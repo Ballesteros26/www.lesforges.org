@@ -1,297 +1,247 @@
-name: 自动解压并合并分卷压缩包
+# -----------------------------------------------------------------------------
+# 工作流：解压并合并分卷/分片压缩包（健壮版）
+# - 识别 _part1/_part2...、_vol1、.part1 等分卷命名，归并为同一组
+# - 同组所有分卷解压到同一文件夹（同名根目录自动合并）
+# - 非分卷普通压缩包解压到各自独立同名文件夹
+# - zip 文件名编码自动回退（UTF-8 flag 缺失时尝试 gbk/big5/latin-1...）
+# - 含路径穿越检查、自然排序、失败退出码
+# -----------------------------------------------------------------------------
 
+name: 自动解压并合并分卷压缩包
 on:
   push:
     branches: [ main, master, GM82 ]
     paths:
-      - '**/*.zip'
-      - '**/*.ZIP'
-      - '**/*.7z'
-      - '**/*.rar'
-      - '**/*.tar'
-      - '**/*.tar.gz'
-      - '**/*.tgz'
-      - '**/*.tar.bz2'
-      - '**/*.tar.xz'
-      - '**/*.z[0-9][0-9]'
-      - '**/*.r[0-9][0-9]'
-      - '**/*.[0-9][0-9][0-9]'
+      - '**.zip'
+      - '**.7z'
+      - '**.rar'
+      - '**.tar'
+      - '**.tar.gz'
+      - '**.tgz'
+      - '**.tar.bz2'
+      - '**.tar.xz'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  extract_archives:
+  extract_all_archives:
     runs-on: ubuntu-22.04
-    timeout-minutes: 360
     if: github.actor != 'github-actions[bot]'
     concurrency:
       group: extract-archives-${{ github.ref }}
       cancel-in-progress: false
 
     steps:
-      - name: 检出代码（完整历史）
-        uses: actions/checkout@v5
+      - name: 检出代码
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0          # rebase 需要足够历史
 
-      - name: 安装依赖
+      - name: 安装解压依赖
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y p7zip-full unrar python3
+          sudo apt-get install -y p7zip-full unrar
 
-      - name: 解压并生成 git 清单
+      - name: 查找、归组、解压合并、暂存并删除压缩包
         run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import os, re, sys, shutil, subprocess, tempfile, zipfile
+          python3 - <<'PYEOF'
+          #!/usr/bin/env python3
+          """解压并合并分卷压缩包，处理 Windows 文件名编码。"""
+          import os, re, sys, shutil, subprocess, zipfile, tarfile
           from pathlib import Path
 
-          ROOT = Path('.').resolve()
-          MANIFEST = Path('/tmp/git-manifest.nul')
-          MAX_FILE = 95 * 1024 * 1024          # GitHub 单文件 100MiB，留余量
-          MAX_NAME_BYTES = 255
-          MAX_FILES = 50000
+          ROOT = Path('.')
 
-          ARCHIVE_SUFFIXES = ['.tar.gz', '.tar.bz2', '.tar.xz', '.tgz', '.zip', '.7z', '.rar', '.tar']
-          NUM_RE = re.compile(r'\.(7z|zip|tar\.(?:gz|bz2|xz)|tar)\.(\d{3,})$', re.I)
-          ZR_RE = re.compile(r'\.(z|r)(\d{2,})$', re.I)
+          ARCHIVE_EXTS = ('.zip', '.7z', '.rar', '.tar', '.tar.gz',
+                          '.tar.bz2', '.tar.xz', '.tgz')
+          PART_RE = re.compile(r'[._-](part|pt|vol)[0-9]{1,3}$', re.I)
+          MAX_TOTAL_UNCOMPRESSED = 20 * 1024 * 1024 * 1024   # 20GB 防 zip bomb
 
-          def log(m): print(m, flush=True)
-
-          def is_archive(p: Path):
-              low = p.name.lower()
-              if any(low.endswith(s) for s in ARCHIVE_SUFFIXES): return True
-              if NUM_RE.search(low): return True
-              if ZR_RE.search(low): return True
-              return False
-
-          def split_ext(name: str):
+          def is_archive(name: str) -> bool:
               low = name.lower()
-              for s in ARCHIVE_SUFFIXES:
-                  if low.endswith(s): return name[:-len(s)], name[-len(s):]
-              m = NUM_RE.search(name)
-              if m: return name[:m.start()], name[m.start():]
-              m = ZR_RE.search(name)
-              if m: return name[:m.start()], name[m.start():]
-              return name, ''
+              return any(low.endswith(ext) for ext in ARCHIVE_EXTS)
 
-          def group_of(rel: str):
-              p = Path(rel); name = p.name
-              d = str(p.parent) if str(p.parent) != '.' else '.'
+          def strip_ext(name: str) -> str:
               low = name.lower()
-              m = re.match(r'^(.*)\.part(\d+)\.rar$', low)
-              if m: return (d, m.group(1), 'rar-part', int(m.group(2)))
-              m = re.match(r'^(.*)\.r(\d{2,})$', low)
-              if m: return (d, m.group(1), 'rar-r', int(m.group(2)))
-              m = re.match(r'^(.*)\.7z\.(\d{3,})$', low)
-              if m: return (d, m.group(1), '7z-num', int(m.group(2)))
-              m = re.match(r'^(.*)\.zip\.(\d{3,})$', low)
-              if m: return (d, m.group(1), 'zip-num', int(m.group(2)))
-              m = re.match(r'^(.*)\.z(\d{2,})$', low)
-              if m: return (d, m.group(1), 'zip-z', int(m.group(2)))
-              m = re.match(r'^(.*)\.(tar\.(?:gz|bz2|xz)|tar)\.(\d{3,})$', low)
-              if m: return (d, m.group(1), 'tar-num', int(m.group(3)))
-              base, ext = split_ext(name)
-              # _partN / _ptN / _volN 命名分片（先于普通扩展名判断）
-              m = re.match(r'^(.*?)[._-](?:part|pt|vol)(\d{1,3})$', base, re.I)
-              if m: return (d, m.group(1), 'named-part', int(m.group(2)))
-              if low.endswith('.rar'):  return (d, base, 'rar-r', 999999)
-              if low.endswith('.zip'):  return (d, base, 'zip-z', 999999)
-              if low.endswith('.7z'):   return (d, base, '7z-num', 999999)
-              if any(low.endswith(s) for s in ('.tar.gz', '.tar.bz2', '.tar.xz', '.tgz', '.tar')):
-                  return (d, base, 'tar-num', 999999)
-              return (d, base, 'single', 0)
-
-          def run(cmd):
-              r = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-              if r.returncode != 0:
-                  tail = r.stdout.decode('utf-8', 'replace')[-2000:]
-                  raise RuntimeError(f'命令失败({r.returncode}): {" ".join(map(str, cmd))}\n{tail}')
-
-          def decode_zip_name(info: zipfile.ZipInfo):
-              name = info.filename
-              if info.flag_bits & 0x800:
-                  return name
-              try:
-                  raw = name.encode('cp437')
-              except UnicodeEncodeError:
-                  return name
-              for enc in ('utf-8', 'gbk', 'big5'):
-                  try:
-                      s = raw.decode(enc)
-                      if all(ord(c) >= 32 or c == '\t' for c in s):
-                          return s
-                  except UnicodeDecodeError:
-                      pass
+              for ext in sorted(ARCHIVE_EXTS, key=len, reverse=True):
+                  if low.endswith(ext):
+                      return name[:-len(ext)]
               return name
 
-          def safe_target(dest: Path, name: str):
+          def group_key(path: Path) -> Path:
+              base = strip_ext(path.name)
+              gbase = PART_RE.sub('', base)
+              return path.parent / gbase
+
+          def natural_key(p) -> list:
+              return [int(t) if t.isdigit() else t.lower()
+                      for t in re.split(r'(\d+)', str(p))]
+
+          # ── zip 文件名编码修复 ──
+          def fix_zip_name(info: zipfile.ZipInfo) -> str:
+              name = info.filename
+              if info.flag_bits & 0x800:          # 已标记 UTF-8
+                  return name
+              try:
+                  raw = name.encode('cp437')      # 未标记时 unzip 按 CP437 解码
+              except UnicodeEncodeError:
+                  return name
+              # 优先 UTF-8（很多工具写 UTF-8 字节但忘设 flag）
+              for enc in ('utf-8', 'gbk', 'gb18030', 'big5',
+                          'shift_jis', 'latin-1'):
+                  try:
+                      dec = raw.decode(enc)
+                      if dec.encode(enc) == raw and \
+                         not any(ord(c) < 32 for c in dec):
+                          return dec
+                  except (UnicodeDecodeError, UnicodeEncodeError):
+                      continue
+              return name
+
+          def safe_target(dest: Path, name: str) -> Path:
               name = name.replace('\\', '/')
-              if name.startswith('/'):
-                  raise RuntimeError(f'拒绝绝对路径: {name}')
               parts = [p for p in name.split('/') if p not in ('', '.')]
               if any(p == '..' for p in parts):
-                  raise RuntimeError(f'拒绝路径穿越: {name}')
-              if parts and parts[0] == '.git':
-                  raise RuntimeError(f'拒绝 .git 路径: {name}')
-              return dest.joinpath(*parts)
+                  raise ValueError(f'路径穿越: {name!r}')
+              target = dest.joinpath(*parts)
+              try:
+                  target.resolve().relative_to(dest.resolve())
+              except ValueError:
+                  raise ValueError(f'路径穿越: {name!r}')
+              return target
+
+          total_uncompressed = 0
+          def check_bomb(n: int):
+              nonlocal total_uncompressed
+              total_uncompressed += n
+              if total_uncompressed > MAX_TOTAL_UNCOMPRESSED:
+                  raise RuntimeError('解压总量超过上限，疑似 zip bomb')
 
           def extract_zip(path: Path, dest: Path):
-              dest.mkdir(parents=True, exist_ok=True)
-              with zipfile.ZipFile(path) as z:
-                  for info in z.infolist():
-                      name = decode_zip_name(info)
+              with zipfile.ZipFile(path) as zf:
+                  for info in zf.infolist():
+                      name = fix_zip_name(info)
+                      if not name:
+                          continue
                       target = safe_target(dest, name)
-                      if name.endswith('/'):
-                          target.mkdir(parents=True, exist_ok=True); continue
-                      if len(target.name.encode('utf-8', 'surrogateescape')) > MAX_NAME_BYTES:
-                          raise RuntimeError(f'文件名超过 {MAX_NAME_BYTES} 字节: {target.name}')
+                      if info.is_dir() or name.endswith('/'):
+                          target.mkdir(parents=True, exist_ok=True)
+                          continue
                       target.parent.mkdir(parents=True, exist_ok=True)
-                      with z.open(info) as src, open(target, 'wb') as out:
-                          shutil.copyfileobj(src, out)
+                      with zf.open(info) as src, open(target, 'wb') as dst:
+                          shutil.copyfileobj(src, dst)
+                      check_bomb(info.file_size)
                       mode = (info.external_attr >> 16) & 0o777
                       if mode:
                           try: os.chmod(target, mode)
                           except OSError: pass
 
-          def extract_one(rel: str, out: Path):
-              p = Path(rel); low = p.name.lower()
-              out.mkdir(parents=True, exist_ok=True)
-              if low.endswith('.zip') and not re.search(r'\.z\d{2,}$', low):
-                  try:
-                      extract_zip(p, out); return
-                  except Exception as e:
-                      log(f'    Python zip 失败: {e}，回退 7z')
-                      shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
-                      try:
-                          run(['7z', 'x', str(p), f'-o{out}', '-y', '-bso0', '-bsp0', '-mcp=65001']); return
-                      except Exception as e2:
-                          log(f'    7z 失败: {e2}，回退 unzip -O UTF-8')
-                          shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
-                          run(['unzip', '-O', 'UTF-8', '-oq', str(p), '-d', str(out)]); return
-              if low.endswith('.7z') or re.search(r'\.7z\.\d{3,}$', low):
-                  run(['7z', 'x', str(p), f'-o{out}', '-y', '-bso0', '-bsp0']); return
-              if low.endswith('.rar') or re.search(r'\.r\d{2,}$', low):
-                  run(['unrar', 'x', '-o+', '-y', str(p), str(out) + '/']); return
-              if low.endswith('.tar.gz') or low.endswith('.tgz'):
-                  run(['tar', '-xzf', str(p), '-C', str(out)]); return
-              if low.endswith('.tar.bz2'):
-                  run(['tar', '-xjf', str(p), '-C', str(out)]); return
-              if low.endswith('.tar.xz'):
-                  run(['tar', '-xJf', str(p), '-C', str(out)]); return
-              if low.endswith('.tar'):
-                  run(['tar', '-xf', str(p), '-C', str(out)]); return
-              raise RuntimeError(f'未知格式: {rel}')
+          def extract_tar(path: Path, dest: Path):
+              with tarfile.open(path) as tf:
+                  for m in tf.getmembers():
+                      target = safe_target(dest, m.name)
+                      if m.isdir():
+                          target.mkdir(parents=True, exist_ok=True)
+                          continue
+                      if not m.isfile():          # 跳过符号链接/设备/管道
+                          continue
+                      target.parent.mkdir(parents=True, exist_ok=True)
+                      src = tf.extractfile(m)
+                      if src is None:
+                          continue
+                      with src, open(target, 'wb') as dst:
+                          shutil.copyfileobj(src, dst)
+                      check_bomb(m.size)
+                      if m.mode:
+                          try: os.chmod(target, m.mode & 0o777)
+                          except OSError: pass
 
-          def merge_volumes(items, workdir: Path):
-              items = sorted(items, key=lambda x: x[0])
-              first = items[0][1].lower()
-              if not re.search(r'\.\d{3,}$', first):
-                  return items[0][1]
-              if '.tar.gz.' in first:  ext = '.tar.gz'
-              elif '.tar.bz2.' in first: ext = '.tar.bz2'
-              elif '.tar.xz.' in first:  ext = '.tar.xz'
-              elif '.tar.' in first:     ext = '.tar'
-              elif '.zip.' in first:     ext = '.zip'
+          def run(cmd):
+              r = subprocess.run(cmd, capture_output=True)
+              if r.returncode != 0:
+                  raise RuntimeError(r.stderr.decode('utf-8', 'replace')[:800])
+
+          def extract(path: Path, dest: Path):
+              dest.mkdir(parents=True, exist_ok=True)
+              low = path.name.lower()
+              if low.endswith('.zip'):
+                  extract_zip(path, dest)
+              elif low.endswith(('.tar.gz', '.tgz', '.tar.bz2',
+                                 '.tar.xz', '.tar')):
+                  extract_tar(path, dest)
+              elif low.endswith('.7z'):
+                  run(['7z', 'x', str(path), f'-o{dest}', '-y', '-bso0', '-bsp0'])
+              elif low.endswith('.rar'):
+                  run(['unrar', 'x', '-o+', '-idq', str(path), f'{dest}/'])
               else:
-                  return items[0][1]
-              out = workdir / ('merged' + ext)
-              with open(out, 'wb') as w:
-                  for _, rel in items:
-                      with open(rel, 'rb') as r:
-                          shutil.copyfileobj(r, w)
-              return str(out)
+                  raise ValueError(f'未知格式: {path}')
 
-          def scan_limits(d: Path):
-              n = 0
-              for root, _, files in os.walk(d):
-                  for f in files:
-                      p = Path(root) / f
-                      if p.is_symlink(): continue
-                      n += 1
-                      if n > MAX_FILES:
-                          raise RuntimeError(f'文件数超过 {MAX_FILES}')
-                      sz = p.stat().st_size
-                      if sz > MAX_FILE:
-                          raise RuntimeError(f'单文件 {sz} 字节超过 GitHub 限制: {p}')
+          def find_archives(root: Path) -> list[Path]:
+              out = []
+              for dirpath, dirnames, filenames in os.walk(root):
+                  dirnames[:] = [d for d in dirnames if d != '.git']
+                  for f in filenames:
+                      if is_archive(f):
+                          out.append(Path(dirpath) / f)
+              return out
 
-          def merge_tree(src: Path, dst: Path):
-              dst.mkdir(parents=True, exist_ok=True)
-              for root, _, files in os.walk(src):
-                  rel = Path(root).relative_to(src)
-                  target_dir = dst / rel
-                  target_dir.mkdir(parents=True, exist_ok=True)
-                  for f in files:
-                      s = Path(root) / f
-                      t = target_dir / f
-                      if t.exists() or t.is_symlink():
-                          if t.is_dir() and not t.is_symlink():
-                              raise RuntimeError(f'目录/文件冲突: {t}')
-                          t.unlink()
-                      if s.is_symlink():
-                          link = os.readlink(s)
-                          if os.path.isabs(link):
-                              raise RuntimeError(f'拒绝绝对符号链接: {s} -> {link}')
-                          resolved = (s.parent / link).resolve()
-                          try:
-                              resolved.relative_to(ROOT)
-                          except ValueError:
-                              raise RuntimeError(f'符号链接逃逸仓库: {s} -> {link}')
-                          os.symlink(link, t)
-                      else:
-                          shutil.copy2(s, t)
+          def main() -> int:
+              archives = find_archives(ROOT)
+              if not archives:
+                  print('未找到压缩文件。')
+                  return 0
+              print(f'找到 {len(archives)} 个压缩文件，开始归组...')
 
-          MANIFEST_PATHS = []
+              groups: dict[Path, list[Path]] = {}
+              for p in archives:
+                  k = group_key(p)
+                  groups.setdefault(k, []).append(p)
+                  print(f'  归组: {p}  ->  {k}')
 
-          def manifest(p):
-              MANIFEST_PATHS.append(str(p))
-
-          def delete_archive(rel):
-              try: os.remove(rel)
-              except FileNotFoundError: pass
-              MANIFEST_PATHS.append(str(rel))
-
-          def pick_volume(mode, items):
-              items = sorted(items, key=lambda x: x[0])
-              if mode == 'rar-part':
-                  return items[0]
-              if mode == 'rar-r':
-                  for it in items:
-                      if it[1].lower().endswith('.rar'): return it
-                  return items[0]
-              if mode == 'zip-z':
-                  for it in items:
-                      if it[1].lower().endswith('.zip'): return it
-                  return items[0]
-              return items[0]
-
-          def process_group(gkey, items):
-              d, base, mode, _ = gkey
-              items = sorted(items, key=lambda x: x[0])
-              dest = Path(d) / base
-
-              if mode in ('single', 'named-part'):
-                  if mode == 'named-part' and items[0][0] != 1:
-                      log(f'  警告: 分片组缺少 part1，数据可能不完整')
-                  ok = False
-                  for _, rel in items:
-                      tmp = Path(tempfile.mkdtemp(prefix='unpack-'))
+              fail = 0
+              for key in sorted(groups, key=natural_key):
+                  parts = sorted(groups[key], key=natural_key)
+                  dest: Path = key
+                  print(f'=== 组 ({len(parts)} 个分卷) -> {dest} ===')
+                  ok = 0
+                  for p in parts:
+                      if not p.is_file():
+                          continue
                       try:
-                          out = tmp / 'out'; out.mkdir()
-                          extract_one(rel, out)
-                          scan_limits(out)
-                          merge_tree(out, dest)
-                          delete_archive(rel)
-                          manifest(dest)
-                          ok = True
-                          log(f'  成功: {rel} -> {dest}')
+                          print(f'  -> {p}')
+                          extract(p, dest)
+                          print('     解压成功，删除原文件。')
+                          p.unlink()
+                          run(['git', 'add', '--', str(p)])
+                          ok += 1
                       except Exception as e:
-                          log(f'  失败: {rel}: {e}（保留原文件）')
-                      finally:
-                          shutil.rmtree(tmp, ignore_errors=True)
-                  return ok
+                          print(f'     解压失败: {e}，保留该分卷。')
+                          fail += 1
+                  if ok > 0:
+                      print(f'  -> 暂存合并目录: {dest}')
+                      run(['git', 'add', '--force', '--', str(dest)])
+                  try:
+                      dest.rmdir()          # 仅当为空时删除
+                  except OSError:
+                      pass
+              print(f'=== 全部处理完毕，失败分卷数: {fail} ===')
+              return 1 if fail else 0
 
-              # 真正分卷：只解第一卷 / 先合并 .001
-              tmp = Path(tempfile.mkdtemp(prefix='unpack
+          sys.exit(main())
+          PYEOF
+
+      - name: 提交变动
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --staged --quiet; then
+            echo "没有文件变动需要提交。"
+            exit 0
+          fi
+          git commit -m "Chore: 自动解压并合并分卷压缩包"
+          git pull --rebase origin "$BRANCH"
+          git push origin "HEAD:$BRANCH"
