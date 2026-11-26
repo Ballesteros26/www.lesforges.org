@@ -1,0 +1,975 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Combien de fins pour mon jeu ?</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	
+« Ce sont nos choix, Harry, bien plus que que nos capacités, qui déterminent qui nous sommes vraiment. »
+
+-- Albus Dumbledore, Harry Potter et la chambre des secrets. 
+
+Il y a quelques temps, j’ai été engagé par un studio pour travailler comme consultant sur un jeu de tir qui proposait plusieurs fins. A la lecture des documents de game design, je me suis rendu compte que celles-ci étaient toutes aussi sombres les unes que les autres. J’ai dit aux designers que les jeux de tir grand public ne sont pas des romans de Kafka et que les joueurs qui parviendraient à la fin d’un tel jeu estimeraient avoir droit à au moins une fin modérément positive. Et ils en ont tenu compte.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#x61;&#x63;&#x74;&#x40;&#108;&#x65;&#115;&#102;&#x6f;&#114;&#103;&#x65;&#x73;&#x2e;&#111;&#114;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Combien de fins pour mon jeu ?</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 2 avril 2013 22:46:59 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/scenario.html">Scénario</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/Shin.html">Pierre Guyot</a>.
+						<br/>L'<a href="http://www.designersnotebook.com/Columns/068_How_Many_Endings_Does_A_Ga/068_how_many_endings_does_a_game_need-.htm" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (décembre 2004).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<blockquote>
+<p>« Ce sont nos choix, Harry, bien plus que que nos capacités, qui déterminent qui nous sommes vraiment. »</p>
+</blockquote>
+<p>-- Albus Dumbledore, <em>Harry Potter et la chambre des secrets.</em> </p>
+<p><img alt="Starcraft (Blizzard) propose une histoire linéaire avec une fin unique." src="../media/img/starcraft.jpg" /></p>
+<p>Il y a quelques temps, j’ai été engagé par un studio pour travailler comme consultant sur un jeu de tir qui proposait plusieurs fins. A la lecture des documents de game design, je me suis rendu compte que celles-ci étaient toutes aussi sombres les unes que les autres. J’ai dit aux designers que les jeux de tir grand public ne sont pas des romans de Kafka et que les joueurs qui parviendraient à la fin d’un tel jeu estimeraient avoir droit à au moins une fin modérément positive. Et ils en ont tenu compte.</p>
+			</div>
+			<div id="article_content">
+				<p>D’un point de vue artistique, mon argument n’était pas valable : les designers devraient pouvoir créer l’équivalent vidéoludique des romans de Kafka, s’ils le souhaitent. Mais d’un point de vue commercial, je pense que c’est une décision saine. Ce studio m’a demandé mon avis sur un jeu commercial et je pense que le public n’est pas encore prêt à dépenser 50 dollars [NDT : !!!] pour un jeu de tir triple A qui ne peut que mal finir. Gagner et perdre a beau être une question de définition, une mauvaise fin donne toujours la sensation de perdre et un <em>happy ending</em> donne toujours un sentiment de victoire. Au fil des années, nous avons entrainé les joueurs à penser qu’ils finiront toujours par gagner à la fin d’un long jeu, même s’ils doivent n’y arriver qu’après de multiples tentatives. Plus le jeu est long, plus le joueur s’est investi dedans et moins il acceptera une mauvaise fin, comme je l’ai expliqué à mes clients. Les jeux d’aventure ou d’énigmes peuvent s’en tirer, mais si un <em>survival</em> se solde par la mort du joueur, celui-ci risque de ne ps apprécier.</p>
+<p>Néanmoins, cette situation m’a fait réfléchir sur le problème des fins multiples. C’est une question essentielle pour quelqu’un qui conçoit un jeu vidéo : le jeu doit-il proposer une une ou plusieurs fins ? Comment devraient-elles se dérouler et comment en décider ?</p>
+<h1>Fins et types de jeux</h1>
+<p>Si vous faites une partie de billard avec quelqu’un dans un bar, deux issues sont possibles : vous gagnez ou vous perdez. Si vous vous asseyez pour faire un poker, quand vous quittez la table, soit vous avez plus d’argent qu’au début de la partie, soit moins : ce score final vous permet de définir simplement victoire et défaite. Sans plus d’analyse, on pourrait conclure que les jeux vidéo doivent proposer ou bien une façon de gagner et une façon de perdre, ou bien un score final. Néanmoins, beaucoup de jeux vidéo – et même pour la majorité d’entre eux – ne sont pas semblables au billard ou au poker. Comme il y a une immense variété de jeux possibles, il est difficile de définir des règles de conception qui s’appliquent à tous. Je vais essayer de traiter le problème en séparant les jeux en différent types et pour certains d’entre eux, la réponse sera assez immédiate.</p>
+<p>On peut déjà répondre simplement à la question des jeux en équipes et des jeux compétitifs multi-joueurs, qu’il s’agisse d’une simulation de billard ou de <em>Counter-Strike</em>. Les jeux compétitifs doivent évidemment proposer les fins standards mentionnées plus haut : c’est ce que les joueurs attendent lorsqu’ils jouent l’un contre l’autre. Pour les jeux multijoueurs en coopération, où les joueurs jouent ensemble contre l’ordinateur, c’est un peu moins clair : dans certains cas, ils gagnent tous ensemble, dans d’autres, ils perdent tous ensemble. Parfois, un joueur abandonne les autres en cours de partie. En fin de compte, trois types de fins sont possibles : aucun joueur ne gagne, certains joueurs gagnent, tous les joueurs gagnent (souvent, les deux dernières options sont confondues).</p>
+<p>On peut aussi répondre simplement pour la plupart des jeux online massivement multijoueurs, en particulier pour les univers persistants et les MMORPG. En général, ils ne proposent pas de fin du tout. L’intérêt de ce genre de jeux est précisément que les joueurs peuvent continuer à joueur indéfiniment. Les joueurs essayent de ne pas  « perdre » – à savoir mourir –  mais la mort n’est en général pas permanente et dans tous les cas, le jeu continue pour les autres joueurs. Il n’y a pas de « victoire » à proprement parler dans un monde persistant, à moins qu’il n’y ait une fin et une condition de victoire proprement définies,  ce dont je n’ai jamais entendu parler [NDT : <em>Curiosity</em> ?].
+Dans <em>SimCity</em> et dans la plupart des <em>citybuilders</em>, vous ne pouvez ni perdre ni gagner, le jeu n’ayant donc qu’une fin – et comme dans le cas des MMORPG, la « victoire » ne constitue pas le but du jeu. Les jeux d’arcade classiques comme <em>Space Invaders</em> ne proposent pas non plus de condition de victoire : le jeu se contente de devenir de plus en plus difficile jusqu’à ce que vous perdiez. La seule façon de « gagner » est de mourir avec un score plus élevé que quiconque a jamais joué. Mais qu’on définisse ceci comme une victoire ou une défaite, le jeu ne propose en fin de compte qu’une seule fin.</p>
+<p>Les jeux courts à un seul joueur (disons d’une durée allant de quelques minutes à trois ou quatre heures) sont aussi relativement simples de ce point de vue. La plupart ne sont pas très complexes et rentrent dans un schéma victoire/défaite comme le solitaire ou bien donnent un score final qui permet au joueur de décider s’il a gagné ou perdu.</p>
+<h1>Les jeux longs à un seul joueur</h1>
+<p>Il nous reste maintenant le cas des jeux longs à un seul joueur et ceux-ci sont en général plus complexes à traiter. Tout d’abord, intéressons nous à ce qui se passe quand l’avatar du joueur meurt au milieu d’un tel jeu. Il s’agit évidemment d’une  « défaite », mais je crois qu’il ne s’agit pas à proprement d’une  « fin ». Évidemment, cette défaite met fin à l’<em>expérience de jeu</em> mais elle ne constitue pas une <em>véritable</em> conclusion au jeu. Le joueur sait qu’il n’a pas été au bout du jeu et qu’il devrait réessayer. Il n’y a d’ailleurs pas beaucoup d’intérêt à créer beaucoup de contenu pour accompagner la mort de l’avatar du joueur, parce que le joueur risque de le voir souvent et d’en être lassé. Pour les besoins de la discussion, je vais maintenant laisser de côté ce type de fins prématurées.</p>
+<p>Alors, si on laisse de côté le <em>game over</em>, combien de fins un jeu long pour un seul joueur devrait-il proposer ? La réponse a à voir avec l’esprit du gameplay et avec les buts que ces différentes fins devraient servir. Tout d’abord, prenons le cas de jeux longs à un seul joueur parmi les plus vieux du genre, les <em>side-scrollers</em>. Dans ces jeux, le joueur est confronté à un flot continu d’obstacles et doit lutter pour sa survie. La plupart du temps, ils ne proposent qu’une fin, conçue de sorte à donner une sensation de triomphe au joueur. C’est la récompense du joueur pour avoir réussi à se frayer un chemin jusqu’au bout sans mourir. Des fins multiples seraient ici inutiles : elles auraient pour effet de réduire ce sentiment de victoire chez le joueur. Si l’une des fins constitue une plus grande récompense que les autres, le joueur va la voir comme la « bonne » fin – la meilleure fin – et verra les autres comme inférieurs, même si elles ne sont pas présentées comme des défaites. Ça na pas tellement d’intérêt, à moins de vouloir établir une distinction spécifique entre une « bonne » partie et une « excellente » partie, par exemple avec un niveau ou une cinématique bonus.</p>
+<h1>Les jeux longs à histoire</h1>
+<p>Considérons maintenant un jeu long, à un seul joueur, mais avec une histoire. <em>Starcraft</em>, par exemple, propose une histoire linéaire avec une seule fin. La <em>manière</em> de jouer ne change pas l’histoire. De la même façon que pour les <em>side-scrollers</em>, le gameplay se concentre sur la survie et la victoire, et lorsqu’il gagne, le joueur est récompensé en découvrant la suite de l’histoire. Le jeu ne donne pas la possibilité au joueur de changer l’histoire et en fait, l’histoire est essentiellement utilisée pour lier entre elles différentes missions. Il est possible de faire le jeu d’un bout à l’autre sans s’intéresser le moins du monde à l’histoire : finir les missions est une récompense en soi [NDT : pour avoir fini le jeu quand j’étais plus jeune sans comprendre un mot d’anglais, je confirme pleinement les dires de l’auteur.].</p>
+<p><strong>Attention : petit spoiler pour <em>Half-Life</em> dans le paragraphe suivant.</strong></p>
+<p>Je pense que des jeux comme <em>Starcraft</em> n’ont besoin que d’une fin et que celle-ci devrait être présentée comme une victoire (bien qu’on puisse évidemment laisser certains éléments en suspens pour une éventuelle suite). Faire suivre au joueur une histoire linéaire jusqu’au bout pour tout d’un coup lui présenter différentes fins est amusant mais en fin de compte superflu. Je pense qu’il s’agit par exemple d’une (toute petite) faiblesse de <em>Half-Life</em>. La proposition que fait G-Man à Gordon s’avère être une offre que le joueur ne peut pas refuser, alors à quoi bon ? C’est un choix bancal et une perte de temps pour le jeu. Et s’il s’était agi d’un choix  légitime, il aurait alors fallu deux suites différentes, une pour chaque alternative.</p>
+<p>Néanmoins, certains joueurs sont vraiment intéressés par l’intrigue et aiment à jouer un rôle dedans : ces joueurs voudront ressentir l’impact et les implications de leurs actions. Pour eux, leurs actions devraient impacter les évènements de l’histoire et ceci passe éventuellement par un système de fins multiples. <em>Wing Commander</em> constitue un bon exemple de ce type de jeu. Il est connu pour proposer une intrigue véritablement non-linéaire. L’échec d’une mission ne se solde pas nécessairement par une fin prématurée, mais change simplement le tour que prend l’intrigue. La réussite ou l’échec des missions devient un élément narratif et en effet, <em>Wing Commander</em> propose différentes fins.</p>
+<p>Néanmoins, je ne crois pas que ceci soit absolument nécessaire. Ça dépend de la nature de l’intrigue elle-même. Un seul soldat a très peu de chance de faire une différence significative dans une guerre. Il peut apporter une séries de contributions, modestes mais cumulatives, et ses choix affecteront profondément son expérience <em>personnelle</em>, mais lui-même ne changera pas nécessairement l’issue du conflit. L’objectif du jeu est de survivre à la guerre et différents joueurs s’attaqueront au problème de façon différente et expérimenteront des histoires différentes, mais en fin de compte, la fin est la même : le joueur a réussi à survivre et la guerre s’achève (peut-être). On peut donc légitimement concilier une intrigue non-linéaire et une fin unique, si la fin se focalise sur les évènements à grande échelle plutôt que sur les expériences personnelles.</p>
+<h1>Challenges et choix</h1>
+<p>Quand vous essayez de déterminer combien votre jeu devrait proposer de fins, tenez compte des différents types d’actions dont le joueur dispose pour impacter l’histoire. Si c’est la réussite ou l’échec face à des <em>challenges</em> qu’on lui propose qui permettent au joueur de changer le déroulement de l’histoire, alors celle-ci devrait se construire autour de la performance du joueur, avec des fins qui différent en fonction de celle-ci – des fins bonnes ou mauvaises, ou peut-être un score final avec différentes conséquences. Les joueurs ont légitimement le droit de s’attendre à une forme de récompense lorsqu’ils réussissent un challenge, qu’il s’agisse de <em>loot</em> comme dans les RPG ou d’une fin positive à l’histoire, et inversement. C’est le cas de <em>Wing Commander</em>, où ce sont les challenges (à savoir réussir les différentes missions) qui contrôlent principalement le déroulement de l’histoire.</p>
+<p><img alt="Wing Commander (Origin Systems)" src="../media/img/wingcommander.png" /></p>
+<p>L’autre grand type d’actions qui permet de changer l’intrigue, ce sont les <em>choix</em>. La différence entre challenge et choix est que le choix de requiert pas que le joueur accomplisse quelque chose (même si ledit choix peut-être difficile à faire). En conséquence, il n’y a pas de présupposé selon lequel un bon choix entrainerait une récompense ou même qu’il <em>existe</em> un bon choix. Bien sûr, il est possible de proposer des bons et des mauvais choix menant à de bonnes et à de mauvaises fins, mais attention : si c’est trop appuyé, le jeu risque de devenir manichéen voire moralisateur. Il est plus intéressant de proposer au joueur des choix moralement ambigus et d’explorer certaines de leurs conséquences.</p>
+<p>Le <em>choix simple</em> est le plus facile à implémenter : le joueur prend une décision précise et l’intrigue suit une direction qui dépend de l’alternative choisie. Au choix suivant, on a un nouvel embranchement de l’histoire. Si les conséquences sont immédiates, ceci peut paraître mécanique : le joueur voit se dessiner l’arbre des choix qui lui sont proposés. Bien que ce soit indispensable pour les RPG [NDT : occidentaux], il s’agit d’une des faiblesses des dialogues basés sur un arbre de décision : on voit vraiment l’arbre se dessiner à mesure qu’on avance dans les dialogues. On peut atténuer cet aspect mécanique en retardant les effets d’un choix (le jeu prendre note de la décision du joueur sur le moment, mais l’histoire ne prend un tour différent que plus tard). Néanmoins, cette façon de procéder a aussi ses inconvénients. Si le joueur regrette sa décision, il doit revenir loin en arrière dans le jeu – en supposant qu’il ait encore une sauvegarde suffisamment ancienne. <em>Le Guide du Voyageur Intergalactique</em> a été maudit par nombre de joueurs, parce qu’il propose un choix apparemment insignifiant au tout début du jeu qui empêche le joueur de gagner une fois celui-ci arrivé à la toute fin. En règle générale, un choix ne devrait pas être insignifiant, ses conséquences ne devraient pas intervenir avec un trop grand décalage et le joueur devrait en connaitre (ou être capable de déduire) les conséquences. Et bien sûr, un choix ne produit pas nécessairement une seule conséquence : choisir un alignement mauvais dans <em>Donjons et Dragons</em> a par exemple des conséquences tout au long du jeu.</p>
+<p>Une autre forme de choix est le <em>choix cumulatif</em>, dans lequel les actions cumulées du joueur affectent l’intrigue, pas ses actions prises individuellement. C’est ce qu’on trouve dans les jeux qui donnent la possibilité d’être bon ou mauvais, sans vous demander spécifiquement de choisir en début de partie. <em>Black and White</em> en est un bon exemple : l’accumulation de vos décisions affecte le déroulement du jeu et l’apparence de votre créature (il ne s’agit pas exactement d’un avatar).</p>
+<p>Ce dont on peut être sûr, c’est que si l’histoire change avec les décisions du joueur, il voudra revenir en arrière pour voir ce qui ce serait passé s’il avait pris une autre décision. C’est dans la nature humaine de s’intéresser à ce qui aurait pu se produire dans d’autre circonstances. Soyez cléments avec vos joueurs : donnez leur la possibilité de sauvegarder avant les choix importants – tout particulièrement si leur décision peut avoir des répercussions catastrophiques qu’ils n'auraient pas pu prédire.</p>
+<h1>Intrigues multiples et fins multiples</h1>
+<p>Dans un jeu avec beaucoup de choix, l’histoire peut produire un nombre d’embranchements qui croît exponentiellement et, en théorie, un nombre énorme de fins possibles. Dans la pratique néanmoins, je ne crois pas que ce soit très intéressant. Tout d’abord, il est très couteux de créer autant de contenu, comme s’en sont rendu compte les développeurs de <em>Wing Commander</em> : pendant des années, <em>Wing Commander IV</em> a été le jeu le plus couteux à développer de tous les temps. Mais au delà de ça, je n’ai pas l’impression que ce soit vraiment nécessaire. Un joueur intéressé par l’intrigue aura rarement envie de disposer d’une liberté totale pour explorer chaque embranchement. Un joueur intéressé par une liberté totale jouera à un <em>Grand Theft Auto</em> , laissera de côté les missions et l’intrigue et ira simplement explorer la ville et la mettre à feu et à sang.</p>
+<p>Ce qu’un joueur intéressé par l’histoire recherche, c’est une conclusion narrative satisfaisante et crédible à l’expérience qu’il vient de vivre. Une fin qui permet de faire retomber la tension dramatique de l’histoire d’une façon cohérente. Ceci ne requiert pas nécessairement un grand nombre de fins. Souvenez-vous de vos cours de littérature [NDT : pour les Anglo-Saxons, du moins] : une histoire devrait comporter un thème, une thématique. Le thème est le cœur de l’œuvre et il devrait toucher le joueur, intellectuellement et émotionnellement. La présence d’un thème riche est caractéristique des grandes œuvres de la littérature et c’est ce qui différencie une œuvre d’une simple distraction. La thématique d’une histoire peut être ambigüe, mais elle ne devrait pas être contradictoire ou illogique. Une part essentielle de cette thématique passe par la façon dont l’histoire se conclut : heureuse, triste, dérangeante, ambigüe. Ceci reste vrai, même pour une histoire interactive. Si les fins et les alternatives offertes par l’histoire sont trop nombreuses, la thématique de l’histoire risque d’être confuse, voire perdue.</p>
+<p><img alt="Planescape : Torment (Black Isle Studios)" src="../media/img/planescape.png" /></p>
+<p><em>Planescape : Torment</em>, un jeu que j’adore par ailleurs, propose si je ne me trompe pas huit fins possibles, chacune basée sur une décision que le joueur prend à la toute fin du jeu. J’ai sauvegardé et rechargé jusqu’à les avoir toutes vues (je crois). Je comprends ce que les designers ont cherché à faire en incluant toutes ces fins : le jeu est plein de choix difficiles et ils ont voulu que le jeu s’achève sur un dernier choix particulièrement difficile et que le joueur en voit les conséquences qui en découlent. Et pourtant, je n’ai pas eu l’impression que c’était vraiment <em>nécessaire</em>. L’une des fins donnait le sentiment d’être la « bonne » fin et les autres – bien que n’étant pas à proprement parler des défaites – étaient moins satisfaisantes. La thématique de l’histoire devenait plus floue à ce moment du jeu. Je pense qu’il aurait été plus fort de proposer une fin unique ou un choix qui découle du cumul des actions du joueur tout au cours du jeu, plutôt qu’un unique choix mécanique à la fin.</p>
+<h1>Conclusion</h1>
+<p>Pour faire court, ne proposez jamais de fins multiples simplement parce que vous le pouvez : c’est couteux et cela n’améliorera sans doute pas le jeu. Créez des fins multiples quand elles s’inscrivent dans un but plus large. Ce but peut être très simple : récompenser ou punir le joueur en fonction de ce qu’il a accompli, juger de la « qualité » de la partie qu’il a jouée. Victoire et défaite standards constituent des fins importantes pour beaucoup de types de jeux.</p>
+<p>Si votre jeu inclut une histoire interactive, des fins multiples peuvent permettre de refléter les actions du joueur au cours du jeu, actions dont il attend qu’elles aient des conséquences significatives. Si l’histoire est dirigée principalement par des challenges, les différentes fins devraient refléter les échecs et les succès du joueur. Si ce sont les choix qui dirigent l’histoire, vous pouvez explorer beaucoup plus de directions, mais soyez prudent : le puissance émotionnelle d’un évènement important peut être fortement diminuée si le joueur peut revenir en arrière et empêcher cet évènement. <em>Starcraft</em> se termine par le sacrifice d’un personnage héroïque qui choisit de mourir pour le bien de la galaxie et le joueur ne peut rien faire pour l’empêcher. Ce moment aurait été bien moins fort si le joueur pouvait simplement recharger et choisir un dénouement plus heureux. Parfois, le joueur ne devrait <em>pas</em> avoir le choix, car cela réduit l’impact de l’histoire.</p>
+<p>Assurez vous que chaque fin soit cohérente avec la ligne narrative qui y mène, même si celle-ci a été extrêmement variée. Faites en sorte que chaque fin réussisse à créer un sentiment de satisfaction narrative, ce « aaaahh » de contentement quand on arrive à la fin d’un bon livre ou d’un bon film. Et faites attention à ce que chacune de vos fins renforce la thématique de l’histoire, plutôt que de la brouiller ou de la distordre.</p>
+<p>Je ne dis pas qu’il ne faut pas proposer de fins multiples. Je dis juste qu’il faut le faire avec soin et dans un but précis.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/combien-de-fins&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_408" class="comment">
+	
+		<span class="meta">Par un anonyme le 27 avril 2015 16:15:21</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Merci pour cette article.</p>
+<p>Je trouve dommage qu'aucun jeu (aucun que je connaisse) ne propose des fins multiples choisies non par le joueur, mais par l'ensemble des choix qu'il a fait pendant son aventure.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_408').addClass('deleted');
+			$('#comment_408 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_408 .delete').css("display", "none");
+			$('#comment_408 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_408 .delete').css("display", "none");
+		else										$('#comment_408 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_388" class="comment">
+	
+		
+			<span class="meta">Par Kled le 18 mars 2014 04:56:09</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Kled" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>L'article pose de très bons fondamentaux, mais je conteste son introduction comme sa conclusion : il semble considérer le « aaahh » de satisfaction comme seule bonne possibilité de ponctuation de scénario et oublier complètement que son dernier point justifie la transgression de la totalité du reste de ses conseils.</p>
+<p>Prenons Nier &amp; Drakengard — ce dernier étant déjà sorti en 2004. On a le droit à des fins glauques, étranges, peu compréhensibles et une va même jusqu'à détruire toutes les sauvegardes du joueur pour accentuer sa narration.</p>
+<p>Il n'y a pas de notion de récompense ou de satisfaction ; tout est porté sur l'ambiance amère, sinistre et pessimiste. L'histoire préfère étouffer que complaire, et si nos choix changent radicalement notre destin — jusqu'à un Tokyo moderne, ce qui n'est pas rien -, ils nous emmènent, fatalement, vers le malaise, la tragédie et la confusion.</p>
+<p>C'est là que la dimension artistique se ressent. La narration n'est pas satisfaisante mais brouillée, distordue, avec un thème finalement pas si clair… et c'est volontaire. Il s'agit du but de Cavia, réalisé avec soin. Tout a été réalisé pour cette ambiance. Et c'est efficace.</p>
+<p>Il faut arrêter de se cacher dans la complaisance et les vieilles recettes à la manière des lobbys d'Hollywood. Certes, beaucoup de jeux tombent dans les exemples et les erreurs décrits par cet article, mais la surprise et la singularité font de grands succès (The Last of Us, Shadow of the Colossus) et l'avenir, selon moi, va se situer dans la capacité à expérimenter et exploiter toutes les composantes exclusives du jeu.</p>
+<p>Les fins alternatives à but scénaristique en sont une.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_388').addClass('deleted');
+			$('#comment_388 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_388 .delete').css("display", "none");
+			$('#comment_388 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_388 .delete').css("display", "none");
+		else										$('#comment_388 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_347" class="comment">
+	
+		
+			<span class="meta">Par samohtrace le 2 mai 2013 13:23:38</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de samohtrace" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>je trouve cette analyse justifiée mais un poil restrictive.
+petite suggestion d'un jeu qui exploite les fins multiple de manière originale:</p>
+<p>http://www.newgrounds.com/portal/view/615863?id=615863</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_347').addClass('deleted');
+			$('#comment_347 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_347 .delete').css("display", "none");
+			$('#comment_347 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_347 .delete').css("display", "none");
+		else										$('#comment_347 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_341" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 9 avril 2013 00:01:27</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Article intéressant. Ce qui m'étonne le plus est que tu exergues Harry Potter ^^</p>
+<p>Pour commenter le commentaire précédent :</p>
+<blockquote>
+<p>Je sais, je sais, ce sont des exceptions, des contre-exemples… Cependant, je trouve que le jeu vidéo est justement trop une industrie et pas assez, hum, artistique (!?). Il manque le génie créateur!</p>
+</blockquote>
+<p>Hay, there's the rub. Il faut des années pour faire un bon romancier, et il a fallu des siècle pour faire une littérature. Les talents de scénaristes de jeu vidéo (il y en a déjà quelques uns, genre l'auteur des dragon quest m'a t'on dit) viendront, mais il faut leur laisser le temps d'émerger. Ce n'est pas une simple question de courage ou de conditions de production dans l'industrie, c'est une question de personnes et de développement d'un domaine artistique.</p>
+<p>En attendant, tout le monde galère et cherche à apporter sa petite pierre.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_341').addClass('deleted');
+			$('#comment_341 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_341 .delete').css("display", "none");
+			$('#comment_341 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_341 .delete').css("display", "none");
+		else										$('#comment_341 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_339" class="comment">
+	
+		
+			<span class="meta">Par LsD le 3 avril 2013 04:03:08</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de LsD" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Super article, très bonne analyse, une analyse juste. Cependant, peut-être un peut trop « consultant » à mon goût, donc très peu risquée et très factuelle… Bon, c'est la profession qui le veut, on ne veut pas faire perdre de l'argent à un client! </p>
+<p>Je trouve qu'on sous-estime les joueurs, on oublie que la moyenne d'âge est, de quoi, près de 30 ans?! Que donc plusieurs sont des universitaires, des parents, des adultes adultes si j'ose me permettre et des femmes. Je pense faire parti de cette classe, un vieux gamer de justement 30ans qui a commencé à jouer sur Atari et PC il y a maintenant environ 25ans… Je me sens délaissé par l'industrie, moi, les Gears of wark, les Far Poches 3 avec leurs scénarios pseudos matures parce qu'on voit des seins ne m'impressionne pas du tout. </p>
+<p>Je délaisse de plus en plus les jeux AAA parce que justement, j'ai l'impression d'avoir tout vue, oh, ici et là des p'tits ajouts, mais mes repaires de vieux loups sont rarement des concertés. Pourtant, je ne suis pas blasé, j'adore la scène indie et puis, comme un héroïnomane, j'espère toujours retrouver l'effet du premier fix, je me fais avoir par des grosses productions, notamment Assassin's Creed, Mass Effect… Reste que même ces jeux, je me sens retourner à mon adolescence, je me sens diminuer. </p>
+<p>Je trouve qu'il y a un effet du genre l'oeuf ou la poule dans l'industrie. On sert depuis 20 ans du scénario d'ado, ça fonctionne, donc on considère que c'est ce que les gens veulent. Cependant, dans les faits, est-ce vraiment ce que les gens veulent?! On a dit que le genre Point-n-click était mort et enterré, qui est-ce qui a gagné le jeu de l'année 2012? Un jeu d'aventure assez '90 et avec un fin assez négative merci. Le jeu le plus vendu? The Sims, un jeu de fifilles et de casual gamer… Sins of Solar Empire, un jeu qui a eu de la misère à trouver du financement parce que justement pas très « actuel » s'adressant à un public limité et une tranche d'âge trop vieille: succès commercial. </p>
+<p>Je sais, je sais, ce sont des exceptions, des contre-exemples… Cependant, je trouve que le jeu vidéo est justement trop une industrie et pas assez, hum, artistique (!?). Il manque le génie créateur! Richard Garriott a sorti récemment une immense critique envers les games designers et je dois dire que je partage en bonne partie sa critique: ça manque de vision et d'audace dans le milieu! Trop de suiveux! Pourtant, c'est l'industrie de divertissement numéro 1, on devrait voir plus d'audace, plus de ciblage d'un public spécifique, arrêter de faire des jeux avec le plus grand consensus mou que le joueur est un mâle de 17 ans!</p>
+<p>Puis, la fin, est-ce si important? Ce n'est pas un film où la fin est primordiale, c'est un jeu que, quoi, le 3/4 des joueurs ne verront même pas! Bref, je crois que qu'importe la fin, tant qu'elle est bien foutue, les joueurs vont embarquer. Le nombre de film d'horreur qui se termine mal, le meilleur Star Wars, l'Empire contre-attaque, se termine mal et imagine à l'époque comment ça du être difficile d'attendre la suite! </p>
+<p>Au contraire, pour moi qui a des rudiments en publicité et en communication, une mauvaise fin peut marquer le jeu dans l'esprit des gens et quand la suite va sortir, ils vont s'en souvenir et vont être sûrement plus curieux de savoir ce qu'il va arriver. Parce qu'on va se le dire, combien de fin de jeux vidéo on peut raconter? Moi, très peu, parce qu'elles sont rarement marquantes, souvent prévisible au possible. Déstabiliser (un peu) le joueur dans ses habitudes  adolescents attardés me semble au contraire un atout commercial! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_339').addClass('deleted');
+			$('#comment_339 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_339 .delete').css("display", "none");
+			$('#comment_339 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_339 .delete').css("display", "none");
+		else										$('#comment_339 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/85';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="combien-de-fins@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#x74;&#97;&#99;&#116;&#x40;&#x6c;&#101;&#115;&#x66;&#x6f;&#114;&#103;&#x65;&#115;&#46;&#x6f;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1126 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Compte-rendu de Ludum Dare #22</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Quatre mois se sont écoulés depuis la précédente édition de Ludum Dare et je ne vais pas vous cacher que j'étais très impatient de participer à nouveau à cet évènement. Pour ceux d'entre vous qui ne seraient pas familiers du principe et qui n'auraient pas lu mon compte-rendu de la précédente édition, rappelons qu'il s'agit d'un weekend pendant lequel des développeurs du monde entier créent des jeux sur un thème imposé. Les participations peuvent se faire soit en 48 heures en solo (la compétition ou compo), soit en groupe en 72 heures (le jam).
+
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#x74;&#97;&#x63;&#x74;&#64;&#x6c;&#101;&#115;&#x66;&#111;&#114;&#103;&#101;&#115;&#x2e;&#111;&#114;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Compte-rendu de Ludum Dare #22</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 22 décembre 2011 16:39:54 | Catégories : <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/graphisme.html">Graphisme</a>, <a href="../tag/ludum-dare.html">Ludum Dare</a>, <a href="../tag/ma-vie.html">Ma vie</a>, <a href="../tag/pixel-art.html">Pixel art</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Quatre mois se sont écoulés depuis la précédente édition de Ludum Dare et je ne vais pas vous cacher que j'étais très impatient de participer à nouveau à cet évènement. Pour ceux d'entre vous qui ne seraient pas familiers du principe et qui n'auraient pas lu mon <a href="ld21.html">compte-rendu de la précédente édition</a>, rappelons qu'il s'agit d'un weekend pendant lequel des développeurs du monde entier créent des jeux sur un thème imposé. Les participations peuvent se faire soit en 48 heures en solo (la compétition ou <em>compo</em>), soit en groupe en 72 heures (le <em>jam</em>).</p>
+<p><img alt="Un morceau du wallpaper fait avec tous les écrans titres du Ludum Dare #22" src="../media/img/ld22-chapeau.jpg" /></p>
+			</div>
+			<div id="article_content">
+				<h1>Avant</h1>
+<p>Les préparatifs pour le Ludum Dare commencent plusieurs semaines en avance avec un formulaire où chacun (même les non-participants) peut proposer des thèmes. J'ai tenté ma chance avec <em>PRHÖFESSOR, I CAHN'T CONTRÖL THE MACHINE ANYMORH!</em> parce que sur le moment je trouvais ça rigolo. Malheureusement, des filtres automatiques ont été appliqués pour faire face à l'immense afflux de propositions de thèmes et ma suggestion n'a pas survécu au nettoyage sur les critères « moins de 3 mots » et « n'utilise pas de mots absents du dictionnaire ». Tant pis pour les scientifiques fous à l'accent allemand.</p>
+<p>Afin d'être prêt au moment du top-départ (Samedi 19 Décembre à 3h00 du matin heure française), j'ai consacré mon après-midi à de savants préparatifs :</p>
+<ul>
+<li>Faire des courses riches en bacon, Coca Cola, cookies et bière</li>
+<li>Créer un squelette de projet vide prêt à accueillir les premières lignes de code</li>
+<li>Préparer une page web pour distribuer le (futur) jeu fini. Ça fait un peu bizarre de faire ça avant même de commencer le développement du jeu.</li>
+<li>Mettre à jour mon framework personnel, <em>Bacchus</em>, avec quelques fonctionnalités développées récemment sur une branche à part</li>
+<li>Installer et apprendre à utiliser <em>Chronolapse</em> (plus d'infos plus bas dans cet article)</li>
+<li>Annoncer ma candidature et mes outils sur le <a href="http://www.ludumdare.com/compo/">blog Ludum Dare</a></li>
+<li>Accorder ma guitare (on ne sait jamais)</li>
+<li>Nettoyer mon bureau qui avait un peu régressé au rang de poubelle à ciel ouvert ces derniers temps</li>
+</ul>
+<p>Une heure avant le début de la compétition, je me trouvais fin prêt. Ouf!</p>
+<p><img alt="Mon bureau tout propre" src="../media/img/ld22-desk.jpg" /></p>
+<p>Je suis ensuite aller me balader sur le blog de l'évènement et le canal IRC dédiés pour me mettre encore plus dans l'ambiance. J'y ai découvert au détour d'un lien l'existence de <a href="http://www.mapeditor.org/">Tiled</a>, un éditeur de maps en 2D génériques. Je me suis dit que ça pourrait servir et j'ai consacré ma dernière heure à écrire un <em>parser</em> basique et incomplet (mais fonctionnel) pour pouvoir utiliser si nécessaire des fichiers produits par ce logiciel.</p>
+<h1>Pendant</h1>
+<p>A 3h00, le coup d'envoi est donné sur IRC : le thème est <em>Alone</em>. Je suis un peu déçu parce que j'adorais les thèmes <em>Forgotten Places</em> et surtout <em>Shapeshifting</em> pour lesquels j'ai déjà réfléchi à des concepts qui me plaisaient. Au moins le thème n'est pas <em>Kittens</em> (qui a fini bon dernier) comme l'espérait un lobby hyperactif et rigolo qui a inondé le blog Ludum Dare les jours précédents.</p>
+<p>Les minutes passent et les bonnes idées ne viennent pas. J'envisage tout d'abord un jeu qui raconte l'histoire d'un marin seul survivant sur un navire et qui meurt à petit feu et où le joueur participe à des mini-jeux qui prennent place dans le souvenirs et les délires du personnage. J'abandonne l'idée car elle oblige à développer plusieurs gameplay de mini-jeux, ce qui ne semble pas très raisonnable. Je pense ensuite à un jeu vu de dessus où l'on incarne un petit garçon dans une école où personne ne lui parle à l'exception d'inquiétants démons que personne ne peut voir sauf lui. A la réflexion, je pense que c'était peut-être ma meilleure idée.
+Finalement, je me décide à parler d'un chevalier ensorcelé qui se retrouve seul dans un monde mystérieux (que je comptais au départ peupler de ses souvenirs et démons intérieurs).</p>
+<p>J'ouvre mon <em>Photoshop</em> préféré et je commence à gribouiller des tiles de jeu de plateforme dans une ambiance crépusculaire (qui est un peu partie à la trappe petit à petit). J'aime bien commencer par des graphismes parce que ça me donne tout de suite une idée de ce à quoi mon jeu va ressembler et c'est motivant pour le programmer. Au petit matin, vers huit ou neuf heures, j'ai terminé mes tiles, un sprite de chevalier, une tombe, une épée et une fleur qui pourront toujours servir. Je m'inquiète beaucoup parce que je ne sais pas encore ce que je vais en faire exactement mais au moins les gens sur IRC et sur le blog disent qu'ils sont très jolis. Au moment d'aller me coucher, je repère que la boîte de <em>Dark Souls</em> en évidence sur mon étagère s'offre à mes yeux dès que je les détourne de l'écran — je la soupçonne très fort de m'avoir influencé sans que je le demande.</p>
+<p>Après cinq heures de sommeil, je me lève avec la ferme intention de ne pas me coucher tant que mon jeu ne ressemblera pas à quelque chose. Je décide d'en faire un jeu de plateforme lent et où l'histoire progresse au fur et à mesure que le joueur avance dans les salles. C'est un peu ambitieux quand on sait qu'à ce moment là je n'ai toujours pas de scénario en tête mais au moins ça me fait quelque chose à coder.</p>
+<p>Je passe toute la journée à alterner entre « je fais des maps avec Tiled » (j'ai bien fait d'écrire mon <em>parser</em> une heure avant la compétition), « je programme le jeu » et « je fais les animations du chevalier ». Avec le recul, je pense que passer deux heures et demie à faire une animation de marche en 8 frames c'était une très mauvaise idée pour un Ludum Dare.</p>
+<p><img alt="Marche" src="../media/img/ld22-walk_gif.gif" /></p>
+<p>Arrive le début de la nuit, j'ai l'impression d'être dans un épisode de MacGyver dont le pitch est « Hum… Ok, j'ai un moteur de jeu de plateformes, des falaises, des cailloux, une épée, une fleur et un tombe et je dois les combiner pour faire un jeu ». J'écris une mini-histoire pour relier tout ça (je vous laisse la découvrir en jouant au jeu, le lien est en bas de cet article) et je la mets en place. J'utilise mes dernières forces pour faire le générique de fin et le texte d'introduction ; à ce moment là je suis plus que content d'avoir choisi d'utiliser un outil qui me permet de gérer l'avancement du projet sans tout garder en tête (ce qui est très difficile quand on est fatigué). J'ai choisi <a href="http://www.asana.com">Asana</a> que j'utilise déjà sur mes projets à long termes et dont je suis très satisfait d'une manière générale. Je vais finalement me coucher, épuisé mais ravi d'avoir un jeu qui ne demande plus qu'à être mis en musique, décoré et testé avant d'être fini.</p>
+<p><img alt="Asana, ma todolist hightech" src="../media/img/ld22-asana.jpg" /></p>
+<p>Je me lève vers 13h00 et après un copieux casse-croûte j'appelle deux amis nantais pour leur demander s'ils auront le temps de venir faire les beta-testeurs plus tard dans la soirée. Ils sont trop cools donc ils acceptent et ils me proposent même de me ravitailler, ce qui est inutile parce que j'ai encore du bacon et des cookies en quantité suffisante.</p>
+<p>Je passe quelques minutes à faire un écran titre (je décide d'appeler le jeu <em>Castaway</em>) et un écran d'instructions très sobres pour pouvoir m'atteler au plus vite aux bruitages et à la musique. Je me dis que <a href="http://www.bfxr.net/">BFXR</a> ne sera pas suffisant pour faire des effets sonores qui correspondent à l'ambiance du jeu et je mets à contribution mon micro pourri qui me sert d'habitude à parler sur Teamspeak. En nettoyant un peu les enregistrements et en les refaisant cent fois jusqu'à ce qu'il n'y ait plus d'ambulances dans ma rue pour tout gâcher, j'arrive à un résultat très acceptable vu mon manque d'expérience dans le domaine. Je suis particulièrement satisfait des sons de mort à la <em>Tekken</em> (vous savez, <em>HEUAAARRRHH HEUUuaah heuaah…</em> avec plein de <em>delay</em>) et des bruits de pas. Ci-dessous une photo de différents objets qui ont servi à faire les bruitages du jeu :</p>
+<p><img alt="Le mouton et les clés qui ont servi pour les bruits de pas, le sac plastique pour le bruit de la fleur" src="../media/img/ld22-sfx_making.jpg" /></p>
+<p>Je m'occupe ensuite des musiques, en commençant par les plus importantes (la musique principale et celle d'introduction). Comme il me reste du temps j'écris quelques mesures pour l'écran titre et je fais une piste « grondement mystérieux » pour les maps sans danger. Contrairement au précédent Ludum Dare, j'avais ma guitare et un petit clavier MIDI sous la main ainsi que deux grands écrans pour étaler <em>Reason</em> (mon <em>Photoshop</em> version audio) et j'ai pu travailler vite et bien selon mes standards personnels. En plus, cette fois-ci je n'ai pas perdu la stéréo sur une piste en oubliant de brancher un câble virtuel…</p>
+<p>La soirée commence, mes vaillants bêta-testeurs arrivent armés de leurs ordinateurs et de kebabs qui sentent mauvais. Je dîne avec eux et je les installe dans le salon pour ne pas être trop déconcentré quand j'aurai à corriger des bugs compliqués. Je regarde les premiers tests avec anxiété, ils trouvent le jeu très difficile (c'était voulu) mais ils rient beaucoup à chaque fois que l'autre meurt, je trouve ça plutôt encourageant. Étant donné qu'ils repèrent des wagons de bugs, je m'aperçois qu'il va falloir s'organiser un peu et comme je n'ai pas le temps de leur faire découvrir Asana, je transforme la table du salon en un micro-<em>scrumboard</em> à base de post-it. Non seulement c'est marrant mais en plus c'est super pratique.</p>
+<p><img alt="A gauche, les bugs à résoudre, au milieu celui sur lequel je travaille et à droite les archives" src="../media/img/ld22-scrum_debug.jpg" /></p>
+<p>J'arrive au bout de la longue liste de bugs une heure et demie avant la fin de la compétition et j'en profite pour rajouter, sur suggestion d'un de mes testeurs, une salle cachée avec une armure bonus qui facilite la suite du jeu. Trente minutes plus tard, j'upload la version finale, je remplis le formulaire de participation sur le blog Ludum Dare (qui est à la limite du crash tellement il y a de gens dessus), je rajoute des liens de téléchargement vers la bande son (j'adore le moment où je dois donner des titres aux morceaux qui s'appellent jusqu'ici 0, 1 et 2) et les sources. Il est 2h55, je décapsule ma dernière bière et j'ai un sourire jusqu'aux oreilles.</p>
+<h1>Après</h1>
+<p>Comme la première fois que j'ai participé, l'effet Ludum Dare se fait sentir. Il est toujours aussi difficile de se rendre compte que 48 heures plus tôt je me demandais quel serait le thème et que là, paf ! j'ai fabriqué un jeu. Il est très court et pas génial mais il est complet et c'est quelque chose d'incroyable en soi. Enfin je trouve.</p>
+<p>Je vous mentionnais tout à l'heure <a href="http://code.google.com/p/chronolapse/">Chronolapse</a>, c'est enfin l'heure de compacter les 4Go de screenshots qu'a pris le logiciel pendant le weekend pour en faire une vidéo. La création de <em>Castaway</em> en moins de 5 minutes ça donne ça :</p>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/Kjzmy5FOWU0" frameborder="0" allowfullscreen></iframe>
+
+<p>Les heures et les jours ont depuis commencé à passer et les avis affluent. Le consensus général semble être que le jeu est très joli et peaufiné mais surtout très frustrant. J'ai choisi de rendre le jeu très difficile en faisant un personnage difficile à contrôler (le chevalier a beaucoup d'inertie) mais ça n'a pas l'air de plaire. C'est sans doute l'interaction entre mes deux testeurs qui avait rendu la difficulté amusante, seul ça a surtout l'air énervant. Dommage.</p>
+<p>En plus de ça, j'ai appris que le jeu crashait violemment sur un grand nombre de machines. Oups, il manquait une ligne de code pour éviter ça. J'ai depuis publié une version alternative qui est beaucoup plus stable.</p>
+<p>Au final, je suis tout de même content du résultat (oui oui, je m'envoie toujours des fleurs) et j'espère qu'il vous plaira aussi. Vous pouvez essayer le produit fini (la version stable) <a href="http://www.antoinegersant.com/LD22+">par ici</a>. Je profite aussi de ce court paragraphe pour remercier mes deux testeurs et les différentes personnes qui m'ont encouragé tout au long du weekend.</p>
+<p>J'ai commencé à jouer à quelques jeux d'autres personnes et voici les premières perles que j'ai trouvé parmi les 891 participations (!) de cette édition :</p>
+<ul>
+<li><a href="http://www.ludumdare.com/compo/ludum-dare-22/?action=preview&amp;uid=1874">Never Alone Hotline</a> de Pierrec</li>
+<li><a href="http://www.ludumdare.com/compo/ludum-dare-22/?action=preview&amp;uid=110">Chromboid</a> de Arne, pekuja et BurnZeZ</li>
+<li><a href="http://www.ludumdare.com/compo/ludum-dare-22/?action=preview&amp;uid=6155">Vatnsmyrkr </a> de Skomakarn</li>
+</ul>
+<p>Si vous en voulez d'autres, je vous recommande de faire un tour sur <a href="http://www.gamesidestory.com/2011/12/17/les-jeux-du-ludum-dare-22/">Game Side Story</a> qui couvre très bien l'évènement.</p>
+<p>Vivement avril prochain pour le prochain Ludum Dare. Mes bonnes résolutions pour la prochaine fois sont de passer moins de temps sur les graphismes, de ne <strong>pas</strong> faire un jeu de plateformes vu de côté et d'avoir plus de contenu. Espérons que tout cela se réalise ! Enfin, je ne peux que vous encourager à participer vous aussi à cet évènement si amusant et productif. Comme l'a dit quelqu'un sur Twitter, si seulement Ludum Dare avait lieu tous les weekends… on dormirait pendant la semaine !</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/ld22&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_174" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 4 janvier 2012 12:44:03</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Ah cool, c'était un des trucs qui faisaient que j'hésitais à participer : la perspective de devoir recoder toutes les fonctionalités basiques d'un jeu.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_174').addClass('deleted');
+			$('#comment_174 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_174 .delete').css("display", "none");
+			$('#comment_174 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_174 .delete').css("display", "none");
+		else										$('#comment_174 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_172" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 30 décembre 2011 20:34:21</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>@Gaetz &gt; Oui, on peut utiliser des outils externes à condition de les déclarer au moment où on annonce sa participation (il y a d'ailleurs beaucoup de gens qui utilisent des frameworks genre Flixel ou Pygame).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_172').addClass('deleted');
+			$('#comment_172 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_172 .delete').css("display", "none");
+			$('#comment_172 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_172 .delete').css("display", "none");
+		else										$('#comment_172 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_171" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 30 décembre 2011 17:39:46</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>On a le droit d'utiliser des outils externes pour le Ludum Dare ? Tu parles de Tiled ou de ton framework personnel ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_171').addClass('deleted');
+			$('#comment_171 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_171 .delete').css("display", "none");
+			$('#comment_171 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_171 .delete').css("display", "none");
+		else										$('#comment_171 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_169" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 30 décembre 2011 16:23:12</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Merci beaucoup pour les compliments et les encouragements !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_169').addClass('deleted');
+			$('#comment_169 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_169 .delete').css("display", "none");
+			$('#comment_169 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_169 .delete').css("display", "none");
+		else										$('#comment_169 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_167" class="comment">
+	
+		
+			<span class="meta">Par Tipyx le 26 décembre 2011 11:53:52</span>
+			<br/><img src="http://www.gravatar.com/avatar/e9718af005f14e2651a86ba083e817fc?s=50&amp;r=g&amp;d=mm" alt="avatar de Tipyx" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'est fabuleux à lire !
+Je pense pas participer au prochain, mais p-e à celui d'après, qui sait…
+J'espère que tu nous donneras les résultats !
+Encore bravo !</p>
+<p>(Je m'en vais de ce pas le tester :D)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_167').addClass('deleted');
+			$('#comment_167 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_167 .delete').css("display", "none");
+			$('#comment_167 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_167 .delete').css("display", "none");
+		else										$('#comment_167 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_166" class="comment">
+	
+		<span class="meta">Par un anonyme le 26 décembre 2011 02:00:10</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Toujours aussi fascinant les comptes rendu de ce genre d'expériences ! Ca me donne vachement envie de participer, si seulement je savais faire au moins une chose… ^^'</p>
+<p>Pour ton jeu, ben je vais répéter ce qui a été dit. Musique et graphisme impeccable ! Mais c'est vrai que niveau inertie, on dirait qu'il marche dans de la semoule… °°'
+C'est vrai que ça rend le jeu frustrant et que ça casse complètement le rythme de se ramasser toutes les 30 secondes, ça pourrait faire un super jeu s'il était amélioré !
+Moi je l'ai fini sans ragequit également, et assez rapidement quand même ^^'</p>
+<p>Merci, Toshi :)</p>
+<p>PS : Sans l'armure, je n'arrivais pas à passer le passage à gauche de l'échelle… :S</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_166').addClass('deleted');
+			$('#comment_166 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_166 .delete').css("display", "none");
+			$('#comment_166 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_166 .delete').css("display", "none");
+		else										$('#comment_166 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_165" class="comment">
+	
+		<span class="meta">Par un anonyme le 25 décembre 2011 20:56:56</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Jai également participé a ce Ludum Dare :)
+J'ai trouvé le jeu super (l'ambiance générale surtout) et je n'ai pas du tout trouvé le jeu dur étant doné que j'ai eu l'armure tout de suite!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_165').addClass('deleted');
+			$('#comment_165 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_165 .delete').css("display", "none");
+			$('#comment_165 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_165 .delete').css("display", "none");
+		else										$('#comment_165 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_162" class="comment">
+	
+		
+			<span class="meta">Par MrEreinion le 22 décembre 2011 19:09:21</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de MrEreinion" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<blockquote>
+<p>Nettoyer mon bureau qui avait un peu régressé au rang de poubelle à ciel ouvert ces derniers temps.</p>
+</blockquote>
+<p>En effet :p</p>
+<p>Sinon pour le jeu :</p>
+<ul>
+<li>alors niveau ambiance c'est réussi</li>
+<li>niveau difficulté c'est ignoble</li>
+<li>le bonus ruine le GamePlay mais bon c'est un bonus caché</li>
+</ul>
+<p>Pour la maniabilité, c'est surprenant de voir une inertie qui te fais penser à des patins à roulettes alors que c'est une "heavy armor".</p>
+<p>Et donc autant louper le premier double saut (qui est totalement anti-intuitif) est très drôle : j'avoue m'être jeté ensuite plusieurs fois exprès dans le vide pour voir si comme dans Tomb Raider tu bénéficiais d'un joli panel de cris d'agonie ;)…autant le louper ensuite plusieurs fois sans le vouloir est réellement frustrant.</p>
+<p>Au sujet du gamedesign, je déteste quand dans un jeu on te "laisse le choix" sur une action nécessaire. "Voulez-vous réveiller le mal ?" est très drôle mais bon là c'est un peu "Voulez-vous continuer le jeu ?"</p>
+<p>Sinon pour revenir sur du positif :
+<em> l'intro
+</em> l'ambiance
+<em> les dessins
+</em> la petite fleur toute mimi</p>
+<p>PS : je suis sûr que mon idée de jeu aurait fait un carton :p</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_162').addClass('deleted');
+			$('#comment_162 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_162 .delete').css("display", "none");
+			$('#comment_162 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_162 .delete').css("display", "none");
+		else										$('#comment_162 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_160" class="comment">
+	
+		
+			<span class="meta">Par Zoneur le 22 décembre 2011 18:53:49</span>
+			<br/><img src="http://www.gravatar.com/avatar/80ceb0fa469ecf3eff58cb48e1a5f87f?s=50&amp;r=g&amp;d=mm" alt="avatar de Zoneur" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Franchement, félicitations ! Le jeu est juste magnifique et j'adore la musique. Niveau gameplay, c'est vrai que c'est frustrant que la difficulté vienne non pas des situations mais de la façon dont se déplace le personnage… Mais je l'ai fini sans ragequit ! J'adore l'ambiance aussi :)
+Faudrait vraiment que je me donne la motivation pour participer.. Je pense pas avoir les compétences pour faire un bon truc, mais ça ne me fera jamais de mal.</p>
+<p>Encore une fois, bravo :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_160').addClass('deleted');
+			$('#comment_160 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_160 .delete').css("display", "none");
+			$('#comment_160 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_160 .delete').css("display", "none");
+		else										$('#comment_160 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_159" class="comment">
+	
+		
+			<span class="meta">Par Phylenius le 22 décembre 2011 18:48:25</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Phylenius" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Encore une fois c'est captivant de lire le compte-rendu de Ludum Dare, et là je viens de relancer le jeu. Je l'ai déjà fini, mais je n'ai pas trouvé cette armure secrète! Qu'à cela ne tienne, je m'en vais quérir cette récompense ^^</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_159').addClass('deleted');
+			$('#comment_159 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_159 .delete').css("display", "none");
+			$('#comment_159 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_159 .delete').css("display", "none");
+		else										$('#comment_159 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/60';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ld22@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#x74;&#97;&#99;&#116;&#64;&#108;&#101;&#x73;&#x66;&#x6f;&#114;&#x67;&#101;&#x73;&#x2e;&#x6f;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

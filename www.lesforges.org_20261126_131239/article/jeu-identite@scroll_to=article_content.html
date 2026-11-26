@@ -1,0 +1,809 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Jeu et identité</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Dans le dur monde du jeu vidéo, tous les titres ne sont pas égaux. Certains deviennent des succès planétaires et d'autre finissent rapidement aux oubliettes. Une différence entre ces deux catégories, c'est ce que j'appellerai l'identité.
+
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#x6e;&#116;&#x61;&#99;&#x74;&#x40;&#x6c;&#101;&#115;&#x66;&#x6f;&#114;&#103;&#x65;&#x73;&#46;&#x6f;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Jeu et identité</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/bonhomme.html">Thomas Chassin</a> | le 18 octobre 2011 23:00:00 | Catégories : <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Dans le dur monde du jeu vidéo, tous les titres ne sont pas égaux. Certains deviennent des succès planétaires et d'autre finissent rapidement aux oubliettes. Une différence entre ces deux catégories, c'est ce que j'appellerai l'identité.</p>
+<p><img alt="Owlboy (D-Pad Studio), un exemple de jeu doté d'une identité forte." src="../media/img/owlboyW.png" /></p>
+			</div>
+			<div id="article_content">
+				<h1>Gameplay.</h1>
+<p>Commençons par le cœur du jeu : le gameplay. Comme écrit dans l''article <a href="essentiel@scroll_to=article.html">Comment aller à l'essentiel et donner aux joueurs ce qu'ils veulent</a>, l'ensemble des mécaniques d'un jeu tourne autour d'un « noyau » central et surtout, unique. Dans la mesure où la majeure partie du temps passée sur un jeu va se résumer à un petit nombre d'actions répétées, ce noyau va définir très fortement l'identité du jeu.</p>
+<p>Prenons l'exemple d'un monument du jeu vidéo au succès planétaire : <em>Pac Man</em>. Le jeu
+se résume à ramasser des points dans un labyrinthe, un noyau central sur lequel viennent se greffer les fantômes, les pilules, etc. Avec la diversification du jeu vidéo liée à l'évolution des supports de jeu, les jeux se définissent en fonction de l'action centrale (ce qu'on pourrait appeler le « genre », pour faire simple) : dans un shmup, on tire, dans un jeu de plate-formes, on saute, dans un <em>Pac-Man</em>, on gobe, dans un <em>Bomberman</em>, on fait tout péter.</p>
+<p>Dans un deuxième temps, un jeu se définit par la façon dont cette mécanique centrale est déclinée : rien à voir entre un <em>Kingdom Hearts</em>, qui vise une action frénétique avec une flopée d'ennemis et des combos acrobatiques, et un <em>Zelda</em>, où l'exploration et la résolution d'énigmes ont une grande place, alors que par ailleurs, tous deux sont des A-RPG.</p>
+<h1>Direction artistique.</h1>
+<p>L'identité visuelle et musicale d'un jeu est très importante, si ce n'est capitale. En effet, toutes les interactions avec le joueur passent par deux sens : la vue et l'ouïe (on peut compter en plus le toucher depuis l'apparition de la fonction vibration, mais cela reste anecdotique). Peu importent la profondeur de l'univers ou le soin porté aux personnages si les choix visuels (character design, choix des couleurs, etc.) ou musicaux (thèmes, sons, etc.) ne permettent pas au joueur d'en garder le souvenir. Indépendamment de la technique du jeu (graphismes next-gen, orchestration, etc.), la musique et le graphisme permettent de créer des points de repères pour le joueur. Un joueur ne pourra pas tout retenir d'un jeu et ces points de repères lui permettront de garder en mémoire les éléments essentiels du gameplay et du scénario. Quel que soit le jeu Mario auquel vous jouez, il aura toujours une moustache et un casquette rouge, et vous retrouverez le célèbre thème musical.</p>
+<p>Par exemple, dans un <em>Zelda</em>, l'acquisition d'un rubis ou la résolution d'une énigme s'accompagnent d'un bruit très caractéristique dont les joueurs se souviennent longtemps après avoir fini le jeu. De nombreux personnages de la saga <em>Final Fantasy</em> restent en mémoire grâce à leur thème musical : Kefka, Aéris, Edea, etc.</p>
+<p>Dans un <em>Mario</em>, les joueurs associent immédiatement des éléments de gameplay à des repères visuels, des symboles (un champignon pour une vie, un cube avec un point d'interrogation contre lequel il faut sauter, une étoile qui rend invincible, etc.). L'identité visuelle et musicale de votre jeu tient en grande partie à la présence de tels éléments, récurrents et facilement mémorisables, comme les ennemis (goombas, space invaders, etc.), les symboles (triforce, champignon « 1-up », etc.) ou encore l'utilisation récurrente d'un même thème musical avec différentes variantes (le chant des Priants dans <em>Final Fantasy 10</em>). Il faut que ces éléments  soient à la fois simples et marquants.</p>
+<p><img alt="23 ans et un passage en 3D plus tard, Mario et les goombas sont toujours reconnaissables." src="../media/img/mario.PNG" /></p>
+<p>Le choix d'un style visuel est essentiel pour que votre jeu soit reconnaissable : le pixel art haute résolution d'un <em>Owlboy</em> saute aux yeux immédiatement et les personnages sont très reconnaissables à leurs teintes brunes et à leurs nez rouges.</p>
+<p>Adopter un style visuel ou mettre en place une ambiance musicale ne fonctionne que si vous avez un réel souci d'homogénéité mais aussi si votre style sert votre gameplay. Si vous concevez un jeu d'un type donné, gardez à l'esprit que votre style graphique et votre environnement sonore y sont subordonnés. Si vous faites un beat'em all dans lequel le joueur éclate des zombies à grands coups de démonte-pneu, il serait incohérent d'utiliser des tons pastels chauds et de passer une musique douce (bien sur, cela n'a aucune valeur dans le cas d'un jeu comique ou parodique, puisque l'incohérence peut être source d'humour). De plus, il faut maintenir une cohérence entre ambiance sonore et ambiance visuelle, sans quoi la magie n'opèrera pas.</p>
+<h1>Personnages.</h1>
+<p>Les personnages jouent un rôle central dans la façon dont un jeu marque les esprits. Très souvent, on peut résumer l'image d'un jeu simplement à son personnage principal : l'image de Sonic ou de Solid Snake suffit à immédiatement rappeler tous les jeux auxquels ils sont associés. Si un joueur doit s'incarner dans un personnage, il est capital qu'il puisse s'y attacher, même si ce personnage n'est pas sympathique. Si la mort brutale de votre personnage ne provoque qu'un rire méprisant chez le joueur, il y a quelque chose qui pose problème.</p>
+<p><img alt="Dans la série des Persona (Atlus), le look anime des personnages et le traitement de leurs caractères est absolument central." src="../media/img/persona-3-fes-06.jpg" /></p>
+<p>Le personnage de jeu existe principalement de trois façons : à travers son design, à travers ses dialogues et à travers ses actions. Il est donc important de rendre, quitte à simplifier, le look d'un personnage mémorable. La structure géométrique de l'armure de Samus dans <em>Metroid</em> est très épurée, mais immédiatement reconnaissable. De la même façon, la voix et les expressions d'une GLaDOS — notamment sa façon de passer d'une neutralité faussement enjouée à un discours passif-agressif plus qu'inquiétant — ont fixé le personnage dans la mémoire des joueurs.</p>
+<h1>La communication</h1>
+<p>Un élément important de l'identité d'un jeu est la communication qui se joue autour du jeu, parce qu'elle va déterminer comment celui-ci restera dans les mémoires. La communication, même si elle ne fait pas à proprement parler partie du jeu, prolonge son univers d'une certaine façon, à travers la <em>fanbase</em>. Un gros éditeur de jeux AAA ne communique pas de la même façon qu'une petite équipe d'indépendants et la « mythologie » qui se construit autour de leurs jeux n'est pas la même.</p>
+<h2>Square Enix</h2>
+<p>Prenons tout d'abord l'exemple de <a href="http://www.square-enix.com/eu/fr/">Square Enix</a>, acteur non-négligeable de la scène vidéoludique. Quand on parle de communication chez Square-Enix, on voit généralement les choses en grand : panneaux publicitaires dans le métro ou aux arrêts de bus, spots télévisés, sites dédiés à l'interface léchée, packaging complexes avec artbooks, etc.</p>
+<p>En faisant le choix d'investir du temps, de l'argent et du travail pour sortir les bandes son de ses jeux, les faire arranger (pour piano notamment), orchestrer et diffuser, Square-Enix a renforcé l'identité musicale de ses jeux : la série des <em>Final Fantasy</em> est reconnue pour ses musiques et un jeu comme <em>Nier</em> a été acclamé pour sa bande son audacieuse.</p>
+<p>Graphiquement, Square-Enix a fait des efforts sur sa série phare pour homogénéiser les logos : la société a même demandé à Yoshitaka Amano, character designer attitré des anciens épisodes, de revenir sur les titres des premiers opus pour les accorder avec les autres et continue à l'artiste de signer les logos des nouveaux <em>Final Fantasy</em>, bien qu'il ne réalise plus leur design.</p>
+<p><img alt="Final Fantasy avant/après. Même en sortant de 25 ans d'hypersommeil, on reconnait un Final Fantasy rien qu'au titre." src="../media/img/ff.png" /></p>
+<p>Pour la sortie de <em>Deus Ex : Human Revolution</em>, le service marketing a conçu un faux site pour l'entreprise fictive Sarif Industries, qui a ensuite été piraté par un groupuscule rebelle, lui aussi fictif. Le jeu entre réalité et fiction permet de prolonger l'univers du jeu, ce qui lui a permis d'installer dans les esprits son ambiance particulière.</p>
+<p>Tous ces choix de marketing font que, d'une certaine manière, l'univers du jeu s'étend hors du cadre du jeu à proprement parler et que l'ambiance, l'image, l'identité de ces titres restent très fortement ancrées dans la mémoire des joueurs.</p>
+<h2>D-Pad Studio</h2>
+<p>A l'opposé de la gamme, on trouve par exemple <a href="http://www.roflgames.com/DPadWebsite/www/index.htm">D-Pad Studio</a>, un petit studio indépendant travaillant sur <em>Owlboy</em>, un projet de jeu de plateforme. Malgré le manque de moyens financiers, l'équipe de développement a su jouer sur la jovialité et la proximité avec les joueurs pour créer une forte communauté autour de <em>Owlboy</em>.</p>
+<p>La communication autour d'<em>Owlboy</em> est caractéristique des jeux <em>indie</em> : l'utilisation centrale d'un blog, la présentation du développement du jeu et des problématiques qui y sont liées, un jeu de réponse entre artworks et <em>fan arts</em>, la présence très régulière à des conventions ou à des concours amateurs. Les membres de l'équipe sont par exemple représentés par de petits portraits dans le style du jeu et donne une image sympathique à la fois du jeu et de ses développeurs, comme si l'ambiance du jeu « contaminait » la communauté qui se crée autour.</p>
+<h2>Valve</h2>
+<p>Entre les deux, l'exemple de <a href="http://www.lesforges.org/article/www.valvesoftware.com">Valve</a> est particulièrement surprenant : les développeurs de <em>Half-Life</em> ont choisi d'utiliser leur arsenal de communication pour établir une relation de connivence avec les joueurs basée sur l'humour. En jouant sur l'absurde et des répliques extrêmement spirituelles, les développeurs ont réussi à créer toute une mythologie autour du jeu, au point de créer de véritables mèmes (on ne présente plus le fameux « The cake is a lie »). </p>
+<p>L'exemple le plus impressionnant de cette communication décalée est le Potato Sack, une offre promotionnelle disponible sur Steam regroupant 13 jeux indépendants, proposé peu avant la sortie de <em>Portal 2</em>. Des modifications subtiles basées sur le thème de la pomme de terre dans chacun des jeux menaient à un jeu de piste labyrinthique, censé déboucher sur des informations cachés sur le futur <em>Portal 2</em>. Oui, oui, vous avez bien lu.</p>
+<p>En choisissant de ne pas considérer les joueurs exclusivement comme des consommateurs mais aussi comme des personnes avec qui l'ont peut échanger sur le jeu, Valve a réussi a étendre l'univers de <em>Portal</em> au delà du jeu à strictement parler : ce n'est plus seulement un jeu, c'est un ensemble de références humoristiques, voire culturelles.</p>
+<h1>Conclusion</h1>
+<p>Un jeu qui a une forte identité est un jeu dans lequel rien n'est laissé au hasard et où tout ce avec quoi le joueur peut interagir à été pensé avec un réel souci de cohérence (gameplay, graphismes, écriture, musique). C'est également un jeu qui a su être promu intelligemment, non pas comme produit commercial, mais comme expérience vidéo-ludique. </p>
+<p>Un jeu, aussi bien dans son univers qu'à l'extérieur, doit être cohérent avec lui même. Ralph Eggleston, <em>production designer</em> chez Pixar disait à propos des univers dans lesquels prennent place les films Pixar : </p>
+<blockquote>
+<p>You don't have to build it all, you just have to know it all.</p>
+</blockquote>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/jeu-identite&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					
+					<div id="new_comment"></div>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/55';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="jeu-identite@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#110;&#116;&#97;&#99;&#116;&#x40;&#x6c;&#101;&#115;&#102;&#111;&#x72;&#x67;&#x65;&#115;&#46;&#x6f;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

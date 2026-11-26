@@ -1,0 +1,866 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | La direction artistique (deuxième partie)</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Maintenant que nous avons vu pourquoi il peut être intéressant de réfléchir et de travailler à la direction artistique aussi tôt que possible, concentrons nous sur les moyens à notre disposition.
+
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#110;&#116;&#x61;&#99;&#x74;&#x40;&#108;&#x65;&#115;&#x66;&#x6f;&#x72;&#x67;&#x65;&#115;&#46;&#x6f;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>La direction artistique (deuxième partie)</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 7 octobre 2013 20:11:23 | Catégories : <a href="../tag/graphisme.html">Graphisme</a>, <a href="../tag/musique.html">Musique</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Maintenant que nous avons vu pourquoi il peut être intéressant de réfléchir et de travailler à la direction artistique aussi tôt que possible, concentrons nous sur les moyens à notre disposition.</p>
+<p><img alt="Legend of Mana (Squaresoft)" src="../media/img/legend_of_mana.png" /></p>
+			</div>
+			<div id="article_content">
+				<h1>Quels sont les éléments sur lesquels travailler ?</h1>
+<p>Avant de se lancer dans un projet, il faut définir les contraintes techniques (résolution, 2D ou 3D, nombre de sprites à l'écran, etc.) et stylistiques (style, palettes, effets, filtres, etc.) qui vont gouverner le développement du jeu. Il est important de se poser ces questions aussi tôt que possible et à y répondre en tenant compte du gameplay et de l'univers du jeu : si vous souhaitez faire un <em>visual novel</em> comique, un style cartoon conviendra bien mieux qu'une 3D granuleuse. </p>
+<p>Il est important de rester conscient de ses capacités et de dimensionner ses projets, de façon à pouvoir les finir.  En général, on a toujours tendance à avoir les yeux plus gros que le ventre, surtout sur les premiers projets. Faire une liste des <em>assets</em> à réaliser peut aider à évaluer la taille du projet et éventuellement à faire des coupes <strong>avant</strong> qu'il ne soit trop tard. Il est important de « dégraisser » les graphismes du jeu autant que possible et de n'utiliser que les effets nécessaires : cela évite de s'éparpiller, préserve l'unité graphique du jeu et surtout évite du travail inutile.</p>
+<p><img alt="The Legend of Zelda : The Wind Waker (Nintendo)" src="../media/img/wind_waker.png" /></p>
+<p>Rappelons au passage qu'un « beau jeu » n'a rien à voir avec une technique complexe : la 2D colorée d'un <em>Legend of Mana</em> m'émoustille infiniment plus que les effets de particules grisâtres d'un <em>Crysis</em>. Plus précisément, la technique doit être mise au service du gameplay et de l'ambiance, et non l'inverse. La série des <em>Zelda</em> illustre très bien cette idée : <em>Wind Waker</em> vieillit infiniment mieux que son prédécesseur <em>Ocarina of Time</em>, non pas parce qu'il est plus récent, mais parce qu'il utilise mieux la technique : le style plus réaliste et plus sombre de l'épisode Nintendo 64 dépend plus lourdement du rendu et de la résolution des textures, un point sur lequel les jeux ont beaucoup progressé depuis 1998, alors que les à-plats cell-shadés de l'épisode GameCube sont intemporels.<br />
+</p>
+<p>Parlons maintenant un peu plus en détail de quelques points essentiels dans la direction artistique d'un jeu, qu'il s'agisse d'un MMORPG full 3D avec shaders et modèles Zbrushés ou d'un RPG simili-NES ultra oldschool en 8 couleurs.</p>
+<p><strong>La lisibilité.</strong></p>
+<p>Pour que le joueur puisse s'y retrouver vite et que le jeu soit agréable à l’œil, il est essentiel que l'écran et plus particulièrement les interfaces soient lisibles. Il faut limiter les éléments à l'essentiel, simplifier au maximum (n'oubliez pas : "less is more"), ajuster les couleurs pour obtenir un bon contraste, utiliser les détails à bon escient pour mettre en valeur certains aspects du jeu et jamais gratuitement (rappelez-vous, ça vous évitera du travail inutile). Si c'est peut-être moins essentiel pour les décors ou les personnages, c'est absolument central pour les menus et les interfaces. </p>
+<p>Une astuce, pour juger de la lisibilité d'une image est de la passer en noir et blanc. On peut aussi utiliser les niveaux automatiques proposés par les logiciels de graphisme (Ctrl+Maj+L sous Photoshop, par exemple). Ces deux méthodes sont radicales, très simples et permettent de retrouver un œil neuf sur des graphismes sur lesquels ont a passé beaucoup de temps.</p>
+<p><strong>L'homogénéité et la cohérence.</strong></p>
+<p>L'ensemble du jeu doit être visuellement cohérent, pour que le joueur n'ai pas l'impression d'un patchwork. Produire trop d'éléments disparates ou essayer d'embrasser trop de thématiques différentes, c'est risquer de créer de l'incohérence, sans compter le travail supplémentaire que cela nécessite. Dans l'ensemble, n'hésitez par à vous limiter, surtout sur vos premiers projets : la contrainte peut être un excellent moyen de stimuler la créativité. Définissez de grands thèmes, forts et pas trop nombreux : le directeur artistique d'un jeu aussi vaste que <em>Dark Souls</em> résume par exemple la direction du jeu en seulement <em>trois</em> points.</p>
+<p><strong>Le son.</strong></p>
+<p>Je prendrai ici un instant pour m'arrêter et m'excuser auprès des compositeurs et des musiciens qui créent des jeux. J'ai bien écrit plus haut que direction artistique concernait les aspects graphiques <em>et</em> sonores d'un jeu et c'est simplement pour alléger le texte que je n'ai parlé que des graphistes (et puis aussi parce que je fais partie de cette engeance répugnante). Je précise donc : la musique, les bruitages (et les voix, s'il y en a) font partie intégrante de la direction artistique. Les aspects visuels et sonores d'un jeu devraient être pensés <em>ensemble</em>.</p>
+<p>Les jeux Cavia (<em>Nier</em>, <em>Drakengard 1</em>, <em>2</em> et <em>3</em>) constituent un exemple particulièrement intéressant : la technique de ces jeux  est catastrophique (je pensais que <em>Drakengard 2</em> était le jeu le plus laid que j'avais jamais vu… jusqu'à ce que je vois le trailer du troisième volet) mais leur ambiance est excellente grâce au travail effectué sur le son. On a l'impression que les développeurs ont fait passer la quasi-totalité de leur budget graphisme dans la musique et le doublage. Les bandes-son des <em>Drakengard</em> évoquent à merveille leur ambiance apocalyptique, tout particulièrement le premier volet dont l'OST, qui rappelle le <em>Sacre du Printemps</em>, est constituée de fragments de musique classique joués par un orchestre et réarrangés comme des <em>samples</em> d'électro. <em>Nier</em>, quant à lui, non content de proposer une bande-son acclamée par la critique et par les joueurs comme la meilleure de ces dernières années, s'ouvre une séquence doublée incroyable.</p>
+<p><strong>L'efficacité de la narration.</strong></p>
+<p>Les choix visuels doivent permettre une narration efficace. Les développeurs d'un <em>visual novel</em> par exemple, n'ont pas tellement intérêt à travailler sur une 3D animée ou des cinématiques. En revanche, il est nécessaire qu'ils s'attardent tout particulièrement sur le design et l'expressivité des personnages.</p>
+<p><img alt="Final Fantasy VI (Squaresoft)" src="../media/img/final_fantasy_6.png" /></p>
+<p>Dans <em>Final Fantasy VI</em>, les développeurs ont fait le choix d'utiliser des sprites SD, qui ne correspondent pas aux artworks d'origine réalisés par Yoshitaka Amano : si l'on perd en réalisme et en finesse (notamment avec les changements de couleur, beaucoup plus vives pour les sprites), on gagne énormément en lisibilité et en expressivité des personnages, ce qui permet de donner beaucoup de vie aux dialogues et de donner la mesure des (nombreux) changements de registre. C'est absolument essentiel pour ce jeu baroque dont une thématique centrale est la théâtralité.</p>
+<h1>Comment s'organiser ?</h1>
+<p>Parlons maintenant un peu des moyens d'organisation à notre disposition. Ce qui suit ne prétend pas être une présentation exhaustive des solutions d'organisation, juste un aperçu de quelques petites choses qui peuvent aider au développement d'un projet.</p>
+<p><strong>Travailler la direction artistique en amont, autant que possible.</strong> Comme je l'ai déjà mentionné plus haut, il est important de discuter le plus en amont possible du développement des problèmes de direction artistique. Le principe de la navette peut être un moyen d'avancer efficacement : les graphistes échangent un concept art sur lequel tout le monde apporte ces modifications. Quand on bosse à plusieurs, ce système a l'avantage de bien faire passer les idées (mieux que ne le ferait un pavé d'explications en tout cas).</p>
+<p><strong>Garder une trace des décisions prises et construire un dossier de références.</strong> Pour garder une trace objective des réunions et des discussions, il est important de poser les décisions prises sur le papier, même de façon très succincte, si possible sous la forme de <em>concept arts</em>, qui sont plus parlants que du texte. Ces traces papier pourront servir de référence pour la suite : par exemple, un concept art de lieu sur lequel tout le monde s'est mis d'accord pourra servir de référence pour l'ambiance et guider les graphistes pour les monstres et les PNJ qui l'habitent. Il peut être utile de constituer une base d'images (et éventuellement de musiques) de référence. Ce fichier d'images doit cependant rester d'une taille raisonnable : on ne peut pas constituer un dossier de 1000 images pour un microdécor.</p>
+<p><strong>Définir rapidement les outils utilisés pour créer le jeu.</strong> Il faut choisir les outils utilisés pour créer le jeu en fonction des différentes contraintes techniques : Photoshop, Tiled, RPG Maker, moteur maison, etc. Par exemple, est-ce que cela vaut le coup de créer un moteur maison si un moteur disponible vous fournit déjà les fonctionnalités dont vous avez besoin ? Est-ce que les gens de l'équipe savent déjà utiliser ce logiciel et si non, est-ce que le temps d'apprentissage est suffisamment raisonnable pour que ça vaille le coup ? Est-ce que j'ai besoin d'un logiciel très puissant mais généraliste ou est-ce que je ne peux pas trouver un logiciel plus spécifique à mon problème ? Parmi ces problèmes d'outils, pensez aussi à faire attention à la question des couleurs et assurez-vous de tester vos palettes sur plusieurs écrans, le rendu pouvant varier drastiquement de l'un à l'autre.</p>
+<p><img alt="Asana, un outil très pratique pour s'organiser." src="../media/img/asana.jpg" /></p>
+<p><strong>Définir rapidement les outils utilisés pour communiquer au sein de l'équipe.</strong> Pour mettre en commun les ressources, un certain nombre de choses sont disponibles : Asana, SVN, Dropbox, Googledocs, Picasa, etc. Pour <em>Lije</em> par exemple, nous utilisons une Dropbox pour partager les fichiers de conception et nous organisons une réunion de discussion une fois par semaine par Skype, à peu près à heure fixe. De cette façon, on maintient un rythme de travail régulier et chacun peut travailler en autonomie.</p>
+<p><strong>Utiliser des <em>placeholders</em>.</strong> Il n'est pas du tout évident de savoir de quels types de tiles on aura besoin lorsque le level design n'est pas encore fixé. Dans ce cas-là, il peut être utile de prototyper aussi « salement » que possible : plutôt que de produire directement des graphismes très finis qui ne seront pas forcément adaptés, le graphiste peut utiliser des <em>placeholders</em> très basiques qui, s'ils ne donnent pas forcément une idée du rendu final, permettent de travailler le level design et d'établir une liste des éléments dont on aura vraiment besoin par la suite. Le graphiste pourra alors se lancer dans la réalisation des éléments visuels, sans craindre de se planter et d'avoir à tout recommencer.</p>
+<p>Une dernière note enfin sur un problème que j'ai vu revenir souvent (et dont je suis moi-même couapble) : le perfectionnisme.  Comme on progresse au fur et à mesure du développement, on est souvent tenté de recommencer depuis le début ou de passer du temps à refaire les « vieilles » ressources. Ca part d'une intention louable, mais il est plus important d'avancer que de repasser sur l'ancien et, à moins d'être très organisé et d'avoir une volonté de fer, on risque de se perdre dans ces « dépoussiérages » (la seule personne que je connaisse à vraiment s'y tenir s'appelle Sylvain Dolisi, allez voir son <a href="http://www.aedemphia-rpg.net/">projet</a>, parce que c'est cool). Il faut fixer un « standard » de qualité, à la fois à atteindre et à ne pas dépasser, parce que chercher à faire mieux prendrait trop de temps. Il peut être intéressant de participer à des concours, des festivals ou de s'imposer à soi-même des délais à respecter : utiliser les <em>deadlines</em> est un moyen de se forcer à finir plutôt que de repasser sur ce qui a déjà été fait, car il est en fin de compte plus important de proposer un jeu imparfait mais fini que pas de jeu du tout. Des réunions de discussion régulières peuvent par exemple faire office de micro-<em>deadlines</em>.</p>
+<h1>Quelques exemples remarquables.</h1>
+<p>Pour conclure cet article sur une note moins technique et plus fun, voici quelques exemples de directions artistiques (parmi tant d'autres) qui se démarquent particulièrement par leur sens de l'<em>économie</em>. </p>
+<p><img alt="Wip3out (Psygnosis)" src="../media/img/wip3out.jpg" /></p>
+<p>La série de jeux de courses futuristes <em>WipEout</em> bénéficie d'une direction artistique très forte et cohérente entre les épisodes. Les grandes lignes, définies par feu <em>The Designers Republic</em>, sont d'utiliser des palettes ultras contrastées (Jaune + Noir, Rouge + Jaune, Rose + Blanc + Cyan, etc.), des formes géométriques et de surcharger le tout d’icônes et symboles (notamment des caractères japonais). Les lignes géométriques et les palettes (et la musique techno) donnent au jeu son aspect futuriste tandis que le déluge d'information et symboles font naître un univers qui parodie la société de consommation, le monde de la publicité et un peu Hello Kitty. Si le sujet vous intéresse, vous pouvez jeter un œil aux articles de <a href="http://www.vis-atk.com/2011/08/03/the-weapons-of-wipeout-part-1/">Visual Attack Formation</a> sur le sujet ou au podcast <a href="http://www.jegamemoinonplus.com/2013/04/je-game-moi-non-plus-17-wipeout-le-futur-du-passe/">Je Game Moi Non Plus</a> sur la série.</p>
+<p><img alt="Off (Mortis Ghost)" src="../media/img/off_ost.jpg" /></p>
+<p><em>Off</em> est un jeu amateur français développé sous RPG Maker. Avec un minimum de moyen visuels, l'auteur a su créer un jeu à l'identité visuelle unique et très marquante, en jonglant entre pixel art minimaliste, sérigraphie, affiches et planches encyclopédiques du XIX<sup>ème</sup>. Derrière sa simplicité apparente, le chara design est extrêmement efficace et d'une originalité rare, alors <a href="http://gaarabis.free.fr/index_ms.php3?catid=03Downloads&amp;topic=off">MANGEZ-EN</a> !</p>
+<p>Et là j'aurais bien voulu vous harceler encore un peu avec <em>Final Fantasy XIII</em>, mais mon éditeur me dit que c'est pas possible. C'est pourquoi je conclurai cet article en mentionnant <em>Persona 4</em> (et même les jeux de la série <em>Shin Megami Tensei</em> de façon générale) pour son design unique (voire tordu) et surtout, l'économie de moyens avec laquelle les développeurs ont réussi à le communiquer. Bien évidemment, nous n'avons traité ici qu'un petit nombre d'exemples et bien d'autres mériteraient d'être mentionnés : n'hésitez pas à nous faire part de vos suggestions dans les commentaires !</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/direction-artistique-2&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_377" class="comment">
+	
+		
+			<span class="meta">Par Chaos17 le 21 novembre 2013 15:20:52</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Chaos17" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je m'y retrouve un peu dans cet article parce que j'ai récemment quitter un projet où j'étais mappeur.</p>
+<p>A cause de mon inexpérience et celle des fondateurs, nous avons procédés sans concept art, mais avec des modèle (officie de placeholders) qu'on m'a demander de sublimer. N'ayant aucun support réel sur lequel me baser, j'ai joué au clairvoyant et je le regrette.</p>
+<p>Je n'ai donc pas eu cette chance là : " Le graphiste pourra alors se lancer dans la réalisation des éléments de graphiste, sans craindre de se planter et d'avoir à tout recommencer."</p>
+<p>Bref : si ça vous intéresse, voici le résumé de mon histoire &gt; http://blogofchaos17.wordpress.com/2013/11/14/les-peripeties-dun-noob-epilogue/ </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_377').addClass('deleted');
+			$('#comment_377 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_377 .delete').css("display", "none");
+			$('#comment_377 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_377 .delete').css("display", "none");
+		else										$('#comment_377 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_373" class="comment">
+	
+		
+			<span class="meta">Par Rémy Cordon le 31 octobre 2013 17:45:24</span>
+			<br/><img src="http://www.gravatar.com/avatar/c561851f8b3f06064db6760a69a702ee?s=50&amp;r=g&amp;d=mm" alt="avatar de Rémy Cordon" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>J'aime beaucoup ton article. 
+J'ai moi même découvert tout les avantages de la direction artistique à force de galère professionnelle.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_373').addClass('deleted');
+			$('#comment_373 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_373 .delete').css("display", "none");
+			$('#comment_373 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_373 .delete').css("display", "none");
+		else										$('#comment_373 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/91';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="direction-artistique-2@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#x6e;&#x74;&#97;&#x63;&#x74;&#x40;&#108;&#x65;&#115;&#102;&#x6f;&#114;&#103;&#x65;&#115;&#x2e;&#111;&#114;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

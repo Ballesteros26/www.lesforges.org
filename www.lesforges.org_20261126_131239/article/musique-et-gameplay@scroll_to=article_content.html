@@ -1,0 +1,1299 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Musique et gameplay</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	La musique de jeu vidéo est confrontée aux mêmes problématiques que d'autres genres, comme la musique de film. Elle conditionne la façon dont le joueur va percevoir les différents éléments du jeu et aussi la façon dont il s'en souviendra. En créant une ambiance, elle détermine la façon dont le joueur va ressentir une scène ou un moment de jeu. Elle permet par ailleurs au joueur d'identifier immédiatement les différents éléments du jeu : une musique est attachée à un lieu, à un personnage (on parle alors de thème), à une scène, à une situation de la même façon qu'un bruitage est associé à une action.
+
+Mais le film, contrairement au jeu vidéo, est un support « invariable » : un compositeur de musiques de films connaît à l'avance la durée et l'enchaînement des scènes telles qu'elles apparaitront au spectateur. A l'inverse, un compositeur de musique de jeux ne peut pas toujours le savoir : à l'exception de certains passages purement cinématiques, la durée et l'enchaînement des différents moments de jeu dépendent du joueur et de sa façon de parcourir le jeu.  La musique de jeu est donc confrontée à des problématiques supplémentaires par rapport à la musique de film : cette musique doit-elle « boucler » et si oui comment ? Comment la musique doit-elle réagir au comportement du joueur ? Comment éviter l'impression de répétitivité due à une écoute prolongée ? Comment faire intervenir les différentes musiques aux moments adéquats sans pouvoir les prévoir systématiquement ? Comment réaliser des transitions musicales alors que c'est le joueur qui dirige l'action ?
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#x74;&#x61;&#99;&#116;&#x40;&#x6c;&#101;&#115;&#102;&#x6f;&#114;&#103;&#x65;&#x73;&#46;&#x6f;&#x72;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Musique et gameplay</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 29 février 2012 21:48:15 | Catégories : <a href="../tag/analyse.html">Analyse</a>, <a href="../tag/musique.html">Musique</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>La musique de jeu vidéo est confrontée aux mêmes problématiques que d'autres genres, comme la musique de film. Elle conditionne la façon dont le joueur va percevoir les différents éléments du jeu et aussi la façon dont il s'en souviendra. En créant une ambiance, elle détermine la façon dont le joueur va ressentir une scène ou un moment de jeu. Elle permet par ailleurs au joueur d'identifier immédiatement les différents éléments du jeu : une musique est attachée à un lieu, à un personnage (on parle alors de thème), à une scène, à une situation de la même façon qu'un bruitage est associé à une action.</p>
+<p><img alt="The Legend of Zelda : Ocarina of Time (Nintendo)" src="../media/img/intro.jpg" /></p>
+<p>Mais le film, contrairement au jeu vidéo, est un support « invariable » : un compositeur de musiques de films connaît à l'avance la durée et l'enchaînement des scènes telles qu'elles apparaitront au spectateur. A l'inverse, un compositeur de musique de jeux ne peut pas toujours le savoir : à l'exception de certains passages purement cinématiques, la durée et l'enchaînement des différents moments de jeu dépendent du joueur et de sa façon de parcourir le jeu.  La musique de jeu est donc confrontée à des problématiques supplémentaires par rapport à la musique de film : cette musique doit-elle « boucler » et si oui comment ? Comment la musique doit-elle réagir au comportement du joueur ? Comment éviter l'impression de répétitivité due à une écoute prolongée ? Comment faire intervenir les différentes musiques aux moments adéquats sans pouvoir les prévoir systématiquement ? Comment réaliser des transitions musicales alors que c'est le joueur qui dirige l'action ?</p>
+			</div>
+			<div id="article_content">
+				<p>Cet article vise à ébaucher un début de réflexion sur les fonctions et les utilisations possibles de la musique dans le jeu vidéo, pour essayer de comprendre ce qui en fait la spécificité, par rapport à la musique de films notamment, et comment l'utiliser non pas en simple accompagnement du gameplay mais comme composante à part entière de celui-ci. N'étant pas moi-même compositeur, je m'intéresserai essentiellement ici à l'utilisation de la musique et à sa construction en rapport avec le gameplay, et non à la composition. Je citerai essentiellement ici des exemples tirés du RPG (et particulièrement des <em>Zelda</em>), tout simplement parce que c'est le genre que je connais le mieux (ceux qui ont lu mes articles précédents connaissent mes névroses c: ).</p>
+<h1>I. Les fonctions de la musique dans le jeu vidéo</h1>
+<h2>1. Tension</h2>
+<p>La musique de jeu conditionne l'ambiance d'un jeu et plus particulièrement son rythme. De la même façon que le level design conditionne le rythme de jeu en s'étrécissant ou en s'ouvrant, la musique détermine la tension, le stress (au sens le plus positif du terme) ressentis par le joueur.</p>
+<p>Il est très classique que le boss final d'un jeu passe par plusieurs formes de plus en plus impressionnantes (avec parfois une forme finale extrêmement faible). Cette montée en puissance se traduit par le gameplay (les statistiques et les points de vie du boss changent, ses attaques et son comportement aussi) et par le graphisme (les différentes formes sont de plus en plus grandes, de plus en plus impressionnantes). Mais fondamentalement, c'est la musique qui va véritablement créer cette impression de <em>crescendo</em>, à mesure que les thèmes successifs deviennent de plus en plus rapides, complexes, intenses. Essayez donc de battre le boss de fin d'un <em>Final Fantasy</em>, d'un <em>Skies of Arcadia</em> ou d'un <em>Grandia</em> en coupant le son : la tension dramatique est immédiatement anéantie.</p>
+<p>La musique conditionne par ailleurs la perception que le joueur a de son environnement. Elle définit comment le joueur va ressentir le lieu et la phase de la gameplay dans lesquels il doit évoluer.</p>
+<p><img alt="Resident Evil (Capcom)" src="../media/img/residentevil.jpg" /></p>
+<p>La plupart du temps, les lieux où le joueur est en sûreté  bénéficient d'un accompagnement musical serein, rassurant : dans un <em>Resident Evil</em>, quand un joueur rentre dans une <em>safe room</em>, un (très joli) thème au rythme plus régulier, plus calme l'informe immédiatement qu'il est en sécurité. A l'inverse, dans les endroits où le joueur peut être attaqué, la musique repasse sur des clusters disonnants et des nappes sourdes, autrement plus angoissants. Le game designer peut donc fournir une information au joueur sans avoir à la lui donner explicitement : plutôt que d'écrire à chaque entrée de porte « <em>Safe room</em> » ou « Attention danger ! », ce qui tuerait l'immersion, il fait directement ressentir au joueur cette 
+information.</p>
+<p>Qui plus est, si le game designer peut se servir de la musique pour informer le joueur, le guider, il peut donc s'en servir pour brouiller les pistes et le piéger.</p>
+<p><em>Resident Evil</em> nous fournit à cet effet un autre exemple, caractéristique des jeux qui cherchent à surprendre ou à faire peur au joueur. Les différentes salles où le joueur doit résoudre des énigmes constituent un ralentissement du rythme de jeu, car elles sont synonymes d'une absence de combats. Il se pourrait que le joueur en profiter pour respirer un bon coup. Ce n'est pas forcément une mauvaise idée pour varier le rythme, mais si ça dure trop longtemps, le joueur trop confiant ne sera plus dans l'état d'esprit adéquat pour se laisser effrayer. Pour compenser ceci, les développeurs de Capcom ont choisi d'accompagner ces séquences par l'une des musiques les plus stressantes de toute la bande-son. La baisse de rythme induite par le gameplay est contrebalancée par une utilisation judicieuse de la bande-son, afin que le jeu maintienne chez le joueur un niveau de tension minimal.</p>
+<h2>2. Les transitions musicales</h2>
+<p>Les transitions musicales dans un jeu constituent des <a href="level-design-2@scroll_to=article.html">modules</a> et à ce titre font partie des éléments de level design : elles doivent donc s'adapter au type de gameplay. </p>
+<p>Prenons l'exemple de la série des <em>Zelda</em>, notamment à partir d'<em>Ocarina of Time</em>. Les combats ne sont pas distincts de l'exploration : Link traverse une plaine, rencontre un ennemi et commence à combattre directement, sans changement d'interface. Pour accompagner l'entrée en combat, la transition est progressive, la musique de la plaine est progressivement « recouverte » par la musique des combats (qui évoque d'ailleurs en général beaucoup plus une tension nerveuse qu'un duel épique). </p>
+<p>Prenons maintenant l'exemple d'une autre série, les <em>Final Fantasy</em>. Dans la plupart des opus, les combats et l'exploration sont très nettement séparés. Le joueur se déplace sur la carte, sans interface, jusqu'à tomber sur un ennemi. Là, rupture nette : l'écran subit un effet visuel très vif (il vole en éclats, par exemple) accompagné d'un gros <em>swoooosh</em>, les ennemis apparaissent, l'interface change du tout au tout (des jauges et des chiffres apparaissent un peu partout), le style graphique aussi (passage d'une caméra fixe à une caméra mobile, de 3D pré-calculée à 3D temps réel, de Super Deformed à réaliste, changement d'angle de vue, etc.). En réponse à cette transition, la musique change du tout au tout : on passe du thème de donjon mystérieux et éthéré au thème de combat <em>upbeat</em> et dramatique.</p>
+<p>Dans les deux cas, la transition musicale s'effectue de manière cohérente avec le reste du jeu, elle respecte le gameplay. Elle peut être brutale (changement de piste et effet sonore) ou très douce (modulation, changement de rythme), mais dans tous les cas, elle doit s'intégrer au reste du gameplay.</p>
+<p><img alt="Owlboy (D-Pad Studios)" src="../media/img/owlboy_1.png" /></p>
+<p>Un autre exemple d'utilisation de la musique comme module entre deux phases de jeux : dans <em>Owlboy</em>, lorsque le personnage principal, Otus, marche sur une île ou sur la terre ferme, l'exploration est accompagné d'une version 8-bit du thème principal du jeu. Dès qu'Otus s'envole, la version orchestrale du thème est superposée à la piste 8-bit. Le changement de genre musical permet de passer sans à-coup d'une phase de gameplay à une autre et d'indiquer au joueur qu'il doit changer de façon de jouer.</p>
+<p>A l'inverse, une transition ratée peut détruire l'immersion dans le jeu. C'est notamment le risque avec une transition entre musique et silence. </p>
+<p>Je citerai ici l'exemple malheureux de <em>Dragon Age : Origins</em>. Dans un RPG occidental, l'exploration des villes prend en général beaucoup de temps, la musique qui accompagne ces lieux est donc essentielle pour immerger le joueur dans l'univers et ne pas le lasser. Les développeurs ont choisi, plutôt que de laisser tourner le thème musical d'une ville en boucle, d'alterner phases de musique et phase de silence (ou de quasi-silence). Si cette technique permet de « rallonger » la durée des pistes sonores pour éviter la lassitude, elle est à l'origine d'une rupture de l'immersion. Quand la musique reprend après un long silence, la transition trop brutale trahit le changement et le joueur pense immédiatement « Tiens, ils ont remis la musique ? ». Cette utilisation de l'accompagnement musical ne fait pas sens, car il y a une transition musicale qui ne correspond à aucune transition du point de vue du graphisme ou du gameplay.</p>
+<h2>3. Musique et temps</h2>
+<p>Si la musique permet de créer une tension, c'est essentiellement parce qu'elle permet au joueur de mesurer plus ou moins clairement la proximité du danger. Ceci peut servir à créer une ambiance, mais aussi à élaborer des solutions de game design.</p>
+<p>Prenons ici l'exemple des donjons d'<em>Ocarina of Time</em> : à plusieurs reprises, le joueur doit activer un interrupteur, puis effectuer une action en temps limitée avant que l'interrupteur ne s'éteigne. Comment faire comprendre ce principe de jeu au joueur sans passer par de fastidieuses explications ? On pourrait proposer d'utiliser un chronomètre, qui indiquerait le temps restant pour indiquer l'épreuve. Mais Nintendo a su se servir de l'accompagnement musical pour se montrer plus subtil.</p>
+<p>Quand le joueur active un tel interrupteur, un tictac (semblable à celui d'une bombe par exemple) se fait entendre. Instinctivement, le joueur sait qu'il doit faire vite. De plus, quand le compte à rebours s'approche du zéro, ce bruitage s'accélère, ce qui permet au joueur d'évaluer le temps qui lui reste. Ceci permet d'éviter l'affichage d'un chronomètre qui nuit à l'immersion et de ne donner au joueur qu'une idée du temps qui lui reste, pour faire grimper un peu plus l'adrénaline chez lui.</p>
+<p><img alt="The Legend of Zelda : Twiilight Princess (Nintendo)" src="../media/img/zeldatwilightprincess.jpg" /></p>
+<p>C'est le même principe utilisé dans un autre opus de la série, <em>Twilight Princess</em>. Dans l'un des donjons, le joueur doit ramener du fond du donjon un orbe lumineux. Mais quand il retire l'orbe en question de son socle, une main géante se lance à sa poursuite pour le récupérer et le joueur doit réussir à fuir, sans se faire attraper, jusqu'à l'entrée du donjon. Dans la mesure où le joueur est occupé à fuir et à désactiver les mécanismes qui bloquent son passage, il ne peut pas forcément regarder où est la main qui le suit et savoir combien il lui reste de temps. L'accompagnement musical permet de répondre à ce problème : une musique du type de celle des <em>Dents de la mer</em> se superpose au thème ambiant à mesure que la main se rapproche. Quand la musique change, le joueur sent la tension augmenter et sait qu'il doit s'apprêter à se battre et non plus s'occuper de l'orbe. C'est un mécanisme qui permet de développer le gameplay et la narration, sans briser l'immersion comme pourrait le faire, disons, l'utilisation d'un radar dans un coin de l'écran.</p>
+<p>La musique peut donc servir le gameplay, parce qu'elle est l'une des seules façons, autre que spatiale, de mesurer un temps, une durée. Les variations d'une mélodie permettent au game designer de faire percevoir au joueur l'écoulement du temps. C'est pour cette raison, même si c'est beaucoup plus discret, que la répétition d'une même musique, par exemple dans un donjon, donne au joueur une sensation d'immersion : intuitivement, il mesure le temps qu'il y a passé, par exemple en se rendant compte qu'il commence à connaître le thème musical de l'endroit.</p>
+<h1>II. La musique, composante à part entière du gameplay</h1>
+<h2>1. Feedback immédiat</h2>
+<p>Le joueur peut donc être influencé par la musique, y réagir, de la façon la plus simple (avoir peur) à la plus complexe (évaluer la proximité d'un danger). Mais le joueur n'est pas uniquement passif vis-à-vis de la musique, il peut aussi agir dessus. De la même manière qu'un joueur aime à agir sur son environnement ludique au travers du gameplay (il détruit un objet, pousse un bloc, etc.) ou du graphisme (il change de lieu, passe du jour à la nuit, etc.), il aime à interagir avec son environnement musical.</p>
+<p>L'<em>immediate feedback</em>, ou feedback immédiat en est sans doute l'exemple le plus flagrant. L'idée est de récompenser immédiatement toute action du joueur par une réaction à l'écran : dès que le joueur appuie sur un bouton, il se passe quelque chose. </p>
+<p>Dans un <em>Mario</em>, dès que le joueur saute ou frappe, le tout est accompagné d'un bruitage adéquat. Dans un <em>Sonic</em>, dès que le joueur collecte un anneau, il entend un bruitage caractéristique. Ceci augmente considérablement le plaisir de jeu : imaginez donc jouer à un <em>Zelda</em> où vous ramasseriez des rubis sans le moindre bruitage !</p>
+<h2>2. L'environnement musical</h2>
+<p>Mais l'interaction joueur-musique ne se limite pas qu'à des exemples aussi simples. La musique de jeu vidéo, si elle partage des points communs avec la musique de film, possède une caractéristique essentielle qui l'en distingue : elle est intégrée au gameplay. L'une des choses qu'un joueur recherche dans un jeu, c'est la possibilité de transformer son environnement et donc aussi son environnement musical.</p>
+<p>Permettez-moi de citer une fois de plus l'exemple de la série des <em>Zelda</em>. Dans les Bois Perdus d'<em>Ocarina of Time</em>, Link doit s'orienter en écoutant la musique qu'il entend. La musique sert d'élément de gameplay, elle guide le joueur. Inversement, le joueur transforme la musique du lieu, comme n'importe quel autre élément du jeu, en se déplaçant : selon la direction qu'il choisit d'emprunter, il module le volume de la musique. Un autre exemple, à la fin du jeu, est l'ascension dans la tour centrale du donjon final (reprise par ailleurs dans <em>Twilight Princess</em>). Lorsque le joueur avance, il entend la musique devenir plus forte (voire se transformer dans <em>Twilight Princess</em>) ce qui lui annonce qu'il se rapproche de la confrontation finale. Mais s'il recule, la musique redevient plus douce. Ainsi, c'est le joueur qui contrôle la musique, qui choisit comment il construit la tension dramatique de cette ascension qui n'est pas scriptée : la musique obéit à ses pas.</p>
+<p>Dans <em>The Wind Waker</em>, les affrontements sont ponctués par de courtes notes de violon, qui se font entendre à chaque coup. Ceci donne la possibilité au joueur de rythmer le combat, non seulement du point de vue ludique, mais aussi du point de vue musical. Chaque note se fait plus aiguë que la précédente, ce qui fait que la tension augmente avec chaque coup et c'est le joueur lui-même qui contrôle cette progression de la tension. <em>Twilight Princess</em> reprend — encore une fois — le même principe et l'affine. Dans le monde du crépuscule, les notes de violon qui dynamisaient le combat sont remplacées par des sons — ou plutôt des bruits — très désagréables et passablement angoissants. Le contact des monstres en devient plus stressant et incite à plus d'hésitation chez le joueur : ce changement sonore induit d'une certaine façon un changement de rythme et donc de gameplay. Poussé plus loin, c'est ce principe qui est à l'origine du concept de l'étrange <em>Rez</em> : le joueur, en détruisant les ennemis et les différents éléments du décor, produit des sons qui viennent un à un s'intégrer à la bande-son du jeu, initialement composée d'une simple pulsation. Le joueur crée son environnement sonore par le rythme de son action.</p>
+<p><img alt="Skies of Arcadia (Overworks)" src="../media/img/skiesofarcadia.jpg" /></p>
+<p>Dans <em>Skies of Arcadia</em>, c'est dans les combats contre les boss que les développeurs ont réussi à intégrer ce principe. Lors de ces affrontements, la musique peut changer selon que le joueur est en position de force ou de faiblesse. Le combat commence avec une musique de combat relativement neutre et passe à un thème sombre et discordant si les points de vie de l'équipe du joueur descendent trop bas. A l'inverse, si les points de vie du boss diminuent suffisamment, la musique se change en un thème de victoire épique. Les transitions étant finement réalisées, ceci n'est pas forcément évident lors d'une première partie. Cette idée, réutilisée dans <em>The Last Remnant</em>, permet à la musique de s'intégrer en tant que punition ou en tant que récompense selon les cas. Faire changer l'environnement sonore devient d'une certaine façon le but du joueur, la musique devient un élément que le joueur peut modifier.</p>
+<h2>3. Le diégétique et l'extradiégétique</h2>
+<p>Le jeu vidéo, comme le cinéma, a l'occasion de jouer sur deux plans : le réel dit <em>diégétique</em>, c'est-à-dire l'univers du jeu (ou du film) tel qu'il est perçu par ses personnages, et le réel dit <em>extradiégétique</em>, c'est-à-dire tel qu'il est perçu par le joueur (ou le spectateur). </p>
+<p>Dans la plupart des cas, la musique de film ou de jeu est un élément extradiégétique : les personnages n'entendent pas la bande-son qui accompagne la scène. Une musique entendue par les personnages, par exemple s'ils assistent à un concert ou s'ils sont à côté d'un poste de radio, est à l'inverse un élément diégétique.</p>
+<p>Le compositeur peut jouer avec cette frontière entre musiques diégétique et extradiégétiques pour créer une atmosphère particulière ou articuler le gameplay et la musique. La musique des Bois Perdus d'<em>Ocarina of Time</em> est-elle véritablement diégétique ? Link est censé entendre la mélodie jouée par son amie Saria, mais dans ce cas, d'où viennent les instruments qui l'accompagnent ? Comment pourrait-il l'entendre de si loin ?</p>
+<p>Reprenons l'exemple de l'ascension de la tour à la fin du jeu. Link entend Ganondorf, qui joue de l'orgue au sommet de la tour. Il est ici amusant de constater que la musique qui guide Link vers le combat final n'est autre que le thème musical de Ganondorf. Comment un personnage pourrait-il avoir conscience de son propre thème ? Il en va de même pour Saria ou, pour changer de jeu, pour Cloud. Dans <em>Final Fantasy VII</em>, lorsqu'il joue de la flûte pour réveiller la Forêt Endormie, c'est l'un des thèmes principaux du jeu qu'il entonne, alors qu'il ne devrait même pas en avoir conscience.</p>
+<h1>Conclusion</h1>
+<p>La musique de jeu, même si elle partage nombre de points communs avec la musique de film, trouve sa spécificité dans l'interaction qui existe entre elle et le joueur. Au même titre que les autres composantes du jeu, elle fait partie intégrante du gameplay et doit être réfléchie en tant que telle : ce n'est pas pour rien que beaucoup de grands jeux sont aussi restés mémorables pour leurs musiques.</p>
+<p>Si nous avons commencé à discuter de la question de l'utilisation des musiques, on peut aussi légitimement s'interroger sur les contraintes qui portent sur la nature même des morceaux utilisés. Certains jeux choisissent d'explorer une large palette de genres et de registres, d'autres au contraire restreignent jusqu'au choix des instruments utilisés. Certains choisissent de privilégier des thèmes musicaux forts et reconnaissables, d'autres préfèrent des compositions d'ambiance plus discrètes et parfois à la limite du bruitage, mais qui laissent plus respirer les voix des personnages. J'espère pouvoir aborder (ou demander à quelqu'un d'autre de le faire) ces questions dans un prochain article. En attendant, vos critiques, remarques et suggestions (musicales notamment) sont plus que bienvenues !</p>
+<h1>Bonus</h1>
+<p>Pour conclure cet article, la rédaction des Forges a souhaité se faire un petit plaisir et vous faire partager certains des morceaux de la musique de jeux vidéo qui l'ont marquée. </p>
+<p><strong>La sélection de Thomas</strong> : </p>
+<ul>
+<li>Dearly Beloved, <em>Kingdom Hearts</em>, Yoko Shimomura<br />
+  Le thème de l'écran-titre de <em>Kingdom Heart</em> premier du nom est pour moi l'une des musiques les plus marquantes du jeu vidéo. Simplement jouée au piano, accompagnant un menu sobre et élégant, c'est la musique apaisante qui précède l'enchaînement de combats, qu'on prend le temps d'écouter au moins une fois avant de partir à l'aventure. L'entendre évoque instantanément la licence et les heures de jeux accumulées sur les divers titres.</li>
+<li>Main Menu Theme, <em>Age of Empires II: The Age of Kings</em>, Stephen Rippy<br />
+  Encore une musique de menu, c'est décidément une habitude. Cette fois ci, c'est un thème épique, entraînant, qui évoque l'époque médiévale, thème central de <em>The Age of Kings</em>. C'est également l'annonce de féroces combats, mais cette fois-ci l'attente est plus fébrile que sereine: on a envie d'en découdre, là, maintenant, et d'assiéger du château à la tête d'une armée de cavaliers en armure.</li>
+<li>Route 24/25 Theme, <em>Pokémon Rouge</em> et <em>Pokémon Bleu</em>, Junichi Masuda<br />
+  Ce dernier choix est guidé par la nostalgie principalement. <em>Pokémon</em>, c'est ma découverte des jeux japonais, c'est ma Game Boy reçue pour mon anniversaire (pensez-vous, une console qu'on peut emmener partout alors qu'on ne connaissait que la grosse tour dans la chambre des parents !), c'est la découverte des RPG. Et le thème de la route 24, c'est <em>Pokémon</em> résumé en 10 minutes: une musique entraînante, un parcours semé d'embûches et l'envie d'aller voir ce qu'il y a au bout.</li>
+</ul>
+<p><img alt="Pokémon Rouge (Chunsoft)" src="../media/img/pokemon.png" /></p>
+<p><strong>La sélection d'Antoine</strong> :</p>
+<ul>
+<li>Gallantry, <em>Raiden</em>, Akira Sato<br />
+   Ce thème est la musique du premier niveau de <em>Raiden</em> (une série de shoot them up des années 90). C'est une musique 16-bit entrainante qui illustre ce que le jeu vidéo a pu apporter à la musique. A cause de limitations techniques, les compositeurs ont du ruser pour obtenir des sons intéressants et ont donné naissance sans le savoir à la scène <em>chiptune</em> qui est si riche aujourd'hui.</li>
+<li>Landmass, <em>WipEout 2097</em>, The Future Sound of London<br />
+  La série des <em>WipEout</em> (des jeux de course à la F-Zero pour hardcore gamers) a pour habitude de constituer ses bandes sons en faisant travailler des artistes à la pointe de la scène <em>electro</em> anglaise (en tout cas c'était le cas à l'époque). Cette piste et le reste de la bande son m'ont fait réaliser qu'il pouvait y avoir des échanges fructueux entre le jeu vidéo et des artistes qui ne sont pas des compositeurs dédiés. Accessoirement, c'était aussi un de mes premiers contacts avec la musique électronique de bonne qualité et The Future Sound of London fait toujours partie de mes groupes préférés.</li>
+<li>Mantis' Hymn, <em>Metal Gear Solid</em>, KCE Japan Sound<br />
+   Je suis désolé d'avoir choisi trois jeux des années 90, je devais être très émotif dans mon enfance. Je crois qu'avant cette piste je ne faisais jamais attention à la musique dans les jeux sauf quand elle était très entrainante ou exaspérante. Il s'agit d'un morceau inquiétant qui exploite habilement le chipset sonore de la PSX pour créer des glissandi dans les chœurs, chouette ambiance. J'ai remarqué l'existence de cette musique quand Snake a explicitement fait remarquer « Tiens !? La musique s'est arrêtée. » quelques minutes avant l'affrontement contre le boss de la zone.</li>
+</ul>
+<p><img alt="Metal Gear Solid (Konami)" src="../media/img/metalgearsolid.jpg" /></p>
+<p><strong>La sélection de Pierre</strong> :</p>
+<ul>
+<li>Blinded By Light, <em>Final Fantasy XIII</em>, Masashi Hamauzu<br />
+Essentiellement, mes choix sont dictés par mon amour des musiques « à thème ». Le thème des combats de cet opus m'a marqué par son dynamisme, sa résistance hors-norme à la répétition (alors que la boucle est extrêmement courte) et surtout sa capacité à associer les dimensions artificielle (batterie, guitare électrique, etc.) et organique (violons, harpes, etc.) qui font toute la direction artistique du jeu.</li>
+<li>Mullen, <em>Grandia</em>, Noriyuki Iwadare<br />
+<em>Grandia</em> est une œuvre immense, émouvante, adulte, véritable transposition d'un Miyazaki en jeu vidéo. Et sa bande-son n'y est pas étrangère. Le thème du personnage de Mullen en est l'exemple le plus frappant : en dix secondes, on sent tout le conflit intérieur de ce personnage profondément déchiré entre sa noblesse, son courage et son arrogance, sa soif de pouvoir. Le thème <em>impérial</em> par excellence.</li>
+<li>Heavenly Flight, <em>Dragon Quest VIII : l'Odyssée du Roi Maudit</em>, Koichi Sugiyama<br />
+Antoine râlera tant qu'il voudra, je n'en démordrai pas : la bande-son des <em>Dragon Quest</em> est remarquable. Cette musique, qu'on entend sur la carte du monde lorsqu'on la survole à dos d'oiseau, traduit tout le sens du voyage qui anime <em>Dragon Quest VIII</em> de bout en bout. Personnellement, c'est grâce à elle que je me suis littéralement senti <em>saisi</em> chaque fois que je voyageais dans cet univers.</li>
+</ul>
+<p><img alt="Final Fantasy XIII (Square-Enix)" src="../media/img/finalfantasy13.jpg" /></p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/musique-et-gameplay&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_367" class="comment">
+	
+		<span class="meta">Par un anonyme le 20 août 2013 18:10:54</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bon j'avoue, je découvre l'article tard, mais pour répondre à ceux qui demandent si il existe autre chose que la boucle évolutive je vous conseille de regarder le process du son dans Dead Space, il est géré par un plug-in appelé le fear meter qui calcule le taux de peur perçu par le personnage principal et le retransmet en musique, il y as 4 couches de musique, quand le personnage est confiant, seule la première couche joue à faible niveau, et quand il est au maximum de la peur, toutes les couches forment une cacophonie et ont le volume au maximum de la musique.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_367').addClass('deleted');
+			$('#comment_367 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_367 .delete').css("display", "none");
+			$('#comment_367 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_367 .delete').css("display", "none");
+		else										$('#comment_367 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_228" class="comment">
+	
+		<span class="meta">Par un anonyme le 7 avril 2012 10:50:36</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Dommage de ne pas avoir évoqué Mother 3, où le rythme de la musique influence les combos.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_228').addClass('deleted');
+			$('#comment_228 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_228 .delete').css("display", "none");
+			$('#comment_228 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_228 .delete').css("display", "none");
+		else										$('#comment_228 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_223" class="comment">
+	
+		
+			<span class="meta">Par plink le 1 avril 2012 17:53:01</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de plink" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Article sympa ! Ça fait du bien de voir des gens hors musiciens mettre en avant la musique en tant que partie intégrante du gameplay et du game design ! Car même si des séries de jeux tel que zelda, mario ou autre intègrent très bien les éléments cités, il n'en va pas de même pour une bonne partie des autres jeux …</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_223').addClass('deleted');
+			$('#comment_223 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_223 .delete').css("display", "none");
+			$('#comment_223 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_223 .delete').css("display", "none");
+		else										$('#comment_223 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_214" class="comment">
+	
+		
+			<span class="meta">Par Kalendos le 29 mars 2012 16:10:30</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Kalendos" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Il y a aussi le jeu "Conker's Bad Fur Day" sur N64 où il y a un boss musical, The Great Mighty Poo. C'est une musique d'opéra où le boss chante, et c'est justement quand il chante qu'il faut lui envoyer un rouleau de papier toilette dans la bouche. En plus du fait que la musique accélère au fur et à mesure qu'on le blesse, et que c'est justement la chanson qui fait qu'une vitre se brise pour accéder à ce qui tuera le boss.</p>
+<p>Je trouve qu'ils ont réussi à faire une association génial entre gameplay et musique ^^.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_214').addClass('deleted');
+			$('#comment_214 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_214 .delete').css("display", "none");
+			$('#comment_214 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_214 .delete').css("display", "none");
+		else										$('#comment_214 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_212" class="comment">
+	
+		
+			<span class="meta">Par Felwynn le 15 mars 2012 10:59:09</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Felwynn" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je plussoie Gaetz. Parler de la musique dans une problématique de GD ça implique de chercher une solution pour la rendre interactive.
+Trop de jeux se contentent justement de la cantonner à l'"illustration"…</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_212').addClass('deleted');
+			$('#comment_212 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_212 .delete').css("display", "none");
+			$('#comment_212 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_212 .delete').css("display", "none");
+		else										$('#comment_212 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_211" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 14 mars 2012 10:32:14</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>T'exagères un peu, monsieur anonyme. Il me semble que l'article a une vocation pratique — mettre en lumière un certain nombre de méthodes pour intégrer la musique à un jeu vidéo — plutôt que théorique — dire que la musique c'est important.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_211').addClass('deleted');
+			$('#comment_211 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_211 .delete').css("display", "none");
+			$('#comment_211 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_211 .delete').css("display", "none");
+		else										$('#comment_211 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_210" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 mars 2012 12:55:57</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>La musique, partie intégrante du gameplay dans un jeu vidéo… C'est pas transcendant non plus comme conclusion. Ça parait logique qu'elle soit d'une part plus qu'illustrative, et souvent construite sur l'idée d'une boucle évolutive, afin de s'adapter à tous les joueurs. </p>
+<p>Ceci dit, ça valait le coup de taper un pavé pour le souligner ! Je préfèrerais savoir si il existe d'autres moyens que la boucle évolutive, que serait un jeu sans musique : y-a t-il des jeux sans musique ? Etc… Et puis, je préfèrerais un article sur la musique avec musique ! :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_210').addClass('deleted');
+			$('#comment_210 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_210 .delete').css("display", "none");
+			$('#comment_210 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_210 .delete').css("display", "none");
+		else										$('#comment_210 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_209" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 mars 2012 11:07:10</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Perso je joue sans musique, ça renforce l'immersion.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_209').addClass('deleted');
+			$('#comment_209 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_209 .delete').css("display", "none");
+			$('#comment_209 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_209 .delete').css("display", "none");
+		else										$('#comment_209 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_208" class="comment">
+	
+		
+			<span class="meta">Par Lyonsbanner le 9 mars 2012 17:59:34</span>
+			<br/><img src="http://www.gravatar.com/avatar/83f929ca3f831bf645fa51a65425f13b?s=50&amp;r=g&amp;d=mm" alt="avatar de Lyonsbanner" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Très bon article sur l'aspect général de l'utilisation de la musique et sur l'influence qu'elle peut avoir sur le joueur.</p>
+<p>En ce qui concerne les jeux basés essentiellement sur la musique, je pensais à <em>Eternal Sonata</em>, le Gameplay ressemble en tout point à un RPG mais le scénario est basé sur le fil harmonique de la musique.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_208').addClass('deleted');
+			$('#comment_208 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_208 .delete').css("display", "none");
+			$('#comment_208 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_208 .delete').css("display", "none");
+		else										$('#comment_208 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_207" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 9 mars 2012 14:00:18</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'est bien ce qu'on dit, tu n'y as pas pensé ! Je pense que Gaetz (ou moi en tout cas) avait plutôt en tête des jeux comme <em>Dance Dance Revolution</em>, <em>Beatmania IIDX</em>, <em>Donkey Conga</em> ou <em>Guitar Hero</em>.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_207').addClass('deleted');
+			$('#comment_207 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_207 .delete').css("display", "none");
+			$('#comment_207 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_207 .delete').css("display", "none");
+		else										$('#comment_207 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_206" class="comment">
+	
+		
+			<span class="meta">Par Pierre Guyot le 9 mars 2012 09:36:06</span>
+			<br/><img src="http://www.gravatar.com/avatar/ef4498aa9ef6758a91ec542f9b93aa36?s=50&amp;r=g&amp;d=mm" alt="avatar de Pierre Guyot" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je proteste (vous pouvez me citer) : j'ai bien pensé aux jeux dont la musique est au cœur du gameplay (notamment à l'utilisation de l'ocarina dans <em>Zelda</em> et la construction des mélodies du jeu qui en découle, par exemple), mais c'était pas évident de raccorder le tout, je préfère garder ça pour un prochain article :p</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_206').addClass('deleted');
+			$('#comment_206 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_206 .delete').css("display", "none");
+			$('#comment_206 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_206 .delete').css("display", "none");
+		else										$('#comment_206 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_205" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 9 mars 2012 05:36:01</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Très bon article, doté d'une étude très concrète sur le level-design. Les exemples sont applicables à tous types de jeu.</p>
+<p>On sent tes influences en termes de jeu vidéo en ceci qu'il ne t'es pas venu à l'idée de traiter les jeux où la musique se situe au coeur du gameplay : les jeux musicaux. C'est un sujet que je connaît très peu, mais il y a sûrement dans ce genre de jeu des utilisations originales de la musique.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_205').addClass('deleted');
+			$('#comment_205 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_205 .delete').css("display", "none");
+			$('#comment_205 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_205 .delete').css("display", "none");
+		else										$('#comment_205 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_202" class="comment">
+	
+		
+			<span class="meta">Par Adrian le 6 mars 2012 14:32:01</span>
+			<br/><img src="http://www.gravatar.com/avatar/ecf8606882b5d5a820fb8b57b78a6e79?s=50&amp;r=g&amp;d=mm" alt="avatar de Adrian" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Baldur's Gate 1 et 2 ! La musique de lancement du jeu est magique, et la BO s'écoute toute seule. </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_202').addClass('deleted');
+			$('#comment_202 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_202 .delete').css("display", "none");
+			$('#comment_202 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_202 .delete').css("display", "none");
+		else										$('#comment_202 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_201" class="comment">
+	
+		<span class="meta">Par un anonyme le 3 mars 2012 01:01:22</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Tbop (impossible de se connecter…)</p>
+<p>Juste pour dire : Owlboy &lt;3</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_201').addClass('deleted');
+			$('#comment_201 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_201 .delete').css("display", "none");
+			$('#comment_201 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_201 .delete').css("display", "none");
+		else										$('#comment_201 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_199" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 1 mars 2012 01:56:16</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>@gridfail &gt; Bien vu l'exemple de Mario 64, il nous a échappé pendant la préparation de l'article. L'effet en question est décrit <a href="http://en.wikipedia.org/wiki/Shepard_tone">ici</a>.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_199').addClass('deleted');
+			$('#comment_199 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_199 .delete').css("display", "none");
+			$('#comment_199 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_199 .delete').css("display", "none");
+		else										$('#comment_199 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_198" class="comment">
+	
+		
+			<span class="meta">Par grifdail le 1 mars 2012 00:55:06</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de grifdail" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Exelents article.
+J'ai toujours consideré la musique comme tres importante (plus même que les graphisme) dans un jeu video. Zelda est (encore une fois) un bon exemple: Si les graphisme n'ont cessé de changer, la musique est resté et devient même de plus en plus grandiose a chaque episode!
+Aussi, cette article parle de la musique en elements de gameplay secondaire mais ne traite pas du gameplay directe. Il y a bien sur les jeux musicaux mais aussi ceux (comme les zelda ou Maestro jump in music) ou elle est un pretexte!
+Enfin, on aurait pu parler en bonus de la musique de l'escalier sans fin dans mario qui, comme dans le plombier semble monter a l'infinit. C'est un effet musical connu dont j'ai oublier le nom!</p>
+<p>Zelda est beaucoups cité mais il faut reconaitre que, au niveau musique, cette serie est genial. Je vous recomande le hors serie IG qui consacre un article entier dessus! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_198').addClass('deleted');
+			$('#comment_198 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_198 .delete').css("display", "none");
+			$('#comment_198 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_198 .delete').css("display", "none");
+		else										$('#comment_198 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/68';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="musique-et-gameplay@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#110;&#116;&#97;&#x63;&#116;&#64;&#x6c;&#x65;&#x73;&#102;&#x6f;&#x72;&#x67;&#x65;&#x73;&#x2e;&#x6f;&#114;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

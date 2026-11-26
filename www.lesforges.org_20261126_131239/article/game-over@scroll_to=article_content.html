@@ -1,0 +1,1017 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Les joies du game over</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Il y a un déjà un petit moment, Bonhomme et moi discutions de son projet en cours, Blade of Victory, et plus particulièrement de la posture à adopter quant au game over. Je n'y avais pas trop réfléchi plus que ça auparavant et au bout d'un moment, je me suis rendu compte que c'était un sujet beaucoup plus difficile que ce à quoi je m'attendais. J'ai eu le temps d'oublier et puis récemment, j'ai dû réaliser un écran de game over pour un autre projet et je me suis dit que c'était un peu bête de ne pas coucher toute cette réflexion sur le papier. Aujourd'hui, je m'intéresse donc au game over.
+
+Cet article est l'occasion d'un premier essai sur Level Up : à la suite d'une discussion sur le forum, j'ai essayé de rédiger une synthèse de ce qui a pu se dire et d'aboutir à un article plus riche que si je m'étais lancé seul dedans. En espérant qu'il y en ait beaucoup d'autres, je vous invite à nous faire part de vos critiques, commentaires et réflexions et surtout, à aller sur Level Up ! :D
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#110;&#116;&#97;&#x63;&#116;&#64;&#x6c;&#x65;&#x73;&#102;&#x6f;&#x72;&#x67;&#x65;&#115;&#x2e;&#111;&#114;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Les joies du game over</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 11 juin 2012 01:44:47 | Catégories : <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Il y a un déjà un petit moment, Bonhomme et moi discutions de son projet en cours, <em>Blade of Victory</em>, et plus particulièrement de la posture à adopter quant au game over. Je n'y avais pas trop réfléchi plus que ça auparavant et au bout d'un moment, je me suis rendu compte que c'était un sujet beaucoup plus difficile que ce à quoi je m'attendais. J'ai eu le temps d'oublier et puis récemment, j'ai dû réaliser un écran de game over pour un autre projet et je me suis dit que c'était un peu bête de ne pas coucher toute cette réflexion sur le papier. Aujourd'hui, je m'intéresse donc au game over.</p>
+<p><img alt="Blade of Victory (Thomas Chassin)" src="../media/img/bladesofvictory.png" /></p>
+<p>Cet article est l'occasion d'un premier essai sur <a href="http://levelup.alexzone.net/">Level Up</a> : à la suite d'une discussion sur le forum, j'ai essayé de rédiger une synthèse de ce qui a pu se dire et d'aboutir à un article plus riche que si je m'étais lancé seul dedans. En espérant qu'il y en ait beaucoup d'autres, je vous invite à nous faire part de vos critiques, commentaires et réflexions et surtout, à aller sur Level Up ! :D</p>
+			</div>
+			<div id="article_content">
+				<h1>I. Game over et difficulté.</h1>
+<h2>1. Crime et châtiment.</h2>
+<p>Classiquement, le game over sanctionne (dans tous les sens du terme) la façon dont un joueur joue. La façon de choisir le type de game over adapté à un gameplay va beaucoup dépendre de la façon dont on souhaite « punir » le joueur et de la difficulté qu'on cherche à lui proposer. On trouve ainsi toute une gamme de game over, du plus cruel au plus clément.</p>
+<p>Le game over classique — sans doute le plus pénalisant — consiste à effacer intégralement la progression du joueur, ce qui l'oblige à recommencer depuis le dernier point de sauvegarde, voire depuis le début du jeu.  Son caractère punitif dépend beaucoup de la répartition et de la fréquence d'apparition des points de sauvegarde. Le joueur peut aussi être pénalisé par une perte plus partielle : de l'argent, des objets, de l'expérience, etc. Dans <em>Dragon Quest</em> ou <em>Pokémon</em>, le game over se solde par la perte d'une bonne partie de son argent (la moitié me semble-t-il) mais permet au joueur de conserver tout le reste. Ce type de game over ne rompt pas la continuité de l'histoire : le joueur continue de jouer <em>après</em> la rouste qu'il s'est prise et non pas comme si elle n'avait <em>jamais</em> existé. Le game over peut aussi consister à renvoyer le joueur à son point de départ. Quand on meurt dans un <em>Zelda</em>, on ne perd rien, mais on réapparaît (avec peu de vie) soit dans un lieu prédéterminé (l'entrée de la grotte dans le premier opus, la maison de l'oncle dans <em>A Link to the Past</em>), soit à l'entrée du donjon. Ce n'est pas forcément très pénalisant, mais suffisamment pour que le joueur soit stressé à l'idée de perdre. A l'autre bout du spectre, des jeux comme <em>Final Fantasy XIII</em> et <em>Kingdom Hearts</em> proposent au joueur de recommencer juste avant le combat, ce qui permet de ne pas interrompre le rythme du jeu.</p>
+<p><img alt="The Legend of Zelda (Nintendo)" src="../media/img/zelda1.jpg" /></p>
+<p>La pénalité peut n'apparaître qu'avec la répétition, comme si le joueur avait un « droit à l'erreur ». C'est le principe des <em>continues</em> dans d'anciens jeux comme <em>Starwing</em>, mais c'est aussi ce qu'on retrouve dans la mécanique des combats de <em>Prince of Persia : les Sables du Temps</em> : tant que le joueur a du sable, c'est-à-dire qu'il n'a pas encore trop mal joué, il peut remonter le temps pour se sauver de la mort.</p>
+<h2>2. Un équilibre délicat.</h2>
+<p>Le game over, comme tout mécanisme permettant de régler la difficulté du jeu, repose sur un équilibre délicat entre frustration et tension. </p>
+<p>Si le game over est trop fréquent et trop pénalisant, le joueur risque d'en avoir assez et d'arrêter de jouer. La différence entre <em>The legend of Zelda</em> premier du nom et beaucoup de jeux mal conçus de la même époque, c'est le choix d'un game over non pénalisant :  le jeu est dur, c'est un véritable challenge, mais il encourage le joueur à persévérer grâce à un système intelligent de game over. Le joueur perd souvent, mais ne repart pas systématiquement de zéro. Si le game over avait été pénalisant comme dans un <em>Final Fantasy</em> classique, la plupart des joueurs auraient sans doute très rapidement arrêter de jouer. </p>
+<p>A l'inverse, un game over trop « laxiste » ne permet pas joueur de ressentir une véritable tension, de s'impliquer dans le jeu. Pour citer un grand dramaturge français :</p>
+<blockquote>
+<p>A vaincre sans péril, on triomphe sans gloire.</p>
+</blockquote>
+<p><em>Persona 3</em> joue avec la répartition des checkpoints pour sadiser le joueur. L'unique donjon que vous parcourez pendant tout le jeu, le Tartarus, fonctionne par étages et vous propose régulièrement des téléporteurs vers l'entrée, <em>à sens unique</em>, mais très rarement de <em>vrais</em> téléporteurs. Pour ainsi dire, le jeu ne vous propose quasiment jamais de « vrais » checkpoints et donne au joueur le sentiment d'être en « apnée » dans le donjon. Le risque de game over est bien présent — d'autant plus que celui-ci est impitoyable, à savoir retour à la dernière sauvegarde sans sommation — ce qui permet de créer une vraie tension dans les donjons : quand on retourne <em>enfin</em> au point de sauvegarde, il y a un sentiment <em>réel</em> de soulagement, de récompense, de gratification. </p>
+<p><img alt="Persona 3 (Atlus)" src="../media/img/persona3.jpg" /></p>
+<p>Il y a ici un compromis délicat à trouver entre donner au joueur envie de continuer à jouer malgré le game over et lui donner la sensation qu'il prend des risques.</p>
+<p>Un exemple subtil est celui que propose <em>Drakengard 2</em> : si vous perdez une bataille, deux alternatives s'offrent à vous. Si vous abandonnez, vous retournez à l'écran-titre et votre progression, votre argent, votre expérience sont définitivement perdus. Si vous recommencez immédiatement la bataille, vous ne perdez que l'argent gagné mais par l'expérience. Ce principe est très fin. Il pousse le joueur à recommencer immédiatement plutôt que d'abandonner, mais sans lui faire grâce du game over. Le jouer est puni, mais on lui donne une chance de se « racheter », ou pour le voir sur un mode plus ludique, de se « refaire ». Le joueur n'est au final pas vraiment pénalisé s'il fait preuve de persévérance. Qui plus est, ce système permet d'éviter que le joueur ne se retrouve définitivement bloqué, car il a toujours la possibilité de faire de l'XP jusqu'à réussir à passer la prochaine bataille. Impossible donc de se retrouver dans une impasse ou de voir sa sauvegarde foutue.</p>
+<h1>II. Rupture et continuité.</h1>
+<p>Cette approche classique du game over sous l'angle de la pénalité n'est pourtant pas suffisante. Après avoir réfléchi un bon moment sur la notion de game over, je me suis rendu compte que je ne pourrai parler de celui-ci sans évoquer sa contrepartie, la sauvegarde. Pourquoi ? Parce que game over et sauvegarde sont deux mécanismes de jeux complémentaires qui permettent au game designer de contrôler le rythme, le flot du jeu, que ce soit en termes de gameplay ou de narration. Ce sont un peu les fonctions <em>stop</em> et <em>play</em> du jeu.</p>
+<h2>1. Les fonctions de la sauvegarde.</h2>
+<p>La sauvegarde a essentiellement deux fonctions dans un jeu.</p>
+<p>D'une part, elle permet au joueur de conserver ses données, tout simplement. Si jamais un incident fâcheux se produit — coupure de courant, bug — la sauvegarde lui permet de récupérer ce qu'il a accompli. C'est cet aspect qui est le plus flagrant dans les systèmes de mots de passe. Ce dernier n'est plus trop à l'ordre du jour parce qu'on dispose maintenant de la mémoire nécessaire pour créer des fichiers de sauvegarde, mais aussi parce que ce système crée moins de liens entre un joueur et sa partie : une sauvegarde n'y est pas un objet unique, personnel.</p>
+<p>D'autre part, la sauvegarde permet de faire une pause. Le joueur peut éteindre la console sereinement : c'est le caractéristique « À table ! » suivi de « Attends deux secondes, je sauvegarde ». Dans cette optique, on trouve les classiques fichiers de sauvegarde, mais aussi plus rarement des sauvegardes dites rapides ou temporaires : le joueur est renvoyé à l'écran-titre et sa sauvegarde disparaît dès qu'elle est chargée. Cette fonctionnalité est liée au rythme du jeu et on l'utilise surtout dans le cas où les séquences de jeux sont longues, comme dans un Tactical RPG à la <em>Final Fantasy Tactics Advance</em>. Ceci permet au joueur de mieux contrôler le rythme du jeu et de ne pas être obligé de jouer par tranche d'une heure minimum, ce qui par exemple incompatible avec des jeux qui visent les plus jeunes ou prévus pour des parties courtes (en particulier sur les consoles portables).</p>
+<p><img alt="Final Fantasy Tactics Advance (Square Enix)" src="../media/img/ffta.png" /></p>
+<p>Au delà de ces deux fonctions, la sauvegarde doit respecter une condition essentielle : en sauvegardant, le joueur ne doit pas pouvoir foutre en l'air sa partie. Dit comme ça, ça a l'air tout bête, mais même des jeux pro récents s'y trompent (je vous renvoie au passage sur les checkpoints hors de propos dans cet <a href="vilain-game-designer-5.html">article</a> d'Ernest Adams). <em>Final Fantasy Tactics</em> premier du nom <em>aurait pu</em> être un chef-d'oeuvre. Mais la structure de la sauvegarde lui confère une difficulté incongrue : si vous sauvegardez au cours d'une série de missions, comme le jeu vous incite lourdement à le faire, vous risquez de vous retrouvez en train de recharger juste avant un combat trop dur pour vous (grâce à une courbe de difficulté complètement discontinue), sans aucune possibilité de faire du level grinding. Vous imaginez, une partie de 30 heures bonne pour la poubelle ?</p>
+<h2>2. Respecter le rythme du jeu.</h2>
+<p>Le game over et la sauvegarde, en tant que modes d'interruptions du jeu, permettent de contrôler son rythme.</p>
+<p>Considérons ici des jeux au game over peu pénalisant, <em>Final Fantasy XIII</em> et <em>Kingdom Hearts</em>. Dans les deux cas, il s'agit de jeux qui se veulent rapides, nerveux, rythmées : les combats sont dynamiques, essentiellement basés sur la vitesse, la structure de la narration est linéaire (une pure ligne droite pour le premier, des mondes très linéaires pour le second). Dans cette optique, les développeurs ont choisi de proposer au joueur de recommencer immédiatement le combat perdu. Cette décision permet d'inciter le joueur à continuer de jouer et surtout, ne brise pas le rythme tendu du jeu. <em>Final Fantasy XIII</em> a été pensé comme une course-poursuite par ses développeurs — que l'on trouve ça réussi ou non — et le choix d'un game over qui n'interrompt pas le rythme du récit est cohérent avec cette vision du jeu. Exemple plus extrême encore, <em>Super Meat Boy</em>. Le gameplay de ce jeu repose essentiellement sur la possibilité de réessayer <em>très</em> rapidement après un échec. Imaginez ce qui se passerait s'il y avait une latence de, disons dix secondes entre chaque essai : <em>Super Meat Boy</em> passerait du statut de jeu culte à celui de médiocre plateformer.</p>
+<p>A l'inverse, considérons maintenant l'exemple de <em>Persona 3</em> et <em>Persona 4</em>. Ces jeux sont basés sur un rythme quotidien, avec un système de calendrier où le joueur construit pas à pas, étape par étape, degré par degré ses relations avec les différents personnages. Ce rythme progressif se retrouve dans des donjons dans lesquels on avance peu à peu, étage par étage : le choix d'un game over pénalisant — à savoir le retour à l'écran-titre — est fait de telle sorte qu'on hésite à avancer dans le donjon, on craint de perdre le butin accumulé à tout instant et donc, on avance à pas comptés parce que tenter de traverser dix étages d'un coup pour atteindre le prochain vrai checkpoint peut s'arriver très risqué. Le système de game over permet ici d'assurer un rythme de jeu cohérent avec la volonté des développeurs. Dans <em>League of Legends</em> et autres MOBA (et même plus généralement dans beaucoup de jeux multijoueurs), l'attente après la mort de son avatar n'est pas une simple pénalité, mais un élément stratégique à part entière puisqu'elle va influencer sur le rythme de la bataille et son issue, souvent de manière décisive.</p>
+<p>Que le rythme du jeu soit lent, rapide, saccadé ou continu, le game over (et donc en creux, la sauvegarde) permet de contrôler ce rythme, de l'interrompre ou de le fluidifier.  Quand vous réfléchissez au type de game over que vous allez choisir ou la façon dont vous allez placer vos checkpoints, il faut toujours vous demander ce que le joueur devra subir après le game over et si ceci correspond au <em>rythme</em> que vous cherchez à définir pour le jeu. Surtout, n'oubliez pas que l'attente, si elle est injustifiée, peut être extrêmement pénible pour le joueur : quelle punition plus grande pour un joueur que le non-jeu ? Non seulement vous avez perdu, votre honneur est sali, vous êtes pénalisé dans le jeu, mais <em>en plus</em> vous devez poireauter (et allez que je me farcis de nouveau les noms des développeurs, éditeurs, technologies utilisées, l'écran-titre et tous les menus, sans compter les temps de chargement en bonus).</p>
+<p><img alt="League of Legends (Riot Games)" src="../media/img/lol.jpg" /></p>
+<p>Le placement des opportunités de sauvegarde est à ce titre essentiel. Un joueur qui a traversé toute une partie d'un niveau difficile et se voit obligé de tout recommencer pour une minuscule erreur peut tout à fait décider d'abandonner purement et simplement. C'est ce qui arrive par exemple quand le joueur, pour aller retenter la séquence difficile qui le bloque, doit retraverser à chaque fois tout le niveau (qu'il commence à connaître par cœur) parce que le level designer n'a pas prévu assez de points de sauvegarde. On peut essayer de résoudre ce problème en multipliant les checkpoints, comme dans un <em>Alan Wake</em> : la démultiplication des points de sauvegarde permet de compenser la difficulté de chaque « segment » de jeu et on peut recommencer directement la séquence qui nous bloque (et qui donc, nous intéresse :P). Mais sur ce sujet, le grand <a href="http://deserthat.wordpress.com/2009/11/26/game-design-the-miyamoto-way-flow-and-difficulty/">Miyamoto</a> s'exprime sans doute bien mieux que moi.</p>
+<h1>III. La question de la narration.</h1>
+<p>Le game over, en tant que fin de la partie, peut aussi constituer la fin de l'histoire. C'est un élément narratif à part entière et la question de l'immersion du joueur doit être prise en compte. </p>
+<p>Le premier danger pour la narration, c'est la répétition : devoir se manger deux fois — voire plus — les mêmes scènes, les mêmes passages après un game over est particulièrement pénible (et une option permettant de passer dialogues ou cut-scenes est souvent la bienvenue). Pire, ceci peut tuer l'émotion ou l'intensité de scènes pourtant bien construites et qui avaient marqué la première fois.</p>
+<p>Un autre problème est celui du choix, question chère aux amateurs de RPG. Il est confortable de pouvoir sauvegarder à volonté, mais ceci peut ruiner la profondeur d'un jeu. Dans les RPG de Bioware comme <em>Dragon Age : Origins</em> ou <em>Mass Effect</em>, la possibilité de pouvoir sauvegarder à tout moment entre en contradiction avec le gameplay dans la mesure où elle retire le poids, l'importance véritable des choix effectués par le joueur : même s'il regrette une décision, le joueur a toujours l'opportunité de revenir en arrière. Les choix — déjà peu intéressants et tristement manichéens — sont alors vidés de toute leur substance : leur irréversibilité.</p>
+<p>Mais le game over et la sauvegarde ne sont pas seulement des risques pour la narration : ce sont aussi des opportunités de l'enrichir et d'entrelacer plus subtilement le récit et le gameplay.</p>
+<p><img alt="Dark Souls (From Software)" src="../media/img/darksouls.jpg" /></p>
+<p>Dans <em>Dark Souls</em> et son prédécesseur <em>Demon's Souls</em>, le game over est intégré à la narration et au scénario mêmes. Lorsque le joueur meurt, il revient à son lieu de départ, mais <em>après</em> sa mort : tout ce qu'il a fait reste valable. S'il a pu récupérer l'arme surpuissante caché dans un coffre juste derrière le boss, tant mieux pour lui car il la conserve et pourra se servir de ladite arme pour asmater ledit boss. A l'inverse, s'il a gâché son mégalixir, il l'a dans le baba. En intégrant cet aspect au scénario (avec notamment l'apparition d'une sorte de « hub » pour morts, le Nexus), les développeurs ont su créer un système très intéressant et qui contribue tout particulièrement à l'ambiance extrêmement oppressante du titre. </p>
+<p>Certains jeux jouent sur l'opposition diégétique/extradiégétique (ce que voit le personnage/ce que voit le joueur) avec de faux game over. Il s'agit souvent de séquences humoristiques comme le délirant « Fission Mailed » de <em>Metal Gear Solid 2</em> et la fausse mort (avec déroulé complet du générique de fin !) du malheureux Guybrush Threepwood dans <em>The Curse of Monkey Island</em>. Les points de sauvegarde sont parfois intégrés à l'histoire du jeu (Masato Kato s'en est fait une spécialité avec des jeux comme <em>Chrono Cross</em> et <em>Xenogears</em>, mais nous n'en dirons pas plus :3). Pour pousser le bouchon encore plus loin, on pourrait parler de l'intrigant <em>Baroque</em> (ou du moins de sa version Saturn, si je ne fais pas d'erreur) : la sauvegarde, possible uniquement à la fin de chaque niveau de la tour qui constitue l'essentiel du jeu, peut <em>échouer</em> aléatoirement. Imaginez l'angoisse du joueur qui vient de voir la possibilité de sauvegarder lui être refusée, après une traversée déjà éprouvante.</p>
+<p>La sauvegarde, au même titre que le game over, n'est donc juste un « système » pour conserver les données, elle est aussi un élément de narration à part entière et on peut l'utiliser comme telle : les sauvegardes de <em>Resident Evil</em> sont pour ainsi dire des objets (les fameux rouleaux encreurs) et leur utilisation fait tout l'intérêt <em>narratif</em> et l'ambiance des <em>safe rooms</em>. Le sentiment de soulagement, de <em>respiration</em> (pour reprendre la métaphore précédente :P) dans ces lieux est un grand moment de jeu vidéo : le gameplay y fait la narration et réussit à créer une émotion profonde chez le joueur.</p>
+<h1>Conclusion</h1>
+<p>Le game over et la sauvegarde sont deux systèmes étroitement liés, qui fonctionnent à la fois comme éléments de gameplay et de narration. Ce sont deux éléments symétriques qui permettent de régler la difficulté d'un jeu, mais surtout son rythme. Mais indépendamment de ces considérations théoriques, n'oublions pas que leur implémentation n'est pas anodine.</p>
+<p>Tout d'abord, elle induit des contraintes techniques et un travail de programmation. Quand on travaille sur un jeu amateur ou indépendant, avec des contraintes de temps ou d'argent très strictes, ceci n'est pas à écarter. En termes de programmation, on peut dire que les solutions de sauvegarde les plus simples sont justement celles proposées par <em>Final Fantasy</em> ou <em>Zelda</em>, c'est-à-dire sauvegarder l'état du jeu à un moment précis et y revenir bêtement (<em>Final Fantasy</em>), ou ne pas toucher à cet état et réinsérer le joueur dedans en le déplaçant légèrement s'il déclenche une condition de défaite (<em>Zelda</em>).</p>
+<p>Par ailleurs, elle participe de l'intégration de la fin de partie dans le game design. Un système comme celui de <em>Dark Souls</em> ou celui de <em>World of Warcraft</em>, où la mort constitue une partie du jeu, demande un gros travail supplémentaire sur le game design, et donc un gros travail technique. Décider ce que l'on sauvegarde et ce que l'on retire au joueur devient encore plus complexe. Le choix d'un système de game over, en tant qu'élément de gameplay, doit être réfléchi en fonction des autres éléments de gameplay et non comme une <em>feature</em> gratuite.</p>
+<p><img alt="Baten Kaitos 2 (Tri-Crescendo)" src="../media/img/batenkaitos2.jpg" /></p>
+<p>Enfin, tout bêtement, son habillage, graphique et sonore, doit s'intégrer dans le reste du jeu : ayons une pensée pour la délicate <em>Soul Poetry</em> de <em>Baten Kaitos</em> ou la mélancolique <em>A Light Already Lost</em> de <em>Chrono Cross</em>.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/game-over&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_254" class="comment">
+	
+		
+			<span class="meta">Par Cawotte-killer le 10 juillet 2012 17:36:53</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Cawotte-killer" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Whouaw, je ne pensais pas qu'on pouvait dire autant de choses sur les sauvegardes et les Game Over ! </p>
+<p>Sinon, pour le premier commentaire, " on aurait pu parler de Zombi U ", je pense qu'il ne l'a pas fait car le jeu n'était pas encore sortie. :p.
+N'empêche si ce que tu dis est vrai faudra que je regarde de plus près ce jeu… Même si il ne sera QUE sur Wii U… :( </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_254').addClass('deleted');
+			$('#comment_254 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_254 .delete').css("display", "none");
+			$('#comment_254 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_254 .delete').css("display", "none");
+		else										$('#comment_254 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_253" class="comment">
+	
+		<span class="meta">Par un anonyme le 3 juillet 2012 02:06:42</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>On pourrait aussi parler maintenant du game over de Zombie U qui est assez intéressant à analyser.</p>
+<p>En effet, le joueur contrôle un survivant au début de la partie et doit avancer dans des niveaux, mais si il meurt, l'avatar devient alors un zombie et le joueur s'incarne alors dans un autre survivant qui commence à un endroit différent du lieu. La progression de l'ancien avatar est sauvegardé avec des portes déjà ouvertes et des raccourcis créés lors de la précédente partie et le joueur doit se rendre à l'endroit où il est mort pour récupérer ses affaires. Le plus frappant c'est qu'à ce moment là, on se retrouve face à face avec le zombie de notre ancien avatar.</p>
+<p>Franchement, un exemple de gameplay autour du game over assez unique en son genre.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_253').addClass('deleted');
+			$('#comment_253 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_253 .delete').css("display", "none");
+			$('#comment_253 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_253 .delete').css("display", "none");
+		else										$('#comment_253 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_252" class="comment">
+	
+		<span class="meta">Par un anonyme le 28 juin 2012 16:03:52</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Enfin un bon gros article de game design comme on aime sur les forges, ça fzait un bail, Merlanfrit c'est cool mais à force…</p>
+<p>"C'est toujours un plaisir (enrichissant) de lire ces articles."
+J'approuve</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_252').addClass('deleted');
+			$('#comment_252 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_252 .delete').css("display", "none");
+			$('#comment_252 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_252 .delete').css("display", "none");
+		else										$('#comment_252 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_251" class="comment">
+	
+		<span class="meta">Par un anonyme le 26 juin 2012 20:03:58</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Très bon article ! Ça me fais penser que les checkpoints parfois indiquent implicitement l'arrivée d'un boss ou un gros événement, et du coup cela peut casser l'effet de surprise !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_251').addClass('deleted');
+			$('#comment_251 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_251 .delete').css("display", "none");
+			$('#comment_251 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_251 .delete').css("display", "none");
+		else										$('#comment_251 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_250" class="comment">
+	
+		<span class="meta">Par un anonyme le 23 juin 2012 23:38:27</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>C'est toujours un plaisir (enrichissant) de lire ces articles.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_250').addClass('deleted');
+			$('#comment_250 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_250 .delete').css("display", "none");
+			$('#comment_250 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_250 .delete').css("display", "none");
+		else										$('#comment_250 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_249" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 22 juin 2012 10:09:36</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Hey, il me semblait bien que j'avais participé à ce débat, je m'en suis rappelé qu'à la fin ^^</p>
+<p>Un gros boulot de synthèse, comme d'habitude rempli d'exemples pertinents. Je critiquerais bien ta tendance à ne pas assez théoriser, mais c'est aussi une des forces de tes articles, qui doivent ainsi aider beaucoup de monde.</p>
+<p>Il faudra lancer un autre sujet sur level-up !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_249').addClass('deleted');
+			$('#comment_249 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_249 .delete').css("display", "none");
+			$('#comment_249 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_249 .delete').css("display", "none");
+		else										$('#comment_249 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_248" class="comment">
+	
+		
+			<span class="meta">Par Sylvain le 11 juin 2012 14:42:01</span>
+			<br/><img src="http://www.gravatar.com/avatar/d8ce5e1e6bfdb7c044ff258130bc8887?s=50&amp;r=g&amp;d=mm" alt="avatar de Sylvain" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Super article ! 
+J'avais également bien aimé le texte à propos du game design de Dark Souls. Très bon blog, bien écrit et documenté. Continuez comme ça !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_248').addClass('deleted');
+			$('#comment_248 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_248 .delete').css("display", "none");
+			$('#comment_248 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_248 .delete').css("display", "none");
+		else										$('#comment_248 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/71';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="game-over@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#110;&#116;&#x61;&#99;&#x74;&#64;&#x6c;&#101;&#x73;&#x66;&#x6f;&#x72;&#103;&#x65;&#115;&#x2e;&#111;&#114;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

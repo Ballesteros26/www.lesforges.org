@@ -1,0 +1,942 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Vilain Game Designer ! Pas de biscuit pour toi !</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Je me suis remis récemment à jouer à de vieux jeux, et j'ai remarqué quelque chose d'intéressant par rapport aux jeux d'aujourd'hui : bien sûr, la technologie a énormément changé, mais certaines erreurs de conception de l'époque sont pourtant toujours présentes. Les énigmes mal conçues et les fausses-bonnes-idées irritantes apparues il y a de ça quinze ou vingt ans rôdent toujours.
+Voici une liste de fausses-bonnes-idées que je ne supporte plus. C'est un point de vue hautement personnel et votre opinion peut être différente, mais pour moi, ces idées sont la marque d'un game design bâclé ou fait par un paresseux.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#x61;&#99;&#116;&#64;&#x6c;&#x65;&#x73;&#x66;&#x6f;&#x72;&#x67;&#101;&#x73;&#46;&#111;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Vilain Game Designer ! Pas de biscuit pour toi !</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 20 juillet 2008 22:54:38 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/pas-de-biscuit.html">Pas de biscuit</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/agersant.html">Antoine Gersant</a>.
+						<br/>L'<a href="http://www.gamasutra.com/view/feature/3260/designers_notebook_bad_game_.php" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (mars 1998).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p>Je me suis remis récemment à jouer à de vieux jeux, et j'ai remarqué quelque chose d'intéressant par rapport aux jeux d'aujourd'hui : bien sûr, la technologie a énormément changé, mais certaines erreurs de conception de l'époque sont pourtant toujours présentes. Les énigmes mal conçues et les fausses-bonnes-idées irritantes apparues il y a de ça quinze ou vingt ans rôdent toujours.</p>
+<p>Voici une liste de fausses-bonnes-idées que je ne supporte plus. C'est un point de vue hautement personnel et votre opinion peut être différente, mais pour moi, ces idées sont la marque d'un game design bâclé ou fait par un paresseux.</p>
+			</div>
+			<div id="article_content">
+				<h1>Les labyrinthes débiles et ennuyeux</h1>
+<p>Le premier jeu d'aventure textuel de l'histoire du jeu vidéo, <em>Colossal Cave</em>, comportait deux labyrinthes. Le premier était une succession de salles toutes décrites ainsi : « Vous êtes dans un labyrinthes de petits passages biscornus, tous semblables. » Le second était une succession de salles décrites par : « Vous êtes dans un petit labyrinthe biscornu de passages, tous différents » (ou par « Vous êtes dans un petit labyrinthe tordu de passages, tous différents », ou encore « Vous êtes dans un labyrinthes de petits passages biscornus, tous différents » etc etc…).</p>
+<p>Ces deux labyrinthes étaient typiquement des labyrinthes débiles et ennuyeux, mais Colossal Cave étant le tout premier jeu d'aventure, on ne lui en veut pas trop pour ça. Par contre c'était il y a plus de vingt ans; il n'y a aujourd'hui plus aucune excuse pour faire ce genre de choses. Quelqu'un m'a donné un exemplaire de <em>The Legend of Kyrandia</em> il y a quelques années, et j'y ai joué avec plaisir…jusqu'à ce que j'arrive au labyrinthe.</p>
+<hr />
+<p>Les labyrinthes ne sont pas nécessairement débiles et ennuyeux et il est possible de concevoir des labyrinthes divertissants en plaçant les salles selon un agencement que les joueurs peuvent comprendre. Un labyrinthe devrait être attirant, intelligent et surtout amusant à résoudre. Si un labyrinthe n'est pas intéressant ou si l'on apprécie pas d'y être, c'est une fausse-bonne-idée.</p>
+<h1>Les jeux sans carte</h1>
+<p>J'ai un sens de l'orientation notoirement déplorable en intérieur alors peut-être que c'est juste moi, mais dans le monde d'un jeu vidéo, où tous les murs et les sols utilisent les mêmes textures, je trouve que les endroits se ressemblent tous. Dans le monde réel, même les pires dédales de cloisons dans les immeubles de bureaux permettent de distinguer les pièces les unes des autres (une tache sur un tapis, une bande-dessinée affichée sur le cube de quelqu'un…). J'ai joué à <em>Doom</em> et je me suis bien amusé. Ensuite j'ai lancé une démo de <em>Quake</em> que j'ai abandonnée dès que j'ai vu qu'il n'y avait pas de carte. Je veux une carte ! Il n'y a pas de raison de m'empêcher d'en avoir une si ce n'est pour me ralentir, et c'est une arnaque pour rallonger le jeu sans offrir de gameplay en plus. Vilain Game Designer ! Pas de biscuit pour toi !</p>
+<h1>Les élément incongrus ou qui brisent la magie.</h1>
+<p>Parfois les jeux d'aventure vous mettent devant un puzzle ou un autre obstacle complètement déplacé par rapport à l'histoire fantastique que vous vivez. A mon avis, c'est le résultat d'un manque d'idées de la part des concepteurs et cela déçoit les joueurs. Si vous m'avez conduit dans un monde magique dans lequel j'incarne un chevalier héroïque qui mène une glorieuse quête pour sauver la princesse en détresse, je n'ai pas envie de m'asseoir pour jouer au <em>Mastermind</em> avec le dragon ! Si il faut absolument que je joue à quelque chose avec lui, débrouillez vous pour que ce soit le jeu du moulin, mais il serait franchement préférable de se débarrasser de lui à la main.</p>
+<p>Cela nous mène tout naturellement au problème suivant…</p>
+<h1>Le Surréalisme bidon</h1>
+<p>Bon nombre de jeux sortis évitent les monde habituels de SF ou fantasy et préfèrent plonger le joueur dans le monde tordu et dérangeant du Blabla blabla. Je vais vous apprendre quelque chose sur le S majuscule de Surréalisme et le A majuscule de Art : ça ne sort pas de nul part. Le vrai Surréalisme cherche à choquer l'esprit pour le rendre conscient de la condition humaine / de la nature de Dieu / du véritable sens de la compassion / etc… en juxtaposant des objets et des idées qui n'ont semble-t-il rien à voir. La clé de voûte du genre réside dans « semble-t-il » : le vrai Surréalisme, même s'il semble bizarre et peut être même vide de sens au premier abord, véhicule sur un thème sous-jacent.</p>
+<p>Je n'ai jamais vu dans un jeu vidéo de Surréalisme qui puisse prétendre à une telle noblesse d'intention. La plupart du temps on dirait plutôt que quelqu'un s'est dit « …et en arrivant dans la salle de contrôle de l'apocalypse, il y aura un clown à l'intérieur ! Ouais! Ca va être cool ! ». Le Surréalisme est comme la prose en poésie : facile à faire mais extrêmement difficile à bien faire. « C'est du Surréalisme » n'est pas une excuse pour un concept mal ficelé à la base.</p>
+<p>Nous arrivons donc en douceur aux…</p>
+<h1>Énigmes qui demandent des formes extrêmes de pensée latérale</h1>
+<p>Nous parlons ici des énigmes du genre « utiliser l'abat-jour avec le bulldozer ». Le concepteur pense peut être que c'est drôle ou sur-réel, mais ce n'est en fait rien de plus qu'un caprice fatiguant. C'est de la paresse dans la conception de l'énigme que de la rendre difficile en lui attribuant une solution irrationnelle ou tirée par les cheveux. On peut comme ça rallonger la durée de vie en créant des obstacles ridicules, mais on ne fait pas plus plaisir au joueur avec ça alors que c'est censé être le but recherché.</p>
+<h1>Énigmes qui ne demandent aucune forme de pensée latérale</h1>
+<p>Vous arrivez devant une porte fermée. La solution évidente pour passer est de trouver la clé, mais c'est aussi la plus ennuyeuse alors peut-être le jeu propose-t-il une autre solution pour l'ouvrir. Cela étant rarement le cas, il n'y a qu'une solution, quelle qu'elle soit.</p>
+<p>Dans les jeu d'aventure textuels, on rencontrait souvent le problème du « quel est le verbe à utiliser ici ? » et on était coincé jusqu'à ce que l'on trouve le verbe attendu par le jeu. Casser ? Frapper ? Endommager ? Démolir ? Défoncer ? Brûler ? De nombreux jeux d'aujourd'hui souffrent de ce problème : un obstacle que l'on ne peut passer que d'une seule et unique façon. Le jeu n'encourage pas le joueur à penser, il lui demande juste de deviner ce que pensait le concepteur.</p>
+<hr />
+<p>Dans la réalité, les moyens d'ouvrir une porte verrouillée ne manquent pas :</p>
+<ul>
+<li>Trouver la clé</li>
+<li>Crocheter la serrure</li>
+<li>Forcer ou persuader la personne qui a la clé de l'ouvrir</li>
+<li>Duper quelqu'un de l'autre côté pour lui faire ouvrir (peut-être simplement en frappant à la porte !)</li>
+<li>Casser la porte, la brûler, la couper, la dissoudre avec de l'acide etc…</li>
+<li>La contourner en passant par une fenêtre ou un trou dans un mur</li>
+</ul>
+<p>La seule limite à cette liste est votre imagination.</p>
+<p>Ok, je sais que c'est plus facile à dire qu'à faire. En tant que développeur, il est coûteux et difficile pour vous de penser et d'implémenter toutes les façons de passer une porte. Tout de même, maintenant que nous avons la capacité de créer des « environnements déformables » (c'est à dire des explosions et des coups de feu qui agissent sur le décor en plus des ennemis), il est temps d'introduire un peu de diversité dans les univers, pour récompenser les joueurs qui font preuve d'imagination.</p>
+<h1>Énigmes qui demandent des connaissances pointues et sans rapport avec le jeu</h1>
+<p>Je dois ce paragraphe à mon ami génie et maître des énigmes <a href="http://www.scottkim.com">Scott Kim</a>. Je n'y avais pas pensé jusqu'à ce qu'il lise le brouillon de cet article et me le fasse remarquer. C'est une astuce bidon, et encore plus frustrantes que les private-jokes. « Non, je ne connais pas le nom de la piste 3 sur Sgt. Pepper’s Lonely Hearts Club Band (NdT : un album des Beatles) », et s'il est vital que je sache ça pour finir le jeu, alors le jeu est mal ficelé. (Les jeux de Quizz du style <em>You Don't Know Jack</em> sont évidemment une exception à cette règle, on sait à quoi s'attendre quand on démarre une partie).</p>
+<h1>Un interrupteur qui ouvre une porte à deux kilomètres d'ici</h1>
+<p>Et pas forcément une porte, je parle de n'importe quel obstacle sur le chemin du joueur. <em>Doom</em> a beaucoup utilisé cette arnaque, mais le pire exemple qui soit est Le Guide du voyageur galactique, un jeu d'aventure textuel crée par Infocom. Dans ce jeu, si vous ne ramassiez pas le « courrier de pub » au tout début du jeu, vous ne pouviez pas gagner tout à la fin. Cette fausse-bonne-idée est inutile et profondément frustrante. A part dans les raffineries et dans les centrales nucléaires, la poignée d'une porte se trouve le plus souvent — suspens suspens — sur la porte. C'est un autre exemple de paresse dans la conception d'énigmes en rendant le problème difficile non pas parce qu'il demande d'être intelligent mais parce qu'il est long à résoudre.</p>
+<h1>Un seule bonne combinaison sur les [Insérez ici un gros chiffre] possibles</h1>
+<p>Encore des énigmes faites par des paresseux. A la fin de <em>Infidel</em>, une autre aventure de chez Infocom, il fallait faire quatre action dans un certain ordre, ce qui nous fait 4! (factorielle 4, c'est à dire 24) combinaisons. Il n'y avait aucun indice pour vous aider à trouver la bonne séquence, il fallait toutes les essayer. Berk. Encore du temps perdu sans s'amuser.</p>
+<p>(NdT : Le problème est apparu plus récemment dans <em>Resident Evil</em> sur PSX/Gamecube où aucun indice ne vous était donné pour trouver la bonne combinaison sur un digicode à 4 touches. Si vous cherchez encore, la bonne combinaison est 4231.)</p>
+<h1>Tuer un monstre / Ramasser l'épée / Vendre l'épée / Acheter une autre épée / Tuer un autre monstre</h1>
+<p>…ou le RPG dans toute son excellence. Vous avez peut-être entendu la blague de John F. Kennedy’s qui dit que Washington D.C. est une ville qui a « l'efficacité du Sud et le charme du Nord », et bien à mon avis, la plupart des RPG combinent « L'adrénaline et l'excitation d'une simulation bancaire avec le challenge intellectuel d'un jeu de tir ». Je joue à des jeux d'aventure médiévaux pour être héroïque, tuer des princesses et sauver des dragons (NdT: chez moi c'est plutôt l'inverse) ; je n'y joue pas pour passer les deux tiers de mon temps à faire des affaires avec des marchands : je veux être un héros mais le jeu me force à être une sorte de marchand d'armes d'occasion itinérant. Ah et puis gagner de l'argent en dépouillant des cadavres ne me rend pas très noble non plus.</p>
+<h1>Vous avez 30 secondes pour résoudre ce problème ou vous êtes mort.</h1>
+<p>Vu le temps qu'un jeu met à recharger la partie, ce n'est pas très intelligent ni stimulant : c'est simplement frustrant. S'il faut trouver une astuce sans avoir eu d'indice, alors c'est encore une perte de temps sous la forme « essaye et crève ». S'il y a des indices, alors il faut donner un temps raisonnable au joueur pour y réfléchir. A titre de comparaison, les militaires ne chargent au hasard jamais sur un territoire qu'ils n'ont pas examiné au préalable (et si ils le font, ils le regrettent) : demander à votre joueur d'agir à l'aveugle n'est pas raisonnable. Si vous placez le joueur face à un danger imminent des l'instant où il voit l'écran, vous devez lui laisser au moins une chance sur trois de s'en sortir sain et sauf.</p>
+<h1>Les adversaires débiles</h1>
+<p>J'ai aussi marre des monstres qui avancent bêtement vers vous jusqu'à leur mort. C'est la méthode <em>Doom</em>, et celle d'un million d'autres jeux depuis l'aube des temps. Au lieu de vous offrir un défi intéressant, le jeu essaye de vous submerger par sa supériorité numérique. Argh. <em>Space Invaders</em> était peut être génial et addictif en son temps, mais il faudrait passer à autre chose.</p>
+<hr />
+<p>Faisons preuve d'imagination ! Pourquoi ne pas mettre en place des monstres lâches qui vous donnent un coup facile avant de repartir se cacher pour combattre plus tard ? Ou un monstre qui peut alternativement s'exposer et se mettre à couvert ? Ou peut être un monstre qui s'échappe dès qu'il vous voit pour aller chercher ses copains (à moins que le joueur ne parvienne à l'abattre en chemin) . Pourquoi pas aussi un monstre qui essaye de s'infiltrer dans votre dos pour vous surprendre ? Ou un qui s'expose pour combattre mais part se cacher s'il est blessé plutôt que de lutter à mort bêtement ? Et peut-être pourrait-on faire des monstres dont le rôle serait de vous attirer hors de votre cachette pour que leurs alliés puissent vous tirer dessus. (C'est ce que faisait la soucoupe volante dans le jeu d'arcade <em>Battle Zone</em>.) Ou même — argh — des monstres assez intelligents pour faire tout ça à la fois, comme le font par exemple, mh…LES GENS ! Parbleu !</p>
+<hr />
+<p>Aucune de ces idées n'est franchement neuve, mais on ne les voit pas souvent à l'œuvre. Pourquoi ? Encore de la paresse : les monstres idiots sont simples à programmer, les monstres intelligents ne le sont pas. Et puis il est facile de balancer un jeu dans lequel les adversaires sont débiles puisqu'il suffit de trouver le bon ratio entre monstres et trousses de soin. Pour rendre le jeu plus ou moins difficile, il suffit de changer le ratio. Mais c'est ennuyeux. Investissez un peu de matière grise en Monster Design, offrez un nouveau challenge aux clients.</p>
+<p>Les deux dernières choses dont j'ai marre sont plutôt de l'ordre de l'esthétique que de la conception mais je les rajoute pour la forme.</p>
+<h1>Le mauvais jeu d'acteur</h1>
+<p>Le mauvais jeu d'acteur détourne le joueur de l'essentiel, et pas moins dans un jeu vidéo que dans un film. Cela brise sa suspension d'incrédulité, et c'est particulièrement visible quand un mauvais acteur est entouré de bons acteurs, si bien qu'on se retrouve à espérer la mort du personnage qui joue mal. Remarquez aussi que le jeu d'acteur est presque toujours mauvais dans les jeux.</p>
+<p>Heureusement, c'est un problème qui se règlera tout seul au bout du compte. La compétition nous forcera à développer des compétences dans le domaine et si on atteint le niveau du 'téléfilm de la semaine', je m'estimerai heureux. Les talents John Gielgud et Katharine Hepburn (NdT: Un célèbre acteur de théâtre britannique et une actrice américaine de renom) seraient inutiles pour un jeu vidéo dont le but est de de toute façon d'être interactif. En général il vaut mieux pas de jeu d'acteur plutôt qu'un mauvais jeu d'acteur, c'est d'ailleurs plus simple et plus économique.</p>
+<h1>De belles explosions bien propres sur elles</h1>
+<p>Regardez de près une photo prise là où une bombe a explosé. C'est le bordel. Le gros bordel. Les choses sont brisées en morceaux de toute tailles, allant de l'objet presque entier à la poussière, en passant par divers fragments et copeaux. Elles sont aussi tordues et déchirées au point d'être à peine reconnaissables. Les objets qui subissent une explosion ne tombent pas gentiment en 4 ou 5 petits polygones : ils sont pulvérisés.</p>
+<p>Je suppose que pour le bien de nos estomacs, il faut éviter de montrer à la télévision ou dans des films de fiction que les gens qui meurent de façon violente ne le font pas rapidement et sans bruit mais en hurlant et en étant éparpillé un peu partout aux environs, mais je ne vois pas de raison de prétendre que les explosions ne détruisent pas les choses de façon affreuse. Les bombes bousillent tout, les gens et les vies, elles laissent les bâtiments en piteux état et on a plus envie d'y entrer. Arrêtons de mentir sur les bombes.</p>
+<h1>Conclusion</h1>
+<p>Scott Kim me dit que je suis trop sévère en traitant certaines de ces fausses-bonnes-idées de paresses de conception. Il tient à faire remarquer que la conception d'énigmes est un domaine difficile et, à moins d'être familier des vieux jeux, il est facile de se planter et de faire les mêmes erreurs sans le savoir. En plus de ça, beaucoup de gens qui se retrouvent à concevoir des énigmes viennent d'autres domaines comme la programmation ou les graphismes, et n'ont pas d'expérience sur le sujet.</p>
+<p>Je veux bien le croire. Mais maintenant que vous avez cette liste pratique vous ne risquez plus de commettre ces erreurs hein ?</p>
+			</div>
+			
+				<div class="sequel">
+					<p><a href="vilain-game-designer-2@scroll_to=article.html">Lire la suite ⇀</a></p>
+				</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/vilain-game-designer-1&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_13" class="comment">
+	
+		<span class="meta">Par un anonyme le 25 juin 2009 12:59:10</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Un petit commentaire vis à vis du Surréalisme : je trouve que le jeu Sanitarium exploite bien le concept même si ce n'est pas toujours complètement maîtrisé.</p>
+<p>Le surréalisme est de plus assez dur à utiliser quand on y travaille à plusieurs, c'est un style beaucoup plus aisé à utiliser seul, puisqu'il fait appel aux sous-entendus (oui, c'est mal exprimé^^). Et étant donné que les jeux sont faits d'équipe allant d'une dizaine de personnes minimum à plusieurs centaines de personnes de nos jours, c'est assez difficile à rendre, même si un bon Game Designer devrait en être capable.</p>
+<p>Je suis tout à a fait d'accord sur le fait qu'il est très dommageable que les game designers fassent des erreurs qui datent du début des jeux vidéos. On a l'impression que ceux-ci ne veulent pas trop bousculer les habitudes de certains joueurs (on comprend leurs craintes en même temps quand on voit les commentaires de certains joueurs vis à vis du nouveau Prince Of Persia, disant que le gameplay était mieux dans le tout premier : ????).</p>
+<p>Je ne pense pas que ses erreurs soient faites parce les game designers ne connaissent pas les vieux jeux, ils n'ont pas 15 ans après tout, et de plus, la plupart des joueurs ont tendance à jouer à de vieux jeux, au moins pour se forger une certaine culture. </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_13').addClass('deleted');
+			$('#comment_13 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_13 .delete').css("display", "none");
+			$('#comment_13 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_13 .delete').css("display", "none");
+		else										$('#comment_13 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_12" class="comment">
+	
+		<span class="meta">Par un anonyme le 3 mai 2009 13:27:13</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<blockquote>
+<p>Ensuite j'ai lancé une démo de Quake que j'ai abandonnée dès que j'ai vu qu'il n'y avait pas de carte. Je veux une carte !</p>
+</blockquote>
+<p>Je trouve que ça ajoute au réalisme et à l'immersion. J'ai vomis lorsque j'ai vu la carte de FFX. Une option pour activer ou désactiver la carte ça c'est le must.</p>
+<blockquote>
+<p>Nous parlons ici des énigmes du genre "Utiliser l'abat-jour avec le bulldozer". Le concepteur pense peut être que c'est drôle ou sur-réel, mais ce n'est en fait rien de plus qu'un caprice fatiguant.</p>
+</blockquote>
+<p>A titre d'exemple Monkey island (Runaway, etc…) se base sur des énigmes de ce genre pourtant lorsque l'on sait le succès planétaire, l'intérêt et le fun de ces jeux… Et des énigmes à se tirer les cheveux dans ces jeux, il y en a un bon paquet !</p>
+<blockquote>
+<p>Argh. Space Invaders était peut être génial et addictif en son temps, mais il faudrait passer à autre chose.</p>
+</blockquote>
+<p>Ca dépend de ce que l'on cherche.</p>
+<blockquote>
+<p>Faisons preuve d'imagination ! Pourquoi ne pas mettre en place des monstres lâches qui vous donnent un coup facile avant de repartir se cacher pour combattre plus tard ? Ou un monstre qui peut alternativement s'exposer et se mettre à couvert ?</p>
+</blockquote>
+<p>Il faut savoir faire la différence entre un type de jeu à la space invaders et Half life.</p>
+<p>Bon article.</p>
+<p>--Rockmik</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_12').addClass('deleted');
+			$('#comment_12 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_12 .delete').css("display", "none");
+			$('#comment_12 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_12 .delete').css("display", "none");
+		else										$('#comment_12 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_11" class="comment">
+	
+		<span class="meta">Par un anonyme le 3 mars 2009 14:57:49</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Articles vraiment très sympa ^^.<br />
+Si j'avais les moyens, j'adorerais pouvoir employé tous les éléments à ma propre création … mais je n'en suis pas encore là.</p>
+<p>En tous les cas, le :</p>
+<blockquote>
+<p>Vous avez peut-être entendu la blague de John F. Kennedy’s qui dit que Washington D.C. est une ville qui a "l'efficacité du Sud et le charme du Nord", et bien à mon avis, la plupart des RPG combinent "L'adrénaline et l'excitation d'une simulation bancaire avec le challenge intellectuel d'un jeu de tir"</p>
+</blockquote>
+<p>M'a vraiment fait rire !</p>
+<p>--Kéké</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_11').addClass('deleted');
+			$('#comment_11 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_11 .delete').css("display", "none");
+			$('#comment_11 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_11 .delete').css("display", "none");
+		else										$('#comment_11 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/14';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="vilain-game-designer-1@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#110;&#116;&#97;&#x63;&#x74;&#x40;&#x6c;&#101;&#115;&#x66;&#111;&#x72;&#103;&#x65;&#115;&#46;&#x6f;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

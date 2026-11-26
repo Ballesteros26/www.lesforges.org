@@ -1,0 +1,1452 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Je crois qu&#39;il se passe quelque chose…</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Vous ne reconnaissez pas les lieux ? Vous êtes perdu ? Qui a rallumé la lumière ?
+
+Les Forges ont changé de décor, et il était plus que temps de redonner un coup de peinture à ce site qui commençait à sentir très fort le renfermé. Certaines fonctionnalités étaient plus ou moins cassées (erreurs PHP par-ci, par là), le forum plus ou moins à l'abandon, les articles aussi rares que les renards dans le métro parisien — c'est à dire pas complètement inexistants mais il faut se lever vraiment tôt pour les voir. Hum, je m'égare un peu…
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#x6e;&#116;&#x61;&#99;&#116;&#x40;&#108;&#101;&#115;&#x66;&#111;&#x72;&#x67;&#101;&#x73;&#x2e;&#111;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Je crois qu&#39;il se passe quelque chose…</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 13 juin 2011 02:06:18 | Catégories : <a href="../tag/editorial.html">Editorial</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p><em>Vous ne reconnaissez pas les lieux ? Vous êtes perdu ? Qui a rallumé la lumière ?</em></p>
+<p><img alt="Le progrès en marche" src="../media/img/edito-apercu.png" /></p>
+<p>Les Forges ont changé de décor, et il était plus que temps de redonner un coup de peinture à ce site qui commençait à sentir très fort le renfermé. Certaines fonctionnalités étaient plus ou moins cassées (erreurs PHP par-ci, par là), le forum plus ou moins à l'abandon, les articles aussi rares que les renards dans le métro parisien — c'est à dire pas complètement inexistants mais il faut se lever vraiment tôt pour les voir. Hum, je m'égare un peu…</p>
+			</div>
+			<div id="article_content">
+				<p>Tout ça pour vous dire qu'un grand coup de pied a été donné dans la fourmilière et voici ce qu'il en reste. Un site en forme de blog entièrement fait main, plus beau, plus propre, plus neuf, plus rapide, plus lisible, plus fonctionnel, plus tonium, plus interactif et — avec un peu de chance — plus souvent mis à jour.</p>
+<p>Tout l'ancien contenu a été migré, vos articles préférés sont donc toujours disponibles. Certains ont même été remaniés par Shin pour l'occasion. Le forum, qui a toujours été le parent pauvre du site a lui pris sa retraite. Un grand merci aux quelques braves (ils se reconnaitront) qui y ont posté régulièrement un contenu certes rare mais de qualité (un peu à l'image du site haha…). Si certains d'entre eux souhaitent prendre la plume et se faire entendre dans ces colonnes, ils sont les bienvenus.</p>
+<p>Ce qui n'a pas changé par contre, c'est notre politique éditoriale. Nous avons toujours pour ambition de nourrir les créateurs de jeux francophones, en herbe ou confirmés, de réflexions et d'articles de qualité afin de les faire progresser. Nous comptons sur vous pour participer à ce maelström créatif en nous faisant part de vos propres réflexions d'artistes ou de Game Designers sous forme de commentaires ou d'articles.</p>
+<p>Un grand merci une fois de plus aux différents auteurs des Forges et aux artistes et créateurs qui nous prêtent des textes et des illustrations pour enrichir ces pages. Enfin, un grand merci à vous qui nous lisez encore, 4 ans et 40 articles depuis la fondation des Forges. En route pour les 4 prochaines années !</p>
+<p>Antoine 'Fil Razorback' Gersant</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/edito-juin-2011&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_480" class="comment">
+	
+		
+			<span class="meta">Par babaorhum le 17 décembre 2021 15:57:06</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de babaorhum" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je suis un futur créateur de jeux indés (en C, Delphi, et javascript).
+Et je suis content de découvrir les forges, c'est un super site avec de très bons articles.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_480').addClass('deleted');
+			$('#comment_480 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_480 .delete').css("display", "none");
+			$('#comment_480 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_480 .delete').css("display", "none");
+		else										$('#comment_480 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_149" class="comment">
+	
+		
+			<span class="meta">Par Annoh le 21 novembre 2011 21:58:48</span>
+			<br/><img src="http://www.gravatar.com/avatar/db88d5eeb1a13b8b323011116f75ffc1?s=50&amp;r=g&amp;d=mm" alt="avatar de Annoh" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Oh le retour ! Je sais comment m'occuper ce soir :-)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_149').addClass('deleted');
+			$('#comment_149 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_149 .delete').css("display", "none");
+			$('#comment_149 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_149 .delete').css("display", "none");
+		else										$('#comment_149 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_108" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 19 juillet 2011 01:28:50</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>@Yarflam &gt; Je peux t'uploader un dump MySQL, ça te conviendrait ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_108').addClass('deleted');
+			$('#comment_108 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_108 .delete').css("display", "none");
+			$('#comment_108 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_108 .delete').css("display", "none");
+		else										$('#comment_108 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_101" class="comment">
+	
+		
+			<span class="meta">Par Yarflam le 17 juillet 2011 02:39:53</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Yarflam" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Super le nouveau design =)
+Mais est-ce que vous pourriez uploader sur megaupload les archives du forum ?
+Je n'ai pas eu le temps de tout consulter :)
+Merci d'avance</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_101').addClass('deleted');
+			$('#comment_101 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_101 .delete').css("display", "none");
+			$('#comment_101 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_101 .delete').css("display", "none");
+		else										$('#comment_101 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_95" class="comment">
+	
+		
+			<span class="meta">Par Lyonsbanner le 7 juillet 2011 03:45:05</span>
+			<br/><img src="http://www.gravatar.com/avatar/83f929ca3f831bf645fa51a65425f13b?s=50&amp;r=g&amp;d=mm" alt="avatar de Lyonsbanner" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Hello ! Salut à tous ! :)</p>
+<p>J'ai été agréablement surpris quand je suis revenu sur ce site tout beau tout frais. Pendant un moment, j'ai vraiment cru que ce site Internet unique en son genre allait passer à la trappe tellement c'était "mort". Et je suis heureux de constater que ce n'est pas le cas :)
+Bon boulot !</p>
+<p>J'étais venu pour vous parler d'un projet de jeu que j'avais en tête, mais comme il n'y a plus de forum désormais… :'(
+Bon, l'anglais ça ne me gène pas. Par contre il va falloir que j'épluche les règles et savoir où poster dans TigForums.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_95').addClass('deleted');
+			$('#comment_95 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_95 .delete').css("display", "none");
+			$('#comment_95 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_95 .delete').css("display", "none");
+		else										$('#comment_95 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_84" class="comment">
+	
+		
+			<span class="meta">Par MrEreinion le 28 juin 2011 17:17:43</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de MrEreinion" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>J'aime beaucoup le nouvel aspect esthétique du site.
+Épuré et efficace :D</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_84').addClass('deleted');
+			$('#comment_84 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_84 .delete').css("display", "none");
+			$('#comment_84 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_84 .delete').css("display", "none");
+		else										$('#comment_84 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_77" class="comment">
+	
+		
+			<span class="meta">Par Thesus le 26 juin 2011 14:54:23</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Thesus" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>J'viens de voir le changement du site et j'ai envie de dire : il était temps :D (surtout pour ajouter du contenu)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_77').addClass('deleted');
+			$('#comment_77 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_77 .delete').css("display", "none");
+			$('#comment_77 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_77 .delete').css("display", "none");
+		else										$('#comment_77 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_76" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 25 juin 2011 13:12:07</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>@Molokov : C'est vrai que c'est un vide laissé par l'absence de forum. Heureusement les endroits où obtenir des critiques ne manquent pas, je pense notamment à <a href="http://pixelation.wayofthepixel.net/">Pixelation</a> pour le Pixel Art et à <a href="http://forums.tigsource.com/">TIGSource</a> pour tout ce qui concerne la création de jeux (Pixel Art ou pas). En tout cas c'est là où je traine moi =)</p>
+<p>@haedri : Merci beaucoup, ça fait plaisir à entendre !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_76').addClass('deleted');
+			$('#comment_76 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_76 .delete').css("display", "none");
+			$('#comment_76 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_76 .delete').css("display", "none");
+		else										$('#comment_76 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_75" class="comment">
+	
+		
+			<span class="meta">Par haedri le 25 juin 2011 10:38:55</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de haedri" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Rien à voir avec le sujet, car j'ai découvert le site il y a peu. Mais c'était juste pour dire un grand bravo pour ce site, au début je cherchais juste des aides pour le texturing en pixel art, et j'ai découvert au final un site très riche, et pleins d'informations essentielles pour le game design.
+Ça m'as fait revoir la conception de pas mal de petites choses pour mon jeu, et j'en suis ravis.</p>
+<p>Si à l'occasion j'ai des choses à dire intéressantes, j'essaierais de proposer un article.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_75').addClass('deleted');
+			$('#comment_75 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_75 .delete').css("display", "none");
+			$('#comment_75 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_75 .delete').css("display", "none");
+		else										$('#comment_75 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_72" class="comment">
+	
+		
+			<span class="meta">Par molokov le 25 juin 2011 06:42:19</span>
+			<br/><img src="http://www.gravatar.com/avatar/a564c27780fc936c8f6f47a5095d8483?s=50&amp;r=g&amp;d=mm" alt="avatar de molokov" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Mais mais mais ! Et si on a des questions, si on veut montrer nos travaux ? Qu'est-ce qu'une forge si on n'y forge plus ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_72').addClass('deleted');
+			$('#comment_72 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_72 .delete').css("display", "none");
+			$('#comment_72 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_72 .delete').css("display", "none");
+		else										$('#comment_72 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_61" class="comment">
+	
+		
+			<span class="meta">Par Azaki le 19 juin 2011 22:20:33</span>
+			<br/><img src="http://www.gravatar.com/avatar/773e5ddeaf8c1de5df1d2a9bf64d8a26?s=50&amp;r=g&amp;d=mm" alt="avatar de Azaki" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Merci fil'. x)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_61').addClass('deleted');
+			$('#comment_61 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_61 .delete').css("display", "none");
+			$('#comment_61 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_61 .delete').css("display", "none");
+		else										$('#comment_61 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_59" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 19 juin 2011 03:30:57</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'était à cause de la majuscule dans ton adresse mail. C'est dorénavant corrigé automatiquement pour tout le monde =)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_59').addClass('deleted');
+			$('#comment_59 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_59 .delete').css("display", "none");
+			$('#comment_59 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_59 .delete').css("display", "none");
+		else										$('#comment_59 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_58" class="comment">
+	
+		
+			<span class="meta">Par Azaki le 19 juin 2011 00:45:08</span>
+			<br/><img src="http://www.gravatar.com/avatar/773e5ddeaf8c1de5df1d2a9bf64d8a26?s=50&amp;r=g&amp;d=mm" alt="avatar de Azaki" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>ça peut paraître stupide, mais je suis incapable de charger un avatar… j'tente de passer par le truc "gravatar", mais ça fait absolument rien (j'ai pourtant chargé une image…).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_58').addClass('deleted');
+			$('#comment_58 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_58 .delete').css("display", "none");
+			$('#comment_58 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_58 .delete').css("display", "none");
+		else										$('#comment_58 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_57" class="comment">
+	
+		
+			<span class="meta">Par christine marchal le 16 juin 2011 10:26:14</span>
+			<br/><img src="http://www.gravatar.com/avatar/28b4b570824bbd8885fb60b5252a7645?s=50&amp;r=g&amp;d=mm" alt="avatar de christine marchal" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Ploub' est un lieu inspirant !!
+<strong>bravo</strong></p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_57').addClass('deleted');
+			$('#comment_57 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_57 .delete').css("display", "none");
+			$('#comment_57 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_57 .delete').css("display", "none");
+		else										$('#comment_57 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_56" class="comment">
+	
+		
+			<span class="meta">Par darkleo le 15 juin 2011 23:53:00</span>
+			<br/><img src="http://www.gravatar.com/avatar/f93f5cffae3dd2120046bc567e6e8121?s=50&amp;r=g&amp;d=mm" alt="avatar de darkleo" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Les articles des Forges ont toujours été d'une qualité et d'une pertinence exemplaire. De quoi pousser à régulièrement revenir voir pour de nouveaux articles.</p>
+<p>On attends donc tous avec impatience les prochains, maintenant que ce blog a pris la relève.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_56').addClass('deleted');
+			$('#comment_56 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_56 .delete').css("display", "none");
+			$('#comment_56 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_56 .delete').css("display", "none");
+		else										$('#comment_56 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_52" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 15 juin 2011 01:19:15</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>J'ai rajouté un index des articles, accessible depuis la colonne à droite. J'espère que ça pourra aider ceux qui n'apprécient pas la navigation par tags.</p>
+<p><strong>EDIT</strong> : Finalement le lien vers l'index compact est en pied de page et j'ai mis des raccourcis vers les articles classés par date de publication dans la colonne à droite.</p>
+<blockquote>
+<p>J'vais essayer d'écrire des articles, si ça vous intéresse…</p>
+</blockquote>
+<p>Avec grand plaisir ! Ne pas hésiter à jeter un coup d’œil <a href="contribuer.html">ici</a> avant de démarrer.</p>
+<blockquote>
+<p>Par contre, j'ai du me ré-inscrire (j'espère que c'est pas moi qui ai fait de connerie XD).</p>
+</blockquote>
+<p>C'est tout à fait normal, no worries =)</p>
+<blockquote>
+<p>je trouve que les maps qui défilent et sur lesquelles on peut zoomer progressent super vite.</p>
+</blockquote>
+<p>J'ai ralenti un peu le bouzin.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_52').addClass('deleted');
+			$('#comment_52 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_52 .delete').css("display", "none");
+			$('#comment_52 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_52 .delete').css("display", "none");
+		else										$('#comment_52 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_51" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 14 juin 2011 21:24:57</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Super, votre site est d'une grande qualité et j'espère que vous allez le mettre à jour régulièrement. J'vais essayer d'écrire des articles, si ça vous intéresse…</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_51').addClass('deleted');
+			$('#comment_51 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_51 .delete').css("display", "none");
+			$('#comment_51 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_51 .delete').css("display", "none");
+		else										$('#comment_51 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_50" class="comment">
+	
+		
+			<span class="meta">Par Azaki le 14 juin 2011 01:59:02</span>
+			<br/><img src="http://www.gravatar.com/avatar/773e5ddeaf8c1de5df1d2a9bf64d8a26?s=50&amp;r=g&amp;d=mm" alt="avatar de Azaki" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Bon, déjà… je trouve que c'est chouette tout ça. C'est du bon boulot.
+Par contre, j'ai du me ré-inscrire (j'espère que c'est pas moi qui ai fait de connerie XD), et je trouve que les maps qui défilent et sur lesquelles on peut zoomer progressent super vite, du coup j'ai pas le temps de bien voir sur quoi je voudrais zoomer, et de plus j'ai l'impression qu'avec la vitesse, l'image saccade un peu. =/
+Mais sinon c'est super, hein ! ^.^</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_50').addClass('deleted');
+			$('#comment_50 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_50 .delete').css("display", "none");
+			$('#comment_50 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_50 .delete').css("display", "none");
+		else										$('#comment_50 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_49" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 14 juin 2011 00:47:07</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je suis content que ça vous plaise, n'hésitez pas à signaler d'éventuels dysfonctionnements. Pour ce qui est d'un menu comme sur l'ancienne version du site, j'avais conçu le système de tags comme un remplaçant mais je me suis peut-être trompé.</p>
+<p>Je vais envisager de faire une option pour lister sauvagement les articles de manière compacte. </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_49').addClass('deleted');
+			$('#comment_49 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_49 .delete').css("display", "none");
+			$('#comment_49 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_49 .delete').css("display", "none");
+		else										$('#comment_49 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_48" class="comment">
+	
+		
+			<span class="meta">Par Jerom le 13 juin 2011 21:47:26</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Jerom" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Très classe (épuré, sobre, élégante) cette skin ;)
+J'attends avec impatience les prochains article!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_48').addClass('deleted');
+			$('#comment_48 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_48 .delete').css("display", "none");
+			$('#comment_48 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_48 .delete').css("display", "none");
+		else										$('#comment_48 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_47" class="comment">
+	
+		
+			<span class="meta">Par Eldorn le 13 juin 2011 17:35:33</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Eldorn" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Effectivement ça manque d'un petit menu comme dans la version précédente.
+Sinon c'est très joli !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_47').addClass('deleted');
+			$('#comment_47 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_47 .delete').css("display", "none");
+			$('#comment_47 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_47 .delete').css("display", "none");
+		else										$('#comment_47 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_46" class="comment">
+	
+		<span class="meta">Par un anonyme le 13 juin 2011 16:43:01</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>(toujours Nemau)</p>
+<p>Par contre heu… comment on fait pour accéder directement à tel ou tel article ? xDD</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_46').addClass('deleted');
+			$('#comment_46 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_46 .delete').css("display", "none");
+			$('#comment_46 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_46 .delete').css("display", "none");
+		else										$('#comment_46 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_45" class="comment">
+	
+		<span class="meta">Par un anonyme le 13 juin 2011 16:36:03</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>(ici Nemau)</p>
+<p>ZOMG new design, gg ! ;3</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_45').addClass('deleted');
+			$('#comment_45 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_45 .delete').css("display", "none");
+			$('#comment_45 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_45 .delete').css("display", "none");
+		else										$('#comment_45 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/41';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="edito-juin-2011@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#97;&#x63;&#x74;&#x40;&#x6c;&#101;&#x73;&#102;&#111;&#x72;&#x67;&#x65;&#115;&#x2e;&#x6f;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

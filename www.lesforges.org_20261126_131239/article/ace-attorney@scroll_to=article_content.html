@@ -1,0 +1,853 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Game Design &amp; Ace Attorney</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Si je vous demande de me citer un avocat de la défense habillé en bleu, avec une tête de hérisson et qui crie « OBJECTION ! » à tout bout de champ, vous me répondez immédiatement : Phoenix Wright.
+
+Les Ace Attorney sont une série de jeux d'enquête découpés en deux phases bien distinctes : l'investigation et le procès. Dans un premier temps, le protagoniste, avocat de son état, va sur le terrain pour enquêter, récupérer des indices et des preuves et faire la lumière sur les circonstances du crime. Dans un deuxième temps, il revient au tribunal pour mener interrogatoires et contre-interrogatoires, affronter le procureur général (et le juge !) dans le but de prouver l'innocence de son client.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#x6e;&#x74;&#x61;&#99;&#x74;&#64;&#108;&#x65;&#115;&#102;&#x6f;&#x72;&#103;&#x65;&#115;&#x2e;&#x6f;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Game Design &amp; Ace Attorney</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/jet25.html">Lyonsbanner</a> | le 21 juillet 2012 16:34:32 | Catégories : <a href="../tag/analyse.html">Analyse</a>, <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Si je vous demande de me citer un avocat de la défense habillé en bleu, avec une tête de hérisson et qui crie « OBJECTION ! » à tout bout de champ, vous me répondez immédiatement : Phoenix Wright.</p>
+<p><img alt="Phoenix Wright en pleine action !" src="../media/img/aceattorney2.jpg" /></p>
+<p>Les <em>Ace Attorney</em> sont une série de jeux d'enquête découpés en deux phases bien distinctes : l'investigation et le procès. Dans un premier temps, le protagoniste, avocat de son état, va sur le terrain pour enquêter, récupérer des indices et des preuves et faire la lumière sur les circonstances du crime. Dans un deuxième temps, il revient au tribunal pour mener interrogatoires et contre-interrogatoires, affronter le procureur général (et le juge !) dans le but de prouver l'innocence de son client.</p>
+			</div>
+			<div id="article_content">
+				<p><img alt="La plupart des épisodes sont basés sur ce schéma" src="../media/img/Schema_deroulement.PNG" /></p>
+<p>Des jeux avec des énigmes, il en existe à la pelle, comme les <em>Myst</em> ou la série <em>Sherlock Holmes</em>. Mais des jeux où l'on incarne un avocat de la défense, personnellement, je n'en avais jamais vu. C'est là l'innovation de Capcom : en plus de devoir résoudre le mystère, il faut être capable de prouver l'innocence de son client.</p>
+<p>Wikipédia décrit la série des <em>Ace Attorney</em> comme des jeux d'aventure. Ce n'est pas entièrement faux mais il n'y a pas que ça. Si l'on s'en tient à la première phase de jeu, l'enquête, on peut considérer qu'il s'agit d'un jeu d'aventure au même titre qu'un <em>The Longest Journey</em> ou un <em>Grim Fandango</em>. Mais la deuxième phase, celle qui fait tout le sel et l'originalité du jeu, ne rentre pas du tout dans cette catégorie : elle s'apparenterait plus du fameux duel d'insultes des <em>Monkey Island</em> et s'oriente beaucoup plus vers le dialogue que la recherche.</p>
+<h1>Première phase : l'enquête</h1>
+<p>Des deux phases qui constituent le jeu, l'enquête est la moins importante. Elle est conçue pour amener et préparer la phase de procès. Elle expose rapidement les personnages, les lieux, les objets et les enjeux et permet au joueur de réunir les indices et objets nécessaires pour le procès à venir.</p>
+<p>La plupart des jeux d'aventures sont basés sur l'exploration, la recherche d'objets, la possibilité d'agir sur des éléments ou de résoudre des casse-têtes que le joueur peut rencontrer (découvrir un nouveau lieu, ouvrir une porte avec une clef, tirer sur un levier, trouver la solution d'une énigme, etc.), comme dans <em>Atlantis</em> ou <em>Myst</em>. Les dialogues peuvent se faire rares voire inexistants et on touche parfois au désert (le poétique <em>L'Amerzone</em> est terriblement dépeuplé, d'où son ambiance profondément mélancolique).</p>
+<p>Dans <em>Ace Attorney</em>, la phase d'enquête est au contraire réduite à l'essentiel et est conçue pour mettre en avant le dialogue au détriment de l'exploration. Tout est fait pour que le joueur avance aussi vite que possible afin de se concentrer sur les dialogues et sur la phase de procès qui va venir. Le joueur évolue dans des décors fixes, sans déplacements (ce qui n'est pas le cas pour un <em>Simon the sorcerer</em> par exemple, où le personnage met dix secondes pour aller d'un bord à l'autre de l'écran). Un simple clic suffit pour examiner les objets, examen qui donne le plus souvent lieu à un dialogue – hilarant – entre les personnages. L'interface est réduite au minimum (cinq boutons à tout casser) pour pouvoir laisser le joueur se concentrer sur les dialogues qui sont longs, très animés et nombreux. Une fois écouté, le dialogue est coché et peut-être réécouté en accéléré, ce qui permet au joueur de revenir rapidement au passage qui l'intéresse. Pour être sûr que le joueur sente qu'il est dans la bonne direction et qu'il aille plus vite, les développeurs utilisent un petit effet visuel et sonore : lorsque quelque chose a changé dans un décor (disparation ou apparition d'un personnage, nouvel objet, etc.), une boîte de dialogue affiche le nom du lieu, la date et l'heure avec un effet machine à écrire (et le bruitage associé, bien sûr). Tout est fait pour remettre le dialogue au centre du gameplay et accélerer le rythme de jeu : l'important, c'est d'aller jusqu'au procès !</p>
+<p><img alt="Les actions : examiner, se déplacer, discuter et présenter un objet. L'icône Dossier est similaire à un inventaire classique." src="../media/img/PW_menu.PNG" /></p>
+<p>Toutes les fonctionnalités du classique jeu d'aventure ont été liftées pour pouvoir coller au <em>cœur</em> du jeu : vous incarnez un avocat, d'où un gameplay centré sur le dialogue et sur le procès. L'inventaire, par exemple, est réduit au plus simple : pas de combinaison hasardeuses d'objets (Dieu merci !), de jolies icônes avec une description brève et efficace, pas besoin de faire de grands efforts pour se rappeler comment il l'a obtenu. Plutôt que de s'embarquer sur des fonctionnalités trop complexes avec les objets, les game designers ont choisi de les insérer au maximum dans les dialogues. Les objets ne doivent pas, la plupart du temps, être utilisés sur le décor mais montrés à des personnages comme preuves. La moindre utilisation donne lieu à un dialogue plutôt qu'à une animation. Cette direction se retrouve jusque dans la direction artistique du jeu : les décors sont peu nombreux et extrêmement basiques, alors que les personnages ont droit à de grands portraits (les pixel artistes de Capcom ont fait des merveilles) et de très nombreuses animations pour émailler les dialogues ; la bande-son est ponctuée de nombreux bruitages pour rythmer les conversations avec les personnages et l'ensemble en retire un côté anime pas déplaisant du tout.</p>
+<h1>Deuxième phase : le procès</h1>
+<p>Passons maintenant au procès. Le (relatif) sentiment de liberté que le joueur a pu connaître durant la phase d'enquête se volatilise, car il ne peut tout simplement plus se déplacer, il est obligé de se plier aux règles, confiné dans une salle où règne l'ordre et la justice, j'ai nommé : le tribunal. Le joueur n'est bien évidemment lâché comme ça dans l'arène : le procureur présente les faits (« Le suspect est accusé d'avoir tué la victime à tel endroit et telle heure. ») et l'inspecteur nous détaille le rapport d'autopsie. Enfin, le témoin oculaire raconte sa version des faits. Si le joueur a décidé de faire une longue pause avant d'entamer la phase de procès, c'est aussi une excellente occasion pour lui de se remettre dans le bain.</p>
+<p>Et c'est là que vous entrez en scène ! Eh oui, la présomption d'innocence n'a pas cours dans le monde cruel des <em>Ace Attorney</em> et c'est à vous de réussir à disculper votre client. Il est possible que le témoin mente, qu'il ait dit quelque chose d'incohérent ou qu'il ait oublié un élément capital lors de sa déposition. Le témoignage prend la forme d'une boucle dont vous ne pourrez sortir qu'en trouvant la bonne réplique ou la bonne preuve et en la présentant au moment adéquat.</p>
+<p><img alt="Présenter la bonne preuve vous permettra de sortir de cette boucle infernale. Elle a rebuté plus d'un joueur." src="../media/img/contre-interrogatoire.PNG" /></p>
+<p>Pour cela, le joueur peut choisir de faire pression sur le témoin, de le « cuisiner », ce qui permettra de lui faire révéler de nouvelles informations qu'il ajoutera à son témoignage, ou de lui présenter une preuve qui démontre que sa déposition est incohérente. Si vous trouvez la bonne option, vous progressez dans le procès et sinon, vous verrez la jauge de patience du juge diminuer. Arrivé à zéro, vous serez confrontés à une nouvelle version du classique game over : <strong>Coupable</strong>.</p>
+<p>Pourquoi avoir mis en place un tel système ? Il y a plusieurs raisons à cela. Pour commencer, imaginez ce qui aurait pu se passer s'il n'y avait pas cette barre : le joueur doit montrer un élément du dossier, il lui suffit donc de présenter bêtement un par un tous les objets qu'il possède. En ajoutant cette jauge, on force le joueur à s'arrêter un moment et à réfléchir à la situation. Autrement dit, on fait monter la pression !</p>
+<p>Cette pression, on va la retrouver partout dans le jeu et c'est elle qui va accaparer toute l'attention du joueur, non seulement quand le juge met une amende mais également quand le joueur doit faire face à un choix, quand il se demande quelle preuve pourra faire l'affaire dans une situation donnée, quand le procureur revient à la charge, etc.</p>
+<p>La musique joue ici un rôle très important. Si la bande-son des phases d'enquête est tout ce qu'il y a de basique, les morceaux conçus pour accompagner les phases de procès ont bénéficié d'un soin remarquable. A chaque avancée dans le procès, à chaque preuve que vous présentez, à chaque coup que le procureur vous assène (très souvent littéralement), la musique accélère. La piste qui accompagne le procès est décomposée en différents mouvements correspondant à des rythmes différents et qui vont servir à faire monter ou à faire redescendre la pression en accélérant ou en ralentissant le tempo. On peut rien qu'à l'oreille savoir à quelle phase du procès on se situe. Et ce n'est pas tout ! À partir du moment où le joueur présente la bonne preuve, la tension atteint son paroxysme : la musique s'arrête net. On respire un bon coup, satisfaction du joueur qui se dit : « Ouais, c'est ça, j'ai trouvé ! ». On se rapproche d'un cran de la vérité et bien entendu, le procureur ne va pas se laisser faire et va tenter de faire voler vos raisonnements en éclats.</p>
+<p>L'aspect graphique de la direction artistique vise aussi à installer cette narration forte qui fait l'intérêt des procès dans le jeu. Dans la plupart des jeux d'aventure, on peut deviner si un personnage est content, triste ou en colère en fonction de l'intonation du doubleur. Mais dans <em>Ace Attorney</em>, point de doublage (sur une DS, c'est pas forcément évident). Capcom a pallié ce manque en concentrant les efforts des graphistes sur les sprites des personnages : ceux-ci sont très grands, très soignés et disposent d'animations fluides et variées (on sent l'expertise <em>Street Fighter</em>). Certaines expressions et mimiques (souvent accompagnées de bruitages) sont volontairement exagérées afin de souligner les passages dramatiques. Les seules voix utilisées ont été réservées pour les points culminants de la narration, les moments où Phoenix lâche son célèbre « OBJECTION ! ». Par ailleurs, l'interface du jeu n'est plus du tout la même que dans les phases d'exploration. On voit le protagoniste à la troisième personne et non plus à travers ses yeux. L'écran affiche tour à tour différents angles de vue du tribunal et le passage de l'un à l'autre permet de mieux immerger le joueur : les mouvements de caméra, en s'accélérant (voire en devenant instantanés), soulignent le rythme de la narration au même titre que la musique et donnent un côté cinématographique (presque similaire à une série) à l'ensemble.</p>
+<h1>Alors, il est parfait ce jeu ?</h1>
+<p><em>Ace Attorney</em> a beau être une version rajeunie du jeu d'aventure textuel, il n'en souffre pas moins de certains défauts.</p>
+<p>Le scénario est parfaitement linéaire, qu'il s'agisse de la phase d'enquête ou de la phase de procès. Même si le joueur à l'impression qu'il est libre de visiter n'importe quel lieu à n'importe quel moment lors de la phase d'enquête, il doit cependant épuiser tous les sujets de conversations d'un protagoniste avant d'aller pouvoir parler au suivant. Cette linéarité se manifeste aussi par l'obligation de présenter la bonne preuve au bon moment. Il arrive parfois que la logique du scénario échappe au joueur ou pire, que celui-ci prévoit le dénouement (pas forcément du procès, mais d'une séquence au moins) et essaye de brûler les étapes : le jeu n'est pas conçu pour ça et l'intrigue, pourtant brillamment ficelée, révèle son caractère « construit », artificiel, linéaire.</p>
+<p><img alt="Ah, ce cher Godot :)" src="../media/img/aceattorney3.jpg" /></p>
+<p>Cette linéarité est par ailleurs la cause logique d'une mauvaise rejouabilité : il y a relativement peu d'intérêt à refaire les enquêtes une fois celles-ci découvertes (ou du moins pas avant un long moment) car leur intérêt réside principalement dans leur intrigue et dans les rebondissements dont elles sont émaillées. Il n'y a pas ici un style d'écriture ou une finesse d'observation sociologique qui justifieraient une relecture comme pour les romans d'Agatha Christie (du moins, pas dans les traductions française et anglaise du jeu).</p>
+<h1>Affaire classée</h1>
+<p>Les <em>Ace Attorney</em> ont su apporter du renouveau au genre du jeu d'aventure en faisant le choix de se recentrer sur le dialogue et la discussion : en utilisant à bon escient des fonctionnalités de gameplay (dialogues accélérés, absence de déplacements) et en proposant une direction artistique d'une économie remarquable (efforts concentrés sur les personnages et non les décors, utilisation de la musique comme un véritable métronome.), Capcom a su créer un rythme et une rapidité de jeu hors norme et à éviter les travers du genre (bavardage, personnages transparents, etc.).</p>
+<p>Mon analyse se termine ici. Comme c'est mon premier article, j'espère qu'il vous aura plu et qu'il vous aura ouvert de nouvelles perspectives sur le game design. La saga des <em>Ace Attorney</em> est un retour aux sources du jeu d'aventure et elle ne semble pas prête de s'arrêter.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/ace-attorney&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_262" class="comment">
+	
+		
+			<span class="meta">Par tregor le 28 juillet 2012 12:46:22</span>
+			<br/><img src="http://www.gravatar.com/avatar/462962a0f389aba40a7da162d0616889?s=50&amp;r=g&amp;d=mm" alt="avatar de tregor" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Yep, un test orienté game design c'est sympa mais quand c'est bien fait et que ça parle des ace attorneys c'est encore mieux, merci bien!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_262').addClass('deleted');
+			$('#comment_262 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_262 .delete').css("display", "none");
+			$('#comment_262 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_262 .delete').css("display", "none");
+		else										$('#comment_262 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_260" class="comment">
+	
+		<span class="meta">Par un anonyme le 26 juillet 2012 18:12:40</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Une analyse très intéressante, la partie sur la musique est particulièrement instructive, merci beaucoup !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_260').addClass('deleted');
+			$('#comment_260 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_260 .delete').css("display", "none");
+			$('#comment_260 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_260 .delete').css("display", "none");
+		else										$('#comment_260 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/69';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="ace-attorney@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#110;&#116;&#x61;&#x63;&#116;&#64;&#x6c;&#101;&#115;&#102;&#x6f;&#x72;&#103;&#101;&#115;&#46;&#x6f;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

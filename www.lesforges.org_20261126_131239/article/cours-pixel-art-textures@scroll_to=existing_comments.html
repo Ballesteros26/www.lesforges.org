@@ -1,0 +1,838 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Cours de pixel art 8 : textures et dithering</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Sauf qu'en fait on va parler de dithering avant de parler de textures. Mais ça sonnait mieux dans l'autre sens.
+
+Après avoir fait une étape au pays de la douceur et de la volupté grâce à l'anti-aliasing, nous allons aujourd'hui nous attaquer à des techniques bien crades, sauvages et pleines de pixels (pour changer) — à savoir l'imitation de textures et le dithering. Commençons par une petite mise au point linguistique : le mot français pour parler de dithering est « tramage » mais les habitudes étant ce qu'elles sont (ça et mes préférences personnelles), vous n'entendrez pas le mot « tramage » dans ce chapitre. A vous de voir celui que vous souhaitez utiliser. Vous ne recevrez pas de coups de fouet si votre choix se porte sur « tramage » (juste un mépris sans fin de ma part).
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#110;&#116;&#x61;&#x63;&#x74;&#x40;&#108;&#x65;&#x73;&#102;&#111;&#x72;&#x67;&#x65;&#x73;&#46;&#x6f;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Cours de pixel art 8 : textures et dithering</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 5 août 2008 01:33:40 | Catégories : <a href="../tag/cours.html">Cours</a>, <a href="../tag/graphisme.html">Graphisme</a>, <a href="../tag/pixel-art.html">Pixel art</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p><em>Sauf qu'en fait on va parler de dithering avant de parler de textures. Mais ça sonnait mieux dans l'autre sens.</em></p>
+<p><img alt="Legend of Mana (Square)" src="../media/img/dithering-apercu.png" /></p>
+<p>Après avoir fait une étape au pays de la douceur et de la volupté grâce à l'anti-aliasing, nous allons aujourd'hui nous attaquer à des techniques bien crades, sauvages et pleines de pixels (pour changer) — à savoir l'imitation de textures et le dithering. Commençons par une petite mise au point linguistique : le mot français pour parler de dithering est « tramage » mais les habitudes étant ce qu'elles sont (ça et mes préférences personnelles), vous n'entendrez pas le mot « tramage » dans ce chapitre. A vous de voir celui que vous souhaitez utiliser. Vous ne recevrez pas de coups de fouet si votre choix se porte sur « tramage » (juste un mépris sans fin de ma part).</p>
+			</div>
+			<div id="article_content">
+				<h1>Ditherer n'est pas jouer</h1>
+<p>Le dithering est une bonne vieille technique inventée du temps de Mathusalem, à l'époque où les machines étaient encore trop péraves pour afficher plus de quelques couleurs à la fois et où les pixel artistes avaient du temps à perdre. Il s'agit d'une technique qui a pour but la réalisation d'un dégradé en utilisant un minimum de couleurs intermédiaires (oui c'est paradoxal, non ce n'est pas absurde).</p>
+<p>Concrètement comment ça marche ? L'œil humain est en fait tout pourri et distingue les pixels de votre écran avec une précision douteuse, sur laquelle repose bon nombre d'illusions d'optiques, si bien qu'il a tendance à mélanger la teinte d'un pixel avec celles de ses voisins. Le carré vert en dessous de ce paragraphe est uniquement constitué de pixels jaunes et bleus entrelacés, et votre œil effectue le mélange pour lui donner sa couleur verte. Merveilleux n'est-ce pas ?</p>
+<p><img alt="Un carré vert sans utiliser de vert" src="../media/img/dithering-1.png" /></p>
+<p>Nous allons donc utiliser cette propriété pour créer des dégradés de couleurs (par exemple du jaune au bleu, en utilisant l’entrelacs ci dessus pour créer du vert entre les deux). Il y a 3 bonnes raisons de procéder ainsi plutôt que d'utiliser un dégradé automatique comme en proposent les logiciels du type Photoshop : la première, c'est qu'en utilisant peu de couleurs, vous maintenez un style "pixel art" qui correspond au reste de votre jeu (pour peu que vous le fassiez en pixel art), la deuxième c'est que cela permet une gestion plus intelligente de votre palette : vous pouvez réutiliser certaines couleurs de votre palette dans le dégradé pour rendre l'image plus cohérente. Enfin la 3eme et certainement la meilleure, c'est que contrairement à un dégradé automatique qui réalise une transition parfaite mais monotone entre 2 couleurs, vous pouvez ici choisir des couleurs intermédiaires originales (hop, un ptit coup de saturation en plus au milieu par exemple) pour avoir des dégradés intéressants pour l'œil.</p>
+<p>Sachez tout de même que l'heure de gloire de cette technique est finie depuis belle lurette et que mal employée, elle a plus de chances de ruiner vos chefs d'œuvres que de les embellir. Par ailleurs, c'est une technique qui nécessite beaucoup d'espace pour être appliquée et elle est complètement inutile dans la création d'un sprite. Elle a beaucoup servi à réaliser les images de la demoscene ou les arrières plans de ciel dans certains jeux.</p>
+<p>Voyez ci-dessous à quoi ressemble un dégradé fait avec 3 couleurs en utilisant du dithering. Je pense qu'il est plus simple pour vous de regarder le motif que pour moi de le décrire. La tendance générale consiste à utiliser de plus en plus une couleur à mesure qu'on se rapproche de "son coté". Il ne faut pas trop coller des motifs distincts les trop près les uns des autres mais les laisser s'étaler sur plusieurs lignes, sinon une fois dezoomé on a pas l'impression que ces motifs obéissent à une quelconque logique.</p>
+<p><img alt="Un dégradé à 3 couleurs" src="../media/img/dithering-2.png" /></p>
+<p>Bien entendu, il existe watmille motifs différents et tous plus compliqués les uns que les autres, histoire de faire passer votre petite sœur et son point de croix pour une débutante. En voici quelques uns parmi les plus simples, rien ne vous empêche de créer les vôtres. Vous n'êtes d'ailleurs même pas obligés de faire appel à des motifs ordonnés : un dithering chaotique fonctionne aussi et crée une certaine texture (sale et rocailleuse) sur une surface.</p>
+<p><img alt="Motifs de dithering" src="../media/img/dithering-3.png" /></p>
+<p>Ah tiens ça tombe bien, on allait justement parler de textures. Quel hasard.</p>
+<h1>Lumières et matériaux</h1>
+<p>Savoir réaliser des textures en pixel art, c'est savoir représenter différents matériaux indépendamment de leur forme. C'est ce qui permet à votre joueur de penser "je passe sur le petit pont en bois" plutôt que "je passe sur le petit pont en plastique". En effet, tous les matériaux ont une texture qui leur est propre et qui permet de les distinguer.
+Deux critères sont déterminants dans la réalisation d'une texture : le premier c'est le motif qui recouvre votre matériau. Il s'agit le plus souvent d'aspérités à sa surface (nœuds sur le bois, petites éraflures sur la pierre) qu'il convient de représenter en réalisant du shading à très petite échelle. Le second critère est la façon dont le matériau réagit à la lumière et la réfléchit, c'est ce qui fait que certaines matières sont plus brillantes que d'autres.
+Passons sans plus attendre à la pratique en parcourant ensemble une petite sélection de matériaux. Les bestiaux en image :</p>
+<p><img alt="Quelques matériaux" src="../media/img/dithering-4.png" /></p>
+<ul>
+<li><strong>Le bois</strong> : Pour le bois, tout repose sur le motif à la surface, qui est un réseau de lignes qui se coupent parfois pour former des nœuds. Il est peu sensible à l'éclairage, sauf si il a été vernis (ce n'est pas le cas ici).</li>
+<li><strong>Le granit</strong> : Le granit a une surface bien plus marquée et irrégulière que le bois et une boule de granit ne s'ombre pas "simplement comme une sphère". En déformant les ombres, on déforme la surface de la pierre pour dessiner les aspérités. Les petites touches de couleurs isolées servent à représenter les petits trous/bosses sur la pierre : il s'agit en fait de shading à très petite échelle. Sa réaction à la lumière est un peu moins timide que celle du bois, mais toujours très matte.</li>
+<li><strong>Le marbre</strong> : La technique pour le marbre est pratiquement la même que pour le granit. La principale différence est que le marbre est généralement plus lisse (on utilise donc plus de couleurs et plus d'antialiasing). Par ailleurs, il a tendance à recevoir des highlights bien plus clairs que ceux du granit.</li>
+<li><strong>L'eau (ou le verre)</strong> : Ces deux matières sont semi-transparentes et ont donc tendance à réfléchir les lumières à l'intérieur d'eux même, d'où le second highlight en bas à gauche. En plus de cela, une grande partie de la lumière reçue est renvoyée et c'est pour cela que le highlight principal (en haut à gauche) est aussi gros et clair. Enfin, ils s'agit de matières très lisses qui demandent beaucoup d'anti-aliasing.</li>
+<li><strong>L'argile</strong> : L'argile est une des matières les plus simples à représenter. Elle demande peu de couleurs car elle réagit peu à la lumière et son aspect grossier permet de ne pas trop s'embêter avec des détails. La boule a été entièrement faite avec un curseur de taille 2pixels * 2pixels (c'est dire si les détails ont peu d'importance).</li>
+<li><strong>Le cuivre</strong> : Le cuivre, comme tous les métaux, réfléchit violemment la lumière dans ses highlights et devient très rapidement très sombre dans les zones à l'ombre. Il ne faut pas avoir peur d'utiliser une palette très étendue, non seulement pour rendre compte du contraste monstrueux, mais aussi pour donner un aspect lisse à la surface (antialiasing à la clé). A noter, les ombres sur le cuivre ont tendance à partir dans le VERT (oui, le vert. Ne me demandez pas pourquoi, regardez plutôt des photos pour vous en convaincre).</li>
+<li><strong>Le métal (acier)</strong> : Comme annoncé juste au dessus, les métaux explorent toute la gamme de valeurs, du noir au blanc…mais sans passer par le gris. Il est courant de voir des débutants représenter les métaux par du gris, mais c'est une erreur. Les métaux sont toujours teintés, soit intrinsèquement soit par l'éclairage ambiant, mais il ne sont jamais simplement gris.</li>
+<li><strong>Pastèque</strong> : En fait, la pastèque réagit presque comme le plastique mais je trouvais plus drôle de faire une pastèque qu'un bout de plastique. Les highlights du plastique sont très désaturés et partent vite vers le blanc, tandis que les ombres sont peu prononcées. Bien évidemment, il n'y a ni motif ni aspérités sur le plastique. Par contre pour les pastèques…</li>
+</ul>
+<h1>A POIL !</h1>
+<p>Les poils, cheveux, fourrures et autres viriles pilosités sont un cas à part et particulièrement difficile à traiter (les artistes 3D ont d'ailleurs autant de mal que nous avec, si ça peut vous rassurer). Tout le problème vient du fait qu'un poil est plus fin qu'un pixel et que par conséquent, on ne peut pas représenter de poils. C'est triste hein. Tant pis on laisse tomber alors. Ou pas.</p>
+<p>La solution consiste à ne pas représenter des poils ou des cheveux, mais des mèches (et en plus y'a sacrément moins de mèches que de cheveux, alors c'est tout bénef). Chaque mèche peut être représentée par une ligne ou un triangle dont l'épaisseur dépend la longueur des poils (plus les poils sont longs, plus les mèches sont fines) et dont l'orientation sert à définir le volume sous-jacent : les poils sont dans le sens de la surface qu'ils recouvrent ou perpendiculaire à cette direction (selon ce qui est le le plus proche de la verticale / ce qui vous semble le plus logique). Par exemple, les poils sur le dos d'un animal sont horizontaux, tandis qu'ils tombent plus à la verticale (mais pas entièrement) le long de ses flancs.</p>
+<p>Enfin, les poils sont des textures d'une grande douceur (pensez douillet :3) et cela doit se ressentir dans vos choix de couleur pour les dessiner. Les transitions entre teintes doivent être masquées autant que possibles, et à cet effet, il est intéressant d'adopter une disposition en mille-feuille. Il s'agit de considérer les poils comme une couche de manteaux que porte votre créature, certains (les plus foncés) "tombant" plus bas que d'autres dans les zones d'ombres. Cela vous permettra d'entrelacer les différentes teintes tout en conservant la texture du pelage. C'est précisément ce que j'ai essayé de faire dans l'exemple du lion ci-dessous.</p>
+<p><img alt="Rawr !" src="../media/img/dithering-5.png" /></p>
+<p>Enfin, je vous laisse cette fois encore avec un pixel art réussi à admirer. Remercions Ahruon qui nous fournit généreusement sa Moonlight Parade pour illustrer cette partie. je vous conseille d'y jeter un coup d'œil attentif (en zoomant très fort de préférence).</p>
+<p><img alt="Moonlight Parade par Ahruon" src="../media/img/dithering-6.png" /></p>
+<p>Pour conclure, revenons sur la retenue dont il faut faire preuve avec le dithering et les textures. Il est souvent préférable de maintenir certaines zones ou objets dans l'ombre ou la lumière suffisamment fort pour que leur texture soit indiscernable. Cela permet de renforcer la profondeur de votre image, cela vous fait moins de travail, et cela sert à définir les zones sur lesquels l'accent est mis (les plus détaillées donc). Remarquez que la patte arrière gauche du lion est pratiquement un aplat de couleur.
+Petite note pessimiste pour finir : si vous avez l'intention d'animer un truc pareil, vous allez en baver alors réfléchissez-y à deux fois avant de trop détailler.</p>
+			</div>
+			
+				<div class="sequel">
+					<p><a href="cours-pixel-art-tiles@scroll_to=article.html">Lire la suite ⇀</a></p>
+				</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/cours-pixel-art-textures&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_364" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 août 2013 20:23:35</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>merci pour le conseil</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_364').addClass('deleted');
+			$('#comment_364 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_364 .delete').css("display", "none");
+			$('#comment_364 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_364 .delete').css("display", "none");
+		else										$('#comment_364 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/24';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-textures@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#110;&#116;&#x61;&#x63;&#x74;&#64;&#108;&#101;&#x73;&#102;&#111;&#x72;&#103;&#x65;&#115;&#46;&#111;&#114;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

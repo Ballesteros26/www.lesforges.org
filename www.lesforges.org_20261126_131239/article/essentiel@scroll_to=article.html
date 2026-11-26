@@ -1,0 +1,906 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Il est important dans la conception d'un jeu de tout faire pour donner au joueur ce qu'il est venu chercher : de la satisfaction. Cet article décrit une technique qui vous aidera à centrer votre jeu autour de son concept et à donner aux joueurs ce dont ils ont envie (et aussi à éviter de leur donner ce qu'ils ne veulent pas). Il ne s'agit que d'une méthode, et pas de la vérité ultime sur le sujet, mais essayez la et voyez si elle vous convient.
+
+Bien, vous avez une idée de ce que votre jeu va être, mais vous n'avez pas encore détaillé le concept à 100%. Vous avez parfois un peu l'impression d'être un musicien de jazz qui essaye différents riffs et qui choisit ce qui sonne le mieux. Au bout du compte, tant que que le jeu marche bien (c'est à dire qu'il est amusant), la façon dont vous êtes arrivé là importe peu. Ou peut être que si en fait :
+Dans les dernières phases de Game Design il faut être structuré pour pouvoir bien balancer le jeu et, contrairement à la peinture abstraite où tout se fait au pif du début à la fin, le Game Design est en bonne partie une affaire de méthodologie. La méthodologie poussée à l'extrême supprime la composante créative du Game Design, mais si l'on en use avec parcimonie, le jeu en bénéficie. Ce qui va suivre est une technique simple que j'emploie pour aller à l'essentiel qui a déjà aidé plusieurs développeurs en plus de moi. Il s'agit d'un nouvel outil pour votre arsenal de concepteur. Commençons sans plus attendre !
+NdT : Cet article a été écourté. Referez-vous à l'original pour lire l'exemple final tronqué.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#x74;&#x61;&#99;&#116;&#x40;&#x6c;&#101;&#x73;&#x66;&#111;&#114;&#103;&#101;&#x73;&#x2e;&#111;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 22 juillet 2008 19:14:33 | Catégories : <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/agersant.html">Antoine Gersant</a>.
+						<br/>L'<a href="http://makeitbigingames.com/2007/09/how-to-focus-your-game-and-give-players-more-of-what-they-want/" target="_blank">article original</a> est écrit par Joshua Dallman  publié par Makeitbigingames (septembre 2007).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p>Il est important dans la conception d'un jeu de tout faire pour donner au joueur ce qu'il est venu chercher : de la satisfaction. Cet article décrit une technique qui vous aidera à centrer votre jeu autour de son concept et à donner aux joueurs ce dont ils ont envie (et aussi à éviter de leur donner ce qu'ils ne veulent pas). Il ne s'agit que d'une méthode, et pas de la vérité ultime sur le sujet, mais essayez la et voyez si elle vous convient.</p>
+<p><img alt="Lui, on ne lui donne pas ce dont il a envie (enfin je crois)." src="../media/img/essentiel.jpg" /></p>
+<p>Bien, vous avez une idée de ce que votre jeu va être, mais vous n'avez pas encore détaillé le concept à 100%. Vous avez parfois un peu l'impression d'être un musicien de jazz qui essaye différents riffs et qui choisit ce qui sonne le mieux. Au bout du compte, tant que que le jeu marche bien (c'est à dire qu'il est amusant), la façon dont vous êtes arrivé là importe peu. Ou peut être que si en fait :
+Dans les dernières phases de Game Design il faut être structuré pour pouvoir bien balancer le jeu et, contrairement à la peinture abstraite où tout se fait au pif du début à la fin, le Game Design est en bonne partie une affaire de méthodologie. La méthodologie poussée à l'extrême supprime la composante créative du Game Design, mais si l'on en use avec parcimonie, le jeu en bénéficie. Ce qui va suivre est une technique simple que j'emploie pour aller à l'essentiel qui a déjà aidé plusieurs développeurs en plus de moi. Il s'agit d'un nouvel outil pour votre arsenal de concepteur. Commençons sans plus attendre !</p>
+<p><em>NdT : Cet article a été écourté. Referez-vous à l'original pour lire l'exemple final tronqué.</em></p>
+			</div>
+			<div id="article_content">
+				<h1>La manie de tout lister</h1>
+<p>Les Game Designers sont souvent aussi des programmeurs, chez qui les idées tendent à s'organiser de façon linéaire et textuelle. C'est une bonne façon de penser pour écrire du code, mais pas pour concevoir des jeux. La programmation vit dans un monde d'absolus, où x a une valeur précise et où y a une tâche précise. Le Game Design vit lui dans un monde relatif dans lequel les relations entre deux éléments sont aussi importantes que ces deux éléments en eux même.<br />
+Prenons par un exemple un jeu du style <em>Bomberman</em>. Pour un programmeur, le jeu se résume à une suite de fonctions qui sont des techniques à mettre en œuvre :</p>
+<ul>
+<li>Mouvement du joueur</li>
+<li>Capacité à poser des bombes</li>
+<li>Pouvoir faire sauter des murs</li>
+<li>Pouvoir détruire les ennemis</li>
+<li>Pouvoir éviter les ennemis</li>
+<li>Powerups</li>
+<li>Sortie de niveau</li>
+</ul>
+<p>Cette façon de voir les choses est tout à fait pertinente pour programmer le jeu. Mais cette liste logique, linéaire et textuelle ne montre pas du tout les relations qu'entretiennent les différents éléments et leur importance relative. Il y a une meilleure méthode.</p>
+<p><img alt="Diagramme visuel des fonctionnalités" src="../media/img/essentiel-1.png" /></p>
+<p>Ce que vous voyez ci-dessus est un diagramme visuel qui reprend les mêmes informations (mais ce n'est PAS un flowchart (organigramme de programmation)). Il s'agit d'une liste des fonctionnalités du jeu arrangées d'après leurs relations : ce n'est ni une représentation parfaite ni un diagramme technique, c'est simplement une approximation qui détermine les éléments importants (ou pas) du jeu et qui décrit leurs relations. Il y a moyen de faire un tel arrangement pour chaque jeu (y compris le vôtre) et vous ne pouvez pas vous tromper : on voit tout de suite quand c'est bon. Cela n'aura peut être pas un grand sens logique en terme de positionnement, mais il existe un arrangement qui vous semblera intuitivement être le bon.</p>
+<h1>Un seul jaune dans mon œuf</h1>
+<p>La première question à laquelle vous devez répondre est : « Quel est le cœur de votre jeu ? Quel est au fond le sujet de votre jeu ? Quelle est l'idée centrale ? Qu'est ce qu'on y fout ? »
+Dans le jeu style <em>Bomberman</em> ci-dessus, le cœur du jeu c'est de faire sauter des trucs ; vous savez…BOOM : des explosions. C'est ce qu'on fait le plus dans ce jeu, c'est ce qui est marrant dans ce jeu, et c'est ce autour de quoi tourne ce jeu. Dessinez le cœur au centre de votre diagramme et entourez le en gros. Tout le reste de votre concept devrait avoir rapport à ce cœur. Tout devrait y renvoyer et le soutenir.</p>
+<p>Si votre cœur est dispersé entre plusieurs petits éléments, vous n'avez pas de cœur. De même, si votre cœur est réparti sur deux éléments parce que vous combinez avec maestria deux choses différentes, vous n'avez pas non plus de cœur. La terre a un noyau, une pomme a un trognon et mon œuf n'a qu'un jaune : un cœur est un cœur parce qu'il est unique. Le cœur en tant que sujet de votre jeu doit être unique, mais il peut par contre être une idée abstraite comme « faire peur au joueur ». Ce qu'il faut c'est un cœur précisément défini et bien encadré. Vous l'aurez compris, le cœur de <em>Bomberman</em> ce sont les bombes.</p>
+<p>Une fois votre cœur situé, arrangez les autres éléments du jeu pour que leurs rapports aient du sens. Il n'y a pas de méthode précise pour y arriver : essayez jusqu'à ce que cela vous semble bon.</p>
+<h1>Est-ce que c'est ÇA l'intérêt ?</h1>
+<p>Maintenant que vous avez votre diagramme sous les yeux et que vous savez autour de quoi votre concept est centré, posez vous cette question : « Est-ce que le cœur du jeu est aussi l'élément le plus intéressant du jeu ? Est-ce que l'on va faire dans votre jeu est ce qu'on a le plus envie d'y faire ? Y'a-t-il des éléments de divertissements qui émergent spontanément et qui sont plus amusants que ce autour de quoi le jeu est construit ? ».</p>
+<p>Soyez honnête avec vous même et faites tester votre jeu, il se peut que vous ayez besoin de réaliser un prototype pour pouvoir répondre à ces questions. Le Game Design consiste aussi à expérimenter, et le divertissement n'aboutit pas toujours là où on a voulu le mettre. Utilisez comme cœur ce qui est divertissant plutôt que de forcer un autre élément à devenir divertissant, et votre jeu en sortira sûrement meilleur.</p>
+<h1>Soutenir le cœur</h1>
+<p>Maintenant vous avez un diagramme avec un cœur, et le cœur est aussi la partie la plus intéressante du jeu. La question suivante est : « Soutenez vous le cœur du projet ? »
+Tout d'abord, commencez par imaginer des moyens de soutenir le cœur. Remarquez que dans <em>Bomberman</em>, c'est l'action de placer des bombes qui a le plus de conséquences : elle pousse le joueur à se déplacer (pour éviter les explosions), elle peut briser des murs (ce qui conduit à des powerups ou à la sortie), elle peut éliminer les adversaires (la meilleure récompense possible). On aurait pu concevoir le jeu de façon à soutenir le déplacement du joueur en lui faisant briser les murs en courant à travers et en faisant mourir les ennemis de la même façon (moyennant un powerup qui permet de les vaincre, comme dans <em>Pac-Man</em>). Cependant, agir ainsi n'aurait pas soutenu le coeur du jeu qui réside dans les bombes.</p>
+<p>Dans <em>Pac-Man</em>, ce qui est marrant c'est de manger les petits palets. Chomp chomp ! Du coup ils ont rajouté des palets qui donnent des capacités spéciales, et ensuite ils ont ajouté une capacité qui transforme les fantômes ennemis en palets ambulants. C'est un soutien très bien trouvé !</p>
+<p>Si on pouvait avoir un deuxième bouton pour jouer à <em>Bomberman</em>, il faudrait permettre une autre façon d'utiliser les bombes. Il ne faudrait pas un bouton « courir » et encore moins un bouton pour utiliser quelque chose qui n'a rien à voir comme un pistolet. Un bouton courir soutiendrait le mouvement du joueur (ce qui n'est pas le cœur du jeu), tandis qu'un pistolet serait complètement isolé sur nos diagrammes et seulement en relation avec « éliminer les ennemis ». Un deuxième bouton pour utiliser des bombes pourrait permettre de les faire rouler jusqu'au mur le plus proche. Cela ajouterait un peu de profondeur au gameplay tout en soutenant le concept de bombe. D'ailleurs le titre du jeu est <em>Bomberman</em> et pas <em>CoursEtPoseDesBomberman</em>.</p>
+<h1>Pensez à d'autres façons de soutenir le cœur.</h1>
+<p>Pour <em>Bomberman</em>, cela pourrait signifier des bombes de différents types comme par exemple des bombes IEM qui paralyseraient les robots ennemis sans blesser le joueur, ou alors d'autres façons de lancer les bombes, comme par exemple un bouton pour les jeter par dessus les murs plutôt que de les poser devant soi. Du côté des graphismes, les explosions avaient intérêt à être réussies : un ou deux ennemis mal foutus auraient pu passer mais les bombes étant le cœur, c'est elles qu'il fallait soigner.</p>
+<p>En bref pensez à différentes façons créatives de soutenir votre cœur, ensuite pensez à soutenir les plus intéressants de ces soutiens etc. …c'est la partie amusante du Game Design : soyez créatifs et flexibles. A vous de voir si vous le faites détaillé ou seulement dans les grandes lignes, essayez un peu tout et amusez vous. =)</p>
+<h1>Dégraissage</h1>
+<p>Maintenant que vous avez planifié plein de fonctionnalités que vous pourriez inclure, il est temps de faire le ménage pour aboutir à un concept propre, élégant, centré et surtout fai-sa-ble. De toute façon un jeu avec trop fonctionnalités est comme un plat avec trop d'ingrédients. Il devient de plus en plus difficile de régler la balance à chaque nouvelle fonctionnalité et le résultat est souvent trop ambitieux, dilué ou bordélique. En plus de cela, le concept du brainstorming consistait à réunir plein d'idées pour ne garder ensuite que les meilleurs : le moment de faire le tri est arrivé.</p>
+<p>Regardez votre diagramme et déterminez comment vos idées renvoient les unes aux autres. Idéalement, il faudrait que les éléments soient liés autant que possible, comme une toile d'araignée ou une tapisserie, plutôt que d'avoir quelques groupes isolés qui n'auraient plus de sens une fois reliés.</p>
+<p>Il y a beaucoup de raisons qui peuvent pousser à supprimer une fonctionnalité et il se peut qu'il faille réaliser des prototypes pour déterminer le véritable intérêt d'une idée. Parfois les fonctionnalités à garder sont déterminées par le budget (un moteur physique par exemple coûte cher mais n'apporte pas toujours grand chose par rapport à de fausses relations physiques). Ne soyez pas trop attaché à vos fonctionnalités et montrez vous sans pitié avec elles : si une fonctionnalité n'en vaut pas vraiment la peine ou ne soutient pas assez le cœur (voire pire, détourne le cœur ou est orpheline sur le diagramme), envisagez de vous en débarrasser.</p>
+<h1>Aider et pénaliser le joueur</h1>
+<p>A mesure que vous modifiez le concept, en enlevant et en ajoutant des fonctionnalités, gardez à l'esprit quels éléments sont là pour aider et pénaliser le joueur, afin de maintenir un certain équilibre. Par exemple, si votre cœur consiste à poser des bombes, dans ce cas les aides doivent aider à placer des bombes : imaginez des tonneaux qui explosent aussi et provoquent des réactions en chaîne, des powerups qui augmentent la puissance de vos bombes, des murs qui s'écroulent tout seul à proximité de vos bombes pour révéler l'existence de powerups ou la sortie. Équilibrez les aides et les pénalités pour que le jeu ne soit ni trivial ni trop difficile ou sec. Si les joueurs ont du mal avec certains passages, essayez de les modifier avant de les supprimer : il leur manque peut-être juste un petit coup de pouce.</p>
+<p>Utiliser des diagrammes pour centrer votre concept est une idée d'une simplicité désarmante mais qui peut mener à des résultats impressionnants. Au moins, cela vous force à réfléchir à votre concept et le voir d'une façon dont vous n'avez pas l'habitude. En vous interrogeant et en bricolant votre concept, vous ferez un meilleur jeu.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/essentiel&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_414" class="comment">
+	
+		<span class="meta">Par un anonyme le 10 septembre 2015 21:14:33</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Très bien écrit. J'y vois un lien assez fort avec les "Primary Mechanics" de Kirby Kid (critical-games).</p>
+<p>/@PypeBros.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_414').addClass('deleted');
+			$('#comment_414 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_414 .delete').css("display", "none");
+			$('#comment_414 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_414 .delete').css("display", "none");
+		else										$('#comment_414 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_265" class="comment">
+	
+		
+			<span class="meta">Par Lothindil le 10 août 2012 20:28:23</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Lothindil" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Excellent article, comme d'habitude. J'ai débarqué sur ce blog pour le pixel art et… bah voilà, j'y reviens trois ans plus tard en tentant de comprendre les erreurs que j'avais faites. Et cet article vient de résumer très aisément mon soucis : J'ai pas 1… mais 3 coeurs en réalité et ce qui devait être mon coeur est totalement étouffé par les fonctions annexes.</p>
+<p>Merci, grâce à vous je sais comment repartir et corriger ça !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_265').addClass('deleted');
+			$('#comment_265 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_265 .delete').css("display", "none");
+			$('#comment_265 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_265 .delete').css("display", "none");
+		else										$('#comment_265 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_239" class="comment">
+	
+		
+			<span class="meta">Par Tristan le 1 mai 2012 13:43:26</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Tristan" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Vraiment très instructif !!! J'ai vu pas mal de techniques pour développer l'idée du jeu, et c'est bien celle là que je préfère.</p>
+<p>C'est l'aspect visuel et schématisé qui rend ça plus facile pour notre cerveau, vu que son fonctionnement est-comme un diagramme ou plus précisément un système d'arborescence avec une idée centrale.</p>
+<p>J'aimerais toutefois avoir une précision sur cet article, car j'ai du mal à cerner le coeur du prochain jeu que je vais développer (j'ai déjà bien avancé dans le GDD du jeu mais quand j'ai vu cet article j'ai tout de suite essayer de placer mon jeu dans ce contexte :D ).</p>
+<p>Pourriez-vous donner plus d'exemples adaptés à des jeux plus récents que bomberman et pac-man, comme par exemple (c'est en rapport avec l'idée de mon jeu) que pensez vous du coeur de "Zelda Ocarina of time" ou "Fable" étant des jeux d'aventure… est ce qu'on peut dire que le coeur de ces jeux est quelque chose de général comme "de l'aventure palpitante" ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_239').addClass('deleted');
+			$('#comment_239 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_239 .delete').css("display", "none");
+			$('#comment_239 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_239 .delete').css("display", "none");
+		else										$('#comment_239 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/16';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="essentiel@scroll_to=article.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="essentiel@scroll_to=article.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#110;&#116;&#x61;&#x63;&#116;&#x40;&#108;&#101;&#115;&#x66;&#111;&#114;&#103;&#x65;&#115;&#46;&#111;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

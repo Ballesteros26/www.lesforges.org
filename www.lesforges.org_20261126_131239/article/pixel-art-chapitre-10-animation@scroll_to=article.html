@@ -1,0 +1,998 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Cours de pixel art 10 : Ça manque d&#39;animation par ici !</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Aucun tutoriel sur le pixel art, qui plus est dans le cadre de la création d'un jeu vidéo, ne saurait faire l'impasse sur l'animation, c'est pourquoi nous vous proposons aujourd'hui un article sur le sujet.
+Commençons par une rapide explication du principe d'animation tel que nous l'envisagerons ici.
+Si vous avez déjà vu une bobine de film, vous n'êtes pas sans savoir qu'elle est composée d'une série d'images fixes affichées très rapidement les unes à la suite des autres (24 images/secondes en général). L'animation en pixel art repose sur ce même principe : l'affichage d'une succession de cadres ou frames, bien que le nombre d'images uniques par seconde soit généralement très inférieur à celui de l'animation classique, résolution oblige.
+Je ne parlerai pas de la gestion des frames au sein d'un logiciel ni de leur organisation au sein d'un fichier, puisque cela dépend de la façon dont votre image est lue mais sachez que dans la très grande majorité des cas, les frames sont toutes regroupées en une seule image appelée spritesheet.
+
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#x74;&#x61;&#99;&#116;&#x40;&#108;&#101;&#115;&#x66;&#111;&#x72;&#x67;&#101;&#115;&#x2e;&#111;&#x72;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Cours de pixel art 10 : Ça manque d&#39;animation par ici !</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/bonhomme.html">Thomas Chassin</a> | le 1 octobre 2012 22:00:00 | Catégories : <a href="../tag/cours.html">Cours</a>, <a href="../tag/graphisme.html">Graphisme</a>, <a href="../tag/pixel-art.html">Pixel art</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Aucun tutoriel sur le pixel art, qui plus est dans le cadre de la création d'un jeu vidéo, ne saurait faire l'impasse sur l'animation, c'est pourquoi nous vous proposons aujourd'hui un article sur le sujet.</p>
+<p>Commençons par une rapide explication du principe d'animation tel que nous l'envisagerons ici.</p>
+<p>Si vous avez déjà vu une bobine de film, vous n'êtes pas sans savoir qu'elle est composée d'une série d'images fixes affichées très rapidement les unes à la suite des autres (24 images/secondes en général). L'animation en pixel art repose sur ce même principe : l'affichage d'une succession de cadres ou <em>frames</em>, bien que le nombre d'images uniques par seconde soit généralement très inférieur à celui de l'animation classique, résolution oblige.</p>
+<p>Je ne parlerai pas de la gestion des <em>frames</em> au sein d'un logiciel ni de leur organisation au sein d'un fichier, puisque cela dépend de la façon dont votre image est lue mais sachez que dans la très grande majorité des cas, les <em>frames</em> sont toutes regroupées en une seule image appelée <em>spritesheet</em>.</p>
+<p><img alt="Exemple de spriteshe (Blade of Victory)." src="../media/img/Blob1.1.png" /></p>
+			</div>
+			<div id="article_content">
+				<h1>Un peu de préparation.</h1>
+<h2>À vos crayons !</h2>
+<p>Avant d'animer, il est important de savoir à peu près ce que vous voulez obtenir comme résultat. Le plus simple pour cela est de le mettre sur papier : oui, vous allez me le dessiner (n'ayez pas peur, pas besoin d'être bon) ! Bien sûr, il serait absurde de dessiner toutes les <em>frames</em>, mais il est important de visualiser les principaux « points de passages » ou <em>key frames</em> de votre animation, i.e. les étapes-clefs qui définissent votre mouvement, mais également les étapes de mouvements complexes, comme par exemple des transformations ne se situant pas dans le plan de l'image (un personnage de jeu de plate-forme tournant sur lui-même par exemple). </p>
+<p>C'est ce qu'on appelle l'animation par parties ou <em>pose to pose animation</em> : on décide d'un certain nombre d'étapes intermédiaires puis on rajoute des <em>frames</em> de transitions entre elles. Dessiner, même de façon sommaire, les <em>key frames</em> vous permettra de mieux visualiser le travail à effectuer et vous aidera grandement au moment de la réalisation de votre <em>sprite</em>.</p>
+<p>Prenons un exemple pour clarifier ce propos un peu obscur : un coup d'épée. Celui-ci se découpe comme suit : le personnage est au repos, il arme son coup, frappe puis réarme, ce qui fait un total de 4 « points de passages » à définir pour pouvoir animer votre personnage, le reste des images servant de transition entre ces derniers.</p>
+<p><img alt="Quelques croquis préparatoires (Odin Sphere - Vanillaware)." src="../media/img/croquis.png" /></p>
+<h2>Les références sont vos amies pour la vie.</h2>
+<p>Si vous n'êtes pas sûr de la façon dont se découpe votre animation, le grand secret de la vie et de la mort consiste à vous documenter, aussi bien du côté animation (regardez ce qui se fait en général) que du coté réalité (rien de mieux que l'observation pour vous débarrasser de vos <em>a priori</em>). </p>
+<p>Notez que pour l'animation de personnages, il est possible de mimer soi-même les mouvements, mais cette option est peu recommandée lorsque vous êtes sur votre lieu de travail, ou même en public de manière générale. Normalement, cela devrait suffire à obtenir un découpage satisfaisant de l'animation, mais ne vous inquiétez pas si vous éprouvez quelques difficultés, le coup de main viens avec la pratique, et si possible des critiques constructives.</p>
+<h1>Un peu de théorie.</h1>
+<h2>Deux, trois généralités.</h2>
+<p>Rentrons maintenant dans la partie plus technique de cet article, si vous le voulez bien (en fait, vous n'avez pas le choix). Pour que votre animation soit réussie, il est important d'avoir une bonne maîtrise de la répartition du mouvement dans les <em>frames</em>. En effet, le mouvement se définit par la différence de position entre deux représentation d'un même élément d'une <em>frames</em> à l'autre.</p>
+<p>De fait, plus vous consacrez de <em>frames</em> à un mouvement, plus il apparaît lent, et inversement, plus vous supprimez de <em>frames</em> intermédiaires, plus il apparaît rapide. La première conséquence logique est que dupliquer une <em>frame</em> permet de marquer une pause dans le mouvement, la seconde est que plus vous chercherez à représenter des mouvements rapides, plus il vous faudra un nombre élevé de <em>frames</em>  pour un même intervalle de temps (on peut aussi parler de fréquence d’échantillonnage ou <em>sample rate</em> pour les intimes). </p>
+<h2>Un peu de dynamisme et de stylisation.</h2>
+<h3>L’élasticité.</h3>
+<p>Si vous ne vivez pas au sein d'une colonie de golems au fin fond d'une caverne, vous aurez peut-être remarqué qu'il existe des matériaux rigides et d'autres plus élastiques. Ces derniers ont la capacité de se déformer sous l'action des forces qui leurs sont appliquées. </p>
+<p>La technique du <em>squash and stretch</em> (compression et étirement) consiste à étirer ou compresser un corps au contact d'un solide, tout en conservant son volume (c'est important). L'exemple le plus flagrant est celui d'un ballon qui rebondit : d'abord sphérique, il s'écrase au moment du contact avec le sol, puis s'étire lorsqu'il rebondit. Ce principe peut se généraliser à de très nombreux mouvements en animation, qu'on anime un visage, un personnage, un objet, etc. </p>
+<p><img alt="Exemple simple de &quot;Squash &amp; Stretch&quot;, qui donne à la balle un aspect élastique." src="../media/img/Squash_and_Stretch.png" />
+<a href="http://i.imgur.com/BbVD0.gif" title="Promis, pas de rickroll">Un rapide aperçu en .gif</a></p>
+<p>Plus la compression et l'écrasement sont fort, plus on obtient un effet « toon ». Ce principe permet de fluidifier les actions et de leur donner plus de force.</p>
+<h3>Inertie et cinétique.</h3>
+<p>N'ayez pas peur, je ne vais pas vous faire un cours de physique ! oubliez vos cours, nous n'allons ici nous intéresser qu'à certains effets physiques utiles à l'animation, à savoir qu'un corps en mouvement tend à le rester et qu'il en va de même pour un corps immobile. Trois effets en découlent :</p>
+<h4>La continuité du mouvement.</h4>
+<p>La continuité du mouvement (ou <em>follow through</em>) a pour conséquence que lorsqu'un corps non rigide s'arrête, ses parties restent en mouvement quelques instants avant de s’arrêter à leur tour. On peut constater ce phénomène de façon très simple : faites quelques pas puis arrêtez-vous. À moins d'avoir tout le haut du corps dans le plâtre, vos bras ne deviendront pas absolument immobiles à la seconde où vous arrêterez d'avancer : leur mouvement continuera quelques instants à cause de l'énergie cinétique accumulée puis ils s’arrêteront de bouger à leur tour.</p>
+<h4>L'effet de traction.</h4>
+<p>L'effet de traction (ou <em>drag</em>) est très proche de la continuité du mouvement : c'est plus précisément son inverse. L'effet de traction peut s'observer lorsqu'on exerce une force sur un corps souple, par exemple du tissu. L'ensemble du corps ne se mettra pas en mouvement simultanément si vous tirez dessus : viendra d'abord la partie que vous tirez, puis le reste, du point de traction jusqu'aux extrémités.</p>
+<h4>Le chevauchement de mouvements.</h4>
+<p>Le chevauchement de mouvements (<em>overlapping action</em>) est le résultat de l'action conjuguée des deux phénomènes précédents. Lorsqu'un corps passe d'un mouvement A à un mouvement B, il y a un instant ou les deux mouvements se « chevauchent » : la partie à l'origine du mouvement B se déplace en accord avec ce dernier mais le reste du corps, en raison du <em>drag</em>, continue encore à suivre le mouvement A. Il y a donc coexistence de deux mouvements possiblement antagonistes jusqu'à ce que l'ensemble du corps suive le mouvement B. Comme expliqué précédemment, la transition de mouvement se fait progressivement de la partie à l'origine du mouvement vers le reste du corps.</p>
+<h3>Les phases de transition.</h3>
+<p>Vous pensiez que c'en était fini de l'inertie ? Que nenni mes braves : en revoilà ! Tout corps qui se déplace, à moins qu'il ne reçoive ou ne transfère brutalement une quantité d'énergie cinétique importante, passe par un régime appelé transitoire en début et en fin de mouvement. Concrètement, cela signifie que le corps à besoin d’accélérer lorsqu'un mouvement est initié, et qu'il lui faut ensuite décélérer avant de s’arrêter. Ces phases de transition, en plus de rendre votre animation plus crédible, permet de véhiculer des informations supplémentaires au joueur. Par exemple, une lente accélération et/ou une tout aussi lente décélération indiquent que l'objet qui se déplace est lourd : pensez à une masse par exemple, c'est une arme lente, mais une fois le coup parti, il est très difficile à arrêter (les marteaux et les grandes épées de <em>Monster Hunter</em> en sont un bon exemple).</p>
+<h2>Pour se la péter dans les dîners mondains (suite) : le <em>motion blur</em>.</h2>
+<p>Le <em>motion blur</em>, ou flou cinétique pour ceux qui sont fâchés avec Shakespeare et ses copains, est un phénomène optique avec lequel nous vivons tous les jours : lors de l'observation d'un mouvement rapide, on peut voir une traînée floue derrière le corps en mouvement. Cette traînée est en fait due à la persistance rétinienne et n'est qu'une illusion d'optique. Ça vous fait une belle jambe ? Et pourtant c'est un principe trèèès utile pour l'animation.</p>
+<p>Lors d'un mouvement très rapide, il y a un déplacement important qui s'effectue d'une <em>frame</em> à une autre, ce qui risque de rendre votre animation peu compréhensible par le spectateur, et ce risque augmente proportionnellement à la complexité de la trajectoire suivie.</p>
+<p>Alors comment faire pour conjuguer mouvement rapide et animation compréhensible ? Une idée ? Si vous avez répondu « Le <em>motion blur</em> ! », on va peut être faire quelque chose de vous, sinon retournez à la case départ.</p>
+<p><img alt="Le motion blur en action (Blade of Victory)." src="../media/img/MotionBlur.png" /></p>
+<p>Pour réussir un <em>motion blur</em>, le mieux est souvent… de ne pas s'en préoccuper ! En effet, le motion blur vient <strong>après</strong> le découpage de votre animation et la réalisation de vos <em>frames</em>. L'idéal est de réaliser vos animations en notant les <em>frames</em> nécessitant du motion blur, puis de revenir les travailler après coup. Si vous utilisez un logiciel gérant les calques (ce que toute l'équipe vous recommande très fort), tracez la trajectoire suivie par l'élément en mouvement d'une <em>frame</em> à l'autre sur un calque à part, elle vous servira de base pour la réalisation du motion blur. Et ensuite ? Eh bien, il ne reste plus qu'à suivre quelques règles :</p>
+<ul>
+<li>La « traînée » est comprise entre la position de départ et celle d'arrivée, et suit la trajectoire de votre mouvement.</li>
+<li>Plus un mouvement est rapide, plus la « traînée » est longue.</li>
+<li>Considérez votre traînée comme un solide, les règles de perspectives et autres s'y appliquent normalement.</li>
+<li>Vous pouvez utiliser un dégradé pour accentuer l'effet de flou.</li>
+</ul>
+<h1>Protips.</h1>
+<h2>Commencer simple.</h2>
+<p>Si vous commencez par faire des <em>frames</em> hyper complexes avec un éclairage à sources multiples, <em>ambient lighting</em> et tout le fatras, vous allez pleurer à chaudes larmes le jour où vous vous rendrez compte que vous avez raté votre animation. Commencez par faire des formes à base d’à-plats de couleur pour animer rapidement. Une fois que l'animation vous satisfait, augmentez le niveau de détail progressivement en vérifiant à chaque fois que le résultat est conforme à vos attentes.</p>
+<h2>Animer séparément les différentes parties.</h2>
+<p>Travaillez avec des calques. Sérieusement. Il est infiniment plus facile de modifier une animation dont les éléments sont sur calques séparés. L'idéal serait de créer un calque par élément si vous n’êtes pas sûr de vous. Notez également que certaines animations ne reposent que sur le déplacement de certains éléments les uns par rapport aux autres, sans déformation quelconque.</p>
+<h2>Prendre l'animation comme un « tout ».</h2>
+<p>Lorsque vous travaillez sur une animation, quelle qu'elle soit, vous travaillez sur un ensemble de <em>frames</em> successives. L'important est que votre animation soit réussie, pas que chaque <em>frame</em> individuelle soit un chef-d’œuvre irréprochable sur lequel vous avez passé une demi-éternité. </p>
+<p>Non seulement garder ceci à l'esprit vous permettra d'éviter une importante perte de temps et d'énergie, mais cela vous permettra également de faire gagner en qualité votre travail. En effet, que chaque <em>frame</em> prise à part soit une réussite ne vous garantira pas que votre animation sera bonne, puisque, bien au contraire, les <em>frames</em> de transitions auront très souvent l'air « moche ».</p>
+<p>C'est un fait inévitable. Il suffit de regarder un quelconque court ou long-métrage d'animation et de mettre en pause aléatoirement pendant que les personnages changent de pose. La probabilité qu'ils aient l'air ridicule est très élevée, et pourtant l'animation <strong>dans son ensemble</strong> est de bonne qualité.</p>
+<h2>La force des détails.</h2>
+<p>La différence entre une bonne animation et une très bonne animation réside (entre autres) dans le soin apporté aux détails ou actions secondaires. Ces actions secondaires ont pour rôle principal d'asseoir l'animation principale, de la rendre plus vivante et de lui donner plus de force. Par exemple, lorsqu'un personnage se déplace et qu'il porte une cape et/ou a des cheveux longs, ceux-ci ne sont pas statiques : il réagissent à l'action principale, ici la marche. Il est cependant important de hiérarchiser les différentes actions, de manière à ce que l'action principale soit clairement identifiable : si ce n'est pas le cas, tout le travail réalisé sur les animations secondaires ne fera que desservir l'action dans son ensemble.</p>
+<h2>Et maintenant bavez un peu devant ce que font les grands !</h2>
+<p>Et pleurez un coup au passage, ça vous fera du bien.</p>
+<ul>
+<li><a href="http://fc04.deviantart.net/fs71/f/2010/265/a/c/wip_animation_by_syosa-d2zacfl.gif">How to Make Her Turn</a>, par <a href="http://syosa.deviantart.com/">Syosa</a></li>
+<li><a href="http://www.pixeljoint.com/files/icons/full/maska_k_a.gif">Maska</a>, par <a href="http://www.pixeljoint.com/p/22720.htm">KO-KI</a></li>
+<li><a href="http://www.pixeljoint.com/files/icons/full/caramba.gif">Arrgh, I guess</a>, par le très grand <a href="http://fool.deviantart.com/">fool</a></li>
+</ul>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/pixel-art-chapitre-10-animation&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_471" class="comment">
+	
+		<span class="meta">Par un anonyme le 23 février 2020 20:55:36</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>merci pour ce cours génial et très complet</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_471').addClass('deleted');
+			$('#comment_471 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_471 .delete').css("display", "none");
+			$('#comment_471 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_471 .delete').css("display", "none");
+		else										$('#comment_471 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_391" class="comment">
+	
+		<span class="meta">Par un anonyme le 8 septembre 2014 18:52:56</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bravo pour ce superbe tuto, probablement l'un des plus clairs, bien écrits et intéressants qu'il m'ait été donné de lire !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_391').addClass('deleted');
+			$('#comment_391 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_391 .delete').css("display", "none");
+			$('#comment_391 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_391 .delete').css("display", "none");
+		else										$('#comment_391 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_389" class="comment">
+	
+		<span class="meta">Par un anonyme le 17 avril 2014 10:51:56</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Effectivement. Ca fait du bien de verser sa petite larme.</p>
+<p>Merci pour ce super tuto !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_389').addClass('deleted');
+			$('#comment_389 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_389 .delete').css("display", "none");
+			$('#comment_389 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_389 .delete').css("display", "none");
+		else										$('#comment_389 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_363" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 août 2013 17:53:25</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>super tutoriel</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_363').addClass('deleted');
+			$('#comment_363 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_363 .delete').css("display", "none");
+			$('#comment_363 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_363 .delete').css("display", "none");
+		else										$('#comment_363 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_352" class="comment">
+	
+		
+			<span class="meta">Par nemj le 15 mai 2013 12:43:06</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de nemj" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>très intéressant et très agréable à lire, franchement merci!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_352').addClass('deleted');
+			$('#comment_352 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_352 .delete').css("display", "none");
+			$('#comment_352 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_352 .delete').css("display", "none");
+		else										$('#comment_352 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_293" class="comment">
+	
+		
+			<span class="meta">Par Rose le 22 octobre 2012 21:22:18</span>
+			<br/><img src="http://www.gravatar.com/avatar/55a19c088324696666abac54a57ba6c1?s=50&amp;r=g&amp;d=mm" alt="avatar de Rose" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Merci pour ce tuto, j'ai beaucoup appris! Merci encore pour vos "cours"! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_293').addClass('deleted');
+			$('#comment_293 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_293 .delete').css("display", "none");
+			$('#comment_293 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_293 .delete').css("display", "none");
+		else										$('#comment_293 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/75';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#97;&#x63;&#116;&#64;&#x6c;&#101;&#115;&#102;&#111;&#114;&#103;&#x65;&#x73;&#46;&#111;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

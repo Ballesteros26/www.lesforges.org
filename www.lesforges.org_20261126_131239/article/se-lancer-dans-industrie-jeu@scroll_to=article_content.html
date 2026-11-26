@@ -1,0 +1,917 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Comment se lancer dans l&#39;industrie du jeu</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	
+Il y a quelque chose d'amusant avec les jeux vidéos : y jouer provoque couramment l'envie d'en faire un soi-même. C'est exactement ce que j'ai ressenti en jouant à mon premier jeu sur ordinateur. Après cinq minutes passées dessus, je me suis dit : « Il FAUT que je sache comment on fait ça ! ». Je ne connais aucun média qui provoque cette sensation aussi fortement. Enfant, je regardais la télévision sans vouloir faire des émissions télévisées. J'ai bien eu envie d'écrire après avoir lu des livres, mais les enfants sont toujours encouragés à écrire. Personne ne m'a encouragé à faire des jeux vidéos. C'était simplement quelque chose que je savais devoir faire.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#110;&#x74;&#x61;&#x63;&#x74;&#64;&#x6c;&#101;&#x73;&#x66;&#111;&#x72;&#103;&#101;&#x73;&#x2e;&#x6f;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Comment se lancer dans l&#39;industrie du jeu</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/bonhomme.html">Thomas Chassin</a> | le 14 août 2011 22:33:47 | Catégories : <a href="../tag/business.html">Business</a>, <a href="../tag/ernest-adams.html">Ernest Adams</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/Bonhomme.html">Thomas Chassin</a>.
+						<br/>L'<a href="http://www.designersnotebook.com/Columns/013_How_to_Get_Started/013_how_to_get_started.htm" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (décembre 1998).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p><img alt="Ernest Adams à la Game Developers' Conference" src="../media/img/industry-ea.png" /></p>
+<p>Il y a quelque chose d'amusant avec les jeux vidéos : y jouer provoque couramment l'envie d'en faire un soi-même. C'est exactement ce que j'ai ressenti en jouant à mon premier jeu sur ordinateur. Après cinq minutes passées dessus, je me suis dit : « Il FAUT que je sache comment on fait ça ! ». Je ne connais aucun média qui provoque cette sensation aussi fortement. Enfant, je regardais la télévision sans vouloir faire des émissions télévisées. J'ai bien eu envie d'écrire après avoir lu des livres, mais les enfants sont toujours encouragés à écrire. Personne ne m'a encouragé à faire des jeux vidéos. C'était simplement quelque chose que je savais devoir faire.</p>
+			</div>
+			<div id="article_content">
+				<p>Je reçois beaucoup de lettres de gens qui veulent se lancer dans l'industrie. Beaucoup de ces gens sont des lycéens ou des étudiants qui sont fascinés par les jeux vidéos exactement comme je l'étais. Je leur écris toujours des conseils et des encouragements, mais j'ai écrit la même lettre tant de fois que j'ai réalisé que la meilleure chose à faire était d'écrire un article qui vivra sur le web (NDT : et pour preuve, le voilà aujourd'hui sur les Forges !). De cette façon, je pourrai juste diriger mes futurs correspondants vers Gamasutra (NDT : ou les Forges pour les anglophobes). En revanche, je ne vous dirai pas comment commencer à développer vous-même, ou comment vous faire connaître. C'est là un sujet pour un livre, pas pour un article. Nous parlerons ici d'obtenir un poste dans l'industrie du jeu vidéo.</p>
+<h1>Si vous êtes au primaire ou au collège</h1>
+<p>S'il vous plaît, ne vous inquiétez pas pour ça pour le moment. La meilleure chose à faire est d'avoir une éducation solide. Si vous consacrez votre vie entière à apprendre à faire des jeux vidéos dès votre âge, vous finirez par n'être bon qu'à une seule chose, et à ce moment-là vous n'en aurez peut-être plus envie. Vous êtes à l'heure de la généralisation, pas de la spécialisation.</p>
+<p>Cependant, il y a certaines choses que vous pouvez faire pour vous mettre sur la bonne voie. Travaillez l'algèbre et la géométrie, et si votre école offre des cours d'informatique ou de programmation, inscrivez-vous y. Même si vous ne souhaitez pas devenir programmeur, il est très utile d'avoir une compréhension générale de ce que font les programmeurs. Si vous avez la chance de pouvoir travailler sur des logiciels d'infographie, ou sur des des outils musicaux électroniques, essayez les également. Familiarisez-vous avec les ordinateurs. Apprenez à bien taper – si vous pouvez taper vite et avec précision, vous gagnerez beaucoup de temps plus tard.</p>
+<h1>Si vous êtes au lycée</h1>
+<p>L'époque où il n'y avait pas besoin de diplômes pour décrocher un poste dans l'industrie du jeu vidéo est bientôt révolue, j'en ai bien peur. Il y a quelques années, il était possible d'obtenir un poste simplement par la force de la programmation que vous aviez fait au lycée, mais maintenant, les entreprises sont suffisamment importantes pour avoir un département des ressources humaines, et les CV sur lesquels ne figurent pas de diplômes post-bac finiront le plus probablement à la poubelle. Suivez les cours nécessaires pour pouvoir pousser vous études jusqu'à une licence, un master ou un diplôme équivalent.</p>
+<h1>Si vous êtes étudiant</h1>
+<p>Arrivé à ce point, il est temps de réfléchir aux talents et aux compétences que vous pouvez amener à l'industrie du jeu vidéo. Qu'aimez-vous ? En quoi êtes vous bon ? Pouvez-vous dessiner, peindre, programmer, écrire des histoires ou composer de la musique ? Il est maintenant l'heure de développer ces talents, en étudiant les maîtres et en vous entraînant.</p>
+<p>Bien que cela semble niais, je suggère fortement que vous suiviez un enseignement varié. Bruce Sterling, l'auteur de science-fiction, a une fois dit que les gens formés « un peu à tout » étaient lisses et mornes, et qu'il valait mieux être un individu atypique aux connaissances pointues dans un domaine précis. C'est un bon conseil pour un artiste indépendant, mais pas pour quelqu'un qui cherche un travail. La plupart des personnes ne veulent pas être des programmeurs ou des artistes toute leur vie — le stress finit par les détruire (comme il m'a détruit). Pour passer à la production et la conception de jeu, vous devez être un individu instruit qui a quelque chose à offrir à sa société en plus de ses compétences artistiques et informatiques. Assurez-vous de suivre des cours d'anthropologie, d'histoire et de littérature. La saga <em>Star Wars</em> n'est pas subitement apparue dans l'esprit de George Lucas ; elle est apparue – et a rencontré un tel succès — parce qu'il a compris le pouvoir de thèmes mythiques comme celui du jeune homme héroïque voyageant pour affronter un passé caché. Lucas avait cette compréhension parce que son enseignement allait au delà de « tenir une caméra et éditer des films ».</p>
+<h1>Étudiez les jeux !</h1>
+<p>Quel que soit votre âge, vous devriez jouer à autant de jeux que possible. Formez un groupe avec vos amis pour les acheter et les échanger. Jouez à différents genres : jeux d'aventure, jeux de tir, simulations militaires, simulations sportives, jeux de réflexion, jeux pour enfants, jeux « pour les filles », etc. N'y jouez pas seulement pour le plaisir, pensez-y sérieusement et observez la façon dont ils fonctionnent. La plupart des jeux ont une économie interne – certaines valeurs varient au cours de la partie, et sans elles, vous perdez (ou mourrez). Au Monopoly par exemple, c'est l'argent. Dans <em>Doom</em>, ce sont les munitions, l'armure et la santé. Quels sont les flux d'entrée ? De sortie ? Quels sont les rôles respectifs de la chance et de l’habilité du joueur ? Comment le jeu est-il équilibré ? Si les jeux proposent différents niveaux de difficulté, jouez à ces modes et prenez note de ce qui a changé.</p>
+<p>Regardez aussi l'interface utilisateur : la façon dont le clavier, la souris ou le joystick sont utilisés, la façon dont l'écran est organisé, la navigation dans les menus. Sont-ils logiques et pratiques ? Vous retrouvez-vous en train de rêver d'une touche ou d'un bouton spécial que le jeu n'a pas ? Quel type de « caméra » est employé : à la première personne, comme <em>Doom</em> ou <em>Quake</em> ? Troisième personne, comme dans <em>Tomb Raider</em> ? Une vue aérienne en déplacement libre, comme dans <em>Dungeon Keeper</em> ? Une perspective isométrique comme dans <em>Starcraft</em> ? Pouvez-vous changer l'angle de la caméra (comme dans <em>NFL Football</em>) et si oui, comment la jouabilité du jeu change-t-elle quand vous le faites ? Toutes ces choses rentrent dans l'analyse de la conception d'un jeu.</p>
+<h1>Un game designer, ça n'existe pas</h1>
+<p>Ok, c'est une redite. Mais à part une ou deux très rares exceptions, il n’existe rien de tel qu'un game designer. [Note de l'auteur : ceci était vrai en 1998, quand cet article à été écrit. Les jeux étant devenus plus importants et plus complexes, il commence à y avoir des game designers à temps plein]. Trip Hawkins, le fondateur d'Electronic Arts et 3DO, avait l'habitude de dire qu'il n'y aurait jamais de poste intitulé « game designer » dans son entreprise car chacun dans le projet participait au design du jeu, et qu'il serait injuste de donner à une personne tout le mérite (et le travail le plus agréable).</p>
+<p>Il y a une autre raison, plus pratique à cela. Le design initial d'un jeu prend de un à trois mois, selon son envergure et sa complexité. Durant le reste de la production, il reste toujours des choix de design à faire, mais pas suffisamment pour consacrer une personne à temps complet. En général, le designer du jeu commence à remplir des tâches administratives, ou participe à la production une fois le développement lancé. Une entreprise ne peut pas se permettre d'avoir à payer quelqu'un ne faisant rien d'autre que du game design toute l'année. [Note de l'auteur : Depuis que j'ai écrit cet article en 1998, l'industrie a changé sa façon de concevoir les jeux. On ne procède plus séquentiellement, en faisant tout le travail de design au début et le développement ensuite. De nos jours on utilise des méthodes de développement agiles (comme <a href="http://fr.wikipedia.org/wiki/Scrum_%28m%C3%A9thode%29">Scrum</a>) qui permettent de prendre les décisions de design au long du développement.]</p>
+<p>Un cas exceptionnel est celui Sid Meier, qui est si célèbre en tant que designer qu'il a son nom sur la jaquette du jeu. Mais Sid a traîné sa carcasse depuis un bout de temps, ses jeux rencontrent un succès phénoménal, et il a plus que payé son dû. Ne pensez pas que vous allez décrocher d'entrée un poste de game designer. A moins de lancer votre propre entreprise – et de pouvoir <em>vous</em> payer à ne faire que du game design – cela ne risque pas d'arriver.</p>
+<h1>Tester des jeux n'est pas aussi fun que vous l'imaginez</h1>
+<p>Tester des jeux, ça doit être un job de rêve, un peu comme être chauffeur d'un type qui roule en Porsche (et qui, inexplicablement, ne veut pas la conduire lui-même). Être payer à jouer ! Que demander de plus ?</p>
+<p>Malheureusement, tester des jeux à la recherche de bugs, ce n'est pas comme jouer pour le plaisir. Quand vous testez à la recherche d'erreurs, vous devez tester chaque possibilité et chaque combinaison (ou au moins, autant que vous le pouvez raisonnablement). Vous ne pouvez pas jouer de manière compétitive ; vous ne pouvez pas jouer pour gagner ; vous jouez en suivant un plan de test qui vous dicte quoi faire. Heure après heure, jour après jour, pour des semaines et des semaines. Tester un jeu, c'est un déjà plus comme manger des sundae au caramel toute la journée, tous les jours. Vous les aimerez peut être au début, mais vous les détesterez certainement à la fin.</p>
+<p>Si vous testez une simulation d'un jeu réel, vous devez aussi tester chaque condition imaginable pour vous assurer qu'elle corresponde à ce qui se passerait dans le vrai jeu. Dans un match de football, lors d'un engagement, que se passe-t-il si le ballon sort du terrain? Qu'arrive-t-il s'il roule hors de la zone des buts ? Si la <em>kicking team</em> le touche d'abord ? Si la <em>receiving team</em> le touche ? S'ils demandent un <em>fair catch</em> ? S'ils demandent un <em>fair catch</em> et le rate ? (NDT : je renvoie les plus curieux d'entre vous sur la page <a href="http://fr.wikipedia.org/wiki/Football_am%C3%A9ricain">Wikipédia</a> consacrée au football américain))</p>
+<p>Ce travail demande beaucoup de patience et d'autodiscipline. Il faut aussi avoir le sens de l'observation. Vous devez savoir exactement ce que vous étiez en train de faire au moment où un bug est survenu, et être capable de l'expliquer clairement et précisément. Ce n'est pas à la portée de tout le monde. Il faut être plus qu'un joueur : il faut être un joueur capable de comprendre la pensée d'un programmeur, programmeur que vous ne rencontrerez probablement jamais.</p>
+<p>Beaucoup de lycéens se demandent s'il est possible d'obtenir un poste de testeur pour l'été. D'après mon expérience, cela n'arrive pas souvent. La plupart des stagiaires que j'ai rencontrés étaient des étudiants. Je ne sais pas si c'est une question de maturité, si c'est en rapport avec la législation concernant le travail des mineurs, ou autre chose, mais je pense que c'est improbable.</p>
+<h1>Si vous avez déjà un travail dans une autre industrie</h1>
+<p>La bonne nouvelle est que, oui, il est possible d'obtenir un poste dans le milieu du jeu après avoir travaillé dans une autre industrie et j'en suis la preuve vivante. Avant d'en venir au développement de jeux, j'ai travaillé pendant sept ans dans l'ingénierie assistée par ordinateur à écrire des programmes qui posent des puces sur du silicium. Je savais que je voulais travailler sur des jeux un jour, mais je ne voulais pas le faire sur les petites machines disponibles à l'époque. Quand le 80386 et la carte VGA sont apparus, j'ai supposé que le moment était venu et c'est alors que j'ai changé de secteur.</p>
+<p>Voilà comment j'ai fait : j'ai écrit une brève lettre de motivation qui expliquait comment travailler dans l'industrie de l'ingénierie assistée par ordinateur m'avait appris la discipline du génie logiciel et des compétences de travail d'équipe qui avaient jusque là été rares dans l'industrie vidéo-ludique ; et que l'expérience acquise à programmer avec un délai, même dans le mauvais champs d'activité, était toujours précieuse. J'ai aussi introduit une petite démonstration d'un jeu que j'avais conçu pour Kaypro (!) et porté sur PC. À son éternel crédit, Rob Fulop, le fondateur de p.f Magic, m'a offert un poste de programmeur pour un jeu AOL (du temps où ils se faisaient encore appeler PC-Link), et je n'ai même pas subi de diminution de salaire dans l'affaire.</p>
+<p>La mauvaise nouvelle est que c'est probablement plus difficile maintenant. À l'époque, l'industrie du jeu vidéo ne connaissait pratiquement rien à la discipline du génie logiciel ; même si c'était déjà un niveau au dessus du « programmeur de garage ». De nos jours, la programmation en équipe est la norme, et la gestion de versions, jadis moquée par ces codeurs de l'extrême, est a présent acceptée comme une pratique standard. Venant d'une communauté d'ingénierie établie, j'apportais quelque chose que l'industrie n'avait pas à l'époque — un avantage que vous n'aurez pas. Mais vous en avez peut être d'autres. Pensez attentivement à ce que vous avez fait et comment votre expérience pourrait s'appliquer au développement de jeu.</p>
+<p>Heureusement, il n'est plus aussi vital de savoir programmer les machines directement. Quand je suis arrivé, les personnes capable de hacker les registres VGA et d'écrire des protocoles modem étaient très recherchées, mais maintenant de telles choses sont prises en charge par les librairies système. Du fait que vous n'avez plus besoin d'être si près de la machine, c'est plus facile que ça ne l'était. Je pense cependant que de l'expérience dans la programmation machine est extrêmement valorisante, en particulier si vous allez programmer sur des consoles de jeu.</p>
+<p>Au sujet du salaire, les nouvelles sont moins bonnes. Le salaire des programmeurs, comme le reste, est régi par la loi de l'offre et de la demande. Il y a tant de gens désireux de rentrer dans l'industrie du jeu que les salaires sont plus bas en comparaison avec les autres industries. Un programmeur expérimenté peut s'attendre à une réduction de salaire de 10 à 25%. Vous pouvez avoir de la chance – j'en ai eu – mais préparez vous à un choc. Soit dit en passant, méfiez-vous des offres de travail ou vous travaillez gratuitement en échanges de royalties. Les start-ups sont en manque chronique d'argent, donc cette méthode s'impose à elles, mais je ne n'accepterais pas une telle offre à moins de connaître personnellement les gens et d'être un partenaire de l'entreprise. Je ne peux même pas commencer la liste de toutes les façons dont vous pouvez vous faire avoir ainsi – elles vont du jeu jamais lancé à la fraude pure et simple.</p>
+<p>Une chose à propos de laquelle je ne peux pas donner beaucoup de conseils est de se lancer avec des compétences artistiques ou musicales venant d'autres industries. Je sais que c'est possible, parce que j'ai rencontré une animatrice expérimentée dans le milieu qui travaillait à Holywood, mais je ne sais pas vraiment comment elle a fait la transition.</p>
+<h1>Si vous avez une idée géniale</h1>
+<p>Beaucoup de gens m'écrivent pour dire qu'ils ont une idée géniale pour un jeu, mais refusent de m'en parler de peur que je leur vole leur idée et gagne une fortune qui leur revient de droit. Ils veulent savoir comment se lancer sans vraiment révéler leur idée. Je suis désolé de le dire, mais les idées géniales il y en a dix à la douzaine. La chance que vous ayez une idée que personne n'ait eue est infinitésimale, surtout maintenant qu'il y a des dizaines de milliers de personnes qui travaillent dans l'industrie.</p>
+<p>Un studio ne va pas passer un contrat de développement avec vous sur la base d'une idée géniale. Ce qu'une entreprise veut savoir c'est : pouvez-vous créer un jeu et le rendre génial, dans les temps et avec un budget fixé ? Ce qui compte vraiment n'est pas l'idée mais sa mise en pratique. Comme disait Thomas Edison : « le génie, c'est 1% d'inspiration et 99% de persévérance ». Il ne s'est pas juste assis et a soudainement inventé l'ampoule ; il a fait passer de l'électricité à travers tous les matériaux sur lesquels il pouvait mettre la main jusqu'à ce qu'il en trouve un qui marche – et encore, il n'a même pas touché au but étant donné qu'il s'est arrêté au fil de coton carbonisé. C'est un autre homme nommé Coolridge qui a inventé l'ampoule à filament en tungstène moderne.</p>
+<p>Bien sûr, tout le monde connaît les lubies des consommateurs qui ont rendu leurs inventeurs millionnaires – le Rubik's cube, les pogs, et autre trucs du genre. Cependant ce genre de lubies n'arrive pas dans le monde du jeu vidéo. Je suis incapable de citer un seul jeu dont les gens sont devenus fous comme il l'ont été du Rubik's cube. Une des raison en est le prix : les gens sont beaucoup moins fous lorsqu'il s'agit de dépenser une cinquantaine d'euros que lorsqu'il s'agit de cinq euros. De toute façon, compter sur le lancement d'une mode, c'est un peu jouer à la loterie. Pour chaque gagnant, il y a des dizaines de milliers de perdants. Pour chaque Rubik's cube, il y a des milliers de merdouilles qui ont vécu trois jours avant de sombrer dans l'oubli.</p>
+<p>J'avais une idée dont je parlais à tout le monde depuis des années : faire un jeu sur les chevaux, et en vendre des millions aux petites filles. Maintenant Mattel l'a finalement fait avec <em>Barbie Club d'Équitation</em>, et il vont se faire un paquet. Je ne suis pas amer, premièrement parce que je suis sûr qu'ils n'ont pas « volé » mon idée – c'est quelque chose d'assez évident quand on y pense – et ensuite, parce qu'il n'y a aucune raison que je ne puisse pas faire un jeu de chevaux aussi. Peut-être que le mien sera meilleur et se vendra plus. C'est une affaire de divertissement, pas de technologie. Les idées géniales sont la clé de voûte d'entreprises comme DuPont et Dow Chemicals (NDT : deux grandes entreprises dans le domaines de la chimie) où la recherche et les brevets sont essentiels à leur succès, mais dans le divertissement interactif, n'importe qui peut faire un jeu sur n'importe quoi — ce qui compte c'est avant tout de faire un bon jeu.</p>
+<h1>Obtenir un travail</h1>
+<p>Il y a deux façons très différentes d'obtenir un travail pour faire des jeux vidéos, et chacune a ses avantages et ses inconvénients. Il y a d'autres chemins qui mènent à cette industrie (vente, marketing, législation, comptabilité, etc.) mais ils n'ont pas beaucoup de lien avec la création du jeu, donc je ne les évoquerai pas ici. Ces deux méthodes sont <em>développer</em> et <em>produire</em>.</p>
+<h2>Se lancer dans le développement</h2>
+<p>La première méthode et la plus directe est de développer un talent dont l'industrie a besoin, et de le lui vendre. Il y a une longue liste de ces derniers : programmation, illustration 2D, modélisation 3D, ingénierie du son, écriture, édition vidéo. La plupart ont des sous-disciplines : programmation 3D, programmation sonore, programmation d'IA, programmation d'interfaces utilisateur. Ce sont les professions fondamentales requises pour créer des jeux vidéos, et c'est ce à quoi pense la plupart des gens quand ils disent « développeur de jeux » : quelqu'un qui créée et assemble les différentes parties du jeu.</p>
+<p>L'avantage de ce genre de métiers est qu'il vous amène directement à la création du jeu et paie bien dès le début, surtout si vous êtes bon. Les entreprises sont toujours à la recherche d'artisans compétents qui connaissent vraiment leur métier. La plupart des différentes compétences sont enseignées au cours des études post-bac, et il commence même a y avoir des cours dédiés entièrement dédiés au développement de jeux. En général, il y a deux sorte d'entreprises pour lesquelles travailler : les éditeurs qui ont des studios de développement internes, et les studios de développement qui vendent leurs productions aux éditeurs.</p>
+<p>L'inconvénient de ce type de métier est, du moins chez les éditeurs, qu'il y a un plafond hiérarchique – il est difficile d'être promu au delà d'un certain niveau. Il y a à cela deux raisons. Premièrement, si vous êtes excellent techniquement ou artistiquement, une entreprise va vouloir que vous continuiez à faire ce que vous faites. Si vous êtes promu à un poste de management, vous n'aurez plus le temps de faire ce pour quoi vous êtes le meilleur, ce pour quoi ils vous apprécient le plus. À moins de leur démontrer que vous êtes un meilleur manager que programmeur, ils vous feront continuer à programmer. Les éditeurs en expansion recrutent presque toujours leurs managers intermédiaires à l’extérieur plutôt que de promouvoir leurs créatifs.</p>
+<p>La deuxième raison pour laquelle développer pour un éditeur présente un plafond hiérarchique est que les postes des échelons les plus élevés sont fondamentalement focalisés sur l'argent. Pour vous élever dans une entreprise, vous devez avoir des compétences en rapport avec l'argent, car gagner de l'argent est le but primordial d'une société. De plus, il est préférable d'être du bord des gens qui rapportent de l'argent (vente et marketing) plutôt que de celui de ceux qui le dépensent (développeurs). Les employés du département vente sont les héros qui « font du chiffres », etc. Les développeurs sont ceux qui dépassent les délais, explosent leur budget, et demandent constamment du nouveau matériel hors de prix. Il y a peut-être des ingénieurs à la tête des entreprises d'ingénierie, mais il n'y en aura pas beaucoup à la tête des entreprises du marché de la consommation de masse, qui est le marché dans lequel nous sommes.</p>
+<p>Ce n'est pas nécessairement vrai dans le développement de jeux. Contrairement aux <em>éditeurs</em>, un studio de <em>développement</em> indépendant <em>est</em> sur le marché de l'ingénierie. Son client est un éditeur, pas le consommateur individuel. Il n'est pas rare pour un expert programmeur d'être partenaire d'un studio de développement. Cependant, les studios de développement ne sont pas très stables. Ils vivent en fonction de leurs contrats de développement, et s'ils ne peuvent pas décrocher un nouveau contrat quand l'ancien est rempli, ils disparaissent. Cela peut ne pas importer si vous débutez, mais si vous avez deux enfants et une hypothèque, vous préférerez peut être travailler dans le studio de développement interne d'un éditeur.</p>
+<h2>Se lancer dans la production</h2>
+<p>La second façon de se lancer dans l'industrie est en tant qu'expert joueur. Il y a des gens qui aiment passionnément les jeux vidéos, qui vivent pour eux, qui n'aiment rien au monde plus que d'y jouer, d'en être proche et d'en parler. Ces joueurs obtiennent souvent des postes comme stagiaires d'été dans des maisons d'édition, à faire du test. S'il sont solides et compétents, il peuvent être engagés comme testeurs à temps plein, ou s'ils ont beaucoup de patience et de bonnes compétences explicatives, comme agents du service clientèle. De là, il peuvent être promus dans le service d'assurance qualité (contrairement aux testeurs normaux, ces gens font les tests de dernière seconde avant qu'un jeu soit lancé), puis producteur assistant, producteur associé et producteur. Les producteurs gèrent tout ce qui a trait à la création d'un jeu vidéo : ils négocient un accord avec les développeurs, ils sont responsables du budget et des délais, ils travaillent avec les gens du département vente et le marketing pour trouver comment faire vendre le jeu, ils travaillent avec les départements législatifs sur les affaires de licence, etc. Les producteurs ne travaillent pas réellement sur les parties techniques et artistiques du jeu, mais ils donnent la direction générale à suivre. Les producteurs assistants et associés conçoivent généralement les missions et les niveaux, et aident de mille autres façons en fonction des besoins du projet sur le moment.</p>
+<p>Les producteurs ont besoin de nombreuses compétences différentes, la plus importante d'entre elles, très subtile, est appelée « sens de production ». C'est une capacité à dire quand le jeu est amusant, quand il ne l'est pas, et plus important, de savoir ce qu'il manque pour le rendre amusant lorsqu'il ne l'est pas. Cela semble facile, mais après que vous ayez joué à un jeu quelques centaines de fois durant le développement — la plupart du temps avec un code buggé et à moitié terminé – il faut de bonnes capacités de jugement pour savoir si c'est en bonne voie ou pas.</p>
+<p>Cette voie d'accès à l'avantage qu'il n'y a pas de plafond hiérarchique – ou s'il y en a, c'est à un niveau beaucoup plus élevé que celui des développeurs. Étant donné qu'un producteur est impliqué dans l'argent – décider du budget de développement, travailler avec les prévisions de ventes – un producteur talentueux peut continuer à s'élever. Un producteur dont le jeu est un succès peut être promu et commencer à gérer toute une ligne de produits similaires. De là, il peut gérer un studio complet, avec plusieurs producteurs travaillant pour lui, etc.</p>
+<p>L'inconvénient de cette méthode est qu'il y a une longue période de dur labeur mal payé au début. Les testeurs, agents du service clientèle et producteurs assistants font beaucoup de travail répétitif et ennuyeux. C'est vital pour faire de bons jeux, mais ce n'est pas très glamour. Toute cette expérience sert au développement de ce « sens de production » pour devenir un bon producteur.</p>
+<p>Finalement, j'ajouterai qu'il est possible de passer de l'échelle « développement » à l'échelle « production », car c'est ce que j'ai fait. Après onze ans dans le génie logiciel (dont quatre dans l'industrie du jeu), j'ai arrêté de programmer pour devenir un producteur audio/vidéo, et ça fait cinq ans que je fais ça (NDT : nous sommes alors en 1998).</p>
+<h1>Conclusion</h1>
+<p>Ceci, d'après mon expérience, est la façon dont les jeux sont crées et dont les gens se lancent dans l'industrie. Si vous voulez un emploi pour créer des jeux, c'est ainsi que vous en décrocherez un, et la plupart des règles sont les mêmes que dans n'importe quelle industrie. Trouver un travail est un travail en soi ; la persévérance est essentielle. Étudiez les jeux. Lisez l'actualité du secteur. Cherchez des entreprises qui vous intéressent. Relancez par téléphone toutes vos candidatures. Soyez poli. Écrivez correctement. Ne soyez pas arrogant ou désinvolte. Prenez vous, et votre travail, au sérieux. Assistez aux conférences du secteur autant que vous le pouvez, et surtout, surtout, à la <em>Game Developers' Conference</em> dont le forum pour l'emploi est inégalé dans l'industrie du jeu vidéo. Cela peut paraître être un coup de pub flagrant, mais ne le négligez pas : la GDC est une occasion sans pareille de rencontrer des développeurs et d'en apprendre plus sur le milieu. </p>
+<p>Cet article peut avoir semblé un brin cynique, au moins pour ceux qui n'ont jamais travaillé dans l'industrie du jeu vidéo auparavant. Je n'ai pas l'intention d'être cynique du tout ; c'est ainsi que l'industrie fonctionne. Les gens qui sont beaux parleurs et qui serrent des mains deviennent Président de la République ; les gens qui gagnent des prix Nobel non. Cela peut sembler injuste, mais le pays s'en porte probablement mieux.</p>
+<p>Je finirai avec une dernière dure vérité : <em>presque personne ne parvient à faire exactement le jeu qu'il souhaite faire</em>. Les jeux faits pour être vendus ne sont pas faits par des individus seuls ; ce sont des collaborations, et collaboration signifie compromis. Les développeurs font des compromis avec le producteur, le producteur fait des compromis avec le marketing et le département des ventes. Les seules personnes qui font exactement le jeu qu'elles veulent sont celles qui le font elles-mêmes, sans se soucier de savoir si les gens l'achèteront. C'est merveilleux si vous pouvez le faire, et je pense que nous avons besoin de plus de ce genre de développeurs indépendants, mais ce n'est pas la même chose qu'avoir un emploi rémunéré dans une entreprise florissante.</p>
+<p>Si après tout ça, vous avez toujours l'idée en tête, alors allez-y et bonne chance !</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/se-lancer-dans-industrie-jeu&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_273" class="comment">
+	
+		<span class="meta">Par un anonyme le 4 septembre 2012 13:57:55</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Mais alors sa veux dire pas besoin diplome pour devenir producteur du jeux </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_273').addClass('deleted');
+			$('#comment_273 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_273 .delete').css("display", "none");
+			$('#comment_273 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_273 .delete').css("display", "none");
+		else										$('#comment_273 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_134" class="comment">
+	
+		<span class="meta">Par un anonyme le 8 septembre 2011 11:58:21</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>il est aussi possible de se lancer en tant qu'entrepreneur</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_134').addClass('deleted');
+			$('#comment_134 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_134 .delete').css("display", "none");
+			$('#comment_134 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_134 .delete').css("display", "none");
+		else										$('#comment_134 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_122" class="comment">
+	
+		
+			<span class="meta">Par Lyonsbanner le 16 août 2011 16:57:30</span>
+			<br/><img src="http://www.gravatar.com/avatar/83f929ca3f831bf645fa51a65425f13b?s=50&amp;r=g&amp;d=mm" alt="avatar de Lyonsbanner" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'est très vrai dans ce que dit Ernest Adams sur l'industrie du jeu vidéo.</p>
+<p>J'ajouterai bien un détail en ce qui concerne le métier de testeur :
+Quand vous êtes développeur, il existe une règle d'or que j'ai appris et que vous devez toujours avoir en tête : "Ne faites jamais confiance à l'utilisateur !". Par exemple, dans un programme tout simple, on vous demande d'écrire votre âge. Mais qui vous dit que l'utilisateur va vraiment le faire ? Il pourrait très bien écrire des lettres, à la place.
+Et c'est précisément un point essentiel du rôle du testeur, essayer de faire toutes les choses possibles inimaginables afin de faire bugger <strong>exprès</strong> le programme / le jeu.
+C'est rageant pour le développeur, mais c'est son boulot. Il impose des limites et il doit faire en sorte que personne ne dépasse ces limites.</p>
+<p>Personnellement, en travaillant en entreprise, les utilisateurs qui testent la version Bêta d'un de mes programmes ont du mal à s'expliquer. Il leur faut donc poser les bonnes questions : Depuis quand ce bug est apparu ? Est-ce qu'il est fréquent ? En appuyant sur quel bouton ? Si ça fait pareil sur l'ordinateur du voisin ? S'il n'a pas une simple panne de composant ? Si la dernière version s'est bien mise à jour ? Etc…</p>
+<p>Je n'ai jamais été testeur, mais un ami à moi m'a raconté (en gros) son expérience : "C'est sympa au début car on découvre le jeu et on a parfois de bonnes — et aussi de mauvaises — surprises. Quand le jeu est bien fait, on est tenté de le réessayer une deuxième fois. Mais à partir du moment où le moindre passage est buggé ou ralenti trop le rythme voir tout simplement bloqué, il faut tester une dizaine de fois ce même passage afin d'être sûr à 100% de ce qu'on avance et retester une autre dizaine de fois ce passage supposé être corrigé. Et ça, ça arrive très fréquemment ; Environ 85% du temps passé sur un jeu."</p>
+<p>Un dernier conseil, pour vous chers amis, qui vient de mes professeurs : "Si vous voulez programmer un jeu, commencez déjà par créer des applications : une calculatrice, un formulaire, etc… C'est plus simple à faire et à corriger. De plus, vous aurez de bonnes bases." D'ailleurs, rien que pour la sauvegarde de données, c'est jamais aussi simple, croyez-moi.</p>
+<p>(Note de Shin : c'est corrigé :p)</p>
+<p>(Edit : J'ai corrigé 2 — 3 trucs. Merci Shin :))</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_122').addClass('deleted');
+			$('#comment_122 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_122 .delete').css("display", "none");
+			$('#comment_122 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_122 .delete').css("display", "none");
+		else										$('#comment_122 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/51';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#x6e;&#x74;&#97;&#x63;&#116;&#x40;&#108;&#101;&#115;&#102;&#x6f;&#x72;&#103;&#x65;&#x73;&#x2e;&#111;&#114;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

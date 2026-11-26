@@ -1,0 +1,947 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Le commerce dans les RPG</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	L’un des éléments les plus importants du RPG, bien qu'on n'y pense pas tout de suite, c'est le commerce. En effet, qui dit jeu de rôle dit achat et vente d’équipement et de matériel divers (épées, potions, amulettes, etc.) et donc, commerce. L’article qui va suivre vise à développer une réflexion sur quelques aspects du commerce dans les RPG, son influence et la façon de l’implémenter, de façon à immerger le joueur dans l’univers sans que cela devienne un fardeau pour lui.
+
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#x6e;&#x74;&#x61;&#x63;&#x74;&#x40;&#108;&#x65;&#115;&#x66;&#x6f;&#114;&#x67;&#x65;&#x73;&#x2e;&#111;&#114;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Le commerce dans les RPG</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 16 août 2008 02:15:14 | Catégories : <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/univers.html">Univers</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>L’un des éléments les plus importants du RPG, bien qu'on n'y pense pas tout de suite, c'est le commerce. En effet, qui dit jeu de rôle dit achat et vente d’équipement et de matériel divers (épées, potions, amulettes, etc.) et donc, commerce. L’article qui va suivre vise à développer une réflexion sur quelques aspects du commerce dans les RPG, son influence et la façon de l’implémenter, de façon à immerger le joueur dans l’univers sans que cela devienne un fardeau pour lui.</p>
+<p><img alt="Guild Wars 2 (ArenaNet)" src="../media/img/commerce-apercu.png" /></p>
+			</div>
+			<div id="article_content">
+				<h1>I. Les différents aspects du commerce</h1>
+<h2>1. Aspect culturel</h2>
+<p>Le commerce intervient de différentes façons dans l’univers d’un RPG. En premier lieu, c'est un élément de background. Le commerce est un indicateur de développement économique, qui permet de distinguer un petit village dans une forêt coupée du reste du monde et une gigantesque ville portuaire au carrefour des civilisations : il est tout naturel de trouver des magasins plus nombreux et mieux achalandés dans les grandes villes que dans les petites.</p>
+<p>Les objets vendus sont aussi des éléments de background. En jouant sur les objets produits uniquement dans certaines régions, on peut modifier l'ambiance d'une ville : par exemple, telle ville sera la seule à proposer la viande d'un animal qui n'est élevé que dans cette région. Les produits locaux donnent un certain exotisme à la ville visitée, ils lui donnent un côté « typique ». A l'inverse, une ville qui importe des produits dans le monde sera sans doute un carrefour commercial, un port par exemple. Ceci va de pair avec la façon dont sont répartis les savoir-faire : telle arme a été forgée à l’aide d’une technologie maîtrisée uniquement par les forgerons d’une certaine région.</p>
+<p>Les marchands, enfin, sont aussi des éléments de background. Leur design doit coller avec leurs origines et si possible avec les produits qu’ils vendent. Ils peuvent donner un caractère rassurant ou inquiétant à un lieu selon leur caractère et ils peuvent constituer des personnages à part entière, comiques très souvent.</p>
+<h2>2. La monnaie</h2>
+<p>Les échanges commerciaux dans les RPG se font le plus souvent par le biais d'une monnaie. La plupart des jeux se contente d'un seul type de devises — souvent des pièces d'or — universel et la plupart du temps sans intérêt.</p>
+<p>Les développeurs de <em>Chrono Trigger</em> ont proposé une solution intéressante à ce problème : à la préhistoire, la monnaie utilisée dans les autres époques — les pièces d'or — est remplacée par des objets apparemment sans valeur — plumes, crocs, os, etc. — que le joueur peut échanger contre d’autres objets. Ceci permet d’éviter que le joueur ne « sorte » du jeu : imaginez-vous en train de payer des hommes préhistoriques avec des pièces d’or frappées à l’effigie d’un monarque ou d’un monument. Vous vous diriez immédiatement que les développeurs n’y ont pas pensé, que ce n’est pas crédible.</p>
+<p>On peut aussi citer la série des <em>Zelda</em>, qui utilise des cristaux de différentes couleurs appelés Rubis. D'une part, ceci permet de particulariser l'univers et lui donner une touche qui le rend un peu plus unique. D'autre part, ce système de couleurs permet d'éviter d'utiliser des chiffres et permet donc une immersion plus efficace.</p>
+<p>Intéressons maintenant au cas d'<em>Odin Sphere</em>. Le joueur doit jongler entre pas moins de cinq monnaies différentes. Celles-ci ont des designs, des histoires et des valeurs différentes et elles sont mêmes intégrées au scénario. Elles constituent donc une forte plus-value pour l'univers. Mais elles ont aussi une importance véritable dans le gameplay. Les marchands ne feront pas l’effort de vous rendre la monnaie lors de vos achats, c’est donc à vous de faire l’appoint, d’où l’intérêt d’avoir la bonne pièce sur soi. De plus, l'acquisition d'expérience se fait par la cuisine dans <em>Odin Sphere</em> et chaque recette proposée possède son addition propre : si vous voulez préparer un plat, il vous faudra un certain type de monnaie, même si vous avez la somme équivalente avec d’autres pièces. Le joueur doit réfléchir un peu plus qu'à l'accoutumée quand il s'agit de ses achats : puis-je me permettre de m’acheter cet objet avec mes pièces ou ferais-je mieux de les économiser en vue de réaliser une recette très particulière ?</p>
+<p>Une autre possibilité pour donner un rôle à la monnaie est la mise en place de taux de changes. <em>Secret of Evermore</em> proposait cette possibilité en permettant au joueur de changer sa monnaie des époques précédentes contre de la monnaie nouvelle, malheureusement à des taux de change lamentables. On aurait pu imaginer, pour pallier ce défaut, l’existence de PNJ bien cachés rachetant au prix fort votre ancienne monnaie ou un moyen de la transformer pour augmenter sa valeur, ce qui aurait pu donner lieu à des quêtes annexes.</p>
+<p>Une dernière possibilité est de limiter la quantité de monnaie qu'il est possible de transporter, comme avec le système de bourses utilisé dans les <em>Zelda</em>. Notez que ceci est plus facile à mettre en œuvre dans un jeu où les quantités d’argent mises en jeu sont relativement petites, typiquement dans les A-RPG.</p>
+<h2>3. Les commerces spéciaux</h2>
+<p>Il existe aussi d'autres types de commerces qui ne font pas intervenir la monnaie. L'exemple le plus simple est celui du troc, qui permet une approche plus intéressante que l'achat simple : pour obtenir un objet convoité, le joueur devra aller chercher une monnaie d’échange très précise, ce qui peut donner lieu à de nombreuses quêtes — citons ici le marché de <em>Secret of Evermore</em>. Néanmoins, la généralisation du troc à tout un jeu peut poser problème si jamais le joueur doit gérer de gros stocks d’objets. Ceci fonctionne généralement mieux dans des jeux où l’inventaire est très réduit, la plupart du temps dans les A-RPG. Le marché permet par ailleurs au joueur de faire jouer la concurrence et de récompenser ses efforts, s'il a pris le temps de tout bien regarder et de comparer les prix intelligemment.</p>
+<p>Une salle aux enchères constitue aussi une forme particulière de commerce. Elle propose des objets plus intéressants et en nombre plus limité. Mais surtout,  elle fait intervenir le temps. Celui-ci permet de faire monter le stress et met en valeur le caractère stratégique de l’achat  : le joueur doit savoir doser la mise et choisir le bon moment pour la placer, afin d’être sûr d’obtenir l’objet qu’il veut. C'est un moyen de donner plus d'intérêt à l'achat, en le présentant comme la récompense d'un petit challenge.</p>
+<h1>II. L’implémentation du commerce</h1>
+<h2>1. Différents types d’objets</h2>
+<p>Le premier problème qui se pose à nous dans l’implémentation du commerce est le suivant : que peut-on acheter ? Essayons de distinguer les différents types d’objets que le joueur pourra acheter.</p>
+<p>Les « consommables » (en anglais, consumables) : ce sont les objets qui peuvent être utilisés une seule fois — typiquement les objets de soin. On peut varier en proposant des objets qui peuvent être consommés en plusieurs fois — une potion bue en plusieurs gorgées par exemple.</p>
+<p>Les upgrades immédiats : ce sont les équipements que le joueur peut équiper immédiatement après les avoir achetés et qui lui permettent de modifier ses caractéristiques — la plupart du temps, ce sont les épées, les armures, etc.</p>
+<p>Les upgrades futurs : ce sont des objets qui ne peuvent pas être équipés mais qui peuvent devenir des objets d’équipement. Par exemple, une épée cassée ou un minerai, qui une fois transformés, deviendront des équipements de grande valeur pour le joueur. Ce sont des objets très importants si vous décidez d’implémenter un système de forge ou de création d’items.</p>
+<p>Les objets qui permettent de gagner de l’argent: il s’agit la plupart d’objets rares, uniquement décoratifs, qui n’ont d’autre utilité pour le joueur que d’être vendus. Un exemple particulier : la bouteille de vin dans <em>Star Ocean III</em>, dont le prix ne cesse d’augmenter tout au long du jeu. Vaut-il mieux la vendre maintenant qu’elle est bien chère ou attendre encore qu’elle le soit beaucoup plus ?</p>
+<p>Les objets funs et/ou inutiles : la plupart du temps, ce sont des bonus (par exemple des artworks ou des musiques du jeu), qui peuvent être achetés avec une monnaie spéciale (des points ou la monnaie d’un casino par exemple). On peut aussi penser aux costumes secondaires — souvent délirants — qui permettent de pousser l’aspect « customisation » plus loin.</p>
+<p>Les magies : plus rarement, les magies peuvent prendre la forme d’objets, consommables ou pas. Par exemple, les pièces magiques de <em>Seiken Densetsu III</em> sont un exemple de magie consommable, alors que les magies vendues dans les échoppes de <em>Final Fantasy V</em> sont plutôt du type équipement, c’est-à-dire non consommable.</p>
+<p>Les objets nécessaires au gameplay : un peu différents des objets nécessaires au scénario, ce sont les objets utiles à l’avancée du joueur, comme les bombes dans les <em>Zelda</em>.</p>
+<p>Notez que les objets nécessaires au scénario ne peuvent classiquement pas être achetés (mais c’est peut-être une piste à explorer pour innover, qui sait ?).</p>
+<h2>2. Fonctionnalités</h2>
+<p>Deuxième problème : quelles sont les options proposées au joueur lorsqu’il parle avec un marchand et comment les rendre attrayantes ?</p>
+<p>Un élément essentiel pour répondre à cette question est une bonne ergonomie. On doit toujours garder à l'esprit qu'un joueur ne vient pas passer quinze heures à marchander et à revendre la moindre queue de lézard, mais pour trancher du dragon avec une épée magique (ou quelque chose d’approchant). Par conséquent, les menus d'achat doivent être pratiques et simples d’utilisation. Si le joueur doit passer par une tripotée de menus chaque fois qu'il parle à un marchant, le moindre achat de potion risque de devenir un véritable calvaire pour lui. Je vous renvoie à un futur article de Fil pour l'optimisation de vos menus.</p>
+<p>Je me permets tout de même de suggérer quelques petites choses, bien que ce ne soit pas mon domaine de prédilection :</p>
+<ul>
+<li>Minimiser les temps d’affichage des fenêtres. </li>
+<li>Alléger les fenêtres de façon à n’avoir que les informations nécessaires à l’écran</li>
+<li>Montrer les améliorations apportées par les équipements directement dans le menu d'achat — ceci évite au joueur d’insupportables allers-retours entre le menu d’achat et le menu d’équipement.</li>
+<li>Permettre de sélectionner rapidement un grand nombre d’objets, ce qui évite d’avoir à patienter au joueur s’il veut acheter une cinquantaine de potions d’un coup.</li>
+<li>Proposer une option semblable à l’option Troquer de <em>Grandia</em>, qui permettait d’échanger l’armure ou l’arme équipée contre un autre équipement du même type et de l’équiper directement en payant simplement la différence.</li>
+<li>Utiliser des bruitages agréables qui marquent l'achat ou la vente — <em>Final Fantasy XII</em> est un exemple du genre.</li>
+</ul>
+<p>On pourra citer l'exemple de la série de <em>Tales Of</em>, dont les menus sont un modèle de clarté et d’ergonomie.</p>
+<p>Ensuite, quelles sont les possibilités offertes au joueur ? </p>
+<p>Dans la quasi-totalité des RPG, il peut acheter et vendre des objets. Bien que cela reste basique, on peut déjà travailler sur ces options, par exemple en jouant sur les prix d'achat et de vente au cours du temps ou selon le lieu où se trouve le joueur.</p>
+<p>Il s’agit malheureusement souvent des seules options proposées, ce qui rend le commerce dans les jeux peu attrayant. Intéressons nous à la façon dont les actions du joueur peuvent rendre les choses plus intéressantes.</p>
+<p>Une première façon de procéder consiste à donner un rôle à la réputation ou au charisme du personnage. Un personnage reconnu comme un bon samaritain aura droit à des réductions dans les magasins les plus classiques, mais aura droit à des prix prohibitifs s'il veut se fournir dans les bas-fonds. On peut aussi permettre au joueur de discuter lui-même avec le marchand pour essayer de l'amadouer, au risque de s'attirer ses foudres et donc une majoration des prix — horreur ! <em>Starfox Adventures</em> implémentait par exemple un système de négociation des prix qui donnaient lieu à de petites scènes amusantes.</p>
+<p><em>Shadow Hearts II</em> avait implémenté de façon intéressante le concept de ristourne. Le joueur peut obtenir de meilleurs prix d'achat ou de vente s'il réussit un mini-jeu d'adresse faisant intervenir une roulette. Ceci avait le mérite de rajouter un peu de piment aux achats et de conserver une cohérence avec le reste de l'univers — la roulette en question servant aussi dans les combats.</p>
+<p>Pour intéresser le joueur, plutôt que de proposer une baisse de prix, on peut aussi lui proposer un objet plus précieux. C'est le concept à la base des « Affaires ». Imaginez vous, au détour d’une conversation, convaincre un marchand un peu méfiant de vous laisser voir dans l’arrière-boutique des artefacts moins licites mais beaucoup plus alléchants : c’est quand même bien mieux qu’un simple marchand de base, bonhomme et bien prévisible qui ne vous propose que des potions de soin.</p>
+<p><em>Valkyrie Profile II</em> propose un système de ce genre : de nouveaux objets, plus précieux, apparaissent au fur et à mesure que vous vendez les bons objets aux marchands. Ce système a le mérite d’inciter le joueur à faire du commerce et rend les achats plus intéressants : les objets à débloquer sont plus précieux et la collecte des objets à vendre s'apparente presque à une mini-quête en soi.</p>
+<p><em>Final Fantasy XII</em> va plus loin encore en proposant une option baptisée « Affaires » chez les marchands. Au bout d’une certaine quantité d’achats et de ventes, les marchands proposent au joueur des lots d’objets dont ils ne connaissent pas le contenu — celui est vaguement évoqué par le nom du lot — mais qui sont généralement très intéressants. Le joueur est alors récompensé de son investissement dans le commerce par des objets précieux et les transactions gagnent en intérêt grâce à une nouvelle facette du gameplay : le pari. Une récompense est d'autant plus précieuse qu'on a pris des risques pour l'obtenir.</p>
+<p>Après l'achat, la vente, la négociation et les affaires, on peut enfin s'intéresser à la malhonnêteté. En effet, qui n’a pas rêvé dans un jeu, face à un marchand à l’air mauvais et aux tarifs repoussants, de pouvoir s’emparer des multiples artefacts contenus dans ses coffres sans avoir à verser la moindre pièce d’or ? La malhonnêteté est particulièrement intéressante dans des jeux où le charisme ou la réputation ont des rôles importants à jouer  — je pense plus particulièrement aux mécaniques de jeu des RPG PC. </p>
+<p>Il faut cependant faire attention à bien doser : si voler un marchand vous rapporte l’intégralité de son stock, il vaut mieux avoir prévu que celui-ci ait des stocks finis, contrairement à un <em>Final Fantasy par exemple</em>. De plus, il peut être très intéressant du point de vue de la cohérence de l’univers d’intégrer le vol au reste du jeu, par exemple en faisant en sorte qu’un commerçant cambriolé ou trop souvent arnaqué refuse de vous vendre quoique ce soit, voire appelle à lui la garde de la ville. A vous aussi de voir comment présenter le vol : cambriolage discret ou braquage à main armée ? Rappelons pour mémoire la façon dont, dans <em>The Legend of Zelda : Link’s Awakening</em>, le héros se retrouvait renommé en Voyou si le joueur volait dans la boutique du village Cocorico.</p>
+<h2>3. L’acquisition de l’argent</h2>
+<p>Troisième problème : comment récupère-t-on de l'argent ?</p>
+<p>Classiquement, c’est soit en effectuant des quêtes, soit en le récoltant sur le corps des ennemis tués que le joueur peut récupérer de l’argent. Néanmoins, on se retrouve vite très limité par cette vision des choses. Mais comment innover sur ce point ?</p>
+<p>Je citerai deux exemples : <em>Final Fantasy XII</em> permet au joueur de gagner à la fin des combats, non pas de l’argent, mais des objets destinés à la revente — divers butins comme des cornes, des écailles, des griffes, etc. Ceci permet d’assurer un système équivalent au gain d’argent classique et en même temps, de résoudre le problème de cohérence suivant : comment se fait-il le moindre slime traîne sur lui une bourse dont la valeur est strictement définie ? De plus, la multitude d’objets à vendre et les descriptions qui vont avec ajoutent  à la profondeur de l’univers du jeu. Il aurait été intéressant de pousser l’immersion plus loin en assurant que les ennemis humanoïde comme les soldats impériaux laissent quand même de l’argent, ce qui serait logique. </p>
+<p><em>Final Fantasy VIII</em> de son côté — et oui, cette série est beaucoup plus riche d’innovations qu’on pourrait le penser au premier abord — proposait tout simplement de supprimer l’argent gagné à la fin des combats et de le remplacer par un salaire reçu à intervalles réguliers, dont la valeur dépendait du rang du personnage — rang qui pouvait être augmenté à travers des examens de connaissance. Bien qu’il soit dommage que la façon de faire varier le rang soit si peu variée, on retiendra un élément très original : le jeu regorgeait d’idées très nouvelles pour un genre aussi codifié que le RPG.</p>
+<h1>III. Problèmes de vraisemblance</h1>
+<p>Maintenant que nous avons examiné différents aspects du commerce dans les RPG et la façon dont on peut les implémenter, intéressons nous aux différents écueils que l’on doit éviter. Pour la plupart, il s’agit de « clichés » ou plutôt de mécanismes tellement anciens qu’ils passent complètement inaperçus, alors qu’ils sont absurdes quand y réfléchit bien.</p>
+<h2>1. Le marchand trou noir</h2>
+<p>Commençons par un cas classique pour les RPG console — et peut-être moins pour les RPG PC : le marchand trou noir. Vous avez sans doute remarqué que dans de nombreux jeux, les marchandises vendues disparaissent immédiatement, alors que le marchand n’a pas eu le temps de revendre l’objet : c'est assez peu crédible. Une solution souvent consiste à permettre aux marchands de tout simplement garder les marchandises que le joueur leur a vendues, de façon à pouvoir les racheter en cas de pépin. On peut imaginer affiner cette solution en faisant disparaître les objets vendus au marchand à plus ou moins long terme de façon à faire circuler les stocks, quitte à retrouver ces objets à d’autres endroits — par exemple un marché noir.</p>
+<h2>2. Inflation et progression</h2>
+<p>Un autre écueil caractéristique des jeux de rôle (et qui s’applique d’ailleurs à d’autres domaines comme la montée en puissance des monstres) est la façon dont l’évolution des marchandises et des prix est adaptée au joueur. Les armes sont de plus en plus puissantes à chaque nouvelle ville et offrent des capacités parfaitement ajustées au donjon du coin. Ceci est certes pratique, mais rend le commerce « automatique » et constitue une atteinte à la crédibilité de l'univers.</p>
+<p>Une solution consiste à varier les prix en se rappelant que le joueur ne pourra jamais tout acheter : vous pouvez lui proposer dès le départ des armes extrêmement puissantes mais très chères — si par exemple la ville de départ est célèbre pour ses armes — de façon à ce qu’il ne puisse pas les acheter. Une autre façon de procéder consiste à jouer sur des armes dont les capacités ne peuvent être utilisées que si le personnage est suffisamment puissant : telle armure ou telle épée n’aura pas d’intérêt pour le joueur pour un niveau ou des caractéristiques trop faibles pour exploiter leurs véritables capacités.</p>
+<p>Ce problème de la progression des prix est souvent lié à un autre écueil, celui du joueur trop riche. Souvent, à la fin du jeu, le joueur dispose d’une quantité d’argent tellement impressionnante qu’il pourrait sans doute acheter une ville (ayons une pensée pour la série des <em>Star Ocean</em>) ! Il faut veiller à ne pas faire pleuvoir l’argent, même en fin de jeu et surtout pas en tuant des monstres : plus fort ne veut pas dire plus riche. De plus, rappelez vous que l’achat d’une arme qui demande un effort financier — par exemple de faire des quêtes pour se procurer plus d’argent — est au final beaucoup plus valorisant pour le joueur qu’un achat automatique : rien de pire que les prix des équipements dosés pour que le joueur puisse les acheter de justesse. Si le joueur a sué pour avoir ses armes, il sera d’autant plus content quand il les obtiendra : on comparera à cet effet le plaisir d’obtenir une nouvelle arme dans un <em>Final Fantasy</em> et un <em>Dragon Quest</em> par exemple.</p>
+<h3>3. Gestion des stocks</h3>
+<p>Le summum de la crédibilité du point de vue de commerce, bien qu’il s’agisse de quelque chose de très difficile à réaliser, consisterait à programmer une gestion réaliste des stocks, c’est-à-dire de faire varier le type, le nombre et la valeur des produits disponibles en fonction des arrivages, voire des événements du scénario. Il semble logique qu’une guerre provoquera une pénurie de certains produits ou que la destruction d’une région amènera à une diminution de la quantité des produits locaux disponibles.</p>
+<p>Il est aussi important de considérer la répartition des objets entre les différents types de commerce : dois-je faire un magasin unique ou une multitude de petites échoppes ? Séparer les armes et les armures ou les réunir ? A vous de voir, de façon à rester cohérent et à varier si possible. Il peut être intéressant de réserver certains types d’objets plus rares ou plus précieux à des commerces spéciaux, principalement les marchés et les enchères (licites ou non).</p>
+<p>Au final, qu’est-il important de retenir de tout cela et que faut-il pour bien implémenter le commerce dans un RPG ? </p>
+<p>Gardez en mémoire que vous devez parvenir à un équilibre entre l’aspect immersif du commerce (qui permet d’approfondir le background du jeu) et son aspect pratique (il faut que cela reste simple pour le joueur) : le joueur n’a pas acheté ou téléchargé le jeu pour passer son temps à compter des haricots. Le commerce doit être pratique (menus ergonomiques, mise en avant des aspects interactifs comme la négociation ou la spéculation, mais sans JAMAIS les imposer), il doit récompenser le joueur (un bon achat doit permettre de voir une modification significative des performances hors des menus et donner un sentiment de réussite au joueur) et il doit être dynamique (marchands sédentaires ou ambulants, arrivage de nouveaux stocks, influence de l’histoire sur les prix et les disponibilités).</p>
+<p>Il est d’autant plus important de penser à cet aspect du RPG qu’il apparaît de plus en plus dans d’autres genres, à travers les upgrades d’un Shoot Them Up ou un système d’équipement dans un FPS : il serait dommage de passer à côté d’un moyen intéressant d’enrichir le gameplay du jeu.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/commerce&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_222" class="comment">
+	
+		
+			<span class="meta">Par BYAM le 1 avril 2012 17:27:58</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de BYAM" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je tiens juste à rectifier une toute petite erreur dans cet article: dans FFXII, les ennemis humanoïdes rapportent bel et bien quelques gils (en faible quantité mais c'est aussi ça qui rend le résultat plausible! Si on soldat se baladait avec 10000 gils sur lui se serait bizarre). Sinon bon article et bon sujet sur lequel il y aurait beaucoup à dire. L'économie, dans un jeu ou dans la réalité, est tellement complexe que pour l'adapter de manière à la fois cohérente, réaliste et ludique et simple d'utilisation!<br />
+</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_222').addClass('deleted');
+			$('#comment_222 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_222 .delete').css("display", "none");
+			$('#comment_222 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_222 .delete').css("display", "none");
+		else										$('#comment_222 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_25" class="comment">
+	
+		<span class="meta">Par un anonyme le 13 mars 2009 15:53:44</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Coucou,</p>
+<p>Tellement de vérité sur cette article, de points qui m'avaient attiré l'attention quand je jouais…
+Perso, je développe l'économie de mon jeu vidéo (Magdales) depuis près de 2 ans maintenant. A la lecture de votre article, je pense avoir échappé à quelques écueils … mais il me reste encore d'autres points à travailler.</p>
+<p>Dans les écueils évités :</p>
+<ul>
+<li>
+<p>Magdales dispose de 5 monnaies distinctes ( le classique or, argent, cuivre propre au JdR l'oeil noir; le classique dent de gobelin, d'orcs et de trolls, propre à Warhammer ; des cristaux ; des coquillages ; une monnaie démoniaque). Une petite innovation de ma part consiste à utiliser un taux d'échange constant que pour la monnaie humaine. Ainsi, 1 pièces d'or (PO) = 100 pièces d'argent (PA) = 10000 pièces de cuivre. Par contre un exemple dans les autres monnaies un dent de troll = 43,28 dents d'orcs ) 824.78 dent de gobelins. Lorsque les marchands utilisent cette monnaie (qui arrondisse les chiffres à la dent près), il arrive qu'il y ai des soucis au niveau des prix… correspondant à des erreurs de calculs…<br />
+Les taux de toutes les pièces peuvent varier d'une ville à l'autre … la dent de troll vaut 112 PC dans une ville et 118 PC dans une autre. Par ailleurs, seul les banques sont habilitées à échanger la monnaie … pratiquant un taux d'échange de 2 à 20 % selon les établissements.
+Les taux varient aussi avec le temps…</p>
+</li>
+<li>
+<p>limite et renouvèlement des stocks :
+Du fait que les magasins peuvent être achetés par les joueurs, j'ai été obligé de faire un système assez juste vis à vis des magasins. Ils ont donc un capital monétaire, une production (pour les ateliers) des couts d'entretiens, des probabilités de vendre ou non des objets … Un magasin ne va donc pas acheter des objets qu'il n'est pas sur de pouvoir revendre … il achètera à bas prix des objets qu'il pourra produire, mais il achètera à un prix raisonnable de la matière première à son entreprise … a condition de ne pas être en sur-stock ou en manque de trésorerie. Régulièrement, ses stocks sont proposés à des PNJ vivant en ville ou à d'autres bâtiments, qui achète ou non selon un barème de prix. L'argent et les stocks circulent ainsi. On peut tuer un PNJ qui possède l'arme que j'avais vendue il y à 10 jours.</p>
+</li>
+<li>
+<p>Niveau interface du jeu, c'est pas ça. Je vais réfléchir à proposer un système tout en un du type "je prends un meilleurs objets, je rend mon ancien objet, je paye la différence, je m'équipe de ce nouvel objet". J'avais vu ce système avec FF mais je l'avais oublié …</p>
+</li>
+</ul>
+<p>Bon, super article au demeurant !</p>
+<p>--Kéké</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_25').addClass('deleted');
+			$('#comment_25 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_25 .delete').css("display", "none");
+			$('#comment_25 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_25 .delete').css("display", "none");
+		else										$('#comment_25 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_26" class="comment">
+	
+		<span class="meta">Par un anonyme le 30 décembre 2008 02:39:36</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Un exemple que je trouve intéressant du commerce dans les jeux vidéo, et qui colle au troisième point de cet article. J'imagine que ça existait déjà avant, mais je trouvais ça rare dans les RPG japonais. Il s'agit de Tales of the Abyss. Dans ce jeu les magasins sont liés au scénario :<br />
+Au début on est dans une période assez prospère, les prix sont bas, les provisions assez élevées.<br />
+Rapidement advient la guerre, à ce moment là on a des pénuries, presque aucun objet ne se vend.<br />
+Ensuite, la période de fin de guerre, on retrouve des objets, mais les pris sont exorbitants.<br />
+Puis les prix se rétablissent progressivement.<br />
+D'un point de vue du joueur j'ai trouvé ça excellent : ça implique les marchands dans le scénario (ce ne sont pas des distributeurs à items) et ça forme un tout cohérent. De plus ça permet au joueur de se lancer dans un petit commerce en jaugeant les prix, en achetant pas cher et revendre en pénurie.</p>
+<p>Un autre exemple intéressant est dans Morrowind (et peut-être d'autres TES). Quand on vend un objet, il apparaît dans le magasin, on peut le racheter, ou bien le vendeur peut le porter. Ca apporte un contexte physique aux objets qu'on perd dans les jeux où on peut vendre 1 milliard d'objets à un fermier qui vend des carottes (d'où sort-il cet argent !? Il pense vraiment se servir des 500000 potions qu'il vient de me racheter ? O_o).</p>
+<p>En tout cas il y a matière à réfléchir pour apporter un système de marché sympathique, et éviter de marteler les débris du quatrième mur.</p>
+<p>--Ptival</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_26').addClass('deleted');
+			$('#comment_26 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_26 .delete').css("display", "none");
+			$('#comment_26 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_26 .delete').css("display", "none");
+		else										$('#comment_26 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/25';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="commerce@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#116;&#97;&#99;&#116;&#64;&#x6c;&#x65;&#x73;&#102;&#x6f;&#114;&#103;&#101;&#115;&#x2e;&#111;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1355 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | La leçon de dessin de Arne</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Je crois qu'il existe une logique qui dicte si une image est réussie ou pas. Je crois aussi que les humains sont des machines faites de viande, et qu'un jour les ordinateurs seront capables de faire ce que nous faisons. Puisque la logique peut être mise sous forme de règles, de lignes de conduites et de théories, on peut la partager. C'est ce que je vais essayer de faire ici.
+Gardez à l'esprit que j'ai déduit empiriquement les théories que je présente ici, et que je suis une machine de viande qui a de grandes chances de se tromper. A un certain niveau, une peinture est assez réussie pour que nos préférences personnelles et nos capacités intellectuelles et cognitives ne remarquent plus ou ne s'attardent plus sur les imperfections. Plus vous en saurez sur l'art et plus vous remarquerez les petits défauts (et plus vous passerez pour un vieux grincheux aux yeux des autres).
+
+De nombreuses règles vont à l'encontre les unes des autres, s'annulent mutuellement, ou sont à oublier pour certaines approches stylisées. Ce dont je vais parler ici n'est que le large spectre des règles de base sur lesquelles nous sommes généralement d'accord. Les extra-terrestres pourraient trouver étrange la partie sur les ombres froides et la lumière chaude…sans parler de la partie où j'évoque les visages humains.
+Le conseil de loin le plus utile que je puisse donner aux artistes en cours d'apprentissage est : Entrainez-vous.
+Étudiez tout et sur tous les supports. Oui, cela veut aussi dire dessiner ce que vous détestez. Alors à quoi bon ce cours si tout ce qui compte c'est l'entrainement ? Et bien je pense qu'il y a quelques choses qu'il est bon de savoir dès le début, mais vous ne remarquerez aucune amélioration simplement après avoir lu ce cours. Il ne fait aucun doute qu'il vous faudra du temps pour digérer ce que j'ai écrit ici, alors vous pourriez avoir besoin de jeter de nouveau un œil à ce texte dans quelques mois.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#110;&#x74;&#x61;&#x63;&#116;&#64;&#x6c;&#x65;&#x73;&#102;&#111;&#x72;&#103;&#101;&#115;&#x2e;&#111;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>La leçon de dessin de Arne</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 27 octobre 2008 16:33:00 | Catégories : <a href="../tag/cours.html">Cours</a>, <a href="../tag/dessin.html">Dessin</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/agersant.html">Antoine Gersant</a>.
+						<br/>L'<a href="http://itchstudios.com/psg/art_tut.htm" target="_blank">article original</a> est écrit par Arne publié par itch_studios (janvier 2005).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p>Je crois qu'il existe une logique qui dicte si une image est réussie ou pas. Je crois aussi que les humains sont des machines faites de viande, et qu'un jour les ordinateurs seront capables de faire ce que nous faisons. Puisque la logique peut être mise sous forme de règles, de lignes de conduites et de théories, on peut la partager. C'est ce que je vais essayer de faire ici.<br />
+Gardez à l'esprit que j'ai déduit empiriquement les théories que je présente ici, et que je suis une machine de viande qui a de grandes chances de se tromper. A un certain niveau, une peinture est assez réussie pour que nos préférences personnelles et nos capacités intellectuelles et cognitives ne remarquent plus ou ne s'attardent plus sur les imperfections. Plus vous en saurez sur l'art et plus vous remarquerez les petits défauts (et plus vous passerez pour un vieux grincheux aux yeux des autres).</p>
+<p><img alt="Sans titre (Arne)" src="../media/img/arne-apercu.jpg" /></p>
+<p>De nombreuses règles vont à l'encontre les unes des autres, s'annulent mutuellement, ou sont à oublier pour certaines approches stylisées. Ce dont je vais parler ici n'est que le large spectre des règles de base sur lesquelles nous sommes généralement d'accord. Les extra-terrestres pourraient trouver étrange la partie sur les ombres froides et la lumière chaude…sans parler de la partie où j'évoque les visages humains.</p>
+<p>Le conseil de loin le plus utile que je puisse donner aux artistes en cours d'apprentissage est : Entrainez-vous.<br />
+Étudiez tout et sur tous les supports. Oui, cela veut aussi dire dessiner ce que vous détestez. Alors à quoi bon ce cours si tout ce qui compte c'est l'entrainement ? Et bien je pense qu'il y a quelques choses qu'il est bon de savoir dès le début, mais vous ne remarquerez aucune amélioration simplement après avoir lu ce cours. Il ne fait aucun doute qu'il vous faudra du temps pour digérer ce que j'ai écrit ici, alors vous pourriez avoir besoin de jeter de nouveau un œil à ce texte dans quelques mois.</p>
+			</div>
+			<div id="article_content">
+				<h1>1. Conditions d'utilisations</h1>
+<p>Vous êtes libre de traduire et héberger ce cours tel qu'il apparait pour l'instant. Vous êtes également libre de le distribuer à des fins éducatives (pour le distribuer à des étudiants par exemple). Il doit cependant demeurer gratuit.</p>
+<p>Étant donné que je risque de le mettre à jour et que les nouvelles versions sont en général mieux que les précédentes, je préfèrerais éviter la multiplication des miroirs de cette page. Je ne peux pas mettre à jour les miroirs que je ne contrôle pas. De plus, exposer ce cours entouré de publicités ou pour gagner du trafic sur un site est une idée de débile. Vous êtes sur internet et un lien vers cette page devrait suffire si vous voulez attirer l'attention de quelqu'un sur ce cours.</p>
+<p>Je crois que ces conditions d'utilisation disent à peu près la même chose :</p>
+<p><img alt="Copyright et tout ça" src="../media/img/arne-cc.png" /></p>
+<p>Le contenu de cette page est mis à disposition selon les termes de la <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Licence Creative Commons Paternité — Pas d'Utilisation Commerciale — Partage à l'Identique 3.0 non transcrit</a>.</p>
+<p>Si vous avez traduit cette page, ou si vous repérez une traduction, merci de me le faire savoir pour que je puisse mettre un lien vers cette traduction ici.</p>
+<p>Par Arne Niklas Jansson — 2005 &amp; 2007<br />
+Contact : <a href="../media/img/arne-mail.jpg">Rébus e-mail</a> (indice : la réponse est diglett (<em>NdT : Taupiqueur</em>) et est hébergée chez le célèbre client de messagerie de Google)<br />
+Traduction : Antoine Gersant (texte) et Shin (images)</p>
+<h1>2. Terminologie</h1>
+<p>Je vais essayer de me tenir éloigner du vocabulaire compliqué. Voici quelques mots de base.</p>
+<p><strong>HSL</strong> — Trois dimensions de la lumière : Teinte, Saturation et Valeur. On peut les représenter sur un cylindre en tant que l'angle, le rayon et la hauteur.</p>
+<p><strong>RVB</strong> — Trois autres dimensions de la lumière : Rouge, Vert et Bleu.</p>
+<p><strong>Exposition</strong> — Tout comme l'œil, un appareil photo est un dispositif qui attrape les photons. Quand il enregistre une image, il compte les photons « par pixel ». Quand une image est transformée en une image plate, son support n'est pas assez lumineux pour briller comme le soleil. Les valeurs de lumière doivent être tronquées dans les extrêmes les plus clairs et les plus sombres. Les appareils photos peuvent enregistrer les images dans un format appelé RAW qui conserve toutes les valeurs. Ces images peuvent être observées sur des « moniteurs à grande gamme dynamique » qui sont capables d'émettre des valeurs plus claires que les moniteurs usuels. Quand on peint sur un support normal, l'impossibilité de peindre des choses brillantes nous oblige à raccourcir à différentes astuces qui simulent la luminosité. Le peintre Anders Zorn faisait ça très bien.</p>
+<ul>
+<li><strong>Teinte</strong> — Les variations de couleur. Par exemple, la peau a des variations de teinte comme les joues qui sont plus roses que le reste.</li>
+<li><strong>Saturation</strong> — La saturation décrit la quantité de couleur présente. Les couleurs « néons » sont très saturées. les couleurs claires et sombres peuvent aussi êtres saturées, mais dans l'espace de couleurs RVB, la saturation est plus visible pour les valeurs moyennes. Cela est du au fait que les couleurs paraissent plus saturées quand les trois composantes RVB ont des valeurs très différentes, ce qui nous place souvent dans des valeurs moyennes.</li>
+<li><strong>Valeur, Luminosité</strong> — Il y a plusieurs façons de calculer la valeur. Dans le système RVB, le vert est en général le plus clair, suivi du rouge puis du bleu. Dans un programme que j'ai un jour codé, j'ai utilisé la formule suivante pour calculer la valeur d'un pixel depuis ses trois composantes RVB : Valeur = 0,299 * Rouge + 0,587 * Vert + 0,114 * Bleu.</li>
+<li><strong>Lisible</strong> — Se dit quand on peut comprendre ce qu'une image est censée représenter.</li>
+<li><strong>Radiosité, ambiance et lumière réfléchie</strong> — J'emploie ces termes pour parler du fait que la lumière qui atteint une surface est réfléchie pour aller atteindre ensuite une autre surface. Cela arrive en permanence. Dans une salle verte, tous les objets prendront une teinte verte par exemple. La radiosité est un terme pour les rendus 3D, j'utilise « lumière réfléchie » pour les reflets dont je connais la source et « Ambiance » pour ceux qui caractérisent une couleur un peu partout dans les environs.</li>
+<li><strong>Speculars (sans équivalent français)</strong> — Les points blancs de lumière qui apparaissent sur les surfaces réfléchissantes.</li>
+<li><strong>Aplanir</strong> — Enlever les textures et changements de valeurs inutiles</li>
+<li><strong>Texture, bruit</strong> — Poussière et autres petits détails de l'image qui ne décrivent rien en particulier.</li>
+<li><strong>Forme, modelage</strong> — La forme en 3 dimensions de quelque chose</li>
+<li><strong>Plan</strong> — Je ne sais pas exactement, je m'en sers pour dire « premier plan », « second plan » et « arrière plan ». Parfois je m'en sers pour parler d'une surface plane.</li>
+<li><strong>Perspective atmosphérique</strong> — L'air n'est pas parfaitement transparent. Comme vous l'avez peut être remarqué, les choses ont tendance à s'effacer avec la distance et les couleur dérive parfois vers le bleu du ciel. La perspective atmosphérique peut servir pour séparer visuellement les différentes parties de votre image à des distances différentes. On peut également l'exagérer. Certains artistes, dont moi, utilisent la perspective atmosphérique pour séparer les différents membres d'un corps qui se superposent ou pour assurer la transition avec l'arrière plan.</li>
+</ul>
+<h1>3. Apprendre à voir</h1>
+<p>La partie consciente du cerveau humain ne peut pas gérer beaucoup d'informations, il est plus efficace de développer des réflexes pour la plupart des tâches courantes et répétitives. Une partie de notre cerveau traite les images venant des yeux. Une fois traitées, très peu d'informations sont en fait envoyées à notre conscience (certains autistes ont d'ailleurs un trouble de ce processus, qui les surcharge d'information). Malheureusement pour nous autres artistes, notre cerveau modifie ainsi notre perception de l'image et nous ne voyons plus vraiment ce que nous voyons. Dans une certaine mesure, nous devons apprendre à réaliser le traitement inverse à celui de la perception.</p>
+<ul>
+<li><strong>Déplier</strong> — Notre œil parvient à voir toutes les surfaces comme de face ou de plusieurs vues à la fois. Par exemple, le côté d'une boite vue de travers ne nous apparait pas déformé.</li>
+<li><strong>Exposition</strong> — Nous parvenons à restituer la couleur d'un objet qu'il soit dans l'ombre ou à la lumière.</li>
+<li><strong>Balance des blancs</strong> — Nous voyons toujours les feuilles de papiers comme du blanc, que l'on soit à l'intérieur ou à l'extérieur. Les appareils photos eux font mal la balance des blancs. Si un photographe ne fait pas attention, ses photos d'intérieurs finissent souvent orangées (à cause de la lumière dans ampoules) et ses extérieurs trop froids (à cause du bleu du ciel).</li>
+<li><strong>Redimensionnement avec la distance</strong> — Une personne au loin nous semble être de la taille d'un humain. Toutefois, j'ai entendu l'histoire d'un homme qui aurait grandi dans une jungle épaisse et qui n'aurait donc jamais rien observé au loin. Le jour où un scientifique l'a emmené dans la savane où un rhinocéros se tenait à l'horizon, l'homme le prit pour un insecte. Lorsqu'ils s'approchèrent, l'homme crut que l'insecte « grandissait ».</li>
+</ul>
+<hr />
+<p>Quand nous dessinons depuis une image plane comme une photographie, il nous est plus facile de voir les proportions, les alignements et les distorsions de perspective. D'une certaine façon, une partie du travail est déjà faite (et sans doute assez mal). Il est bien plus difficile d'étudier depuis la réalité, mais dans l'état actuel des choses les photographies ne nous donnent pas « toute l'image ». Les appareils photos tronquent des valeurs et modifient les teintes subtiles, sans parler du fait que les photographies ne sont pas en stéréo.</p>
+<h1>4. Pelures d'oignon (penser en calques)</h1>
+<p><img alt="Penser en couches" src="../media/img/arne-oignon.png" /></p>
+<p>Avant de donner un coup de pinceau, il faut penser à un bon paquet de choses. En fait, vous ne devriez même pas y penser et en faire des automatismes.</p>
+<ul>
+<li>Sentir le volume et l'angle de la forme.</li>
+<li>Déterminer d'où arrive la lumière sur cette forme.</li>
+<li>Essayer de déterminer si certaines ombres atterrissent sur cette surface</li>
+<li>Existe-t-il une lumière réfléchie (radiosité) qui arrive sur cette surface ?</li>
+<li>Quelle est la couleur d'ambiance de la scène (lumière globale réfléchie) ?</li>
+<li>A-t-on besoin d'ajouter des speculars ? La surface est elle mouillée ou réfléchissante et orientée de sorte à réfléchir une source de lumière comme le ciel ?</li>
+<li>Quel est le niveau d'exposition ? Suis-je en train de peindre un objet si éclairé qu'il est plus que blanc ? L'objet est-il tellement dans l'ombre que même son point le plus clair est plongé dans l'obscurité ?</li>
+<li>Du brouillard intervient-il ?</li>
+<li>Quelle est la texture de la surface ?</li>
+</ul>
+<p>Notez bien que tout cela concerne surtout les styles réalistes. Chaque coup de pinceau devrait être efficace et cohérent avec le reste de la peinture et votre choix de couleur. Vous pourriez aussi bien avoir un style ou une idée qui vous interdit certaines couleurs ou textures et qui donne la priorité à d'autres éléments. Toutefois, même les illustrations des Super Nana sont des simplifications de représentations réalistes. N'espérez pas vous cacher derrière un « Ça ne fait pas partie de mon style donc je n'apprend pas à le faire ».</p>
+<h1>5. Lumière</h1>
+<p>Il n'existe dans la réalité qu'un seul type de lumière, et elle rebondit. La part de lumière (les photons en fait) que vous percevez est celle qui après avoir rebondi finit par rentrer dans vos yeux. La lumière fait deux choses quand elle frappe une surface : tout d'abord une partie de la lumière est absorbée, et c'est ce qui donne aux choses leurs couleurs. Une pomme réfléchit surtout les longueurs d'onde correspondant au rouge et le reste est absorbé et transformé en chaleur ou autre chose. C'est pour ça que les objets noirs chauffent au soleil d'ailleurs. Bref, la lumière rebondit différemment selon la nature de la surface qu'elle frappe. Si la surface est irrégulière, la lumière va rebondir de façon un peu aléatoire, comme quand une balle de tennis tombe sur du gravier. Si au contraire la surface est lisse, la lumière rebondira selon une trajectoire prévisible. Un miroir est une surface très lisse, si bien que la lumière repart non déformée, et on peut y voir son reflet.<br />
+Remarquez que toutes les surfaces ont des speculars, puisque ces derniers ne sont que de la lumière réfléchie. C'est juste qu'ils sont très très dispersés et dilués sur les surfaces mats.</p>
+<p><img alt="Exemples de speculars" src="../media/img/arne-lumiere.png" /></p>
+<p>Selon la position de l'œil ou du tyrannoeil, il verra la lumière différemment et les speculars a des endroits différents sur une surface courbe comme celle-ci. Une flaque d'eau n'est pas courbée (mise à part les bords, à cause des tensions de surface) donc vous ne verrez un reflet brillant que depuis un certain angle. Les speculars ne peuvent apparaître que dans un environnement contenant une source de lumière ponctuelle comme le soleil, une ampoule ou une petite fenêtre.</p>
+<p><img alt="Ma chemise" src="../media/img/arne-lumiere2.jpg" /></p>
+<p>Il y a aussi des speculars sur les vêtements, plus dilués et plus subtils. J'ai tiré sur la manche de ma chemise avec deux doigts pour obtenir une surface plane entre les deux points indiqués (et j'ai ensuite bougé la caméra, pas la chemise).</p>
+<p>Sur terre il y a en général un environnement dense sur lequel la lumière peut rebondir, du coup les objets sont plus ou moins éclairés de tous les côtés. Par exemple nous avons le ciel qui est comme une source de lumière bleue en forme de dôme. Nous avons aussi le sol, les murs et d'autres surfaces. Dans l'espace il n'y a en gros qu'une seule source de lumière, le soleil. C'est pour ça que la lune a une face éclairée et une face dans l'ombre, d'où son air plat. Cependant, si vous regardez attentivement vous pouvez voir la lumière réfléchie par la Terre sur la face ombragée de la lune. A cela s'ajoute la lueur des étoiles autres que le soleil, qui est je suppose encore plus faible.</p>
+<p>La deuxième chose que fait la lumière quand elle frappe une surface et rebondit, c'est changer de couleur. Si elle frappe une nouvelle fois une surface de la même couleur, cette dernière gagnera en saturation.</p>
+<p><img alt="La lumière rebondit" src="../media/img/arne-lumiere3.png" />
+<img alt="(Trop orange pour être une couleur de peau de toute façon)" src="../media/img/arne-lumiere4.png" /></p>
+<h1>6. Exposition</h1>
+<p>La lumière du soleil est bien plus intense que celle du ciel, qui est elle même plus forte que la lumière en intérieur. Nos yeux s'adaptent automatiquement après un certain délai, et nous pouvons également les adapter manuellement en plissant les yeux ou en fixant notre attention sur un objet.
+A cause de cela, il est difficile de comprendre que nos yeux sont en fait assez limités. Leurs limites deviennent évidentes grâce aux appareils photos. Si vous prenez une photo en intérieur, les fenêtres seront surexposées (blanches). Si vous essayez d'ajuster le niveau d'exposition en fonction de la lumière de la fenêtre, l'intérieur de la pièce sera alors sous-exposé.</p>
+<p>Ce phénomène peut être utilisé à votre avantage, par exemple en plaçant un personnage où un objet au premier plan là où il sera sombre, de telle sorte que sa silhouette se lise bien avec une pièce très éclairée en fond.</p>
+<p>Les variations d'exposition peuvent aussi faire rendre certaines parties d'un corps très claires ou très foncées, et les éloigner très loin des couleurs de peaux habituelles. Quand l'ombre est très sombre et que le côté éclairé est surexposé, la couleur ne peut se loger qu'à la frontière des deux.</p>
+<h1>7. Matières</h1>
+<p>Voici quelques exemples de matières et la façon dont je fais leurs rendus.</p>
+<ul>
+<li><strong>Vêtements</strong> — Très peu de speculars, juste des zones d'ombre et de lumière. Parfois, une vive lumière peut traverser un vêtement fin et être diffusée sous la surface.</li>
+<li><strong>Cuir</strong> — Il peut parfois être un peu brillant et du coup avoir quelques speculars. Attention à ne pas le faire trop saturé.</li>
+<li><strong>Arbres et bois</strong> — Mat. Et peu saturé aussi (un peu gris brun / terre de sienne).</li>
+<li><strong>Pierre</strong> — Un peu comme les vêtements. La surface est en général trop irrégulière (aussi bien à l'échelle microscopique que macroscopique) pour avoir des speculars visibles.</li>
+<li><strong>Plastique</strong> — On dirait que les speculars et les reflets sont de la même couleur que le plastique. Les plastiques sont parfois aussi un peu transparents.</li>
+<li><strong>Or</strong> — L'or n'est pas orange. J'utilise du noir, parfois du orange désaturé avec des pointes de vert, puis ensuite plus clair vers le jaune et le blanc.</li>
+<li><strong>Argent</strong> — Plus ou moins comme un miroir.</li>
+<li><strong>Metal</strong> — Pour les armures, boostez un peu les valeurs, et pas trop de teintes médianes.</li>
+<li><strong>Métal brossé</strong> — Un intermédiaire entre une surface grise et une surface en argent.</li>
+<li><strong>Verre</strong> — Souvent simplement transparent avec des distorsions. Les speculars apparaissent brutalement et sont souvent blancs. Dans le cas des vitres de voitures, vous aurez peut-être remarqué qu'il est plus simple de voir ce qui est derrière si il y a un ombre sur la fenêtre, la réflexion la plus claire masque ce qui est derrière.</li>
+<li><strong>Surfaces mouillées</strong> — Plus de speculars ! Les vêtements peuvent devenir transparents (<em>NdT : pensez Miss T-Shirt mouillé</em>) et les pierres deviennent plus saturées (et leurs détails ressortent plus).</li>
+</ul>
+<p><img alt="Différents matériaux" src="../media/img/arne-matieres.png" /></p>
+<h1>8. Ombres</h1>
+<p>Les ombres sont plutôt plates et en général moins saturées que le côté éclairé. La lumière d'ambiance se repère plus facilement dans l'ombre.
+Les ombres deviennent floues avec la distance (phénomène de diffraction).</p>
+<p><img alt="(Les ombres d'UNE même source de lumière ne s'additionnent pas je veux dire...)" src="../media/img/arne-ombres.png" /></p>
+<h1>9. Les tons de peau</h1>
+<p>Considérez l'environnement. la lumière est plus forte dehors, et la peau a tendance à y être moins saturée à cause de la lumière ambiante du ciel bleu et des speculars bleus. Parfois la couleur de la peau dérive vers le violet à cause du bleu du ciel qui s'en mêle. C'est particulièrement vrai si le sujet est à l'ombre.</p>
+<p>En intérieur (sans fenêtres, et avec un éclairage à base d'ampoules), la lumière plus chaude augmente la saturation et amplifie les tons oranges et rouges.
+Les ombres sur la peau peuvent parfois s'éloigner vers le vert, particulièrement si la pièce comporte des objets verts (papier-peint, plantes, meubles).</p>
+<p>Dans une pièce blanche ou une salle de bain, les teintes de peau sont plus pâles, proches des couleurs du lieu et moins contrastées en raison de la forte lumière d'ambiance.</p>
+<p>Une pièce éclairée par une seule source de lumière intense donnera probablement des ombres presque noires.</p>
+<p>…en bref l'environnement dans lequel se trouve la peau affecte beaucoup la façon dont vous devez en faire le rendu.</p>
+<h1>10. Les teintes de peau</h1>
+<p>Le corps humain a de nombreuses teintes différentes. Les parties qui sont couvertes par des vêtements sont par exemple moins bronzées : le pubis, les hanches et le torse sont plutôt pâles. Les épaules et les avant-bras (côté extérieur) sont un peu plus bronzés. La peau des genoux et des coudes est plus foncée que le reste. Le visage comporte de nombreuses teintes, comme les joues rosées, et les hommes peuvent avoir du gris voire presque du vert sur la mâchoire s'ils sont adeptes de la barbe de trois jours. La meilleure façon d'apprendre quelle sont les teintes du corps humain est évidemment de l'étudier. N'oublier pas que les animaux, les monstres et les objets ont aussi des teintes diverses. Si vous peignez tout avec la même teinte et la même saturation le résultat sera ennuyeux.</p>
+<p>Certaines teintes sont dues aux lumières réfléchies et aux lumières d'ambiance. Les épaules et autres surfaces pointées vers le haut peuvent ainsi recevoir un peu du bleu du ciel.</p>
+<h2>Les dégradés saturés</h2>
+<p>Les dégradés entre ombre et lumière ne sont pas de simples fondus mélangeant les deux couleurs. De tels fondus ont l'air sans vie. Si vous regardez les images ci-dessous, vous verrez que les dégradés réussis sont ceux saturés au milieu.</p>
+<p><img alt="Dégradés saturés" src="../media/img/arne-peau.png" /></p>
+<hr />
+<h2>La diffusion sous les surfaces</h2>
+<p><img alt="Le principe de la diffusion" src="../media/img/arne-diffusion.png" /></p>
+<p>Les lumières intenses peuvent pénétrer les surfaces de certaines matières et rebondir à l'intérieur avant de sortir à nouveau. Cela augmente la saturation et la surface a l'air éclairée depuis l'intérieur. Dans le cas de la peau humaine, on le voit parfois sur les contours nets entre ombre et lumière.</p>
+<p><img alt="La diffusion sur des feuilles" src="../media/img/arne-feuilles.jpg" /></p>
+<p>Les feuilles sont brillantes sur le dessus, ce qui veut dire qu'il peut parfois y avoir un specular bleu dessus. La lumière brillant à travers la feuille augmente la saturation du dessous, c'est aussi vrai pour les oreilles et les doigts, qui peuvent prendre une couleur « super rouge » quand ils sont très retroéclairés.</p>
+<p><img alt="Diffusion et peau" src="../media/img/arne-main_1.jpg" /></p>
+<p>Diffusion sous la surface du bout des doigts. La lumière sur le côté gauche du pouce est sans doute de la lumière réfléchie depuis l'index.</p>
+<p><img alt="Surexposition" src="../media/img/arne-main2.jpg" /></p>
+<p>Remarquez que le contour n'apparait que si l'objet est surexposé. Ce n'est pas aussi prononcé sur le pouce.</p>
+<h1>11. Relativité des couleurs</h1>
+<p>Les couleurs et les valeurs sont relatives. En utilisant différentes astuces, il est possible de faire croire à l'observateur qu'une couleur en est une autre, ou une valeur différente. Malheureusement, les artistes se font aussi souvent avoir et utilisent plus de valeurs ou de couleurs que nécessaire.</p>
+<p>Un contour net se remarque plus qu'une transition douce. Vous devrez apprendre quand utiliser l'un plutôt que l'autre . Parfois vos choix de valeurs seront très limités, par exemple quand vous travaillerez sur des zones d'ombres. En utilisant des contours durs, vous pourrez alors décrire plus de détails en utilisant moins de valeurs différentes. Toutefois, les dégradés sont bien pratiques pour changer de valeur sans que l'observateur ne s'en aperçoive. Les « faux-plats » ont bel et bien l'air plats alors que ce sont des dégradés. Sur l'illustration du faux-plat, le carré à droite est de la couleur la plus à gauche du rectangle.</p>
+<p><img alt="Relativité des couleurs" src="../media/img/arne-saturation.png" /></p>
+<p>Les couleurs de même valeur sont perçues de façon relative à leur teinte. Une erreur courante est de dessiner un détail trop saturé, ce qui rend grisâtre quelque chose d'autre au voisinage de ce détail on augmente alors la saturation ici aussi pour composer et au final tout est trop saturé.</p>
+<p><img alt="Des patates" src="../media/img/arne-saturation2.png" /></p>
+<h1>12. Identité des couleurs</h1>
+<p>On se laisse souvent aller à mettre trop de highlights. Cela masque les couleurs réelles des objets, et vous feriez mieux d'utiliser les ombres pour dépeindre les volumes du sujet.</p>
+<p><img alt="Identité des couleurs" src="../media/img/arne-identite.png" /></p>
+<h1>13. Aplanir et simplifier</h1>
+<p>Travaillez avec des brosses grosses et supprimez les coups de pinceau inutiles. Regardez ci-dessous l'exemple de ce qu'il faut faire (ou pas). Je n'ai pas fait grand chose sur le deuxième, il est en fait simplifié. Il est surprenant de voir comment un peu d'aplanissement ici et là peut tout changer. J'ai aussi passé un peu plus de temps sur le visage car un visage raté peut tout foutre en l'air. L'image est basée sur une photo.</p>
+<p><img alt="Pas bien" src="../media/img/arne-aplanir1.jpg" />
+<img alt="Mieux" src="../media/img/arne-aplanir2.jpg" /></p>
+<h1>14. Point focaux</h1>
+<p>Une peinture est une hiérarchie de détails d'importance variable. Si vous êtes en train de peindre une pin-up, alors le personnage et sa silhouette sont ce qu'il y a de plus importants. Dans les bandes dessinées, un contour épais entoure souvent les silhouettes tandis que les détails sont dessinés avec des lignes plus fines par ordre d'importance. Quand vous peignez, ce doit être la même chose mais à coups de pinceau ! Vous devez utiliser des teintes, des saturations, des valeurs, des nettetés, des compositions et des niveaux différents pour guider l'œil de l'observateur vers le point focal de la peinture.</p>
+<p>Si votre rendu est le même partout, le résultat sera plat. Vous pouvez guider l'œil vers les points importants, mais une fois l'œil en place il faut quelque chose pour l'y maintenir, comme par exemple des détails bien placés. La quantité de détails sur un endroit doit être proportionnelle au temps que l'œil y passera.</p>
+<p><img alt="Une tentative d'isolement des techniques que vous pouvez utiliser pour attirer l'œil" src="../media/img/arne-focus.png" /></p>
+<p>Voici un exemple que j'ai réalisé : (A) Formes importantes | (B) Texture | (C) Les deux à la fois</p>
+<p><img alt="Formes importantes" src="../media/img/arne-volume.jpg" />
+<img alt="Texture" src="../media/img/arne-organic.jpg" />
+<img alt="Les deux à la fois" src="../media/img/arne-organic2.jpg" /></p>
+<p>Il faut faire attention à ne pas se laisser emporter par le rendu des détails, surtout au début d'une peinture. Vous ne pouvez pas détailler de la même façon dans l'ombre et dans la lumière. Sur la seconde image (B), j'ai fait apparaitre tous les détails pour montrer ce qui arrive quand on barbouille tout son dessin de détails sans penser aux formes importantes (A). (C) n'est pas parfait non plus mais c'est plus un problème de construction qu'autre chose. On peut difficilement faire mieux avec une vue de côté, et l'anatomie bizarre complique la lecture de l'image.</p>
+<p>A est la forme sans détails, B représente les détails et C la combinaison de A et B. Soyez attention à ne pas exagérer B, on doit toujours pouvoir lire la forme !</p>
+<h1>15. Perspective et construction</h1>
+<p>Je ne vais pas me lancer dans un long cours sur la perspective ici. Je vais me contenter de vous dire à quel point ils est plus facile de dessiner après avoir dessiné quelques lignes de référence pour aligner vos personnages ou vos environnements.</p>
+<p><img alt="Perspective à deux points" src="../media/img/arne-perspective.jpg" /></p>
+<p>Si vous renâclez à dessiner des environnements juste parce que la perspective est pénible à mettre en place, vous pouvez utiliser une simple perspective à deux points et deviner un peu les détails (<em>NdT : mais faudra pas pleurer si vos décors sont de travers</em>). Les choses n'ont pas besoin d'être parfaites pour avoir l'air parfaites. Vous aurez d'ailleurs des problèmes si vous n'êtes pas capable d'improviser et que vous avez besoin de votre règle avant et après chaque coup de pinceau. Commencez par dessiner une ligne d'horizon puis faites partir de chaque extrémité de la ligne d'horizon des lignes dans des directions aléatoires, débarrassez vous ensuite des bords de l'image et vous êtes paré à dessiner.</p>
+<p>Voici quelques lignes rapides et à mains levé qui m'aident à aligner les épaules et le reste. Quand on dessine des personnes, cela peut aider de les aligner selon le tracé de leur colonne vertébrale.</p>
+<p><img alt="La perspective en 3 coups de pinceau" src="../media/img/arne-perspective2.png" /></p>
+<h1>16. Tracés</h1>
+<ul>
+<li><strong>Exagérer</strong> — L'une des choses merveilleuses avec l'art c'est que l'on peut exagérer les choses, comme les hanches et les seins. Haha, non sérieusement. C'est une bonne chose que les courbes importantes soient plus prononcées.</li>
+<li><strong>Simplifier</strong> — L'avantage du dessin sur la photographie est les simplification. Une photographie est remplie de détails qui détournent l'attention. En dessin, on peut se passer de tous les objets qui ne sont pas pertinents pour la scène représentée. Une erreur fréquente consiste à dessiner tous les muscles abdominaux à grand renfort de croisillons. Il vaut mieux conserver de simple lignes à cet endroit, particulièrement si vous allez colorier l'image puisque le contraste entre deux couleurs peut servir de ligne.</li>
+<li><strong>Harmoniser</strong> — Un autre mot pour cela est « dynamique ». Contrairement au paragraphe ci-dessus, nous parlons cette fois de relations entre les détails et la façon dont les lignes se croisent et se dominent. Essayez d'utiliser quelques lignes dynamiques sur lesquelles vous pourrez aligner plusieurs éléments.</li>
+<li><strong>Styliser</strong> — Quand on décide d'utiliser un style particulier, il est essentiel d'être cohérent. Vous pouvez par exemple transformer les courbes en traits droits ou vous pouvez décider de tout remplacer par des sinusoïdes ondulantes. Je préfère un mélange des deux en transforment les courbes en lignes droites à partir d'un certain seuil.</li>
+<li><strong>Épaisseur des lignes</strong> — A quelques exceptions près, j'apprécie peu les dessins où l'épaisseur du trait est fixée. Je vais essayer d'introduire quelques conseils pour savoir quand et comment modifier l'épaisseur de son trait.<ul>
+<li>Les traits sont plus épais dans les ombres que dans la lumière.</li>
+<li>Les traits sont plus épais près de l'observateur qu'à l'arrière plan.</li>
+<li>Les contours de silhouettes sont plus épais que ceux des détails intérieurs.</li>
+<li>Les objets plus clairs demandent des traits plus fins.</li>
+<li>Les traits fins sont les amis des motifs détaillés.</li>
+<li>Les traits épais sont les amis des formes simples.</li>
+<li>Les traits épais sont aussi les amis des aplats de couleur.</li>
+<li>Les traits fins aident à obtenir des volumes prononcés et des rendus réalistes.</li>
+</ul>
+</li>
+</ul>
+<p>Aussi, vous n'êtes pas toujours obligé de dessiner une ligne. Il suffit parfois d'en tracer l'extrémité pour que l'œil la complète naturellement. Les endroits où la peau s'agglutine comme la bouche, les fesses ou les seins (<em>NdT : malheur à vous si vous êtes arrivé sur cette page en recherchant un de ces mots clés</em>) sont de bons exemples de ce phénomène. Il est souvent de bon ton de rendre la ligne un peu plus épaisse là où se trouve un trou dans la ligne. Cela se voit bien là où les vêtements sont étirés, par exemple au dessus des espaces entre les muscles… ou sur les décolletés.</p>
+<p>Pour finir, voici quelques illustrations. La première a été faite avec Photoshop (5.5) et une tablette Wacom, on ne peut pas appeler ça des traits de bonne qualité mais vous comprendrez sans doute l'idée. La deuxième illustration est un truc que j'ai encré il y a quelques années.</p>
+<p><img alt="Swoosh !" src="../media/img/arne-lignes.png" /></p>
+<p>Quand vous peignez, les lignes sombres qui restent du tracé initial peuvent vous pénaliser. Vous pouvez séparer les formes autrement qu'avec des lignes noires. Vous pouvez par exemple utiliser des valeurs différents ou une lignes claire. Voici une illustration de quelque possibilités et des effets produits.</p>
+<p><img alt="Différentes bordures" src="../media/img/arne-bords.jpg" /></p>
+<p>La vie d'un tracé comporte plusieurs niveaux de raffinements au fur et à mesure que les versions précédentes, plus brouillonnes, se font recouvrir par de nouveaux tracés. La version finale n'est pas représentée ici.</p>
+<p><img alt="Un procédé long et complexe" src="../media/img/arne-lineart.png" /></p>
+<h1>17. Etudes</h1>
+<p>J'ai commencé à faire des études il y a seulement quelques années et je le regrette. Vous ne tomberez jamais « sur la ligne juste » avec des devinettes et des barbouillages aléatoires. C'est avec des références que vous avancerez. Pour dessiner rapidement et naturellement vous devez parvenir à dessiner sans penser à la construction générale des choses (comme l'anatomie de base). Alors vous pourrez vous concentrer sur les concepts et les détails.
+Construisez vos dessins/peintures. N'avancez pas détail par détail avec votre crayon. Vérifiez systématiquement les proportions générales et ne vous laissez pas entrainer par les détails trop tôt. Placez des points de repères là où sont les caractéristiques importantes, elles vous serviront de balises sur lesquelles vous aligner.</p>
+<p>Essayez de n'apprendre qu'une chose à la fois. Il est impossible de s'entrainer en même temps au jonglage et au 400 mètres haies. Si vous voulez apprendre à maitriser un médium ou un outil, faites des études de choses simples comme des fruits. Si vous voulez apprendre à dessiner des visages, utilisez un médium que vous connaissez bien pour ne pas avoir à lutter avec lui en plus. Si plusieurs facteurs d'incompétence entrent en jeu, vous ne pourrez pas identifier ce qui ne va pas. La quantité est importante aussi, je ne vous recommande pas de faire des études d'anatomie avec des outils pour gravures sur bois.</p>
+<h2>Tracés</h2>
+<p>Les études au crayon n'ont pas besoin d'être autre chose que des petites esquisses sur du papier. J'y passe à chaque fois quelques heures et j'en mets 10 à 30 sur une feuille A4. Je ne fais que quelques études par mois, mais je remarque des progrès à chaque fois. Imaginez un peu quels seraient les résultats si vous le faisiez plusieurs fois par semaine pendant des années.</p>
+<p>Quelques <a href="../media/img/arne-practice.jpg">vieilles</a> <a href="http://www.lesforges.org/article/(/media/img/arne-practice2.jpg)">planches</a> d'études faites d'après une bande dessinée (poses) et des photos (visages).</p>
+<h2>Peinture</h2>
+<p>Quand je fais des études digitales, j'utilise Photoshop et une image trouvée sur le net. Je duplique la fenêtre et j'en vide une, où je commence à placer les masses de couleur prédominantes. Après ça, j'augmente graduellement le niveau de détail, les valeurs et les couleurs avec le plus de précision possible. Quand de loin ou avec les yeux plissés on elle ressemble à l'original, c'est terminé. Je travaille toujours avec la plus grosse brosse possible permettant de rendre un détail donné. Je ne prélève pas les couleurs depuis l'original, mais je conserve les deux fenêtres de la même taille pour mieux voir si je rate le placement de quelque chose. Si vous voulez compliquer l'affaire, vous pouvez toujours essayer de dessiner dans une fenêtre de taille différente, avec une symétrie ou en peignant ce que bous observez autour de vous plutôt qu'une photo.</p>
+<p>Études de statue : La <a href="../media/img/arne-statue.jpg">première</a> est faite sous OC (Open Canvas), et la <a href="../media/img/arne-statue2.jpg">seconde</a> sous PS (Photoshop).</p>
+<p><a href="../media/img/arne-jambe.jpg">Ici</a> j'ai essayé d'être le plus économique possible. La <a href="../media/img/arne-jambe2.jpg">deuxième</a> n'est pas une étude mais un exemple de nettoyage, ce qui n'est pas indispensable pour les études.</p>
+<p><a href="../media/img/arne-color.jpg">Une de mes premières études</a></p>
+<h1>18. Sujets d'études</h1>
+<p>Étudiez tout ! Vous devez construire dans votre tête une grande bibliothèque de formes pour pouvoir dessiner intuitivement. Cela prend une vie voire plus alors vous devriez commencer dès maintenant !</p>
+<h2>Anatomie humaine</h2>
+<p>L'une des choses les plus importantes à connaitre. Même les monstres ont des traces d'anatomie humaine.</p>
+<ul>
+<li>Le corps entier. Utilisez des photos, des livres d'anatomie, des statues ou des gens.</li>
+<li>Le visage est ce que l'on regarde en premier. Si vous vous déplacez une ligne d'un poil, toute l'expression du visage peut changer. Étudiez des photos vos amis et vous même.</li>
+<li>Les mains aussi sont importantes (et difficiles) à maitriser.</li>
+<li>Les pieds peuvent poser problème, non pas à cause de leur forme, mais parce qu'il faut enraciner le personnage sur le sol de telle sorte qu'il ne soit pas en train de tomber et que le sol n'ait pas l'air penché.</li>
+<li>Les vêtements de tous les jours. Il est important de savoir comment les vêtements se plient et à quoi ressemblent différents types de vêtements se comportent.</li>
+</ul>
+<h2>Gestes et styles</h2>
+<p>Vous devez avoir des activités variées et trouver des idées neuves. Apprendre des styles différents peut être une bonne idée.</p>
+<ul>
+<li>Faites du dessin d'observation en utilisant vos amis, les gens au café, dans le bus ou ailleurs. Quelle est la posture d'une personne qui ouvre une porte en cherchant ses clés tout en étant intimidé par l'artiste ?</li>
+<li>Marvel. Comment les artistes de Marvel représentent-ils l'anatomie humaine avec des lignes ? (<em>NdT : Ils la représentent mal ! Haha !</em>) Quels sont les détails importants et lesquels sont simplifiés ?</li>
+<li>Modesty Blaise, ou un autre style de bande dessinée réaliste. Faire des dégradés avec simplement du noir et du blanc n'est pas chose aisée.</li>
+<li>Le manga ou un style qui vous plait. Encore une fois, comment l'artiste transforme-t-il le corps humain en une série de lignes et des tâches de couleurs ? Quelles parallèles pouvez vous établir entre les différents styles ?</li>
+</ul>
+<h2>Environnements</h2>
+<p>Placer un personnage dans un environnement le rend tout de suite plus vivant. C'est d'ailleurs quelque chose que je me dois d'apprendre.</p>
+<ul>
+<li>Les paysages avec des champs, des montagnes ou autre chose.</li>
+<li>Les forêts denses ou les jungles.</li>
+<li>Les paysages urbains ou industriels.</li>
+<li>Un environnement intérieur, comme une pièce avec des meubles. Oui c'est chiant. Pour vous dire la vérité je ne l'ai pas encore fait.</li>
+</ul>
+<h2>Allez chercher un livre sur les animaux</h2>
+<p>…et dessinez des animaux. Une bonne façon de concevoir un monstre est de fusionner plusieurs animaux en un.</p>
+<ul>
+<li>Tout ce qui vit. La nature perfectionne ses concepts depuis des millions d'années alors vous feriez bien de les étudier.</li>
+<li>Les chevaux, les chats, les chiens, les oiseaux. Ce sont les plus importants car les plus courants.</li>
+</ul>
+<h2>Machinerie</h2>
+<p>Vous devez aussi vous entrainer à dessiner des machineries. Cela peut servir pour dessiner des robots et droïdes de combats avides de vengeance et exploseurs de planètes.</p>
+<ul>
+<li>Différents modèles de voitures.</li>
+<li>Les machines permettant de creuser ou les machines d'assemblage.</li>
+<li>Les véhicules militaires.</li>
+</ul>
+<h2>Natures mortes classiques</h2>
+<p>C'est à dire n'importe quoi. Ce sont de bons sujets pour apprendre à peindre et dessiner, à cause de leurs formes simples. Vous n'aurez pas trop à lutter avec les formes et pourrez vous concentrer sur les textures.</p>
+<ul>
+<li>Fleurs, fruits, squelettes, sculptures, bouts de bois et de métaux rouillés.</li>
+</ul>
+<h1>19. Auto-critique</h1>
+<p>Analysez vos erreurs. Il est fréquent de s'aveugler en regardant trop longtemps la même image (ce que vous êtes bine obligé de faire pour travailler dessus). Essayez de renverser les images (symétrie horizontale), de les regarder à l'envers, à travers un miroir (j'utilise un CD), de vous reculer ou de zoomer/dézoomer. Ne restez pas assis et les yeux rivés sur le papier ou l'image zoomée. Sous Photoshop vous pouvez aussi utiliser « Créer une nouvelle fenêtre pour <em>Nom du document</em> » (ou « New View » en anglais).</p>
+<p>Vous devez aussi accepter le fait que ce n'est pas parce que vous avez travaillé sur une image pendant longtemps qu'elle vaut quelque chose. Vous devez savoir sacrifier le temps passé sur quelque chose si le résultat est bancal. Même si vous êtes content des détails il se peut que vous deviez les retravailler. Parfois ce n'est pas le détail sur lequel vous vous concentrez qui cloche mais quelque chose qui y a trait, comme la valeur de son arrière plan ou la perspective d'un autre détail.</p>
+<h1>20. Ordre d'importance</h1>
+<p>Pour parler de façon très très générale, certains aspects d'une peinture sont plus importants que d'autres.</p>
+<h2>Construction</h2>
+<p>Qu'essayez vous de peindre ? Votre sujet et votre composition devraient être réussis au niveau fondamental, sinon même le meilleur rendu du monde ne sauvera pas votre image de la médiocrité. N'ayez aucune illusion du genre « ça va s'améliorer avec les étapes suivantes ». Si une pose est foirée, elle aura toujours l'air foirée une fois la peinture finie, même si Rembrandt fais le rendu à votre place.</p>
+<h2>Valeurs</h2>
+<p>Pour qu'une peinture soit réussie vous devez utiliser les valeurs pour sculpter les formes. Les valeurs peuvent très bien regrouper et dissocier les formes. <br />
+<a href="../media/img/arne-valeurs.jpg">Exemple</a> : la première version est évidemment ratée. Chaque forme a reçu toute la palette, de l'ombre à la lumière. La seconde est mieux mais chaque forme n'a qu'une valeur. La troisième a différentes valeurs sur différents formes. La construction n'est peut-être pas terrible par contre ; ce n'est pas une pin-up très intéressante.<br />
+<a href="../media/img/arne-valeurs2.jpg">Exemple 2</a> : ici les valeurs et les couleurs sont utilisées pour séparer premier plan et arrière plan, mais je n'aime pas trop le résultat non plus sans doute à cause de sa construction (encore).</p>
+<h2>Couleur</h2>
+<p>On peut toujours s'en sortir avec des couleurs imparfaites. Si vous n'arrivez pas trouver les bonnes couleurs, ce sont en fait probablement les valeurs qui ont un problème. Petite note en passant, si vous avez réussi les étapes précédentes il est alors facile de faire des images qui auront l'air différentes à vos yeux simplement en réglant la balance des couleurs. Dans mon cas les couleurs de départ sont souvent les meilleures.</p>
+<h1>21. Critiques et erreurs fréquentes</h1>
+<p>Quand j'écris des critiques sur des forums, je me retrouve souvent à taper les mêmes remarques à chaque fois. Voici une liste des erreurs courantes que font les artistes débutants.</p>
+<p><strong>Problème</strong> : Utiliser ombre, teinte médiane et highlight sur chaque objet indépendamment de sa forme et de son angle.<br />
+<strong>Solution</strong> : Essayez de dézoomer, de retourner l'image ou votre tête. Ne faites pas le rendu de chaque détail un part un. Des petites formes éclairées équitablement ont tendance à aplatir l'image et à masquer les formes importantes.</p>
+<p><strong>Problème</strong> : Ajouter du noir pour les ombres et du blanc pour la lumière, puis flouter entre les couleurs pour la transition (par exemple avec l'outil « doigt » de Photoshop).<br />
+<strong>Solution</strong> : Cela rend les peintures grisâtres et ternes. J'ai croisé quelques personnes qui cherchaient des tutoriaux de « shading ». Il n'existe rien de tel. Il n'y a pas de méthode simple qui consiste à dire qu'il faut commencer avec une couleur foncée et aboutir à une couleur claire pour chaque détail. Vous devez apprendre comment vit la lumière et faire le rendu presque comme si vous étiez un logiciel de modélisation 3D. N'en déplaise à certains, c'est vrai au moins pour moi puisque j'obtiens souvent de meilleurs résultats en me débarrassant de mes habitudes et des mes préjugés pour ne suivre que les « règles de rendu ».</p>
+<p><strong>Problème</strong> : Faire le rendu et mettre des highlights sur des petits détails qui détournent l'attention. Utiliser l'outil Densité +/- (« Dodge ») de Photoshop.<br />
+<strong>Solution</strong> : Vous aller devoir sacrifier de nombreux détails qui auraient pu être magnifiques une fois rendus. Ce qui compte c'est la peinture dans son ensemble alors vous pouvez oublier les étincelles d'éclat lumineux sur la boucle de ceinture du petit type sans importance dans le coin de l'image. L'œil s'attarde sur les détails, les highlights, les grands contrastes et la saturation. Vous devez guider l'œil vers les parties importantes de votre peinture.</p>
+<p><strong>Problème</strong> : Poses plates et raides, personnages écartelés.<br />
+<strong>Solution</strong> : C'est un de mes propres problèmes. C'est si facile de dessiner les gens de face ou de profil avec les bras étendus… Ça aura toujours l'air ennuyeux et sans dynamique à moins que vous ne fassiez une icône ou que vous ayez une idée géniale de composition (<em>NDT : Pensez Jésus</em>). Il est souvent tentant de vouloir mettre en valeurs tous les détails d'un personnage dans un seul dessin mais c'est rarement compatible avec une pose dynamique. Cacher un bras derrière le corps est un sacrifice parfois nécessaire pour obtenir une bonne pose. De plus, en cachant un détail, vous laissez l'imagination de l'observateur décider à quoi il ressemble, et ça peut être une bonne chose ! Le résultat est parfois meilleur dans l'esprit de l'observateur qu'il ne l'aurait été sur papier. En bref, apprenez à gérer des poses dynamiques et vue de travers à partir de la réalité, de photographies ou de bandes dessinées. Vous n'irez pas bien loin avec des personnages écartelés.</p>
+<p><strong>Problème</strong> : Coups de pinceaux inutiles ou tentatives de coups de pinceaux artistico-« Oh regarde comme c'est spontané ! »<br />
+<strong>Solution</strong> : Chaque coup de pinceau doit contribuer au résultat final. Certains espèrent s'en tirer avec des coups de pinceaux aléatoires et désorganisés. Les traits aléatoires créent des détails aléatoires, et les détails aléatoires détournent des vrais détails de l'image. Je sais bien que certains artistes donnent l'impression de peindre une scène parfaite avec quelques traits bien sentis et légers, mais gardez à l'esprit qu'il passent beaucoup de temps à styliser et à nettoyer pour atteindre ce résultat. Revisitez toute votre peinture pour supprimer les traits inutiles qui ne contribuent pas à l'ensemble. Soyez sur que ce que vous représentez attire l'attention plus que des traits pseudo-artistiques. Les formes et les volumes sont toujours plus importants et beaucoup de jolis traits devront être sacrifiés pour que le résultat soit là.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/arne&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_402" class="comment">
+	
+		
+			<span class="meta">Par Frakilom le 2 février 2015 21:30:24</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Frakilom" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'est super cool d'avoir linké ce cours dans l'apprentissage au shading/blending
+Merci a vous meme si je sais que vous n'avez rien inventé de ce cours vous m'avez permis de le trouver</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_402').addClass('deleted');
+			$('#comment_402 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_402 .delete').css("display", "none");
+			$('#comment_402 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_402 .delete').css("display", "none");
+		else										$('#comment_402 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_259" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 21 juillet 2012 16:16:09</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>@Trippledose &gt; Merci pour le compliment mais gare à la méprise. Nous avons simplement traduit cet article, l'original est mentionné en haut de page. Hélas, je doute que Arne dispense des cours.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_259').addClass('deleted');
+			$('#comment_259 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_259 .delete').css("display", "none");
+			$('#comment_259 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_259 .delete').css("display", "none");
+		else										$('#comment_259 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_258" class="comment">
+	
+		
+			<span class="meta">Par Tripppledose le 20 juillet 2012 00:31:28</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Tripppledose" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je trouve votre travail formidable! Il correspond tout à fait à ce que je cherche depuis quelques années déjà.
+Je me demandais si vous ne donneriez pas des cours ou ne dirigeriez pas un stage de formation!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_258').addClass('deleted');
+			$('#comment_258 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_258 .delete').css("display", "none");
+			$('#comment_258 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_258 .delete').css("display", "none");
+		else										$('#comment_258 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_243" class="comment">
+	
+		
+			<span class="meta">Par Pierre Guyot le 17 mai 2012 21:14:27</span>
+			<br/><img src="http://www.gravatar.com/avatar/ef4498aa9ef6758a91ec542f9b93aa36?s=50&amp;r=g&amp;d=mm" alt="avatar de Pierre Guyot" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Pour le coup, je ne suis pas trop sûr, mais il me semble que les rehauts désignent uniquement les coups de crayon blancs quand on travaille à la sanguine notamment. La notion de "specular" peut aussi être utilisée en physique (par exemple, quand on étudie les surfaces lambertiennes) et est donc plus générale : disons que les rehauts sont un moyen de représenter les highlights et les speculars :p</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_243').addClass('deleted');
+			$('#comment_243 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_243 .delete').css("display", "none");
+			$('#comment_243 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_243 .delete').css("display", "none");
+		else										$('#comment_243 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_241" class="comment">
+	
+		<span class="meta">Par un anonyme le 10 mai 2012 12:58:56</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Merci d'avoir traduit ce bon article ! Cependant, il me semble que "speculars" en français, c'est "rehauts" non ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_241').addClass('deleted');
+			$('#comment_241 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_241 .delete').css("display", "none");
+			$('#comment_241 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_241 .delete').css("display", "none");
+		else										$('#comment_241 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_213" class="comment">
+	
+		<span class="meta">Par un anonyme le 20 mars 2012 23:27:16</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>superbe tuto! Un grand merci pour le temps que vous y avez passer!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_213').addClass('deleted');
+			$('#comment_213 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_213 .delete').css("display", "none");
+			$('#comment_213 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_213 .delete').css("display", "none");
+		else										$('#comment_213 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_192" class="comment">
+	
+		<span class="meta">Par un anonyme le 6 février 2012 20:43:30</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>merci et bravo pour le temps que vous avez consacré.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_192').addClass('deleted');
+			$('#comment_192 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_192 .delete').css("display", "none");
+			$('#comment_192 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_192 .delete').css("display", "none");
+		else										$('#comment_192 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_152" class="comment">
+	
+		<span class="meta">Par un anonyme le 25 novembre 2011 06:21:53</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Rien a dire, si j'avais consulté ce site avant çà m'aurait évité plusieurs annees d'acharnement à trouver les techniques de bases </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_152').addClass('deleted');
+			$('#comment_152 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_152 .delete').css("display", "none");
+			$('#comment_152 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_152 .delete').css("display", "none");
+		else										$('#comment_152 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_148" class="comment">
+	
+		<span class="meta">Par un anonyme le 6 novembre 2011 16:35:15</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Vraiment très complet et très intéressant même en ayant déjà des bases.
+Merci! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_148').addClass('deleted');
+			$('#comment_148 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_148 .delete').css("display", "none");
+			$('#comment_148 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_148 .delete').css("display", "none");
+		else										$('#comment_148 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_107" class="comment">
+	
+		<span class="meta">Par un anonyme le 18 juillet 2011 19:54:38</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>C'est super, on voit les premiers progrès juste après avoir lu.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_107').addClass('deleted');
+			$('#comment_107 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_107 .delete').css("display", "none");
+			$('#comment_107 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_107 .delete').css("display", "none");
+		else										$('#comment_107 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_78" class="comment">
+	
+		<span class="meta">Par un anonyme le 27 juin 2011 01:35:12</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Le tutorial est impressionnament clair O.O. Bravo!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_78').addClass('deleted');
+			$('#comment_78 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_78 .delete').css("display", "none");
+			$('#comment_78 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_78 .delete').css("display", "none");
+		else										$('#comment_78 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_34" class="comment">
+	
+		<span class="meta">Par un anonyme le 28 avril 2009 02:17:49</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Article très intéressant , j'ai beaucoup appris avec , Merci beaucoup :) ! </p>
+<p>--MugenSaku</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_34').addClass('deleted');
+			$('#comment_34 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_34 .delete').css("display", "none");
+			$('#comment_34 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_34 .delete').css("display", "none");
+		else										$('#comment_34 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/31';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="arne@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="arne@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#x74;&#x61;&#99;&#x74;&#64;&#x6c;&#x65;&#x73;&#102;&#x6f;&#114;&#x67;&#101;&#115;&#x2e;&#111;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1219 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Game Design &amp; Dark Souls</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Dans mon article de juin dernier sur le game design des MOBA, j'ai déclaré ne plus prendre beaucoup de temps pour jouer à des jeux vidéo ; il y a effectivement une quantité assez sidérante de jeux pas déballés ou pas essayés sur mes étagères. Mais je me soigne : au fil des derniers mois, j'ai redécouvert par petites doses les mille et un plaisirs du rôle de joueur et je suis venu à bout de pas mal de jeux que j'avais l'intention de faire. Il m'en reste des wagons mais je progresse. Ouf.
+
+Dark Souls est un jeu développé par From Software, sorti en 2011 sur XBox 360 et PS3. Si on voulait enfermer le jeu dans des boîtes, on dirait que c'est un RPG d'aventure à la troisième personne en temps réel. Essayez d'imaginer un jeu à mi-chemin entre The Witcher et Shadow of the Colossus et le résultat ne sera pas trop loin de l'idée générale, sauf si vous êtes en train d'imaginer « un type avec les cheveux blancs dans un jeu où il faut draguer des monstres géants ».
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#110;&#116;&#97;&#x63;&#x74;&#x40;&#108;&#101;&#x73;&#102;&#x6f;&#114;&#x67;&#x65;&#115;&#46;&#111;&#x72;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Game Design &amp; Dark Souls</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 19 janvier 2012 20:07:43 | Catégories : <a href="../tag/analyse.html">Analyse</a>, <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/level-design.html">Level Design</a>, <a href="../tag/ma-vie.html">Ma vie</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Dans mon article de juin dernier sur le <a href="moba.html">game design des MOBA</a>, j'ai déclaré ne plus prendre beaucoup de temps pour jouer à des jeux vidéo ; il y a effectivement une quantité assez sidérante de jeux pas déballés ou pas essayés sur mes étagères. Mais je me soigne : au fil des derniers mois, j'ai redécouvert par petites doses les mille et un plaisirs du rôle de joueur et je suis venu à bout de pas mal de jeux que j'avais l'intention de faire. Il m'en reste des wagons mais je progresse. Ouf.</p>
+<p><img alt="Dark Souls (From Software)" src="../media/img/darksouls_preview.png" /></p>
+<p><em>Dark Souls</em> est un jeu développé par <em>From Software</em>, sorti en 2011 sur XBox 360 et PS3. Si on voulait enfermer le jeu dans des boîtes, on dirait que c'est un RPG d'aventure à la troisième personne en temps réel. Essayez d'imaginer un jeu à mi-chemin entre <em>The Witcher</em> et <em>Shadow of the Colossus</em> et le résultat ne sera pas trop loin de l'idée générale, sauf si vous êtes en train d'imaginer « un type avec les cheveux blancs dans un jeu où il faut draguer des monstres géants ».</p>
+			</div>
+			<div id="article_content">
+				<p>Je ne sais plus exactement pourquoi j'ai acheté ce jeu, il me semble que les deux principales raisons étaient que les gens en parlaient beaucoup sur le forum de <a href="http://www.tigsource.com/">TIGSource</a> et aussi la vue de ce trailer curieux :</p>
+<iframe width="620" height="349" class="video" src="http://www.youtube.com/embed/h3-_yo3lMg4?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>A vrai dire, le jeu démarrait assez mal de mon point de vue. D'abord, il y avait des dragons dans l'introduction, ce qui est très souvent signe de mauvais goût et de clichés tolkienesques. Ensuite, on commence en prison comme dans un <em>Elder Scrolls</em> (une série que je ne porte pas franchement dans mon cœur), autant vous dire que j'étais plein d'appréhension et pas vraiment vendu d'avance.</p>
+<p>Inutile de vous le cacher plus longtemps, si j'écris cet article, c'est bien parce que mes mauvais pressentiments on très vite été dissipés. Voilà, j'avoue tout : je pense que <em>Dark Souls</em> est un des jeux les plus remarquables de ces dernières années. Heureusement pour moi, je ne suis pas critique de jeu vidéo : je ne vous parlerai donc pas des graphismes sublimes, de la bande son insaisissable ou encore du design exceptionnel de ce jeu (oups, trop tard). Le propos de cet article est d'analyser quelques unes des mécaniques de jeu qui font de <em>Dark Souls</em> un jeu si réussi. Je n'ai donc aucune prétention d'objectivité puisque je choisis de me focaliser sur « ce qui fonctionne bien » dans le jeu.</p>
+<h1><em>Dark Souls</em> et la difficulté</h1>
+<p><em>Dark Souls</em> est le successeur de <em>Demon's Souls</em>, lui même précédé par toute une flopée de jeux <em>King's Field</em> développés par <em>From Software</em>. Le point commun de tous ces jeux, c'est qu'ils ont la réputation d'être extrêmement difficiles (et je peux attester de la véracité de ces propos en ce qui concerne <em>King's Field II</em>). Cette réputation a été le fondement de la campagne marketing autour de <em>Dark Souls</em> dont le slogan était <em>Prepare to Die</em> et qui montrait un montage de plein de façons horribles de mourir dans le jeu. Ambiance.</p>
+<p>Beaucoup de joueurs considèrent <em>Dark Souls</em> comme un jeu à la difficulté insurmontable comme on en avait dans les années 80 (que tous ceux qui ont fini <em>Wizardry</em> lèvent la main !). Seulement, quand on y réfléchit, on s'aperçoit que c'est très très faux et que <em>Dark Souls</em> se contente d'être un tout petit peu en décalage avec les poncifs du game design des années 2000 et plus. Explication :</p>
+<p>Dans <em>Dark Souls</em>, le joueur peut mourir en deux ou trois coups de n'importe quel monstre. Dans un jeu moderne comme <em>God of War</em> ou <em>Bayonetta</em>, mon personnage peut encaisser des effondrements de bâtiments et des éclairs magiques par paquets de cinq avant de succomber. Je pense que les joueurs qui se plaignent que <em>Dark Souls</em> est un jeu trop difficile sont ceux qui tente d'y jouer comme ils jouent à <em>God of War</em> et <em>Bayonetta</em>. Dans ces deux jeux, lorsque l'on combat des ennemis on adopte une posture offensive qui consiste à déployer ses combos les plus puissants et à faire un joli combat chorégraphié que, parfois, on choisit d'interrompre par une esquive ou une parade afin d'éviter un coup porté par un adversaire. Ces mêmes adversaires sont extrêmement lents à lancer leurs attaques (elles sont « téléphonées », une longue animation vous laisse le temps d'anticiper le coup pour l'esquiver) et cet avantage est suffisant pour que la défense fasse figure d'« exception » dans la chorégraphie du joueur.</p>
+<p>A l'inverse dans <em>Dark Souls</em>, si vous foncez tête baissée dans un affrontement, vous avez de bonnes chances de vous faire tuer en deux secondes. Pour réussir, il faut changer d'attitude (ce qui est très inhabituel et à contre-courant des jeux modernes) et être défensif par défaut plutôt qu'offensif. Dans <em>Dark Souls</em> les monstres ne sont pas beaucoup plus lents que vous (en général, vos attaques à vous sont téléphonées aussi) et tel un monstre sournois caché dans un angle mort de caméra de <em>Bayonetta</em>, vous devez attendre une occasion de placer un enchaînement sans risquer de prendre un coup de Jarnac qui viendrait ruiner votre barre de vie. Il en résulte que les chorégraphies de combats de <em>Dark Souls</em> tiennent plus, et ce dès les premières heures de jeu, de la gavotte que du <em>pole dance</em>. Attaques, parades, feintes, esquives — tout s'enchaîne avec un réalisme saisissant (les animations sont très bonnes) et le jeu aurait pu être sous-titré <em>The Real Medieval Combat Simulator</em>. <em>Metal Gear Solid 3: Snake Eater</em> est un autre exemple de jeu moderne où le système de jeu punit sévèrement les joueurs trop pressés et inattentifs à leur environnement. Ce choix de game design apporte une dimension tactique aux combats sans pour autant sacrifier leur dynamisme, mais a l'inconvénient de dresser une barrière d'entrée qui écarte beaucoup de joueurs incapables de se défaire de leurs habitudes et d'aborder les situations avec sang-froid.</p>
+<p>Heureusement dans <em>Dark Souls</em>, les développeurs ont pensé à tout et même aux gens pas très doués comme moi. J'étais plutôt mauvais à <em>Dark Souls</em>, non pas parce que j'étais pressé mais parce que je manque souvent d'adresse dans les jeux (lève la main si toi aussi tu n'arrives pas à faire les esquives dans <em>Alan Wake</em> et les QTE — argh — dans <em>Castlevania: Lords of Shadows</em>). Du coup je suis mort très souvent et j'ai pu apprécier dans toute sa finesse la mécanique de la mort dans <em>Dark Souls</em>.</p>
+<p><img alt="Ce qui arrive souvent dans Dark Soul (par offal)" src="../media/img/youdiedmouse.png" /></p>
+<p>Quand je meurs dans un jeu classique, la continuité du jeu est brisée. L'état du jeu (position du personnage, inventaire, etc.) est ramené à un état antérieur (éventuellement avec une pénalité sur ma progression macroscopique : expérience, or ou une autre ressource non critique pour mon succès à court terme) et on me donne une seconde chance pour refaire correctement la séquence que j'ai ratée. Si je multiplie les échecs, cela devient vite frustrant et ça finit souvent sur GameFAQs en quête d'un monde plus juste.</p>
+<p>Dans <em>Dark Souls</em>, le personnage du joueur est maudit et porte une marque sombre qui fait de lui un non-mort qui renait éternellement à l'étincelle de lumière (lire <em>checkpoint</em>) la plus proche. La conséquence immédiate de cette décision est que lorsque je meurs, le flux du temps n'est pas brisé pour revenir dans le passé et recommencer : je ressuscite et c'est la suite logique de l'aventure. Mourir fait partie du jeu et n'est pas directement relié à la notion de défaite. On ne peut d'ailleurs pas littéralement perdre dans <em>Dark Souls</em>. Ce n'est pas pour rien que le message qui apparait à l'écran est « You died » et non « Game Over » (dans la version bêta présentée sur un salon le message était « You went hollow », ce qui correspondait effectivement à un échec définitif dans le contexte scénaristique du jeu). Je pense que c'est une façon très habile de faire accepter sa mort au joueur et de l'encourager à poursuivre ses efforts.</p>
+<p>La seconde conséquence de cette façon de gérer la mort est que si vous avez utilisé des objets consommables (qui sont en petit nombre dans le jeu, à l'exception des potions de soins que l'on récupère gratuitement) avant de trépasser, vous ne les aurez plus à votre disposition pour votre prochaine tentative. A l'inverse, si vous avez ramassé un objet très puissant gardé par un monstre féroce avant qu'il ne vous massacre, vous l'aurez toujours après votre renaissance ! Enfin, le jeu introduit une pénalité qui consiste à laisser sur le lieu de décès toutes les âmes (qui servent pour acheter de l'équipement et des <em>level up</em>) en possession du joueur. Il est possible d'annuler la pénalité en ramassant les âmes sans mourir à nouveau entre temps, ce qui permet de les accumuler lorsque l'on bute sur une difficulté : je tue dix monstres, je ramasse mes âmes, je meurs contre le boss, je recommence. Une fois la difficulté passée, on peut aller joyeusement dépenser son tas d'âmes durement gagnées.</p>
+<p>Au final, si vous êtes nul comme moi à <em>Dark Souls</em>, vous mourrez beaucoup (jamais sans une bonne raison) mais le game design du jeu fait tout pour vous faire avaler la pilule — ce que ne faisaient pas du tout les jeux des années 80 auxquels certains ont comparé la difficulté de <em>Dark Souls</em>.</p>
+<h1>Metroidvania et mécanique du rendez-vous</h1>
+<p>Le principal point fort de <em>Dark Souls</em> nous arrive lui aussi tout droit d'une autre décennie. La structure des jeux d'action/aventure qui sortent depuis quelques années repose le plus souvent sur l'un des deux paradigmes suivants :</p>
+<ul>
+<li>Une succession (le plus souvent linéaire) de niveaux essentiellement linéaires (<em>Bayonetta</em>, <em>Final Fantasy XIII</em>, etc.)</li>
+<li>Un monde ouvert à 360°, « bac à sable » dans lequel le joueur doit se déplacer entre différents points d'intérêt (<em>GTA III</em>, <em>Morrowind</em>)</li>
+</ul>
+<p><em>Dark Souls</em> fait renaitre une autre structure que je n'avais pas eu la chance d'observer depuis longtemps, celle des <em>Metroidvania</em> (savante contraction de <em>Metroid</em> et <em>Castlevania</em>). La structure d'un <em>Metroidvania</em> pourrait être décrite comme une multitude de niveaux essentiellement linéaires et interconnectés. Parce qu'un exemple est toujours plus parlant, voici la carte du château de <em>Castlevania: Symphony of the Night</em> sur Playstation. Désolé pour l'absence de source, je ne sais plus où je l'ai piquée :</p>
+<p><img alt="Castlevania: Symphony of the Night (KCET)" src="../media/img/darksouls_sotn.gif" /></p>
+<p>Appréciez la structure qui alterne les zones linéaires et les embranchements qui redirigent vers l'une ou l'autre de ces zones. A comparer avec par exemple la carte de <em>Morrowind</em> (profitez en passant des attractions de <em>Disneyland</em> qui se sont cachées au milieu des noms plein de consonnes et qui finissent par « a ») :</p>
+<p><img alt="Morrowind (Bethesda Game Studios)" src="../media/img/darksouls_morrowind.png" /></p>
+<p>Cette différence de structure entraîne des perceptions complétement différentes de la part du joueur. Dans un <em>Metroidvania</em>, le joueur tient à jour dans sa tête (ou sur un papier) une liste des embranchements qu'il a délaissés et des chemins bloqués (parce qu'il lui <a href="http://www.gamedev.net/page/resources/_/creative/game-design/lock-mechanisms-in-game-design-r1386">manque une clé</a>) où il pourra revenir plus tard.</p>
+<p>Dans un monde ouvert, cette tâche est le plus souvent effectuée au moyen d'un journal de quêtes (ou équivalent) qui rappelle au joueur tous les lieux où il peut se rendre pour faire avancer l'une ou l'autre des intrigues en cours.</p>
+<p>Dans les deux cas, le résultat accompli est ce que j'appelle la mécanique du rendez-vous, qui consiste à donner au joueur un point de repère (dans le temps et l'espace) sur son statut futur dans le jeu. Dire au joueur « plus tard, tu iras là » (ou « plus tard, tu combattras untel ») c'est lui donner une perspective sur le jeu qui le pousse à continuer, pour peu que le rendez-vous ne soit pas d'un ennui mortel du genre « plus tard, tu iras tuer 500 rats ». En plus d'être une source d'intérêt pour le joueur, cette mécanique permet de le faire jouer plus longtemps (ce n'est pas forcément votre but) puisque le meilleur moment pour s'arrêter est celui où le joueur n'a plus de rendez-vous à espérer. Les <em>Hack-n-Slash</em> (et les <em>Roguelike</em>) les plus addictifs comme <em>Diablo</em> ou <em>Torchlight</em> reposent sur un rendez-vous permanent avec l'étage suivant du donjon, ce qui pousse beaucoup de joueurs à jouer jusqu'à des heures déraisonnables (NDLR : Antoine en sait quelque chose).</p>
+<p>La mécanique du rendez-vous fonctionne mieux dans les <em>Metroidvania</em> que dans les jeux ouverts pour deux raisons :</p>
+<ul>
+<li>
+<p>D'abord, dans un <em>Metroidvania</em>, le joueur a une liste de rendez-vous gérée par le concepteur du jeu : elle se remplit pendant une partie du jeu, finit par diminuer au fur et à mesure qu'il brise les verrous et elle est vide quand le joueur termine le jeu. Dans un jeu ouvert, cette liste est gérée par le joueur : un joueur peu curieux qui se déplace d'objectifs en objectifs videra très vite sa liste de rendez-vous initiale et se concentrera sur la sacro-sainte « quête principale » tandis qu'un vagabond errant remplira encore et encore sa liste, souvent plus vite qu'il ne peut la vider. Les deux extrêmes sont très difficiles à équilibrer (surtout pour le joueur, ce n'est pas son métier) et la plupart des joueurs se retrouvent alors dans une situation qui ne leur convient pas. En ce qui me concerne, j'ai collectionné trop de rendez-vous dans la première moitié de <em>Nier</em> (j'ai fait le plein de quêtes annexes) et j'ai été victime d'un grand ras-le-bol qui m'a poussé à aller ensuite en ligne droite vers la fin du jeu.</p>
+</li>
+<li>
+<p>Ensuite, l'efficacité de la mécanique du rendez-vous repose en bonne partie sur la qualité du rendez-vous. Dans un <em>Metroidvania</em>, vos rendez-vous mènent les joueurs vers de nouvelles zones de la carte (qui sont la promesse de nouveaux décors, nouvelles rencontres, nouveaux objets etc.). C'est à peu près tout ce dont ils ont envie. Dans un monde ouvert, la récompense obtenue par le joueur qui atteint un rendez-vous n'est pas une nouvelle aire de jeu, c'est tout au plus un évènement scripté dans une zone qu'il pouvait déjà visiter avant.</p>
+</li>
+</ul>
+<p>Je ne suis pas en train d'essayer de démontrer que les mondes ouverts sont fondamentalement « moins bien » que les <em>Metroidvania</em> (même si je le crois très fort) ; je tente plutôt d'expliciter les qualités de game design que la structure de <em>Metroidvania</em> confère à <em>Dark Souls</em> et qui font défaut à bon nombre de RPG modernes comme les <em>Elder Scrolls</em>. Ne me faites pas dire ce que je n'ai pas dit hein, les mondes ouverts ont aussi de bons côtés (dont nous parlerons un autre jour).</p>
+<p>Comme pour la difficulté, <em>Dark Souls</em> ne se contente pas de recycler de vieilles idées de game design que l'on croyait abandonnées (les <em>Metroidvania</em> n'ont pas vraiment survécu au passage à la 3D et ont un peu disparu du paysage ces quinze dernières années, à part quelques rares exceptions comme <em>Metroid Prime</em>). Les jeux d'aventure d'une manière générale n'exploitent généralement pas la 3D dans leur level design, ils sont en « 2.5D ». Si vous regardez la capture d'écran de <em>Skyrim</em> ci-dessous, vous pouvez remarquer qu'à chaque coordonnée (X, Y) de la carte ne correspond qu'une seule altitude Z explorable (sauf quand parfois il y a une grotte). C'est une structure qui a du sens puisqu'elle correspond assez bien à la réalité en plus d'être facile à concevoir. C'est comme ça que marchent à peu près tous les jeux modernes.</p>
+<p><img alt="Skyrim (Bethesda Game Studios)" src="../media/img/skyrim.jpg" /></p>
+<p>Je vous aurais bien fourni une carte de <em>Dark Souls</em> pour comparer mais il n'en existe aucune plus pertinente qu'une projection semblable à la carte de <em>Castlevania: Symphony of The Night</em> présentée plus haut. <em>Dark Souls</em> est à ma connaissance le seul <em>Metroidvania</em> qui utilise autant la 3D dans son level design. L'aire de jeu occupe une surface au sol assez petite mais elle s'étend en hauteur (vers le haut et le bas), non pas linéairement comme un <em>Diablo</em> mais avec de véritables embranchements. Le jeu n'inclue d'ailleurs aucune carte (une décision contestable mais qui ne m'a pas gêné outre-mesure) et il est fréquent de se dire « Hmm, ok, je suis ici, je veux aller là bas. Je peux passer par telle zone et telle zone puis prendre tel ascenseur pour y aller ; ou alors je passe par l'échelle là bas, telle zone etc. ».</p>
+<p>Les Level Designer ont joué de cette force pour permettre au joueur de débloquer des raccourcis (ascenseurs, échelles, portes fermées) entre des zones qui semblaient jusqu'alors très éloignées. L'effet est assez saisissant d'avancer la peur au ventre dans un sombre couloir inondé avant de se rendre compte qu'on l'a déjà parcouru dans l'autre sens quatre heures plus tôt et qu'il est proche d'une zone connue et rassurante.</p>
+<h1>L'aventure, c'est pas fait pour les comptables</h1>
+<p>Bon, on commence à dresser le portrait d'un jeu sympathique avec ses combats intenses, sa difficulté intelligemment réglée et son level design semi-linéaire en vraie 3D. Continuons notre tour d'horizon avec une autre <em>feature</em> de <em>Dark Souls</em> qui contribue à le rendre si bon.</p>
+<p>Une fois encore, il s'agit d'un « retour aux sources » intelligent. Si vous jouez aux RPG depuis plus d'une dizaine d'années, vous n'aurez pas manqué de remarquer que la quantité d'objets que vous ramassez dans ce genre de jeux n'a pas cessé d'augmenter. J'ai l'impression que la tendance a démarré dans les RPG occidentaux qui ont voulu gagner en réalisme en proposant de ramasser tout et n'importe quoi ; ce qui correspond aussi à l'essor des systèmes de <em>crafting</em>. L'idée s'est propagée aux RPG japonais : il n'y à qu'à voir la quantité de merdouilles que l'on peut (doit) ramasser dans <em>Final Fantasy XIII</em> pour s'en convaincre. Le problème, c'est qu'il est fastidieux pour le joueur de gérer un grand nombre d'objets de faible valeur et de faible utilité. Cela complique la navigation et l'oblige à retenir toute une flopée d'informations peu utiles elles aussi sur la nature des objets.</p>
+<p>Dans <em>Dark Souls</em>, chaque objet que vous ramassez (ou presque, mais vraiment presque) est un trésor à vos yeux. Les objets que vous voyez briller au loin sont tous potentiellement des anneaux magiques qui vont vous changer la vie, des armes inédites, des armures complètes (on ne trouve jamais une chaussette gauche ou une cotte de maille seule) ou encore des clés qui ouvrent l'accès à des secrets du jeu. C'est tout le contraire d'un <em>Torchlight</em> où le <em>loot</em> est tellement banalisé qu'au bout d'un moment on ne prend même plus la peine d'identifier les objets magiques les plus faibles. D'ailleurs dans <em>Dark Souls</em> vous ne ramasserez jamais (<em>vraiment</em> jamais) une <em>Short Sword +1</em> ou un <em>Great Shield +2</em> ; les objets ont un nom, un <em>artwork</em> et une description (et un effet — dans le cas des objets magiques) qui sont uniques.</p>
+<p>L'unicité des objets ramassés donne le sentiment d'une grande diversité qui pousse à la rêverie (les objets intéressants ne sont pas noyés au milieu des merdouilles). Une fois encore les développeurs l'ont bien compris et affichent pendant les chargements des descriptions d'objets énigmatiques et qui révèlent quelques informations sur le (mystérieux) <em>background</em> du jeu.</p>
+<p>Cette décision s'inscrit dans le à mon avis cadre d'un choix de conception plus large que celui de la nature et la diversité des objets. Le jeu déploie beaucoup d'efforts pour donner l'impression au joueur qu'il n'est qu'un grain de poussière dans un univers immense qui le dépasse. Depuis certaines zones du jeu, on peut apercevoir au loin des paysages (même une ville) inaccessibles et dont on entend pas parler. Le scénario du jeu est évoqué à demi-mots, souvent par sous-entendus ou par des personnages à moitié fous : c'est au joueur de boucher les trous avec son imagination. Les noms des lieux ou certains objets font référence à des personnages et des histoires souvent inexpliquées. Certains personnages évoqués dans le prologue du jeu ne refont pas surface ensuite, etc.</p>
+<p>Je pense que grâce à cette approche, <em>From Software</em> a assez bien répondu à la problématique qu'évoque Ernest Adams dans son article <a href="magie.html">Rendons sa magie à la magie</a> (même si ça concerne l'univers du jeu plus que le système de magie lui même). <em>Dark Souls</em> n'est pas un parc d'attractions où on se déplace de la <em>cave aux champignons</em> à la <em>grotte du maraudeur</em> avec une barbe à papa dans la main et un <em>kodak</em> sur le ventre. Le contenu n'est tout simplement pas centré sur ce que le joueur va voir, il a sa propre cohérence interne qui échappe à la capacité de compréhension du joueur. C'est tout le contraire d'un jeu comme <em>Fable III</em> où chaque bribe de contenu est usée jusqu'à la moelle et agitée sous le nez du joueur pour être sur qu'il l'ait bien vue, c'est d'autant plus dommage que le peu de contenu existant est de très bonne qualité.</p>
+<p>Il en résulte une communauté active de joueurs (<a href="http://darksoulswiki.wikispaces.com/message/view/home/46047802?o=0">exemple</a>) à la recherche des nombreux secrets (objets, zones de jeu, personnages, boss, etc.) de <em>Dark Souls</em>. Le jeu est sorti depuis 4 mois et il reste beaucoup de mystères à résoudre. J'ai eu la chance d'y jouer tôt, au moment où il restait vraiment beaucoup à découvrir et échanger des informations sur internet m'a rappelé les échanges entre jeunes joueurs dans les cours de récréation (mais si, souvenez vous de ces rumeurs pour déshabiller Lara Croft !). C'est encore une forme de retour aux sources intelligent. <em>Dark Souls</em> grâce à sa richesse et ses non-dits (aucun PNJ avec un point d'exclamation jaune pour vous proposer une quête — c'est à vous de trouver vos propres aventures) place les joueurs dans une situation de jeu qui rappelle un peu les années 80, du temps où il était très difficile de faire le tour d'un RPG et où GameFAQs n'était pas là pour vous aider. Bien sur, il est tentant de passer un peu trop de temps sur le wiki et de briser le plaisir de la découverte me je pense que cette dimension du jeu est suffisamment explicite pour que les joueurs la remarquent et préservent leur expérience intacte.</p>
+<hr />
+<p>Voilà qui m'amène au bout de ma réflexion sur les grandes forces du game design de <em>Dark Souls</em>. J'espère que vous y aurez trouvé quelques pensées intéressantes et qu'elles vous pousseront, si ce n'est pas déjà fait, à jouer au jeu. Si vous n'en avez pas eu assez, je vous recommande la lecture (en anglais) de cet <a href="http://savetherobot.wordpress.com/2012/01/02/the-great-big-puzzle-box-a-close-look-at-dark-souls-ingenious-difficulty-as-witnessed-by-one-dead-guy-in-sens-fortress/">éloge</a>, de ces <a href="http://www.gamasutra.com/blogs/JorgeAlbor/20120106/9191/Playing_Dark_Souls_Desperate_Acts_and_Our_Shared_Humanity.php">pensées sur la difficulté du jeu</a> ou encore de ce très très judicieux <a href="http://www.eurogamer.net/articles/2011-12-07-telling-tales-skyrim-and-dark-souls-article">comparatif de la narration</a> dans <em>Skyrim</em> et <em>Dark Souls</em>.</p>
+<p><em>Merci à Camille Bouquet pour sa capture d'écran de </em>Skyrim<em>.</em></p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/dark-souls&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_359" class="comment">
+	
+		<span class="meta">Par un anonyme le 24 juillet 2013 11:56:47</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bravo pour cet article ! J'ai bien aimé la référence au coup de Jarnac : qui a dit que l'érudition et les jeux vidéos étaient incompatibles..?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_359').addClass('deleted');
+			$('#comment_359 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_359 .delete').css("display", "none");
+			$('#comment_359 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_359 .delete').css("display", "none");
+		else										$('#comment_359 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_271" class="comment">
+	
+		<span class="meta">Par un anonyme le 31 août 2012 16:04:59</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>opps, j'ai pas vus que l'article étais si vieux.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_271').addClass('deleted');
+			$('#comment_271 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_271 .delete').css("display", "none");
+			$('#comment_271 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_271 .delete').css("display", "none");
+		else										$('#comment_271 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_270" class="comment">
+	
+		<span class="meta">Par un anonyme le 31 août 2012 16:02:39</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Les metroidVania n’existe plus ??
+Comme ça de tête et sur cette génération de console, les deux Batman et les deux Darksider sa fait 4 jeux et 4 excellents jeux.
+J'ai pas jouer aux derniers Resident evil et Zelda, mais je présume qu'ils utilisent les mêmes mécanismes.
+Bref c'est pas une mécanique de jeu hyper rare.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_270').addClass('deleted');
+			$('#comment_270 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_270 .delete').css("display", "none");
+			$('#comment_270 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_270 .delete').css("display", "none");
+		else										$('#comment_270 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_204" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 7 mars 2012 14:59:16</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>@anonyme &gt; J'approuve. De mémoire c'est d'ailleurs un élément qui est cité dans l'article sur les <em>locks</em> auquel il est fait référence plus haut. J'imagine mal un personnage de <em>Dark Souls</em> faire un double saut ou se transformer en chauve-souris mais en étant plus subtil je pense qu'il y aurait matière à améliorer le jeu oui.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_204').addClass('deleted');
+			$('#comment_204 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_204 .delete').css("display", "none");
+			$('#comment_204 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_204 .delete').css("display", "none");
+		else										$('#comment_204 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_203" class="comment">
+	
+		<span class="meta">Par un anonyme le 6 mars 2012 21:14:47</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>J'avais oublié de mentionner une chose… ( Je suis toujours le même anonyme. :p )
+Dark Souls est un MetroidVania, mais il manque une caractéristiques présentes dans les MetroidVania, qui ajoute tout le fun : Les Power-Up.
+C'est toujours plaisant de trouver un power up qui va nous permettre d'ouvrir une nouvelle zone, en permettant de passer un obstacle jusqu'alors infranchissable, ça permet aussi de trouver d'autre bonus, moindres, comme de la vie bonus ( Metroid ) ou un bon item ( Castlevania ) dans des niveaux déjà passée, sans que ça soit une nouvelle zone, c'est un peu ce qui manque à Dark Souls. :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_203').addClass('deleted');
+			$('#comment_203 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_203 .delete').css("display", "none");
+			$('#comment_203 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_203 .delete').css("display", "none");
+		else										$('#comment_203 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_200" class="comment">
+	
+		<span class="meta">Par un anonyme le 1 mars 2012 21:55:21</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Une excellent analyse ! :O
+J'aime bien la référence au Metroidvania, car c'est justement le style de jeux que j'ai adoré avec Metroid et Castlevania, qui ne se fait plus aujourd'hui…
+Même si je ne m'en suis pas rendu compte que c'était un Metroidvania lorsque je me le suis procurée… ( Je n'ai pas un aussi bon sens de l'analyse que vous… :/ ) </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_200').addClass('deleted');
+			$('#comment_200 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_200 .delete').css("display", "none");
+			$('#comment_200 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_200 .delete').css("display", "none");
+		else										$('#comment_200 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_191" class="comment">
+	
+		
+			<span class="meta">Par Thomas_S le 24 janvier 2012 17:36:03</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Thomas_S" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je ne suis pas tout à fait d'accord avec le fait que dans un monde ouvert la mécanique de rendez-vous n'offre pas de nouveaux décors/objets/rencontres. Bien évidemment le joueur peut les découvrir avant (ou pas, d'ailleurs, il suffit de les fermer). Mais si le jeu est réellement ouvert, bien souvent le joueur n'aura pas eu l'idée d'aller à tel ou tel endroit et la quête est alors une direction à suivre pour ces découvertes, comme l'acquisition d'un nouvel accès dans un Metroidvania.</p>
+<p>Concernant la quantité d'objets de FF13, elle est bien moindre par rapport à la plupart des RPG qui sortent actuellement et ne sont absolument pas compliqués ni chiants à gérer. Il y a peu d'armes et de consommables, seuls les matériaux auxquels on accède rarement et les accessoires peuvent être un peu casse-burnes. Pour illustrer ça j'aurais plutôt cité un Skyrim et ses trois tonnes d'objets impossibles à gérer avec l'interface ("générée aléatoirement" Copyright A. Gersant).</p>
+<p>Sinon j'suis d'accord avec tout le reste de l'article très bien écrit, même si moi j'aime les Elder Scrolls (truffés de défauts certes, mais les à côtés… Nomnomnomnom)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_191').addClass('deleted');
+			$('#comment_191 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_191 .delete').css("display", "none");
+			$('#comment_191 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_191 .delete').css("display", "none");
+		else										$('#comment_191 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_190" class="comment">
+	
+		<span class="meta">Par un anonyme le 23 janvier 2012 18:15:12</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Des analyses très fines dans cet article. :)</p>
+<p>"Metroidvania" est un terme certes moche, mais que l'on retrouve un peu partout dans la presse. Quant à savoir qui l'a inventé…</p>
+<p>=&gt; Jeremy Parish revendique en tout cas sa popularisation : http://www.1up.com/features/the-metroid-legacy</p>
+<p>(Zim)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_190').addClass('deleted');
+			$('#comment_190 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_190 .delete').css("display", "none");
+			$('#comment_190 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_190 .delete').css("display", "none");
+		else										$('#comment_190 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_189" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 22 janvier 2012 15:04:09</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Merci pour vos remarques =)</p>
+<p>@Gaetz &gt; Je n'ai effectivement pas d'abonnement gold au Xbox Live. J'ai tout de même un peu profité du mode online en regardant jouer mes colloc (sur PS3 ou Xbox avec abonnement) et j'aurais aussi beaucoup de bien à en dire. Je trouve que le choix d'empêcher les joueurs de communiquer autrement que par des gestes est très bon ; cela rend les autres joueurs plutôt crédibles dans leurs rôles de héros venus d'autres âges égarés dans le tissu du temps.</p>
+<p>@anonyme &gt; J'ai essayé de ne pas trop comparer <em>Dark Souls</em> à <em>Skyrim</em> et de varier un peu mes exemples. Visiblement j'ai encore trop de tendances trollesques envers ce jeu =)</p>
+<p>@anonyme &gt; Autant pour moi alors pour les grottes ; je n'ai joué à <em>Skyrim</em> qu'en tant que spectateur et je n'ai pas vu la zone dont tu parles. J'aurais pu choisir un autre exemple du coup.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_189').addClass('deleted');
+			$('#comment_189 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_189 .delete').css("display", "none");
+			$('#comment_189 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_189 .delete').css("display", "none");
+		else										$('#comment_189 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_188" class="comment">
+	
+		<span class="meta">Par un anonyme le 22 janvier 2012 12:26:34</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Article intéressant, néanmoins comparer un jeu à Skyrim c'est déloyal… Dans la catégorie monde dysneyland vide sans âme et sans intérêt, avec scénario minable (on regrette Morrowind !!)… ça ressemble plus à un mmo solo (ramène 20 peaux d'ours etc…). Je hais ce jeu. ça va mieux en le disant. Merci.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_188').addClass('deleted');
+			$('#comment_188 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_188 .delete').css("display", "none");
+			$('#comment_188 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_188 .delete').css("display", "none");
+		else										$('#comment_188 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_186" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 22 janvier 2012 10:06:16</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>L'article est chouette et donne très envie de jouer au jeu. Tu ne parles pas de la partie en ligne du jeu. Tu n'es peut-être pas abonné au live or ?</p>
+<p>"Metroidvania" est un terme certes moche, mais que l'on retrouve un peu partout dans la presse. Quant à savoir qui l'a inventé…</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_186').addClass('deleted');
+			$('#comment_186 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_186 .delete').css("display", "none");
+			$('#comment_186 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_186 .delete').css("display", "none");
+		else										$('#comment_186 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_185" class="comment">
+	
+		<span class="meta">Par un anonyme le 22 janvier 2012 05:27:04</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>super article, tu n'as pas tort dans une certaine mesure… Par contre je ne te rejoins pas du tout sur l'aspect "plane" de la map de skyrim… Je ne vais pas spoiler, mais il se trouve un monde souterrain insoupçonné en bordeciel… et je ne met pas ceci sur le compte des nombreuse grottes du jeu, même si quelques une mène à ces dit lieux souterrains… J'ai plus d'une centaine d'heure de jeu sur ce titre et je n'ai pas encore eu l'occasion d'en explorer la moitié, ces souterrains sont d'ailleurs conçue de façon très "métroidienne"…<br />
+</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_185').addClass('deleted');
+			$('#comment_185 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_185 .delete').css("display", "none");
+			$('#comment_185 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_185 .delete').css("display", "none");
+		else										$('#comment_185 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_184" class="comment">
+	
+		<span class="meta">Par un anonyme le 21 janvier 2012 16:55:31</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Je vote pour "metrovania" :)</p>
+<p>Je suis pas d'accord avec tout, mais tres interessant a lire neanmoins: kudos! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_184').addClass('deleted');
+			$('#comment_184 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_184 .delete').css("display", "none");
+			$('#comment_184 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_184 .delete').css("display", "none");
+		else										$('#comment_184 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_183" class="comment">
+	
+		<span class="meta">Par un anonyme le 20 janvier 2012 23:54:14</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Excellent article, comme toujours !</p>
+<p>Pourtant le terme metroidvania me pique les yeux, castleroid est plus approprié sachant que métroid a influencé castlevania.
+Précision inutile, mais je serais heureux de connaitre le vrai terme et pourquoi (si mon éxplication est fausse).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_183').addClass('deleted');
+			$('#comment_183 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_183 .delete').css("display", "none");
+			$('#comment_183 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_183 .delete').css("display", "none");
+		else										$('#comment_183 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/66';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="dark-souls@scroll_to=article.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#110;&#x74;&#97;&#x63;&#116;&#64;&#x6c;&#x65;&#x73;&#102;&#111;&#114;&#x67;&#101;&#115;&#46;&#x6f;&#x72;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

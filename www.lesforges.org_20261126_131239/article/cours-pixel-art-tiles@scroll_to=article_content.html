@@ -1,0 +1,1208 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Cours de pixel art 9 : un monde de tiles</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Tout ça pour ça…
+
+Si vous m'avez lu jusqu'ici, vos connaissances théoriques en Pixel art sont désormais à peu près correctes. Cependant, vous êtes sans doute déçu que je n'ai pas répondu à vos préoccupations les plus pressantes, du genre « Comment je fais un tile d'herbe ? », « Comment je fais la tête de mon héros ? », « Comment faire un arbre pas trop moche ? », « Où trouver une nouvelle copine ? ». En fait, vous en savez déjà assez pour faire tout ça (sauf pour la copine, et là vous vous débrouillez mieux sans moi je pense)… mais ne rêvez pas trop ! Sans pratique, on n'arrive à rien, et si vous vous posez encore ce genre de question, vous avez besoin de pratique (et de critiques).
+Histoire de remédier un peu à cela, nous allons passer en revue les éléments de base qui constituent un tileset de RPG et qui posent beaucoup de problèmes en pixel art. Ou pas.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#110;&#116;&#97;&#x63;&#116;&#64;&#108;&#101;&#115;&#x66;&#x6f;&#114;&#x67;&#101;&#x73;&#x2e;&#x6f;&#x72;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Cours de pixel art 9 : un monde de tiles</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 18 août 2008 14:43:31 | Catégories : <a href="../tag/cours.html">Cours</a>, <a href="../tag/graphisme.html">Graphisme</a>, <a href="../tag/pixel-art.html">Pixel art</a>, <a href="../tag/tiles.html">Tiles</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p><em>Tout ça pour ça…</em></p>
+<p><img alt="Alundra (Matrix Software)" src="../media/img/tiles-apercu.png" /></p>
+<p>Si vous m'avez lu jusqu'ici, vos connaissances théoriques en Pixel art sont désormais à peu près correctes. Cependant, vous êtes sans doute déçu que je n'ai pas répondu à vos préoccupations les plus pressantes, du genre « Comment je fais un tile d'herbe ? », « Comment je fais la tête de mon héros ? », « Comment faire un arbre pas trop moche ? », « Où trouver une nouvelle copine ? ». En fait, vous en savez déjà assez pour faire tout ça (sauf pour la copine, et là vous vous débrouillez mieux sans moi je pense)… mais ne rêvez pas trop ! Sans pratique, on n'arrive à rien, et si vous vous posez encore ce genre de question, vous avez besoin de pratique (et de critiques).
+Histoire de remédier un peu à cela, nous allons passer en revue les éléments de base qui constituent un tileset de RPG et qui posent beaucoup de problèmes en pixel art. Ou pas.</p>
+			</div>
+			<div id="article_content">
+				<h1>La hantise du Pixel artiste : le TILE D'HERBE (<em>cris et pleurs</em>)</h1>
+<h2>Comme les pros !</h2>
+<p>Le problème qui se pose pour représenter de l'herbe est le même que celui pour la fourrure au chapitre précédent : les brins d'herbe sont trop fins pour être représentés individuellement en Pixel art. Il va donc falloir recourir à une stratégie semblable à celle des touffes de poils… j'ai nommé la stratégie des touffes d'herbe. Si.</p>
+<p>Étant donné que des photos d'herbe ne vous seraient d'aucun secours dans votre tâche, il va falloir s'inspirer d'autre chose… à savoir des tiles d'herbe réussis (ou pas) de jeux professionnels. Ce qui va suivre n'est en aucun cas une incitation à la copie, il s'agit d'une collection de screenshots contenant des tiles d'herbes que je vous suggère d'observer de très près (enregistrez les et zoomez très fort) en vous posant des questions techniques : combien de couleurs sont utilisées ? quels motifs dessinent les couleurs ? dans quels sens sont orientées les « touffes » ? le résultat est-il convaincant ?
+Voilà sans plus attendre la collection en question. Enjouaillez.</p>
+<p><img alt="Sword of Mana (Brownie Brown)" src="../media/img/tiles-grass-swom.png" />
+<img alt="Terranigma (Quintet)" src="../media/img/tiles-grass-terranigma.png" />
+<img alt="Bahamut Lagoon (Square)" src="../media/img/tiles-grass-bahamut.png" />
+<img alt="Alcahest (HAL Laboratory)" src="../media/img/tiles-grass-alcahest.png" />
+<img alt="Chrono Trigger (Square)" src="../media/img/tiles-grass-ct.png" />
+<img alt="Rudora No Hihou (Square)" src="../media/img/tiles-grass-rudora.png" />
+<img alt="Seiken Densetsu 3 (Square)" src="../media/img/tiles-grass-sd3.png" />
+<img alt="Star Ocean (tri-Ace)" src="../media/img/tiles-grass-star.png" /></p>
+<p>Cliquez sur les images si vous voulez voir les noms des jeux.</p>
+<p>Comme je suis sympa, je vais vous mâcher un peu le travail et disséquer en votre compagnie le tile d'herbe de<em> Rudora No Hihou</em>. Voilà le tile d'herbe en question.</p>
+<p><img alt="Le tile d'herbe de Rudora No Hihou" src="../media/img/tiles-grass-dissec.png" /></p>
+<p>Il est impératif de remarquer que le tile n'est pas fait « n'importe comment » en plaçant au hasard des pixel des 4 couleurs. Souvenez vous du cours sur la texture. Les blocs d'une même couleur sont pour la plupart verticaux ou un peu en biais et cela représente grosso-modo la direction des touffes d'herbe. De plus, il n'y a pratiquement pas d'anti-aliasing (seulement un peu sous les highlights) car il n'y a pas franchement la place ou le besoin d'en faire (les teintes se ressemblent assez pour ne pas s'entrechoquer violemment).</p>
+<p>Regardons justement un peu la palette histoire de savoir de quoi on parle : l'artiste a utilisé 4 teintes de vert pour créer ce tile d'herbe, à savoir une pour les highlights, une pour les ombres, et deux teintes médianes assez proches l'une de l'autre comme base. Les highlights servent à faire « le haut des touffes d'herbe » tandis que les ombres représentent les zones les plus enfoncées et près du sol.</p>
+<p>La gestion du contraste est primordiale pour faire un tile d'herbe : moins le tile est contrastée, plus le tile est plat ; plus le tile est contrasté, plus le tile exhibe son volume et la richesse de la flore locale (couche épaisse d'herbe). Il faut réaliser un compromis entre un sol « plat » et sol « en volume » car ce dernier complique la lisibilité de l'écran et attire l'attention. Il ne faut pas oublier que le tile d'herbe ne doit pas noyer les personnages qui sont dessus ou paraitre plus éclairé et volumineux que les arbres et les maisons.</p>
+<p>Pour l'exemple, comparez le screenshot original de <em>Rudora No Hihou</em> (à gauche) avec une version modifiée (teinte sombre de l'herbe plus sombre et teinte claire plus claire). A droite, il y a plus de volume mais moins de lisibilité.</p>
+<p><img alt="Comment une teinte peut tout changer" src="../media/img/tiles-grass-dissec2.png" /></p>
+<h2>Trucs et astuces</h2>
+<p>Voici deux astuces qui devraient vous aider à mieux réussir votre tile d'herbe (la seconde ne s'applique d'ailleurs pas qu'aux tiles d'herbe).</p>
+<p>Premièrement, il est très avantageux de ne pas utiliser un tile d'herbe… mais plusieurs tiles d'herbe ! Si vous avez observé attentivement les screenshots proposés ci dessus vous avez sans doute remarqué que chaque jeu utilise plusieurs tiles différents afin d'avoir des variations dans la texture du sol. Cela permet de limiter l'effet de quadrillage du à la répétition d'un même motif sur une large surface.</p>
+<p>La plupart des jeux utilisent 4 tiles d'herbe (un carré 32*32), une variété d'herbes hautes et différents tiles de fleurs. De plus, les développeurs essayent en général de ne pas avoir de grandes étendues d'herbes (même pleines de variation) et remplissent leurs cartes de falaises et d'arbres pour se débarrasser une bonne fois pour toute du problème.</p>
+<p>Deuxièmement, il est possible d'éliminer la grille de façon efficace en corrigeant à la main les petits détails de votre tiles qui rendent visible la répétition. Considérons si vous le voulez bien le tile (32* 32 pixels, 4 tiles donc)à votre gauche (réalisé exprès pour ce cours). Il n'est pas trop mal, mais j'ai encadré en rouge une ligne horizontale qui se répète de façon clairement visible tous les 32 pixels, et une ligne de touffes en diagonale qui souffre du même problème. En modifiant cela, je peux rendre mon tile plus uniforme et plus à même de boucler.</p>
+<p><img alt="Problèmes de tiling" src="../media/img/tiles-grass-tiling.png" /></p>
+<p>Le problème des touffes en diagonale se trouve dans la partie en haut à droite du tile donc il me suffit d'aplanir un peu les touffes pour corriger le problème. Par contre, les lignes horizontales sont à cheval sur le haut et le bas de mon tile (qui boucle mal donc) et il faut recourir à une petite astuce pour y remédier. L'astuce consiste à placer une copie du tile sous lui, histoire de bien voir la transition, et de faire disparaitre la ligne en travaillant à la fois sur le haut du tile du bas et le bas du tile du haut. Une fois la ligne supprimée, on colle ensemble le bas du tile du haut avec le haut du tile du bas…et on a un tile qui boucle correctement. Le procédé est illustré ci-dessous, Le résultat n'est pas encore parfait mais déjà bien plus convaincant.</p>
+<p><img alt="Technique pour corriger" src="../media/img/tiles-grass-tiling2.png" /></p>
+<h1>Auprès de mon arbreuuuh</h1>
+<p>Bien, maintenant que vous avez de la verdure, il est temps de passer au gros œuvre : un arbreuh (ou un arbre, pour les non initiés). Je ne vais pas vous faire l'affront de vous expliquer qu'un arbre est constitué de branches et de feuilles, et que ces dernières sont généralement vertes. Je commence par vous laisser regarder une pelletée de screenshots avec des arbres réussis (ou pas ! <em>Chrono Trigger</em> n'est pas un exemple à suivre dans le domaine) à observer, les explications sont en dessous. Comme précédemment, il serait très bon pour vous de passer du temps à analyser à la loupe quelques uns de ces screenshots et de procéder à des « dissections ».</p>
+<p><img alt="Alcahest (HAL Laboratory)" src="../media/img/tiles-tree-alcahest.png" />
+<img alt="Bahamut Lagoon (Square)" src="../media/img/tiles-tree-bahamut.gif" />
+<img alt="Chrono Trigger (Square)" src="../media/img/tiles-tree-ct.png" />
+<img alt="Chrono Trigger (Square)" src="../media/img/tiles-tree-ct2.png" />
+<img alt="Rudora No Hihou (Square)" src="../media/img/tiles-tree-rudora.gif" />
+<img alt="Seiken Densetsu 3 (Square)" src="../media/img/tiles-tree-sd3.png" />
+<img alt="Sword of Mana (Brownie Brown)" src="../media/img/tiles-tree-swom.png" />
+<img alt="Tales of Phantasia (Wolf Team)" src="../media/img/tiles-tree-top.png" /></p>
+<p>Comme vous pouvez le voir, il existe de nombreuses façon de représenter des arbres, du très réaliste <em>Tales of Phantasia</em> au plus exotique et stylisé <em>Sword of Mana</em>. En fait, je n'ai en tout et pour tout que quelques importants conseils à vous donner pour réussir un arbre :
+La premier c'est que les racines d'un arbre sont enfoncées dans le sol et qu'on a souvent tendance à l'oublier et à en faire d'interminables filaments qui courent entre les brindilles. Les arbres sont PLANTES dans le sol, une petite ballade en plein air sera l'occasion de le vérifier.
+Tant que vous êtes dehors, profitez-en pour jeter un œil aux feuillages autour de vous, c'est ce qu'il y a de plus important sur un arbre. Il y a deux erreurs à éviter sur les feuillages : la première c'est de faire un feuillage « plat », comme une tranche de carton. Il faut garder à l'esprit que le feuillage est un objet en 3 dimensions, qui est soumis aux règles sur l'ombre et la lumière que l'on a évoquées précédemment. Le second piège est de trop penser à cela et de réduire son arbre à une sphère éclairée. Il ne faut pas non plus oublier que le feuillage est constitué de branches et de feuilles, qui ne forment pas une sphère parfaite, mais le plus souvent un empilement de sphères incomplètes ou tordues sur lesquelles les feuilles bataillent pour recevoir de la lumière en se passant les unes devant les autres. Regardez l'arbre de <em>Seiken Densetsu 3</em> : il est constitué de 4 sphères sur lesquelles sont dessinées les feuilles.</p>
+<p>Allons-y pour un petit mode d'emploi :</p>
+<p><img alt="Réalisation d'un arbre" src="../media/img/tiles-tree-maison.png" /></p>
+<p>Je commence par dessiner grossièrement la forme du feuillage (étape 1), avant de consacrer 5 étapes à la création des volumes du feuillage. Ma source de lumière est à gauche et je place couleur après couleur des ombres et des lumières. L'étape 3 est celle où le procédé apparait le plus clairement. Cela fait, je dessine une esquisse de tronc et trouve que mon arbre à trop des airs de champignon géant. Je décide de descendre le feuillage un bon coup (et oui, un peu de travail effectué pour rien). Je détaille un peu le tronc et beaucoup le feuillage (c'est TRÈS TRÈS long et TRÈS TRÈS ennuyeux. Soyez patients et appliqués) pour arriver à l'avant dernière étape.</p>
+<p>Enfin, je coupe franchement le tronc pour éviter le problème des « racines tentacules » et bien planter mon arbre dans le sol, j'ajuste la forme du feuillage pour que l'arbre soit moins difforme (mais sans être parfaitement symétrique pour autant), je change la palette du tronc en quelque chose de plus sombre et plus vert (pour mieux s'accorder au feuillage), et je n'oublie pas que le feuillage fait de l'ombre au tronc. J'ai collé un de mes tiles d'herbes en dessous pour tester l'homogénéité des couleurs, mais j'ai eu la flemme de faire l'ombre portée du feuillage sur l'herbe : regardez le screenshot de <em>Rudora no Hihou</em>, ils font ça bien mieux que moi de toute façon.</p>
+<p>Une dernière remarque en passant, je me suis ici permis de m'occuper séparément du feuillage et du tronc car j'ai fait un feuillage très dense qui masque complètement les branches. La logique voudrait que l'on dessine d'abord toutes les branches d'un arbre (son « squelette 7) avant d'y ajouter les feuilles, et c'est ce qu'il faut faire si vos arbres sont plus dégarnis.</p>
+<h1>Vamos a la playa !</h1>
+<p>Passons sans plus attendre à des tiles plus ensoleillés, à commencer par un tile de sable. Conservons la même démarche que précédemment et observez de près les images ci-dessous :</p>
+<p><img alt="Alcahest (HAL Laboratory)" src="../media/img/tiles-sand-alcahest.gif" />
+<img alt="Bahamut Lagoon (Square)" src="../media/img/tiles-sand-bahamut.gif" />
+<img alt="Rudora No Hihou (Square)" src="../media/img/tiles-sand-rudora.png" />
+<img alt="Seiken Densetsu 3 (Square)" src="../media/img/tiles-sand-sd3.png" />
+<img alt="Star Ocean (tri-Ace)" src="../media/img/tiles-sand-so.png" />
+<img alt="Sword of Mana (Brownie Brown)" src="../media/img/tiles-sand-swom.png" /></p>
+<p>Si votre observation a été fructueuse, vous aurez remarqué que le tile de sable est bien plus simple à réaliser que les précédents, et aussi que la plupart des conseils données pour le tile d'herbe sont également valables ici (utiliser plusieurs tiles, faire attention à briser la grille, trouver un compromis entre volume et lisibilité). La plupart des tiles (les plus réussis surtout, notamment ceux de <em>Seiken Densetsu 3</em> et de <em>Sword of Mana</em>) sont en majeure partie constitués d'un aplat d'une seule couleur (vacances pour le pixel artiste) accompagnée de petites dunes ondulées. Remarquez également que de petits motifs de dithering sont de bon ton pour les tiles de sable, afin de donner un texture granuleuse.</p>
+<p>Question palette, il faut faire attention à éviter le jaune fluo crève-rétine, et ne pas hésiter à tirer vers des tons crèmes (<em>Seiken Densetsu 3</em>) ou marrons (<em>Rudora No Hihou</em>). Si vous faites tendre un peu la palette vers le rouge, vous obtiendrez un joli sable éclairé par le soleil couchant.</p>
+<p>Étant donné que je n'ai cette fois-ci aucune technique particulière à illustrer et que tout ce que j'avais à signaler se voit dans les screenshots (et dans mon explication) ci-dessus, je passe mon tour et ne fais pas de tile de sable.</p>
+<h1>Sea, Sex And Sun !</h1>
+<p>Terminons notre petite liste par les tiles d'eau. Il existe plein de façons de traiter leur cas (bien plus que pour l'herbe) donc vous allez avoir du boulot si vous voulez tout analyser. En ce qui me concerne, je vais tenter de mettre en valeur les grandes lignes. Voilà pour les images :</p>
+<p><img alt="Alcahest (HAL Laboratory)" src="../media/img/tiles-water-alcahest.gif" />
+<img alt="Bahamut Lagoon (Square)" src="../media/img/tiles-water-bahamut.gif" />
+<img alt="Chrono Trigger (Square)" src="../media/img/tiles-water-ct.png" />
+<img alt="Rudora No Hihou (Square)" src="../media/img/tiles-water-rudora.gif" />
+<img alt="Rudora No Hihou (Square)" src="../media/img/tiles-water-rudora2.gif" />
+<img alt="Terranigma (Quintet)" src="../media/img/tiles-water-terranigma.png" />
+<img alt="Star Ocean (tri-Ace)" src="../media/img/tiles-water-so.png" />
+<img alt="Tales of Phantasia (Wolf Team)" src="../media/img/tiles-water-top.png" />
+<img alt="Sword of Mana (Brownie Brown)" src="../media/img/tiles-water-swom.png" /></p>
+<p>Je vous ai mis la dose mais il faut bien ça pour illustrer la diversité des méthodes utilisables. Procédons a une classification.</p>
+<p>Les tiles de <em>Sword of Mana</em> et <em>Tales of Phantasia</em> sont les plus minimalistes du lot. Ils utilisent peu de couleurs par tiles et illustrent à merveille le premier point que je veux vous faire remarquer : l'eau étant une matière à peu près transparente, on la repère généralement plus à son entourage qu'à sa propre présence. Je m'explique : regardez cette photo du lac de Fabrège (dans les Pyrénées). La surface du lac est avant tout la surface où se reflète la montagne. Vous voyez une montagne à l'envers sur le sol, donc vous en concluez qu'il s'agit d'une étendue d'eau où la montagne se reflète, alors que rien ne vous l'indique vraiment.</p>
+<p><img alt="Le lac de Fabrège" src="../media/img/tiles-water-lac.jpg" /></p>
+<p>Bien qu'il soit difficile d'atteindre de tels extrêmes dans la réalisation d'un tile (encore que, ça mériterait d'être essayé), je pense que vous comprendrez l'idée en voyant que l'eau de <em>Tales of Phantasia</em> est d'un bleu uni sur lequel s'étalent les ombres des branchages qui la surplombent. De même, <em>Sword of Mana</em> dispose de toute une palette de profondeurs différentes, en jouant sur la palette utilisée. Plus l'eau est sombre et opaque, plus la distance qui sépare le fond de la surface est grande. Enfin, en regardant un peu les autres screenshots, vous remarquerez qu'il n'est pas rare de voir des falaises s'y refléter (ou visibles en transparence à travers l'eau), notamment dans <em>Rudora No Hihou</em>.</p>
+<p>Les tiles de <em>Chrono Trigger</em> et <em>Bahamut Lagoon</em> sont les moins réussis du lot, et ne constituent pas des exemples à suivre (sauf pour ce qui est des cascades). Leurs textures sont avares en couleurs et se limitent à des barbouillages informes de points, à tel point que si l'eau de <em>Bahamut Lagoon</em> n'était pas bleue, il serait très difficile de deviner qu'il s'agit d'eau (une texture réussie est reconnaissable en noir et blanc).</p>
+<p>A l'inverse, <em>Alcahest</em>, <em>Terranigma</em> et <em>Rudora No Hihou</em> (celui dans la caverne) ont des textures bien plus évocatrices, qui dessinent des motifs souples et arrondis (et bien anti-aliasés aussi). Regardez par exemple sur ce détail du screenshot de <em>Rudora No Hihou</em> comment la texture trace des courbes qui ondulent sur la surface de l'eau.</p>
+<p><img alt="Oh les belles ondulations" src="../media/img/tiles-water-dissec.png" /></p>
+<p>J'ai gardé le meilleur, et le plus difficile, pour la fin : l'eau de mer et les vagues. Il est courant de représenter les tiles de mer en utilisant une ou deux couleurs très claires pour tracer les crêtes des vagues, formant ainsi une sorte de trame ondulée et très irrégulière à la surface de l'eau. Il faut ensuite remplir cette trame en utilisant les couleurs plus sombres et sans oublier de choisir une source de lumière (les vagues sont tout sauf plates !). Ci-dessous, ma tentative personnelle après une séance d'observation.</p>
+<p><img alt="Un tile d'eau fait maison" src="../media/img/tiles-water-maison.png" /></p>
+<p>J'ai tenté de garder discret le système de crêtes mais je pense que le résultat final manque un peu de personnalité. L'excès inverse se trouve dans <em>The Legend of Zelda : The Wind Waker</em> dont la mer se limite en tout et pour tout à ce système de quadrillage (mais le résultat est pourtant excellent !).</p>
+<p><img alt="The Legend of Zelda : The Wind Waker (Nintendo EAD)" src="../media/img/tiles-water-zelda.jpg" /></p>
+<h1>Le grand secret de la vie et de la mort</h1>
+<p>Nous en avons maintenant fini avec les tiles, et ce cours touche également à sa fin. J'ose espérer qu'il vous a été utile et que vos jeux seront désormais un peu plus beaux.
+Je tiens à conclure en vous donnant un dernier conseil, et c'est sans aucun doute le plus important que vous trouverez dans ces 8 chapitres : c'est en vous entraînant que vous progresserez. Le pixel art est un domaine dans lequel vous pouvez devenir très bon sans avoir aucune forme de talent et sans être un artiste très doué avec les médias plus traditionnels (dessin, peinture…).
+La persévérance couplée au travail acharné est un duo gagnant à tous les coups, pour peu que vous réfléchissiez un peu à ce que vous faites et que vous soyez appliqués. La paresse et l'attentisme sont eux un duo perdant à tous les coups. C'est seulement en enchaînant tileset sur tileset et personnage sur personnage que vous finirez par exceller en la matière. N'attendez pas de miracle du jour au lendemain, il s'agit d'une progression lente et organique que vous ne remarquerez qu'en comparant vos travaux récents à ceux réalisés plusieurs semaines ou plusieurs mois auparavant. Pour preuve, je vous laisse en compagnie d'une image qui illustre ma propre progression entre 2006 et 2008 et qui vous en donne la clé.</p>
+<p><img alt="Avec un peu d'entraînement on arrive à tout :&gt;" src="../media/img/tiles-ccl.png" /></p>
+			</div>
+			
+				<div class="sequel">
+					<p><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Lire la suite ⇀</a></p>
+				</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/cours-pixel-art-tiles&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_470" class="comment">
+	
+		<span class="meta">Par un anonyme le 22 février 2020 18:27:12</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>DISCLAIMER : Talent <em>is not inclued</em> in this method.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_470').addClass('deleted');
+			$('#comment_470 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_470 .delete').css("display", "none");
+			$('#comment_470 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_470 .delete').css("display", "none");
+		else										$('#comment_470 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_427" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 avril 2016 19:38:42</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Je comprends rien </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_427').addClass('deleted');
+			$('#comment_427 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_427 .delete').css("display", "none");
+			$('#comment_427 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_427 .delete').css("display", "none");
+		else										$('#comment_427 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_382" class="comment">
+	
+		
+			<span class="meta">Par Pierre Guyot le 12 février 2014 19:35:56</span>
+			<br/><img src="http://www.gravatar.com/avatar/ef4498aa9ef6758a91ec542f9b93aa36?s=50&amp;r=g&amp;d=mm" alt="avatar de Pierre Guyot" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je n'ai pas de réponse définitive à vous fournir sur la question des méthodes employées précisément, d'autant plus qu'elles divergent selon les différents studios. </p>
+<p>Pour exemple, je me souviens avoir vu des concept arts du premier <em>The Legend of Zelda</em> sur du papier avec une grille où le designer avec dessiné des versions simplifiées des monstres qui devaient servir de base au pixel art pour les sprites. Certains fonds de combat de <em>Final Fantasy VI</em> semblent avoir été inspirés par des réductions photographiques. Les sprites des jeux de combat 2D Capcom plus récents sont basés sur des dessins papier méticuleusement re-linés en pixel art. Pour des exemples de processus de travail d'artistes actuels, on peut jeter un oeil aux forums de <a href="http://wayofthepixel.net/index.php?PHPSESSID=acre511egbveeckue2j53c8uo3&amp;board=2.0">Pixelation</a> : certains commencent avec base papier, d'autres sans, mais dans tous les cas, un travail de véritable pixel art reste nécessaire à la fin.</p>
+<p>Cependant, il serait naïf de croire que ces graphismes sont obtenus simplement en scannant des illustrations papiers. En scannant une illustration papier, on n'obtient ni des graphismes qui bouclent (alors que les tiles sont essentiels), ni une palette de couleur réduite, ni une bonne palette (les problèmes de colométrie sont encore très actuels), ni des traits propres, ni un bon contraste, ni une bonne lisibilité, ni un bon anti-aliasing. Par exemple, scanner une illustration papier ne sera que très peu utile (voire pas du tout) pour des graphismes de résolution Game Boy ou Nes, à peine plus pour des décors de SNES.</p>
+<p>Au mieux, une illustration scannée et réduite peut constituer une base pour travailler (comme dans le cas des photographies de Final Fantasy VI), mais en général cela servira plutôt pour de très grandes portions de graphisme  (des facesets, des fonds de combats, des écrans fixes dans une introduction, du très grand pixel art comme sur Playstation, etc.) et non pour des tiles. Par ailleurs, cela n'évitera en rien un très long et méticuleux travail de pixel art derrière. Par exemple, une réduction de couleurs automatiques donne en général de mauvais résultats sur tout ce qui est lignes.</p>
+<p>Pour donner une illustration de ce que donne une simple réduction des couleurs à partir d'illustrations plus grandes, on peut regarder l'un des derniers trailers de <a href="http://www.youtube.com/watch?v=1NFmP4fVBqA">Lightning Returns</a>, qui a été réalisé dans un style pseudo-rétro : le résultat est extrêmemement pauvre et mauvais dans l'ensemble (à l'exception peut-être de la partie non-animée de Barthandelus que j'avais vu traîner sur Internet au moins deux ans auparavant) et donne une vision plutôt inquiétante de la perte de compétence en 2D chez Square-Enix. On peut aussi parler des effets de redimensionnement catastrophiques sur la version Iphone de <em>Final Fantasy VI</em> qui vient de sortir.</p>
+<p>Pour résumer, même si le mode de travail fait intervenir une base papier, un rendu pixel art nécessite toujours un gros travail à l'ordinateur après coup (ce qui est le cas d'à peu près tous les bons exemples que vous pourrez voir dans cette série d'articles, je pense : regardez les lignes de pixel parfaitement verticales du bateau et du ponton de <em>Star Ocean</em> sur SNES, il est impossible d'obtenir un rendu parfait comme celui-ci en se contentant de scanner). On peut tout à fait travailler intelligemment avec les outils récents, mais on ne peut jamais vraiment éviter le travail de pixel art derrière :) </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_382').addClass('deleted');
+			$('#comment_382 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_382 .delete').css("display", "none");
+			$('#comment_382 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_382 .delete').css("display", "none");
+		else										$('#comment_382 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_380" class="comment">
+	
+		<span class="meta">Par un anonyme le 26 décembre 2013 02:25:35</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Je suis tombé sur cette page par hasard je pense simplement que ceux qui ont fait les graphismes pour les jeux mentionné ci-dessus ont tous simplement fait les dessins à la mains puis les on digitalisés scanés en fait pixélisé je ne les vois pas faire des jeux vidéo pixel par pixel à mon humble avis.</p>
+<p>Attention ce n'est pas une critique mais plutôt une réflexion car je n'ai jamais rien trouvé sur la façon de faire les graphismes de jeux tel que chrono trigger, Rudra No Hihou, ou seiken dentsetsu 3 ; il devait déjà à l'époque avoir des sorte de scanner pour y intégré à l'ordinateur.</p>
+<p>Voilà voilà une réponse pour éclairé ma lanterne sur la façon de faire les graphisme de l'époque serait la bien venu.</p>
+<p>Salut.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_380').addClass('deleted');
+			$('#comment_380 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_380 .delete').css("display", "none");
+			$('#comment_380 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_380 .delete').css("display", "none");
+		else										$('#comment_380 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_361" class="comment">
+	
+		<span class="meta">Par un anonyme le 10 août 2013 13:38:05</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>http://opengameart.org/content/les-forges-pixel-art-course</p>
+<p>"Translator's Notes</p>
+<p>This massive pixel art tutorial is written by Fil Razorback from LesForges.org. You can find the original tutorials here. A big thank you to Fil Razorback for allowing OpenGameArt.org to translate these tutorials and archive them here!"</p>
+<p>Pas de panique ;)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_361').addClass('deleted');
+			$('#comment_361 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_361 .delete').css("display", "none");
+			$('#comment_361 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_361 .delete').css("display", "none");
+		else										$('#comment_361 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_360" class="comment">
+	
+		<span class="meta">Par un anonyme le 9 août 2013 19:14:20</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Désolé de up mais : http://opengameart.org/content/chapter-8-a-world-of-tiles</p>
+<p>=&gt; On vous a "plagié" (traduit et même pas de citation vers votre site !)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_360').addClass('deleted');
+			$('#comment_360 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_360 .delete').css("display", "none");
+			$('#comment_360 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_360 .delete').css("display", "none");
+		else										$('#comment_360 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_269" class="comment">
+	
+		
+			<span class="meta">Par Sylvain le 22 août 2012 17:11:17</span>
+			<br/><img src="http://www.gravatar.com/avatar/d8ce5e1e6bfdb7c044ff258130bc8887?s=50&amp;r=g&amp;d=mm" alt="avatar de Sylvain" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Merci pour ces différents cours sur le pixel art ! Je débute complètement mais j'ai appris plein de trucs. En plus les textes sont plutôt drôles à lire.</p>
+<p>Merci !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_269').addClass('deleted');
+			$('#comment_269 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_269 .delete').css("display", "none");
+			$('#comment_269 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_269 .delete').css("display", "none");
+		else										$('#comment_269 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_195" class="comment">
+	
+		<span class="meta">Par un anonyme le 17 février 2012 23:15:38</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Ma deuxième référence !
+Pour ce qui veulent continuer dans le pixel art il y a aussi ce tuto (en anglais) qui est bien :
+http://gas13.ru/v3/tutorials/sywtbapa_almighty_grass_tile.php
+Il aborde plus les personnages et l'animation alors les deux se complètent.</p>
+<p>En tout cas merci beaucoup pour ce tuto de qualité.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_195').addClass('deleted');
+			$('#comment_195 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_195 .delete').css("display", "none");
+			$('#comment_195 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_195 .delete').css("display", "none");
+		else										$('#comment_195 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_109" class="comment">
+	
+		
+			<span class="meta">Par Roi_of_the_Suisse le 19 juillet 2011 23:36:53</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Roi_of_the_Suisse" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Très bon article, très complet. Ma référence.</p>
+<p>Peut-être serait-il intéressant de dédier un article complet à l'eau, parce que l'eau est vraiment le cauchemar du graphiste, et pas seulement pour le tile de mer. 
+D'ailleurs ici un seul type d'eau est traité : le type "quadrillage", utilisé dans ZeldaWindWaker ou encore dans les RTP de RPG Maker XP.
+Mais il y a également le type motif de vagues, utilisé dans pokémon Rubis/Saphir (http://media.strategywiki.org/images/a/af/PRS%26E_Abandonedship.png) ; ou encore le type bleu uni, avec des scintillements et/ou des petites vaguelettes, comme dans Zelda MinishCap (http://static2.dmcdn.net/static/video/226/411/20114622:jpeg_preview_large.jpg).
+Animer une fontaine ou dessiner de la pluie n'est pas évident au premier abord. Mettez donc un de vos pixel-artistes sur l'écriture d'un article à propos.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_109').addClass('deleted');
+			$('#comment_109 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_109 .delete').css("display", "none");
+			$('#comment_109 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_109 .delete').css("display", "none");
+		else										$('#comment_109 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_32" class="comment">
+	
+		<span class="meta">Par un anonyme le 3 octobre 2010 13:06:38</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Dommage que le cours ne se poursuive pas avec les personnages et les animations. Y a-t-il un autre tuto aussi bien fait sur le sujet ? </p>
+<p>--Doudoulolita</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_32').addClass('deleted');
+			$('#comment_32 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_32 .delete').css("display", "none");
+			$('#comment_32 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_32 .delete').css("display", "none");
+		else										$('#comment_32 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_31" class="comment">
+	
+		<span class="meta">Par un anonyme le 13 mai 2009 04:59:17</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Hey, just noticed it's fil_razorback from Pixelation! Cheers and thanks again !</p>
+<p>--leSingeFaitIl</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_31').addClass('deleted');
+			$('#comment_31 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_31 .delete').css("display", "none");
+			$('#comment_31 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_31 .delete').css("display", "none");
+		else										$('#comment_31 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_30" class="comment">
+	
+		<span class="meta">Par un anonyme le 13 mai 2009 04:57:49</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>(Je suis désolé — Je ne parle pas français. Cela a été traduit par google)<br />
+Je suis arrivé ici, de http://opengameart.org/.
+Vous avez un très joli site web. Vos tutoriels sont très bien! Merci! </p>
+<p>--leSingeFaitIl</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_30').addClass('deleted');
+			$('#comment_30 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_30 .delete').css("display", "none");
+			$('#comment_30 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_30 .delete').css("display", "none");
+		else										$('#comment_30 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/29';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="cours-pixel-art-tiles@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#110;&#x74;&#97;&#99;&#116;&#64;&#108;&#x65;&#115;&#102;&#111;&#x72;&#x67;&#x65;&#115;&#x2e;&#111;&#x72;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,895 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Pourquoi écrire un Game Design Document ?</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	De temps à autres, je reçois des questions de la part d'étudiants ou je lis des posts de développeurs débutants qui exigent de savoir pourquoi ils devraient écrire des Game Design Document (GDD). Ils veulent se plonger tout de suite dans la modélisation ou le code et ils ne voient le travail sur papier que comme une perte de temps. Les joueurs ne le verront jamais, alors à quoi bon ?
+Je connais cette façon de penser : j'avais la même aussi quand j'ai commencé à créer des jeux. Je me revois en train de coder en FORTRAN bien avant d'avoir une idée claire de comment mon jeu allait bien pouvoir fonctionner en temps que divertissement ou même en tant que programme. Bien sûr, à l'époque, il n'y avait pas de designers expérimentés dans le coin pour me dire comment j'aurais dû faire — tout le monde prenait les décisions au fur et à mesure.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#x6e;&#116;&#97;&#x63;&#x74;&#64;&#108;&#101;&#x73;&#x66;&#111;&#x72;&#103;&#101;&#x73;&#x2e;&#x6f;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Pourquoi écrire un Game Design Document ?</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 11 décembre 2011 15:44:23 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/Shin.html">Pierre Guyot</a>.
+						<br/>L'<a href="http://www.designersnotebook.com/Columns/091_Why_Design_Documents_Matte/091_why_design_documents_matte.htm" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (juillet 2007).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p>De temps à autres, je reçois des questions de la part d'étudiants ou je lis des posts de développeurs débutants qui exigent de savoir pourquoi ils devraient écrire des <em>Game Design Document</em> (GDD). Ils veulent se plonger tout de suite dans la modélisation ou le code et ils ne voient le travail sur papier que comme une perte de temps. Les joueurs ne le verront jamais, alors à quoi bon ?</p>
+<p>Je connais cette façon de penser : j'avais la même aussi quand j'ai commencé à créer des jeux. Je me revois en train de coder en FORTRAN bien avant d'avoir une idée claire de comment mon jeu allait bien pouvoir fonctionner en temps que divertissement ou même en tant que programme. Bien sûr, à l'époque, il n'y avait pas de designers expérimentés dans le coin pour me dire comment j'aurais dû faire — tout le monde prenait les décisions au fur et à mesure.</p>
+			</div>
+			<div id="article_content">
+				<p>Chez les débutants, l'une des objections les plus courantes à l'écriture de GDD est que personne ne les lit. Ça semble logique au premier abord, mais en réalité cet argument est complètement hors-sujet. Personne ne lit l'annuaire non plus et pourtant, s'il n'y avait pas de moyen de trouver les numéros, le téléphone serait beaucoup moins utile. Comme l'annuaire, la plupart des GDD ne sont pas conçus en vue d'être lus mais en vue d'être consultés. Personne ne les lit d'un bout à l'autre, mais les managers et les développeurs peuvent y trouvent les informations qui concernent leurs tâches respectives.</p>
+<p>Une autre objection classique est que, dans la mesure où les jeux sont d'abord développés sous la forme de prototypes, le prototype peut constituer la base du jeu et l'équipe peut y ajouter de nouvelles fonctionnalités, alors pourquoi écrire un GDD ? Mais ce n'est pas pour ça que le prototype existe et procéder ainsi le prive de sa valeur. Les prototypes sont censés être conçus rapidement et salement, et plus ils sont conçus salement, plus ils pourront être conçus rapidement. Ils sont faits pour le test, pas pour la conception — vous pouvez y jouer, mais vous ne pouvez pas y trouver de données ou de plans. Dans la célèbre <a href="http://fr.wikipedia.org/wiki/Mark_Cerny">Méthode Cerny</a>, l'auteur avertit les développeurs que tout ce qu'ils produisent pour le prototype sera jeté. Ceci les autorise à y aller très grossièrement et les assure que s'il y a des bidouilles dans le prototype, ces bidouilles ne seront pas dans le produit fini. Il est toujours dangereux de transformer le code d'un prototype en code final, et Cerny évite ce risque en faisant en sorte que cela ne se produise pas. De plus, les prototypes ne contiennent presque jamais tout les éléments du jeu fini. On utilise principalement les prototypes pour tester les mécaniques de jeu et les interfaces utilisateur. Si un jeu comporte trente niveaux, le prototype en présentera trois ou quatre, voire moins. Il reste encore à concevoir et à poser sur le papier tous les éléments restants pour que l'équipe puisse les réaliser. Un prototype ne remplace pas les documents papier — diagrammes, cartes, listes d'objets, etc. — nécessaires à la construction de ces niveaux.</p>
+<p>Jusqu'à présent, j'ai répondu à quelques objections, mais je n'ai pas encore avancé de raisons positives pour lesquelles les GDD sont importants. Quiconque a mené un gros projet dans l'industrie du jeu vidéo sait parfaitement pourquoi ils le sont, mais c'est une question raisonnable pour ceux qui n'ont pas encore pu profité de ce (douteux) privilège. Il y a en fait plusieurs raisons, que j'évoquerai en commençant par la moins importante et en finissant par la plus essentielle.</p>
+<p><strong>Raison 1 (la moins importante) : les gens qui vous financent (éditeurs ou autres) veulent des GDD comme preuves que le designer sait ce qu'il fait.</strong></p>
+<p>Beaucoup de gens dans l'industrie voudrait avoir l'argent d'abord et se pencher sur les détails après — évidemment, qui ne voudrait pas, s'il pouvait s'en tirer comme ça ? Parfois vous pouvez réussir à embobiner un investisseur privé pour qu'il vous laisse faire ça, en particulier s'il ne s'y connait pas trop en affaires. Mais un éditeur sensé ne va pas simplement placer des millions de dollars dans les mains d'un designer qui n'a pas de plan clair en tête. Les producteurs exécutifs veulent une trace écrite. Ils n'insistent plus sur une bible du jeu de trois cents pages, comme il y a quinze ans, mais ils veulent quand même quelque chose qu'ils puissent tenir entre leurs mains et montrer au département marketing. Aujourd'hui, on demanderait plutôt un document d'une trentaine de pages, mais il s'agit toujours d'un document et quelqu'un doit l'écrire. Pas de GDD, pas d'argent.</p>
+<p>Si vous êtes auto-financé, ce n'est pas un problème, mais il y a plusieurs autres bonnes raisons pour écrire un GDD même si vous vous débrouillez pour payer.</p>
+<p><strong>Raison 2 : les GDD sont parfois la base d'obligations contractuelles.</strong></p>
+<p>La plupart des contrats de développements comporte un calendrier des différentes étapes qui définit quand le développeur devra fournir certains livrables et quand l'éditeur devra avancer plus d'argent pour le développement. Vous ne pouvez pas créer un calendrier avant de savoir quelles fonctionnalités seront dans le jeu, et vous ne pouvez pas savoir ça avant d'en avoir conçu au moins une partie, ce qui inclut une trace écrite pour pouvoir bâtir le rapport dessus.</p>
+<p>En pratique, ces calendriers changent tout le temps, et la liste des fonctionnalités aussi. Ça n'a pas d'importance : il faut bien commencer quelque part. Pas de liste de fonctionnalités, pas de calendrier ; pas de calendrier, pas de contrat. De plus, il est dans l'intérêt du développeur d'avoir une planification aussi claire et précise que possible. Si les développeurs peuvent prouver sans doute possible qu'une certaine part du travail est faite et qu'un nouveau payement est dû, ils sont en position de force. Si le game design consiste à brasser de l'air, les éditeurs peuvent brasser beaucoup d'air en retour pour expliquer qu'ils diffèrent le payement et exigent plus de travail. Si vous savez ce que vous vous engagez à fournir, vous êtes certains de savoir si vous avez tenu vos engagements à temps.</p>
+<p>En plus de la relation légale entre éditeur et développeur, il y a aussi la relation légale entre le développeur et les sous-traitants extérieurs. Aujourd'hui, la musique, le graphisme, l'animation et l'écriture sont souvent sous-traités auprès d'agences spécialisées. Pour que ces entreprises puissent faire leur travail, elles doivent disposer de documents qui leur indiquent ce qu'on attend d'elles et quand, documents qui peuvent constituer la base de leur contrat.</p>
+<p><strong>Raison 3 : le GDD communique vos intentions au reste de l'équipe et lui permet de planifier les différentes tâches.</strong></p>
+<p>En théorie, voilà pourquoi tout le monde devrait écrire un GDD : afin de transmettre l'information aux autres. Les petites équipes n'en ont pas autant besoin dans la mesure où les membres travaillent souvent dans la même pièce et se parlent tout le temps. C'est pourquoi les étudiants et les débutants ne voient pas l'intérêt d'écrire un GDD : ils pensent que s'ils peuvent parler ensemble, il n'y a pas besoin de mettre quoi que ce soit sur le papier. Néanmoins, comme nous l'avons vu, ces documents sont conçus pour d'autres raisons, contractuelles entre autres. Étrangement, communiquer avec le reste de l'équipe n'est pas la raison la plus importante pour écrire un GDD, mais c'est déjà une raison et une bonne.</p>
+<p>Les enseignants demandent aux étudiants d'écrire des GDD même si les équipes d'étudiants n'en ont pas forcément besoin pour la communication. c'est parce que les enseignants savent que les étudiants ne travailleront pas toujours au sein d'une petite équipe et qu'ils ont besoin de s'entraîner avant de rentrer sur le marché du travail. Les grandes équipes de développement peuvent aller jusqu'à cent cinquante personnes (NDT : et même plus de trois cent sur un <em>Final Fantasy XIII</em>) et sont souvent réparties sur plusieurs bureaux, voire plusieurs pays si une partie du travail est sous-traitée. Parler tout le temps, même par téléphone ou vidéoconférence, n'est pas pratique.</p>
+<p><img alt="Madden NFL (EA Sports)" src="../media/img/madden.jpg" /></p>
+<p>Plus le jeu est grand, plus il est important de poser le design sur papier, de façon à ce que les autres puissent élaborer leur planning. Si vous voulez que votre jeu inclue 45 types de créatures, les artistes de l'équipe devront modéliser, texturer et animer chacun d'entre eux. Ils auront besoin de concept art à partir desquels travailler — une autre forme de <em>design document</em>. Les ingénieurs du son auront besoin de trouver ou créer des effets sonores pour chacune de ces créatures. Si elles sont autonomes, les programmeurs auront besoin de connaître leurs caractéristiques comportementales. Si vous ne posez pas tout ça sur le papier, comment ces gens pourront-ils savoir tout ça ? Vous ne pouvez pas vous contenter de leur expliquer ça lors d'un meeting et espérer à ce qu'ils se souviennent de tout.</p>
+<p>Quand je faisais de la production audio et vidéo pour la série des <em>Madden</em>, j'ai écrit les scripts d'enregistrement ligne par ligne — encore une autre forme de <em>design document</em>. A la fin, ça faisait environ 75 pages. Nous devions enregistrer du contenu audio pour tous les événements qui pouvaient se produire dans le jeu et tout les commentaires possibles pour John Madden. Personne ne pourrait garder tout ça en tête et dans tous les cas, Madden avait besoin du texte pour le lire et l'ingénieur du son avait besoin d'une base pour s'organiser lorsqu'il retravaillait les prises de son brutes. Les jeux de sport nécessitent plus de GDD que vous ne pourriez le pensez, parce que bien que ce soit la ligue qui fixe les règles du jeu, quelqu'un doit définir toutes les différentes stratégies [c'est-à-dire le <em>playbook</em> (NDT : le carnet contenant les diagrammes stratégiques et descriptions d'une équipe, plus particulièrement au football américain) de chacune des équipes], les animations et l'interface utilisateur pour traduire le sport en jeu. Tout ce travail produit de la documentation.</p>
+<p>Enfin, sur certains projets, tous les membres d'une équipe ne parleront pas la même langue — littéralement. J'ai été confronté à ça quand j'ai travaillé avec THQ (Angleterre) et GSC Game World (Ukraine) sur <em>S.T.A.L.K.E.R.: Shadow of Chernobyl</em>. La plupart des développeurs ne parlaient pas anglais du tout, uniquement le russe ou l'ukrainien. Il n'était pas possible d'avoir des traducteurs présents quarante ou soixante heures par semaine : une grande partie de la communication entre éditeur et développeur se faisait donc sous la forme de documents traduits.</p>
+<p><strong>Raison 4 : un GDD permet de transformer des généralités en particularités.</strong></p>
+<p>Le processus d'écriture transforme une idée vague en plan explicite. C'est une chose de dire « Les harpies seront des créatures volantes. » lors d'un meeting, mais c'est très loin d'être suffisant pour constituer une base de travail. Ce dont les développeurs ont besoin, ce sont les détails : à quelle hauteur peuvent-elles voler ? A quelle vitesse volent-elles ? Sont-elles affectées par la météo ? Peuvent-elles atterrir ? Peuvent-elles atterrir n'importe où ? Peuvent-elles se déplacer au sol et si oui, sur quelles sortes de terrains et à quelle vitesse ? Sont-elles plus (ou moins) vulnérables dans les airs que sur le sol ? Et ainsi  de suite et tout doit être posé sur papier pour que l'équipe ait toutes les informations pour réaliser le produit.</p>
+<p>Ce serait bien si le game design consistait à rêvasser les pieds sur la table et à s'imaginer des fonctionnalités et du contenus « trop cools ». J'ai rencontré des designers qui pensent que c'est le cas. Ça ne l'est pas : ces types sont des fainéants. La plus grande partie du design consiste à penser les détails. Bien que vous puissiez toujours changer les détails plus tard lors des phases de test et d'équilibrage, vous devez bien commencer quelque part. On peut même véritablement dire que le processus de design, <em>c'est</em> l'écriture des <em>design documents</em>, parce que c'est le moment où vous transformez des concepts abstraits en plans concrets. Même si personne ne lit votre document, écrire une idée, c'est prendre une décision, atteindre une conclusion.</p>
+<p><strong>Raison 5 (la plus importante) : les <em>design documents</em> constituent une trace écrite des décisions qui ont été prises.</strong></p>
+<p>Le jeu vidéo est une activité hautement collaborative, bien plus que le cinéma. Contrairement à un réalisateur de film, qui règne presque sans partage, peu de designers ont un contrôle total sur leur jeu. En tant que développeurs, nous tolérons les longs horaires et les salaires comparativement bas de l'industrie du jeu vidéo parce que nous avons la chance d'apporter une contribution créative et si cela nous était retiré, il n'y aurait plus d'intérêt. Un <em>lead designer</em> ne conçoit pas lui-même l'intégralité du jeu : il doit continuellement mettre en commun les idées d'autres gens et (dans la mesure du possible avec tact) rejeter les idées qui ne collent pas.</p>
+<p>En conséquence, une énorme partie des décisions de conception ne sont pas prises à votre bureau, mais lors de meetings, autour d'une tasse de café ou d'un repas. Certaines d'entre elles, peut-être faites par un débutant, sont juste des tentatives et doivent être mises de côté avec l'aide du lead designer et le reste de l'équipe. Dans tous les cas, quand une décision de game design est prise à la suite d'une conversation ou d'une négociation, vous devez poser vos conclusions sur le papier — même si vous savez déjà que vous allez les modifier plus tard, je le répète. La raison en est que vous avez besoin d'une trace papier, un enregistrement de ce que vous avez déjà décidé.  Je me suis retrouvé dans trop de meetings où un débat éclatait parce que personne n'avait noté la précédente décision et que les gens n'étaient pas d'accord sur ce qui avait été décidé : « On n'avait pas dit qu'on ferait ça ? Non, pas du tout, on avait décidé qu'on ferait ça ! ». Tout ce qui en résulte, c'est une perte de temps et d'énergie. Si une semaine ou deux se sont écoulées depuis le précédent meeting, il se peut que toute l'équipe ait passé son temps à travailler sur la base de suppositions erronées. C'est pourquoi il devrait y avoir pour chaque meeting un secrétaire qui prend des
+notes et les envoie à chacune des parties concernées — et si les questions débattues sont des questions de design, ces notes font partie des <em>design documents</em> et devraient être répertoriées en tant que telles. Si les gens ne se souviennent pas de la même chose, vous pouvez revenir en arrière et vérifier ces notes.</p>
+<p><img alt="S.T.A.L.K.E.R.: Shadow of Chernobyl (GSC Game World)" src="../media/img/stalker.jpg" /></p>
+<p>Les <em>design documents</em> vous aident aussi à garder une trace de ce que vous avez fait et de ce que vous avez encore à faire. Si une fonctionnalité du jeu n'a jamais été décrite dans un document écrit, il y a de bonnes chances que vous l'ayez oubliée et que quelqu'un vienne vous en reparler beaucoup plus tard, ou pire, prenne une décision sur le sujet sans en parler ni à vous, ni à qui que ce soit. Le résultat peut être désastreux quand chacune des parties de l'équipe a une idée différente de ce que vous attendiez et produit un résultat incohérent. Il est bien plus facile et moins cher de corriger une erreur de design avant que le code soit écrit ou que les artworks soient réalisés.</p>
+<p>J'ai cité cet argument comme le plus important parce qu'avant tout, les <em>design documents</em> sont des outils pour s'organiser. Il ne s'agit pas de livres ou d'histoires à lire, mais de planification : une liste des choses à mettre en œuvre. Ils peuvent prendre de nombreuses formes : diagrammes, <em>concept art</em>, références graphiques, textes explicatifs, tableaux de statistiques ou d'attributs, listes de toutes sortes, storyboards, <em>flowcharts</em> (oui, même de nos jours, mais pour la structure d'une interface utilisateur et non plus pour du code), notes de réunion, scripts d'enregistrement audio et video et synopsis pour vendre le projet à des éditeurs. Quand le jeu est presque terminé et que la majorité du travail consiste à tester et équilibrer le jeu, vous pouvez jeter les <em>design documents</em> de la même façon qu'on démonte les échafaudages à la fin d'un chantier, quoique ce soit toujours utile de les garder dans les parages comme références. Mais pendant que les choses sont en cours, les <em>design documents</em> sont essentiels pour garder la trace de ce qui se passe et de ce que vous devez faire ensuite.</p>
+<h1>Conclusion</h1>
+<p>Les <em>design documents</em> ne garantissent pas que vous ferez un grand jeu, ni un bon jeu, ni même que vous aurez fini dans les temps. En fait, si elle s'en sert mal, une équipe peut perdre un temps précieux avec ces documents et je parlerai de cet écueil dans un prochain article. Mais j'espère avoir répondu à certaines questions que l'on a pu me poser.</p>
+<p>Oui, une petite équipe qui travaille sur un petit jeu, parfois sans contrainte de temps, n'a pas besoin de beaucoup en matière de documentation. Si votre carrière entière est dédiée à des jeux basiques sur portable, il se pourrait que vous n'écriviez jamais de vrai GDD (mais il faut toujours que quelqu'un pose les éléments de base sur le papier, non ?). Néanmoins, les professionnels qui travaillent sur de gros projets qui doivent absolument sortir pour Noël connaissent bien la valeur de la documentation. Elle permet de communiquer, d'organiser et de diriger tout le processus. Un manager de projet ne peut pas établir un programme, une liste de tâches et une répartition du travail — et suivre leur avancée — sans savoir ce qui doit être produit, et cette information doit exister sous une forme écrite.</p>
+<p>Enfin, écrire (ainsi que dessiner, faire des diagrammes, des tableaux et des listes et écrire du pseudo-code), c'est ça la conception. Vous vous en passez à vos risques et périls.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/design-documents&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_216" class="comment">
+	
+		
+			<span class="meta">Par BYAM le 1 avril 2012 14:30:15</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de BYAM" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>En tant que passionné de JV, je me suis lancé dans la conception d'un GDD mais en lisant cet article je me rends compte de tout ce qui me reste encore à faire et du manque de pertinence de ce que j'ai déjà fait! Moi qui adore écrire en détail chaque étape du jeu, chaque dialogue de chaque scène ainsi que détailler tout l'inventaire etc. je vois que je n'ai fait qu'aborder la partie émergée de l'iceberg! En tous cas, merci pour ces explications, elles vont m'aider à travailler de manière plus efficace!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_216').addClass('deleted');
+			$('#comment_216 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_216 .delete').css("display", "none");
+			$('#comment_216 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_216 .delete').css("display", "none");
+		else										$('#comment_216 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_163" class="comment">
+	
+		
+			<span class="meta">Par Felwynn le 23 décembre 2011 21:07:37</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Felwynn" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'est surprenant de voir que des étudiants ne cernent pas l'utilité d'un tel document.
+Dans le domaine du cinéma, la base papier est également une part importante du travail préliminaire à la réalisation d'un film. Mettre en cohérence mise en scène, performance d'acteurs et dérouement scénaristique ne seraient pas impossible sans, mais la durée du travail de réalisation et de montage et les difficultés de tournage rendraient la tâche tout bonnement invivable. Développer un projet sur papier est la première chose qu'on enseigne à un étudiant en cinéma et son importance est rapidement évidente comme le nez au milieu de la figure.</p>
+<p>Ce devrait également être le cas dans les formations liées au jeu vidéo; d'autant plus qu'un des défaut les plus récurrents des entreprises selon les gens qui en sortent, sont justement le manque de cohésion et de communication au sein des équipes, et ce malgré l'existence des GDD sensés mettre à plat les tâches à effectuer.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_163').addClass('deleted');
+			$('#comment_163 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_163 .delete').css("display", "none");
+			$('#comment_163 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_163 .delete').css("display", "none");
+		else										$('#comment_163 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_157" class="comment">
+	
+		<span class="meta">Par un anonyme le 14 décembre 2011 13:57:51</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Effectivement la "documentation" est essentielle comme tu l'indique et doit être travaillée dans sa forme, car elle est le vecteur de communication pour toute l'équipe.</p>
+<p>La version bible (word que vous allez imprimer) est à proscrire pour la communication. Elle ne sert qu'au designer lui même dans le meilleur cas..</p>
+<p>La forme Wiki ou autres Hubs est devenue assez répandue et plus facile à consulter, et mettre à jour.
+Mais attention dès qu'elle perd en crédibilité, elle n'est plus consultée.</p>
+<p>Librande Stone a fait une <a href="http://www.stonetronix.com/gameconnection-2011/OnePageDesigns-GC-2011.ppt">très bonne présentation à ce sujet à la GameConnetion europe 2011</a>.</p>
+<p>Le wiki est une bonne solution, mais si le designer peut présenter son design une seule page, alors la communication passera beaucoup mieux avec l'équipe.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_157').addClass('deleted');
+			$('#comment_157 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_157 .delete').css("display", "none");
+			$('#comment_157 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_157 .delete').css("display", "none");
+		else										$('#comment_157 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/59';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="design-documents@scroll_to=article.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="design-documents@scroll_to=article.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#110;&#x74;&#x61;&#99;&#116;&#x40;&#x6c;&#101;&#x73;&#x66;&#x6f;&#114;&#x67;&#101;&#115;&#x2e;&#111;&#114;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

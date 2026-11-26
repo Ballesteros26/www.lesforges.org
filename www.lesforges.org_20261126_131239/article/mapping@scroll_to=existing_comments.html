@@ -1,0 +1,1088 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Méthodes et conseils pour le mapping</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Le mapping est une activité que je trouve extrêmement divertissante et ludique. Elle succède souvent à la conception des graphismes ; c'est alors l'occasion d'exploiter le fruit de longues heures de travail. Bien sûr, mapper correctement c'est, comme pour toutes les disciplines de la création d'un jeu vidéo, un travail de patience (rien ne s'obtient en claquant des doigts). Mapper à partir de graphismes somptueux ne vous garantit pas un succès assuré… Et un mauvais mapping peut lourdement pénaliser des graphismes de qualité. Mais, et j'y reviendrai plus loin, le bon graphiste aura vraisemblablement un maximum de chances d'être en même temps un bon mappeur. La raison ? Non pas un talent inné, mais un œil entraîné à repérer l'anomalie.
+
+Je vous propose dans ce tutoriel des principes assez généraux, forcément imprécis car devant s'adapter à une multitude de cas. Son application directe concerne les graphismes 2D du type console 16 bit (ce sera le support des illustrations proposées). Toutefois la plupart des idées devraient aider quelque soit le support de création.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#116;&#97;&#x63;&#x74;&#64;&#108;&#x65;&#115;&#102;&#x6f;&#114;&#103;&#101;&#x73;&#x2e;&#111;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Méthodes et conseils pour le mapping</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/dyo.html">Dyo</a> | le 28 décembre 2008 18:44:22 | Catégories : <a href="../tag/cours.html">Cours</a>, <a href="../tag/graphisme.html">Graphisme</a>, <a href="../tag/level-design.html">Level Design</a>, <a href="../tag/pixel-art.html">Pixel art</a>, <a href="../tag/tiles.html">Tiles</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Le mapping est une activité que je trouve extrêmement divertissante et ludique. Elle succède souvent à la conception des graphismes ; c'est alors l'occasion d'exploiter le fruit de longues heures de travail. Bien sûr, mapper correctement c'est, comme pour toutes les disciplines de la création d'un jeu vidéo, <em>un travail de patience</em> (rien ne s'obtient en claquant des doigts). Mapper à partir de graphismes somptueux ne vous garantit pas un succès assuré… Et un mauvais mapping peut lourdement pénaliser des graphismes de qualité. Mais, et j'y reviendrai plus loin, le bon graphiste aura vraisemblablement un maximum de chances d'être en même temps un bon mappeur. La raison ? Non pas un talent inné, mais un œil entraîné à repérer l'anomalie.</p>
+<p><img alt="Seiken Densetsu 3 (Square)" src="../media/img/mapping-apercu.png" /></p>
+<p>Je vous propose dans ce tutoriel des <em>principes assez généraux</em>, forcément imprécis car devant s'adapter à une multitude de cas. Son application directe concerne les graphismes 2D du type console 16 bit (ce sera le support des illustrations proposées). Toutefois la plupart des idées devraient aider quelque soit le support de création.</p>
+			</div>
+			<div id="article_content">
+				<h1>L'équilibre, rien que l'équilibre.</h1>
+<p>Le mapping est un domaine de création qui, comme tant d'autres, repose essentiellement sur l'équilibre (cela me parait si important que j'ai décidé d'en faire ma première partie ; si vous ne deviez lire qu'une seule chose de toute ce tutoriel, c'est bien cette partie là). Cette notion d'équilibre peut être abordée à quatre échelles différentes, un peu comme si l'on zoomait successivement quatre fois sur une map :</p>
+<ul>
+<li>Au niveau le plus large, une vue d'ensemble de toutes les maps</li>
+<li>Au niveau intermédiaire, une map dans sa totalité</li>
+<li>Au niveau rapproché, un équilibre appliqué zone par zone</li>
+<li>Au niveau le plus fin, une zone dans la zone nécessitant un micro-mapping</li>
+</ul>
+<p>Commençons par le niveau le plus large :</p>
+<p><img alt="Equilibre global" src="../media/img/mapping-1.png" /></p>
+<p>Il faut penser le parcours du joueur vis à vis de l'ensemble des maps, et donc faire alterner de manière équilibrée les maps grandes, moyennes et petites (représentées par les différentes teintes de rouge) mais aussi les maps « ordinaires » — en rouge (partie de forêt, pièce de donjon, village…) et les maps « particulières » — en bleu (lieu spécifique comme un gouffre, une immense cascade, une fontaine magique…). Bien sûr, mon schéma est très simplificateur et une succession de petites maps (exemple : pour un labyrinthe) n'est pas un mal en soi ! Mais il faut bien avoir en tête que c'est une alternance réfléchie de la taille et du type de maps qui va éviter au joueur de se lasser. Pour résumer, sa motivation sera d'aller de lieu particulier en lieu particulier (on fait tout le donjon pour atteindre la salle du boss contenant moult trésors…) : il faut donc doser la proportion de ces lieux pour ne pas trop en mettre (conserver leur statut attractif) mais en mettre suffisamment (si le joueur doit traverser une quinzaine de maps ordinaires avant de tomber sur un coin sympa, soyez assurés que sa motivation pour avancer dans le jeu va en prendre un coup).</p>
+<p>A tout ceci se superpose la nécessité, bien sûr, de faire varier les lieux visités (ville, forêt, grotte…) mais le principe vu ci-dessus peut concerner un seul type de lieu. Par exemple, pour un village découpé en plusieurs maps : alternance de grands et petits quartiers, lieux particuliers disséminés avec soin (statue du roi sur la place centrale, manoir hanté plutôt isolé, etc.). Et un autre facteur est à prendre en compte : l'état d'avancement dans le jeu. Les grandes maps ne doivent pas arriver dès le début du jeu (cela va décourager le joueur). Il faut réussir à faire une gradation de la taille des maps en commençant par quelque chose de très petit.</p>
+<p>Mais passons maintenant à l'analyse de l'équilibre pour une seule map :</p>
+<p><img alt="Minstrels from the West (Dyo) / Secret of Mana (Square)" src="../media/img/mapping-2.png" /></p>
+<p>Je me sers d'un tileset personnel (image de gauche) dont l'aspect très basique (éléments tous égaux en taille et peu nombreux) me permet d'illustrer de manière vraiment concrète les idées proposées dans ce tutoriel. Quelque soit la complexité des graphismes utilisés, les principes fondateurs sont toujours applicables (comme le montre la capture d'écran de <em>Secret of Mana</em> que j'ai mise à côté). Ici je pense que le principe d'équilibre est respecté. Pourquoi ? Parce tout est réparti. Les arbres, qui ceinturent le village, ne sont pas groupés en une seule masse qui dominerait le reste. Les maisons sont disposées de manière à couvrir l'ensemble de la map. A cet ordonnancement régulier des bâtiments vient se greffer un « élément perturbateur » : une colonne isolée dans une clairière. Mais surtout, l'effet d'équilibre provient de l'opposition entre une grande maison d'un côté, et deux maisons plus petites de l'autre. Et la clé d'un bon mapping, c'est la répartition des masses.</p>
+<p>Schématisons l'exemple :</p>
+<p><img alt="Version schématique" src="../media/img/mapping-3.png" /></p>
+<p>Pour équilibrer il faut répartir, mais pas répartir de manière régulière. Une régularité parfaite, une symétrie systématique peut rendre un jeu complètement fade et sans aucun intérêt pour l'exploration (voir plus loin pour la différence entre le mapping de la nature et le mapping de constructions humaines). Car le but est encore une fois le même : amener le joueur à explorer tout ce qu'on veut qu'il explore et éviter qu'il se lasse. Le secret consiste donc à mettre en opposition des masses. Si on me demandait de résumer en une seule image un « bon mapping », je ferais ce schéma :</p>
+<p><img alt="Version très schématique" src="../media/img/mapping-4.png" /></p>
+<p>Trois éléments disposés sur une surface de 3x3 positions d'éléments possibles, s'organisant selon le regroupement de deux d'entre eux d'un côté et un élément isolé de l'autre. Cette agencement donne une dynamique, un angle de lecture suggéré, et c'est bien là le souhait de tout mappeur : faire que le joueur suive l'un des parcours suggérés (j'y reviendrai plus loin). Histoire d'être bien clair, je ne vous conseille pas d'appliquer de manière primaire cette répartition là mais d'avoir en tête cette illustration : éléments regroupés et éléments isolés. Quand on doit mapper un village avec dix maisons, par exemple, recourir à ce genre de principe est indispensable.
+Une objection pourrait être opposée à tout ça : quand on explore, on ne voit quasiment jamais la map dans son ensemble. Le joueur a devant lui une vision cadrée, un fragment de la map. En fait c'est le déplacement qui va donner une vision globale ; si le déplacement est particulièrement lent, cette vision globale sera plus difficilement perceptible, mais dans tous les cas le joueur va ressentir l'équilibre général – ou le déséquilibre…</p>
+<p>Mais puisque l'on parle de cadrage, passons au niveau rapproché de cette analyse de l'équilibre, avec une étude de zone (ce que le joueur aura toujours sous les yeux, puisqu'il visite la map « zone par zone »).</p>
+<p><img alt="Tales of Phantasia (Wolf Team)" src="../media/img/mapping-5.png" /></p>
+<p>Voilà ce qui pourrait être qualifié de « zone ». Globalement, c'est un « lieu dans le lieu » (l'exemple parfait est l'intérieur d'une maison mais on peut penser à une clairière, un petit lac, un pont et ses environs…). Là encore, c'est le même discours que je répète et que vous devez mettre en application : penser « équilibre » avant tout. La répartition des arbres, de l'herbe haute ou courte, l'emplacement d'un tapis de fleurs, tout doit être pensé dans la modération et la nuance. Le joueur doit pouvoir faire une capture d'écran de n'importe quel endroit de la map et toujours se dire « c'est équilibré ».</p>
+<p>Et ce n'est pas le sur-emploi d'un tile en particulier qui pose problème (l'exemple type : un champ de fleurs ou une forêt). Ce qui doit faire l'objet de toute votre attention ce sont les zones de cohabitation des tiles. Pour dire les choses autrement, et toujours du point de vue de l'équilibre, rien ne me dérange à la vue d'un lac faisant se répéter 40 fois un même tile d'eau ; en revanche la bande de sable parsemée de rochers qui fait jointure entre l'eau et la terre correspondra à une zone de « mapping mixte » qui requiert plus de travail et de soin.</p>
+<p>Avant de passer à des choses moins théoriques, il nous reste à voir la question du micro-mapping.</p>
+<p><img alt="Minstrels from the West (Dyo) / Lufia II (Neverland)" src="../media/img/mapping-6.png" /></p>
+<p>Le micro-mapping désigne les espaces extrêmement petits qui nécessitent de réfléchir à la position du moindre élément (si vous partagez ma vision d'un bon mappeur, vous me rétorquerez – à juste titre – que n'importe quel élément sur n'importe quelle map doit être placé après une réflexion, plus ou moins longue, ce à quoi j'adhère totalement ; toutefois dans le cas du micro-mapping il s'agit de mettre en évidence la difficulté à placer un lit dans une pièce qui fait cinq tiles de large par rapport au placement d'un tile de fleurs dans un vaste champ de fleurs). Encore une fois, les mêmes règles s'appliquent. On ne met pas trop d'un côté s'il n'y a pas quelque chose de l'autre côté pour faire contrepoids.</p>
+<p>Finalement, vous aurez compris que l'objectif de cette partie (trop longue étant donnée la simplicité du message délivré – mais pour moi c'est le cœur de la discipline) était de vous faire voir que l'équilibre d'une map se pense sur une multitude d'échelles. Je vous recommande, bien sûr, de travailler du plus gros vers le plus petit. Pensez en premier lieu à l'organisation de toutes vos maps. Quand vous décidez de mapper l'une d'entre elles, brossez d'abord un rapide croquis de sa structure (pas besoin de papier et de crayon pour ça, servez-vous de tiles de couleur). Où seront les masses ? Où seront les éléments isolés ? Puis vous pouvez attaquer le mapping zone par zone, en veillant à porter un soin majeur aux espaces restreints.</p>
+<h1>Mapping de la nature, mapping de constructions humaines.</h1>
+<h2>Mapping de la nature.</h2>
+<p>Attaquons quelque chose d'un peu plus concret, un peu plus pratique. Je disais plus haut qu'il faut fuir la symétrie ; en fait, tout dépend du type de lieu mappé. La nature déteste l'alignement et la régularité. Vous avez ici un lien direct avec la première partie : le regroupement de certains éléments et l'isolement de certains autres bénéficie non seulement à l'équilibre mais aussi à donner un aspect naturel, crédible, à la composition.</p>
+<p><img alt="The Legend of Zelda : A Link to the Past (Nintendo EAD)" src="../media/img/mapping-7.png" /></p>
+<p>La partie de droite fait beaucoup plus naturelle que la partie de gauche. Bien sûr, les deux maps étant tirées du même jeu, on sait que la map de gauche correspond à un choix particulier des concepteurs, mais ça représente quand même ce que l'on trouve fréquemment dans des productions de type RPG amateurs pour lesquelles la disposition des éléments laisse trop d'équidistances. On retrouve ce problème spécialement pour les éléments considérés comme mineurs (cailloux, buissons, fleurs…), posés ici et là de manière complètement aléatoire, dans l'espoir inconscient que le résultat fera « naturel » grâce au « hasard » du placement. Or, et c'est là un joli paradoxe, pour faire du naturel il faut de la réflexion. Et le pseudo-hasard n'existe bien évidemment pas (on est enclin « par instinct » à mapper avec trop de régularité). Retenez donc bien ce conseil : l'équidistance, c'est le mal.</p>
+<p>Un deuxième aspect concerne la variété des éléments utilisés. Je disais plus haut que la répétition d'un même tile sur de grandes surfaces n'était pas un problème par rapport à l'équilibre ; en revanche, du point de vue du naturel cela pose quelques soucis. Une forêt mérite au moins quelques types d'arbres différents ; un sol, quelques textures ; une falaise, des creux et des saillies. Sans faire tomber ce tutoriel dans des questions relevant du graphisme, il faut quand même souligner l'intérêt d'un chipset à contenir des variations d'un même tile.</p>
+<p>Prenons l'exemple du sol. Cet exemple est particulièrement pertinent ; en effet il est question ici de casser les régularités en introduisant de la variété, or le sol est, dans le mapping, créé en juxtaposant plusieurs tiles identiques sur de grandes surfaces. Même les jeux vidéos à la pointe de la technologie vont utiliser une même texture qui se répète, aucun cm² ne sera jamais unique. Et le public admet sans broncher cette « symbolisation ». Pour un RPG en 2D, l'herbe peut même être suggérée par un simple à-plat vert. Or, plus on abuse de cet symbolique admise, plus on s'éloigne du naturel. Il faut donc avoir au minimum deux tiles différents pour créer un « tramage ».</p>
+<p><img alt="Ce tramage peut être plus ou moins dense" src="../media/img/mapping-8.png" /></p>
+<p>Cet exemple m'amène à parler d'un autre critère à prendre en compte quand on mappe du naturel : l'adoucissement, l'anti-aliasing. Oui, vous avez bien lu, ce maudit anti-aliasing (je sais que Fil vous a déjà pas mal suriné avec ça, mais j'en remet une couche, ça fait pas de mal). Et pourtant, jusqu'à présent on ne parlait pas de pixel art. Mais souvenez-vous : au début de ce tutoriel, j'avais évoqué les chances qu'un bon graphiste soit en même temps un bon mappeur. Pourquoi ? Parce que le même principe s'applique dans les deux domaines. L'idée, c'est d'adoucir la rupture trop brutale entre des surfaces trop différentes. Vous me direz : c'est encore un problème de graphisme… Mais regardez l'exemple de cette capture d'écran.</p>
+<p><img alt="Minstrels from the West (Dyo)" src="../media/img/mapping-9.png" /></p>
+<p>Les éléments correspondant à un « mapping d'anti-aliasing  » sont les quelques arbres qui se détachent de la masse de la forêt, le petit bloc de falaise au sud, les petits cailloux éparpillés… Si ces éléments n'étaient pas là, la masse de la falaise serait en rupture avec la zone d'herbe en dessous, idem pour la forêt. Bien sûr, certains éléments doivent être mis en valeur et dans ce cas vous pouvez ne pas anti-aliaser, mais la plupart du temps vous devrez y recourir.</p>
+<p>Sur cet exemple de sol :</p>
+<p><img alt="Secret of Evermore (Square Soft)" src="../media/img/mapping-10.png" /></p>
+<p>Ce sont les tiles d'herbe situés entre les masses qui viennent adoucir la transition herbe dense — terre. Ces éléments sont vraiment indispensables, même si le chipset est parfait à la base. Le challenge consiste ici à faire cohabiter ce mapping d'anti-aliasing avec la variété des tiles utilisés (par exemple, l'arbre qui se détache de la forêt doit être associé habilement aux éléments périphériques — buissons, rochers, etc. — et ne pas surcharger la composition).</p>
+<p>Dans le même esprit, une falaise ne sera jamais découpée au couteau, avec des angles droits, la bordure d'une forêt jamais parfaitement rectiligne. Donc quand on mappe « au naturel », il faut constamment avoir en tête ce principe d'adoucissement.</p>
+<p>Un dernier exemple :</p>
+<p><img alt="Seiken Densetsu 3 (Square)" src="../media/img/mapping-11.png" /></p>
+<p>Les arbres isolés (ronds rouges) correspondent aux éléments d'adoucissement de la forêt. La petite élévation au centre (rond bleu) est extrêmement importante pour introduire la falaise plus élevée à gauche. On a donc ici une bonne map qui applique correctement le principe d'adoucissement, en revanche on peut contester l'aspect trop rectiligne de la forêt sur la partie supérieure. Une suggestion serait de placer un arbre isolé juste devant, sur le rond blanc.</p>
+<h2>Mapping de constructions humaines.</h2>
+<p>L'avantage ici, c'est de pouvoir mapper « ce que l'on veut ». En revanche, les mots-clé qui s'imposent sont réalisme et logique. On a tendance à oublier que la loi de l'économie joue un rôle majeur. Dans une maison, on découpe les pièces de manière à ne pas perdre de place, on ne réserve pas une pièce immense juste pour un tapis et quelques caisses dans un coin. Il y bien quelques cas d'exception, tels que les palais, châteaux, sanctuaires, où les plans de bâtiments peuvent suivre d'autres logiques et gaspiller volontairement de l'espace (église en forme de croix, hall d'un palais dont la seule fonction est de montrer la grandeur, la richesse du lieu, etc.).</p>
+<p><img alt="Plein d'erreurs" src="../media/img/mapping-12.png" /></p>
+<blockquote>
+<p>Cet exemple de map cumule les erreurs : perte de place en bas à gauche, murs non alignés, décrochement sans raison d'un mur commencé droit… Un vrai cauchemar d'architecte.</p>
+</blockquote>
+<p>Toujours dans cette idée de réalisme architectural, il faut penser à la question de la portance. Sans aller trop loin dans le sujet, on peut quand même trouver bizarre de traverser une pièce gigantesque ne contenant aucun point d'appui tel qu'un prolongement de mur porteur ou quelques piliers… Alors bien sûr, beaucoup ne s'embarrassent pas de ce genre de questions, le plus souvent à tort (gagner en réalisme est toujours un plus). Par contre, aucun problème ici avec la symétrie. C'est même un double atout que de l'utiliser : d'un, pour son impact visuel, son esthétique ; de deux pour les points de repère que cela donne au joueur (s'il visite une pièce d'un côté, il sait qu'une pièce similaire est à visiter de l'autre).</p>
+<p><img alt="Chrono Trigger (Square)" src="../media/img/mapping-13.png" /></p>
+<p>La symétrie donne de la force à une composition. L'usage de la symétrie pour un mapping de nature, comme on a pu le voir dans de vieux jeux vidéos, peut apporter un côté irréel à un décor, lui conférer du charme… Mais toujours au détriment du réalisme.</p>
+<p>Attention aussi aux principes de réalisme les plus fondamentaux (tellement fondamentaux que j'ai hésité à les rappeler) : pas de fenêtre sur un mur si derrière il y a une falaise, pas de foyer de cheminée si la maison ne possède pas de tuyau de cheminée sur le toit, etc. En bref, malgré l'aspect souvent simples des graphismes utilisés et la faible diversité des tiles utilisés, mettez-vous à la place de ceux qui auraient bâti les constructions que vous mappez.</p>
+<p>Le mapping de constructions humaines pose généralement moins de problèmes que celui de la nature. Tout est justifiable, d'une manière ou d'une autre (en revanche, comment expliquer que cette falaise est naturellement carrée ou que ce lac a pris mystérieusement une forme parfaitement circulaire…).</p>
+<h1>Relief et volume.</h1>
+<p>Tout mapping nécessite de penser au relief (quelle évidence, mais une évidence bonne à rappeler !). Dans notre monde, n'importe quelle plaine, n'importe quel champ n'est jamais complètement plat (or cas exceptionnels comme une banquise). Mais il est souvent difficile de recréer un relief complexe lorsque les outils de création sont limités. Le danger est donc de tomber dans une alternance de maps totalement plates et de maps en relief.</p>
+<p>Comme d'habitude, il faut d'abord penser à l'ensemble des maps (alternance bien dosée de maps aux reliefs différents) puis s'attaquer à l'une des maps avec une vue d'abord très générale (encore une fois, c'est une question d'équilibre et je vous renvoie pour cela à la première partie). Pour le relief, la question du mapping par zone se pose moins (idem pour le micro-mapping).</p>
+<p><img alt="Illusion of Time (Quintet)" src="../media/img/mapping-14.png" /></p>
+<p>Cette map est vraiment très bien réalisée. Elle est pensée à la fois en « pleins » et en « creux », et les escaliers donnent beaucoup de profondeur. Mais là, on reste encore dans le cas d'un relief assez marqué. La représentation d'une petite dénivellation est possible mais souvent trop « crue » pour suggérer une pente. On est donc obligé de passer par une construction en terrasses.</p>
+<p><img alt="Terranigma (Quintet)" src="../media/img/mapping-15.png" /></p>
+<p>N'hésitez pas à recourir à cette technique pour échapper au « plat total » plutôt ennuyant lors de l'exploration. Une autre technique à mettre en œuvre consiste à associer des reliefs de hauteurs différentes pour éviter l'effet « mur » (pour les falaises le plus souvent).</p>
+<p><img alt="The Legend of Zelda : A Link to the Past (Nintendo EAD) / Minstrels From the West (Dyo)" src="../media/img/mapping-16.png" /></p>
+<p>Dans le même ordre d'idée, vous pouvez insérer de petits plateaux dans vos montagnes, plateaux que le joueur ne pourra pas forcément explorer mais qui contribueront à l'aspect esthétique et à l'équilibre général.</p>
+<p>Et j'en viens à parler du volume (d'autres points importants touchant au relief seront abordés dans la partie suivante, car ils font intervenir la question du gameplay). Ce problème du volume ne se pose que pour les perspectives particulières ; l'essentiel est de ne jamais oublier de penser en 3D même pour des graphismes en 2D. Ainsi il faut faire attention aux décalages de hauteur qu'on observe parfois sur des reliefs complexes</p>
+<p><img alt="Final Fantasy VI (Square)" src="../media/img/mapping-17.png" /></p>
+<p>Sur cette capture d'écran de Final Fantasy VI, la hauteur du mur en haut doit correspondre à la somme des deux hauteurs de mur (deux escaliers) en bas (tout est correct, on a une hauteur de 4 tiles reportée partout). Ici le volume est relativement simple (avec un mur). Mais la difficulté va apparaître dès qu'on essaye de complexifier le volume en faisant s'empiler des niveaux de hauteurs différentes.</p>
+<p><img alt="Seiken Densetsu 3 (Square)" src="../media/img/mapping-18.png" /></p>
+<p>La complexité du relief sur cette map est assez hallucinante. Obtenir ce genre de résultat n'est pourtant pas très difficile du moment que l'on est méthodique, que l'on pense bien au volume, que l'on compte toutes les hauteurs soigneusement (et que l'on possède les graphismes adaptés, mais c'est un autre sujet).</p>
+<p>Voyons maintenant quelques points souvent problématiques, toujours avec cette perspective en 2D, et tout d'abord l'éternel effet « les plans inclinés ont l'air de face ».</p>
+<p><img alt="Escaliers et perspective" src="../media/img/mapping-19.png" /></p>
+<p>L'exemple de gauche montre un escalier créé en juxtaposant deux tiles l'un au dessus de l'autre. Or, si on se représente correctement le volume (en 3D, exemple de droite), on se rend compte que cet escalier est en fait extrêmement raide ! Il convient donc de rajouter un carreau d'escalier supplémentaire (au dessus ou au dessous, au choix).</p>
+<p>Toujours dans cette idée de bien penser « en volume » :</p>
+<p><img alt="Attention aux volumes" src="../media/img/mapping-20.png" /></p>
+<p>Ce petit exemple du placement d'un tapis parle de lui même. Pour que le tapis occupe toute la surface du sol, il doit être positionné en tenant compte de la largeur des murs (ici, un tile). Bien sûr, l'exemple en haut à gauche n'est pas « incorrect » au sens strict, mais il apparaît illogique que le tapis soit placé comme ça dans une pièce et surtout la juxtaposition « bas du tapis / sommet du mur » est extrêmement déplaisante d'un point de vue esthétique et elle prête à confusion (le joueur se demandera si c'est un choix délibéré ou un mauvais mapping, or un bon mapping ne doit soulever aucune question de ce genre).</p>
+<p>Enfin, pensez à ces petites choses quand vous mappez :</p>
+<p><img alt="Non / Oui" src="../media/img/mapping-21.png" /></p>
+<p>La partie gauche correspond aux choses à ne pas faire, la partie de droite montre les erreurs corrigées.</p>
+<ul>
+<li>Un élément de petite taille (tel qu'un caillou, une plante) a tendance à casser le volume et la perspective. Mieux vaut placer ces éléments périphériques plutôt devant les structures principales ; toutefois ce n'est qu'une recommandation générale et il n'y a rien de dramatique à ne pas la suivre constamment.</li>
+<li>Deux sols de hauteurs différentes ne devraient jamais être exactement similaires ; cela crée une confusion, une perte de repères chez le joueur. Au contraire, il vaut mieux employer deux types de sol différents pour marquer l'élévation (rien n'interdit ensuite de varier les textures au sein même de ces sols, ce qui manque d'ailleurs cruellement à l'exemple).</li>
+<li>Un arbre isolé placé derrière une falaise, entièrement visible, casse le volume. Je conseille personnellement de placer le plus possible de marques du volume (par exemple, un arbre dont la moitié inférieure est cachée comme sur l'exemple de droite, mais ça pourrait être un rocher, le mur d'une maison…).</li>
+</ul>
+<h1>Mapping et gameplay.</h1>
+<p>Nous abordons dans la dernière partie de ce tutoriel la question du gameplay. Comme on l'a vu, le mapping doit paraitre réaliste, il doit être agréable à l’œil et varié pour que le joueur ne se lasse pas. Mais les contraintes du gameplay sont nombreuses et vont déterminer pour beaucoup la structure d'une map.</p>
+<p>La notion fondamentale ici, c'est le parcours. Il faut suggérer un ou plusieurs parcours au joueur pour éviter qu'il passe dix fois par le même endroit, qu'il se perde, qu'il se lasse. Suggérer un parcours, c'est aussi amener le joueur à rencontrer des personnages, trouver des coffres, combattre des ennemis là où vous le voulez et dans l'ordre que vous voulez.</p>
+<p>Comment suggérer des parcours ? D'abord avec des techniques de contrainte et d'incitation.</p>
+<p>L'une de ces techniques majeures, c'est la mise à profit du relief. Vous pouvez créer des couloirs de circulation en bloquant le joueur à différents endroits avec le relief ou des éléments bloquants (arbres, pierres), ou tout simplement en plaçant des signes visuels (non bloquants, donc) comme un chemin. Le joueur a toujours tendance à emprunter les passages les plus dégarnis en éléments, les moins denses (la simplicité attire, la complexité — ou densité — rebute). Ainsi pour des intérieurs de maison, je conseille de placer la majorité des éléments contre les murs, pour dégager de grands espaces de circulation plus attractifs (et plus agréables à parcourir du point de vue de la jouabilité).</p>
+<p>Mais les techniques de motivation sont beaucoup plus intéressantes (et difficiles) à mettre en œuvre. Il s'agit de faire voir quelque chose au joueur, tel qu'un coffre, un objet étrange, un personnage, mais de telle façon que cette chose paraisse totalement inaccessible. Le joueur va chercher à arriver jusqu'à cette chose et pour cela il sera forcé de suivre le chemin que vous aurez prévu pour lui.
+Ce cas de figure est extrêmement utilisé dans les jeux professionnels de toutes sortes. Dès le début de la map, on nous aguiche avec une porte grandiose nécessitant une clé, on nous fait miroiter la sortie de la map… Ce qui motive le joueur. Il a alors une raison de faire l'exploration (autre que le plaisir des yeux à regarder le décor ou le combat contre des monstres), et va même y prendre plaisir.</p>
+<p>Rien de pire que de ne suggérer aucun parcours !</p>
+<p>Le pire cas d'exemple possible est celui de la place de village bordée de maisons en rayons (place d'où pourrait démarrer le héros). Le joueur n'est donc pas vraiment perdu puisqu'il sait qu'il doit visiter une à une ces maisons ou seulement l'une d'entre elles pour progresser, mais sans aucune indication il va se sentir totalement découragé. Ce sentiment de devoir « tout visiter » alors que les chemins sont extrêmement nombreux constitue un danger majeur qu'il faut à tout prix éviter.</p>
+<p><img alt="Final Fantasy VI (Square)...Pas bon !" src="../media/img/mapping-22.png" />
+<img alt="Terranigma (Quintet)...Pas bon non plus !" src="../media/img/mapping-23.png" /></p>
+<p>Une seule exception à cette règle : les lieux particuliers comme un bazar (un souk), un palais-labyrinthe… Où perdre le joueur en le saturant de parcours disponibles est alors un choix de game design. Mais même pour ces cas d'exceptions il faut prévoir un fil directeur, choisir un parcours principal à suivre et disséminer des éléments de repères (par où était l'entrée, par où sera la sortie) pour que le joueur puisse se raccrocher à quelque chose.</p>
+<p>Nous allons maintenant voir quelques recommandations d'ordre pratique, toujours en relation avec le gameplay.</p>
+<p>A commencer par les bords de maps (cette recommandation concerne plus spécifiquement le mapping de graphisme 2D mais s'applique aussi aux maps 3D). Le joueur ne doit jamais être bloqué par un « mur invisible » qui serait en fait le bord « virtuel » de la map. Une solution pour remédier à ce problème : ceinturer systématiquement les maps avec du relief et des éléments bloquants (une forêt, une rivière, etc.). Attention toutefois à ne pas tomber dans l'aspect « muraille ».</p>
+<p><img alt="Terranigma (Quintet)" src="../media/img/mapping-24.png" /></p>
+<p>Cette map est correctement ceinturée avec des arbres, mais à cause de leur alignement parfait cette fonction devient trop évidente. Le joueur ne devrait jamais remarquer qu'on lui bloque le passage « consciemment ».</p>
+<p>Si le joueur est bloqué par un mur invisible, non seulement ce sera pour lui une incohérence (visuellement, rien ne lui interdit l'accès) mais ce sera aussi le dévoilement de « l'envers du décors », du support logiciel du jeu. On voit parfois ce problème dans les jeux 3D : vous vous êtes sans doute déjà retrouvé dans cette situation où l'on fait brusquement face à un vide immense ou à un « mur » ; en cas d'erreur de programmation, on peut même « sortir de la map » et la contempler de l'extérieur. Il faut bien réaliser que dans ce cas là il y a rupture complète de l'illusion, l'immersion est anéantie.</p>
+<p>De cette recommandation particulière je propose donc une recommandation plus générale : évitez à tout prix les erreurs de mapping qui vont faire voir au joueur l'envers du décor (autrement dit, le support logiciel du monde fictif que vous avez mis en place). Certaines erreurs, vous l'aurez compris, sont plus graves que d'autres… Un autre conseil que je vous donne : pensez à adapter la taille des maps en fonction de la vitesse de déplacement. Je crois qu'il n'y a pas besoin d'en dire beaucoup plus. Si vous voulez que le joueur passe du temps sur une map, faite la grande ou complexe, mais ne trichez pas en contrariant le déplacement du joueur.</p>
+<p>Enfin, si vous avez à mapper des infrastructures très grandes (villes, bâtiments possédant de nombreuses pièces, etc.), ayez à l'esprit que l'exploration de chaque point d'entrée sera fastidieuse (intérieurs des maisons ou intérieurs des pièces). Vous devez recourir à des astuces pour limiter le nombre d'entrées à l'intérieur d'une map. J'en vois deux :</p>
+<ul>
+<li>Tout d'abord, interdire, tout simplement, l'accès à une entrée (barrière, porte fermée à clé, etc.) mais cela risque de créer un sentiment de frustration (et le joueur risque de ne pas comprendre ces interdictions, il va peut être penser qu'il y a quelque chose à faire même si ce n'est pas le cas).</li>
+<li>Une deuxième astuce, bien meilleure : cacher l'entrée, tout simplement. Dans le cas d'un mapping 2D, il suffit de ne pas montrer l'entrée (ne pas placer de porte sur la face visible d'une maison ; le joueur s'imaginera qu'elle est derrière). Les maps 3D posent plus de problème puisque le joueur peut étudier un bâtiment sous tous les angles. A vous d'improviser en plaçant des murs, en accolant les structures pour limiter le nombre d'entrées. La map ci-dessous utilise ces techniques extrêmement bien.</li>
+</ul>
+<p><img alt="Tales of Phantasia (Wolf Team)" src="../media/img/mapping-25.png" /></p>
+<h1>Conclusion</h1>
+<p>Voilà, ce tutoriel touche à sa fin. Je pense avoir abordé la plupart des notions clés ; il est possible que vous constatiez quelques oublis, si c'est le cas n'hésitez pas à m'en faire part. Certaines parties sont sans doute contestables, mais je vous demande de considérer tout ce que j'ai écrit comme une simple proposition de méthodes et non pas l'affirmation de règles d'or fonctionnant quelque soit le contexte. Avant de clore ce tutoriel, j'ai une dernière recommandation à donner à l'apprenti mappeur : les jeux professionnels ne sont pas obligatoirement bien mappés (à titre d'exemple, je citerai le jeu <em>Terranigma</em> du développeur Quintet), et il ne faut pas avoir peur de sortir des figures classiques du mapping afin de proposer quelque chose d'innovant.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/mapping&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_463" class="comment">
+	
+		<span class="meta">Par un anonyme le 21 mai 2018 00:01:17</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p><em>Ce commentaire contiendra des suggestions supplémentaires à ce tutoriel…</em></p>
+<p>Je me permets de revenir sur certains points, et d'apporter ma patte.
+Je n'entrerai absolument pas en contradiction avec ce tutoriel : ce n'est pas l'objet de ce message.</p>
+<p>Cette partie est extrêmement intéressante :
+http://www.lesforges.org/media/img/mapping-1.png</p>
+<p>Directement concevoir un <strong>LIEU</strong> en plusieurs maps de <strong>DIFFÉRENTES TAILLES</strong>, c'est super !
+En revanche, <em>qu'est-ce qu'une map spéciale</em> ? </p>
+<p>Pour ma part, j'aime bien parler de <em>"Safe Zone"</em>.
+Une zone où l'on est pas aggro, ou où l'on peut se "Cacher" et se "Reposer".</p>
+<p>Par exemple : dans une forêt qui grouille de monstres, une "Map spéciale" peut être une <em>Fontaine des fées</em> (Zelda Link's Awakening RPZ), ou <em>un petit village qui permet de se reposer, récupérer deux trois objets, et retourner farmer/taper sur tout ce qui bouge</em>.</p>
+<p>Dans une autre forêt, où un gnome nous poursuit, une <em>Safe Zone</em> (ou "Map spéciale" peut être une map sur laquelle on trouve une petite cabane dans laquelle l'on peut se cacher, et où le gnome le pensera pas à venir nous chercher…</p>
+<p>Une "Map spéciale" peut aussi très bien être l'entrée d'une grotte au milieu d'une forêt (j'aime les forêts).</p>
+<p>Et pour ce qui est d'autres idées encore, je vous laisse y penser !</p>
+<p>J'adore "Combiner" ce tutoriel avec celui de <em>RoiOfTheSuisse</em> sur Oniromancie… :</p>
+<p>http://www.rpg-maker.fr/tutoriels-531-generation-procedurale-d-un-donjon-a-la-zelda.html</p>
+<p>Je fais un graphe (comme lui) : 
+http://img110.xooimage.com/files/a/d/4/mack-donjon-1-48a33d8.png</p>
+<p>Chaque noeud correspond à une map.</p>
+<p>Je colorie au pif mes noeuds.
+Rouge = petite map
+Vert = map moyenne…</p>
+<p>C'est bon, vous avez compris ?</p>
+<p>Une fois le graphe fait, je me base dessus pour créer l'équivalent de ceci :
+http://img110.xooimage.com/files/0/e/0/arbre-donjon6-48aa2ff.png</p>
+<p>Par exemple… : 
+https://media.discordapp.net/attachments/423091832423972874/423546735475032064/unknown.png</p>
+<p>Si je n'ai "Pas assez de place" pour pouvoir créer mes salles et les connecter comme elles le sont sur le graphe, <em>j'en crée de nouvelles</em>, qui seront des <em>couloirs</em>, des maps <em>"transitives"</em>. (Ce sont les fameux "T").</p>
+<p>https://media.discordapp.net/attachments/423091832423972874/423546690037874688/unknown.png</p>
+<p>Je songe bien à la notion de "Passage unique" (corniches desquelles on ne peut sauter que d'en haut dans Pokemon, portes qui se referment et se verrouillent derrière nous dans Zelda…) pour inclure une notion <strong>d'allers-retours</strong>, de <strong>choix</strong> et de <strong>pièges</strong>.</p>
+<p>Pour ce qui est des zones : très intéressant également !
+http://www.lesforges.org/media/img/mapping-5.png</p>
+<p>Je me sers de ce petit "Schéma" que j'ai fait de mes successions de map pour en créer un… ^^
+Juste que, du coup, pour créer des "Zones", je me permets d'encadrer ce schéma et de dire : il y aura une zone "Petite", une zone "Grande", une zone "Moyenne", réparties de telles façons, sur… une seule map !</p>
+<p>https://media.discordapp.net/attachments/423091832423972874/423545106105237514/unknown.png</p>
+<p>Et l'on retrouve l'idée de faire "Des maps dans les maps", c'est fou, non ? :)</p>
+<p>Autre chose encore, que je trouve fort amusant, c'est de ne pas penser qu'une "Petite" map est une map de 20 tiles de côté par 15, qu'une grande est une map de 50 tiles de côté par 15… Non !</p>
+<p>En fait, on peut très bien faire toutes les maps de son jeu en 50 carreaux par 50 ! Juste que la "Petite" map sera bordé par des murs, des arbres… bref, des tiles inaccessibles, quoi !</p>
+<p>C'est à peu près ce qu'il se passe dans <em>Zelda Minish Cap</em>, et c'est d'ailleurs pour ça que sa transition "En scrolling" entre les maps marche si bien et est toujours <strong>parfaitement alignée</strong>.</p>
+<p>(Amusez-vous à aligner une map en 50 * 50 avec une autre en 20 * 15, on va bien rigoler… comme des fous…)</p>
+<p>Le seul point qui manque un peu à ce tuto, je crois, (peut-être l'ai-je encore mal lu, haha !), c'est la notion de <em>passabilité</em>. OK, on a la notion de <em>parcours</em>, qui est super ! Mais on n'a pas la notion de la <em>place que le joueur doit avoir pour pouvoir se déplacer</em>, pour qu'il puisse se sentir libre, mais aussi guidé !</p>
+<p>Bref, ce n'est pas bien grave.</p>
+<p>Je me permets un exemple avec une map en pokemon like :</p>
+<p>Contexte : les pokemon du joueur sont tout raplaplas, il veut à tout prix éviter un combat. Il est déjà un peu énervé/stressé/déstabilisé.</p>
+<p>Une map, et le "Parcours" du joueur dessus :</p>
+<p>http://img110.xooimage.com/files/0/e/c/intelligence-5481fdd.png</p>
+<p>Le joueur arrive d'en bas. Il voit le "Rond point". Il commence par vouloir franchir ce "Rond-point" par la gauche, mais voit des herbes. Mince !</p>
+<p>Il essaie donc d'être <strong>feignant</strong>. Et passe là où il n'y a pas d'herbes (donc, pas de combats ?).</p>
+<p>Surprise ! On lui met un dresseur dans les pattes !
+Il va, par réflexe, vouloir "Être plus malin que nous", et ne va donc pas forcément simplement revenir vers ses pas, mais profiter de la façon dont on a mappé pour éviter le dresseur et gagner du temps…</p>
+<p>Et pouf ! Il tombe dans des herbes ! RAH !
+Il a vraiment tout gagné…</p>
+<p>(Et oui, les vieux jeux nous énervaient pas mal, mais en fait, c'était surtout parce qu'ils étaient très bien pensés !)</p>
+<p>Autre point sur lequel je ne m'étendrai pas trop : répéter le même tile, l'un à côté de l'autre, ça se fait… Si si…
+https://media.discordapp.net/attachments/423091832423972874/423557084575956992/unknown.png</p>
+<p>https://media.discordapp.net/attachments/423091832423972874/423557412499357696/unknown.png</p>
+<p>Quant aux décors plus "Spéciaux" et "Rares", ils sont généralement aussi là pour donner un peu de Gameplay. (Des jarres que l'on peut fouiller, des herbes que l'on peut couper…)</p>
+<p>Je n'ai pas vu ça sur ce tuto, m'enfin, ce n'est pas grave !</p>
+<p>Voili voilou… En espérant ne pas être trop confus (en tout cas, je suis sûr déjà sûr d'être trop dense…)</p>
+<p>Bien à vous, Boubou.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_463').addClass('deleted');
+			$('#comment_463 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_463 .delete').css("display", "none");
+			$('#comment_463 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_463 .delete').css("display", "none");
+		else										$('#comment_463 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_462" class="comment">
+	
+		<span class="meta">Par un anonyme le 20 mai 2018 23:29:24</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Salut !</p>
+<p>À mes débuts, j'ai longtemps malaimé ce tutoriel, parce que je l'avais mal compris, et "Intégré" les informations que d'une façon trop fragmentaire.</p>
+<p>Après dix ans de mapping…
+Je dois admettre que ce tuto est vraiment soufflant. Je finis par y retrouver absolument tout le discours que je tiens moi-même concernant le mapping !</p>
+<p>La partie sur <strong>l'importance du Gameplay dans le mapping</strong> (on touche au level design, du coup) est très intéressante : effectivement, <em>le Gameplay remplit lui aussi la map !</em></p>
+<p>Et c'est vraiment très bien de le souligner !</p>
+<p>Pour le reste, c'est vraiment super. J'ai également adoré la partie sur les falaises/hauteurs de murs. Link's Awakening DX peut (à peu près) se tenir tranquille…</p>
+<p>Super tuto !</p>
+<p>Bien à vous,
+Boubou.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_462').addClass('deleted');
+			$('#comment_462 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_462 .delete').css("display", "none");
+			$('#comment_462 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_462 .delete').css("display", "none");
+		else										$('#comment_462 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_292" class="comment">
+	
+		
+			<span class="meta">Par Ideophage le 21 octobre 2012 01:04:28</span>
+			<br/><img src="http://www.gravatar.com/avatar/2ac84b74e55539a0faf479ae5c71d456?s=50&amp;r=g&amp;d=mm" alt="avatar de Ideophage" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Bonjour,</p>
+<p>Je vous remercie pour cette série d'articles.
+Une question : vers le milieu, dans la map avec les arbres isolés (ctrl+F : "Un dernier exemple :"), ne serait-il pas mieux pour adoucir la bordure d'enlever un ou deux arbres ? Comme ça, on ne perd pas de place.</p>
+<p><strong>edit</strong> : en fait, je pense qu'on verra le bord de la map, si on fait ça, donc je n'ai rien dit.</p>
+<p><strong>edit2</strong> : et puis je n'avais pas vu la date de publication de l'article.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_292').addClass('deleted');
+			$('#comment_292 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_292 .delete').css("display", "none");
+			$('#comment_292 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_292 .delete').css("display", "none");
+		else										$('#comment_292 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_156" class="comment">
+	
+		<span class="meta">Par un anonyme le 4 décembre 2011 18:01:08</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Merci beaucoup pour cet article, très utile et rappelle de nombreuses notions simples à retenir mais trop souvent oubliées.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_156').addClass('deleted');
+			$('#comment_156 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_156 .delete').css("display", "none");
+			$('#comment_156 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_156 .delete').css("display", "none");
+		else										$('#comment_156 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_155" class="comment">
+	
+		<span class="meta">Par un anonyme le 4 décembre 2011 17:36:11</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>génial comme tutos, félicitation^^</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_155').addClass('deleted');
+			$('#comment_155 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_155 .delete').css("display", "none");
+			$('#comment_155 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_155 .delete').css("display", "none");
+		else										$('#comment_155 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/32';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="mapping@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#x74;&#97;&#x63;&#116;&#x40;&#108;&#101;&#x73;&#x66;&#x6f;&#114;&#x67;&#x65;&#x73;&#46;&#x6f;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

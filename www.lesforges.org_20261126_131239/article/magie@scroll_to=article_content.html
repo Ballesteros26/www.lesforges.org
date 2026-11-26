@@ -1,0 +1,1056 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Rendons sa magie à la magie</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	
+Si vous avez déjà joué à un vieux jeu sur ordinateur, un jeu vraiment vieux (sur un macro-ordinateur relié à un terminal d'impression), vous vous souvenez sûrement que ce qui en sortait ressemblait à ceci :
+
+« Nous sommes en l'an 3 de votre règne. La population compte 1937 citoyens. Au cours de l'année écoulée, 24 citoyens sont morts et 92 citoyens sont nés. Vous avez 178 acres de terre cultivée et 241 sacs de grain dans les greniers.
+Combien de sacs voulez vous semer cette année ? »
+
+Ce qui saute aux yeux dans cet exemple c'est qu'il est plein de chiffres. Les ordinateurs ne manipulent que des chiffres, bien sûr, et c'est pour cela que tous les jeux vidéos sont nécessairement des modèles mathématiques. Dans les premiers jeux sur ordinateur, le modèle mathématique était proche de la surface : puisqu'il n'y avait pas de graphismes, les concepteurs ne pouvaient pas faire mieux que de vous renvoyer des nombres avec des petits bouts de texte au milieu pour les relier.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#110;&#x74;&#x61;&#x63;&#x74;&#x40;&#108;&#101;&#x73;&#x66;&#111;&#x72;&#103;&#x65;&#x73;&#x2e;&#111;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Rendons sa magie à la magie</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 25 juillet 2008 23:39:24 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/agersant.html">Antoine Gersant</a>.
+						<br/>L'<a href="http://www.gamasutra.com/view/feature/3321/the_designers_notebook_lets_put_.php" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (mars 1999).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p><img alt="Diablo III (Blizzard)" src="../media/img/magie.png" /></p>
+<p>Si vous avez déjà joué à un vieux jeu sur ordinateur, un jeu vraiment vieux (sur un macro-ordinateur relié à un terminal d'impression), vous vous souvenez sûrement que ce qui en sortait ressemblait à ceci :</p>
+<blockquote>
+<p>« Nous sommes en l'an 3 de votre règne. La population compte 1937 citoyens. Au cours de l'année écoulée, 24 citoyens sont morts et 92 citoyens sont nés. Vous avez 178 acres de terre cultivée et 241 sacs de grain dans les greniers.</p>
+<p>Combien de sacs voulez vous semer cette année ? »</p>
+</blockquote>
+<p>Ce qui saute aux yeux dans cet exemple c'est qu'il est plein de chiffres. Les ordinateurs ne manipulent que des chiffres, bien sûr, et c'est pour cela que tous les jeux vidéos sont nécessairement des modèles mathématiques. Dans les premiers jeux sur ordinateur, le modèle mathématique était proche de la surface : puisqu'il n'y avait pas de graphismes, les concepteurs ne pouvaient pas faire mieux que de vous renvoyer des nombres avec des petits bouts de texte au milieu pour les relier.</p>
+			</div>
+			<div id="article_content">
+				<p>Ce n'est aujourd'hui plus le cas et au fil des années nous avons appris à cacher ou à déguiser les nombres, notamment en empruntant les techniques d'affichage de statistiques : nous utilisons des barres, des voyants colorés, des panneaux de contrôle, et tout un tas d'autres mécanismes pour présenter des données numériques sans afficher aucun nombre à l'écran. C'est parfois même fait de façon très intelligente, en utilisant un moyen d'afficher l'information direct et en rapport avec le jeu. Dans <em>Doom</em> par exemple, il y avait un portrait de votre personnage en bas de l'écran pour vous représenter. Quand vous vous faisiez toucher, le visage devenait de plus en plus ensanglanté, il piquait du nez et avait l'air de plus en plus épuisé. Quand vous vous soigniez, vous aviez l'air moins répugnant et plus alerte. Le portrait affichait aussi d'autres informations ; quand vous ramassiez des armes, il souriait comme un dément pendant une seconde ou deux. C'était un mécanisme intelligent et bien conçu pour afficher différentes variables sur un petit espace.<br />
+En plus de ça, il y avait dans <em>Doom</em> une jauge de vie qui indiquait de manière chiffrée la vie qu'il vous restait. Étant donné qu'on pouvait se renseigner sur le portrait, le compteur était redondant et je pense que c'était une erreur.</p>
+<p>A chaque fois que l'on affiche un nombre « brut » à l'écran, on se raccroche à notre héritage de terminal d'impression. Si votre monde de fantaisie fait vraiment intervenir des nombres, comme dans une simulation de business ou de conduite d'un véhicule militaire moderne, pas de problème. Mais si vous incarnez un space-marine ou un chevalier errant, vous ne devriez pas voir des nombres à tous les carrefours. Aucun chevalier n'a jamais regardé son armure pour conclure « Ouaip, celle là peut encore recevoir exactement 37 coups ».</p>
+<p>En plus de cela, il y a des variables de jeu dont la valeur devrait être imprécise. L'essence et les munitions peuvent et doivent avoir des valeurs précises, mais pas la santé et la résistance d'une armure. Je suis bien conscient que personne n'a envie de simuler la santé de façon complètement réaliste en s'occupant indépendamment de chaque membre ou organe et en simulant les effets des dégâts reçus de façons différentes selon les parties touchées, mais d'un autre côté, afficher une valeur numérique absolue nuit à la suspension volontaire d'incrédulité du joueur.
+Si vous tenez à afficher la santé du joueur dans une barre, vous pouvez appliquer du flou à l'extrémité de la barre. Ce n'est pas parce que la santé du joueur est stockée en dur par le jeu qu'il faut la donner telle quelle au joueur.</p>
+<p>Tout cela est encore plus vrai en ce qui concerne la façon dont on gère la magie. Nous avons emprunté les mécanismes de Donjons et Dragons pour implémenter la magie, et cela nous a donné un modèle mathématique utile. Mais Donjons et Dragons est un jeu de rôle papier dans lequel les calculs doivent être effectués au vu et au su de tous pour que personne ne triche. C'est inutile dans un jeu -vidéo : les petits calculs et les valeurs devraient être enterrés assez profondément pour que le joueur n'en voit pas la trace.</p>
+<p>La magie est une affaire de superstition et d'émotion, et la croyance en la magie émerge de l'intersection de deux besoins humains. Le premier est le besoin d'expliquer un univers hostile et incompréhensible. Nous ne sommes peut-être pas capables de contrôler la mort, les épidémies, la qualité des récoltes ou la météo, mais il est rassurant de penser qu'il existe des connaissances occultes qui donnent des réponses et des pouvoirs. L'autre besoin est le désir de croire qu'il existe une forme d’Être supérieur qui n'est pas sujets aux revers du destin et du hasard. L'idée d'un tel être nous donne l'espoir qu'Il vienne pour apaiser les souffrances et la détresse de l'humanité, ou qu'en L'imitant on puisse devenir comme Lui.</p>
+<p>Pendant les siècles précédents, quand le paradigme dominant pour comprendre l'univers était surnaturel, l’Être en question était Dieu ou une panoplie de dieux et esprits. De nos jours, le besoin de croire en de telles choses est toujours présent, mais le paradigme a changé. Le paradigme dominant d'aujourd'hui c'est la science et la technologie, et Dieu a été remplacé pour beaucoup de gens par les « aliens », puissant et bienfaisant (du moins on l'espère). En fait, il existe un débat vieux de plusieurs siècles sur le sujet : quand Dieu reviendra, sera-t-Il un Dieu vengeur venu plonger l'humanité dans la damnation, ou nous apportera-t-Il la lumière, la paix et la félicité ? Aujourd'hui on se demande : quand les aliens viendront, seront-ils des êtres supérieurs et avides de conquêtes venus prendre possession de notre planète, ou seront-ils bienfaisants et venus nous offrir une technologie plus avancée pour améliorer nos vies ? C'est exactement le même débat ; seul le contexte a changé.</p>
+<p>On remarque aussi le phénomène dans la terminologie utilisée par les charlatans pour vendre des soins aux gens les plus crédules. Pendant l'antiquité ils vendaient des amulettes et des charmes censés éloigner les mauvais esprits. Au moyen-âge, ils vendaient des reliques : des os des Saints et des fragments de la Vraie Croix qui étaient censés attirer la bienveillance de Dieu à l'égard de leurs possesseurs. Aujourd'hui ce sont les cristaux et les bracelets en cuivre, et le langage n'est plus celui de la spiritualité mais de la technologie. Ces objets « concentrent les champs biomagnétiques » ou « canalisent les flux d'énergie » (enfin il paraît), tout cela n'aurait rien voulu dire il y a mille ans. Ce sont toujours des charlataneries, mais des charlataneries de pseudoscience plutôt que de religion.</p>
+<p>Ce que je veux dire par là c'est que rien de tout cela n'est rationnel. La magie, ancienne ou moderne, émerge d'une zone pre-rationnelle de l'esprit humain. Elle est imaginée depuis le système limbique du cerveau, à partir de la peur, des désirs, des attentes, des craintes, des interrogations et de l'horreur. En tant que développeurs de jeux, nous sommes mal placés pour comprendre cela. Nous sommes des gens qui vivent avec des ordinateurs et des ingénieurs. Nous faisons parti de ceux qui ont réussi leurs études scientifiques à l'école et à qui les mots « algèbre de Boole » ne font pas peur. Nous sommes les héritiers de cinq siècles de rationalisme…et cela se voit dans les jeux que nous faisons. Notre magie n'est pas magique, elle est mécanique.</p>
+<p>Arthur C.Clarke a un jour écrit que n'importe quelle technologie suffisamment avancée est virtuellement indiscernable de la magie. Il ne parlait pas spécialement pour nous, utilisateurs des technologies modernes ; il voulait dire que la réponse culturelle à la technologie est relative. La distinction entre magie et technologie repose sur l'attitude de l'observateur. Quand un paysan médiéval lambda était confronté à un phénomène mystérieux et inexplicable, il l'interprétait comme l'œuvre de Dieu, de sorcières ou de démons. Quand nous observons des phénomènes inexplicables, nous les mettons sur le compte de principes scientifiques pas-encore-compris.</p>
+<p>Quand nous, développeurs de jeux, implémentons la magie dans les jeux, nous devons mettre notre rationalisme et notre point de vue technologique de côté un petit moment. Nous devons nous plonger dans ce marécage bouillonnant de superstitions et d'émotions que nous avons éliminé avec tant d'efficacité, mettez-y la main pour en ressortir une poignée de saletés et apprenez à travailler avec. Pensez à la magie comme y pensent les gens qui croient en la magie. Si vous incarnez un sorcier, vous n'êtes pas un genre de comptable médiéval, occupé à additionner ses points de mana sur un grand registre : vous êtes un être humain qui a été touché par la main du Tout-Puissant. Si vous incarnez une sorcière, vous ne passez pas votre temps à faire rentrer et sortir des sorts de votre cerveau comme si il s'agissait de balles dans un pistolet, en vous demandant lesquels vous devriez emmener avec vous : vous êtes une personne extraordinaire et terrifiante : les forces inconcevables de la nature tonnent à travers votre corps dans un torrent enragé à peine en votre contrôle. On ne devrait pas penser à vous comme « une personne pratique à avoir dans l'équipe » ; vous devriez être une personne à côté de qui est il est extrêmement dangereux et effrayant de se trouver.</p>
+<p>Regardez la façon dont sont gérés les objets magiques dans la plupart des RPG fantastiques. Vous marchez dans la forêt et vous trouvez un bâton. une fois sur deux, vous savez immédiatement de quoi il s'agit, c'est tellement bien étiqueté que ça doit être gravé sur la tranche : « Bâton, magique, éclair+3. Propriété du gouvernement américain. Tout utilisateur non habilité sera poursuivi en justice. ». Ça ou alors il n'y a pas l'étiquette et vous devez l'apporter à une vieille chouette que connaissez qui a comme de par hasard la capacité d'identifier chaque objet magique jamais conçu. </p>
+<blockquote>
+<p>« Salutations, bel aventurier ! Samantha peut-elle faire quelque chose pour vous aujourd'hui Messire ? Ah, oui. Messire possède un bâton, magique, éclair+3. Puis-je faire autre chose pour vous, Messire ? »</p>
+</blockquote>
+<p>La réponse émotionnelle de nos personnages à ces objet est l'indifférence la plus glaciale. La plupart du temps, on ramasse ces trucs plein d'aplomb, en toute équanimité, et on se balade avec sans faire de commentaires. Si vous devez combattre, votre seule préoccupation est alors de planifier sur qui vous allez utiliser votre bâton. « Mh voyons voir, je vais te foudroyer toi, et toi aussi, et…. mh toi. »</p>
+<p>Ce ne va pas. On parle d'un bâton magique de la foudre là, pas d'un moulin à poivre. La réponse émotionnelle appropriée à cette trouvaille n'est pas « Oh, super, ça peut servir ». Un bâton magique de la foudre est un objet dont le pouvoir est terrifiant, capable d'invoquer une des forces élémentaires de l'univers. Notre personnage convaincu de l'existence de la magie devrait répondre comme vous si on vous mettait dans les mains une bombe atomique armée : </p>
+<blockquote>
+<p>« Oh Pu#&amp;%$ !! Je viens de ramasser un bâton rempli d'éclairs ! Merde ! J'espère qu'il ne va pas me faire exploser la tête. »</p>
+</blockquote>
+<p>Nous devons changer la façon dont nous traitons la magie dans les jeux, et nous devons aussi changer, dans une certaine mesure, la façon dons nous la programmons. Pour l'instant, nous traitons les sorts et les objets magiques de la même manière que les autres objets et outils. Mais les objets magiques ne sont pas des armes. La magie est étrange et mystérieuse, elle est bizarre, dérangeante et grotesque, elle est dangereuse, éblouissante et belle. La magie est surnaturelle, dans tout le sens extraordinaire du mot. Par dessus tout, la magie est imprévisible, la magie n'est pas fiable, la magie n'est pas mécanique. Nous devons rendre la magie magique à nouveau.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/magie&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_305" class="comment">
+	
+		
+			<span class="meta">Par Yarflam le 27 novembre 2012 23:01:15</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Yarflam" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Magicka est un bon exemple en faite :)</p>
+<p>Pour créer des sorts on doit combiner 8 éléments : eau, terre, feu, électricité, glace, arcane, soin, protection. Mais attention aux sortilèges opposés.</p>
+<p>On a pas de mana, les sorts sont infinis et la difficulté se juge sur la vitesse d'accomplissement des sortilèges par le magicien. Après on a des sorts spéciaux, comme la foudre que l'on obtient en ramassant des parchemins magiques. On peut même enchanter son épée.</p>
+<p>Et la barre vie est un peux moins indiqué. Dans la mêlée on ne l'aperçoit pas toujours, tellement on enchaîne (soin, défense, attaque).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_305').addClass('deleted');
+			$('#comment_305 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_305 .delete').css("display", "none");
+			$('#comment_305 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_305 .delete').css("display", "none");
+		else										$('#comment_305 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_90" class="comment">
+	
+		
+			<span class="meta">Par Elried le 2 juillet 2011 11:59:00</span>
+			<br/><img src="http://www.gravatar.com/avatar/56d08da304eab9028ecc5343f070f593?s=50&amp;r=g&amp;d=mm" alt="avatar de Elried" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<blockquote>
+<p>Cependant, ce concept très crédible de par son approche scientifique ne semble envisageable que pour un jeu ou le joueur incarne un mage.</p>
+</blockquote>
+<p>Le joueur est bien un mage, ce jeu devrait être principalement basé sur la magie.</p>
+<blockquote>
+<p>(n'hésite pas à donner le nom du jeu à sa sortie).</p>
+</blockquote>
+<p>Je n'y manquerais pas, mais vous avez encore le temps. Je le commencerais vraiment qu'au mois d’août après avoir finis le boulot…</p>
+<p>En tout cas merci pour tes remarques, elle m'ont fait bien plaisir ^^</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_90').addClass('deleted');
+			$('#comment_90 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_90 .delete').css("display", "none");
+			$('#comment_90 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_90 .delete').css("display", "none");
+		else										$('#comment_90 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_89" class="comment">
+	
+		
+			<span class="meta">Par Thomas Chassin le 1 juillet 2011 23:56:08</span>
+			<br/><img src="http://www.gravatar.com/avatar/ec852bde49a584965632129e8e93343e?s=50&amp;r=g&amp;d=mm" alt="avatar de Thomas Chassin" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Un bon article qui mérite d'être lu et qui fait réfléchir sur le décalage entre la magie imaginée spontanément et la magie dans les jeux vidéos. Je suis content de voir qu'il est encore lu. ^^</p>
+<p>@Elried:
+J'applaudis (des deux mains)cette idée originale de considérer la magie comme un spectre de flux élémentaire formant un tout. Je dois avouer que la pertinence du concept et les possibilités d'application au gameplay me laissent pantois. En effet, en fonction du nombre de flux élémentaire, on peut imaginer un nombre impressionnant de combinaisons (et de sorts ?).</p>
+<p>Cependant, ce concept très crédible de par son approche scientifique ne semble envisageable que pour un jeu ou le joueur incarne un mage. Le point fort de l'approche est aussi sa faiblesse: la magie peut devenir plus une science qu'un art, et perdre son aspect mystique ( ne dit-on pas "Ouah, c'est magique!" des mystère que la science n'explique pas -encore- ?).</p>
+<p>Cette critique est bien sur un avis personnel sur l'exposé rapide que tu a pris la peine de faire (et je t'en remercie, ce fut enrichissant) et ton système pris dans sa globalité ne tombe peut-être pas dans cet ecart. En tout cas, n'hésite pas à nous contacter pour nous donner des nouvelles de ce système prometteur (n'hésite pas à donner le nom du jeu à sa sortie).</p>
+<p>--Bonhomme</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_89').addClass('deleted');
+			$('#comment_89 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_89 .delete').css("display", "none");
+			$('#comment_89 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_89 .delete').css("display", "none");
+		else										$('#comment_89 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_88" class="comment">
+	
+		
+			<span class="meta">Par Elried le 1 juillet 2011 10:53:35</span>
+			<br/><img src="http://www.gravatar.com/avatar/56d08da304eab9028ecc5343f070f593?s=50&amp;r=g&amp;d=mm" alt="avatar de Elried" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<blockquote>
+<p>Ouais mais concrètement qu'est ce qui peut être mis en place dans un jeu? </p>
+</blockquote>
+<p>Personnellement, j'ai essayé de définir un système de gestion de la magie en me basant sur cet article, et pense peut-être tenir quelque-chose. J'ai essayé d’éviter plusieurs classiques de la magie numérique.</p>
+<h1>La nature de la magie</h1>
+<p>Bien que la magie soit quelque-chose d'obscur, je considère que le joueur doit pouvoir la comprendre. Ainsi, le système de dégât et des autres joyeusetés (cout en mana etc…) se base sur D&amp;D, c'est à dire, tel sort a telle chance de faire entre tant et tant  de dégât, pour un cout en mana de tant.</p>
+<p>Cependant, ces éléments sont influencés par plusieurs choses.</p>
+<h2>Les flux</h2>
+<p>La Magie est un flux, qui peut être décomposé en flux élémentaires, un peu comme la lumière.
+En apposant des filtres, on peut donc définir quel type de flux (d’élément) domineras dans le sort. Les divers matériaux utilisés pour l'équipement ou l'environnement, peuvent agir comme des filtres naturels. 
+Plus le joueur emmagasine des connaissances IG, plus sa connaissance des flux devient poussée et plus ces derniers deviennent puissants. Ce qui nous emmène à la partie suivante:</p>
+<h2>La canalisation</h2>
+<p>Pour pouvoir être utilisés correctement, les flux de magie doivent être canalisés pour leur donner une forme. Là aussi, le système de connaissance entre en jeu. Plus le joueur (et son personnage) auras d’expérience dans un type de canalisation, plus il sera à même d'en tirer toute la puissance possible.
+Ainsi, avec ce système, un sort se compose de deux composantes:
+1. Les flux élémentaires utilisés
+2. La forme de la canalisation souhaitée</p>
+<p>Ces éléments permettent selon moi d'avoir une magie étrange, mais compréhensible pour le jour de manière à ne pas le frustrer. Cependant, la magie ne s’arrête pas là… car la magie est aussi dangereuse.</p>
+<h1>Les dangers de la magie</h1>
+<p>Comme nous venons de le voir, les flux doivent être canalisés… Cependant, que ce passe-t-il lorsque que la puissance des flux à canaliser outrepasse la capacité de contrôle du lanceur? Le sort 'explose' et produit des effets inattendus. Ces effets peuvent être:
+<em>Pas d'effet
+</em>Libération des flux de manière dévastatrice (dégât ennemis)
+<em>Retour de flamme (dégât joueur)
+</em>Épuisement du lanceur
+*…</p>
+<p>Nous avons maintenant une composante de la magie qui fait peur. Il nous reste donc à définir un peu les 'bonus'.</p>
+<h1>Bonus</h1>
+<h2>Les objets magiques</h2>
+<p>Finis les bâtons de force +5, les flux de magiques ne sont pas si faciles à lire. Je me suis inspiré du système du nom des armes  présent dans WoW ou certaines armes portent des noms d'animaux pour spécifier leurs caractéristiques.
+En effet, comme je l'ai dit plus haut, les éléments agissent comme des filtres naturels. Ainsi, par exemple le sapin ne pourrait laisser passer que le flux de feu. Un bâton de sapin serait donc un 'Bâton de Feu +1'
+Enfin, certains éléments pourraient si bien filtrer les flux, qu'il apposerait des malus.</p>
+<h2>Lancer un sort</h2>
+<p>Ce dernier point et lié au support que j'ai choisis (la DS). En effet, quoi de moins magique que de cliquer sur un bouton pour lancer une boule de feu? Mon système utilise donc le stylet.
+Le joueur doit donc dessiner des symboles correspondants aux flux et au marque de canalisation qu'il souhaite utiliser, ce qui augmente l'immersion dans la magie, la rendant moins automatique d'une simple icône avec marqué: "Boule de Feu (rang 12)"</p>
+<p>J’espère avoir pu te montrer comment on peut implémenter concrètement certaines notions de cet article. Je reste de plus ouvert à toute idée, critique ou conseil pour améliorer ce système.</p>
+<p>Cordialement</p>
+<p>--Elried</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_88').addClass('deleted');
+			$('#comment_88 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_88 .delete').css("display", "none");
+			$('#comment_88 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_88 .delete').css("display", "none");
+		else										$('#comment_88 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_19" class="comment">
+	
+		<span class="meta">Par un anonyme le 23 mai 2011 20:33:38</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Ouais mais concrètement qu'est ce qui peut être mis en place dans un jeu? </p>
+<p>--Torod</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_19').addClass('deleted');
+			$('#comment_19 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_19 .delete').css("display", "none");
+			$('#comment_19 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_19 .delete').css("display", "none");
+		else										$('#comment_19 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_20" class="comment">
+	
+		<span class="meta">Par un anonyme le 9 avril 2011 02:20:54</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Cette article est génial ! Merci, merci, merci !!<br />
+Et cette inscription toute simple ^^ faudrait le mettre partout ce système.</p>
+<p>--Yarflam</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_20').addClass('deleted');
+			$('#comment_20 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_20 .delete').css("display", "none");
+			$('#comment_20 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_20 .delete').css("display", "none");
+		else										$('#comment_20 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_21" class="comment">
+	
+		<span class="meta">Par un anonyme le 10 novembre 2009 22:15:23</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Excellent article, m'expliquant clairement et précisément (oui, je suis programmeur) ce que mon collègue essaye de me faire comprendre depuis quelque temps déjà :D</p>
+<blockquote>
+<p>mains une bombe atomique armée : "Oh Pu#&amp;%$ !! Je viens de ramasser un bâton rempli d'éclairs ! Merde ! J'espère qu'il ne va pas me faire exploser la tête."</p>
+</blockquote>
+<p>hilarant</p>
+<p>--Pompei2</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_21').addClass('deleted');
+			$('#comment_21 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_21 .delete').css("display", "none");
+			$('#comment_21 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_21 .delete').css("display", "none");
+		else										$('#comment_21 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/19';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="magie@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="magie@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#x61;&#x63;&#x74;&#64;&#x6c;&#101;&#115;&#x66;&#111;&#x72;&#103;&#x65;&#x73;&#46;&#x6f;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

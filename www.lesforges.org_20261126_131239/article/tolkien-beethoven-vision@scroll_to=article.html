@@ -1,0 +1,997 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Tolkien, Beethoven, Vision</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Selon le mythe de la création de l'univers fantastique de J.R.R. Tolkien, la terre a été dessinée par la musique. Eru, l’Elu, créa plusieurs esprits appelés les Ainur, qui chantaient devant lui. Mais il y eut des conflits entre les Ainur au sujet de quel thème devait dominer et on en essaya plusieurs. Finalement, Eru arrêta la musique d’une seule et vibrante note, et il révéla aux Ainur ce que leur chant avait fait en réalité – il avait formé une vision de la terre et de toute son histoire. Puis, avec un mot, Eru fit de la vision une réalité.
+
+Le mythe de la création de Tolkien fait inévitablement penser à la Neuvième Symphonie de Beethoven, à tel point que je demande parfois si Tolkien n’a pas été inspiré par celle-ci. La Neuvième Symphonie est composée de cinq mouvements. Dans les trois premiers, l’orchestre explore trois thèmes très différents. Mais dans le quatrième mouvement, une conversation prend place entre les violoncelles, qui sont clairement un professeur, et les violons, qui sont les élèves. L’un après l’autre, les violons commencent à joueur chacun les thèmes des trois premiers mouvements. A chaque fois, les violoncelles les interrompent et désapprouvent vivement. Finalement, les violons introduisent timidement un nouveau thème. Les violoncelles les encouragent et le thème prend de l’ampleur jusqu’à devenir l’éclatant Hymne à la Joie qu’est le cinquième mouvement.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#x6e;&#x74;&#x61;&#x63;&#116;&#64;&#108;&#101;&#x73;&#102;&#111;&#114;&#103;&#x65;&#115;&#46;&#x6f;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Tolkien, Beethoven, Vision</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 30 octobre 2009 23:25:12 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/Shin.html">Pierre Guyot</a>.
+						<br/>L'<a href="http://www.gamasutra.com/view/feature/3349/the_designers_notebook_tolkien_.php" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (juin 1999).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p>Selon le mythe de la création de l'univers fantastique de J.R.R. Tolkien, la terre a été dessinée par la musique. Eru, l’Elu, créa plusieurs esprits appelés les Ainur, qui chantaient devant lui. Mais il y eut des conflits entre les Ainur au sujet de quel thème devait dominer et on en essaya plusieurs. Finalement, Eru arrêta la musique d’une seule et vibrante note, et il révéla aux Ainur ce que leur chant avait fait en réalité – il avait formé une vision de la terre et de toute son histoire. Puis, avec un mot, Eru fit de la vision une réalité.</p>
+<p><img alt="The Dark Tower (John Howe)" src="../media/img/tolkien-apercu.png" /></p>
+<p>Le mythe de la création de Tolkien fait inévitablement penser à la Neuvième Symphonie de Beethoven, à tel point que je demande parfois si Tolkien n’a pas été inspiré par celle-ci. La Neuvième Symphonie est composée de cinq mouvements. Dans les trois premiers, l’orchestre explore trois thèmes très différents. Mais dans le quatrième mouvement, une conversation prend place entre les violoncelles, qui sont clairement un professeur, et les violons, qui sont les élèves. L’un après l’autre, les violons commencent à joueur chacun les thèmes des trois premiers mouvements. A chaque fois, les violoncelles les interrompent et désapprouvent vivement. Finalement, les violons introduisent timidement un nouveau thème. Les violoncelles les encouragent et le thème prend de l’ampleur jusqu’à devenir l’éclatant Hymne à la Joie qu’est le cinquième mouvement.</p>
+			</div>
+			<div id="article_content">
+				<p>Beethoven était inspiré par une vision (si on peut appeler vision une expérience purement sonore). En fait, il n’a jamais entendu la Neuvième Symphonie, si ce n’est dans sa propre tête. Le temps de l’écrire, il était complètement sourd. Beethoven dirigea lui même l'orchestre lors de la première, sans en entendre la moindre note.</p>
+<p>Le travail de Tolkien était aussi l’expression de sa propre vision, qu’il avait en lui depuis qu’il était un jeune homme. Il l’a raffinée avec les années, mais une grande partie des éléments fondamentaux de celle-ci sont restés identiques tout au long de sa vie. A la fin, Tolkien ne se voyait du tout comme « créateur » de ce monde, mais plutôt comme s’il mettait au jour quelque chose qui existait déjà. Quand quelqu’un lui posait une question sur la Terre du Milieu à laquelle il n’avait pas de réponse, il mettait une note dans son journal : « Doit découvrir comment. ». Pas « Doit penser à quelque chose. » ou « Doit créer quelque chose. », mais « Doit découvrir comment. ». Tolkien n’était pas un romancier en train de créer un monde, mais un historien qui se documentait sur celui qu’il pouvait voir dans sa tête.</p>
+<p>Cette qualité de la vision est l’une de celles qu'en tant que créatifs nous ignorons à nos risques et périls. Non, nous ne sommes ni des Beethoven ni des Tolkien ; la plupart d’entre nous ne sont pas des génies ; nous produisons un divertissement de masse pour le marché, pas d'extraordinaires chefs-d'oeuvre de la musique ou de la narration. Nous concevons par groupes et non individuellement ; nous travaillons sous la contrainte de délais ; notre but premier est de faire un jeu qui se vende et qui rapporte de l’argent. Les conditions dans lesquelles nous travaillons n’ont rien à voir avec celles dans lesquelles Tolkien ou Beethoven ont travaillé. Mais toute personne créative a besoin d’une vision, une image du travail achevé dans sa tête.</p>
+<p>Il est facile de repérer les jeux qui manquent d’une vision. Ils semblent pâles, sans substance, sans l’harmonie dont j’ai parlée dans un article précédent. Parfois, ceci arrive quand il y a deux visions du jeu en compétition parmi les développeurs et que le producteur, de façon à rétablir la paix dans l’équipe, tranche par un mauvais compromis entre celles-ci. Parfois, c’est parce que personne n’a réellement cette vision : l’équipe patauge en essayant de produire quelque chose qu’elle ne comprend pas – ou pire, en laquelle elle ne croit pas.</p>
+<p>J’ai souvent entendu le rôle de producteur décrit comme “celui qui garde la vision”. Le producteur peut être le garant de la vision, s’il est aussi le designer, mais souvent le producteur est tellement coincé par des détails administratifs que la vision disparaît. La vision a besoin d’un garant, néanmoins, une personne qui y croit et qui la comprend, qui l’aime et qui peut l’expliquer et la défendre. Dans beaucoup d’entreprises de nos jours, ce n’est pas suffisant pour concevoir un jeu ; il est aussi nécessaire de mettre sur pied une campagne de propagande pour réussir à intéresser les commerciaux et le management. La vision ne doit pas seulement être gardée et nourrie, mais aussi défendue et répandue comme la divine parole. C’est l’un des rôles du game designer de nos jours.</p>
+<p>Les visions, néanmoins, ne sont pas créées en tapant sur un clavier d’ordinateur. Les visions naissent de concepts et de connaissances. Elles naissent d’un croisement fertile d’idées. Elles sont le produit de la pensée elle-même. C’est l’une des raisons pour lesquelles ce serait une erreur pour les développeurs en formation de se concentrer uniquement sur l’apprentissage de la programmation ou du graphisme ou de la musique. La programmation, la musique ou la modélisation 3D sont des moyens permettant d’atteindre une fin, mais ce sont seulement des moyens. Avant eux, il doit y avoir une vision, et la vision émerge de la littérature et de l’art, de l’histoire et de l’architecture, de l’observation, et de l’émotion, et de l’expérience, le tout en interaction dans un esprit qui s’intéresse à de telles choses.</p>
+<p>Une importante partie du Game Design consiste à être assis et à regarder le mur. C’est la partie la plus difficile, mais aussi la plus gratifiante. C’est aussi le moment où les managers de projets, obsédés par la productivité, sont le moins aptes à comprendre. Oui, vous devez faire des sessions de brainstorming avec l’équipe. Oui, vous devez consulter les gens du marketing. Oui, vous devez écrire des documents de game design. Mais aucune de ces activités ne peut accomplir la partie du processus de design la plus essentielle, c’est la pensée qui le peut. Parfois, il est nécessaire de passer du temps à rester assis, seul, dans un endroit calme, dans une fauteuil confortable, à regarder le mur et à penser. Peut-être avec un carnet et un crayon – mais pas un ordinateur. Un ordinateur empêche de se concentrer, il demande trop d’attention. Il se tient là, en vous présentant son curseur et en faisant tourner son engin 450 MHz, dans l’attente de pouvoir exécuter la moindre tâche que vous pourriez lui donner en quelques millisecondes. Vous lui donnez quelque chose à faire et BOUM ! Il l’exécute en un éclair, avant de revenir à sa position de départ, avec son curseur qui clignote comme le halètement d’un chien trop enthousiaste.</p>
+<p>Les visions ne naissent pas de données rapidement traitées. Elles naissent d’une connaissance lentement assimilée. D’une réflexion et de considérations. Récemment, j’ai eu pour tâche de travailler sur un design pour lequel une équipe prototype avait été rassemblée. Trois programmeurs, un artiste, un level designer et un manager de projet étaient là, à attendre ce que j’avais à dire et ils voulaient que je lance n’importe quelle idée folle que je pouvais avoir pour qu’ils puissent se mettre au travail. J’ai trouvé ça assez bizarre. Je savais qu’ils étaient toujours dans l’attente de matière pour pouvoir travailler, je n’avais donc jamais le temps de simplement m’asseoir et de penser au design, de le laisser fermenter dans mon cerveau. C’est un processus qui ne saurait être brusqué.</p>
+<p>Je n’ai jamais vraiment cru que la créativité requérait une sorte de qualité spéciale et inexplicable de l’esprit, qui ne serait pas sujet à l’analyse rationnelle et que seuls les artistes possèderaient. C’est une prétention du vingtième siècle en Occident. La plupart des cultures tribales n’ont de mot ni pour « art », ni pour « artiste ». Les gens fabriquent juste des choses. Ce qu’ils fabriquent peut être décoratif, cérémonial, spirituel ou servir à d’autres fins non utilitaires, mais ils ne le placent pas sur un piédestal en appelant ça de l’art.</p>
+<p>Les Balinais sont un bon exemple de ceci. A Bali, tout le monde crée des choses tout le temps. Le chauffeur de taxi qui vous emmène de votre hôtel à votre aéroport crée probablement chez lui des choses que nous classifierions comme étant de l’art, mais ils n’ont pas de mot pour « art » parce qu’ils n’en font pas tout un plat. Le concept d’art et d’artiste n’est pas universel. Le désir de créer des choses est universel, mais placer ces choses et leurs créateurs dans une catégorie spéciale appelée art est une caractéristique de cultures extrêmement complexes comme les nôtres.</p>
+<p>J’écris ceci car je ne veux pas que l’on pense que je défends cette période de calme dans le processus de design comme une sorte de chose mystique, ou parce que je veux placer la créativité dans le Game Design sur un piédestal. Quand je parle de la vision d’un designer, je ne parle pas d’une vision religieuse ou spirituelle, mais de la simple vision qui se produit dans la tête de toute personne créative, la vision qui est la réponse à la question « A quoi cela ressemblera-t-il, comment cela fonctionnera-t-il, qu’est-ce que cela fera ressentir quand ce sera terminé ? ». Tous les créatifs ont ceci en commun, de Picasso à un type qui fabrique des meubles dans son garage.</p>
+<p>Le développement de jeux est un business avec des délais à respecter et de l’argent à rapporter. La plupart du temps, nos actions sont guidées par des considérations purement pratiques. Mais il s’agit quand même d’un processus créatif qui nécessite imagination et inspiration, et celles-ci se font rarement jour dans les réunions. Il y a une période dans le processus de développement où la chose dont un designer a le plus besoin, c'est la solitude.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/tolkien-beethoven-vision&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_479" class="comment">
+	
+		
+			<span class="meta">Par babaorhum le 17 décembre 2021 15:38:15</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de babaorhum" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je ne sais pas qui tu es mais pour moi tu es un génie ;)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_479').addClass('deleted');
+			$('#comment_479 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_479 .delete').css("display", "none");
+			$('#comment_479 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_479 .delete').css("display", "none");
+		else										$('#comment_479 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_472" class="comment">
+	
+		<span class="meta">Par un anonyme le 29 février 2020 14:28:32</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Merci cet article vient d'éclairer ma vie ! J'avais déjà compris tout ça il y a des années mais je ne pouvais mettre des mots : c'était juste un ressenti dans tout mon âme : trop de temps passé sur mes créations que je ne pouvais jamais partager alors que l'on m'a toujours dis que c'était parfait je ne trouvais jamais ça assez bien je recherchais la perfection à ma création et pour moi il manquait toujours quelque chose ; tu est trop perfectionniste me disait on !! Mais la vie à fait que j'ai laissé la musique de coté depuis 10ans pour un métier tout aussi passionnant mais dure : coffreur ! Réaliser des bâtiments d'architecte reconnu en tant que petites mains est tout aussi gratifiant et m'a permis de vivre et d'acquérir 1 savoir faire personnel apris sur le tas exactement comme la musique . Mais m'a détourné de ma première passion : la création musicale !!! Il aura fallu 1 accident de travail il y a 2 semaines pour me remettre sur la piste "du grand tout de l'univers" : d'abord revoir ce livre que je voulais acheter il y a quelque temps mais que je n'ai pas acheter ( Laurent Obertone — Guerilla ) et direct après le livre de "Robert Frances : La Perception de la Musique " qui me permis de comprendre énormément de chose juste en lisant les 2 premières pages , la suite c'est the économiste 2020 qui m'a mis sur la piste . Et me voila sur cet page : TOUT S'ECLAIRE !!! mais il est malheureusement trop tard !!!!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_472').addClass('deleted');
+			$('#comment_472 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_472 .delete').css("display", "none");
+			$('#comment_472 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_472 .delete').css("display", "none");
+		else										$('#comment_472 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_379" class="comment">
+	
+		<span class="meta">Par un anonyme le 17 décembre 2013 08:08:59</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>So are you trying to say that literally everything is being created by vision? After reading through all the blog this is what I have assumed and I cannot think of a better suggestion.  read more    I feel I am right.’aint so? <br />
+</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_379').addClass('deleted');
+			$('#comment_379 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_379 .delete').css("display", "none");
+			$('#comment_379 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_379 .delete').css("display", "none");
+		else										$('#comment_379 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_369" class="comment">
+	
+		
+			<span class="meta">Par Shidow le 11 octobre 2013 00:45:39</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Shidow" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Magnifique article, merci j'ai adoré =)</p>
+<p>Ce que dit tolkien est incroyablement vrai ! Je l'ai remarqué à mainte reprise lorsque je m'imagine des histoires ou crée des univers.</p>
+<p>L’article me fait penser à une réplique de "Bakuman" un manga qui raconte l'histoire de mangaka (créateur de manga). En effet on y apprend qu'il existe deux types de mangaka (qui peut en fait s'étendre sur de nombreux domaine ) les mangaka réfléchie qui font une étude de marché, regarde la concurrence et utilise des "recettes" connue mais qui marche. Et pit y a les passionnés, qui n'écrivent qu'avec leur inspiration et leur coeur, d’ailleurs les "génies", font toujours partie de la deuxième catégorie. Et l'un de ces génies dit une phrase qui reflète très bien la "vision" de tolkien, "je ne contrôle pas mes personnages, l'intrigue et les personnages bougent tous seul, je ne fais que raconter leur histoires" . Je pense que tolkien à crée l'univers, les personnage principaux, mais qu’après le monde à évolué tout seul, que la graine est devenu un arbre et que tolkien, de temps à autre, cueille une pomme de connaissance de ce monde.</p>
+<p>@Yarflam :
+Je ne suis pas d'accords, je pense pas que des personnes sans esprit créatif existe. Tu dit que quelqu'un qui rêve aura plus de chance de pondre un scénario décent ? C'est vrai et faux en même temps. Les rêves sont l'expression de ton subconscient, qui ne connais aucune règle et qui n'est pas entravé par le raisonnement logique de notre conscience. De ce fait les rêves sont l'incarnation même de notre esprit créatif, mais sans un esprit logique pour ordonner le tout, ton scénario aura l'impression d'avoir été écrit sous extasie. Mais ça montre bien une chose : un esprit libre est un esprit créatif, "Monsieur Tout Le Monde" n'est pas plus bête que les autres et n'as pas un cerveau inférieur aux autres, il est juste bridé par la conformité de la société et par le quotidien. Il suffit de laisser son esprit créatif s'exprimer pour qu'il puisse se développer et évoluer, car oui un esprit créatif s'entraine. Et c'est une capacité qui disparait malheureusement avec l'age, l'esprit d'un enfant est très créatif car il n'as pas encore assimilé et incorporé les " dur loi de la vie" qui vont l'enchainer à la réalité.</p>
+<p>Merci d'avoir lu jusque la x)
+Désolé pour le saignement au yeux mon sens de l'orthographe n'est pas aussi développé que mon esprit créatif so Gomen nasai !!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_369').addClass('deleted');
+			$('#comment_369 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_369 .delete').css("display", "none");
+			$('#comment_369 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_369 .delete').css("display", "none");
+		else										$('#comment_369 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_69" class="comment">
+	
+		
+			<span class="meta">Par AristA le 21 juin 2011 23:08:17</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de AristA" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Très enrichissant !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_69').addClass('deleted');
+			$('#comment_69 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_69 .delete').css("display", "none");
+			$('#comment_69 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_69 .delete').css("display", "none");
+		else										$('#comment_69 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_36" class="comment">
+	
+		<span class="meta">Par un anonyme le 10 avril 2011 01:09:32</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonjour.</p>
+<blockquote>
+<p>"Qu'une personne soit responsable de la vision du jeu dans une équipe de développement, ok. Mais je ne crois pas nécessairement que ce doive être le gamedesigner. Avoir une vision, et être capable de la faire partager requiert pas mal de qualité humaines, que le gamedesigner n'a pas forcément. Un programmeur, un producteur, un artiste peuvent aussi bien faire l'affaire."</p>
+</blockquote>
+<p>C'est pas faux, mais il faut prendre en compte que tout le monde n'a pas un esprit créatif.<br />
+Quelqu'un qui rêve, sera plus apte à donner un scénario digne de ce nom. =&gt; un designer a déjà cette esprit.<br />
+Mais une personne qui s'appelle "Monsieur Tout Le Monde" aura une vision classique : il reprendra les mêmes projets déjà réalisés.
+"Monsieur Tout Le Monde" est un cerveau moyen : regarde la télé, naïf, innocent, simple d'esprit…</p>
+<p>Évidement on peut progresser, il suffit qu'un jour on se demande "Qui on est ?" et "Monsieur Tout Le Monde" devient "Monsieur X".
+Là encore, ça suit un état d'esprit. Le producteur n'est pas obligatoirement MTLM…</p>
+<p>C'est un excellent article ! Merci beaucoup. </p>
+<p>--Yarflam</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_36').addClass('deleted');
+			$('#comment_36 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_36 .delete').css("display", "none");
+			$('#comment_36 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_36 .delete').css("display", "none");
+		else										$('#comment_36 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_37" class="comment">
+	
+		<span class="meta">Par un anonyme le 21 octobre 2009 17:59:45</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Juste pour signaler que le monde de Narnia, de C.S.Lewis, qui date du milieu du XXe, est lui aussi créé en musique.</p>
+<p>Qu'une personne soit responsable de la vision du jeu dans une équipe de développement, ok. Mais je ne crois pas nécessairement que ce doive être le gamedesigner. Avoir une vision, et être capable de la faire partager requiert pas mal de qualité humaines, que le gamedesigner n'a pas forcément. Un programmeur, un producteur, un artiste peuvent aussi bien faire l'affaire. </p>
+<p>--Gaetz</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_37').addClass('deleted');
+			$('#comment_37 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_37 .delete').css("display", "none");
+			$('#comment_37 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_37 .delete').css("display", "none");
+		else										$('#comment_37 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/35';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#110;&#x74;&#97;&#99;&#x74;&#x40;&#108;&#101;&#115;&#x66;&#111;&#x72;&#103;&#101;&#115;&#46;&#x6f;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

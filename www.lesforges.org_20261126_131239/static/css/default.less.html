@@ -1,0 +1,594 @@
+﻿/*Palette*/
+@border: #CACACA;
+@dropShadow: #DDDDDD;
+@heavyDropShadow: #AAAAAA;
+@text: #333333;
+@mainTint: ~`mainTintHex`;
+@hover: ~`hoverTintHex`;
+@tableEven: #F4F4F4;
+@tableOdd: #FAFAFA;
+
+/*Values*/
+@site_width: 980px;
+@site_padding: 18px;
+@simpleMargin: 24px;
+
+/*IE stupidness (for imagemap)*/
+img { border: 0px; }
+
+/*Fonts*/
+@font-face {
+    font-family: 'Museo100';
+    src: url('fonts/museo100-regular-webfont.eot');
+    src: url('fonts/museo100-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museo100-regular-webfont.woff') format('woff'),
+         url('fonts/museo100-regular-webfont.ttf') format('truetype'),
+         url('fonts/museo100-regular-webfont.svg#Museo100') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo300';
+    src: url('fonts/museo300-regular-webfont.eot');
+    src: url('fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museo300-regular-webfont.woff') format('woff'),
+         url('fonts/museo300-regular-webfont.ttf') format('truetype'),
+         url('fonts/museo300-regular-webfont.svg#Museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Mixins*/
+.drop_shadow (@x: 0, @y: 2px, @blur: 5px, @color: @dropShadow) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+.icon  {
+	position: relative;
+	top: 2px;
+	margin-right: 4px;
+}
+
+/*Site structure*/
+html, body {	
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+body {	
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+	line-height: 150%;
+	color: @text;
+}
+
+#main  {
+	width: @site_width;
+	height: 100%;
+	margin: auto;
+}
+
+/*Dont center this with margin:auto. It has to be float so that content gets all the body height*/
+#banner {
+	float:right;
+	position:relative;
+	left:-50%;	
+	font-size: 0em;
+	line-height: 0%;
+	.centered {
+		float: left;
+		width: @site_width - 2px;
+		height: 86px;
+		position:relative;
+		left:50%;
+		margin-bottom: @simpleMargin;
+		.drop_shadow(0px, 0px, 5px, @heavyDropShadow);
+	}
+}
+
+#profile_area {	
+	z-index: 1;
+	float: right;
+	position: absolute;
+	top: 6px;
+	right: 19px;
+	min-width: 160px;
+	color: #FFFFFF;
+	font-family: 'Museo300', Verdana;	
+	font-size: 16px;
+	line-height: 0%;
+	border-bottom: 1px solid #FFFFFF;
+	img {
+		margin-right: 6px;
+		border: 1px solid #FFFFFF;
+		border-bottom: none;
+		vertical-align: middle;
+	}
+	a { 		
+		color: #FFFFFF;
+		text-decoration: none;
+		&.dropdown { display: block; }
+	}	
+	#menu {
+		display: none;
+		margin: 0px;
+		padding: 4px;
+		color: @text;
+		line-height: 100%;
+		list-style-type: none; 
+		background-color: #FFFFFF;
+		a {
+			color: @text;
+			&:hover { color: @hover; }
+		}
+		li {
+			margin: 4px;
+			border-bottom: 1px solid @border;
+		}
+		.drop_shadow(0px, 0px, 5px, @heavyDropShadow);
+	}
+}
+
+#social {
+	z-index: 0;
+	float: right;
+	position: absolute;
+	bottom: 6px;
+	right: 19px;	
+	img { margin-left: 2px; }
+	.levelup {
+		position: relative;
+		right: 2px;
+		top: 3px;
+	}
+}
+
+#content {
+	width: @site_width - 4px - 2*@site_padding;
+	min-height: 100%;
+	margin: auto;
+	margin-bottom: -7px;
+	padding-left: @site_padding;
+	padding-right: @site_padding;
+	border-left: 1px solid @border;
+	border-right: 1px solid @border;
+	.drop_shadow(0px, 0px, 5px, @heavyDropShadow);
+}
+
+/*hr*/
+hr {
+	clear: left;
+	height: 1px;
+	margin-top: @simpleMargin;
+	margin-bottom: @simpleMargin;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	border: 1px dotted @border;
+	border-style: none none dotted none;
+}
+
+hr.heavy {
+	width: @site_width - 4px;
+	height: 2px;
+	margin: 0px;
+	margin-bottom: 1.5 * @simpleMargin;
+	margin-left: -@site_padding;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	border: none;
+	border-top: 1px solid @border;
+	border-style: solid none none none;
+	.drop_shadow(0px, 2px, 6px, @border);
+}
+
+/*hr height in Chrome and Safari*/
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	hr.heavy { height: 1px; }
+}
+
+/*Spotlights*/
+#spotlights {
+	font-size: 0em;
+	line-height: 0%;
+	>a {
+		margin-left: 20px;
+		&:first-child { margin-left: 0px; }	
+	}
+	img {		
+		margin-bottom: @simpleMargin;
+		padding: 7px;
+		border: 1px solid @border;
+		.drop_shadow();
+	}
+	a { text-decoration: none; }
+}
+
+/*Base*/
+th { text-align: right; }
+h1 {	
+	margin: 0px;
+	font-size: 2em;
+	line-height: .75em;
+	font-weight: bold;
+	a {
+		color: @text;
+		text-decoration: none;
+	}
+}
+
+h2 {
+	margin: 0px;
+	font-size: 1.375em;
+	line-height: 1.0909em;
+}
+
+a {
+	border: none;
+	color: @mainTint;
+	&:hover { color: @hover; }
+	img { border: none; }
+}
+.clear { clear: both; }
+
+/*Navigation*/
+#right_column {
+	float: right;
+	width: 300px;
+	margin-bottom: 5 * @simpleMargin;
+	h2 {		
+		font-family: 'Museo300', Verdana;
+		color: @mainTint;
+	}
+	.loupe {
+		font-size: 0px;
+		line-height: 0%;
+		margin-top: @simpleMargin / 2;
+		margin-bottom: @simpleMargin / 2;
+		padding: 7px;
+		border: 1px solid @border;		
+		object {
+			outline: none;
+		}
+	}
+	.loupe_help { 
+		line-height: 120%;
+		.source { font-size: .8em; }
+		font-family: 'Museo300', Verdana;
+		text-align: center;
+	}
+}
+
+#archives {
+	margin-top: @simpleMargin / 2;
+	margin-top: @simpleMargin / 2;
+	> ul > li > a {
+		color: @text;
+		text-decoration: none;
+		&:hover {
+			color: @hover;
+		}
+	}
+	ul {
+		margin-top: 0px;
+		padding-left: @simpleMargin;
+		ul { padding-left: @simpleMargin / 2; }
+		li ul { display: none; }
+	}
+}
+
+#tags_cloud {
+	margin-top: @simpleMargin / 2;
+	margin-bottom: @simpleMargin;
+	text-align: left;
+	font-family: 'Museo100', Verdana;
+	a {
+		color: @text;
+		text-decoration: none;
+		&:hover { color: @hover; }
+	}
+}
+
+#latest_comments {
+	margin-top: @simpleMargin / 2;
+	margin-bottom: @simpleMargin;	
+	line-height: 0%;
+	.comment {
+		line-height: 100%;
+		display: block;
+		padding: 6px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		color: @text;
+		text-decoration: none;
+		background-color: @tableEven;
+		&:nth-child(odd) { background-color: @tableOdd; }
+		&:hover { color: @hover; }		
+	}
+	.meta {		
+		font-size: .8em;
+		line-height: 100%;
+	}
+	.avatar {
+		float: left;
+		background-color: #FFFFFF;
+		border: 1px solid #CACACA;
+		margin-right: 6px;
+		padding: 2px;
+	}
+	.infos {
+		margin-left: 42px;
+	}
+}
+
+/*Articles*/
+#left_column {
+	float: left;
+	width: 620px;
+	overflow: hidden;
+	margin-bottom: 5 * @simpleMargin;
+	.center {
+		text-align: center;
+		margin-left: -@simpleMargin / 2;
+		margin-right: -@simpleMargin / 2;
+	}
+	img {
+		padding: @simpleMargin / 2;
+		border: 1px solid @border;
+		margin-left: @simpleMargin / 2;
+		margin-right: @simpleMargin / 2;
+		max-width: 620px - @simpleMargin - 2;
+		.drop_shadow();
+	}
+	blockquote {
+		font-style: italic;
+		border-left: 2px solid @border;
+		margin-left: @simpleMargin;
+		padding-left: @simpleMargin;
+	}	
+	p {
+		margin-top: @simpleMargin;
+		margin-bottom: @simpleMargin;		
+	}
+	ul { list-style-type: circle; }
+	li img {
+		margin-top: @simpleMargin;
+		margin-bottom: @simpleMargin;
+	}
+}
+
+.compact_container {
+	background-color: @tableEven;
+	&:nth-child(odd) { background-color: @tableOdd; }
+	a { text-decoration: none; }
+	.compact {
+		padding: 4px;
+		cursor: pointer;
+		color: @text;		
+		&:hover  { 
+			padding: 8px;
+			padding-left: 4px;
+			font-size: 1.25em;
+			font-weight: bolder;
+			color: #FFFFFF;
+			background-color: @mainTint;		
+		}
+	}
+}
+
+
+
+.meta {
+	font-family: 'Museo300', Verdana;
+	font-size: .8em;
+	margin: @simpleMargin / 2;
+	margin-left: 0px;
+	line-height: 1.875em;
+}
+
+.read_more {
+	font-family: 'Museo100', Verdana;
+}
+
+.disclaimer {
+	margin-top: @simpleMargin / 2;
+	margin-bottom: @simpleMargin / 2;
+	padding: @simpleMargin / 2;
+	font-style: italic;
+	border: 1px dashed @border;
+	background-color: @tableOdd;
+}
+
+.previous_articles {
+	float: left;
+	margin-top: 2 * @simpleMargin;
+	text-decoration: none;
+}
+
+.next_articles {
+	.previous_articles;
+	float: right;
+	border-right: 0px;
+	padding-right: 0px;
+}
+
+#article {
+	h1, h2, h3, h4, h5, h6 { 
+		margin: 0px;	
+		margin-bottom: @simpleMargin;
+	}
+	h1+.meta {
+		margin-top: -@simpleMargin / 2;
+	}
+	.sequel {
+		text-align: right;
+	}
+	.share {
+		margin-top: @simpleMargin / 2;
+		margin-bottom: @simpleMargin / 2;
+	}	
+}
+
+#article_content {
+	h1 {
+		line-height: 1.25em;	
+		border-bottom: 2px solid @border;
+	}	
+	h1+p, h2+p, h3+p, h4+p, h5+p, h6+p { margin-top: -@simpleMargin / 2; }	
+}
+
+#article_comments {
+	line-height: 0%;
+	h1 { border: none; }
+	.comment {	
+		line-height: 150%;
+		padding: @simpleMargin / 2;
+		border-top: 2px solid @border;
+		background-color: @tableOdd;
+		margin-bottom: @simpleMargin / 2;
+		label { text-align: left; }
+		.comment_actions {
+			font-family: 'Museo300', Verdana;
+			font-size: .8em;
+			text-align: right;
+			margin-top: @simpleMargin;
+			a { 
+				margin-left: @simpleMargin / 2;
+				color: @text;
+				text-decoration: none;
+			}
+			.edit:before { 
+				content: url('img/edit.png');
+				.icon;
+			}
+			.delete:before { 
+				content: url('img/delete.png');
+				.icon;
+			}
+			.restore:before {
+				content: url('img/restore.png');
+				.icon;
+			}			
+		}
+		.helptext {
+			font-family: 'Museo300', Verdana;
+			font-size: .8em;
+			a {
+				color: @mainTint;
+				&:hover { color: @hover; }
+			}
+		}
+	}	
+	.avatar {		
+		float: left;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-right: @simpleMargin / 2;
+		padding: 4px;
+		border: 1px solid @border;
+		background-color: #FFFFFF;
+	}
+	.comment_content { 		
+		margin-left: 72px;
+	}
+	p { margin-top: 0px; }
+	textarea { 
+		resize: vertical;
+		width: 586px;		
+	}
+	.edit_comment_form  textarea { width: 514px; }
+	.submit { 
+		text-align: center;
+		font-family: 'Museo300', Verdana;
+	}
+}
+
+/*Login popup*/
+.popup {
+	.drop_shadow(0px, 5px, 5px, @heavyDropShadow);
+	p {
+		clear: left;
+	}
+	label {		
+		display: block;
+		float: left;
+		width: 160px;
+		margin-bottom: @simpleMargin / 2;
+	}
+	#password_form label {
+		width: 180px;
+	}
+	.helptext {
+		display: block;
+		margin-left: 160px;
+		font-size: 12px;
+		a {
+			color: @mainTint;
+			&:hover { color: @hover; }
+		}
+	}
+	#password_form .helptext {
+		margin-left: 180px;
+	}
+}
+
+.errorlist {
+	margin-top: @simpleMargin;
+	padding: 0px;
+	color: @mainTint;
+	li { list-style-type: none; }
+	border-top: 1px dotted @border;
+	border-bottom: 1px dotted @border;
+	li:before {
+		content: url('img/form_error.png');
+		.icon;
+	}
+}
+
+.form_complete p {
+	margin: 0px;
+	&:before  {
+		content: url('img/form_ok.png');
+		.icon;
+	}
+}
+
+/*Footer*/
+#footer {
+	clear: both;	
+	padding: @simpleMargin;
+	font-family: 'Museo300', Verdana;
+	font-size: .8em;
+	line-height: 140%;	
+	background-color: @tableOdd;
+	.content {
+		width: @site_width - 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin: auto;
+	}
+	.column {
+		float: left;
+		width: 219px;
+		padding-bottom: @simpleMargin / 2;
+		padding-left: 20px;
+		border-left: 1px dotted @border;
+		&:first-child { 
+			padding-left: 0px;
+			border-left: none;
+		}
+	}
+	ul {
+		float: left;
+		padding-left: @simpleMargin;
+		line-height: 220%;
+		list-style-type: none;
+	}
+	a {
+		color: @text;
+		text-decoration: none;
+		&:hover { color: @hover; }
+	}
+}

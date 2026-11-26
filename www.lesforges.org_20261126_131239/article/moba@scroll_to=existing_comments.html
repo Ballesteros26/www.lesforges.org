@@ -1,0 +1,1046 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Game Design &amp; MOBA</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Je ne sais pas pour vous mais depuis que je fais des jeux (et depuis que je ne suis plus au lycée, ce qui commence à dater un peu), j'ai l'impression que je passe de moins en moins de temps à jouer. En tant que passionné, je suis au courant de l'actualité, des annonces et des jeux qui sortent ; je lis la presse, je regarde des screenshots, je m'arrête dans le salon regarder à quoi jouent mes chers colocataires, mais je ne joue pas très souvent moi-même.
+
+Un peu largué dans les conversations de gamers, je me demande bien où réside l'attrait de bon nombre de succès récents. Par exemple la série des Halo. Je suis sûr qu'il doit y avoir quelque chose à sauver et qu'autant de gamers ne peuvent pas s'être tous trompés, mais vu de loin il s'en dégage pour moi l'image d'un FPS qui tourne au ralenti où les personnages sont des cosmonautes neurasthéniques dans une série B avec des aliens (et des épées lasers).
+Heureusement, mon instinct de joueur n'a pas disparu et il m'arrive de redevenir un hardcore gamer pour quelques semaines ou quelques mois. C'est ce qui s'est produit l'an dernier quand j'ai eu le plaisir (ou le malheur ? à vous de trancher) de découvrir League of Legends, l'un des MOBA à la mode ces derniers temps.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#116;&#x61;&#x63;&#x74;&#x40;&#108;&#x65;&#x73;&#102;&#x6f;&#114;&#103;&#x65;&#x73;&#46;&#111;&#x72;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Game Design &amp; MOBA</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/agersant.html">Antoine Gersant</a> | le 26 juin 2011 12:44:34 | Catégories : <a href="../tag/analyse.html">Analyse</a>, <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Je ne sais pas pour vous mais depuis que je fais des jeux (et depuis que je ne suis plus au lycée, ce qui commence à dater un peu), j'ai l'impression que je passe de moins en moins de temps à jouer. En tant que passionné, je suis au courant de l'actualité, des annonces et des jeux qui sortent ; je lis la presse, je regarde des screenshots, je m'arrête dans le salon regarder à quoi jouent mes chers colocataires, mais je ne joue pas très souvent moi-même.</p>
+<p><img alt="League of Legends (Riot Games)" src="../media/img/dota-zilean.png" /></p>
+<p>Un peu largué dans les conversations de gamers, je me demande bien où réside l'attrait de bon nombre de succès récents. Par exemple la série des <em>Halo</em>. Je suis sûr qu'il doit y avoir quelque chose à sauver et qu'autant de gamers ne peuvent pas s'être tous trompés, mais vu de loin il s'en dégage pour moi l'image d'un FPS qui tourne au ralenti où les personnages sont des cosmonautes neurasthéniques dans une série B avec des aliens (et des épées lasers).</p>
+<p>Heureusement, mon instinct de joueur n'a pas disparu et il m'arrive de redevenir un <em>hardcore gamer</em> pour quelques semaines ou quelques mois. C'est ce qui s'est produit l'an dernier quand j'ai eu le plaisir (ou le malheur ? à vous de trancher) de découvrir <em>League of Legends</em>, l'un des MOBA à la mode ces derniers temps.</p>
+			</div>
+			<div id="article_content">
+				<h1>Qu'est ce qu'un MOBA ?</h1>
+<h2>Historique rapide</h2>
+<p>Si vous êtes déjà familier du genre, vous pouvez vous épargner la lecture de quelques paragraphes et passer directement au coeur de l'article (<em>Pourquoi ça marche ?</em>). Pour les autres, le MOBA (pour <em>Multiplayer Online Battle Arena</em>) est un genre récent à la croisée du RPG et du RTS. Le jeu à l'origine du genre est le célèbre mod de <em>Warcraft III</em> baptisé <em>DOTA</em> (pour <em>Defense of the Ancients</em>) qui sert de modèles à tous les autres — c'est à dire <em>League of Legends</em>, <em>Demigod</em>, <em>Heroes of Newerth</em>, le futur <em>Dota 2</em> développé par Valve et quelques autres jeux plus obscurs. </p>
+<p>Mon expérience se limite à <em>DOTA</em> auquel j'ai peu joué, et à <em>League of Legends</em> qui a englouti plusieurs mois de ma vie. Mes explications et mes exemples reposeront donc sur ce dernier mais je vais faire de mon mieux pour faire abstraction des spécificités du jeu et ne m'intéresser qu'au genre. Les puristes me pardonneront de ne pas rentrer dans les détails, de ne pas mentionner des variantes de règles, ou d'oblitérer des subtilités qui ne font pas avancer mon propos.</p>
+<h2>Mode d'emploi d'un genre à part</h2>
+<p>La première chose à vous mettre dans la tête est que les MOBA sont un genre à part entière. Ce ne sont pas des RTS ni des RPG mais bien un enfant bâtard qu'aucun des deux genres ne pourrait jamais reconnaitre comme le sien. C'est ce fragile équilibre qui rend le genre si pointu. Vous allez le voir par vous même, à entendre le concept d'un MOBA on se demande comment on peut tirer plusieurs jeux différents d'un genre aux caractéristiques si précises.</p>
+<p><img alt="League of Legends (Riot Games)" src="../media/img/dota-lol-ingame.jpg" /></p>
+<p>Une partie dure entre vingt minutes et une heure et met face à face deux équipes de 5 joueurs humains. La caméra a un point de vue semblable à celui d'un RTS, mais chaque joueur ne contrôle qu'un seul personnage, avec sa souris (comme dans un RTS ou un Hack'N Slash). Il n'y a pas de bâtiments à construire ni d'unités auxquelles donner des ordres. Ce qui semble très étrange au premier abord, c'est que l'on joue toujours sur la même carte. Voici une version schématique de la carte en question (commune au moins à <em>DOTA</em>, <em>LoL</em> et <em>HoN</em>).</p>
+<p><img alt="La map typique des MOBA" src="../media/img/dota-map.png" /></p>
+<p>Les équipes ont chacune une base (coins haut-gauche et bas-droit de la carte) où les joueurs respawnent quand ils meurent. L'objectif de la partie est de détruire le cœur de la base ennemie, qui est défendu non seulement par les joueurs mais aussi par de puissantes tours de défense automatiques. Il y a 3 chemins (appelés <em>lanes</em>, en rouge sur ma carte) qui relient les deux bases et qui sont tous pourvus de tours de défenses (indiquées sur la carte). La dynamique du jeu repose sur le combat à 5v5 sur ces 3 champs de batailles différents entre lesquels il faut sans cesse alterner, car une tour sans joueur(s) pour la défendre peut être rapidement abattue (et une tour en moins, c'est un pas en plus vers la base).</p>
+<p>Les 10 joueurs ne sont pas seuls sur la carte pour autant. Chaque base génère en continue des unités très faibles (les <em>creeps</em>) qui avancent de manière robotique le long des 3 lanes pour aller combattre les <em>creeps</em> de l'équipe adverse. Ces <em>creeps</em> ont plusieurs intérêt pour le Game Design du jeu :</p>
+<ul>
+<li>Ils ont un champ de vision dont le joueur profite car toutes les informations accessibles à son équipe sont représentées sur sa minimap.</li>
+<li>Ils permettent de savoir grosso modo jusqu'où une équipe a le contrôle stratégique de la carte (les <em>creeps</em> se font arrêter par les tours et les <em>creeps</em> adverses, ou par des joueurs ennemis qui les massacrent).</li>
+<li>Ils servent de chair à canon pendant que les joueurs abattent une tour (la tour tue les <em>creeps</em> — et non les joueurs — pendant que les joueurs sapent la tour. En l'absence de <em>creeps</em>, la tour s'attaquerait aux joueurs).</li>
+<li>Ils rapportent de l'or et de l'expérience (voir ci-dessous)</li>
+</ul>
+<p>De l'expérience et de l'or, c'est là que l'aspect RPG entre en jeu. A mesure qu'ils tuent des creeps, des joueurs ennemis et des tours, les joueurs sont récompensés par de l'or et de l'expérience. L'or sert à acheter des objets au magasin (dans la base de l'équipe) pour rendre son personnage plus puissant (un peu comme le magasin dans <em>Counter Strike</em>), et l'expérience permet d'améliorer ses caractéristiques (force, défense etc.) et ses compétences (les <em>skills</em>) comme dans un RPG traditionnel.</p>
+<p>Là où le système s'éloigne d'un RPG traditionnel, c'est que les caractéristiques de base et les compétences d'un joueur sont essentiellement déterminées avant le début de la partie par le choix d'un personnage. Chaque MOBA propose plusieurs dizaines de personnages (104 dans <em>DOTA</em>) qui ont chacun un design propre, des caractéristiques de base et surtout 4 <em>skills</em> qui seront leurs seules actions possibles pendant la partie (en plus d'une attaque standard commune à tous les personnages).<br />
+On retrouve comme personnages les archétypes développés dans les RPG et MMORPG ces dernières années : <em>healers</em> (personnages avec des sorts de soin), <em>tanks</em> (personnage capable d'encaisser beaucoup de dégâts pour son équipe), <em>DPS</em> (personnage capable d'infliger des dégâts conséquents sur la durée), <em>nuker</em> (personnage capable de faire beaucoup de dégâts en peu de temps) etc., avec toutes les variantes possibles et imaginables (personnage corps à corps ou à distance, dégâts physiques ou magiques…).</p>
+<p>La gestion des objets (achetés pendant la partie avec de l'or, si vous avez tout suivi) est elle aussi différente d'un inventaire traditionnel de RPG. Chaque joueur a 6 <em>slots</em> d'inventaire pour son personnage qu'il peut remplir comme il le souhaite. Je veux dire par là que vous pouvez équiper votre personnage avec 6 épées différentes, c'est tout à fait l'état d'esprit. La subtilité du système réside dans le fait que :</p>
+<ul>
+<li>Les objets du magasin sont très nombreux (mais les joueurs un peu entraînés les connaissent sur le bout des doigts).</li>
+<li>La plupart des objets s'obtiennent en combinant entre eux des objets de coût inférieur.</li>
+<li>Les objets ont des effets souvent complexes qui agissent sur plusieurs caractéristiques, et qui peuvent (ou non) se cumuler entre eux.</li>
+</ul>
+<p><img alt="League of Legends (Riot Games)" src="../media/img/dota-lol-shop.jpg" /></p>
+<p>Il en résulte des wikis, des guides, et des débats de <em>theory crafting</em> (sur les forums ou avec vos colocataires) pour tenter d'établir quels sont pour chaque personnage les objets les plus adaptés. Il n'y en général pas de solution exacte mathématique au problème, et tout dépend de la composition de l'équipe adverse, du déroulement de la partie et des changements d'équilibrage des derniers patchs. Équilibrer un tel jeu est en effet un exercice périlleux en raison du nombre colossal de personnages, d'objets et de <em>skills</em> mis en jeux (et c'est sans doute l'une des raisons pour lesquelles les MOBA ne se jouent que sur une seule carte).</p>
+<p>Enfin, dernier élément de briefing avant que l'on ne s'intéresse aux astuces de Game Design qui rendent les MOBA si addictifs (et si bien conçus) : la carte ne se limite pas aux trois <em>lanes</em> où sont plantées les tours. Il est possible de circuler entre les <em>lanes</em> en passant par la « jungle » qui est faite de petits chemins tortueux (parfaits pour tendre des embuscades) et où l'on trouve à emplacement fixe des monstres neutres (les <em>neutral creeps</em>) qui ne s'en prennent aux joueurs que si on les attaque et qui pour certains donnent des récompenses considérables — ce qui fait d'eux des endroits stratégiques de la carte à contrôler.</p>
+<h1>Pourquoi ça marche</h1>
+<p>Bon, c'est bien gentil tout ça mais mon intention n'est pas de faire un guide d'initiation aux MOBA. Passons donc aux choses sérieuses si vous le voulez bien, tentons d'isoler quelques-unes des spécificités du genre qui le rendent si prenants, et qui ont poussé plus d'un joueur raisonnable à veiller jusqu'à l'aube.</p>
+<h2>Avatars et héros</h2>
+<p>Comme je vous l'ai expliqué, chaque partie commence par un écran de sélection de personnage où chaque joueur choisit le héros qu'il incarnera pendant la partie. Là où les choses deviennent intéressantes, c'est que le choix du héros donne l'impression au joueur non pas qu'il incarne le héros mais que le héros le <em>représente</em>. La nuance est très importante ; considérez la différence d'affection et d'attachement éprouvés envers Lara Croft (quand vous jouez à <em>Tomb Raider</em>) et votre personnage dans <em>Guild Wars</em> ou <em>World of Warcraft</em>.</p>
+<p>Ce qui différencie fondamentalement Lara Croft et Belin le nain forgeron (votre personnage de <em>World of Warcraft</em>), c'est que Belin est un personnage qui a une apparence physique et des caractéristiques (en terme de règles du jeu) qui sont uniques et le fruit de vos décisions. Lara Croft a le même physique pour tous les joueurs de <em>Tomb Raider</em> et toujours le même fusil à pompe. Vous l'avez compris, c'est la <em>customisation</em> qui fait la différence : en étant amené à prendre des décisions le concernant, le joueur se sent plus responsable et proche de son personnage.</p>
+<p>Dans un MOBA, on ne personnalise pas son héros. L'identification est pourtant possible grâce à plusieurs astuces :</p>
+<ul>
+<li>Le nom du joueur est toujours associé au héros qui le représente dans la partie en cours. Dans <em>League of Legends</em>, le nom du joueur est affiché sur le portrait du héros dès l'écran de chargement (en dessous du nom du héros). Pendant la partie, ce sont les noms des joueurs qui sont affichés au dessus des personnages. Dans <em>HoN</em>, les noms des joueurs ne sont même pas affichés à l'écran de chargement et seul un portrait de leur héros apparait.</li>
+</ul>
+<p><img alt="L'écran de chargement de Heroes of Newerth (S2 Games)" src="../media/img/dota-loading-hon.jpg" /></p>
+<ul>
+<li>Le très grand nombre de héros disponibles rend le choix d'un héros finalement peu différent d'un procédé de <em>customisation</em>. Avoir une centaine de personnages procure autant de diversité (voire plus puisqu'ils sont crées à la main) qu'une <em>customisation</em> où l'on aurait 20 options à choisir avec 5 valeurs possibles pour chacune. C'est de l'ordre de ce que proposent certains MMORPG. La recherche d'un héros qui corresponde au joueur est facilitée (et encouragée) par la présence d'informations détaillées (<em>artwork</em>, <em>background</em>, <em>skills</em>, <em>style de jeu</em>, etc.) sur chaque personnage accessibles depuis le jeu et de manière très ordonnée. Ci-dessous, l'écran d'information sur les personnages dans <em>League of Legends</em>. C'est cet écran aperçu sur le PC d'un colocataire qui a attisé ma curiosité envers le jeu, comment résister à l'envie de cliquer sur ces petits tiles carrés bien agencés ?</li>
+</ul>
+<p><img alt="League of Legends (Riot Games)" src="../media/img/dota-persos.png" /></p>
+<ul>
+<li>Le caractère très compétitif et technique du jeu fait que la plupart des joueurs passent un très grand nombre d'heures à jouer avec une petite poignée de héros qu'ils veulent bien maîtriser. En ce qui me concerne, j'ai joué mes 200 premières parties de <em>League of Legends</em> — une centaine d'heures — avec un seul et unique héros. Le même phénomène a lieu avec les jeux de combats un peu techniques (<em>Guilty Gear</em>, <em>Street Fighter</em>, etc.) où les bons joueurs sont connus en tant que spécialistes de tel ou tel personnage, auquel on les associe ensuite naturellement. A force de jouer toujours les mêmes héros, on a l'impression d'établir un lien avec eux qui perdure entre les parties (qui sont pourtant indépendantes).</li>
+</ul>
+<p>Ce sont là les techniques que j'ai pu identifier pour permettre aux joueurs de considérer les personnages qu'ils incarnent comme leurs avatars, ce qui renforce leur lien avec le jeu.</p>
+<h2>Le feedback immédiat</h2>
+<p>Une fois la partie démarrée, les DOTA-like usent et abusent de <em>feedback immédiat</em>. Je sais que le nom est proche mais cela n'a rien à voir avec la <a href="retroaction.html">rétroaction positive</a> dont Ernest Adams parle si bien. Le <em>feedback immédiat</em> est une notion que j'aime beaucoup parce que je trouve qu'elle renvoie très fortement au concept de jeu vidéo dans sa forme la plus simple, à savoir :</p>
+<ul>
+<li>Je regarde l'écran</li>
+<li>J'appuie sur un bouton</li>
+<li>Il se passe un truc à l'écran</li>
+</ul>
+<p>Ce qui rend en grande partie les jeux vidéos si addictifs, c'est le savant dosage de ces mécaniques d'action/réaction qui donnent l'impression au joueur qu'il fait quelque chose de plus qu'appuyer sur des boutons. Quelques exemples de <em>feedback immédiats</em> particulièrement mémorables sont le <strong>gling gling</strong> rythmé des pièces que l'on accumule dans <em>Super Mario Bros.</em> (ou le <strong>dôôi dôôi</strong> de la caisse de pommes que l'on vide avec un rythme de métronome dans <em>Crash Bandicoot</em>), la ligne complétée qui clignote frénétiquement avant de disparaitre dans <em>Tetris</em>, le <em>barrel roll</em> d'un <em>Starwing</em> ou d'un <em>Wipeout HD</em>, ou encore le <em>stealth kill</em> millimétré de <em>Tenchu</em>. La liste pourrait être beaucoup beaucoup plus longue car il s'agit d'une notion assez simple à appréhender et que beaucoup de Game Designers semblent maîtriser (parfois inconsciemment).</p>
+<p>L'absence totale de <em>feedback immédiat</em> associé à une action produit un effet très désagréable, qui donne au joueur l'impression que le jeu n'est pas réactif voire carrément mal programmé. Essayez d'imaginer comment ce serait de jouer à <em>Zelda</em> si les rubis ne faisaient pas de bruit quand on les ramasse ; on aurait l'impression qu'ils disparaissent quand on passe à proximité (alors qu'avec le son on a l'impression de les ramasser).</p>
+<p>Vous aurez remarqué que beaucoup de mes exemples de <em>feedback immédiat</em> sont associés à un son caractéristique et pas juste à un effet visuel à l'écran, c'est dû au fait que plus le feedback est important, plus le joueur ressent de plaisir immédiat. Chez Blizzard North, c'est une chose que l'on a compris depuis bien longtemps, et c'est pour cela que des générations de joueurs ont tremblé au son cristallin (<strong>ding</strong>) des anneaux magiques qui tombent au sol dans <em>Diablo</em>, ou au comparable <strong>ding</strong> de Level-up de World of Warcraft. D'ailleurs les Game Designers de chez Blizzard ont décidé d'aller encore plus loin. Voici ce qu'on pouvait lire en 2008 dans une preview de <em>Diablo 3</em> sur <em>planetdiablo.com</em> :</p>
+<blockquote>
+<p>Leveling up is probably the greatest thing I have seen yet. Imagine yourself surrounded by a horde of zombies, you are clicking away, casting or swinging weapons, and all of a sudden you level up; Big deal right? Ok, let's take that one step further. When you level up in Diablo III , it does a massive damage area-of-effect skill. I was grinning from ear to ear. </p>
+</blockquote>
+<p>Et là tout est dit. Vous vous battez normalement, vous cliquez sur un monstre et là <strong>CRAC</strong> c'est l'explosion de lumière, le déluge d'effets de particules lumineuses dans l'écran, et j'imagine qu'une montagne d'effets sonores (chœur angélique qui délivre un saint « Aaaaah », craquement gras de l'explosion, cris et bruits percussifs des monstres qui meurent) vient accompagner ce festival d'orgasmes de poche. Autant dire que vous n'êtes pas déçus d'avoir cliqué et que vous ne risquez pas de passer à côté d'un level up.</p>
+<p>Pour en revenir aux MOBA, sachez que non seulement ils font un usage très bien dosé du <em>feedback immédiat</em> (il y en a même quand vous cliquez pour déplacer votre personnage) avec toutes les ficelles classiques dont on vient de parler, mais à cela s'ajoute un aspect important. Rappelez vous que nous sommes en multijoueur à 5 contre 5, et que tout le monde profite de vos <em>feedbacks</em> (pour peu que tout le monde ne soit pas à l'autre bout de la carte), et cela implique que le joueur les apprécie d'autant plus qu'il les impose à tout le monde. C'est un autre niveau par rapport au concept de base de feedback immédiat. Ici le schéma est le suivant :</p>
+<ul>
+<li>Je regarde l'écran</li>
+<li>J'appuie sur un bouton</li>
+<li>Il se passe un truc à l'écran</li>
+<li>Il se passe un truc sur les écrans de 9 autres personnes qui y prêtent attention</li>
+</ul>
+<p>Je vous ai déjà fait remarquer que le fun ressenti était lié à l'intensité du <em>feedback</em>, il est intéressant de constater que dans le cadre d'un jeu multijoueur le <em>feedback</em> en question devient un pouvoir exercé sur les autres joueurs — autant dire quelque chose de bien plus intense qu'un effet sonore. Le travail du Game Designer est de doser ce pouvoir donné au joueur pour maximiser son plaisir individuel sans pour autant briser la cohérence du jeu ou créer de la frustration chez les autres joueurs.<br />
+Si vous avez déjà joué à <em>Quake III</em> en activant le <em>mod</em> qui fait que le <em>Plasma Gun</em> tire des grenades à fragmentation au lieu de boules d'énergies (avec une cadence de tire de mitrailleuse), vous aurez remarqué que le premier joueur à s'en saisir s'amuse comme un fou au milieu de morceaux de cadavres en charpie qui volent sur fond d'explosion, pendant que les autres joueurs se font tuer souvent moins d'une seconde après leur <em>respawn</em>. Voilà un exemple de <em>feedback immédiat</em> si important qu'il en dérègle le jeu. A l'inverse, un exemple particulièrement bien dosé dans <em>League of Legends</em> est le <em>skill</em> Paranoïa du personnage Nocturne ; entre autres effets, ce <em>skill</em> assombrit pendant quelques secondes l'écran de tous les joueurs, joue un effet sonore (une voix grave et fantomatique qui murmure <em>darkness</em> avec plaisir) et réduit le champ de vision des adversaires. Le jeu n'est pas déréglé, mais le joueur qui incarne Nocturne a eu son heure de gloire en déclenchant tout un petit festival de <em>feebacks immédiats</em> en appuyant sur une touche de son clavier.</p>
+<h2>La compression du RPG</h2>
+<p>Passons à un atout vraiment spécifique aux MOBA. Le choix du personnage et le feedback immédiat, c'est bien gentil tout ça, mais dans une certaine mesure on en trouve presque autant dans <em>Street Figther II</em> . Aussi excellent soit-il, il n'est pas aussi addictif qu'un MOBA.</p>
+<p>Dans un RPG classique, et c'est surtout vrai pour les RPG dits <em>à l'occidentale</em> (pensez <em>Wizardry</em>, <em>Baldur's Gate</em> ou encore une fois <em>Diablo</em>), une grande partie de l'amusement du joueur repose sur la progression et la montée en puissance de son personnage. Au début du jeu, vous peinez pour éradiquer le grenier d'une horde de rats. Quatre-vingt dix heures plus tard, à la fin du jeu, vous êtes récompensés pour vos choix tactiques (équipements, compétences etc.) et vous êtes en mesure de sauver des royaumes et vaincre des dragons.</p>
+<p>Maintenant imaginez exactement <em>la même chose</em> mais compressée en une demi-heure de temps. Vous voyez où je veux en venir ? Un MOBA propose le temps d'une partie la même structure ludique qu'un RPG entier, et je vous laisse deviner l'intensité du gameplay qui en résulte et le caractère crucial que prend chaque choix d'équipement (ce qui explique le phénomène du <em>theory crafting</em> dont je vous parlais plus tôt). C'est un tour de force de Game Design qui demande bien plus d'ajustements que diviser tous les chiffres d'un RPG classique par 100. Proposer au joueur un tel champ d'évolution en un laps de temps aussi court expose l'équilibrage des mécaniques de jeu puisqu'il devient très facile pour les joueurs de les tester en profondeur et de voir les effets à « long terme » (c'est à dire une heure tout au plus) de leurs décisions.</p>
+<p>Le résultat est à la hauteur du concept. En début de partie les personnages sont de puissance comparable et peuvent se faire tuer d'un seul coup par certains monstres neutres de la carte. A la fin, un joueur qui a réussi sa partie peut sortir vainqueur d'une rencontre à 1 contre 2 (voire plus selon le jeu et le personnage dont on parle).</p>
+<h2>De la coopération à la dépendance</h2>
+<p>Dernière spécificité de Game Design des MOBA dont nous allons parler, la relation entre les joueurs d'une même équipe. Je suis très loin d'être un connaisseur en matière de jeux en lignes (rassurez vous, j'ai tout de même fait mon quota d'heures sur <em>Unreal Tournament</em> ou <em>Neverwinter Nights</em>), mais je pense que les MOBA apportent là aussi quelque chose d’intéressant.</p>
+<p>La notion d'équipe dans un MOBA dépasse celle que l'on trouve dans un <em>Team Deathmatch</em> classique. Dans les FPS en ligne, les joueurs sont subordonnées à un objectif commun mais ils sont capables d'évaluer leurs propres performances (par exemple avec leur ratio <em>ennemis tués/morts</em>) indépendamment du reste de leur équipe et surtout de la tournure générale que prend l'affrontement. Dans un MOBA, chaque mort donne un avantage en or très considérable à l'équipe adverse et un court répit pour avancer vers les objectifs de la partie. En plus de cela, l'équilibrage de ces jeux est si fin qu'un seul joueur moins bon que les autres peut mener une équipe droit vers la défaite, et c'est d'ailleurs ce qui se passe dans la plupart des parties.</p>
+<p>Un système de jeu qui intègre une telle dépendance entre les joueurs (un peu comme dans <em>Left4Dead</em> d'ailleurs) est une arme à double tranchant. C'est la porte ouverte à beaucoup de frustrations et à beaucoup de parties gâchées, mais c'est aussi une route toute tracée pour un jeu très stratégique et très compétitif à haut niveau — sans parler de toutes les émotions qui naissent du lien de confiance et de respect mutuel qui s'établit naturellement entre les joueurs d'une bonne partie. Voir votre personnage marcher au coude à coude avec un autre joueur de votre équipe, tout en sachant de manière tacite quelle stratégie complexe et coordonnée employer quand un ennemi apparaîtra à l'écran — c'est un instant d'une qualité rare que peu de jeux peuvent offrir.</p>
+<p>Une ficelle de Game Design à utiliser avec précaution donc.</p>
+<hr />
+<p>Je crois être arrivé au bout de ma réflexion, merci de l'avoir suivie jusqu'à son terme. J'espère qu'elle vous aura donné quelques perspectives de Game Design ou au moins la curiosité de jouer à un MOBA par vous-même pour vous rendre compte du travail d'orfèvre que représente leur conception (prévoyez beaucoup de temps libre ou une volonté de fer). Soyez bien conscient que cet article n'avait pas pour but de donner un avis objectif sur les MOBA mais bien d'analyser les points forts de leur Game Design, sans m'attarder trop sur leurs défauts (interdépendance excessive des joueurs, la courbe d'apprentissage trop raide, etc.). Comme toujours, vos remarques et commentaires sont les bienvenus, je suis convaincu que le genre a bien d'autres trouvailles de Game Design à considérer :).</p>
+<p><em>Merci à Widowan pour ses screenshot de </em>Heroes of Newerth<em> et à Deodred pour ceux de </em>League of Legends<em>.</em></p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/moba&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_481" class="comment">
+	
+		
+			<span class="meta">Par babaorhum le 17 décembre 2021 16:07:40</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de babaorhum" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Vu l''explication donnée à propos de ce type de jeux, cela est tout a fait ce que faisait un mod de starcraft (Broodward) dans les années 90 et quelques.
+Une base pour chacun des deux camps, défendues par des tours, et où les joueurs morts respawnent, ainsi que les trois chemins qui mènent d'un camp à l'autre.
+A l'époque on appellait ça des towers defense, mais ensuite le tower-defense s'est spécialisé et est apparu le MOBA, enfin c'est comme ça que je perçois la chose, d'après mon expérience de joueur.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_481').addClass('deleted');
+			$('#comment_481 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_481 .delete').css("display", "none");
+			$('#comment_481 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_481 .delete').css("display", "none");
+		else										$('#comment_481 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_86" class="comment">
+	
+		
+			<span class="meta">Par MrEreinion le 28 juin 2011 18:21:52</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de MrEreinion" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Les aspects de ce genre sont tous pleinement détaillés.
+Je pense principalement au <em>Direct Feedback</em> qui n'est pas l’apanage de ce genre mais qui fait de plus en plus son chemin dans les nouvelles créations (je pensais que tu citerais le fameux <strong>Torchlight</strong> qui a fait de ce point de GameDesign un art, surtout du point de vue visuel).</p>
+<p>Pour revenir au point du <em>business model</em> et meta-game de LoL, je pense que cela fait partie de l'addiction au jeu. Bien que vouée à rapporter des écus aux créateurs, elle participe au GameDesign en donnant au joueur la possibilité d'aller plus loin dans la <strong>customisation</strong> et donc resserrer le lien tissé avec son Avatar
+<em>(LoL permet d'altérer les caractéristiques de base de son personnage, ainsi 2 avatars incarnés par 2 joueurs n'obtiendront pas la 'même puissance' hors équipement.
+A noter que ces modifications peuvent aussi bien s'obtenir avec argent réel ou argent virtuel, glané au fil des parties).</em></p>
+<p>Ce point me permet d'enchainer sur un autre aspect du jeu, la <a href="difficulte@scroll_to=article.html" title="La difficulté dans les jeux vidéo">Difficulté</a>. Celle-ci comme tu l'as très bien dit repose en grande partie sur la cohésion de l'équipe d'une part, et des 2 équipes d'autre part.
+Une équipe désorganisée peut venir à bout d'une équipe moins forte mais concertée. A contrario, une équipe faible mais soudée peut venir à bout d'une équipe plus forte sur le point individuelle mais moins sur le <strong>teamplay</strong>.
+A cette fin, le jeu propose un système d’<strong>XP</strong> et d’<strong>Or</strong> qui perdure entre les parties. (non développé dans l’article car n’est pas une caractéristique du genre).
+Ce système permet à une autre version de votre Avatar (le <em>Summoner</em>) de gagner des niveaux et de l’équipement à la manière d’un <strong>RPG</strong>. Ainsi, le <strong>matchmaking</strong> oppose des équipes équilibrées en <em>niveaux de summoner</em>. Cela permet aux joueurs de gagner en expérience et en compétence 'ensemble' (et de découvrir progressivement les mécaniques et subtilités du genre, propres ou non au jeu).</p>
+<p>Je pense que cet ajout est un atout pour le jeu et le genre en lui-même de manière générale, bien que je ne connaisse pas la part utilisée entre le <em>lvl summoner</em> et le rang <strong>ELO</strong> pour la constitution des équipes.</p>
+<p>PS : Vincento Raton spotted</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_86').addClass('deleted');
+			$('#comment_86 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_86 .delete').css("display", "none");
+			$('#comment_86 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_86 .delete').css("display", "none");
+		else										$('#comment_86 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_83" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 27 juin 2011 19:11:48</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>@Molokov &gt; J'ai fait quelques parties en <em>ranked</em> longtemps après avoir atteint le niveau 30 mais c'était super chiant parce que les gens étaient vraiment trop mauvais dans le voisinage de l'ELO de départ. Je suis monté à 1400 et je suis retourné faire des <em>Normal Game</em>, je ne connais pas mon ELO là-bas mais il est bien plus intéressant à jouer =)</p>
+<p>@Arista &gt; Je me suis abstenu de parler du <em>business model</em> et du meta-game de <em>LoL</em> parce qu'ils n'étaient pas du tout communs à tous les MOBA. Pour le coup c'est presque plus du marketing que du Game Design mais y'a de quoi disserter.</p>
+<p>@Gaetz &gt; Merci pour la coquille =)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_83').addClass('deleted');
+			$('#comment_83 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_83 .delete').css("display", "none");
+			$('#comment_83 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_83 .delete').css("display", "none");
+		else										$('#comment_83 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_82" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 27 juin 2011 14:32:51</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<blockquote>
+<p>Je ne sais pas pour vous mais depuis que je fais des jeux (et depuis que je ne suis plus au lycée, ce qui commence à dater un peu), j'ai l'impression que je passe de moins en moins de temps à jouer. </p>
+</blockquote>
+<p>Ouep, et du coup c'est très gentil de faire des petites piqures de mise à jour. J'avais joué à DOTA du temps où je faisais des lan-party, et il est très intéressant de voir comment le gamedesign du genre s'est approfondi.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_82').addClass('deleted');
+			$('#comment_82 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_82 .delete').css("display", "none");
+			$('#comment_82 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_82 .delete').css("display", "none");
+		else										$('#comment_82 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_81" class="comment">
+	
+		
+			<span class="meta">Par AristA le 27 juin 2011 13:55:22</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de AristA" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Je suis moi même joueur de LoL et j'ai été agréablement surpris de voir que tous les points que tu détailles sont véridiques et ont marchés sur moi. D'ailleurs j'étais tellement attaché à mon personnage que lorsque la nouvelle semaine a commencée (avec de nouveaux personnages gratuits) et que mon petit bonhomme a disparu, j'ai tout bonnement arrêté de joué car les autres ne me correspondaient pas :(
+T'aurais pu préciser aussi que tout dans le jeu est montré pour que l'on veuille continuer de jouer : on gagne des niveaux hors-parties, des compétences, des points pour acheter de nouveaux persos…</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_81').addClass('deleted');
+			$('#comment_81 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_81 .delete').css("display", "none");
+			$('#comment_81 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_81 .delete').css("display", "none");
+		else										$('#comment_81 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_80" class="comment">
+	
+		
+			<span class="meta">Par molokov le 27 juin 2011 12:54:23</span>
+			<br/><img src="http://www.gravatar.com/avatar/a564c27780fc936c8f6f47a5095d8483?s=50&amp;r=g&amp;d=mm" alt="avatar de molokov" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Un fan de LoL ! Toi ? 
+T'as essayé les parties ranked ? J'suis arrivé à 1700, j'attend la saison 2 pour recommencer.</p>
+<p>Pareil que toi, je jouais plus trop puis LoL m'est tombé dessus. Maintenant je crée beaucoup moins de jeux vidéo, et je joue beaucoup plus.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_80').addClass('deleted');
+			$('#comment_80 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_80 .delete').css("display", "none");
+			$('#comment_80 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_80 .delete').css("display", "none");
+		else										$('#comment_80 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/43';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="moba@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#x61;&#x63;&#116;&#64;&#108;&#101;&#x73;&#102;&#x6f;&#114;&#x67;&#x65;&#115;&#46;&#x6f;&#x72;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

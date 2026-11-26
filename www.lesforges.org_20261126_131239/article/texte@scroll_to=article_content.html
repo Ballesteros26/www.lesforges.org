@@ -1,0 +1,1037 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Le texte</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Dans un certain nombre de critiques, d'articles, de posts et d'interviews que j'ai pu lire récemment, une même idée semble revenir de façon assez récurrente : le jeu vidéo doit redonner au gameplay une place dominante face à la narration et donc devenir moins « bavard ». Il y a une mouvance assez récente chez les joueurs et les game designers qui semble réticente à utiliser le texte. Le texte, d'une certaine façon, représenterait l'échec d'un gameplay noyé sous la narration (en particulier sous la forme des cinématiques-fleuves qu'on trouve dans les productions AAA).
+
+L'article Less Talk More Rock, écrit par les concepteurs de Sword &amp; Sworcery en est un exemple particulièrement intéressant (et dont je vous recommande chaudement la lecture, ne serait-ce que pour les illustrations qui l'accompagnent).
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#110;&#x74;&#x61;&#99;&#x74;&#64;&#x6c;&#101;&#115;&#102;&#x6f;&#x72;&#x67;&#101;&#x73;&#x2e;&#111;&#114;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Le texte</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 1 janvier 2013 17:43:49 | Catégories : <a href="../tag/scenario.html">Scénario</a>, <a href="../tag/univers.html">Univers</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Dans un certain nombre de critiques, d'articles, de posts et d'interviews que j'ai pu lire récemment, une même idée semble revenir de façon assez récurrente : le jeu vidéo doit redonner au gameplay une place dominante face à la narration et donc devenir moins « bavard ». Il y a une mouvance assez récente chez les joueurs et les game designers qui semble réticente à utiliser le texte. Le texte, d'une certaine façon, représenterait l'échec d'un gameplay noyé sous la narration (en particulier sous la forme des cinématiques-fleuves qu'on trouve dans les productions AAA).</p>
+<p><img alt="Sword &amp; Sworcery (Capy, Jim Guthrie &amp; Superbrothers)" src="../media/img/swordsworcery.png" /></p>
+<p>L'article <a href="http://boingboing.net/features/morerock.html">Less Talk More Rock</a>, écrit par les concepteurs de <em>Sword &amp; Sworcery</em> en est un exemple particulièrement intéressant (et dont je vous recommande chaudement la lecture, ne serait-ce que pour les illustrations qui l'accompagnent).</p>
+			</div>
+			<div id="article_content">
+				<p>L'idée développée par l'auteur est que le texte n'est pas le mode d'expression « naturel » du jeu vidéo et qu'il n'est pas le moyen le plus fort pour communiquer une idée : une image vaut mieux qu'un long discours. Et en effet, des jeux comme <em>Journey</em>, <em>Limbo</em> ou <em>Sword &amp; Sworcery</em> lui-même ont réussi à se passer du texte comme moyen de narration. Néanmoins, si l'on peut remettre en cause une génération de jeux noyée sous des dialogues bavards, il me semble que rejeter le texte comme élément de narration dans le jeu vidéo, c'est aller un peu loin.</p>
+<p>Le jeu vidéo est un médium qui a été beaucoup plus influencé par le cinéma que par la littérature, et plus particulièrement ces dernières années, où l'industrie n'a eu de cesse d'essayer d'imiter les blockbusters de l'industrie cinématographique. C'est, je pense, cette vision cinématographique du jeu vidéo qui explique partiellement la position des auteurs de l'article : le cinéma est un art où il est essentiel de montrer plutôt que de dire quand on en a la possibilité. Mais l'image ne permet pas tout et il reste un certain nombre de possibilités offertes par le texte qui restent sous-exploitées par les développeurs de jeux : ce sont ces « espaces textuels » que cet article cherche à mieux cerner.</p>
+<h1>Fonctions classiques du texte.</h1>
+<p>Pour commencer, intéressons nous un peu aux diverses fonctions que le texte permet de remplir dans un jeu.</p>
+<h2>Communiquer.</h2>
+<p>L'un des premiers intérêts du texte dans un jeu vidéo, c'est de communiquer rapidement des informations au joueur. </p>
+<p>Il peut s'agir d'une phase de didacticiel au début du jeu où vous présentez au joueur les commandes, les possibilités qui lui sont offertes ou les règles du jeu. Dans ce cas-là, on peut avoir un pavé de texte à disposition du joueur qui souhaite aller le lire ou bien un texte plus entrelacé avec les phases de jeu, avec par exemple de boîtes de dialogues qui viennent ponctuer un niveau introductif. Dans ce cas-là, le texte s'adresse directement au joueur.</p>
+<p>D'une façon moins directe, le texte peut être une occasion de glisser des informations sur l'univers du jeu à travers les dialogues des PNJ. Il peut s'agir de simples éléments de background, mais aussi de pistes pour avancer dans la quête principale ou trouver des éléments de jeu annexes. En général, ce genre de dialogue prend place sous la forme d'allusions : le PNJ ne parle pas directement au joueur, mais parle au personnage pour faire comprendre certaines choses au joueur.</p>
+<p><img alt="Final Fantasy VI (Squaresoft)" src="../media/img/finalfantasy6.png" /></p>
+<p>Pour une discussion plus avancée de la question des dialogues chez les PNJ, je vous renvoie à <a href="http://thegamedesignforum.com/features/reverse_design_ff6_5.html">cet article</a> : les auteurs se sont intéressés à de nombreux points de la conception de <em>Final Fantasy VI</em> et sont attachés en particulier à comprendre comment l'ensemble des dialogues du jeu est construit de façon à diriger le joueur sans le prendre pour un imbécile.</p>
+<h2>Caractériser les personnages.</h2>
+<p>Le texte, sous la forme du dialogue, est aussi l'occasion de présenter et de caractériser les personnages. C'est notamment un élément essentiel pour donner de la variété et de la profondeur aux différents protagonistes. </p>
+<p>D'une part, le contenu du texte est l'occasion de présenter les personnages : le protagoniste parle de son histoire, de ses aspirations, de ses doutes, de ses peurs. D'autre part, la forme même du texte permet aussi de préciser ce personnage : sa façon de parler (hésitante, assurée, neutre), son registre de langage (soutenu, familier, ordurier), ses tics verbaux (répétitions, expressions, fautes) et beaucoup d'autres d'éléments permettent de révéler au joueur le caractère du personnage qui s'exprime.</p>
+<p><img alt="Off (Mortis Ghost)" src="../media/img/off.png" /></p>
+<p>Le jeu amateur <em>Off</em> sur RPGMaker (si vous n'y avez pas joué, foncez le <a href="http://mortisghost.blogspot.fr/p/jeux-videos.html">télécharger</a>) est un exemple particulièrement réussi de caractérisation des personnages à travers les dialogues. Rien qu'en lisant une réplique, on sait immédiatement qui est le personnage qui parle : le batteur est laconique, le juge déploie une prose particulièrement raffinée, Dedan est ordurier, Vadereloha est tragique… Ces dialogues sont une des forces du jeu, au point qu'une équipe de traducteurs amateurs américains a intégralement traduit le jeu en anglais.</p>
+<p>Un exemple encore plus extrême est celui de <em>Chrono Cross</em>. Le jeu proposant au joueur de recruter 50 personnages, il était impossible de réécrire tous les dialogues en tenant compte de toutes les combinaisons possibles. Une bonne partie des dialogues est donc écrite de façon neutre, puis passée au travers d'un algorithme qui lui donne la caractérisation propre à un personnage : certains parlent entièrement en majuscules, d'autres ponctuent leurs dialogues de « Moi » et de « Toi » (en français dans le texte), d'autres encore rajoutent des accents divers sur leurs voyelles, etc. </p>
+<h2>Proposer des choix.</h2>
+<p>Le texte est aussi un moyen de présenter de façon simple des choix. Bien qu'il puisse y avoir d'autres façons de présenter un choix au joueur, le texte constitue le moyen le plus simple, le plus direct de le faire, en général sous la forme d'une liste d'alternatives. </p>
+<p>C'est aussi ce qui fait parfois aussi sa difficulté d'utilisation : comment rester subtil dans la formulation des alternatives ? Un jeu comme <em>Mass Effect</em> (tout du moins le premier opus) pâtit lourdement de la forme de ses dialogues : les alternatives sont toujours divisées selon un axe conciliant/pragmatique, l'alternative conciliante en haut, l'alternative pragmatique en bas. Si ce système favorise la clarté, il nuit aussi à la subtilité, car la présentation des alternatives trahit toujours le manichéisme des choix.</p>
+<h1>Le texte, un outil pas forcément exploité.</h1>
+<p>À côté de ces fonctions classiques et plutôt bien cernées par les développeurs, d'autres possibilités pour jouer avec le texte dans le jeu existent et sont souvent mises de côté par les créateurs.</p>
+<h2>Des espaces textuels sous-utilisés.</h2>
+<p>L'ensemble des noms d'attaques, d'armes, d'équipements, d'objets forment un ensemble qui, s'il est utilisé de façon cohérente, participe à la profondeur de l'univers du jeu. Les descriptions de ces objets sont des espaces où le scénariste peut placer des informations d'une façon intéressante : le joueur qui n'en a pas envie n'est pas obligé de les lire, le joueur qui les lit se sent plus immergé, voire récompensé par des informations plus ou moins dissimulées. Dans <em>Demon's Souls</em> et son successeur <em>Dark Souls</em>, les descriptions des différents items disponibles dans l'inventaire recèlent un nombre surprenant de micro-histoires, voire d'indications sur la façon de récupérer certains pouvoirs.</p>
+<p>Dans la série des <em>Mother</em> ou dans <em>Radical Dreamers</em> (la suite de <em>Chrono Trigger</em> et le « brouillon » de <em>Chrono Cross</em>), les combats sont racontés au moins partiellement sous la forme de phrases et non de visuels ou de chiffres. Ces phrases qui décrivent les combats sont l'occasion d'ajouter de la variété aux actions du joueur (ne serait-ce qu'en changeant la manière de raconter une simple attaque de base) voire d'élaborer des micro-histoires à l'intérieur même des combats. </p>
+<p><img alt="Mother 3 ( HAL Laboratory &amp; Brownie Brown)" src="../media/img/mother3.png" /></p>
+<p>Si <em>Radical Dreamers</em> proposent des joutes classiques où la scénarisation permet de faire la tension chez le joueur, les <em>Mother</em> jouent la carte de l'humour. Ainsi, au cours de certains combats contre de petits robots appelés Frightbots, ceux-ci se contentent de laisser leurs alliés attaquer à leur place et de raconter des histoires d'horreur (oui, vous avez bien lu) : les combats contre eux sont régulièrement émaillés de phrases comme « Le Frightbot raconte une histoire à vous glacer les sangs. » ou « Le Frightbot raconte une histoire d'horreur, mais néanmoins émouvante. ». Si sur le plan du gameplay, ces ennemis sont inutiles, ils apportent néanmoins beaucoup sur le plan de l'ambiance et de l'univers du jeu. Nombre de joueurs se souviendront par ailleurs de la fameuse phrase « You cannot grasp [SPOILER]'s attack true form ! ».</p>
+<p>Ainsi, tous ces petits bouts de texte sont en général considérés comme inutiles ou simplement basiques, mais il y a matière à travailler dessus pour produire des effets intéressants, voire une profondeur de jeu supplémentaire.</p>
+<h2>Typographie et éclatement.</h2>
+<p>La forme même du texte peut faire l'objet d'un travail. Les scénaristes et les traducteurs vont ainsi parfois jusqu'à utiliser les subtilités de la typographie pour produire des effets uniques.</p>
+<p>Dans <em>Final Fantasy X</em>, lors de la scène où Tidus est confronté à des réminiscences de son père à qui il en veut tout particulièrement, les auteurs ont joué à la fois sur l'éclatement spatial du texte (la voix de son père « résonne » partout sur l'écran de façon aléatoire) et sur le timing (les phrases apparaissent très brièvement, comme si elles étaient criées). C'est un moyen visuel très efficace pour rendre l'impression que Tidus est particulièrement oppressé par ces voix intérieures. Dans le huitième opus de la série, c'est la casse qui est mise à rude épreuve : lors du dialogue précédent le combat final contre Ultimecia, cette dernière alterne de façon chaotique majuscules et minuscules, créant ainsi une forte dissonance avec le décorum lisse et raffiné et donc une impression de malaise chez le joueur.</p>
+<p>Dans <em>Nier</em>, une phase entière du jeu se déroule sous la forme de texte. Au début, la forme en est classique, mais, au fur et à mesure, les phrases et les mots s'éclatent de plus en plus jusqu'à ce que le texte devienne incompréhensible, ce qui traduit d'une autre façon l'effondrement que décrit le texte lui-même. Les personnages vont même jusqu'à commenter la bizarrerie de cette façon de jouer. Ce jeu sur la frontière entre joueur et personnage peut devenir très intéressante. On pourrait tout à fait imaginer un personnage qui commenterait lui-même le texte qui le prononce et la façon dont celui-ci s'écrit : « Oh regarde ! Quand le vieux sage dit « Cristal », ça s'affiche en rouge, ça doit être sacrément important ! » !</p>
+<p>Dans l'exemple de Nier, l'effet obtenu est tout particulièrement caractéristique du texte et ne peut pas être reproduit par d'autres vecteurs.</p>
+<h2>Dissonances.</h2>
+<p>Le texte permet aussi de produire des effets de dissonance que le visuel ou le gameplay ne permettent pas de reproduire. Lorsque le texte est censé décrire ce qui se passe à l'écran, que se passe-t-il si celui-ci dévie et entre en contradiction avec ce qui est visible à l'écran ? Un effet de malaise, de dissonance.</p>
+<p>Imaginons qu'à l'écran, un personnage doublé parle avec des sous-titres. Au début, le texte n'est que la transcription de ce que dit le personnage. Mais au bout d'un moment, le joueur réalise que certains mots cruciaux diffèrent entre le texte écrit et le texte dit. Il en résulterait une forte impression de malaise, le joueur penserait sans doute « Est-ce que j'ai vraiment bien lu/entendu ? ». On peut aussi imaginer un joueur entrant dans une pièce, au milieu de laquelle se trouve un objet quelconque, mettons un cube rouge. Imaginons maintenant que le texte qui décrit les actions du joueur affiche : « Vous entrez dans une pièce au milieu de laquelle trône un cube <em>bleu</em>. ». De la même façon, vous générez une impression de malaise.</p>
+<p><img alt="Nier (cavia)" src="../media/img/nier.png" /></p>
+<p>Si ce genre d'effet, qui joue sur la limite entre diégétique et extradiégétique (le fameux « Fourth Wall »), n'a pas forcément sa place dans un certain nombre de jeux, il peut permettre des effets très intéressants pour des jeux d'horreur ou qui traitent de la thématique de la folie.</p>
+<p><em>Nier</em> en propose un exemple frappant dès son ouverture : après que le joueur a lancé une nouvelle partie, les mots « Eté 2049 » s'affichent à l'écran. Juste après qu'ils ont disparu, le jeu s'ouvre sur une ville couverte de neige. La première réaction qui vient à l'esprit, c'est quelque chose du genre « Quelque chose ne va pas. ». En cinq secondes, une impression très forte est faite sur le joueur et conditionne tout le ressenti qu'il aura face au prologue du jeu.</p>
+<p>Dans une moindre mesure, <em>Off</em> joue aussi de cette dissonance pour réaffirmer la bizarrerie de son univers. Au fur et à mesure que le joueur avance dans sa quête, il découvre chacun des quatre éléments (que je vous laisse le soin de découvrir :p). À chaque fois,  la même petite phrase vient conclure la description de l'élément : « C'est le premier des quatre éléments. ».</p>
+<h2>Références et méta-texte.</h2>
+<p>Sur plusieurs jeux d'une même série ou d'un même auteur, les noms et les descriptifs peuvent se répondre, de façon à créer une attente chez le joueur. Dans des séries longues comme les <em>Final Fantasy</em>, les <em>Dragon Quest</em> ou un peu différemment, les jeux Tri-Ace, le fait qu'un certain nombre de noms reviennent de façon récurrente (comme Shiva, Ifrit, Dharma, Zenithia, Gabriel Celesti, etc.) donne l'impression que ces noms font référence à quelque chose, à une <em>mythologie</em>. Cette utilisation du texte crée une forte impression de profondeur et de cohérence de l'univers, car elle est transversale. C'est un peu le même mécanisme qu'utilisaient les <em>Final Fantasy</em> au départ en faisant référence à la mythologie ancienne : à force d'être employés, ces mots sont devenus partie d'une mythologie interne à la série. </p>
+<p><img alt="Vagrant Story (Squaresoft)" src="../media/img/vagrantstory.png" /></p>
+<p>Cette utilisation de la répétition peut aussi être utilisée pour donner au joueur des informations cachées. Les jeux de Yasumi Matsuno, par exemple, n'ont pas de lien apparent mais se déroulent dans le même univers, Ivalice. Si les descriptions de chaque jeu sont efficaces et bien écrites, un certain nombre d'entre elles ne révèlent leur véritable sens qu'une fois que le joueur a fait plusieurs des jeux de la série. Par exemple, la description de certains objets de <em>Vagrant Story</em> éclaire le dénouement ambigu de <em>Final Fantasy Tactics</em>. C'est aussi un moyen de récompenser les joueurs qui s'y intéressent sans pénaliser les autres. C'est une façon particulièrement efficace de créer la sensation de « secret » qui a été encensé dans <em>Dark Souls</em> et dont beaucoup ont <a href="http://tevisthompson.com/saving-zelda/">déploré l'absence</a> dans les derniers <em>Zelda</em>.</p>
+<p>La répétition de noms et de répliques à travers différents jeux permet de créer un « méta-texte » qui donne de la profondeur, de la densité à l'univers et aide à construire ce qu'on pourrait appeler une véritable mythologie.</p>
+<h1>Mise en forme.</h1>
+<p>Pour finir, j'aimerais revenir sur quelques aspects plus triviaux de l'écriture et sur la façon de la mettre en forme. Si certains points semblent évidents, un rappel ne me semble cependant pas inutile quand on voit les ratés qu'il y a pu avoir sur les jeux de certaines très grosses boîtes (oui oui, je pense à toi, Square Enix). Je mettrai cependant l'aspect graphique de côté pour cette discussion, celui-ci sera sans doute traité dans un prochain article :p</p>
+<h2>Orthographe et syntaxe</h2>
+<p>Il faut impérativement que l'orthographe, la syntaxe et la concordance des temps soient irréprochables. Ceci semblera évident à beaucoup de monde, mais nombre de projets amateurs ont une orthographe déplorable et certains projets de grands studios aussi ! Un des exemples qui m'a le plus marqué à titre personnel est la traduction française abominable d'<em>Okami</em> (qui est pourtant une merveille par ailleurs) : outre la vulgarité crasse de certains noms, les traducteurs ont semblé très attachés à ne pas conjuguer correctement les verbes. Même si le français n'est pas la langue la plus simple à maîtriser, dites vous que c'est un critère qui permet d'écarter rapidement des jeux bâclés pour les joueurs et les testeurs. Si nécessaire, faîtes vous relire, si possible par plusieurs personnes.</p>
+<p><img alt="Okami (Clover)" src="../media/img/okami.png" /></p>
+<h2>Rythme d'affichage.</h2>
+<p>C'est un problème qu'on retrouve souvent dans les RPG, tout particulièrement ceux qui ont été réalisés par des amateurs. S'il peut être intéressant de jouer sur le timing avec lequel le texte s'affiche (pour marquer des pauses par exemple), il est insupportable pour un joueur de ne pas pouvoir passer rapidement les dialogues, tout particulièrement s'il les a déjà lus. On se souviendra bien évidemment du fameux hibou d'<em>Ocarina of Time</em> qui, non content de parler très lentement et d'empêcher le joueur de passer à la suite, prend un malin plaisir à tout répéter (pour la petite histoire, c'est parce que les développeurs ont oublié de changer le rythme d'affichage, adéquat pour des caractères japonais, lors de la localisation en Occident :p).</p>
+<p>Des jeux comme les <em>Persona</em> récents et les <em>Ace Attorney</em> ont très bien négocié ce problème : dans <em>Persona</em>, en maintenant une touche appuyé on peut faire défiler rapidement les dialogues, mais cette même touche ne permet pas de valider quand le jeu propose un choix, ce qui évite de cliquer par mégarde. Dans les <em>Ace Attorney</em>, il est possible de faire défiler les dialogues en accéléré la deuxième fois qu'on les lit, ce qui permet de retourner directement au passage qui vous intéresse.</p>
+<h2>Traduction.</h2>
+<p>Bien que ce problème ne se posera sans doute qu'à assez peu de créateurs amateurs, la traduction est un point qui est souvent négligé, même par les plus gros studios. Je mentionnais plus haut la localisation lamentable d'<em>Okami</em>, mais on pourrait tout aussi bien parler de la traduction de <em>Final Fantasy VII</em>, dont les dialogues sont truffés de fautes d'orthographe, de contresens, voire dépassent des boîtes de dialogue ou celle de <em>Dissidia</em> où l'anglais et le français se mélangent allègrement (oui oui, Square Enix, c'est encore à toi que je parle).</p>
+<p>Une mauvaise traduction peut très facilement rompre l'immersion du joueur. Par ailleurs, pour des scénarios un peu élaborés, par exemple dans un RPG qui ferait intervenir un peu de politique, il est particulièrement important de faire attention à la façon dont les marques de politesse passent d'une langue à l'autre. Le passage du « you » anglais au « tu/vous » français est particulièrement maltraité en général. <em>Saga Frontier II</em>, malgré une excellente histoire, en est une triste victime : quand un soldat de seconde classe s'adresse à un roi, un général ou à un ministre, il ne le tutoie pas et même un traducteur amateur devrait le savoir.</p>
+<p>A l'inverse, une traduction réussie peut apporter beaucoup. Pour s'en convaincre, il suffit de jouer aux opus récents de la saga <em>Persona</em> où les traducteurs ont fait attention de préserver les marques de politesse japonaises, ce qui leur permet non seulement d'avoir des dialogues fidèles à l'original, mais aussi de préserver l'ambiance <em>anime</em> très particulière de ces jeux.</p>
+<h2>Minimalité.</h2>
+<p>Dans l'ensemble, soyez paresseux et faîtes en toujours le minimum. Essayez de vous en tenir à l'essentiel pour ne pas lasser le joueur, mais aussi parce qu'écrire des dialogues, c'est beaucoup de boulot (et vous en aurez sans doute assez par ailleurs). En général, si une scène ou une ligne ne vous paraît pas absolument essentielle, si vous n'arrivez pas à exprimer la fonction qu'elle sert dans votre jeu, autant l'enlever.</p>
+<p><img alt="The Legend of Zelda : A Link to the Past (Nintendo)" src="../media/img/alttp.png" /></p>
+<p>J'ai été assez frappé en rejouant à certains opus de la série des <em>Zelda</em> récemment et notamment, j'ai été assez attristé de voir une dégradation dans l'utilisation des dialogues.</p>
+<p>Prenons l'exemple de l'opus Super Nintendo, <em>A Link to the Past</em> : lorsque Link récupère un objet (mettons la baguette de glace), la description qui s'affiche à l'écran est d'une concision remarquable.</p>
+<p>« Vous avez trouvé la Baguette de Glace ! » : on vous donne le nom de l'objet.
+« Utilisez là pour lancer des bourrasques glacées et geler vos ennemis. » : on vous explique à quoi elle sert.
+« Attention à votre compteur de Magie ! » : on vous donne la règle d'utilisation.</p>
+<p>En trois lignes de texte (qu'il est de plus possible de passer rapidement si on en a envie), le jeu introduit l'objet de façon complète et efficace. C'est une utilisation minimale (et admirable) du texte dans un jeu.</p>
+<p>Regardons maintenant du côté de son successeur, <em>Ocarina of Time</em> : lorsque Link récupère un objet quelconque, non seulement le joueur doit se farcir une description longue, qu'il ne peut pas passer, mais surtout, le jeu lui rappelle comment équiper ledit objet avec les boutons C. Pourtant, c'est la même règle pour tous les objets et le joueur l'a déjà vu quinze fois en une heure de jeu, sans compter les Kokiris qui le lui rappellent au début de l'aventure. Rapidement, le joueur se retrouve à relire régulièrement un laïus qu'il connaît déjà par cœur, qui ne lui apporte aucune information nouvelle et qui parasite son rythme de jeu (pour rappel, chaque fois que vous ramassez un objet dans un flacon, soit assez souvent, vous devez vous retaper ce même laïus !).</p>
+<p>Entre les deux jeux, il y a un véritable fossé en matière d'utilisation du texte (et qui malheureusement, va dans le mauvais sens). Il me semble qu'en tous les cas, il vaut toujours mieux essayer de « dégraisser » le texte autant que possible. Et surtout, ne prenez pas les joueurs pour des abrutis !</p>
+<h1>Conclusion</h1>
+<p>Malgré une mouvance dans le jeu vidéo qui cherche à s'affranchir du texte, celui-ci reste un outil très puissant et souvent mal exploité. Même s'il n'est pas évident d'écrire des dialogues subtils, il est toujours possible d'assurer une qualité minimum en réfléchissant bien aux fonctions qu'on prête au texte et en demandant l'aide d'autres personnes pour des relectures (il peut s'agir de personnes n'ayant pas un intérêt particulier pour le jeu vidéo, un avis extérieur est toujours le bienvenu !). Assurer une orthographe, une syntaxe et un respect minimal des registres de langue est à la portée de tout le monde et en particulier des indépendants et des amateurs. Si c'est un sujet sur lequel même l'industrie pêche, c'est aussi l'occasion de montrer que sur certains points, le jeu indépendant peut faire aussi bien voire mieux que le jeu pro ! :P</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/texte&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_353" class="comment">
+	
+		<span class="meta">Par un anonyme le 21 mai 2013 18:20:28</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Quand j'ai essayé Sword and Sworcery, j'ai joué 10 minutes, puis décontenancé par le manque de texte et la confusion ambiante qui en découlait, j'ai arrêté. Décidément, on n'arrêtera jamais le "concept" :P</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_353').addClass('deleted');
+			$('#comment_353 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_353 .delete').css("display", "none");
+			$('#comment_353 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_353 .delete').css("display", "none");
+		else										$('#comment_353 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_324" class="comment">
+	
+		
+			<span class="meta">Par Sylvain le 4 janvier 2013 10:06:35</span>
+			<br/><img src="http://www.gravatar.com/avatar/d8ce5e1e6bfdb7c044ff258130bc8887?s=50&amp;r=g&amp;d=mm" alt="avatar de Sylvain" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Merci pour cet excellent article ! </p>
+<p>Par contre en terme de police, de couleur, de taille, vous auriez des conseils ? Celles à éviter ? Celles agréables à l'oeil pour le joueur ? J'ai toujours du mal là dessus. Si un texte est indispensable / bien écrit / etc mais avec un visuel qui fait saigner les yeux, je doute que le joueur soit conquis :)</p>
+<p>Des conseils ou bonnes pratiques là dessus ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_324').addClass('deleted');
+			$('#comment_324 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_324 .delete').css("display", "none");
+			$('#comment_324 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_324 .delete').css("display", "none");
+		else										$('#comment_324 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_323" class="comment">
+	
+		<span class="meta">Par un anonyme le 3 janvier 2013 13:26:24</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Très bon article, comme d'habitude.
+Je suis un peu déçu de ne pas avoir lu de parenthèse sur les jeux où le texte a constitué le seul élément visuel et de gameplay : <em>Colossal Cave Adventure</em> par exemple.
+De même je pense que l'exemple de <em>Alan Wake</em> aurait aussi constitué un très bon support pour ce thème.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_323').addClass('deleted');
+			$('#comment_323 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_323 .delete').css("display", "none");
+			$('#comment_323 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_323 .delete').css("display", "none");
+		else										$('#comment_323 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_322" class="comment">
+	
+		
+			<span class="meta">Par Pierre Guyot le 2 janvier 2013 19:54:12</span>
+			<br/><img src="http://www.gravatar.com/avatar/ef4498aa9ef6758a91ec542f9b93aa36?s=50&amp;r=g&amp;d=mm" alt="avatar de Pierre Guyot" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Pour <em>Okami</em>, pas d'erreur (j'en avais déjà discuté avec plusieurs personnes).</p>
+<p>Les traductions ne sont pas homogènes (par exemple, lors des rencontres avec les esprits, on a droit alternativement « Amaterasu, notre mère à tous », ce qui est correct, et « Amaterasu, mère à nous tous », ce qui est ridicule), il y a des faux-sens régulièrement (Cave de la Lune pour traduire Cave of  the Moon alors qu'il s'agit d'une grotte ou d'une caverne), il y a des fautes d'orthographe et de conjugaison (par exemple, le futur se retrouve régulièrement affublé du « s » du conditionnel). </p>
+<p>Très concrètement, si vous regardez l'introduction du jeu, on a droit à un magnifique « il vaincu » au lieu de « il vainquit » après environ 10 lignes de dialogues (pour info, j'ai joué à la version PS2, je ne sais pas ce qu'il en est de la version Wii).</p>
+<p>Par ailleurs, précisons que cela ne change rien au fait que ce jeu est fabuleux :p</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_322').addClass('deleted');
+			$('#comment_322 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_322 .delete').css("display", "none");
+			$('#comment_322 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_322 .delete').css("display", "none");
+		else										$('#comment_322 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_321" class="comment">
+	
+		<span class="meta">Par un anonyme le 2 janvier 2013 19:23:48</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Je suis étonné par la description que vous faites de la traduction française d'Okami, êtes-vous certain de ne pas confondre avec la traduction anglaise qui elle modifie effectivement les noms propres (les occidentaux sont surement trop bêtes pour se souvenir de noms japonais de plus de deux syllabes) ?
+Les seules étrangetés dont j'ai le souvenir sont des références un peu décalées comme la chanson de la coupe du monde entonnée par Isshun… J'ai joué à la version PS2 mais je serais assez étonné que les autres versions n'utilisent pas la même traduction, m'éclaireriez-vous ? @_@</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_321').addClass('deleted');
+			$('#comment_321 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_321 .delete').css("display", "none");
+			$('#comment_321 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_321 .delete').css("display", "none");
+		else										$('#comment_321 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_320" class="comment">
+	
+		<span class="meta">Par un anonyme le 1 janvier 2013 21:48:18</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>J'ai toujours eu l'impression, en jouant à A Link to the Past, que les descriptions étaient faites par une entité hors du jeu mais intérieur à la fois, entre le niveau du joueur et celui de Link. Du coup par rapport à Ocarina of Time (dont je n'ai que la description) ça ne casse pas l'immersion, c'est le narrateur de Pokémon qui me parle et pas le guide de jeu (ou alors pour ALTTP c'est inscrit sur / à coté de l'objet, ce qui est aussi bien). La description simple et rapide est aussi plus sympathique que le teste d'Ocarina of Time (tout ALTTP me laisse cette impression d'entité bienveillante au dessus tout du long).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_320').addClass('deleted');
+			$('#comment_320 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_320 .delete').css("display", "none");
+			$('#comment_320 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_320 .delete').css("display", "none");
+		else										$('#comment_320 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_319" class="comment">
+	
+		<span class="meta">Par un anonyme le 1 janvier 2013 21:30:07</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Pour les fenêtres de dialogues, je peux aussi conseiller l'excellent <a href="http://www.cavestory.org/">cave story</a> qui en fait une très bonne utilisation.
+Très bon article,  juste un petit accent en trop sur "dîtes vous que c'est un critère qui permet d'écarter rapidement des jeux bâclés pour les joueurs et les testeurs" qui contredit un peu le reste du texte :p </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_319').addClass('deleted');
+			$('#comment_319 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_319 .delete').css("display", "none");
+			$('#comment_319 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_319 .delete').css("display", "none");
+		else										$('#comment_319 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/80';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="texte@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="texte@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#x74;&#x61;&#99;&#116;&#x40;&#x6c;&#x65;&#x73;&#x66;&#x6f;&#x72;&#103;&#101;&#115;&#x2e;&#111;&#114;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

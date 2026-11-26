@@ -1,0 +1,842 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | La narration libre</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	
+En 1995, j'ai donné une conférence à la Computer Game Developer's Conference au cours de laquelle j'ai identifié plusieurs des problèmes de la narration interactive. J'ai repris ces idées quelques années plus tard dans l'un des articles du Designer's Notebook intitulé « Trois problèmes de la narration interactive » et j'y ai suggéré qu'au lieu d'essayer de raconter des histoires, nous devrions essayer de construire des univers dans lesquels des histoires peuvent se produire — des univers où les joueurs puissent vivre des histoires de leur propre création. L'industrie ne disposait d'aucun terme spécifique pour ceci à l'époque, et j'ai proposé le nom de sandbox storytelling.
+Dans le cadre d'un jeu bac à sable, l'idée est de présenter au joueur un grand monde ouvert truffé d'opportunités pour réaliser des interactions. Le joueur n'est pas obligé de suivre une intrigue linéaire comme un rail, mais peut interagir avec le monde dans l'ordre dans lequel il souhaite. Si le monde est correctement construit, une expérience narrative devrait naitre spontanément.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#x74;&#x61;&#x63;&#x74;&#x40;&#108;&#x65;&#115;&#x66;&#x6f;&#114;&#x67;&#x65;&#115;&#x2e;&#111;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>La narration libre</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 8 août 2011 20:00:00 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/scenario.html">Scénario</a>, <a href="../tag/univers.html">Univers</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/Shin.html">Pierre Guyot</a>.
+						<br/>L'<a href="http://www.designersnotebook.com/Columns/106_Sandbox_Storytelling/106_sandbox_storytelling.htm" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (août 2010).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p><img alt="Deus Ex 3 (Eidos Montreal)" src="../media/img/deusex3b.jpg" /></p>
+<p>En 1995, j'ai donné une conférence à la <em>Computer Game Developer's Conference</em> au cours de laquelle j'ai identifié plusieurs des problèmes de la narration interactive. J'ai repris ces idées quelques années plus tard dans l'un des articles du <em>Designer's Notebook</em> intitulé « <a href="narration-interactive.html">Trois problèmes de la narration interactive</a> » et j'y ai suggéré qu'au lieu d'essayer de raconter des histoires, nous devrions essayer de construire des univers dans lesquels des histoires peuvent se produire — des univers où les joueurs puissent vivre des histoires de leur propre création. L'industrie ne disposait d'aucun terme spécifique pour ceci à l'époque, et j'ai proposé le nom de <em>sandbox storytelling</em>.</p>
+<p>Dans le cadre d'un jeu bac à sable, l'idée est de présenter au joueur un grand monde ouvert truffé d'opportunités pour réaliser des interactions. Le joueur n'est pas obligé de suivre une intrigue linéaire comme un rail, mais peut interagir avec le monde dans l'ordre dans lequel il souhaite. Si le monde est correctement construit, une expérience narrative devrait naitre spontanément.</p>
+			</div>
+			<div id="article_content">
+				<p>Tout le monde ne pense pas que la narration libre est une bonne idée. L'année qui a suivi cette conférence, Bob Bates en a donné une au <em>CGDC 1996</em> intitulée « La responsabilité de l'auteur ». L'un des choses qui y a été dite était que « [Les environnements ouverts] sont peut-être amusants à explorer, mais ils ne remplissent les fonctions d'une histoire. Il n'y a ni début, ni milieu, ni fin. Il n'y a pas de <em>pathos</em>, ni de drames humains, ni de vérité supérieure qui se révélerait derrière les combats menés par le joueur ».</p>
+<p>Bob proposait d'utiliser à la place une série linéaire d'environnements ouverts — ce que nous appelons maintenant une intrigue multilinéaire ou <em>foldback story</em>, dans laquelle le joueur est contraint de passer par certains points obligatoires de l'intrigue.</p>
+<p>Néanmoins, Bob suppose ici que dans un environnement ouvert, le joueur aurait à aller chercher l'intrigue et que tout ce qu'il obtiendrait, c'est une série d'événements déconnectés les uns des autres. Je pense que Bob imaginait que les différents événements étaient liés à des lieux spécifiques et que si le joueur pouvait les déclencher dans n'importe quel ordre, ils ne pourraient pas être reliés entre eux. Je ne suis pas surpris qu'il ait fait cette hypothèse, surtout à l'époque. Nous sommes totalement habitués à définir les intrigues en fonction des lieux physiques où elles se déroulent — à tel point que c'est notre approche par défaut et que tout autre système nous semble étrange. Depuis <em>Zork</em> à <em>Fallout 3</em> en passant par <em>Half-Life</em>, le mouvement à travers l'espace est synonyme de mouvement à travers l'histoire. Mais pour réaliser une narration dans un jeu bac à sable, nous devons nous débarrasser de cette notion et plutôt réfléchir à comment créer une intrigue qui se déploie — et maintient sa continuité — par d'autres moyens.</p>
+<p>Les <em>Grand Theft Auto</em> sont célèbres pour leur environnement bac à sable, mais ils ne mettent pas en place une véritable narration libre. A la place, vous avez droit à l'habituelle chaîne linéaire de mission : vous en complétez une, puis une autre, et ainsi de suite. Il se trouve par ailleurs que les missions se déroulent dans un monde ouvert très vaste et que vous pouvez abandonner la mission et vous mettre à vous balader en semant le chaos autour de vous (ou en conduisant un taxi) si vous en avez envie. D'une certaine façon, c'est ce que Bob désignait comme une série linéaire d'environnement ouvert, sauf qu'au lieu d'une séries d'environnements différents, les <em>Grand Theft Auto</em> vous donnent juste de nouvelles missions dans un nouvel environnement — bien que vous débloquiez de nouvelles zones de temps à autres.</p>
+<p><img alt="Grand Theft Auto IV (Rockstar Games)" src="../media/img/sandbox1.jpg" /></p>
+<p><em>Les Sims</em> offrent d'une certaine façon une narration libre. Le jeu vous propose un monde avec beaucoup d'éléments et de personnages avec des personnalités variées. En tant que joueur, vous pouvez les faire interagir et créer une (sorte de) fil narratif. Dans la mesure où les Sims ne parlent pas anglais, la majeure partie de la narration se fait dans votre tête, mais ce n'est pas grave. Vous pouvez vous faire votre propre film, le doubler et l'uploader sur Youtube.</p>
+<p>Mais <em>Les Sims</em> utilisent une modèle d'interaction dans lequel vous n'avez pas d'avatar particulier au sein de l'univers du jeu. Pour élaborer une histoire à partir des <em>Sims</em>, vous devez manipuler plus d'un personnage, plutôt que d'incarner un unique personnage. Ceci fait de vous un créateur plus qu'un participant. Ce n'est pas la façon dont la plupart des jeux narratifs fonctionnent, et je pense que ce n'est pas ce que la plupart des gens attendent d'un jeu narratif.</p>
+<p>Les jeux de rôle PC offrent au joueur un vaste univers ouvert, mais plutôt que fournir une unique intrigue, cet univers est plein de quêtes — fondamentalement, des sous-intrigues déconnectées les unes des autres. J'aime les RPG occidentaux, mais il ne m'apportent pas le même ressenti qu'un jeu avec une histoire à intrigue unique. Ils fonctionnent plus comme les douze travaux d'Hercule ou comme n'importe quel ancien héros qui apparaît dans plusieurs histoires déconnectées les unes des autres.</p>
+<p>Alors, comment faire pour réaliser un jeu bac à sable où le joueur puisse à la fois se balader comme bon lui semble et faire partie intégrante de l'histoire ? Tout d'abord, comme je l'ai dit, nous devons abandonner l'idée que le joueur ne pourra faire l'expérience de la narration qu'à travers l'exploration. Dans le même temps, le voyage doit aussi être une composante à part entière de l'histoire, car sinon voyager serait juste pénible. Habituellement, les films se débarrassent de ce genre de passages — quelqu'un sort de sa maison le matin, monte dans sa voiture et au plan suivant, il est train de marcher jusqu'à son lieu de travail — à moins que le film ne se focalise spécifiquement sur ce voyage, comme un film de course-poursuite.</p>
+<p>Dans les jeux d'aventure ou les RPG classiques, tous les événements de l'intrigue dépendent du joueur : ils ne se produisent pas tant que le joueur ne vient pas les trouver et les déclenche. En utilisant des environnements confinés, on peut s'assurer que le joueur les trouve dans le bon ordre. Le problème d'une intrigue composée uniquement d'événements dépendants du joueur, comme je l'expliquai lors de la conférence, est qu'elle donne l'impression d'être mécanique : le monde entier se contente d'attendre que le joueur fasse quelque chose.</p>
+<p>Si vous rendez l'intrigue complètement indépendante du joueur — c'est-à-dire qu'elle continue d'avancer quoi que le joueur fasse, même s'il ne fait rien du tout — alors le joueur a tendance à perdre beaucoup. Il n'est pas là où il le devait, ou bien il n'a pas fait ce qu'il fallait au moment où le climax se produit.</p>
+<p>Le problème dans la narration d'un un jeu bac à sable, c'est de construire l'intrigue avec une combinaison d'événements dépendants du joueur et indépendants du joueur. Faîtes avancer l'intrigue en permanence quoi que fasse le joueur pour que l'univers ne semble pas statique, mais pas trop vite pour que le joueur ne se retrouve pas trop en retard et perde (à moins que l'intrigue ne se focalise sur une bombe à retardement). Mettez la pression de façon raisonnable sur le joueur pour qu'il agisse, mais réduisez la pression si le joueur est sur la bonne voie. Dans un jeu bac à sable, ce n'est pas l'exploration qui fait avancer l'intrigue — alors à la place, utilisez une combinaison de l'écoulement du temps (c'est la pression sur le joueur) et d'activités du joueur : rencontrer des gens, résoudre des énigmes, prendre des décisions, surmonter des obstacles. Changer le rythme de temps à autre. Parfois, James Bond explore à son rythme (il est maître de la situation) et parfois, il tente désespérément de fuir les méchants (ce sont eux les maîtres de la situation). Puis il réussit à s'enfuir ou alors il les abat et redevient maître de la situation. Bien sûr, tous les jeux vidéo n'ont pas à mettre une forte pression sur le joueur. Vous pouvez laisser le joueur avoir une expérience très calme si vous voulez.</p>
+<p>L'une des question que posent certains designers, c'est : « Et si le joueur se contente de se balader et ne rentre jamais dans l'histoire ? ». La réponse est : cela dépend du type d'expérience que vous voulez qu'il ait. Cela peut être très bien de le laisser se balader tranquillement. J'aimerais beaucoup explorer les paysages des différents <em>Far Cry</em> sans me faire tirer dessus à tout bout de champ. D'un autre côté, si vous voulez que le joueur rentre dans l'histoire, alors vous devez vous demander pourquoi il se contente de se balader. S'il se ballade parce qu'il est perdu ou parce qu'il ne sait pas où aller, c'est de votre faute. Le designer Chris Bateman a écrit un chapitre intitulé « Maintenir le joueur sur la bonne route » dans le livre <em>Game Writing: Narrative Skills for Videogames</em> qu'il a publié. Dans ce chapitre, il parle des techniques « d'entonnoir » : il s'agit d'outils variés pour aider le joueur à trouver « l'épine dorsale » du jeu. Dans un monde ouvert, vous ne pouvez pas utiliser l'environnement spatial pour forcer le joueur à retourner vers l'histoire, mais vous pouvez laisser de nombreux signes et indices ça et là. Voyez le livre en question pour plus d'information.</p>
+<p><img alt="Far Cry 2 (Ubisoft Montreal)" src="../media/img/sandbox2.jpg" /></p>
+<p>D'un autre côté, si le joueur se contente de batifoler et que vous voulez qu'il retourne à l'histoire, vous devez faire lui mettre la pression en utilisant des événements indépendants du joueur et de sa localisation dans le jeu. Les maîtres du jeu des jeux de rôle papier connaissent bien ce problème. Si le joueur ne vient pas à l'intrigue, c'est l'intrigue qui ira à eux (NDT : on appelle ça le <em>railroading</em>). S'ils ont été engagés pour se débarrasser d'un parrain local et qu'au lieu de ça, ils se contentent de rester ici et de boire des bières, le dit parrain peut très bien avoir vent de leurs projets et envoyer une bande d'assassins à la taverne pour se débarrasser de l'expédition avant même qu'elle ait commencé. Lors du combat qui s'ensuit, la taverne prend feu. Même si l'équipe survit, elle ne pourra plus continuer à boire ici.</p>
+<p>Une autre question que les gens posent souvent : « Dans un monde ouvert, comment empêcher que le joueur voit trop dès le début du jeu des éléments qu'il n'est supposé voir que plus tard ? » Cette question est enraciné dans l'hypothèse qu'une histoire a besoin d'être physiquement présente dès le début au sein d'un monde statique — comme il est en généralement dans les jeux d'aventure et les RPG occidentaux, où l'histoire correspond aux lieux. Mais nous ne faisons pas correspondre l'histoire aux lieux, mais au rythme et à l'activité du joueur. La réponse est simple : ne faîtes pas apparaître un objet dans l'univers du jeu tant qu'il n'y en a pas besoin. Dans les <em>Grand Theft Auto</em>, on ne peut pas détruire une certaine voiture à la mission 1 parce qu'elle sera nécessaire à la mission 3, tout simplement parce qu'elle n'est pas dans l'univers du jeu à la mission 1. Vous ne voulez évidemment pas faire surgir des voitures de nulle part juste devant les yeux du joueur, mais vous pouvez faire une sortir une voiture d'un garage fermé auparavant. Le joueur ne peut pas être à plus de deux endroits à la fois, vous pouvez donc faire plein de choses dans son dos.</p>
+<p>Alors, quel genre d'histoire pouvons nous raconter dans des mondes ouverts que le joueur peut explorer dans n'importe quel ordre et dans lesquels le voyage est une facette à part entière de l'expérience ? Et bien, en voici une série : </p>
+<ul>
+<li><strong>Trouver le trésor enfoui.</strong> C'est un type de jeu où l'urgence est faible, puisque le trésor n'ira nulle part. Le joueur se ballade dans la ville pour récupérer et assembler des indices. Il n'est pas nécessaire de trouver les indices dans le bon ordre : il peut s'agir des parties disséminées d'une carte au trésor.</li>
+<li><strong>Trouver le trésor enfoui avant que quelqu'un d'autre ne le fasse.</strong> Même histoire, mais il y a déjà plus de pression sur le joueur. Vous pouvez donner à cette histoire la forme d'une simple course ou vous pouvez faire monter et retomber la pression en faisant en sorte que l'équipe ennemie essaye de saboter les tentatives du joueur. S'ils y arrivent, le joueur subit encore plus de pression ; si c'est le joueur qui joue les saboteurs, la pression redescend (faites néanmoins attention à ne pas créer une trop forte rétroaction positive).</li>
+<li><strong>Trouver une bombe à retardement.</strong> Évidemment, c'est là qu'il y a le plus de pression et c'est assez difficile à développer dans un univers ouvert, mais pas impossible. Une façon de donner un peu plus de contrôle au joueur sur le rythme de l'aventure est d'accorder à son avatar une super-vitesse en quantité limitée, comme Superman, Flash ou Neo dans <em>Matrix</em>. Le joueur peut utiliser ce pouvoir pour essayer de gagner un peu temps.</li>
+<li><strong>Trouver des gens plutôt que des objets.</strong> Bien sûr, c'est tout de suite beaucoup plus compliqué vu que les gens se déplacent. Le joueur peut incarner un chasseur de primes à la poursuite de fugitifs, un détective à la recherche d'une personne disparue, un membre des services de contre-espionnage qui traque un agent double, etc.</li>
+<li><strong>Une enquête de police.</strong> On en revient à la vieille série des <em>Police Quest</em> de Sierra On-Line. Afin de monter un dossier en béton, la police passe beaucoup de temps à se déplacer pour rendre visite aux témoins, questionner les proches des suspects et rechercher des preuves matérielles. Certaines preuves peuvent être trouvées dans n'importe quel ordre, alors que d'autres n'apparaissent qu'en suivant une certaine succession d'indices. Vous aurez peut-être besoin de restreindre la taille de votre ville, car bien que le voyage fasse partie intégrante du métier, ce n'est pas follement palpitant. Vous pourriez épicer ça en laissant les policiers gérer la délinquance et repérer les témoins ou les suspects sur leur lieu de travail. Afin de baisser la pression, laissez le joueur mener son enquête alors qu'un suspect est déjà arrêté. Pour faire remonter la pression, laissez le s'échapper.</li>
+<li><strong>Infiltrer une large zone depuis n'importe quel endroit.</strong> Trop de shooters se contentent de placer le joueur sur des rails. C'est moins coûteux à développer, mais c'est aussi moins intéressant pour le joueur. Dans l'actuelle guerre en Afghanistan, les alliés de l'OTAN contrôlent l'espace aérien et disposent d'hélicoptères, de façon à pouvoir déposer les troupes n'importe où hors des zones de combat et à les laisser se déplacer comme ils l'entendent. La planification des missions implique un examen minutieux de photographies aériennes afin de choisir une tactique d'approche.</li>
+<li><strong>S'échapper d'un territoire hostile.</strong> Lors de mes ateliers de game design, je donne souvent comme défi à l'une des équipes de faire un jeu sur l'<em>Underground Railroad</em>, le réseau souterrain utilisé par les abolitionnistes avant la guerre de Sécession pour aider les esclaves à s'échapper. Certaines de ces routes sont en réalité longues de plusieurs centaines de kilomètres et donc inadaptées pour un jeu, mais vous avez saisi l'idée.</li>
+<li><strong>La contrebande</strong>, ce n'est pas juste s'infiltrer ou s'échapper, mais faire les deux — et le plus souvent avec un chargement peu orthodoxe. Durant les longues, longues guerres entre l'Angleterre et la France aux dix-huitième et dix-neuvième siècles, le commerce entre les deux nations était techniquement interrompu. Néanmoins, on trouvait encore une grande quantité d'eau-de-vie en Grande-Bretagne. Les littoraux des deux nations offraient de nombreuses entrées où un bateau de guerre ne pouvait pas rentrer, et les contrebandiers les connaissaient très bien.</li>
+<li>Comme la police, les <strong>reporters</strong> voyagent beaucoup, souvent sous la pression d'une échéance, afin de récolter des informations. Sans oublier les <strong>espions</strong>.</li>
+<li>Les <strong>chasseurs</strong> ont une tendance naturelle à explorer l'univers. La chasse ne permet pas d'ordinaire de construire une véritable histoire à moins que quelque chose d'inhabituel ne se produise, mais parfois cela arrive. Je me rappelle de deux histoires que j'avais lues quand j'étais petit où de riches (et méchants) chasseurs nourrissaient une passion secrète pour la chasse à l'homme — plus précisément, les guides qu'ils engageaient.</li>
+<li><strong>Démanteler un réseau criminel</strong>. Les tentacules du professeur Moriarty sont partout. Quelque soit l'endroit de Londres où se rend Sherlock Holmes, il y découvre systématiquement des traces des agissements sinistres de Moriarty. Mais où se trouvent les véritables bras droits de Moriarty, où se trouve son quartier général et où se trouve-t-il lui-même ?</li>
+<li><strong>Résistance</strong>. Une autre idée de jeu que je propose dans mes ateliers consiste à concevoir un jeu sur un mouvement de résistance dans un pays occupé. Ils ne sont pas autorisés à faire de shooter : le jeu doit consister à saboter et à pourrir la vie de l'occupant sans se faire prendre. Ceci aussi peut être développé sur un grand espace de jeu, où les soldats de l'armée d'occupation sont constamment à la recherches des combattants de la résistance et maintiennent le joueur sous pression.</li>
+</ul>
+<p>Il y a plein d'autres sortes de métiers ou de loisirs qui nécessitent de voyager : pompiers, électriciens, chasseurs de tornades, critiques de restaurants… Tous ne conviennent pas nécessairement à un jeu vidéo, mais il suffit juste d'un peu d'imagination. Je suis sûr que vous pouvez en trouver d'autres.</p>
+<p>Pour donner une dimension narrative à une expérience ludique, vous devez éviter de faire intervenir des événements sans lien entre eux de façon trop aléatoire ou trop répétitive (à ce sujet, voir mon article « Innovations dans la dramaturgie des jeux et des histoires » pour plus d'information). Si vous lisez un thriller qui se passe pendant la Deuxième Guerre mondiale, il ne s'agit pas juste de voir des légions de Nazis tous identiques se faire massacrer : chaque situation doit être unique. Ceci signifie que votre bac à sable doit contenir des éléments très variés, et non pas la simple répétition d'un même événement. Il s'agit probablement du plus fort argument en défaveur d'une narration libre : c'est extrêmement coûteux à développer et nécessite beaucoup de travail. Mais à la différence des jeux linéaires, si vous concevez votre univers avec suffisamment de soin, le jeu pourra être refait un grand nombre de fois. Différents parcours dans l'univers du jeu offriront des expériences de jeu différentes. Il n'est pas nécessaire qu'ils proposent les mêmes objectifs ou la même fin.</p>
+<p>Pendant des centaines d'années, la plupart des habitants de Rome ont soutenu l'une des quatre équipes qui participaient aux courses de char. Les conducteurs portaient des vêtements de couleur de façon à ce que les gens puisse les distinguer et les différentes équipes étaient appelées les Rouges, les Blancs, les Bleus et les Verts. Supposons que notre joueur se retrouve tout à coup dans Rome. Il peut rejoindre n'importe lequel des groupes de supporters, de la même façon que dans n'importe quel sport d'équipe aujourd'hui, mais à une différence près : les différents groupes provoquaient souvent des émeutes et se livraient à des combats sanglants dans les rues. Ce qui signifie en pratique qu'un PNJ qui appartient au groupe de supporters que le joueur choisit devient un allié, mais que si le joueur recommence une partie et choisit un autre groupe, ce même PNJ devient alors un ennemi. Pas besoin d'écrire deux histoires ou de concevoir deux personnages : le drame, le conflit émergent naturellement de la situation.</p>
+<p>Pour faire court, je pense qu'une narration libre est à la fois possible et amusante. Vous aurez besoin de remplir autant que possible votre bac à sable de façon à proposer autant d'opportunités dramatiques que possible (de nombreux jeux de type bac à sable semblent vides et stériles) et vous devrez décider quelle pression faire peser sur le joueur et comment. Ceci peut faire intervenir des éléments de l'intrigue qui dépendent du temps mais pas du joueur, afin d'obliger celui-ci à aller de l'avant. L'environnement en lui-même est aussi crucial : ce doit être un lieu où le joueur apprécie d'être, parce qu'il va y passer beaucoup de temps.</p>
+<p>Il y a un film noir célèbre intitulé <em>La Cité sans voiles</em> qui a été par la suite adapté en série télévisée. A la fin du film et de chaque épisode de la série, on entendait le narrateur dire : « Il y a huit millions d'histoires dans la Cité sans voiles. Ceci en était une. ». Essayez de concevoir votre propre Cité sans voiles et de voir combien d'histoires vous pouvez y créer.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/narration-libre&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_123" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 23 août 2011 11:21:09</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Aah, c'est un peu décevant. Il parle de quelque chose qui semble très important pour raconter une histoire dans un monde libre — la réintroduction du temps, qui permet des conséquences non mécaniques à différents termes et évite de figer l'univers (un gros défaut de Dragon Age Origin par exemple, qui flinguait l’implication du joueur) — mais il ne développe pas précisément cet aspect.</p>
+<p>Les idées de situation qu'il propose sont intéressantes et efficaces, mais elles ont été exploitées ces dernières années.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_123').addClass('deleted');
+			$('#comment_123 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_123 .delete').css("display", "none");
+			$('#comment_123 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_123 .delete').css("display", "none");
+		else										$('#comment_123 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/49';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="narration-libre@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#116;&#97;&#x63;&#x74;&#x40;&#x6c;&#101;&#x73;&#x66;&#x6f;&#114;&#103;&#x65;&#x73;&#46;&#111;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

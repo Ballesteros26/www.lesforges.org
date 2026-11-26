@@ -1,0 +1,987 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Craft, alchimie et autres créations d&#39;objets</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	En tant que grande joueuse et conceptrice de jeux, j'essaye régulièrement d'analyser en profondeur les mécanismes de certains jeux. En ce moment, je joue surtout à deux jeux : Dragon Age : Origins et Guild Wars. Ces deux RPG, bien que très différents dans leur concept et leurs conceptions, possèdent cependant un mécanisme commun, que j'ai retrouvé dans de nombreuses autres productions, y compris amateurs : le crafting ou alchimie. 
+
+Le terme anglais (crafting) a l'avantage d'être plus complet, car il parle de toutes les formes roleplay de transformation ou de création d'objets. Il n'y a pas d'équivalent direct en français : on pourrait parler de « forge », « herboristerie » ou encore « alchimie ». Mais ces termes ajoutent une nuance plus précise qui n'existe pas dans le terme « crafting ». N'étant pas fan de l'anglais dans mes jeux, j'ai décidé d'adopter le terme « alchimie », à défaut de mieux. Il apporte un coté fantastique.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#97;&#x63;&#x74;&#x40;&#x6c;&#101;&#115;&#102;&#111;&#114;&#103;&#x65;&#x73;&#x2e;&#x6f;&#114;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Craft, alchimie et autres créations d&#39;objets</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/lothindil.html">Lothindil</a> | le 12 février 2013 02:14:53 | Catégories : <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/level-design.html">Level Design</a>
+				</div>
+				
+					
+						<div class="disclaimer">
+							Cet article est une re-publication.
+							<br/>L'<a href="http://www.jeux-lothi.com/post/37189451025/lalchimie-ou-la-creation-dobjets" target="_blank">article original</a> est écrit par Lothindil publié par Jeux de Lothi (décembre 2012).
+						</div>
+					
+				
+			
+			<div id="article_headline">
+				<p>En tant que grande joueuse et conceptrice de jeux, j'essaye régulièrement d'analyser en profondeur les mécanismes de certains jeux. En ce moment, je joue surtout à deux jeux : <em>Dragon Age : Origins</em> et <em>Guild Wars</em>. Ces deux RPG, bien que très différents dans leur concept et leurs conceptions, possèdent cependant un mécanisme commun, que j'ai retrouvé dans de nombreuses autres productions, y compris amateurs : le <em>crafting</em> ou alchimie. </p>
+<p><img alt="table of the Alchemist by yanzi-5" src="../media/img/craft-intro1.png" /></p>
+<p>Le terme anglais (<em>crafting</em>) a l'avantage d'être plus complet, car il parle de toutes les formes <em>roleplay</em> de transformation ou de création d'objets. Il n'y a pas d'équivalent direct en français : on pourrait parler de « forge », « herboristerie » ou encore « alchimie ». Mais ces termes ajoutent une nuance plus précise qui n'existe pas dans le terme « crafting ». N'étant pas fan de l'anglais dans mes jeux, j'ai décidé d'adopter le terme « alchimie », à défaut de mieux. Il apporte un coté fantastique.</p>
+			</div>
+			<div id="article_content">
+				<h1>Quelques définitions.</h1>
+<p>L’alchimie, ou mélange d’ingrédients, se retrouve dans pas mal de jeux vidéos et de MMORPG. Citons en vrac <em>Guild Wars</em> (1 et 2), <em>Aion</em>, <em>World of Warcraft</em>, <em>Oblivion</em>, <em>Morrowind</em> et autres <em>Minecraft</em> (pour ne citer que quelques-uns des plus connus).</p>
+<p>Le principe est simple : prendre un ou plusieurs objets (ressources) pour en faire un ou plusieurs autres objets. Les noms varient beaucoup, dépendant partiellement des contraintes : forge, métiers, professions (ce qui entraine des confusions avec les classes; <em>profession</em> en anglais), etc.</p>
+<p>Maintenant, quand on est game designer et qu’on travaille sur l’alchimie, un certain nombre de questions se pose. On retrouve d’ailleurs ces choix à travers les différents jeux que j'ai cités plus haut.</p>
+<p>Dans la suite, pour simplifier, nous nommerons « ingrédients » les produits de base nécessaires à la réalisation d'une formule et « produits » les produits issues de l’alchimie. Notons qu’un produit peut être un ingrédient s’il est à son tour utilisé dans une recette. Nous parlerons alors de « ressources secondaires ».</p>
+<h2>« Quoi ? » : La valeur ajoutée.</h2>
+<p>C’est sans doute la question essentielle à se poser AVANT toutes les autres questions, car les choix que vous ferez plus tard dépendent partiellement de la réponse que vous apportez à cette question.</p>
+<p>Le « quoi ? » pose la question de l'intérêt qu’aura le joueur à pratiquer l’alchimie. Quelle sera la valeur ajoutée du produit final par rapport aux produits de base ? L’équation est cependant plus complexe que « cout en pièces d’or du produit &gt; cout en pièces d’or des ingrédients ». Il faut en effet mettre dans la balance toutes les contraintes nécessaires pour faire l’alchimie (recettes, rareté des ingrédients, possibilités de pratiquer, possibilité d’échec, ingrédients qui sont des ressources secondaires, etc.) ainsi que la rareté du produit fini (un produit fini impossible à trouver autrement dans le jeu aura une valeur ajoutée bien plus importante qu’un objet qu'on peut acheter dans une boutique en ayant dix niveaux de plus).</p>
+<p>Il est nécessaire donc de répondre aux questions suivantes avant de passer à la suite :</p>
+<ul>
+<li>Quels types d’objets seront réalisables avec l’alchimie (consommables, équipements, ressources à haute valeur ajoutée, etc.) ?</li>
+<li>Les produits de l’alchimie sont-ils des produits uniques/rares/achetables avec de l’argent réel ?</li>
+</ul>
+<p>Bref, <strong>quelle est la valeur du produit ?</strong></p>
+<p>Plus la valeur d'un produit est grande, plus les contraintes pour le fabriquer peuvent être fortes. Notons que dans un jeu multijoueur, les contraintes rajoutent encore de la valeur ajoutée à un produit accessible uniquement via l’alchimie. En effet, plus ces contraintes sont fortes, plus il sera rare et donc plus sa valeur sera forte.</p>
+<p>Prenons deux exemples fort différents : dans <em>Aion</em>, les métiers permettent à haut niveau de créer des objets à très forte valeur ajoutée (équipements rares supérieurs à ce qu’on trouve normalement dans le jeu), mais les contraintes sont très nombreuses et très lourdes. </p>
+<p>A l’inverse, dans <em>Oblivion</em>, l’alchimie permet de créer uniquement des potions à valeur ajoutée réduite (consommables dont on trouve des exemplaires en magasin ou sur des monstres), mais les contraintes sont assez rares et assez faibles.</p>
+<h1>Les différentes contraintes.</h1>
+<h2>Où ?</h2>
+<p>Où le joueur va-t-il pouvoir faire l’alchimie ?  Il existe globalement deux réponses : « quelque part » ou « n’importe où ».</p>
+<p>Dans le premier cas, le PJ va devoir trouver l’endroit où il peut faire son alchimie. Généralement, cela se fait dans des ateliers dans les villes principales. C’est le cas de jeux comme <em>Aion</em> ou <em>Guild Wars 2</em>.</p>
+<p><img alt="Bijouterie sur Guild Wars 2" src="../media/img/craft-GW2.jpg" /></p>
+<p>Dans le second cas, le joueur va pouvoir faire ça au cours de ses séquences d'exploration. C’est le cas dans <em>Oblivion</em>. </p>
+<p>Notons que la contrainte de lieu devient d’autant plus importante que le sac est limité en taille et que les explorations du PJ le conduisent loin de la ville. Ainsi, forcer un joueur à retourner en ville pour faire de l’alchimie tout en limitant son sac à 40 objets (identiques ou différents) a toutes les chances de le dégouter et de le pousser à l’abandon très rapidement. A l’inverse, si l’exploration se passe toujours dans un rayon court autour de la ville (ou mieux s’il y a moyen de revenir en ville quand on veut très facilement) revient quasiment à permettre au joueur de pratiquer n’importe où. </p>
+<h2>L’origine des ingrédients.</h2>
+<p>Globalement, la contrainte de l’origine des ingrédients se base sur plusieurs paramètres :</p>
+<ul>
+<li><strong>Leur accessibilité</strong> : le problème ici est de savoir où l'on peut obtenir l’objet. Si c’est « partout », ça sera forcément moins contraignant que « dans la dernière caverne du donjon de Raslabeurk qui est à une semaine de marche du dernier village ».</li>
+<li><strong>Leur valeur monétaire</strong> : ceci a été évoqué plus haut. Forcément, plus un objet vaut cher, plus il sera considéré comme « contraignant ».</li>
+<li><strong>La quantité disponible</strong> : un objet disponible en illimité chez un PNJ (fût-il au bout du monde) sera forcément moins contraignant que celui qui n’existe qu’en dix exemplaires dans tout le jeu (fût-il dans le sac à dos dès le départ).</li>
+<li><strong>La facilité d’obtention</strong> : l’herbe que l’on peut arracher à mains nues avec un taux de réussite de 100 % sera forcément moins contraignante à obtenir que l'herbe magique qu’on doit récolter à la serpe d’or avec 2 % de taux de réussite. Dans le même genre, la fourrure miteuse qu’on a 75 % de chances d'attraper sur un lapin de niveau 1 sera nettement moins contraignante que l’écaille de dragon qu’on ramasse une fois sur cinq sur le cadavre d'un dragon de niveau 150.</li>
+</ul>
+<h2>Le matériel.</h2>
+<p>Il est ici question d’un matériel fixe, par exemple une pièce d’équipement ou un objet qui doit rester dans l’inventaire pour pratiquer l’alchimie. La question de ce matériel va souvent de pair avec la question « où » posée plus haut. Il est en effet rare qu’on impose à la fois un endroit où aller et un équipement à porter. Dans <em>Oblivion</em> par exemple, on impose pour faire de l’alchimie d’avoir au minimum un pilon.</p>
+<p>Les contraintes porteront pour l’essentiel sur :</p>
+<ul>
+<li><strong>La difficulté d'obtenir</strong> l’objet en question : plus l’objet sera difficile à obtenir, que ça soit pour des raisons financières ou parce qu’il est caché dans un coin, plus la contrainte sera forte.</li>
+<li><strong>L’usure du matériel</strong> : un matériel qui s’use sera plus contraignant qu’un inusable et d’autant plus contraignant que son usure est rapide. Cette contrainte peut au besoin être baissée en autorisant le joueur à avoir plusieurs exemplaires de l’objet ou à le réparer.</li>
+<li><strong>L’encombrement du matériel</strong> : dans un jeu où le moindre emplacement dans l'inventaire compte (je pense à un sac fait comme dans <em>Diablo</em>), transporter le matériel sera en soi une contrainte importante. Plus la place disponible est grande et moins l’objet est encombrant, plus la contrainte est faible. Dans <em>Oblivion</em>, l’objet de base prend très peu de place.</li>
+<li><strong>L’adaptation du matériel au produit</strong> : nous y reviendrons dans la partie suivante.</li>
+</ul>
+<h2>Différents « types » d’alchimie : les métiers.</h2>
+<p>Voilà une contrainte plus subtile qui, mal utilisée, peut s’avérer totalement inutile ou, au contraire, trop efficace au point de rendre l’alchimie inutilisable.</p>
+<p>L'idée est de diviser l’alchimie en différentes activités, en fonction des produits généralement. La plupart des jeux qui l’appliquent utilisent un principe de métiers en distinguant la forge, la couture, la cuisine, etc.</p>
+<p>L’erreur de base, qui rend la contrainte complètement inutile, est de permettre aux joueurs d'exercer tous les métiers. En effet, s’ils peuvent tout faire, pourquoi ne pas leur permettre directement d’avoir accès à tout, sous un seul nom ? Ou utiliser ces distinctions pour améliorer l'ergonomie sans influencer le gameplay ?</p>
+<p>L’erreur inverse, qui peut rendre l’alchimie inutilisable, est de restreindre drastiquement l’utilisation d’un métier à certains joueurs. Pour peu que le jeu compte peu d’actifs (chose qui sur la toile arrive bien plus souvent qu’on ne le croit), il peut très bien arriver que certains métiers soient inexistants. Ce qui rend leurs produits très rares… Imaginez maintenant que le métier en question produise entre autres des ressources secondaires pour d’autres métiers. Même avec de nombreux actifs, si le métier possède des limitations trop fortes (typiquement les métiers payables en argent réel ou demandant d'avoir un très haut niveau), le problème peut se produire. J’ai croisé cette erreur dans de nombreux jeux amateurs et semi-amateurs qui comptaient sur des milliers d’actifs…</p>
+<p>Cette contrainte est souvent renforcée par deux autres : la présence d’un matériel propre au métier (dans <em>Allods</em> par exemple, il est nécessaire d’acheter une ceinture correspondant à son métier) et le niveau (sur lequel nous allons enchainer).</p>
+<h2>Les niveaux de métiers.</h2>
+<p>Le principe est simple : comme pour les niveaux du personnage, à chaque fois que vous réussissez une action, vous gagnez de l'XP. Au bout d’un certain seuil d’expérience, vous gagnez un niveau. Il existe d'autre systèmes sans niveau, où les points servent à être dépensés pour acheter des recettes. Les contraintes sont similaires aux deux systèmes.</p>
+<p>C'est évident : plus il faut d’expérience, plus la contrainte est forte. </p>
+<p>C’est au game designer pour l’essentiel de bien calibrer la difficulté. Pour gagner de l'expérience, il faut des ingrédients ; pour réunir des ingrédients, généralement, il faut farmer. Et tout le monde n’aime pas forcément farmer durant des heures et des heures, sans autre but que de monter son niveau de métier. Il est donc essentiel de bien doser la difficulté de gagner des niveaux (de manière à ce que les objets haut niveau restent proportionnellement rares), la quantité de production nécessaire pour atteindre ce niveau (si un PJ doit produire 50 fois la même armure pour atteindre le niveau nécessaire à l’armure suivante, il sera tenté de vendre — et donc de mettre sur le marché — les 49 armures inutiles, rendant l’objet nettement moins rare et attrayant) et la puissance de l’objet acquis au niveau supérieur.</p>
+<p>Il existe plusieurs façons de gérer cette montée de niveau. Certains poussent au coopératif (le joueur qui va monter son métier ne pourra pour ainsi dire pas le faire seul et donnera l’équipement excédentaire à ceux l’ayant aidé). Cette solution est attrayante à première vue, mais méfiez-vous, la réalité est souvent autre et les « récolteurs » sont souvent lésés et finissent dégoutés par les métiers. De surcroit, le problème du nombre d'actifs se pose à nouveau. S'il faut 50 armures pour grimper de niveau, et qu'on veut éviter l'arrivée des armures sur le marché, c'est donc qu'il faut 49 récolteurs derrière 1 créateur. A moins d'avoir un jeu à plusieurs milliers de joueurs, c'est pratiquement intenable, que ce soit pour le fabricant qui va galérer à trouver ses ressources ou pour les récolteurs qui parfois devront attendre les 48 précédentes armures pour avoir la leur…</p>
+<p>D’autres jeux permettent de monter de niveau sans produire des objets qui iront sur le marché. C'est le cas d'<em>Aion</em> par exemple, qui propose un système de commande. Le PNJ demande un certain nombre d’objets, fournit une partie des ressources et rémunère le joueur en expérience de métier.</p>
+<h2>Le taux de réussite.</h2>
+<p>Dans certains jeux, nous trouvons un taux de réussite des produits, taux qui peut dépendre ou non du niveau du métiers. Nous ne nous étendrons pas sur cette contrainte car elle est vraiment simple à comprendre : plus le taux de réussite est fort, plus la contrainte est faible. Un taux de 100% rend cette contrainte nulle.</p>
+<p>Sachez juste que cette contrainte est démultipliée pour peu que la majorité des recettes produisant des objets à hautes valeurs ajoutées demandent des ressources secondaires. En effet, les taux d’échecs vont s’additionner et ainsi augmenter sensiblement la consommation de ressources et donc faire grimper la contrainte.</p>
+<p>Un petit calcul simple pour vous donner une idée du chiffrage. On raisonne ici en moyenne, et n'oublions pas qu'avec un peu de malchance, certains joueurs vont galérer beaucoup plus que ça.</p>
+<p><img alt="Un petit schéma pour y voir plus clair." src="../media/img/maths.jpg" /></p>
+<blockquote>
+<p>Soit une recette permettant de fabriquer « l'épée de la mort qui tue » (taux de réussite à 50%), qui demande 4 lingots d'alliage mythril-adamantium et deux gemmes rouges. L'alliage de mythril-adamantium est issue d'une recette (taux de réussite à 50%) réclamant 2 minerais de mythril (taux de réussite à la récolte à 20%) et 1 minerai d'adamantium (taux de réussite à 25%). La gemme rouge est issue d'un drop à 5% sur un monstre.</p>
+<p>Pour 1 gemme, il faudra en moyenne tuer 20 monstres.</p>
+<p>Pour 1 minerai de mythril, il faudra en moyenne récolter 5 fois.
+Pour 1 minerai d'adamantium, il faudra en moyenne récolter 4 fois.
+Pour 1 lingot d'alliage, il faut en moyenne 4 minerais de mythril et 2 minerais d'adamantium (on rate une fois sur deux), soit 20 récoltes de mythril et 8 récoltes d'adamantium.</p>
+<p>Pour l'épée enfin, on rate 1 fois sur 2, il nous faut donc 8 lingots d'alliage et 4 gemmes, soit 160 récoltes de mythril, 64 récoltes d'adamantium et 80 monstres.</p>
+</blockquote>
+<p>Vous voyez à quel point tous les taux de réussite (ou plutôt tous les taux d'échecs) se cumulent très rapidement. Sur des jeux où les actions sont limitées par jour, la contrainte se fait encore plus sentir (idem sur les jeux où il faut par exemple attendre une heure pour forger ledit « équipement de la mort qui tue »).</p>
+<h2>La quantité d’ingrédients.</h2>
+<p>C’est une des contraintes les plus importantes et, malheureusement, l'une des plus souvent négligées.</p>
+<p>En elle-même, la contrainte est simple : plus il faut d’ingrédients (que ce soit en diversité ou en quantité), plus la contrainte est forte.</p>
+<p>Cependant, elle est rarement bien évaluée. Plus de la moitié des jeux auxquels j’ai joué avec un système d’alchimie proposaient un système décourageant et démotivant, simplement à cause de la quantité.</p>
+<p>L’exemple-type est celui du jeu où pour faire une potion, on vous demande 10 champignons, 5 eaux et 13 fioles vides. A partir du moment où le PJ risque de se prendre des dégâts sur le temps de la récolte des 10 champignons et des 5 eaux, les potions devront rapporter plus de PV que la quantité de dégâts maximale lors de la récolte. C’est idiot, mais c’est rare, très rare. À tel point que les level designers créent des quêtes nécessitant les produits de la recette pour justifier l’existence même de cette recette (c’est une erreur classique que j’ai moi-même faite).</p>
+<p>Dans le même genre, il y a les armures qui demandent 500 ressources de 4 types (pour un total de 5000 à 6000 monstres). « Oui, mais il suffit de coopérer ». Ne rêvez pas, mesdames et messieurs les game designers. A part quelques guildes super-organisées, ça ne se passe jamais comme ça et ça dégoute généralement le créateur des objets — qui passe finalement tout son temps à farmer pour tenter de monter son métier pour obtenir l’armure du niveau haut dessus — et les récolteurs (qui n’obtiennent que rarement leur armure).</p>
+<p>Dans les jeux à un seul joueur, c'est encore pire, vu que la coopération n'existe pas. Monter son métier va prendre du temps, beaucoup de temps, souvent trop de temps pour être intéressant. À l’inverse, il y a les quantités trop faibles cumulées à des ingrédients très faciles d’accès et très disponibles, qui créent une contrainte nulle.</p>
+<h2>Les recettes.</h2>
+<p>C’est la dernière grande contrainte : la façon dont on crée le produit.</p>
+<p>Il existe globalement trois grandes écoles :</p>
+<ul>
+<li>Les ingrédients sont associés en fonction d’une caractéristique commune (dans <em>Oblivion</em>, les ingrédients doivent être liés par un même effet).</li>
+<li>Les ingrédients doivent entrer dans une recette (connue ou non), leur ordre est généralement sans importance.</li>
+<li>Les ingrédients doivent entrer dans une matrice, leur ordre a une importance et détermine la nature de l'objet (c’est le système de <em>Minecraft</em>).</li>
+</ul>
+<p>Bien sûr, chaque école a ses propres contraintes.</p>
+<p>Dans le premier système, la contrainte dépendra essentiellement de la rareté de l’effet associé à l’ingrédient. Plus l’ingrédient peut être associé à d'autres ingrédients, moins la contrainte est forte.</p>
+<p>Dans le deuxième système, tout dépend de la façon d’obtenir une recette. Si elles sont données, la contrainte est réduite ; s’il faut les obtenir au bout de longues quêtes, la contrainte sera plus forte ; s’il faut la deviner, la contrainte peut devenir bloquante si rien n’est fait pour aider le joueur (indiquer le nombre de recettes faisables, le nombres d’ingrédients, etc.).</p>
+<p>À titre d'exemple, le système d’alchimie de <em>Heroes’ Chronicles</em> tenait de l’impossible quand j’y ai joué (il y a quelques années déjà, le système a peut-être changé depuis). Trente plantes, cinq emplacements maximum (il existait des recettes à 2, 3, 4 et 5 ingrédients), possibilité de devoir utiliser plusieurs fois la même plante, aucune aide. Les ingrédients étaient perdus en cas d’échec. Pour vous donner une idée, ça fait quand même quelques 25 137 900 (30<sup>2</sup>+30<sup>3</sup>+30<sup>4</sup>+30<sup>5</sup>) combinaisons possibles. Là-dessus, il devait y avoir 1000 ou 2000 combinaisons gagnantes. Autant dire que le système pouvait éventuellement intéresser les hardcore gamers, mais dégoutait très rapidement tous les autres qui se hâtaient de fouiller le net à la recherche de la solution…</p>
+<p>Le troisième système est très proche du deuxième. Il s’agit en réalité d’un système dérivé où la recette a l’avantage d’être visuelle, ce qui constitue une aide en soi, mais complexifie le problème en augmentant la quantité d’ingrédients possibles.</p>
+<h1>Conclusion.</h1>
+<p>Encore une fois en matière de game design et de level design, la création d’objets n’est jamais qu’une question d’équilibre.</p>
+<p>Cet équilibre joue en réalité sur deux variables :</p>
+<ul>
+<li><strong>Le produit</strong> : où l’équilibre se fera entre l'« inutile » (objet — trop — courant, accessible plus facilement par d'autres moyens, etc. ) et le « cheaté » (objet nettement plus puissant que tout ce qu’on peut obtenir par d'autres moyens, objet surpassant les objets achetés avec de l’argent réel, etc.).</li>
+<li><strong>Les contraintes de production</strong> : où l’équilibre se fera entre le « trop simple/trop rapide » (contraintes quasiment nulles) et le « trop complexe/trop aléatoire/trop long » (contraintes trop fortes). </li>
+</ul>
+<p>Et enfin, l’équilibre d’interaction entre ces deux variables, la comparaison entre le produit et les contraintes qui ont permis de le réaliser (toujours l’histoire de la potion de soin coutant plus de PV qu’elle n’en rapporte).</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/crafting&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_346" class="comment">
+	
+		
+			<span class="meta">Par Anost le 29 avril 2013 13:52:27</span>
+			<br/><img src="http://www.gravatar.com/avatar/a93a344f42fdd121aa1bb00d7788ee25?s=50&amp;r=g&amp;d=mm" alt="avatar de Anost" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Salutations !</p>
+<p>Tout d'abord, belle écriture.
+Ensuite, cet article rejoint vraiment ma manière de penser ! J'ai récemment ouvert un blog sur le game design, et je m'atèle à faire des analyses de systèmes etc. afin de comprendre, et faire comprendre les intérêts d'un jeu à l'autre.</p>
+<p>Pour en revenir au sujet, le "crafting" dans un jeu est souvent utilisé comme une sorte d'objectif secondaire, rallongeant ainsi la durée de vie d'un jeu. De plus, ce système (que l'on retrouve généralement dans les jeux online) amène les PJs à investir économiquement dans leurs métiers, mais aussi à pouvoir s'enrichir. Le fait que les PJs puissent posséder les mêmes métiers que leurs compagnons fait intervenir la notion de compétitivité, et les joueurs se retrouvent ainsi à jouer des heures et des heures, dans le seul but de faire mieux que son voisin ! :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_346').addClass('deleted');
+			$('#comment_346 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_346 .delete').css("display", "none");
+			$('#comment_346 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_346 .delete').css("display", "none");
+		else										$('#comment_346 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_335" class="comment">
+	
+		
+			<span class="meta">Par Kalys le 26 février 2013 12:01:57</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Kalys" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Bonjour !</p>
+<p>Un article intéressant, comme d'habitude ; même pour moi qui ne suis pas du tout dans le game design, je trouve toujours matière à réflexion sur ce site !</p>
+<p>Une petite remarque cependant : "crafting" se traduit tout simplement par… "artisanat". Je ne crois pas que la notion d'herboristerie ait quoi que ce soit à voir avec ce terme :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_335').addClass('deleted');
+			$('#comment_335 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_335 .delete').css("display", "none");
+			$('#comment_335 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_335 .delete').css("display", "none");
+		else										$('#comment_335 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_334" class="comment">
+	
+		<span class="meta">Par un anonyme le 12 février 2013 22:59:43</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Encore un bon article pour orienter les games designers débutants (et pourquoi pas professionnels), merci beaucoup !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_334').addClass('deleted');
+			$('#comment_334 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_334 .delete').css("display", "none");
+			$('#comment_334 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_334 .delete').css("display", "none");
+		else										$('#comment_334 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_332" class="comment">
+	
+		<span class="meta">Par un anonyme le 12 février 2013 07:51:05</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>J'aime beaucoup ce genre d'article ! Super ! 
+Merci a vous !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_332').addClass('deleted');
+			$('#comment_332 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_332 .delete').css("display", "none");
+			$('#comment_332 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_332 .delete').css("display", "none");
+		else										$('#comment_332 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/83';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="crafting@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#111;&#x6e;&#116;&#97;&#x63;&#x74;&#x40;&#x6c;&#x65;&#115;&#x66;&#x6f;&#x72;&#103;&#x65;&#115;&#46;&#111;&#x72;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

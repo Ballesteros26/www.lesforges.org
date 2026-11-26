@@ -1,0 +1,882 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Il est temps de faire revenir les jeux d&#39;aventure</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	
+S'il y a bien une chose dont on n'entend plus beaucoup parler, c'est la « narration interactive ». À la Game Developers' Conference, il y avait beaucoup de tables rondes consacrées à ce sujet, et elles continuaient autour d'un verre au bar. C'était l'époque où les jeux d'aventure étaient rois. L'époque où LucasArts et Sierra On-line étaient au sommet de leur forme, les jeux d'aventure étaient les plus beaux et dominaient le reste du marché. Ils étaient amusants, effrayants, mystérieux et fascinants. Les jeux d'aventure présentaient des défis et exploitaient des domaines que les autres genres ne touchaient pas.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#110;&#116;&#97;&#99;&#116;&#x40;&#108;&#101;&#x73;&#102;&#111;&#114;&#103;&#x65;&#115;&#46;&#111;&#114;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Il est temps de faire revenir les jeux d&#39;aventure</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/jet25.html">Lyonsbanner</a> | le 6 novembre 2011 19:00:00 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>, <a href="../tag/scenario.html">Scénario</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/jet25.html">Lyonsbanner</a>.
+						<br/>L'<a href="http://www.designersnotebook.com/Columns/025_Adventure_Games/025_adventure_games.htm" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (novembre 1999).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p><img alt="Sarah Kerrigan et Jim Raynor dans StarCraft" src="../media/img/SarahKerriganJimRaynor_SC2_Art1.jpg" /></p>
+<p>S'il y a bien une chose dont on n'entend plus beaucoup parler, c'est la « narration interactive ». À la <em>Game Developers' Conference</em>, il y avait beaucoup de tables rondes consacrées à ce sujet, et elles continuaient autour d'un verre au bar. C'était l'époque où les jeux d'aventure étaient rois. L'époque où <em>LucasArts</em> et <em>Sierra On-line</em> étaient au sommet de leur forme, les jeux d'aventure étaient les plus beaux et dominaient le reste du marché. Ils étaient amusants, effrayants, mystérieux et fascinants. Les jeux d'aventure présentaient des défis et exploitaient des domaines que les autres genres ne touchaient pas.</p>
+			</div>
+			<div id="article_content">
+				<p>À cette époque, au début des années 90, les jeux de guerre étaient moribonds – c'était de petits jeux au tour par tour sur des grilles hexagonales qui se vendaient entre 5000 et 10000 exemplaires. Les jeux à la première personne étaient presque inexistants ; nous n'avions pas la technologie requise. Du côté de l'action, les side-scrollers faisaient la loi. <em>Flight Simulators</em> était un monde rudimentaire et très cubique. Les jeux d'aventure étaient très en avance sur les autres genres par leur richesse, leur profondeur, leurs personnages et leurs qualités artistiques, et cela se voyait dans les budgets du développement et du marketing. Beaucoup de gens travaillaient dessus et d'autres rêvaient d'en faire autant.</p>
+<p>Les jeux d'aventure ont depuis sombré dans l'oubli, mis de côté pour être remplacé par des jeux de tirs en 3D et des jeux de stratégie en temps réel. De nos jours, le terme de "jeu d'aventure" lui-même est un peu devenu un abus de langage. C'est une contraction de « jeu à la Adventure », terme qui fait référence au tout premier jeu d'aventure, parfois appelé <em>Colossal Cave</em>, mais plus souvent connu sous le nom de <em>Adventure</em>. Pour s'offrir une vraie peur bleu ou avoir le cœur au bord des lèvres comme on l'attend dans une aventure, il est difficile de faire plus efficace que les jeux modernes en 3D comme <em>Half-Life</em> ou <em>Thief : The Dark Project</em>, surtout quand on y joue seul tard la nuit. Le terme « jeu d'aventure » désigne aujourd'hui un jeu avec des personnages, des énigmes et une intrigue qui se déroule, et généralement sans moments de stress intense.</p>
+<p><img alt="Adventure, Une histoire interactive" src="../media/img/Adventure.PNG" /></p>
+<p>Les cartes graphiques accélératrices 3D ont beaucoup influencé le déclin des jeux d'aventure. Les moteurs 3D permettent une grande liberté de mouvement, des perspectives illimitées, et par dessus tout, de la vitesse. L'accélération 3D est l'une des meilleures choses qui ne soit jamais arrivé à l'industrie du jeu vidéo, mais dans la hâte de faire des jeux toujours plus rapides, nous avons sacrifié la richesse visuelle dans nos décors. A quoi ça sert d'avoir un environnement de toute beauté, si c'est pour courir dans tous les sens en ne faisant attention qu'aux tirs ennemis ?</p>
+<p>L'autre élément qui a éjecté les traditionnels jeux d'aventure hors des feux de la rampe, ce sont les jeux en ligne. Quand je suis entré pour la première fois dans l'industrie du jeu vidéo, la plupart des développeurs ignoraient l'existence d'Internet, et les jeux en ligne étaient une niche minuscule occupés par des sociétés telles que <em>CompuServe</em> et <em>GEnie</em>. Les éditeurs ne prenaient même pas la peine de s'y intéresser, et encore moins de le développer. Aujourd'hui, les jeux en ligne sont à la mode, et très peu de jeux sont produits sans mode multijoueur. Certains jeux, comme <em>Quake</em> et ses successeurs, sont principalement conçus pour le mode multijoueur et le mode solo est un peu la cinquième roue du carrosse.</p>
+<p>Il y a une vieille blague qui dit qu'il y a deux catégories de personnes dans le monde, ceux qui divisent les personnes en deux catégories, et ceux qui ne le font pas. Dans l'ensemble, je fais parti de la deuxième – les généralisations sont responsables de nombreux problèmes dans ce monde. Cependant, je crois qu'il y a deux sortes de joueur, ceux qui aiment jouer à des jeux seuls, et ceux qui aiment jouer contre d'autres personnes.</p>
+<p>Les jeux multijoueur, malgré leur popularité, ne sont pas fait pour tout le monde. Pour une raison simple, il leur faut (tada !) d'autres personnes, et ça veut dire que vous devez trouver le temps de pouvoir jouer ensemble. Si vous n'avez pas beaucoup de temps libre et préférez jouer par petites séances, vous pouvez vous permettre de quitter un jeu sans frustrer un autre joueur quelconque. Vous pourriez évidemment jouer à des jeux rapides comme le poker et le black-jack en ligne, mais si vous préférez jouer à des jeux longs sur de courtes périodes, vous avez besoin d'un grand jeu solo.</p>
+<p>Une autre raison pour laquelle certaines personnes préfèrent jouer à des jeux seuls est une question de tempérament. Je joue à des jeux pour m'amuser, et je voudrais que les gens avec qui je joue s'amusent aussi. Je ne suis pas là pour vous fendre le cœur ; je suis là pour passer un bon moment ensemble. Je suis sûr qu'enfant nous avons tous déjà joué au moins une fois avec un gamin qui se délecte de ses victoires, qui boude de ses défaites et se comporte comme un crétin de manière générale. Beaucoup trop d'univers en ligne sont remplis de ce genre de personne : des adolescents psychotiques dont le seul plaisir dans la vie semble être de railler les étrangers. Je respecte les bonnes manières, et j'ai reçu assez de railleries dans les cours de récréations pour tout une vie, merci bien.</p>
+<p>Mais la raison la plus importante pour jouer seul est le sentiment d'immersion. Beaucoup de gens sont attirés par les jeux parce qu'ils aiment être dans un monde fantastique ; ils aiment le côté exploration et découverte, autant du décor que de l'intrigue. Partager ce monde avec des gens réels tend à détruire ce doux rêve. C'est une chose de prétendre que vous êtes le puissant chevalier arpentant seul la forêt ; c'est autre chose si votre ami Joe est juste à côté de vous. Joe est un produit du 20ème siècle, et contrairement aux personnages fictifs dans le jeu, il ne parle pas avec des répliques à là Geoffrey Chaucer (NDT : un poète médiéval anglais) que les fantasmes médiévaux semblent exiger. ("Je vous salue, preux chevalier ! Que vous amène dans ces bois si périlleux à la tombée de la nuit ? J'ai ouïe dire des rumeurs d'un dragon en ce lieu.") Quand Joe parle, c'est comme si c'était Joe – qui est bien dans la vie réelle, mais dont le phrasé moderne sonne faux sur  les terres mystiques d'Albion. Et partager un monde avec des étrangers est encore pire. Si je suis à la recherche de gloire, de fortune et d'amour pour ma bien-aimé, la dernière personne que je souhaite avoir comme compagnon est le sieur KewL DooD (NDT : « MeC KooL »).</p>
+<p>Ce qui m'intéresse le plus dans les jeux ce sont les personnages, les lieux, les relations et les événements qui se déroulent, et avoir une chance de pouvoir interagir avec eux. J'ai joué jusqu'à la fin de <em>StarCraft</em> (en trichant parfois) non pas parce que j'ai été captivé par le jeu de guerre en lui-même, mais parce que je voulais savoir ce qui allait arriver à Jim Raynor et à Sarah Kerrigan. Je n'ai pas l'intention de manquer de respect aux mécaniques du jeu – je les ai beaucoup appréciées – mais ce qui m'a poussé à vouloir jouer à la trentaine de missions, c'était l'histoire.</p>
+<p>Les jeux d'aventure sont la quintessence de l'expérience en solo. Beaucoup de jeux en mode solo sont en réalité des jeux multijoueur dans lesquels la machine est un substitut d'adversaire humain, et maintenant il est possible de jouer contre de vrais adversaires, c'est comme ça que fonctionne l'industrie du jeu vidéo. Mais les jeux d'aventure ne sont pas orientés autour de la compétition ; en fait, ce ne sont pas du tout des « jeux ». Il n'y a pas d'adversaires à proprement parler, ni de conditions de victoire si ce n'est de résoudre toute les énigmes et d'atteindre la fin de l'histoire. Les jeux d'aventure font la part belle aux actions d'un individu dans un monde complexe, le plus souvent un monde où on se sert plus de sa tête que de ses armes. Si vous jouez avec quelqu'un d'autre, c'est quelqu'un assis dans la même pièce que vous et qui vous aide à réfléchir – les jeux d'aventures récompensent la pensée latérale.</p>
+<p>Le genre a tout de même ses problèmes, le pire d'entre eux étant les coûts de développement. <em>Infocom</em> et <em>LucasArts</em> sont devenus plutôt doués pour développer des moteurs de jeux réutilisables, respectivement la <em>Z-Machine</em> et <em>SCUMM</em>, mais ce qui coûte vraiment cher, ce sont les graphismes et l'audio. Les histoires doivent avoir du contenu, et les histoires interactives ont besoin de trois à dix fois plus de contenu que les histoires linéaires. Des éditeurs ont investi des sommes colossales dans le développement de leurs jeux d'aventure (<em>Phantasmagoria</em> est sorti sur sept CD-ROM) et ils n'ont tout simplement pas calculé les recettes qu'il aurait fallu pour compenser leurs dépenses. Quand vous pouvez gagner au moins autant d'argent en développant un Quake-like pour une bouchée de pain, pourquoi s'embêter à développer un jeu d'aventure ?</p>
+<p><img alt="Phantasmagoria (Brr...)" src="../media/img/phantasmagoria.jpg" /></p>
+<p>En dépit de tout cela, je pense qu'on doit leur redonner une chance. Il y a encore un marché pour les jeux au rythme lent où le challenge est surtout mental. Rempli de casse-tête intelligents et de plaisirs visuels, les jeux d'aventure ont toujours été populaires auprès des femmes. Bien que la plupart des femmes utilisent bien plus souvent un ordinateur et jouent plus souvent à des jeux qu'autrefois, je crois que l'industrie a fait un pas en arrière pour ce qui est d'offrir un divertissement qui puisse plaire au plus grand nombre de joueuses. L'accent mis actuellement sur les jeux de courses, de vol ou de tir (tout ça grâce à l'accélération 3D, bien sûr) n'a pas vraiment intéressé beaucoup de femmes ; encore moins le fait de pinailler sur la gestion de production d'armes qui prend tellement de temps dans les jeux de stratégie en temps réel.</p>
+<p>L'autre marché pour lequel les jeux d'aventure sont parfaits est celui des jeunes enfants, particulièrement si le jeu ne demande pas beaucoup de dextérité. Les enfants s'évadent très facilement du monde réel (je n'arrive pas à croire que plus jeune j'aimais <em>Le Sous-marin de l'apocalypse</em> (NDT : un film américain des années soixante)), et ils aiment comprendre des choses tout comme les adultes. L'énorme succès de la refonte de <em>The Legend of Zelda</em> sur Nintendo 64 démontre manifestement qu'il existe encore un marché, et les moteurs 3D ont aussi tout autant à apporter aux jeux d'aventures qu'aux autres genres.</p>
+<p><img alt="The Legend of Zelda : Ocarina of Time" src="../media/img/the-legend-of-zelda-ocarina-of-time.jpg" /></p>
+<p>Nous allons encore devoir faire face à cette question des coûts de développement, mais avec des entreprises qui dépensent couramment un million de dollars ou plus dans leurs jeux, ce n'est pas comme si les autres genres étaient raisonnables non plus. La voix-off et les cinématiques que l'on retrouve dans les jeux d'aventure sont maintenant inclus dans toute sorte de jeux. Le coût de fabrication des cinématiques est le même pour un jeu de guerre ou un jeu d'aventure.</p>
+<p>Les jeux d'aventure plaisent à un public qui n'est pas focalisé sur la taille d'une explosion ou de la vitesse du moteur, un public que nous ignorons la plupart du temps. Mais ces gens veulent jouer à des jeux aussi. Il est temps pour les jeux d'aventure de revenir.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/faire-revenir-jeux-aventure&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_219" class="comment">
+	
+		
+			<span class="meta">Par BYAM le 1 avril 2012 15:15:29</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de BYAM" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Petit commentaire pour dire que je suis soulagé de voir enfin quelqu'un faire l'apologie des jeux offline! Même si je suis plus RPG que jeux d'aventures (j'ai tout de même adoré Another Code et Hotel Dusk sur DS), je suis lassé de voir qu'aujourd'hui tous les nouveaux jeux ne sont bien notés que pour leur mode multijoueur alors même que leur scénario se résume à trois missions pliées en 2h (je parle surtout pour les jeux de guerre) et l'arrivée des DLC (contenus téléchargeables) n'a pas arrangé les choses mais c'est un autre sujet. Bref, aux jeux offline!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_219').addClass('deleted');
+			$('#comment_219 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_219 .delete').css("display", "none");
+			$('#comment_219 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_219 .delete').css("display", "none");
+		else										$('#comment_219 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_164" class="comment">
+	
+		
+			<span class="meta">Par rabesandratan le 25 décembre 2011 19:36:59</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de rabesandratan" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Bonjour et bonnes fêtes à tous,</p>
+<p>La pertinence de ce genre même de nos jours n'est plus à prouver (Gemini Rue, Phoenix Wright, Hotel Dusk, Overclocked: a history of violence, Downfall, etc.) pourtant, il lui manque certainement des titres de grande envergure marketing.</p>
+<p>Aujourd'hui, deux innovations majeures sur le marché du high-tech grand public sont déjà présentes auprès du public des femmes (voire au-delà) :</p>
+<p>1 ) Microsoft Kinect qui grâce à la gestuelle ou la reconnaissance vocale, gagnerait une importante crédibilité ludique en ayant recours aux licences de type Myst-like ou autres jeux d'aventure/réflexion au rythme très lent,</p>
+<p>2 ) La grande résolution des écrans des tablettes ou téléviseurs HD, utilisables dans des lieux de meilleur confort (canapés, lits), qui permettrait le retour vers ces jeux qui sont aussi des jeux de détail, de pixel.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_164').addClass('deleted');
+			$('#comment_164 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_164 .delete').css("display", "none");
+			$('#comment_164 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_164 .delete').css("display", "none");
+		else										$('#comment_164 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_158" class="comment">
+	
+		
+			<span class="meta">Par Vlad le 21 décembre 2011 14:40:32</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Vlad" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>J'adore votre blog, une mine d'information pour les amateurs comme moi et ça me permet d'avoir pas mal d'idées pour plus tard (qu'en j'aurais dépassé le stade de programmation d'un snake^^).</p>
+<p>Pourtant il me semble que les jeux d'aventure n'ont pas disparus mais plutôt évolué, pour ma part je n'ai quasiment jamais joué a des jeux comme "Phantasmagoria" par contre les Zelda-like il y en a une pelle et j'ai l'impression (peut être a cause de l'industrie japonaise) que le genre aventure s'est mélangé avec les RPGs.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_158').addClass('deleted');
+			$('#comment_158 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_158 .delete').css("display", "none");
+			$('#comment_158 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_158 .delete').css("display", "none");
+		else										$('#comment_158 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/57';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="faire-revenir-jeux-aventure@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#x6e;&#116;&#x61;&#x63;&#x74;&#x40;&#x6c;&#x65;&#x73;&#102;&#111;&#x72;&#x67;&#x65;&#x73;&#x2e;&#x6f;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

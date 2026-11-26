@@ -1,0 +1,941 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Chiffres, émotions et comportement</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Les ordinateurs ont été inventés pour manipuler des nombres. La machine à différences de Charles Babbage a été construite pour calculer des polynômes et Lady Lovelace a écrit le premier programme de sa machine analytique pour calculer ce qu'on appelle les nombres de Bernoulli. Ce n'est que bien plus tard que les ordinateurs furent utilisés pour des tâches appliquées comme l'artillerie. Et c'est encore plus tard que les jeux vidéo furent inventés. Nous avons placé une couche de vernis sur une simulation mathématique pour créer un monde imaginaire, mais souvent le vernis n'est pas très épais. C'est particulièrement visible dans les simulations économiques et les jeux de rôles. On gagne en regardant des chiffres sur un écran.
+
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#x6e;&#116;&#97;&#x63;&#116;&#x40;&#x6c;&#101;&#115;&#x66;&#x6f;&#114;&#103;&#x65;&#x73;&#46;&#x6f;&#x72;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Chiffres, émotions et comportement</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 15 septembre 2011 15:22:54 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/Shin.html">Pierre Guyot</a>.
+						<br/>L'<a href="http://www.designersnotebook.com/Columns/099_Numbers__Emotions__and_Beh/099_numbers__emotions__and_beh.htm" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (janvier 2009).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p>Les ordinateurs ont été inventés pour manipuler des nombres. La machine à différences de Charles Babbage a été construite pour calculer des polynômes et Lady Lovelace a écrit le premier programme de sa machine analytique pour calculer ce qu'on appelle les nombres de Bernoulli. Ce n'est que bien plus tard que les ordinateurs furent utilisés pour des tâches appliquées comme l'artillerie. Et c'est encore plus tard que les jeux vidéo furent inventés. Nous avons placé une couche de vernis sur une simulation mathématique pour créer un monde imaginaire, mais souvent le vernis n'est pas très épais. C'est particulièrement visible dans les simulations économiques et les jeux de rôles. On gagne en regardant des chiffres sur un écran.</p>
+<p><img alt="Ça donne envie, non ?" src="../media/img/chiffresb.jpg" /></p>
+			</div>
+			<div id="article_content">
+				<p>Ceci fait sens dans les simulations économiques, particulièrement celles qui sont à but éducatif. Récemment, j'ai eu la chance de pouvoir jouer à la version beta d'un drôle de petit jeu intitulé <em>Super Energy Apocalypse</em> de Brain Juice Games. Le game designer, Lars Doucet, le résume ainsi : « Des énergies renouvelables… et des ZOMBIES ! ». Chaque nuit, votre communauté est attaquée par des zombies (ou plus exactement, des aliens mangeurs d'ordures déguisés en zombies… C'est une longue histoire.). Pour gagner, vous devez développer des sources d'énergie non polluantes afin d'alimenter vos défenses. Les zombies adorent les fumées toxiques et les déchets nucléaires, vous devrez donc garder un œil sur votre taux de production d'énergie et sur la quantité de fumées et de déchets que vous produisez ainsi. C'était un jeu amusant et, puisqu'il se base sur de véritables systèmes pour générer de l'énergie, j'ai appris quelques petites choses.</p>
+<p>Dans l'ensemble néanmoins, je commence à me lasser des jeux dans lesquels les mathématiques sont trop apparentes. J'aime jouer à des jeux de rôle pour l'exploration, pour l'histoire et pour la diversité de lieux et de personnages qu'ils proposent, mais je suis moins enthousiaste en ce qui concerne la marchandage et l'upgrading permanent. Cette façon d'insister sur l'équipement me semble particulièrement <em>geek</em>. Il n'y a pas tant de différence que ça entre se la raconter avec sa Hallebarde Flamboyante Supérieure de Raclée Majeure et se la jouer avec son PC <em>Alienware</em> overclocké, watercoolé et muni du dernier type de DEL à la mode.</p>
+<p>Les RPG sont basés sur l'évolution des personnages, mais cette évolution est exprimé en termes numériques. A la fin du jeu, votre personnage est plus rapide, plus fort, plus adroit, etc. Les chiffres le prouvent. Mais dans ce cas-là, il pourrait aussi bien être un robot qu'un être humain. On n'accorde que très peu de place à ce qu'on pourrait appeler une évolution psychologique du personnage — une évolution en tant que personne.</p>
+<p>Je commence donc à penser à des jeux où les chiffres seraient remplacés par un comportement. Bien sûr, de nombreux jeux utilisent des automates finis (NDT : pour plus de précisions, je vous renvoie à la page <a href="http://fr.wikipedia.org/wiki/Automate_fini">Wikipédia</a> sur le sujet. Pour faire simple, c'est ici une forme d'IA très simple où l'on peut se retrouver dans un seul état à la fois) pour les IA de leurs personnages et ces automates récupèrent des valeurs numériques en entrée (« Si l'ennemi est à portée, passer en mode attaque »). Mais ces automates ne changent pas — les personnages n'évoluent pas et n'apprennent pas à modifier leur comportement. Et comme l'a fait remarqué le designer et professeur Michael Mateas, les automates finis ne peuvent pas marcher et mâcher du chewing-gum en même temps — c'est-à-dire qu'ils ne peuvent occuper qu'un état à la fois, ce qui leur interdit de mettre en œuvre des actions complexes.</p>
+<p>Un exemple ancien de « personnage » qui changeait en apparence d'humeur et de comportement de façon complexe apparaît dans le jeu <em>Balance of Power</em> de Chris Crawford. J'ai déjà écrit souvent au sujet de ce jeu parce qu'il est à la fois brillant et unique — une simulation de gestion géopolitique avec deux superpuissances, une idée qui, à ma connaissance, n'a jamais été reprise depuis. Il s'agissait d'un jeu à un seul joueur. Vous jouiez soit les Etats-Unis, soit l'URSS et vous deviez essayer de maximiser le prestige de votre pays aux dépends de l'autre camp, en partie en leur faisant face lors de crises diplomatiques (la crise des missiles de Cuba en est le plus célèbre exemple réel). A tour de rôle, les deux camps entreprenaient des actions diplomatiques variées (comme la formation d'alliances) dans d'autres pays du monde et au tour suivant, chaque camp avait la possibilité de s'opposer aux actions de l'autre camp — une crise. Quand une crise survenait, l'un des deux camps devait finir par céder. Il était essentiel de choisir soigneusement sur quels conflits intervenir, car si vous provoquiez une guerre nucléaire, vous aviez perdu.</p>
+<p><img alt="Balance of Power (Chris Crawford)" src="../media/img/chiffres2.jpg" /></p>
+<p><em>Balance of Power</em> a été un tel succès que Crawford a écrit un livre qui expliquait comment le jeu fonctionne, avec toutes les équations utilisées. Le livre s'intitulait <em>Balance of Power : International Politics as the Ultimate Global Game</em>. Il est depuis longtemps en rupture de stock, mais Crawford en a fait une version texte disponible sur son site.Je pense qu'il s'agit d'une lecture essentielle pour tout game designer : une explication claire et intelligente de la façon de convertir des formules mathématiques en comportements.</p>
+<p>Il n'y avait pas à proprement parler de personnages dans <em>Balance of Power</em>, mais les actions de l'IA ennemie donnaient dans une certaine mesure l'impression qu'il s'agissait d'un vrai gouvernement, et Crawford a renforcé ce sentiment avec le langage diplomatique utilisé pour annoncer les actions de chaque camp. Les annonces pouvaient être fermes ou conciliantes selon la façon dont le camp adverse se « sentait ». Crawford a créé une variable appelée la pugnacité pour chaque camp et une autre appelée la tension pour l'ensemble du jeu. La pugnacité était initialisé à une valeur aléatoire proche de la valeur neutre (plus haute pour les Russes que les Américains ; cette vision du monde est aujourd'hui un peu dépassée) et augmentait ou diminuait à mesure que la superpuissance adoptait un comportement agressif ou conciliant respectivement. La tension général du jeu augmentait avec les activités militaires et les crises et ne diminuait qu'avec le temps.</p>
+<p>Comme Crawford l'écrit dans son livre, « Ces deux variables ont pour effet de créer une ambiance dans le jeu. Les joueurs qui mènent des stratégies de confrontation augmenteront la pugnacité de leur camp et la tension du jeu. Si c'est fait correctement, une stratégie aussi impitoyable encourage les nations plus faibles à « finlandiser » avec le joueur (NDT : dans le domaine politique, le verbe anglais <em>to finlandize</em> signifie ne pas chercher à défier une puissance plus importante tout en conservant la souveraineté nationale. C'est un terme péjoratif souvent associé avec une idée de lâcheté. Ici il s'agit de s'aligner diplomatiquement sur le joueur, plutôt que de chercher à s'opposer à lui.). Mais de petites erreurs peuvent amener la pugnacité de l'ennemi à augmenter et la votre à baisser si vous vous retrouvez à céder trop souvent au cours de crises diplomatiques. »</p>
+<p>Si vous jouez suffisamment longtemps au jeu, vous pouvez effectivement ressentir cette ambiance. Des actions agressives vont amener l'autre camp à devenir lui aussi plus agressif, mais si vous vous montrez trop peu sûr de vous, les petits pays auront tendance à penser que vous êtes faibles et à s'allier avec l'autre camp. Vous pouvez tout à fait sentir lorsqu'on ne vous respecte pas. La pugnacité, le respect diplomatique et le prestige géopolitique sont des concepts émotionnels qu'on ne voit pas souvent dans le jeu vidéo, et <em>a fortiori</em> en 1985 quand <em>Balance of Power</em> est sorti.</p>
+<p>Il y a quelque chose comme cinq ans, j'ai écrit un article intitulé « Quel failles peuvent bien se cacher dans le cœur des PNJ ? ». Dans celui-ci, je discute du sujet de la création de personnages véritablement tridimensionnels — des personnages qui se comportent de façon apparemment incohérente (et donc réaliste) parce qu'ils sont confrontés à des conflits internes. Par exemple, au lieu de caractériser les sentiments d'une personne pour une autre avec une seule variable chiffrée qui varie du négatif (je le hais) au positif (je l'aime), imaginez que nous utilisions deux variables, l'une pour l'amour et l'autre pour la haine. S'il y a beaucoup d'amour et pas de haine, les deux personnages vont être amis (ou plus si affinités !). S'il y a beaucoup de haine et pas d'amour, ils seront ennemis. Mais il pourrait y avoir aussi beaucoup des deux, ce qui peut arriver en certaines circonstances. Il faudrait alors élaborer un système de comportement qui permette d'exprimer ce conflit interne.</p>
+<p>Je ne sais pas exactement comment fonctionne <em>Façade</em>, un jeu expérimental brillant sur le thème d'un mariage qui s'effondre par Michael Mateas et Andrew Stern, mais les personnages éprouvent véritablement des sentiments complexes les uns vis-à-vis des autres. <em>Les Sims</em> aussi parviennent à transformer des chiffres en comportements — quoique d'une façon peut-être un peu moins sophistiqué que dans <em>Façade</em>. <em>Façade</em> tourne autour d'un couple de personnages et de leur ami, le personnage incarné par le joueur.</p>
+<p><img alt="Façade (Michael Mateas et Andrew Stern)" src="../media/img/chiffres3.jpg" /></p>
+<p><em>Les Sims</em> permettent au joueur de créer n'importe quel type de personnage dont il a envie, il est donc nécessaire qu'il dispose d'un modèle de relations et de comportements générique, qui peut fonctionner pour tout le monde. Mais dans les deux cas, ces jeux produisent un résultat sous forme d'interactions humaines. Le joueur ne reçoit pas de chiffres ou de jauges. Il n'est pas censé penser les personnages du jeu en termes de simulation, mais en tant que véritables personnes.</p>
+<p><em>Façade</em> utilise le langage, ce qui introduit toutes sortes de complications — parce qu'une conversation doit pouvoir se dérouler de façon intelligible même si les mots choisis reflètent l'état émotionnel du personnage. <em>Les Sims</em> utilisent uniquement le Simlish (NDT : un faux langage inventé pour le jeu, qui n'a pas de sens véritable mais dont la sonorité imite une vraie conversation) mais les personnages expriment les sentiments à travers les symboles qui apparaissent à l'écran et ils doivent prendre certaines décisions : dois-je continuer à parler à cette personne ou arrêter et partir ? Dois-je interagir physiquement avec lui ou elle, le ou la prendre dans mes bras, l'embrasser, le ou la gifler, me battre avec lui ou elle ? Un tel système est extrêmement compliqué à développer et encore plus compliqué à tester, tout particulièrement si les personnages sont capables de ressentir des émotions complexes. Si un personnage se comporte de façon contradictoire, est-ce un bug ou est-ce une expression légitime de ses sentiments ?</p>
+<p>Je pense qu'il y a un autre domaine où nous pourrions améliorer la simulation d'émotions et ainsi produire des comportements plus riches. Parfois dans un film, on voit une scène dans laquelle une femme est effrayée ou fâchée par ce que l'homme qu'elle aime a fait. Elle le frappe, elle lui jette des insultes au visage et tout d'un coup elle s'effondre en pleurant dans ses bras. Sa colère se dissipe presque immédiatement et elle lui pardonne — tout particulièrement si le public sait que ce n'est pas vraiment de sa faute — car son amour pour lui et son désir d'être consolée prennent le dessus.</p>
+<p>L'homme ne fait rien si ce n'est accepter les injures puis de la réconforter quand elle s'effondre. Marion Ravenwood le fait à Indiana Jones dans <em>Les Aventuriers de l'Arche Perdue</em> et j'ai vu ça dans plusieurs autres films, mais jamais dans un jeu vidéo. C'est une sorte d'astuce, dramatiquement parlant — on ne voit pas ça souvent dans la vie réelle. Mais le but d'une simulation d'émotions humaines est justement de produire des effets dramatiques dans un médium qui est, pour l'instant, dramatiquement dépourvu de vie. Si je mentionne cet exemple, c'est parce qu'il illustre bien un mécanisme que nous n'utilisons pas souvent.</p>
+<p>La plupart des simulations émotionnels utilisent une simple boucle stimulus/calcul/comportement. Quelqu'un dit ou fait quelque chose à un personnage. Ceci influence son état émotionnel. Il agit en fonction de ses sentiments. Cet état émotionnel peut revenir à un état plus neutre avec le temps (j'étais en colère il y a une demi-heure, mais maintenant, je me suis calmé) ou changer en réponse à une stimulation d'un autre personnage. Si ces systèmes ont l'avantage d'être vraiment simples, ils produisent des résultats absurdes : un personnage est furieux puis une seconde plus tard il est joyeux, comme un personnage de cartoon de Warner Bros. C'est le genre de chose que vous obtenez avec un automate fini.</p>
+<p>Cette approche ne tient pas compte du fait que le comportement en lui-même modifie les émotions. Le comportement n'est pas juste une façon de rendre nos émotions visible : il affecte aussi la façon dont nous nous sentons. Il agit sur notre état émotionnel. Quand une femme se dispute avec son amoureux dans un film, l'acte de frapper quelqu'un qu'elle aime fait disparaître sa colère et elle commence à chercher du réconfort parce qu'elle a subi cette expérience traumatique et ces sentiments violents. Nous frappons dans un oreiller ou donnons un coup de pied au chien. Ceci ne correspond pas à un comportement qui vise à satisfaire un besoin, comme dans <em>Les Sims</em>, parce que frapper un oreiller ne fait pas disparaître la source du problème. Tout ce que cela fait, c'est d'alléger l'esprit (Mark Twain a écrit : « Quand vous êtes en colère, comptez jusqu'à quatre. Si vous êtes vraiment très en colère, jurez. »). Mais je pense que c'est quelque chose que l'on peut incorporer à un jeu sans trop de difficultés.</p>
+<p>En fonction du caractère d'un individu, les comportements peuvent dissiper une émotion ou la renforcer. Dans l'exemple que j'ai donné, la colère de la femme disparaît parce qu'elle n'est pas habituellement une personne violente. En fait, le seul fait d'agir violemment la fait se sentir mal. D'un autre côté, dans le cadre de vraies violences conjugales, l'agresseur devient souvent de plus en plus furieux à mesure qu'il frappe la victime. Ils ne s'arrêtent que lorsque la victime a complètement arrêter de réagir. Leur machinerie émotionnelle est sévèrement abîmée. Ce n'est pas un sujet particulièrement joyeux, mais je pense qu'on peut le simuler dans un jeu s'il y a un vrai besoin dramatique pour cela.</p>
+<p>Afin de faire réellement évoluer un personnage dans un sens psychologique (et dans cet exemple, une spirale tragique vers l'auto-destruction), nous devons créer une méta-simulation — une simulation capable d'altérer la base émotionnelle avec laquelle le jeu commence. Ceci pourrait prendre la forme de quelque chose qui interrompt la boucle stimulus/calcul/comportement et redéfinit ses variables. Un événement-clef pourrait transformer une rétroaction négative en une rétroaction positive, ou inversement.</p>
+<p>La drogue est un exemple classique de spirale tragique. Supposons qu'un personnage accro à la drogue rencontre quelqu'un — un professeur charismatique par exemple — qui soit capable de lui apporter le réconfort émotionnel qu'il cherchait à l'origine dans la drogue. Cette source alternative de réconfort pourrait briser la dépendance à la drogue, en la remplaçant par une nouvelle dépendance vis-à-vis du professeur, ce qui pourrait à son tour introduire de nouveaux problèmes dans l'histoire.</p>
+<p>Je vous dirai tout de suite que je ne suis pas certain de la façon de procéder. Tant que quelqu'un ne me finance pas, je peux écrire des articles, mais pas de code. Mais je suis convaincu que ceci peut être réalisé suffisamment bien pour créer un jeu à la fois divertissant et crédible. Je ne propose pas que nous visions un réalisme psychologique absolu — après tout, la psychanalyse en est encore au stade de l'enfance. Je suggère plutôt que nous essayions d'introduire plus de richesse dans nos simulations, afin de produire chez l'IA de nos personnages des comportements dramatiquement intéressants.</p>
+<p>Les personnages de jeu sont pour l'instant beaucoup trop rationnels et leur comportement est assez proche de celui de Vulcains (NDT : le peuple extraterrestre dont fait partie Monsieur Spock dans <em>Star Trek</em> et qui ne réagit que sur des bases purement logiques et non émotionnelles) : ils réagissent à des stimuli pour accomplir leur buts. Les personnes réelles ne sont pas comme ça. Elles agissent contre leur propre intérêt, elles font des choses irrationnelles, elles font même des choses complètement stupides. Il y a beaucoup d'opportunités pour l'expérimentation.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/chiffres-emotions-comportement&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_482" class="comment">
+	
+		
+			<span class="meta">Par babaorhum le 17 décembre 2021 19:37:54</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de babaorhum" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Simlish ça fait Sim + yidish ;)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_482').addClass('deleted');
+			$('#comment_482 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_482 .delete').css("display", "none");
+			$('#comment_482 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_482 .delete').css("display", "none");
+		else										$('#comment_482 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_146" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 9 octobre 2011 11:23:43</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p><em>Civilization 4</em> est une bonne illustration du début de cet article, pour son utilisation éclairée des chiffres. Ils servent à la fois à représenter un game design simple mais profond, et à fertiliser l'imagination du joueur.</p>
+<p>Je pense au concept de culture, qui représente par une simple addition (la culture est cumulative) la puissance culturelle d'une ville et son influence géographique. Les ressources, représentées par des bonus clairs accordés aux cases sont immédiatement compréhensibles par le joueur, et fournissent à l'imagination un objectif intéressant (je VEUX cette mine de pierre précieuse pour montrer la prospérité et la supériorité de ma civilisation). Le commerce qui, s'il s'effectue automatiquement, ne donne pas moins un retour là aussi évident, et propice au rêve (ma ville de Paris commerce avec la lointaine Samarcande — ah ah, je suis le maître des mers).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_146').addClass('deleted');
+			$('#comment_146 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_146 .delete').css("display", "none");
+			$('#comment_146 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_146 .delete').css("display", "none");
+		else										$('#comment_146 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_143" class="comment">
+	
+		
+			<span class="meta">Par Pierre Guyot le 25 septembre 2011 14:17:37</span>
+			<br/><img src="http://www.gravatar.com/avatar/ef4498aa9ef6758a91ec542f9b93aa36?s=50&amp;r=g&amp;d=mm" alt="avatar de Pierre Guyot" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Visiblement, il y a une petite confusion ^^': je n'ai pas écrit l'article, je l'ai seulement traduit depuis l'anglais. Il s'agit d'un article d'Ernest Adams daté de 2009 (c'est marqué au début de l'article).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_143').addClass('deleted');
+			$('#comment_143 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_143 .delete').css("display", "none");
+			$('#comment_143 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_143 .delete').css("display", "none");
+		else										$('#comment_143 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_142" class="comment">
+	
+		<span class="meta">Par un anonyme le 24 septembre 2011 18:51:19</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>"Le jeu dont vous parlez au début, en bêta-test ?"
+Je vous rappelle que cet article est une traduction d'un texte de 2009.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_142').addClass('deleted');
+			$('#comment_142 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_142 .delete').css("display", "none");
+			$('#comment_142 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_142 .delete').css("display", "none");
+		else										$('#comment_142 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_141" class="comment">
+	
+		<span class="meta">Par un anonyme le 23 septembre 2011 21:38:46</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Article très intéressant ! C'est un sujet auquel on ne réfléchit pas assez souvent, j'aimerai bien travailler là dessus et programmer une petite simulation de vie qui se concentre sur cette aspect (mais bon, on verra :) ).
+D'ailleurs, je ne vous comprend pas quand je lis "Tant que quelqu'un ne me finance pas, je peux écrire des articles, mais pas de code".
+A écrire ça, ça ne vous donne pas envie de vous lancer dans un projet qui relèverait ce défis ? (bon, désolé, j'arrive comme un cheveux dans la soupe, je ne connais pas vos projet en cours, ni le temps dont vous disposez)</p>
+<p>Le jeu dont vous parlez au début, en bêta-test ? Il est jouable depuis bel lurette sur Kongregate : http://www.kongregate.com/games/larsiusprime/super-energy-apocalypse-recycled
+Une nouvelle version peut être ? :) (je n'ai pas fini ce jeu à 100% mais j'en garde un bon souvenir, justement grâce à l'aspect énergie/pollution assez original) </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_141').addClass('deleted');
+			$('#comment_141 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_141 .delete').css("display", "none");
+			$('#comment_141 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_141 .delete').css("display", "none");
+		else										$('#comment_141 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article_content';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/53';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="chiffres-emotions-comportement@scroll_to=article_content.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#x6e;&#x74;&#97;&#x63;&#x74;&#x40;&#x6c;&#x65;&#x73;&#102;&#111;&#x72;&#103;&#x65;&#x73;&#x2e;&#111;&#x72;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1696 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | La création de noms : tout un art</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Créer quelques noms propres c'est relativement facile ; on a tous de temps en temps des petites illuminations sur une syllabe qui déchire ou bien un nom commun détourné en nom propre. Là où ça devient compliqué c'est quand, pour un jeu où chaque PNJ porte un nom, il faut des tonnes de noms, et que ces noms doivent avoir des consonances communes selon la race/région… Sans oublier les noms de lieux. La création de noms est donc en fait une tâche complexe et longue (rassurez-vous, rien d'infaisable :p).
+Attention : ce cours, qui permet de produire « en masse » des noms intéressants, est long. Si vous avez comme objectif de créer un jeu de type Final Fantasy où seuls les héros sont nommés (et où les PNJ s'appellent « Villageois 1 » par exemple :D), vous pouvez aller directement à la dernière partie. Elle explique les fondements d'un nom de qualité (ce qu'il faut faire — et ne pas faire) en vous épargnant le travail rendant crédible et homogène une longue série de noms (nécessaire si votre projet est plus vaste).
+ Attention (bis) : fuyez les générateurs tout fait (du genre ceux proposant noms elfiques, nanesques et consorts, à part pour un fan game du Seigneur des Anneaux, c'est pas bon) ou complètement aléatoires (prenant des lettres au hasard).
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#x6e;&#116;&#97;&#99;&#x74;&#x40;&#x6c;&#x65;&#x73;&#x66;&#x6f;&#114;&#x67;&#x65;&#x73;&#x2e;&#111;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>La création de noms : tout un art</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/dyo.html">Dyo</a> | le 5 août 2008 00:11:41 | Catégories : <a href="../tag/cours.html">Cours</a>, <a href="../tag/univers.html">Univers</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>Créer quelques noms propres c'est relativement facile ; on a tous de temps en temps des petites illuminations sur une syllabe qui déchire ou bien un nom commun détourné en nom propre. Là où ça devient compliqué c'est quand, pour un jeu où chaque PNJ porte un nom, il faut des tonnes de noms, et que ces noms doivent avoir des consonances communes selon la race/région… Sans oublier les noms de lieux. La création de noms est donc en fait une tâche complexe et longue (rassurez-vous, rien d'infaisable :p).</p>
+<p><strong>Attention</strong> : ce cours, qui permet de produire « en masse » des noms intéressants, est long. Si vous avez comme objectif de créer un jeu de type <em>Final Fantasy</em> où seuls les héros sont nommés (et où les PNJ s'appellent « Villageois 1 » par exemple :D), vous pouvez aller directement à la dernière partie. Elle explique les fondements d'un nom de qualité (ce qu'il faut faire — et ne pas faire) en vous épargnant le travail rendant crédible et homogène une longue série de noms (nécessaire si votre projet est plus vaste).</p>
+<p><strong> Attention (bis)</strong> : fuyez les générateurs tout fait (du genre ceux proposant noms elfiques, nanesques et consorts, à part pour un fan game du Seigneur des Anneaux, c'est pas bon) ou complètement aléatoires (prenant des lettres au hasard).</p>
+			</div>
+			<div id="article_content">
+				<p>Ce cours est divisé en 4 parties :</p>
+<ul>
+<li>Dans la première, on va voir comment faire un brassage de sonorités pour en tirer une liste de syllabes.</li>
+<li>Dans la deuxième, on va produire à partir de ces syllabes une série de noms « bruts ».</li>
+<li>Dans la troisième, on classera par groupes des préfixes et des suffixes destinés à créer des prénoms, des noms de famille et des noms de lieux.</li>
+<li>Dans la quatrième et dernière partie, on sélectionnera et on retouchera les noms bruts pour en tirer les noms finalisés.</li>
+</ul>
+<p>Pour ce qui est des outils nécessaires, le bloc-notes intégré à Windows est indispensable (et suffisant comme logiciel de traitement de texte). Quelques programmes supplémentaires (des générateurs) vous seront proposés dans la première et deuxième partie.</p>
+<h1>1. Sonorités</h1>
+<h2>a. Par où commencer ?</h2>
+<p>Il existe plusieurs méthodes pour démarrer. Je vous en propose une qui marche particulièrement bien (et à vrai dire, je n'en ai pas trouvé de meilleure). En fait, il s'agit de débarrasser l'alphabet que nous utilisons de plusieurs lettres, afin de créer des sonorités particulières. Je vais prendre un exemple tiré d'un de mes propres projets, avec le peuple Cilde (exemple qui me servira plus loin dans ce cours). On va sélectionner un nombre restreint de lettres, le « brasser » pour en tirer des syllabes variées et à partir de là, essayer de construire de « vrais » noms.</p>
+<p>On part avec : aeiouy — bcdfghjklmnpqrstvwxz (il y a bien les 26, vous pouvez compter :D).</p>
+<p>En gros je diviserai ces lettres en 3 groupes : celles qui vont amener des <em>sonorités dures</em> (<em>k</em>, <em>r</em>, <em>t</em>, etc.), celles qui vont amener des <em>sonorités douces</em> (<em>d</em>, <em>n</em>, <em>l</em>, etc.) et celles qui vont amener des <em>sonorités « étranges »</em> (<em>y</em>, <em>w</em>, <em>x</em>, etc.). Hé oui, mon cours est extrêmement franco-centré. Pour un Chinois, l'emploi de <em>z</em> et de <em>x</em> au milieu des noms est beaucoup plus habituel que pour un Français… Quoiqu'il en soit, il est plutôt conseillé de garder toutes les voyelles (qui « lient » les consonnes, bien évidemment. Ok, certaines langues d'Europe de l'Est me feront mentir). A la limite, vous pouvez en éliminer une voire deux.</p>
+<blockquote>
+<p>Pour mon exemple (le peuple cilde), je veux des sonorités qui dégoulinent pas mal, avec juste quelques consonnes un peu dures (sinon ça ressemblera à de l'elfique :p) mais rien d'étrange. Je vais aussi m'amuser à supprimer le <em>u</em> et le <em>y</em> pour colorer encore davantage ces noms. En taillant dans le lard, j'obtiens : aeio — cdlmnrstv.</p>
+</blockquote>
+<p>Sacrée réduction non ? Je suis passé de 26 à 13 (j'y suis allé volontairement un peu fort, car il est important que l'on reconnaisse bien les noms associés à ce peuple ; moins il y a de lettres au début, plus les noms se ressembleront à la fin — mais bien sûr vous pouvez choisir de ne supprimer que quelques lettres, voire aucune !). Si vous voulez, vous pouvez utiliser une méthode alternative, mais qui demande déjà de faire un premier pas imaginatif : dresser une liste de noms, en partant de rien, et relever dedans les lettres communes. Mais bon, l'intérêt de ce cours est d'échapper à cette contrainte de « partir de rien » (la feuille blanche, c'est jamais bien engageant). Une chose importante : conservez-bien, dans cette sélection, les lettres déjà présentes dans le nom même du peuple (par exemple, pour « cilde », je garde le <em>c</em>, le <em>i</em>, etc.). Et cela pour la cohérence.</p>
+<h2>b. Premières constructions de syllabes</h2>
+<p>Pour cette deuxième sous-partie, on va avoir besoin de l'aide d'un générateur. Le travail pourrait être fait de tête, mais le générateur nous facilite la tâche. Personnellement, j'utilise le petit programme NewName, qui fait parfaitement l'affaire.</p>
+<p><a href="http://www.lunerouge.org/newname/newname.php">NewName (595 ko)</a></p>
+<p>Rentrez dans les champs appropriés votre sélection de voyelles et de consonnes. Décochez noms composés, numéros, majuscules. Laissez coché syllabes, de 1 à 3, et générez !</p>
+<p>Le logiciel va vous donner divers noms (ainsi que quelques syllabes isolées) et dans le tas plusieurs qui pourraient être pris tels quels. Relevez tous les noms intéressants mais aussi toutes les syllabes et associations de syllabes qui vous plaisent, qui « sonnent » bien. Attention, c'est cette partie qui détermine la « couleur » finale des noms du peuple, donc il faut vraiment s'appliquer. Mais n'hésitez pas à générer vite et beaucoup ; laissez parler votre instinct, générez, générez. Et cueillez au vol tout ce qui sonne bien !</p>
+<blockquote>
+<p>Avec ma sélection de lettres de départ, j'obtiens :
+Val — Memnel — Aramid — Nirteven — Tel — Torel — Ren — etc.</p>
+</blockquote>
+<hr />
+<p>C'est le moment de regrouper toutes vos syllabes sélectionnées en une unique liste. C'est aussi l'heure du second tri, « à tête reposée ». Éliminez toutes les syllabes qui vous paraissent trop hétérogènes au milieu du reste. Gardez uniquement ce qui vous plaît vraiment : l'idéal est d'en obtenir une grosse quarantaine (une trentaine semble être un minimum, mais bien sûr tout dépend du nombre de noms que vous voulez créer). N'oubliez pas aussi de décomposer tous les noms relevés.</p>
+<blockquote>
+<p>Par exemple, Nirteven me donne -nir, -te, -ven. Mais j'aurai tout aussi bien pu décomposer en -nirt -ev -en.</p>
+</blockquote>
+<p>Pour ce qui concerne le nombre de lettres par syllabe (2, 3 lettres voire 4), tout dépend de ce que vous voulez obtenir à la fin. Ne garder dans votre liste que des syllabes à 2 lettres, par exemple, vous donnera des noms plus spéciaux, originaux, que si vous les prenez toutes sans distinction. N'hésitez pas à intégrer dans vos syllabes choisies des consonnes muettes, ou bien des successions de consonnes (<em>ett</em>, <em>ahj</em>, <em>lpo</em> peuvent être retenues si elles correspondent à l'aspect des noms que vous désirez).</p>
+<h1>2. Production</h1>
+<p>C'est la partie la plus facile (car uniquement technique) : il s'agit maintenant de configurer un générateur qui permettra de créer rapidement des tonnes et des tonnes de noms, qui auront donc tous des consonances communes. Fil m'a retrouvé une de ses créations, un générateur personnalisable (<em>Note de Fil : excusez la laideur, le petit format et le Flash Player prérequis. Cette chose doit bien dater de 2006.</em>).</p>
+<p><a href="../static/dl/generateur.zip">Générateur offert par le site</a></p>
+<p>Pour ce qui est de son utilisation : ouvrez tout d'abord le fichier .xml (avec le bloc-notes), et à l'intérieur des guillemets, inscrivez toutes les syllabes obtenues précédemment, sans oublier aussi les voyelles.</p>
+<blockquote>
+<p>Pour mon exemple, ça donne :<br />
+&lt;syllabe txt="a"/&gt;<br />
+&lt;syllabe txt="e"/&gt;<br />
+&lt;syllabe txt="i"/&gt;<br />
+&lt;syllabe txt="o"/&gt;<br />
+&lt;syllabe txt="val"/&gt; <br />
+&lt;syllabe txt="mem"/&gt;<br />
+&lt;syllabe txt="nel"/&gt;<br />
+[…]</p>
+</blockquote>
+<p>Pas de difficulté, il suffit de rentrer les syllabes telles quelles (par ordre alphabétique si ça vous amuse, mais de toute façon le générateur choisira aléatoirement :p). Et voilà, il n'y a plus qu'à lancer le fichier .html et à générer. On obtient rapidement et facilement une grande série de noms se ressemblant. Mais bien entendu, tous ne sont pas « exploitables », tous ne sonnent pas bien… Ce serait trop facile ! Il nous reste encore plusieurs étapes : un gros travail de catégorisation et de retouche.</p>
+<h1>3. Catégorisation des préfixes et suffixes</h1>
+<h2>a. Quelques mises au point</h2>
+<p>Nous allons maintenant inventer et classer des préfixes et des suffixes qui nous serviront à transformer les noms bruts en prénoms, noms de familles ou noms de lieux. Pour bien faire, il faudrait d'abord inventer une langue, de laquelle ils découleraient tous. Cohérence et réalisme garantis, mais à part Tolkien je vois peu de gens capables de cette prouesse.</p>
+<p>Analysons rapidement un exemple typiquement français : <em>Marie Dujardin</em>, habitant la commune de Bellerive.</p>
+<ul>
+<li>Le prénom Marie correspond à la francisation du prénom hébreux Myriam. Comme la plupart des prénoms donnés en France, celui-ci provient d'un saint (une sainte en l’occurrence). On voit ici toute la complexité de l'apparition d'un prénom dans une langue, car cette apparition peut avoir des origines très diverses : adaptation d'un nom commun, d'un nom étranger, d'un personnage saint…</li>
+<li>Le nom <em>Dujardin</em> est assez explicite : le patronyme renvoie à un lieu (donc à un nom commun). On peut d'ailleurs souvent rattacher un nom à une caractéristique (lieu d'habitation, particularité physique, habitude comportementale/morale…).</li>
+<li>Enfin le nom du lieu, Bellerive, est du même type : sans doute ce village est-il situé à proximité d'un cours d'eau.</li>
+</ul>
+<p>Cette analyse rapide et primaire, très éloignée d'un véritable travail étymologique, n'a qu'un seul but : vous montrer toute la difficulté que l'on rencontre quand on veut donner du sens et une origine aux noms que l'on crée. L'invention préalable d'une langue est nécessaire à l'élaboration d'un système de noms poussé.</p>
+<p>Mais une méthode légère et alternative est possible. On va en fait se contenter de reprendre des suffixes et des préfixes communs, pour une meilleure homogénéité au sein de chaque catégorie de noms (prénoms, lieux, noms patronymiques) et pour plus de réalisme. Vous avez certainement déjà senti que la sélection de lettres au début de ce cours déterminait pour beaucoup l'aspect final des noms. Donc ce que l'on fait tout de suite, c'est juste une meilleure mise en forme. Et selon vos attentes, vos besoins, et un perfectionnisme plus ou moins aigu, cette mise en forme sera plus ou moins longue.</p>
+<h2>b. On catégorise !</h2>
+<p>Reprenons notre liste de syllabes créée dans la partie 1. Nous allons en prélever certaines et les répartir en plusieurs groupes. Généralement, les groupes seront :</p>
+<ul>
+<li>Les préfixes de prénoms</li>
+<li>Les préfixes de noms de famille</li>
+<li>Les préfixes de noms de lieux</li>
+</ul>
+<p>Et</p>
+<ul>
+<li>Les suffixes de prénoms masculins</li>
+<li>Les suffixes de prénoms féminins</li>
+<li>Les suffixes de noms de famille</li>
+<li>Les suffixes de noms de lieux</li>
+</ul>
+<p><strong>Attention !</strong> A ce stade, tout dépend de vous : ce sont vos choix qui vont déterminer l'ampleur de la tâche ! En effet, vous n'êtes pas obligés de créer autant de groupes (en supprimant les préfixes de noms de lieux, par exemple), mais vous pouvez aussi en créer d'autres (en créant des préfixes masculins et féminins, ou en multipliant l'ensemble des groupes par le nombre de races/peuples/régions souhaité…).</p>
+<p>Un très bon exemple est celui du Seigneur des Anneaux. Tolkien a nommé un de ses peuples avec des prénoms + noms patronymiques (ex : <em>Bilbo Baggins</em>), mais d'autres peuples ne possèdent qu'un seul nom « générique » (ex : <em>Aragorn</em>, fils d'<em>Arathorn</em>). De plus il a bien évidemment séparé les préfixes/suffixes humains des préfixes/suffixes elfiques et nanesques, mais à l'intérieur du groupe de noms « humains » il a encore séparé les hommes du Rohan de ceux du Gondor… C'est un travail titanesque mais qui apporte une profondeur et un réalisme incroyable à son univers.</p>
+<p><img alt="Catégorisation étendue" src="../media/img/noms.png" /></p>
+<p>Ce schéma vous montre comment s'articule l'arborescence des groupes nécessaire à une catégorisation étendue. Tout ceci nécessite beaucoup d'organisation ! Mais bien sûr, cette catégorisation peut être restreinte.</p>
+<p>Pour une catégorisation superficielle, contentez-vous d'attribuer 3 ou 4 syllabes (tirées de votre liste) à chaque groupe, mais rien ne vous empêche d'en attribuer 20 (bien sûr, cela nécessite de se munir auparavant d'une longue liste de syllabes « exploitables » — n'hésitez pas à en générer davantage !). Réserver ainsi quelques syllabes pour les différents types de noms permet de donner des points de repère au futur lecteur/joueur. Il se sentira rassuré de reconnaître dans plusieurs prénoms ou dans les noms de lieux des préfixes/suffixes identiques, et vous gagnerez en crédibilité.</p>
+<h2>c. Donner du sens</h2>
+<p>Nous arrivons au moment de déterminer si vous voulez donner un véritable sens à tous vos noms (ou seulement quelques-uns). Vous pouvez en effet inventer une traduction pour chaque syllabe catégorisée.</p>
+<blockquote>
+<p>Exemple : si je sors de ma liste de départ les syllabes <em>nir</em>, et <em>an</em>.
+- <em>nir</em> me paraît intéressante en position de préfixe. Cette syllabe signifiera « la terre ». Ainsi le prénom <em>Nirien</em> pourrait-il être traduit grosso modo par « le terrien ». Et <em>Nirteven</em>, en tant que nom de lieu, par « la haute terre » (notez que j'utilise le même préfixe pour deux types de noms — je réunis ainsi deux groupes en un seul). En procédant comme ceci, on introduit des éléments intéressants dans son univers sans avoir à élaborer un véritable système linguistique.
+- <em>an</em> semble mieux convenir comme suffixe. Je vais placer cette syllabe dans le groupe des suffixes de prénoms masculins, mais je ne vais pas inventer de traduction. Je réalise donc un travail partiel, mais toujours cohérent.</p>
+</blockquote>
+<p>Attention, il ne faut pas trop abuser de cette méthode. Vos noms risquent de paraître redondants si vous ré-utilisez trop souvent les mêmes préfixes et suffixes. En fait, comme vous pourrez le constater si vous avez à générer énormément de noms, la plupart d'entre eux pourront se passer de ces ajouts. Il vous suffira simplement de les sélectionner avec soin.</p>
+<p>Il serait logique à ce stade de se demander : quelles syllabes attribuer à quels groupes de préfixes/suffixes ? Et donc, autrement formulé : à quoi doit ressembler tel type de nom ? C'est l'objet de la dernière partie.</p>
+<h1>4. Finalisation</h1>
+<h2>a. Types de noms</h2>
+<p>En fait, il n'existe aucune règle formelle. N'importe quel nom pourrait, en théorie, être attaché à une personne ou à un lieu. Mais en réalité, notre langue maternelle (et notre connaissance de plusieurs langues étrangères) nous conduit à privilégier certaines sonorités, certaines syllabes, selon le type de nom. Par exemple, la syllabe -<em>el</em>, utilisée en tant que suffixe, rappelle les prénoms <em>Daniel</em>, <em>Raphaël</em>, <em>Marcel</em>… De la même façon, la syllabe -<em>ster</em> en fin de nom de ville rappellera Gloucester ou Manchester (villes anglaises).</p>
+<p>Ces syllabes familières ne sont pas un mal. Ce sont elles qui donneront de la crédibilité à vos noms. En effet, il est difficile de rendre accrocheur un nom dépourvu de toute ressemblance avec une langue existante. Par exemple, si je ne savais pas à quoi ressemblait le polonais et que je lisais « Krzysztof Zbikowski », je trouverais ça d'une rudesse incroyable (un assemblage maladroit incluant trop de consonnes). Or, <em>Krzysztof</em> m'évoque immanquablement <em>Christophe</em>, et la terminaison en -<em>ski</em> est très répandue dans les noms polonais.</p>
+<p>Le joueur a donc besoin de « s'y retrouver ╗. Dans ce but, on peut utiliser une méthode : calquer approximativement les types de noms sur une langue existante. Si vous avez choisi le français, par exemple :</p>
+<ul>
+<li>Le nom de famille sera plus long que le prénom (ou de taille égale) mais rarement plus court.</li>
+<li>Les prénoms et les noms de familles ne comporteront pas de successions trop longues de consonnes.</li>
+<li>Vous utiliserez des syllabes familières « françaises » pour distinguer les noms patronymiques des prénoms et des noms de lieux.</li>
+</ul>
+<p>Exemple : pour l'un de mes peuples, les Lugdènes, je voulais des noms à consonances très françaises. Grâce à l'ajout de syllabes dites « familières » dans les groupes de suffixes, j'ai obtenu comme noms de famille : <em>Planguène</em>, <em>Lacière</em>, <em>Gulbelet</em>, <em>Lebord</em>, <em>Remillet</em>… Ces noms sont crédibles car ils respectent la « charte » des noms français.</p>
+<p>Mais vous auriez pu choisir le chinois :</p>
+<ul>
+<li>Les prénoms et les noms de familles sont courts.</li>
+<li>La formulation en trois parties (ajout du nom maternel) est fréquente.</li>
+<li>Les lettres <em>z</em>, <em>w</em>, ou <em>x</em> sont plus fréquemment utilisées.</li>
+<li>Vous utiliserez des syllabes familières « chinoises ».</li>
+</ul>
+<p>Exemple : Si vous avez déjà joué à un jeu de la série <em>The Elder Scrolls</em>, vous connaissez sans doute la race des Impériaux. Ces derniers ont leurs noms calqués sur les prénoms et patronymes romains (<em>Caius Cosades</em>, <em>Crassius</em>, <em>Darius</em>…). Le jeu (qui se veut réaliste) en tire un grand intérêt, et la légion impériale se présentant sous beaucoup d'aspects comme la légion romaine, ça ne choque pas. Toutefois, il faut bien remarquer que les Impériaux correspondent au seul peuple calquant d'aussi près une véritable langue (sinon cet univers fantastique ne le serait plus beaucoup).</p>
+<p>Cette technique doit donc être appliquée avec retenue. En fait, il est préférable d'essayer de croiser plusieurs langues pour obtenir des mélanges intéressants. Le but est d'éviter l'emploi de syllabes familières au « mauvais endroit » (le joueur doit sentir que tel nom désigne une personne ou un nom de lieu). Mais il n'y a pas de formule magique : c'est à vous de jouer. Selon le nombre de syllabes catégorisées, vous pourrez rendre vos noms très exotiques (consonances inconnues du joueur) ou bien familiers (syllabes « familières » de la ou les langues choisies).</p>
+<h2>b. Des possibilités supplémentaires</h2>
+<p>Récapitulons : une fois le travail de catégorisation des préfixes et des suffixes achevé, il ne vous reste plus qu'à vous servir du générateur configuré dans la partie 2 pour générer rapidement des listes de noms (j'insiste sur le « rapidement » : le premier coup d’œil est le meilleur, vous ne devez pas avoir à vous « convaincre » vous même que tel ou tel nom est acceptable — il doit naturellement vous paraître réaliste et plaisant à l'oreille).</p>
+<p>Piochez ensuite dans vos groupes de préfixes : vous pouvez les rajouter en début de nom ou remplacer directement la première syllabe par le préfixe choisi. Il en va de même pour les suffixes. N'oubliez pas que ces préfixes et suffixes sont « accessoires », vous pouvez vous en passer. Comme vu juste au dessus, ces syllabes, plus ou moins familières, vont aider à créer les « types » de noms (et à leur donner crédibilité et sens).</p>
+<p>Il nous reste encore quelques techniques de création importantes à aborder.</p>
+<h3>L'emploi direct de noms communs</h3>
+<p>Une technique très intéressante consiste à se servir de noms communs (français, obligatoirement — mais ils pourront être traduits) pour créer directement des noms propres (principalement des noms de lieux, mais aussi des noms patronymiques).</p>
+<ul>
+<li>Soit tels quels : « Les Hautes Plaines », « Les Marais des Morts »</li>
+<li>Soit par associations : « Rochefer », « Sombrefeuille »…</li>
+</ul>
+<p>En revanche il est délicat de mélanger ces noms avec des noms créés de toute pièce. Utilisez-les pour des régions particulières si vous voulez être certains d'éviter l'hétérogénéité. Pour ce qui est du sens, il est bien sûr explicite mais vous pouvez jouer avec pour obtenir des effets divers ; par exemple, appeler une terre dévastée « Blanchelande ».</p>
+<h3>L'emploi de surnoms</h3>
+<p>Comme dit précédemment, un nom propre est souvent issu d'une caractéristique ; on peut donc attacher des surnoms (basés sur le même principe) assez facilement. Surnoms relatifs à une caractéristique physique (« le boiteux », « le borgne ») mais pas seulement ; ils peuvent concerner un comportement (« le brave », « l'indécis »), un talent ou un métier (« l'artisan », « le virtuose ») ou même une habitude vestimentaire (« le rouge », « le noir »).</p>
+<p>Il faut noter qu'un surnom interpelle plus volontiers le lecteur/joueur. Attention donc à ne pas trop les utiliser et à les réserver à des personnages importants, ou tout du moins à des personnages sur lesquels vous voulez attirer l'attention.</p>
+<h2>c. Le bon, le beau et le mauvais nom</h2>
+<p>Il me reste enfin quelques recommandations à vous soumettre (rassurez-vous, c'est bientôt fini).</p>
+<p>Un nom sera toujours « bon » si :</p>
+<ul>
+<li>Il a été travaillé (il ne doit pas avoir été inventé dans l'urgence pour pallier un manque d'inspiration).</li>
+<li>Il sonne bien à la première lecture (ou plutôt, "écoute"). A force de lecture, n'importe quel nom peut finir par devenir acceptable, pour autant s'il était mauvais au début il le restera.</li>
+<li>Il s'intègre bien dans son "groupe" (race, région, peuple). L'homogénéité est l'indispensable but à atteindre.</li>
+<li>Il se retient facilement : un nom trop compliqué, difficile à lire, ne restera pas longtemps dans la tête du joueur. L'utilisation de nombreuses consonnes contribue à alourdir la lecture.</li>
+</ul>
+<p>Maintenant, voyons comment rendre nos noms excellents, en :</p>
+<ul>
+<li>Insérant des allitérations : répéter dans le prénom et le nom des mêmes syllabes (ou consonnes) donne un effet d'harmonie tout à fait plaisant. Par exemple : dans <em>Caïus Cosades</em>, on remarque une répétition du <em>c</em> en ouverture de nom et un <em>s</em> en fermeture. Encore une fois, cette méthode est à utiliser avec parcimonie.</li>
+<li>Équilibrant les longueurs : si le nom de famille est long, le prénom doit être court. Si le prénom est long, le nom de famille doit être court. Le but est que l'ensemble ne soit pas trop lourd à lire (surtout s'il est répété souvent). Un effet intéressant s'obtient en mettant côte à côte un nom très court (une syllabe) et un nom très long (trois ou quatre syllabes).</li>
+<li>Se servant du nom pour conférer une identité à un lieu/personnage : le nom, plus ou moins doux ou dur à l'oreille, plus ou moins porteur de sens, va aider à construire une identité pour celui (ou ce qui) le porte. La technique la plus simple est l'emploi d'un surnom ; mais plus encore, certaines consonances peuvent former des images dans la tête du joueur.</li>
+</ul>
+<p>Par exemple, <em>Krarock</em> est un nom très dur (des <em>k</em> et des <em>r</em> qui râpent le palais). De plus, <em>kra</em> (« crasseux, crade ») évoque la saleté et <em>rock</em> (simplement <em>roc</em>), quelque chose de solide ou d'imperturbable. Et hop, voilà que l'image d'un guerrier robuste et sale se forme dans ma tête (et certainement pas l'image d'une fillette en robe rose). Il est impossible, bien sûr, de maîtriser complètement la connotation d'un nom et l'effet qu'il produira sur le joueur, mais on peut quand même prendre garde à la dureté plus ou moins grande d'un nom et aux homonymies.</p>
+<p>Et au contraire, voici les écueils à éviter :</p>
+<ul>
+<li>Utiliser à outrance les lettres muettes et les apostrophes : le grand danger de cette technique sur-employée dans les univers fantastiques est de faire perdre toute saveur à vos noms. Il est facile en effet d'insérer un <em>h</em> muet en plein cœur d'un nom ou bien de couper celui ci en deux avec une apostrophe. Mais c'est une méthode artificielle qui va avoir tendance à effacer le travail sur les syllabes au profit de la forme, ainsi vos noms seront redondants et banalisés (à la limite vous pouvez réserver son emploi pour un peuple ou une région, et en usant de la technique avec retenue).</li>
+<li>Utiliser des noms aux consonances trop proches pour les personnages principaux d'un jeu : plus les noms sont éloignés en terme de sonorités, plus le joueur pourra s'en rappeler facilement. Une exception concerne les personnages d'une même famille, qui peuvent avoir des noms ressemblants (ce sera un aide-mémoire pour le joueur, à moins que le lien familial doive rester secret). Pour un jeu où seuls les héros sont nommés, n'hésitez pas à vous libérer complètement des contraintes de réalisme ; vous pouvez toujours vous servir du générateur de syllabe (CF Partie 1 et 2) pour attraper au vol une association de syllabes intéressante, mais votre jugement personnel compte par dessus tout.</li>
+<li>Insérer des noms existants au milieu de noms inventés : il n'y a rien de pire que jouer à un RPG médieval-fantastique et se rendre compte que le nom du héros est <em>Anthony</em>. Il est tentant, quand on crée un univers, quand on nomme à tour de bras des PNJ et des héros, d'inclure ici ou là le nom d'un ami par exemple, ou bien un prénom qui nous a toujours plu. Mais bien évidemment, cela déconstruit totalement la crédibilité et l'homogénéité du jeu. Attention donc à refréner parfois ses envies pour un résultat cohérent !</li>
+<li>Recourir systématiquement à la terminaison en -<em>a</em> pour nommer vos lieux et vos personnages féminins : cette technique, là aussi, est gratuite et sur-utilisée. Il ne s'agit pas de bannir l'emploi du -<em>a</em> mais juste de le remettre à sa place (il doit découler logiquement de votre travail de construction des noms et ne pas arriver comme par magie à la fin).</li>
+</ul>
+<p>En conclusion…</p>
+<p>Cet article est fini, j'espère qu'il vous aura aidé. Il me reste un dernier conseil à vous donner : la création de nom est un art, et on ne peut pas l'enfermer dans quelques lignes de texte. Les techniques proposées, les choses à faire et à ne pas faire seront des aides de chantier mais jamais elles ne se suffiront à elles-mêmes. Les noms que vous inventerez ne seront jamais perçus de la même manière par deux de vos lecteurs, il vous faudra avoir tout ceci à l'esprit et ne pas attendre d'office des retours dithyrambiques. J'ai toutefois la prétention de penser qu'en suivant de près ou de loin cet article, vous obtiendrez des retours positifs… ou pas.</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/creation-de-noms&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_466" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 novembre 2018 16:56:43</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>C'est très dommage, les générateurs ne marchent plus.
+Mais sinon excellent cour !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_466').addClass('deleted');
+			$('#comment_466 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_466 .delete').css("display", "none");
+			$('#comment_466 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_466 .delete').css("display", "none");
+		else										$('#comment_466 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_464" class="comment">
+	
+		<span class="meta">Par un anonyme le 1 août 2018 00:49:48</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonsoir, est-ce normal que le générateur NewName ne fonctionne plus ? C'était un excellent outil pourtant…</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_464').addClass('deleted');
+			$('#comment_464 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_464 .delete').css("display", "none");
+			$('#comment_464 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_464 .delete').css("display", "none");
+		else										$('#comment_464 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_441" class="comment">
+	
+		<span class="meta">Par un anonyme le 2 juin 2017 18:25:10</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>fantastique, très utile, vraiment merci ! j'ai un peu galéré pour ma part à ouvrir le second générateur, d'ailleurs merci à l'anonyme du 20 mai 2017, ça a été très utile ! A tous ceux qui auront du mal avec ça, je vous recommande vivement d'essayer sa méthode ! en tout cas, merci pour cet excellent tutoriel ! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_441').addClass('deleted');
+			$('#comment_441 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_441 .delete').css("display", "none");
+			$('#comment_441 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_441 .delete').css("display", "none");
+		else										$('#comment_441 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_440" class="comment">
+	
+		<span class="meta">Par un anonyme le 20 mai 2017 18:30:42</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Jolie tuto, très bien expliqué. Pour ceux qui on le problème d'erreur allez ici : http://www.flashflashrevolution.com/vbz/showthread.php?t=120256 . En suite sélectionné votre système d'explotation et télécharger le Adobe Player 12. Ouvrez le fichier .swf avec et ça marche ! En espérant vous avoir aidé !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_440').addClass('deleted');
+			$('#comment_440 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_440 .delete').css("display", "none");
+			$('#comment_440 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_440 .delete').css("display", "none");
+		else										$('#comment_440 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_439" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 mai 2017 12:59:32</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonjour, </p>
+<p>cet article est très intéressant, il me sera très utile.</p>
+<p>Seul bémol, même en utilisant Internet Explorer et en appliquant la procédure d'extraction du Zip et de modification du fichier syllabes, Internet Explorer m'affiche systématiquement le message d'erreur suivant "Erreur de chargement".
+Dommage…</p>
+<p>Laurent B</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_439').addClass('deleted');
+			$('#comment_439 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_439 .delete').css("display", "none");
+			$('#comment_439 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_439 .delete').css("display", "none");
+		else										$('#comment_439 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_438" class="comment">
+	
+		<span class="meta">Par un anonyme le 1 mai 2017 11:18:18</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonjour à tous, la technique qui m'intéresse est celle qui consiste à coller deux nom commun pour former un nom propre car elle peux aussi s appliquer pour des noms d'objet. Est ce que ça serait possible de créer un générateur qui pioche des noms commun au hasard pour former des associations. Je suis conscient qu'un certain nombre de ces associations seraient bizarre mais on aurait quelques bonnes surprise je pense.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_438').addClass('deleted');
+			$('#comment_438 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_438 .delete').css("display", "none");
+			$('#comment_438 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_438 .delete').css("display", "none");
+		else										$('#comment_438 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_432" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 octobre 2016 17:52:20</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonjour, 
+Merci pour ce tutoriel très intéressant.
+Pour ceux qui ont des problèmes avec le second générateur, j'ai pour ma part réussi à l'utiliser en l'ouvrant dans Internet Explorer alors qu'il ne fonctionnait pas lorsque je l'ouvrais sous Chrome. 
+En espérant que ce constat puisse servir à d'autres…</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_432').addClass('deleted');
+			$('#comment_432 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_432 .delete').css("display", "none");
+			$('#comment_432 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_432 .delete').css("display", "none");
+		else										$('#comment_432 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_431" class="comment">
+	
+		<span class="meta">Par un anonyme le 2 octobre 2016 13:02:37</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonjour, tout à d'abord, je tiens à vous remercier pour ce tuto fort pratique, malheureusement, je rencontre un problème avec le générateur. Je l'utilise depuis quelques temps, tout marchait sans problèmes, sauf que maintenant, chaque fois que je l'ouvre, un message d'erreur s'affiche, indiquant une erreur de chargement.</p>
+<p>Si quelqu'un pouvait m'indiquer un autre générateur ou une façon de réparer celui-ci, ça serait super! :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_431').addClass('deleted');
+			$('#comment_431 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_431 .delete').css("display", "none");
+			$('#comment_431 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_431 .delete').css("display", "none");
+		else										$('#comment_431 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_430" class="comment">
+	
+		<span class="meta">Par un anonyme le 23 juillet 2016 22:20:45</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Pour tous ceux qui ont des problèmes lors de l'utilisation du générateur de noms :</p>
+<p>-Télécharger le dossier compressé
+-Sous Windows, faire : clic droit, extraire tout, valider
+-Ouvrir le nouveau dossier ayant été crée
+-Ouvrir le document .XML avec le bloc-note : clic droit, ouvrir avec…, bloc-notes
+-Entrer comme indiqué les syllabes entre les guillemets (vous pouvez rajouter des lignes si vous avez plus de syllabes, un simple copié-collé suffit)
+-Dans le bloc-note : fichier, enregistrer
+-Revenir dans le document et ouvrir le fichier .HTML avec un navigateur internet</p>
+<p>Si vous l'avez bien fait, ça devrait fonctionner, sinon, réessayez ! </p>
+<p>Voilà en espérant que mon commentaire aura été utile,
+Bye</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_430').addClass('deleted');
+			$('#comment_430 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_430 .delete').css("display", "none");
+			$('#comment_430 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_430 .delete').css("display", "none");
+		else										$('#comment_430 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_426" class="comment">
+	
+		<span class="meta">Par un anonyme le 5 avril 2016 01:19:47</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Le générateur  NewName marche très bien, mais je n'arrive pas du tout à utiliser l'autre. Quelqu'un aurait une alternative ou un autre générateur semblable?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_426').addClass('deleted');
+			$('#comment_426 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_426 .delete').css("display", "none");
+			$('#comment_426 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_426 .delete').css("display", "none");
+		else										$('#comment_426 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_423" class="comment">
+	
+		<span class="meta">Par un anonyme le 5 mars 2016 12:16:41</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonjour j'aimerais savoir marche le générateur parce que niveau informatique je suis paumé loll.^^'</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_423').addClass('deleted');
+			$('#comment_423 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_423 .delete').css("display", "none");
+			$('#comment_423 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_423 .delete').css("display", "none");
+		else										$('#comment_423 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_420" class="comment">
+	
+		<span class="meta">Par un anonyme le 18 février 2016 00:37:20</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Génial cet article ! Bien construit, bien écrit, efficace… Merci, ça m'a donné beaucoup d'idées ! 
+J'avoue que les noms de personnages constituent pour moi un obstacle, mais maintenant il me semble que ça va être moins dur. Je vais donc jouer avec les syllabes et les sonorités, faire attention à la cohésion de chaque peuple, et m'inspirer de tes conseils ;)
+Merci aussi pour les remarques sur ce qui existe déjà (le Seigneur des Anneaux par ex), ça fait toujours plaisir de voir comment ont procédé les grands auteurs ! :) Ce sont des choses qui paraissent évidentes une fois qu'on les lit, mais on ne les aurait jamais remarquées si tu le ne les avais pas mises en valeur ! :)
+Merci encore et bonne continuation ^^</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_420').addClass('deleted');
+			$('#comment_420 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_420 .delete').css("display", "none");
+			$('#comment_420 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_420 .delete').css("display", "none");
+		else										$('#comment_420 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_418" class="comment">
+	
+		<span class="meta">Par un anonyme le 25 novembre 2015 00:45:37</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>C'est vraiment excellent mais le générateur ne fonctionne pas :(</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_418').addClass('deleted');
+			$('#comment_418 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_418 .delete').css("display", "none");
+			$('#comment_418 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_418 .delete').css("display", "none");
+		else										$('#comment_418 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_411" class="comment">
+	
+		<span class="meta">Par un anonyme le 9 juillet 2015 21:27:30</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Le logiciel de "Fil" ne marcha pas sur mon ordi. Quelqu'un en connais un autre ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_411').addClass('deleted');
+			$('#comment_411 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_411 .delete').css("display", "none");
+			$('#comment_411 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_411 .delete').css("display", "none");
+		else										$('#comment_411 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_406" class="comment">
+	
+		
+			<span class="meta">Par NosKaan le 29 mars 2015 17:10:41</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de NosKaan" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Bonjour à tous, </p>
+<p>Merci pour ce tuto vraiment efficace, néanmoins si le New Name est bon le générateur ne marche pas. Donc si quelqu'un peut m'en donner un autre ou me dire comment le créer?? Merci beaucoup</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_406').addClass('deleted');
+			$('#comment_406 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_406 .delete').css("display", "none");
+			$('#comment_406 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_406 .delete').css("display", "none");
+		else										$('#comment_406 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_405" class="comment">
+	
+		<span class="meta">Par un anonyme le 18 mars 2015 23:32:22</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>excellent article, merci beaucoup! Cela m'aura évité des heures de travail dans une mauvaise direction, choisie trop hâtivement</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_405').addClass('deleted');
+			$('#comment_405 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_405 .delete').css("display", "none");
+			$('#comment_405 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_405 .delete').css("display", "none");
+		else										$('#comment_405 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_397" class="comment">
+	
+		
+			<span class="meta">Par JaKcS le 21 décembre 2014 13:53:23</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de JaKcS" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Bon, chez moi le générateur ne fonctionnait pas, alors j'en ai codé un rapidement,si il y en a qui sont intéressés…
+En tout cas très bon tuto:)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_397').addClass('deleted');
+			$('#comment_397 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_397 .delete').css("display", "none");
+			$('#comment_397 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_397 .delete').css("display", "none");
+		else										$('#comment_397 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_396" class="comment">
+	
+		<span class="meta">Par un anonyme le 10 décembre 2014 13:51:33</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Wahoo, il est super ton article ! Ca m'a été vraiment utile !
+J'ai trouver un nom pour une ville de sirenes enfouie sous l'océan : Hydra
+Merci beaucoum en tous cas ! ;)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_396').addClass('deleted');
+			$('#comment_396 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_396 .delete').css("display", "none");
+			$('#comment_396 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_396 .delete').css("display", "none");
+		else										$('#comment_396 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_376" class="comment">
+	
+		<span class="meta">Par un anonyme le 18 novembre 2013 22:05:22</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>j'adore ton article merci beaucoup, mais lorsqu'on a rentré les syllabes dans le bloc-notes et qu'on a ouvert le ficher html qu'est-ce qu'on doit faire ? parce que il y a bien le bouton générer mais sa ne fait rien. <br />
+</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_376').addClass('deleted');
+			$('#comment_376 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_376 .delete').css("display", "none");
+			$('#comment_376 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_376 .delete').css("display", "none");
+		else										$('#comment_376 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_362" class="comment">
+	
+		<span class="meta">Par un anonyme le 11 août 2013 17:45:36</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Merci beacoup mais le générateur ne marchait pas donc j'ai du le faire de tête mais comme je te lais dit il y a quelque mois (le 20avril 2013 quand j'ait dit les noms de familles qui sonnait "bien" etc) c'est très bien et NewName est un très bon site.</p>
+<p>Encore merci pour ces beaucoup de lignes qui m'ont très bien aidés </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_362').addClass('deleted');
+			$('#comment_362 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_362 .delete').css("display", "none");
+			$('#comment_362 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_362 .delete').css("display", "none");
+		else										$('#comment_362 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_343" class="comment">
+	
+		<span class="meta">Par un anonyme le 20 avril 2013 17:06:11</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Merci beaucoup pour ce que tu as ecrit ( en effet j'ai inventé plein de nom de famille qui sonnait "bien" auparavant mais j'était à cours d'idée). Alors encore merci et ça ma beaucoup aidé! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_343').addClass('deleted');
+			$('#comment_343 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_343 .delete').css("display", "none");
+			$('#comment_343 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_343 .delete').css("display", "none");
+		else										$('#comment_343 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_274" class="comment">
+	
+		
+			<span class="meta">Par Neokjata le 9 septembre 2012 18:47:33</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Neokjata" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>J'avais déjà créé un univers de JdR et je m'était servi sans le savoir de la plupart de ces techniques, merci pour cet article très intéressant!!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_274').addClass('deleted');
+			$('#comment_274 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_274 .delete').css("display", "none");
+			$('#comment_274 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_274 .delete').css("display", "none");
+		else										$('#comment_274 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_229" class="comment">
+	
+		
+			<span class="meta">Par Dexyne le 7 avril 2012 23:11:24</span>
+			<br/><img src="http://www.gravatar.com/avatar/ec9e1c194c8c1ed93b7a160a20e08064?s=50&amp;r=g&amp;d=mm" alt="avatar de Dexyne" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Très bon article que je viens de relire une nouvelle fois :).</p>
+<p>Pour les prénoms des amis / que l'on aiment / etc. que l'on souhaite intégrer dans l'univers c'est une chose à laquelle on pense souvent (je sais que je voulais le faire à mes débuts n'ayant pas d'idée de noms) mais je pense que pour certains si il est traduit par rapport à notre univers (et race, peuple, etc.), il est possible de l'intégrer dedans sans trop de soucis ^^.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_229').addClass('deleted');
+			$('#comment_229 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_229 .delete').css("display", "none");
+			$('#comment_229 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_229 .delete').css("display", "none");
+		else										$('#comment_229 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_221" class="comment">
+	
+		
+			<span class="meta">Par BYAM le 1 avril 2012 17:03:12</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de BYAM" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Personnellement, je créais beaucoup de personnages dans mes histoires (écrites, pas sous forme de JV malheureusement) et le me sers beaucoup de l'étymologie pour donner un sens aux noms de mes héros. Par exemple, un flic avait pour nom de famille "Legislex", association de "legis" et "lex", deux étymologie du même mot, la loi. Dans la mesure où le personnage était un modèle de droiture et intransigeant de surcroît, ce nom accentuait ce trait de caractère. Ou bien j'utilise aussi d'autres langue (souvent l'anglais) quand je ne trouve rien qui me plaise dans la langue de Molière. Quoiqu'il en soit, j'apprécie la qualité de cet article et soyez-sûr qu'il m'aidera à appliquer de nouvelles méthodes de travail! </p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_221').addClass('deleted');
+			$('#comment_221 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_221 .delete').css("display", "none");
+			$('#comment_221 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_221 .delete').css("display", "none");
+		else										$('#comment_221 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_87" class="comment">
+	
+		
+			<span class="meta">Par gozuforce le 30 juin 2011 11:16:55</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de gozuforce" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>à noter qu'avec newname on peut choisir la fréquence de telle ou telle lettre en la démultipliant dans la liste de lettres. c'est plus modulable qu'une suppression de lettres.</p>
+<p>sinon bel article.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_87').addClass('deleted');
+			$('#comment_87 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_87 .delete').css("display", "none");
+			$('#comment_87 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_87 .delete').css("display", "none");
+		else										$('#comment_87 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_55" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 15 juin 2011 18:58:03</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'est corrigé, merci de l'avoir remarqué.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_55').addClass('deleted');
+			$('#comment_55 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_55 .delete').css("display", "none");
+			$('#comment_55 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_55 .delete').css("display", "none");
+		else										$('#comment_55 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_53" class="comment">
+	
+		
+			<span class="meta">Par trotter le 15 juin 2011 09:05:56</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de trotter" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Le lien vers le générateur newname est mort.</p>
+<p>Ils ont sorti une version en ligne :
+http://www.lunerouge.org/newname/newname.php</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_53').addClass('deleted');
+			$('#comment_53 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_53 .delete').css("display", "none");
+			$('#comment_53 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_53 .delete').css("display", "none");
+		else										$('#comment_53 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_24" class="comment">
+	
+		<span class="meta">Par un anonyme le 13 décembre 2010 22:53:19</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Wow ! Je suis stupéfaits ! Ce tutoriel est vraiment excellent ! Je n'aurais jamais imaginé que ça demandais autant de travail et je vois que ça en vaut la peine ! C'est vraiment super intéressant comme article, c'est là qu'on voit le boulot qu'un jeu demande dans les moindres détails, merci beaucoup pour cet excellent article ! </p>
+<p>--Deimz</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_24').addClass('deleted');
+			$('#comment_24 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_24 .delete').css("display", "none");
+			$('#comment_24 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_24 .delete').css("display", "none");
+		else										$('#comment_24 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/23';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="creation-de-noms@scroll_to=article.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#110;&#116;&#97;&#99;&#x74;&#64;&#108;&#101;&#x73;&#x66;&#111;&#114;&#103;&#x65;&#x73;&#46;&#x6f;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

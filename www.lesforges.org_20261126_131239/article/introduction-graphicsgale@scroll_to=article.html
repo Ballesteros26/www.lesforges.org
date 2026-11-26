@@ -1,0 +1,1169 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | Introduction à GraphicsGale</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	GraphicsGale est un outil très puissant pour quiconque s'intéresse au pixel art, et propose une version d'essai gratuite qui reprend la majorité des fonctionnalités de la version complète (sauf les formats comme .gif, .cur, .ani et . ico qui ne sont pas supportés) téléchargeable ici.
+GraphicsGale permet notamment l'utilisation de plusieurs frames pouvant elles-mêmes contenir plusieurs calques et gère la transparence. C'est également un outil de gestion des palettes restreintes très puissant, mais trêve de bavardage, entrons dans le vif du sujet.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#110;&#116;&#97;&#x63;&#x74;&#x40;&#108;&#101;&#115;&#102;&#x6f;&#x72;&#x67;&#x65;&#x73;&#x2e;&#111;&#x72;&#x67;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>Introduction à GraphicsGale</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/bonhomme.html">Thomas Chassin</a> | le 13 novembre 2011 16:00:00 | Catégories : <a href="../tag/cours.html">Cours</a>, <a href="../tag/pixel-art.html">Pixel art</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>GraphicsGale est un outil très puissant pour quiconque s'intéresse au pixel art, et propose une version d'essai gratuite qui reprend la majorité des fonctionnalités de la version complète (sauf les formats comme .gif, .cur, .ani et . ico qui ne sont pas supportés) téléchargeable <a href="http://www.humanbalance.net/gale/us/download.html">ici</a>.</p>
+<p>GraphicsGale permet notamment l'utilisation de plusieurs frames pouvant elles-mêmes contenir plusieurs calques et gère la transparence. C'est également un outil de gestion des palettes restreintes très puissant, mais trêve de bavardage, entrons dans le vif du sujet.</p>
+			</div>
+			<div id="article_content">
+				<h1>L'interface de GraphicsGale</h1>
+<p>Étudions de plus près le fonctionnement de l'interface, dont voici un aperçu:</p>
+<p><img alt="L'interface de GraphicsGale" src="../media/img/Screen_GraphicsGale.PNG" /></p>
+<h2>Les menus</h2>
+<p><img alt="Les menus et barres d'outils de GraphicsGale" src="../media/img/ZoomInterface.PNG" /></p>
+<p>Les blocs (déplaçables) sont abordés dans l'ordre affiché ci-dessus et les icônes sont abordées de gauche à droite.</p>
+<h3>Bloc n° 1: Options générales</h3>
+<ul>
+<li><strong>Nouveau :</strong> Est-il vraiment nécessaire de détailler l'utilité de cet outil ? Il permet simplement la création d'un nouveau document. (Ctrl + N)</li>
+<li><strong>Ouvrir :</strong> Ici aussi, rien de bien extraordinaire. Ce bouton provoque l'ouverture d'un explorateur vous permettant de sélectionner un document à ouvrir. (Ctrl + O)</li>
+<li><strong>GaleBrowser :</strong> Ouvre le GaleBrowser, un outil de recherche plus perfectionné (compris dans le pack d'installation de la version d'essai) qui permet entre autre de prévisualiser les fichier Gale (.gal).
+Je ne m'en suis jamais servi, donc je ne m'étendrai pas dessus.</li>
+<li><strong>Sauvegarder :</strong> Sauvegarde le fichier sélectionné. (Ctrl + S)</li>
+<li><strong>Précédent :</strong> Annule la dernière action effectuée. (Ctrl +Z)</li>
+<li><strong>Refaire :</strong> Refait la dernière action annulée (Ctrl + Y)</li>
+<li><strong>Couper :</strong> Copie la sélection vers le presse-papier et la supprime du fichier. (Ctrl + X)</li>
+<li><strong>Copier :</strong> Copie la sélection vers le presse-papier. (Ctrl + C)</li>
+<li><strong>Coller :</strong> Copie l'élément présent dans le presse-papier. (Ctrl + V)</li>
+<li><strong>Coller comme nouvelle image :</strong> Crée un nouveau document à partir de l'élément du presse-papier.</li>
+<li><strong>Grossissement :</strong> Permet de choisir le grossissement de l'image. L'option <em>setup</em> permet de configurer un grossissement personnalisé.</li>
+<li><strong>Grille :</strong> Affiche la grille de délimitation des pixels.</li>
+<li><strong> Grille personnalisée :</strong> Affiche une grille au dimension réglables (très, très pratique). L'option <em>input</em> permet de créer une grille paramétrable et l'option <em>setup</em> permet de définir de nouvelles grilles par défaut.</li>
+<li><strong>Curseur aimanté :</strong> Active ou désactive le magnétisme du curseur. Le curseur aimanté se place automatiquement dans le bord supérieur gauche d'une case.</li>
+<li><strong>Peau d'oignon :</strong> Cette option permet de visualiser en transparence la <em>frame</em> précédente ou/et suivante. Notez bien que la transparence ne dépend pas de la profondeur des couleurs (marche même en 1bit)</li>
+</ul>
+<h3>Bloc n° 2: Les outils</h3>
+<ul>
+<li><strong>Loupe :</strong> Lorsque cet outil est sélectionné, le clic gauche provoque l'augmentation du grossissement et le clic droit sa diminution.</li>
+<li><strong>Outil main :</strong> Cet outil vous permet de déplacer librement l'image en maintenant une pression du clic gauche.</li>
+<li><strong>Sélection rectangulaire :</strong> Définit une plage de sélection rectangulaire à partir du point sélectionné en maintenant le bouton gauche de la souris enfoncé. Notez que cet outil peut également être utilisé lorsqu'un autre outil est sélectionné en maintenant enfoncé le bouton droit de la souris. Le clic droit permet d'annuler la sélection.</li>
+<li><strong>Sélection ovale :</strong> Définit une plage de sélection ovale à partir du point de clic.</li>
+<li><strong>Lasso :</strong> Définit une plage de sélection personnalisée en traçant un contour en maintenant enfoncé le bouton gauche de la souris.</li>
+<li><strong>Baguette magique :</strong> Sélectionne une plage de pixel de couleur plus ou moins uniforme selon le niveau de tolérance choisi. Fait la différence entre deux couleurs identiques en tolérance 0.</li>
+<li><strong>Sélecteur de couleur :</strong> Sélectionne tout pixel de la couleur choisie au sein du claque sélectionné. La tolérance est paramétrable. Fait la différence entre deux couleurs identiques en tolérance 0.</li>
+<li><strong>Crayon :</strong> Votre outil de dessin principal. Il applique le motif choisi en le centrant sur le pixel cliqué.</li>
+<li><strong>Outils segment :</strong> Trace un segment entre deux points successivement définis. Le clic gauche défini un nouveau point, le clic gauche valide le tracé.</li>
+<li><strong>Outil courbe :</strong> Trace une courbe passant par les points définis. S'utilise comme l'outil segment.</li>
+<li><strong>Rectangle :</strong> Trace un rectangle d'une pression maintenue du clic gauche du point d'origine au point d'arrivée.</li>
+<li><strong>Rectangle plein :</strong> Similaire au rectangle, mais trace une plage rectangulaire de couleur uniforme.</li>
+<li><strong>Ovale :</strong> Trace un ovale à partir de deux points. Utilisation similaire à l'outil rectangle.</li>
+<li><strong>Ovale plein :</strong> Trace une plage ovale de couleur uniforme.</li>
+<li><strong>Pot de peinture :</strong> Remplit une plage de pixels de couleur plus ou moins uniforme selon le niveau de tolérance choisi. Fait la différence entre deux couleurs identiques en tolérance 0.</li>
+<li><strong>Remplacer couleur :</strong> Fonctionne de la même manière que le crayon, mais uniquement sur la couleur secondaire. Fait la différence entre deux couleurs identiques.</li>
+<li><strong>Texte :</strong> Ouvre une fenêtre d'édition de texte.</li>
+<li><strong>Antialias :</strong> Active ou désactive l'antialiasing automatique lors du redimensionnement.</li>
+<li><strong>Transparence :</strong> Active ou désactive la transparence de la sélection, définie par la couleur de transparence du calque ou de la <em>frame</em>.</li>
+<li><strong>Mode de peinture</strong>(?) <strong>:</strong> Je n'ai honnêtement AUCUNE idée de l'utilité de cet outil, je ne m'en suis jamais servi en 3 ans, et chaque fois que j'ai essayé de l'utiliser, toutes les options étaient grisées.</li>
+</ul>
+<h3>Bloc n° 3: Gestionnaire d'animation</h3>
+<ul>
+<li><strong>Ajouter <em>frame</em> :</strong> Ouvre une fenêtre permettant la création d'une nouvelle <em>frame</em> à la fin de l'animation.</li>
+<li><strong>Dupliquer <em>frame</em> :</strong> Duplique la première <em>frame</em> sélectionnée et la place automatiquement la nouvelle à la fin de l'animation.</li>
+<li><strong>Supprimer <em>frame</em> :</strong> Supprime la <em>frame</em> sélectionnée.</li>
+<li><strong><em>frame</em> précédente :</strong> Sélectionne la <em>frame</em> précédente.</li>
+<li><strong><em>frame</em> suivante :</strong> Sélectionne la <em>frame</em> suivante.</li>
+<li><strong>Propriétés :</strong> Ouvre la fenêtre d'édition des propriétés de la <em>frame</em> sélectionnée.</li>
+<li><strong>Couper <em>frame</em>:</strong> Supprime la(les) <em>frame</em>(<em>s</em>) sélectionnée(s) et la(les) ajoute au presse-papier.</li>
+<li><strong>Copier <em>frames</em> :</strong> Ajoute la(les) <em>frame</em>(<em>s</em>) sélectionnée(s) au presse-papier.</li>
+<li><strong>Coller <em>frames</em> :</strong> Ajoute la(les) <em>frame</em>(<em>s</em>) du presse-papier à la suite de la(des) <em>frame</em>(<em>s</em>) sélectionnée(s).</li>
+<li><strong>Lecture :</strong> Joue l'animation dans la fenêtre d'aperçu.</li>
+<li><strong>Pause :</strong> N'affiche que la <em>frame</em> actuelle dans la fenêtre d'aperçu.</li>
+</ul>
+<h3>Bloc n° 4: Gestionnaire de calques</h3>
+<ul>
+<li><em>Ajouter calque :_</em> Ouvre une fenêtre permettant la création d'un nouveau calque.</li>
+<li><strong>Dupliquer calque :</strong> Duplique le calque sélectionné et le place automatiquement au dessus de la pile.</li>
+<li><strong>Fusionner calques :</strong> Fusionne tous les calques visibles. Le résultat est ce qui s'affiche à l'écran.</li>
+<li><strong>Supprimer calque :</strong> Supprime le calque sélectionné.</li>
+<li><strong>Calque précédent :</strong> Sélectionne le calque inférieur.</li>
+<li><strong>Calque suivant :</strong> Sélectionne le calque supérieur.</li>
+<li><strong>Propriétés :</strong> Ouvre la fenêtre d'édition des propriétés du calque sélectionné.</li>
+</ul>
+<h2>Fenêtre de gestion des calques</h2>
+<p><img alt="Parfois, une image vaut mieux que mille mots (GraphicsGale)" src="../media/img/LayerManager.png" /></p>
+<p>Le calque sélectionné est coloré en bleu. Pour réarranger vos calques, faites les glisser à l'emplacement désiré. Les propriétés d'un calque regroupent son nom, sa couleur de transparence et son opacité (attention, l'affichage se fait selon votre profondeur de couleur : en dessous de 15bit, vous obtiendrez un dithering). Les options du menu déroulant sont les mêmes que celle de la barre d'outils, à l'exception de l'option <em>Reverse visbility with same name</em>, qui inverse la visibilité de tous les calques du même som (attention, l'icône de visibilité ne change pas, ce qui peut porter à confusion, raison pour laquelle je déconseille cet outil).</p>
+<p>Vous remarquerez un bouton non légendé dont l'utilité m'échappe totalement.</p>
+<h2>Fenêtre de gestion de la palette</h2>
+<p><img alt="Le gestionnaire de palette, votre meilleur ami." src="../media/img/PaletteManager.png" /></p>
+<h3>La palette</h3>
+<p>La palette affiche les couleurs utilisées dans l'image en dessous du 8bit (compris). Vous pouvez sélectionner une couleur en cliquant dessus avec le bouton gauche de la souris, ou sélectionner une seconde couleur en cliquant dessus avec le bouton droit. Notez bien qu'à partir du 15bit, la palette vous présente une échelle de teintes que vous pouvez modifier en double-cliquant dessus. Il faudra en revanche annuler la sélection de la couleur pour actualiser votre pinceau. La palette est lue de gauche à droite et de haut en bas.</p>
+<h3>Le menu déroulant (1)</h3>
+<p>Voici un petit descriptif des options proposées:</p>
+<ul>
+<li><strong>Copier valeur RGB :</strong> Copie la couleur vers le presse-papier.</li>
+<li><strong>Copier valeurs RGB :</strong> Copie la valeur RGB des couleurs comprise entre la couleur sélectionnée et la couleur secondaire.</li>
+<li><strong>Coller valeur RGB :</strong> Copie la valeur RGB du presse-papier vers la couleur sélectionnée ou vers la couleur secondaire. L'option <em>Coller de multiples couleurs en partant de la couleur sélectionnée</em> permet de faire exactement ce qu'indique son nom.</li>
+<li><strong>Charger palette :</strong> Permet de charger une palette de couleur à partir d'un fichier de palette (.pal) ou d'un fichier d'une profondeur de couleur de 8bit ou moins. L'option <em>Faire correspondre les pixels aux couleurs</em> permet d'attribuer à chaque pixel la couleur de la palette la plus proche de sa couleur actuelle. Si cette option n'est pas activée, la couleur est remplacée par la couleur qui prend sa place sur votre palette.</li>
+<li><strong>Sauvegarder palette :</strong> Permet d'exporter votre palette actuelle en fichier .pal.</li>
+<li><strong>Palette par défaut :</strong> Cette option réinitialise votre palette si vous travaillez en 15bit ou plus, c'est à dire que votre palette est remplacée par l'échelle de teintes initiales. Cela ne modifie pas les couleurs utilisées.</li>
+<li><strong>Faire un dégradé :</strong> Crée un dégradé automatique entre votre couleur primaire et votre couleur secondaire  sur la palette (Pratique pour créer rapidement une palette). En 8bit ou moins, les couleurs utilisées seront remplacée par les nouvelles couleurs.</li>
+<li><strong>Supprimer couleurs inutilisées :</strong> Supprime de votre palette tout couleur qui n'apparait pas au moins une fois. Cet outil fait la différence entre deux couleurs identiques.</li>
+<li><strong>Unir couleurs dupliquées :</strong> Cet outil supprime les doublons de vos couleurs. Seule la première occurrence de la couleur est conservée.</li>
+<li><strong>Uniformiser couleurs :</strong> Cette option permet de d'ouvrir un fenêtre permettant de gérer une palette globale pour tous les fichiers ouverts d'une profondeur de 8bit ou moins.</li>
+<li><strong>Recharger pinceau/tuile :</strong> Encore une option aux fonctionnalités obscures.</li>
+<li><strong>Sélectionner première couleur pour transparence :</strong> Affecte la couleur sélectionnée à la couleur de transparence de votre calque actuel.</li>
+<li><strong>Sélectionner seconde couleur pour transparence :</strong> Affecte la couleur secondaire à la couleur de transparence de votre calque actuel.</li>
+</ul>
+<h3>Choix du pinceau (2)</h3>
+<p>Vous disposez de deux paramètre réglables ici: le pinceau et le motif de remplissage.</p>
+<ul>
+<li><strong>Le pinceau :</strong> Vous pouvez choisir une des 8 formes de pinceau, de taille variable.</li>
+<li><strong>Le motif :</strong> il existe 8 motifs de remplissage, qui permettent entre autre de créer rapidement des plages de dithering.</li>
+</ul>
+<h3>Couleurs sélectionnées (3)</h3>
+<p>La couleur du dessus, correspond à votre couleur principale, et la couleur du dessous à votre couleur secondaire. En passant votre souris dessus, la valeur RGB de la couleur s'affiche. Vous pouvez éditer les couleurs en les cliquant. La petite croix en bas à gauche permet d'inverser couleur principale et couleur secondaire.</p>
+<h3>Éditeur de couleurs (4)</h3>
+<p>Permet de faire varier les paramètres TSL ou RGB de la couleur sélectionnée. Notez qu'en 15bit et plus, la modification n'affecte que la couleur de votre pinceau, pas la couleur sélectionnée sur la palette.</p>
+<h2>Gestion des <em>frames</em></h2>
+<p>La fenêtre de gestion des <em>frames</em> reprend les symboles qu'on peut retrouver ailleurs dans le logiciel, il est inutile de la commenter. Cependant, les options de gestion des <em>frames</em> sont intéressantes. Les propriétés d'une <em>frame</em> sont son nom, sa transparence et le délai d'attente avant la <em>frame</em> suivante. Le paramètre <em>Disposal</em> permet de gérer la méthode de suppression des <em>frames</em>. Il est possible de changer les propriétés de l'ensemble des <em>frames</em> en cochant la case <em><em>All frames</em></em>.</p>
+<h1>Quelques conseils et astuces</h1>
+<ul>
+<li>Le format Gale (.gal) permet de sauvegarder vos calques et <em>frames</em>, pensez à l'utiliser pour la réalisation d'éléments complexes.</li>
+<li>GraphicsGale est un puissant outil de gestion des palettes limitées, créez vos fichiers en 8bit ou moins : cela vous évitera d'avoir des couleurs semblables qui traînent partout dans votre image.</li>
+<li>Pour les grilles d'animation ou les tilesets, la grille personnalisée est votre meilleure amie : utilisez là.</li>
+<li>Un antialiasing réalisé automatiquement, c'est moche : faites le vous-même.</li>
+<li>GraphicsGale est paramétrable (File -&gt; Preferences), profitez-en pour l'adapter à vos besoins.</li>
+</ul>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/introduction-graphicsgale&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_478" class="comment">
+	
+		
+			<span class="meta">Par babaorhum le 17 décembre 2021 14:50:18</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de babaorhum" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Il faudrait un moyen de télécharger les tutos ;)
+Comme ça on peut les lire même si on a plus de connexion et travailler avec.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_478').addClass('deleted');
+			$('#comment_478 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_478 .delete').css("display", "none");
+			$('#comment_478 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_478 .delete').css("display", "none");
+		else										$('#comment_478 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_428" class="comment">
+	
+		<span class="meta">Par un anonyme le 21 juin 2016 20:15:01</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Tout ce qu'il manque à ce logiciel, c'est une gestion de grille isométrique. Pour les soucis de menus qui partent en burnes, vous pouvez les rebouger en cliquer-glisser, et une fois que vous avez remis tout en place, clic droit sur une partie vide, et décocher "Draggable".</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_428').addClass('deleted');
+			$('#comment_428 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_428 .delete').css("display", "none");
+			$('#comment_428 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_428 .delete').css("display", "none");
+		else										$('#comment_428 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_422" class="comment">
+	
+		<span class="meta">Par un anonyme le 26 février 2016 17:57:41</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Ce logiciel est plus qu'incompétent.
+J'ai téléchargé la version d'éssai. Bien que j'aie regardé le plus de tutoriels possibles, je ne comprends pas comment fonctionnent les touches.
+En modifiant les emplacement des layers (palette, etc.), tout part en couille. Je me suis dit que j'allais désinstaller puis réinstaller le logiciel pour que tout redevienne comme avant. Au lieu de ça, ils me disent que la version d'éssai a expiré.
+Un scandale.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_422').addClass('deleted');
+			$('#comment_422 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_422 .delete').css("display", "none");
+			$('#comment_422 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_422 .delete').css("display", "none");
+		else										$('#comment_422 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_412" class="comment">
+	
+		
+			<span class="meta">Par ilos le 31 juillet 2015 07:59:31</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de ilos" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Mais c'est moi, ou dans le logiciel et dans pro motion aussi d'ailleurs, il n'y a pas la transparence de trait? Comme dans photoshop par exemple ou on peut modifier a volonté l'alpha du pinceau.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_412').addClass('deleted');
+			$('#comment_412 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_412 .delete').css("display", "none");
+			$('#comment_412 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_412 .delete').css("display", "none");
+		else										$('#comment_412 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_365" class="comment">
+	
+		
+			<span class="meta">Par Sylvain le 16 août 2013 14:32:19</span>
+			<br/><img src="http://www.gravatar.com/avatar/d8ce5e1e6bfdb7c044ff258130bc8887?s=50&amp;r=g&amp;d=mm" alt="avatar de Sylvain" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Bon 2 ans après mais c'est pas grave. J'ai découvert un truc assez foufou avec Graphicsgale, c'est que tu peux dessiner avec le clavier. Tu prends ton crayon, tu clic pour commencer à dessiner, et tu déplaces le curseur avec les flèches du clavier. Bref on s'en fout mais c'est certainement le logiciel le plus mal documenté de tous les temps.</p>
+<p>Donc merci pour les explications :D</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_365').addClass('deleted');
+			$('#comment_365 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_365 .delete').css("display", "none");
+			$('#comment_365 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_365 .delete').css("display", "none");
+		else										$('#comment_365 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_267" class="comment">
+	
+		<span class="meta">Par un anonyme le 14 août 2012 09:41:27</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Bonjour :),</p>
+<p>Je suis en train de le tester, mais il y a quelque chose qui me gène, c'est la taille du pinceau. Impossible de trouver l'option qui me permettrai de paramétrer la taille de la forme en un carré de 2<em>2 pixels par exemple, je reste bloqué au 1</em>1.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_267').addClass('deleted');
+			$('#comment_267 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_267 .delete').css("display", "none");
+			$('#comment_267 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_267 .delete').css("display", "none");
+		else										$('#comment_267 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_154" class="comment">
+	
+		
+			<span class="meta">Par Pierre Guyot le 2 décembre 2011 14:24:29</span>
+			<br/><img src="http://www.gravatar.com/avatar/ef4498aa9ef6758a91ec542f9b93aa36?s=50&amp;r=g&amp;d=mm" alt="avatar de Pierre Guyot" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'est en cours, l'ensemble des rédacteurs a été très short ces derniers temps, mais ça ne devrait plus tarder :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_154').addClass('deleted');
+			$('#comment_154 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_154 .delete').css("display", "none");
+			$('#comment_154 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_154 .delete').css("display", "none");
+		else										$('#comment_154 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_153" class="comment">
+	
+		<span class="meta">Par un anonyme le 2 décembre 2011 14:02:30</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>On veut un nouvel article ! On veut un nouvel article !</p>
+<p>Signé, un fidèle lecteur des Forges !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_153').addClass('deleted');
+			$('#comment_153 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_153 .delete').css("display", "none");
+			$('#comment_153 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_153 .delete').css("display", "none");
+		else										$('#comment_153 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_151" class="comment">
+	
+		
+			<span class="meta">Par Mod le 24 novembre 2011 17:54:55</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Mod" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>C'aurait été intéressant d'avoir également un petit point sur ce qui rend GraphicsGale intéressant par rapport à un autre logiciel (pourquoi il est puissant pour qui s'intéresse au Pixel Art).
+Ca fait plus de dix ans que je me traîne avec le vénérable Paint Shop Pro 7, et je n'ai encore trouvé aucune bonne raison de passer à autre chose. Le seul plus de GraphicsGale qui m'avait poussé à le tester était sa gestion des animations, mais ça ne m'avait pas réellement convaincu à l'époque.</p>
+<p>D'ailleurs, le logiciel est-il encore mis à jour ?</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_151').addClass('deleted');
+			$('#comment_151 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_151 .delete').css("display", "none");
+			$('#comment_151 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_151 .delete').css("display", "none");
+		else										$('#comment_151 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_150" class="comment">
+	
+		
+			<span class="meta">Par Tipyx le 22 novembre 2011 15:44:07</span>
+			<br/><img src="http://www.gravatar.com/avatar/e9718af005f14e2651a86ba083e817fc?s=50&amp;r=g&amp;d=mm" alt="avatar de Tipyx" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Owiiii, enfin un tuto GraphicsGale. Merci !!!</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_150').addClass('deleted');
+			$('#comment_150 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_150 .delete').css("display", "none");
+			$('#comment_150 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_150 .delete').css("display", "none");
+		else										$('#comment_150 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'article';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/58';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="introduction-graphicsgale@scroll_to=article.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#110;&#116;&#97;&#x63;&#116;&#64;&#x6c;&#x65;&#x73;&#102;&#x6f;&#x72;&#x67;&#101;&#x73;&#46;&#x6f;&#114;&#x67;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

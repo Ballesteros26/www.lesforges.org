@@ -1,0 +1,1014 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | La difficulté dans les jeux vidéo</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	L'un des thèmes qui revient de façon récurrente dans les débats sur le game design est celui de la difficulté. On entend beaucoup de choses : si certains critiquent les joueurs assistés et appellent à un retour au « oldschool », d'autres tentent de diminuer le challenge afin d'élargir leur public au maximum (c'est l'un des piliers de la politique de Nintendo, qui a pourtant donné son nom à l'expression « Nintendo Hard »). 
+
+Le but de cet article est de proposer une ébauche de réflexion sur la difficulté dans le jeu, en essayant de la définir et de dégager quelques principes pour réussir à éviter certains écueils.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#x6e;&#116;&#x61;&#99;&#x74;&#x40;&#108;&#101;&#x73;&#102;&#x6f;&#x72;&#x67;&#x65;&#x73;&#x2e;&#111;&#114;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>La difficulté dans les jeux vidéo</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 18 juin 2011 18:33:03 | Catégories : <a href="../tag/game-design.html">Game Design</a>
+				</div>
+				
+					
+				
+			
+			<div id="article_headline">
+				<p>L'un des thèmes qui revient de façon récurrente dans les débats sur le game design est celui de la difficulté. On entend beaucoup de choses : si certains critiquent les joueurs assistés et appellent à un retour au « oldschool », d'autres tentent de diminuer le challenge afin d'élargir leur public au maximum (c'est l'un des piliers de la politique de Nintendo, qui a pourtant donné son nom à l'expression « Nintendo Hard »). </p>
+<p><img alt="Super Meat Boy (Team Meat) - Une maniabilité exemplaire." src="../media/img/difficulte.png" /></p>
+<p>Le but de cet article est de proposer une ébauche de réflexion sur la difficulté dans le jeu, en essayant de la définir et de dégager quelques principes pour réussir à éviter certains écueils.</p>
+			</div>
+			<div id="article_content">
+				<p>Commençons tout d'abord par essayer de définir les termes — ou plutôt le terme — de notre sujet : la difficulté. Pour faire simple, on peut dire qu'il s'agit juste d'une mesure de l'effort qu'un joueur va devoir fournir pour surmonter un obstacle dans un jeu. Mais si l'on y réfléchit bien, il apparaît qu'il n'y a pas une, mais plusieurs formes de difficultés. Essayons d'en dégager quelques aspects.</p>
+<h1>I. Vrai challenge et fausse difficulté</h1>
+<p>Une difficulté bien dosée peut constituer l'un des éléments essentiels d'un gameplay. Pour le joueur, réussir une épreuve qui a nécessité un effort conséquent sans que cela tourne à l'arrachage de cheveux peut constituer une gratification immense. Le game design a beaucoup évolué depuis les années 80 et l'on est passé de jeux conçus <em>contre</em> le joueur à des jeux conçus <em>pour</em> le joueur. Néanmoins, de nombreux jeux continuent de présenter ce que j'appellerai une <em>fausse</em> difficulté. Souvent, il s'agit de rallonger la durée de vie de façon artificielle (bien qu'on puisse discuter s'il s'agisse réellement de « durée de vie ») ou d'échapper à une étiquette « trop facile » qu'on épingle sur beaucoup de jeux récents.</p>
+<p><strong>Une discontinuité dans la progression :</strong> le joueur fait littéralement face à un mur, le plus souvent sous la forme d'un boss, dont la difficulté est très nettement surélevée par rapport à ce qu'il a pu affronter avant.</p>
+<p>Un petit pic de difficulté peut très bien apporter à un combat un tour plus dramatique : l'exemple type est le combat « de fin de CD1 » qu'on trouve dans moult RPG, comme le premier combat contre Dhoulmagus dans <em>Dragon Quest VIII</em>. Mais un changement de difficulté mal dosé se solde dans la plupart des cas par un abandon du jeu ou par une phase pénible de level grinding.</p>
+<p>Un exemple particulièrement marquant est celui de <em>Star Ocean III</em>, où le niveau de tous les monstres du jeu se voit relevé d'un seul coup de façon scandaleuse. Pour le joueur, il y a un sentiment d'injustice, d'un <em>manque de fair-play</em> de la part des développeurs qui changent tout un coup les règles du jeu sans prévenir.</p>
+<p><img alt="Star Ocean 3 (Tri-Ace) - Une difficulté trop irrégulière." src="../media/img/difficulte4.jpg" /></p>
+<p><strong>Une mauvaise maniabilité :</strong> un travers qu'on rencontre dans de nombreux jeux qui prétendent ainsi donner une touche rétro à leur gameplay, où un personnage peu maniable rend le jeu beaucoup plus difficile qu'il ne devrait l'être. </p>
+<p>Proposer un saut à la limite des compétences du héros et avec un timing serré peut constituer une vraie difficulté. Proposer un héros dont la physique est contre-intuitive, des boîtes de collision abusives ou de mauvais contrôles de caméra constitue une fausse difficulté. Un bon jeu de plate-forme rétro nécessite des sauts millimétrés, mais propose une maniabilité impeccable en contrepartie — l'exemple le plus frappant qui vienne à l'esprit est celui de <em>Super Meat Boy</em>.</p>
+<p>Nombre de vieux jeux de plate-formes souffrent grandement de ce travers. Un exemple assez remarquable est celui de la série des <em>Resident Evil</em> où la maniabilité du héros (la touche gauche ne sert pas à aller vers la gauche mais à pivoter sur la gauche, par exemple) est totalement contre-intuitive. Néanmoins, si cela peut être vu comme un défaut, on peut aussi considérer que cela participe du stress ambiant et contribue d'une certaine façon à l'ambiance du titre. A discuter, donc.</p>
+<p><strong>Des chiffres trop élevés :</strong> un travers qui consiste à multiplier les grandeurs comme les points de vie des ennemis ou des boss ou à copier-coller des passages entiers dans un niveau, pour créer une durée de vie artificielle.</p>
+<p>Il arrive que les développeurs trouvent un combat trop court, même s'il est parfaitement dosé. L'idée est donc, sans modifier la difficulté réelle du combat, de multiplier les points de vie d'un boss (ou à dupliquer les différentes parties d'un niveau). Ceci oblige le joueur à répéter outre mesure un pattern, ce qui n'augmente pas la difficulté mais seulement le temps de jeu et tend à donner une impression de répétitivité.</p>
+<p>Un travers de Square-Enix dans ses jeux récents. <em>Kingdom Hearts II</em>, malgré des combats très bien pensés, propose un certain nombre de boss à la jauge de vie invraisemblablement longue, ce qui nécessite parfois de répéter plus d'une dizaine de fois un pattern très long. </p>
+<p>De même pour <em>Final Fantasy XII</em> où certains boss pas particulièrement difficiles ont un nombre de HP dépassant la dizaine de millions : on passe plus d'une heure à attendre qu'un boss peu menaçant finisse par bien vouloir s'effondrer, ce qui détruit par ailleurs toute la tension dramatique du combat.</p>
+<p><strong>Rétention d'information :</strong> le joueur ne sait pas  que ce qu'il a pu manquer au début du jeu peut rendre le jeu beaucoup plus difficile, voire impossible à finir par la suite, ou que ceci l'empêchera d'accéder à certains éléments du jeu.</p>
+<p>Très connu et donc souvent évité : peu de choses ont autant de chances de provoquer une dépression nerveuse chez un joueur que de savoir qu'il ne pourra jamais terminer le jeu parce qu'il a manqué, douze heures plus tôt, un ridicule petit bout de papier dans un placard secret. Néanmoins, une version plus soft est toujours à l’œuvre.</p>
+<p>Un exemple dans <em>Valkyrie Profile II</em> : vers la moitié du jeu, le joueur voit deux personnages quitter son équipe et en échange, reçoit des équipements. La puissance de ces équipements dépend du niveau des personnages qui quittent l'équipe. A moins d'être au courant du fonctionnement de cette récompense (ce qui est impossible sans une solution) et d'avoir passé quelque chose comme trois heures à faire du level grinding pour passer plus d'une dizaine de niveaux, la suite du jeu devient très difficile. A l'inverse, si le joueur fait tout ceci dans l'idée d'obtenir une arme digne de ce nom et d'avoir accès une difficulté normale pour la suite du jeu, tout est déséquilibré dans l'autre sens et devient trop facile. </p>
+<p>Un exemple un peu différent est celui de <em>Valkyrie Profile</em> où l'obtention de la vraie fin nécessite d'aller farfouiller dans une solution, sans quoi vous passerez très largement à côté. <em>Persona 4</em> reprend ce même principe, même s'il est vrai que c'est avec plus de brio (je n'en dis pas plus pour ne pas trop spoiler, mais posez vous la question de savoir si vous avez vraiment obtenu la véritable fin du jeu :] ).</p>
+<p><img alt="Valkyrie Profile (Tri-Ace)" src="../media/img/difficulte6.jpg" /></p>
+<p><strong>Roue de la fortune :</strong> l'issue de l'épreuve ne dépend pas dans une mesure raisonnable des actions du joueur et est principalement déterminée par le hasard. </p>
+<p>Épouvantable. Cela peut nécessiter de répéter un passage du jeu (souvent pénible) à de très nombreuses reprises et provoque chez le joueur un sentiment d'injustice, puisqu'il ne peut lui-même rien y faire.</p>
+<p>Très présent dans les RPG dans le principe des drops. Réaliser certaines quêtes nécessite de tuer un type de monstre qui libère parfois un objet. Si le taux d'apparition de l'objet est trop bas, cela peut tourner au monster bashing bête et méchant. Particulièrement sournois si combiné avec des chiffres trop élevés. L'obtention des objets ultimes pour le craft est particulièrement infâme pour cette raison dans <em>Final Fantasy XIII</em>.</p>
+<p>Un exemple un peu différent est la roue utilisée pour les combats du fort mal réputé <em>Unlimited Saga</em>, qui rend difficile l'élaboration de tactiques. A l'inverse, c'est en proposant un timing extrêmement précis — et donc qui ne repose pas sur la chance — que <em>Shadow Hearts II</em> a pu réussir à faire de la roue le point crucial d'un excellent gameplay.</p>
+<p><strong>Une difficulté trop réglée :</strong> un problème plus narratif, qu'on retrouve dans la célèbre <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGrandListOfConsoleRolePlayingGameCliches">liste des clichés du RPG</a>. Étrangement, dans beaucoup de jeux et aux dépens de l'immersion, les monstres ont toujours un niveau comparable au vôtre : au début du jeu, vous combattez les slimes de base et dans le donjon final, ce sont les démons des dernières strates infernales qui vous attaquent. C'est moins un problème de gameplay qu'un problème de récit et d'univers. </p>
+<p>Un travers qu'on retrouve dans presque tous les RPG classiques, mais que des jeux comme <em>SaGa Frontier II</em> ou <em>Final Fantasy XII</em> on su éviter, en rajoutant une difficulté optionnelle : dans une plaine ou un donjon, on trouve globalement des ennemis d'un niveau acceptable, mais aussi des ennemis plus faibles et plus forts — parfois <em>beaucoup</em> plus forts. Néanmoins, ces derniers peuvent être évités, de façon à ne pas entraver la progression du joueur, et les battre conservent un intérêt, pour les récompenses substantielles qu'ils offrent au joueur.</p>
+<p><img alt="Saga Frontier 2 (Squaresoft) - le seul SaGa dont la difficulté est correctement dosée." src="../media/img/difficulte3.jpg" /></p>
+<h1>II. Difficulté annoncée</h1>
+<p>Lorsque l'on cherche à doser la difficulté d'un jeu, l'un des problèmes à cerner est de déterminer ce qu'attend le joueur. Il faut donc dans une certaine mesure annoncer au joueur ce qui l'attend, de façon à ce que celui ne se sente pas lésé.</p>
+<p>Beaucoup de jeux proposent pour cela plusieurs niveaux de difficultés. Ceci permet d'une part d'essayer de satisfaire une plus large tranche de joueurs, d'autre part de permettre au joueur de trouver quel est le créneau qui lui convient. Un joueur occasionnel qui n'a pas beaucoup de temps pour lui et qui voudrait quand même découvrir l'histoire ou le gameplay du jeu cherchera plutôt un mode facile, alors qu'un hardcore gamer avide de challenge se ruera sur les modes de difficultés extrêmes aux intitulés plus colorés les uns que les autres (citons parmi d'autres « Dante Must Die », « 4D Mode » et « European Mode »).</p>
+<p>Il faut pour autant faire attention à ce que les annonces correspondent à peu près à ce que le joueur trouvera en y jouant. Il n'est pas évident que le mode « Normal » d'un <em>Star Ocean III</em>  ne soit pas un mode difficile, au vu de l'arrachage de cheveux potentiel qui attend le joueur par moments. Par ailleurs, dans un souci d'immersion, on peut essayer de faire rentrer ce choix dans le contexte du jeu. <em>Resident Evil</em> et <em>Kingdom Hearts</em> le font très bien sous la forme d'une sorte de test psychologique.</p>
+<p>Une autre façon d'annoncer la difficulté passe par la réputation et par le genre du jeu. Ainsi, la plupart des joueurs savent à quoi s'attendre lorsqu'ils se lancent dans un shmup. De même, quand on commence un jeu Capcom, on s'attend plutôt à quelque chose de difficile, à l'inverse d'un jeu Nintendo (actuel du moins, ce n'a pas toujours été le cas :] ). Il faut donc faire attention à l'image que l'on véhicule et à ce qu'elle ne trahisse pas le joueur en lui donnant une fausse impression.</p>
+<h1>III. XP versus Skill</h1>
+<p>J'aimerais ici parler d'une distinction qui me semble fondamentale et qui permet de distinguer les jeux sur le plan de la difficulté en les plaçant sur une échelle. La difficulté à laquelle le joueur va faire face est principalement définie par la façon dont le joueur va devoir réagir. </p>
+<p>D'un côté, ce sont les personnages du jeu qui vont gagner de l'expérience. Face à un boss trop difficile ou à un niveau trop dur, le joueur va reprendre les niveaux précédents, les refaire pour que son avatar gagne de l'expérience, ce qui matérialisera par des HP plus élevés ou de nouvelles compétences. C'est le cas le plus classique dans les RPG classiques et dans beaucoup de jeux où l'on peut acheter des compétences et c'est le fondement du level grinding. C'est ce que j'aurais tendance à appeler l'XP.</p>
+<p>A l'opposé du spectre, c'est le joueur qui va gagner en expérience. En réessayant un niveau ou en recommençant à plusieurs reprises un combat contre un boss, le joueur va maîtriser de plus en plus son personnage et comprendre les patterns qui régissent le fonctionnement du boss. C'est le principe de beaucoup de jeux de plate-formes où, face à un boss difficile, on recommence le combat jusqu'à en connaître parfaitement les principes selon une mécanique de <em>trial and error</em>, sans possibilité que le personnage devienne plus fort. C'est que j'aurais tendance à appeler le skill.</p>
+<p><img alt="Odin Sphere (Vanillaware)" src="../media/img/difficulte7.jpg" /></p>
+<p>Entre les deux, on peut observer une immense diversité de jeux qui les combinent. Beaucoup de MMORPG ne reposent par exemple que sur l'XP. A l'inverse, un jeu de plate-forme comme <em>Mario</em> ne repose que sur le skill. Un <em>Final Fantasy XIII</em> se place plutôt du côté du skill, puisqu'il bride l'expérience et propose un game over non pénalisant, qui permet de réessayer un combat presque immédiatement. Un <em>Odin Sphere</em> équilibre très bien les deux en proposant des boss à pattern et un système d'expérience qui permet de ne pas tomber dans le game breaking.</p>
+<p>Les deux possibilités ont leurs avantages et leurs inconvénients. L'XP permet de s'assurer que le joueur pourra aller jusqu'au bout du jeu, même s'il faut passer par une phase de level grinding. En contrepartie, cette phase peut s'avérer répétitive, voire pénible : un exemple est la quasi-intégralité de l'infâme série des <em>SaGa</em> — à l'exception notable du remarquable <em>SaGa Frontier 2</em> — qui nécessite un level grinding absolument infernal. A l'inverse, le skill permet de s'assurer que le joueur n'aura rien d'autre à faire que jouer véritablement pour avancer, mais au risque de le voir définitivement bloqué devant un ennemi qui dépasse ses compétences. L'exemple le plus extrême — mais tout à fait volontaire — est <em>Super Kaizo Mario</em>, une sorte de version ultra difficile des aventures du plombier moustachu.</p>
+<h1>IV. Principes</h1>
+<p>Je ne prétends pas dresser ici une liste de lois immuables qui permettraient de parfaitement régler la difficulté d'un jeu. Il s'agit juste de remarques que j'ai pu me faire en jouant et en discutant avec d'autres joueurs.</p>
+<p><strong>Le jeu est conçu <em>pour</em> le joueur, pas <em>contre</em> lui.</strong> Le game designer ne doit pas voir le joueur comme un ennemi qu'il doit embêter, mais comme quelqu'un à qui il est censé procurer du fun. Un jeu vidéo, comme son nom l'indique, n'a pas vocation à être pénible — même s'il peut dépasser sa dimension de simple jeu — et victimiser le joueur est loin d'être la preuve d'un game design intelligent. Il ne faut pas donner au joueur l'impression que le jeu n'est pas fair-play avec lui — ce qui arrive souvent lorsqu'il se rend compte que l'ordinateur ne joue pas selon les mêmes règles que lui. La majorité des épisodes du <em>Joueur du Grenier</em> illustre très bien ce principe.</p>
+<p><strong>Quand on annonce un niveau de difficulté, on s'y tient.</strong> Si le joueur a choisi un mode de difficulté, facile ou difficile, il a ses raisons et le game designer doit les respecter. Ce n'est pas parce qu'on joue en facile qu'on ne mérite pas de jouer. Aussi, relever soudainement la difficulté d'un mode facile (ou inversement), en particulier en toute fin de jeu, est un motif de frustration particulièrement efficace chez un joueur.</p>
+<p><strong>La difficulté doit varier continûment, c'est-à-dire sans à-coup et sans pic.</strong> S'il y a une seule chose à retenir de tout cet article, c'est peut-être celle-là. Rien de plus rageant que de jouer pendant vingt heures sans problème et de se voir tout à coup bloqué sans raison par un monstre dix fois plus fort que les autres. Quand on traverse un donjon, le niveau du boss doit être corrélé à celui des ennemis. Un joueur qui traverse le donjon sans fuir aucun combat devrait avoir un niveau du bon ordre de grandeur pour aller battre le boss. Un peu moins si vraiment c'est un jeu dur, mais pas beaucoup moins, sans quoi cela débouche sur des aller-retours incessants et du level grinding stupide. Beaucoup de jeux perdent <em>énormément</em> à être joués sur ce point. </p>
+<p>Les jeux Tri-Ace et les jeux de la série des <em>SaGa</em> en sont des représentants tout particulièrement infâmes. Prenons l'exemple de <em>Star Ocean III</em>, qui a pourtant un certain nombre de qualités par ailleurs (dont un système de combat jouissif). Les passages trop faciles et trop difficiles alternent sans aucune logique ni continuité, plaçant le joueur face à des boss quasiment invincibles à la sortie de donjons aussi inoffensifs qu'une promenade ou à l'inverse, proposant un boss aussi faible qu'un poussin asthmatique à la sortie d'une grotte infernale remplie de monstres dont le niveau excède celui du joueur d'une dizaine d'unités. L'augmentation drastique de la difficulté en fin de DVD 1 — même si elle est tempérée d'une justification scénaristique — est absolument lamentable en termes de gameplay. Je ne m’appesantirai pas plus avant sur le cas des <em>SaGa</em>, qui sont absolument remarquables pour leur nullité crasse sur ce point, à l'exception de <em>SaGa Frontier 2</em>.</p>
+<p>Un autre exemple, plus ponctuel, est celui du début du CD 2 de <em>Baten Kaitos II</em>. Celui-ci commence par un boss beaucoup trop dur, après avoir fait sauvegarder le joueur et sans lui donner la possibilité de faire de l'expérience. A moins d'avoir consulté une solution pour trouver une faille dans la façon dont celui fonctionne — pour ainsi dire un bug de conception — vous êtes condamnés à reprendre la partie depuis le début, soit la bagatelle de trente heures.</p>
+<p><img alt="Baten Kaitos (Tri-Crescendo) - l'infâme boss du début du CD 2." src="../media/img/difficulte5.jpg" /></p>
+<p><strong>Un début de jeu n'est jamais trop facile.</strong> Le meilleur moyen de faire qu'un joueur arrête de jouer et balance le CD et sa boîte par la fenêtre, c'est de lui proposer un début de jeu trop difficile. C'est par exemple ce qui fait que vous éteignez un jeu amateur après seulement cinq minutes de jeu. Non seulement, cela peut-être pénible si cela oblige le joueur à repasser une longue — voire interminable — introduction, mais en plus, c'est presque insultant pour sa fierté de mourir si tôt en début de partie. De plus, ça n'est souvent pas cohérent avec la montée en puissance qui a classiquement lieu dans un jeu.</p>
+<p><strong>Pas de final trop facile.</strong> A l'inverse, si la fin du jeu est trop facile, ceci risque de gâcher le plaisir du joueur en donnant l'impression qu'on sous-estime ses compétences et en provoquant une retombée de la tension. Ceci peut ruiner un final du point de vue scénaristique, par exemple en privant un grand méchant d'un combat final qui soit à la hauteur de sa puissance, telle qu'elle est décrite par le scénario. De très bons jeux se cassent les dents sur ce point, dont les excellents <em>Final Fantasy X</em> et <em>Kingdom Hearts</em>, dont les boss de fin ne sont, en termes de difficulté, pas à la hauteur de leur design et de leur importance dans le scénario.</p>
+<p><strong>Ne jamais laisser de gap, c'est-à-dire de situation où le joueur ne peut faire de level up nulle part.</strong> A la fin du jeu, les ennemis les plus forts doivent donner une expérience suffisante pour qu'en faisant du level grinding, il soit possible d'atteindre en un temps raisonnable les derniers niveaux. Ceci peut passer par des donjons secrets, des boss optionnels, etc. L'idée est que le joueur ne doit pas se retrouver dans une situation où les monstres qu'il combat actuellement sont simples à battre et donnent donc peu d'expérience et où le prochain niveau le met face à des monstres complètement hors de sa portée. C'est le problème de <em>Persona 4</em> par exemple, où les ennemis du donjon de fin donnent une quantité d'expérience très faible, au regard des quantités exigées pour monter de niveau à cet endroit du jeu. Bien que cela permette d'avoir un boss de fin suffisamment difficile, ceci oblige le joueur à level grinder pendant un temps absolument hallucinant s'il compte pouvoir utiliser les plus puissantes personas et ruine ainsi l'intérêt de ces dernières.</p>
+<p><strong>Si cela est faisable, donner au joueur la possibilité de moduler un peu la difficulté.</strong> <em>God of War</em> proposait ainsi, si le joueur recommençait trop de fois une même séquence, d'abaisser temporairement la difficulté du jeu. </p>
+<p><strong>La difficulté doit toujours être récompensée.</strong> Ce qui est important dans la gestion de la difficulté, c'est que les efforts du joueur doivent être récompensés. A l'inverse, il ne faut pas distribuer les récompenses à tout va, sans quoi celles-ci perdent de leur valeur. C'est un peu le principe des <em>achievements</em> et ce qui fait qu'il est extrêmement gratifiant de terminer un manic shooter.</p>
+<p>J'espère que cet article aura permis de dégager quelques pistes de réflexion sur cette question ardemment débattue de la difficulté et qu'il pourra être utile. Si vous avez des remarques, des commentaires ou des contradictions à apporter, n'hésitez absolument pas :)</p>
+			</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/difficulte&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_85" class="comment">
+	
+		
+			<span class="meta">Par MrEreinion le 28 juin 2011 17:38:23</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de MrEreinion" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>La liste des <strong>principes</strong> est effectivement un must à ne pas perdre de vue. Je pense que tout joueur y reconnaîtra les jeux qu'il a finis… ou abandonnés.</p>
+<p>Merci au rédacteur ^^</p>
+<p><em>Erratum : du début du GD 2 de Baten Kaitos II ==&gt; du début du CD 2</em></p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_85').addClass('deleted');
+			$('#comment_85 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_85 .delete').css("display", "none");
+			$('#comment_85 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_85 .delete').css("display", "none");
+		else										$('#comment_85 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_66" class="comment">
+	
+		
+			<span class="meta">Par Antoine Gersant le 21 juin 2011 20:11:48</span>
+			<br/><img src="http://www.gravatar.com/avatar/38ec8cdc7829c5ced3683ed14894d7c8?s=50&amp;r=g&amp;d=mm" alt="avatar de Antoine Gersant" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<blockquote>
+<p>Comment as-tu pu aller jusqu'au bout de tout ces jeux ?</p>
+</blockquote>
+<p>C'est facile, il ne joue qu'à des JRPG :&gt;<br />
+Merci Gaetz pour tes réflexions qui apportent des nuances qui manquent peut-être à l'article.</p>
+<p>Tant que nous y sommes, un article (en anglais) intéressant sur le sujet : <a href="http://deserthat.wordpress.com/2009/11/26/game-design-the-miyamoto-way-flow-and-difficulty/">Game Design the Miyamoto Way: Flow and Difficulty</a></p>
+<p>EDIT : Et un autre paru aujourd'hui même, par le concepteur de <em>No Time To Explain</em> : <a href="http://tinybuildgames.com/thanks-guys-and-pacing">par ici</a></p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_66').addClass('deleted');
+			$('#comment_66 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_66 .delete').css("display", "none");
+			$('#comment_66 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_66 .delete').css("display", "none");
+		else										$('#comment_66 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_65" class="comment">
+	
+		
+			<span class="meta">Par Gaetz le 21 juin 2011 07:35:53</span>
+			<br/><img src="http://www.gravatar.com/avatar/9a624a5be3f9e5d4e701f737d18de91a?s=50&amp;r=g&amp;d=mm" alt="avatar de Gaetz" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Les conclusions sont très utiles et le nombre d'exemple impressionnant (comment as-tu pu aller jusqu'au bout de tout ces jeux ? oO).</p>
+<p>Deux critiques : </p>
+<ul>
+<li>
+<p>Même si tu l'abordes incidemment, tu ne parles pas trop de la difficulté (ou de l'illusion de difficulté) comme vecteur de plaisir pour le joueur. Or c'est souvent la cause des erreurs que tu mets en lumière : la difficulté trop réglée parce que le designer ne veut pas prendre le risque d'interrompre le chemin pépère du joueur, ou la fausse difficulté des MMO, qui cherchent uniquement à apporter de la gratification au joueur, pour que celui-ci joue plus longtemps (d'où un système entièrement basé sur l'Xp, égalitaire). Jusqu'à la difficulté très basse des grosses productions FPS du moment, parce qu'il faut que le joueur finisse le jeu et, puisqu'il l'a aimé, en achète un autre.</p>
+</li>
+<li>
+<p>Tu sous-estimes un peu le rôle du hasard par rapport à celui de la stratégie dans un jeu. La chance, l'imprévisibilité ou le risque pimentent un jeu. Par contre, en effet, le hasard ne doit pas être bloquant : on aime un jeu de hasard parce qu'on peut retenter régulièrement sa chance (cf. le succès du rapido, qui taxe les pauvres gens dans les bar PMU).</p>
+</li>
+</ul>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_65').addClass('deleted');
+			$('#comment_65 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_65 .delete').css("display", "none");
+			$('#comment_65 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_65 .delete').css("display", "none");
+		else										$('#comment_65 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_63" class="comment">
+	
+		
+			<span class="meta">Par Pierre Guyot le 20 juin 2011 00:40:02</span>
+			<br/><img src="http://www.gravatar.com/avatar/ef4498aa9ef6758a91ec542f9b93aa36?s=50&amp;r=g&amp;d=mm" alt="avatar de Pierre Guyot" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Oh un adepte de TVTropes !</p>
+<p>Pour être honnête, j'ai surtout tapé dans le J-RPG parce que c'est le genre que je connais le mieux :p</p>
+<p>Effectivement, je me dis que ce serait une bonne idée d'essayer compléter cet article par un autre plus ciblé sur la question du game over. Je vais essayer de programmer ça pour dans pas trop longtemps :]</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_63').addClass('deleted');
+			$('#comment_63 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_63 .delete').css("display", "none");
+			$('#comment_63 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_63 .delete').css("display", "none");
+		else										$('#comment_63 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_62" class="comment">
+	
+		
+			<span class="meta">Par Timst le 19 juin 2011 23:29:49</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de Timst" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Vrai. Après, certains jeux (je pense notamment à Unreal Tournament 98, bien que ça s'éloigne des exemples J-RPG de l'article) proposent une difficulté dynamique, en fonction des résultats du joueur : s'il se fait massacrer, les bots deviennent moins vifs et précis, mais s'il enchaîne les kills comme Simo Häyhä, le jeu va progressivement les améliorer, jusqu'à obtenir un bon équilibre où la difficulté est suffisamment gratifiante. 
+Après, la réussite de ce système venait du fait que le jeu jouait sur l'IA des bots, chose qui est beaucoup plus difficile dans un RPG en tour par tour. Dans ce genre de jeux, il n'y a souvent que les variables numériques (vie, attaque) qui peuvent influencer un combat, et trop les augmenter finit par donner un côté irréaliste au jeu comme vous le disiez.</p>
+<p>Bon sinon y'a certainement à débattre sur les game-overs eux-mêmes : entre ceux qui signifient la fin de tout (y compris de ta sauvegarde, dans les roguelikes), et ce qui te font juste revenir quelques minutes voire secondes en arrière… Sans parler des systèmes intermédiaires, comme dans Mount &amp; Blade où il n'y a pas de game over en soi, mais où une défaite peur représenter une perte matérielle et pécuniaire représentant des dizaines d'heure de jeu (une bonne représentation de <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/ContinuingIsPainful">continuing is painful</a>).</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_62').addClass('deleted');
+			$('#comment_62 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_62 .delete').css("display", "none");
+			$('#comment_62 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_62 .delete').css("display", "none");
+		else										$('#comment_62 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_60" class="comment">
+	
+		
+			<span class="meta">Par Azaki le 19 juin 2011 22:20:09</span>
+			<br/><img src="http://www.gravatar.com/avatar/773e5ddeaf8c1de5df1d2a9bf64d8a26?s=50&amp;r=g&amp;d=mm" alt="avatar de Azaki" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Chouette article. Bien écrit et tout.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_60').addClass('deleted');
+			$('#comment_60 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_60 .delete').css("display", "none");
+			$('#comment_60 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_60 .delete').css("display", "none");
+		else										$('#comment_60 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+		<script type="text/javascript">
+			scroll_dest = 'existing_comments';
+			function tryScroll (time) {
+				if ($('#' + scroll_dest).length > 0) {
+					$('html, body').animate({
+						scrollTop: $('#' + scroll_dest).offset().top,
+						easing: 'swing'
+					}, 600)
+				} else if (time < 2000) {
+					setTimeout( function () { tryScroll(time + 50) }, time)
+				}
+			}
+			$().ready(function() {
+				setTimeout(function () { tryScroll(0); }, 500);
+			});
+		</script>
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/42';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="difficulte@scroll_to=existing_comments.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#111;&#x6e;&#x74;&#x61;&#99;&#116;&#x40;&#108;&#x65;&#115;&#102;&#x6f;&#114;&#x67;&#x65;&#x73;&#46;&#x6f;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>

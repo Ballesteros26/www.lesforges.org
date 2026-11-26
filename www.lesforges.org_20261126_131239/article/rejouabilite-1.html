@@ -1,0 +1,894 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>	
+	
+		<!--Page Title-->		
+		<title>Les Forges | La rejouabilité, partie 1 : la narration</title>
+
+		<!--Référencement-->
+		<meta name="robots" content="all" />
+		<meta name="author" content="Antoine Gersant" />
+		<meta name="keywords" content="Les Forges, pixel-Art, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+		<meta name="description" content="
+	Qu'est-ce qui fait qu'un jeu est rejouable ? Et pourquoi certains jeux sont rejouables alors que d'autres non ?
+
+En principe, n'importe quel jeu devrait être rejouable. Imaginons que vous alliez au magasin de jouets, que vous achetiez un jeu de société pour vingt ou trente dollars et qu'une fois arrivé chez vous, vous vous rendiez compte que vous ne pouvez y jouer qu'une seule fois : vous seriez légitimement furieux. Pourtant, ceci arrive assez souvent avec les jeux vidéo et nos clients s'y sont plus ou moins résignés. La rejouabilité, cependant, n'est pas le résultat du hasard : il s'agit de quelque chose que nous concepteurs pouvons créer volontairement… si nous le souhaitons.
+" />
+		<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+		<!--RSS Feed-->	
+		<link rel="alternate" type="application/rss+xml" title="Les Forges - derniers articles" href="../feeds">
+			
+		<!--Style-->		
+		
+		<script type="text/javascript">
+			var mainTintHex = '#BA0009';
+			var hoverTintHex = '#1F8CE9';		
+						
+		</script>
+
+		<link rel="icon" type="image/png" href="../static/img/favicon.png" />
+					
+		<link href="../static/css/default.css" 			rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/autocaption.css" 		rel="stylesheet" 	type="text/css" />
+		<link href="../static/css/slimbox2.css" 			rel="stylesheet" 		type="text/css" />
+		
+				
+		<!--Javascript-->
+		<script src="../static/js/less-1.1.0.min.js" 					type="text/javascript"></script>	<!--CSS Less-->
+		<script src="../static/js/jquery-1.6.1.min.js" 				type="text/javascript"></script>	<!--jQuery-->
+		<script src="../static/js/jquery.slimbox2.js" 				type="text/javascript"></script>	<!--slimbox-->		
+		<script src="../static/js/jquery.equalheights.js" 			type="text/javascript"></script>	<!--equalheight-->
+		<script src="../static/js/jquery.easylistsplitter.js" 		type="text/javascript"></script>	<!--list splitter-->
+		<script src="../static/js/jquery.autocaption.js" 				type="text/javascript"></script>	<!--Image captions-->
+		
+		<!--jQueryUI-->
+		<script src="../static/js/jquery-ui-1.8.13.custom.min.js" 	type="text/javascript"></script>
+		<link href="../static/js/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
+			
+		<!--Authentification-->
+		<script type="text/javascript">
+			$().ready(function(){$.ajaxSetup({ traditional: true })});
+			authenticated = false;
+			
+			csrf = "dy36Il3nApjNfBTR0ULwN3Q2xjzgKXqV";
+			signup_url = '/signup/';
+			login_url = '/login/';
+			logoff_url = '/logoff/';
+			profile_url = '/profile/';
+			edit_profile_url = '/edit_profile/';
+			edit_password_url = '/edit_password/';
+			you_url = '/you/';			
+			edit_comment_url = '/edit_comment/';			
+			edit_comment_confirm_url = '/edit_comment_confirm/';			
+			delete_or_restore_comment_url = '/delete_comment/';			
+			static_url = '/static/';
+		</script>
+		<script src="../static/js/auth.js" type="text/javascript"></script>	<!--User management-->
+		
+		<!--Archives-->
+		<script src="../static/js/archives.js" type="text/javascript"></script>
+		
+		
+		
+	</head>	
+	
+	<body>
+		<div id="main">
+			<div id="banner">
+				<div class="centered">
+					
+						<img src="../static/img/banniere.png" alt="Les Forges" usemap="#logomap" />
+					
+					<map name="logomap"><area shape="rect" coords="0,0,400,86" alt="Les Forges" href="../index.html" /></map>
+					<div id="profile"></div>
+					<div id="social">
+						<a href="http://levelup.alexzone.net/" target="_blank"><img class="levelup" src="../static/img/social_levelup.png" alt="Discuss on Level Up!" /></a>
+						
+							
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#x63;&#x6f;&#110;&#116;&#x61;&#99;&#116;&#64;&#108;&#101;&#115;&#102;&#x6f;&#x72;&#103;&#101;&#115;&#x2e;&#x6f;&#x72;&#103;"><img src="../static/img/social_mail.png" alt="Contact us" /></a>')
+ 	       	// ]]></script>
+
+						
+						<a href="../feeds"><img src="../static/img/social_rss.png" alt="Grab our RSS flux" /></a>
+						<a href="http://twitter.com/#!/lesforges_org" target="_blank"><img src="../static/img/social_tw.png" 	alt="Follow us on Twitter" /></a>
+						<a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank"><img src="../static/img/social_fb.png" alt="Find us on Facebook" /></a>						
+					</div>
+				</div>
+			</div>
+			<div id="content">
+										
+					﻿<div id="spotlights"><a href="un-jeu-parfait@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/sais_title.png" alt="Un jeu parfait" width="284" height="164" class="spotlight_image"/></div></a><a href="vilain-game-designer-10@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/oblivion.jpg" alt="Vilain Game Designer ! X" width="284" height="164" class="spotlight_image"/></div></a><a href="rejouabilite-2@scroll_to=article.html"><div class="autocaption_me"><img src="../media/img/ikaruga_affiche.jpg" alt="La rejouabilité (II)" width="284" height="164" class="spotlight_image"/></div></a></div>
+
+<!--Apply autocaptions-->
+<script type="text/javascript">  
+	$().ready(function() {  
+		$('#spotlights .autocaption_me').autocaption(); 
+	});
+</script>
+					<hr class="heavy"/>
+							
+				<div id="left_column">
+					
+	<div id="article">
+		<div class="lightboxable">
+			<h1>La rejouabilité, partie 1 : la narration</h1>
+			
+				<div class="meta">
+					Par <a href="../publisher/shin.html">Pierre Guyot</a> | le 20 février 2014 23:46:22 | Catégories : <a href="../tag/ernest-adams.html">Ernest Adams</a>, <a href="../tag/scenario.html">Scénario</a>, <a href="../tag/univers.html">Univers</a>
+				</div>
+				
+					<div class="disclaimer">
+						Cet article est une traduction de <a href="../publisher/Shin.html">Pierre Guyot</a>.
+						<br/>L'<a href="http://www.designersnotebook.com/Columns/039_Replayability_1__Narrative/039_replayability_1-_narrative.htm" target="_blank">article original</a> est écrit par Ernest Adams publié par Gamasutra (mai 2001).
+						<br/>L'auteur original n'est en aucun cas reponsable de la précision de cette traduction.
+					</div>
+				
+			
+			<div id="article_headline">
+				<p>Qu'est-ce qui fait qu'un jeu est rejouable ? Et pourquoi certains jeux sont rejouables alors que d'autres non ?</p>
+<p><img alt="Civilization III (Firaxis)" src="../media/img/civ3_1.jpg" /></p>
+<p>En principe, n'importe quel jeu devrait être rejouable. Imaginons que vous alliez au magasin de jouets, que vous achetiez un jeu de société pour vingt ou trente dollars et qu'une fois arrivé chez vous, vous vous rendiez compte que vous ne pouvez y jouer qu'une seule fois : vous seriez légitimement furieux. Pourtant, ceci arrive assez souvent avec les jeux vidéo et nos clients s'y sont plus ou moins résignés. La rejouabilité, cependant, n'est pas le résultat du hasard : il s'agit de quelque chose que nous concepteurs pouvons créer volontairement… si nous le souhaitons.</p>
+			</div>
+			<div id="article_content">
+				<p>Commençons par nous demander si nous le souhaitons. D'un point de vue purement vénal, la rejouabilité n'est pas toujours une bonne chose. Si un jeu est rejouable à l'infini, nos clients n'ont pas de raison d'aller en acheter d'autres. Nous avons besoin qu'ils achètent de nouveaux jeux pour que nous ayons du travail, nous avons donc une motivation financière à concevoir des jeux avec une durée de vie finie. Néanmoins, je ne connais aucun développeur qui pense réellement de cette façon. En premier lieu, la plupart des jeux ont une durée de vie finie en raison de la progression galopante de la technologie : il n'y a pas besoin de limiter artificiellement la durée de vie quand Intel et AMD font tout leur possible pour que nos jeux deviennent obsolètes au bout de quelques années, quoi que nous fassions. Mais, plus important encore, la majeure partie d'entre nous a une certaine fierté créative. Nous voulons que les gens continuent de jouer à nos jeux pendant longtemps. Nous avons du respect pour les jeux comme <em>Civilization</em> et <em>Myst</em>, auxquels les gens continuent de jouer pendant des années et nous respectons leurs créateurs pour avoir réussi une telle prouesse.</p>
+<p>Supposons maintenant que nous voulons créer un jeu rejouable, quels sont les éléments qui influent sur la rejouabilité ? Si on laisse de côté la technologie, que l'on ne peut pas contrôler, comment peut-on concevoir un jeu rejouable ? Dans la première partie de cet article, je m'intéresserai à l'impact de la narration sur les jeux et dans un second temps, j'examinerai celui des mécaniques de jeu.</p>
+<p>La narration dans les jeux — c'est-à-dire l'histoire, quand il y en a une — a une nette tendance à la rigidité et la linéarité. Malgré 25 et quelques années de recherches au petit bonheur, personne n'a vraiment conçu d'histoire « à embranchements » pleinement satisfaisante. Quand les gens rejouent à un jeu pour voir les embranchements qu'ils ont manqués la première fois, ils ont tendance à passer le plus vite possible les parties qu'ils ont déjà vues sans faire très attention. Et si la narration est linéaire, comme dans <em>Starcraft</em> ou <em>Diablo</em>, une fois que vous connaissez l'histoire, celle-ci ne fournit plus une très grande motivation pour refaire le jeu. Heureusement, ces jeux proposent un gameplay suffisamment intéressant pour valoir la peine d'être refaits, même en connaissant déjà l'histoire. Mais pour les jeux d'aventure, l'histoire est la principale raison de jouer. Une fois que vous avez résolu toutes les énigmes et que vous connaissez toute l'histoire, il n'y a plus beaucoup de raisons d'y rejouer. Plus la narration est importante dans un jeu, moins vous êtes incités à y rejouer.</p>
+<p>Mais je pense qu'on peut faire les choses différemment.</p>
+<p><img alt="Myst III Exile (Presto Studios)" src="../media/img/myst_1.jpg" /></p>
+<p>Si vous vous rendez à la pointe à l'extrême nord de l'Écosse, là où les macareux nichent dans les falaises et où la brume glisse sur l'herbe même au plus fort de l'été, vous pourrez voir au nord, au-delà des eaux traîtresses du détroit de Pentland, un archipel nu : les Orcades.</p>
+<p>Et si vous prenez le ferry pour vous y rendre, vous pourrez visiter des dizaines d'anciens monuments de pierre laissés là par des gens plus hardis que nous : des fermiers du Néolithique, des Pictes, des Vikings. Parmi ces monuments se trouve un petit village incroyablement préservé, Skara Brae, où tous les murs, les sols et même le mobilier sont faits de <a href="http://fr.wikipedia.org/wiki/Lauze_%28pierre%29">pierres plates</a>. Aujourd'hui, on peut se tenir au sommet des murs, se pencher pour regarder à travers les pièces sans plafond les lits, les étagères et les armoires intégralement faits de pierres et essayer d'imaginer à quoi pouvait y ressembler la vie dans les ténèbres glacées d'une nuit d'hiver au bord de la mer du Nord, il y a cinq mille ans. Des gens vêtus de peaux, blottis autour du feu au milieu d'une obscurité puante, brûlant tout le <a href="http://fr.wikipedia.org/wiki/Bois_flott%C3%A9">bois flotté</a> qu'ils ont pu trouver, la seule lumière venant du foyer.</p>
+<p>Que faisaient-ils pendant ces hivers interminables ? Ils travaillaient, sans doute : ils cuisinaient, cousaient, s'occupaient des enfants et réparaient les outils. Ils jouaient, sans doute : ils chantaient, ils parlaient, ils plaisantaient et ils riaient. Ils faisaient ce que les humains font : ils mangeaient et dormaient, faisaient l'amour et donnaient naissance, tombaient malades et mourraient. Et tout du long, un fil fait le lien entre ces générations : raconter des histoires et les entendre raconter.</p>
+<p>De nos jours, nous disposons de tellement d'histoires que quelqu'un pourrait passer sa vie entière à lire, à regarder la télévision, à aller au cinéma toute la journée et chaque jour, et ne jamais entendre deux fois la même. Mais dans les temps anciens, les histoires étaient moins nombreuses et se transmettaient par la parole et non par l'écriture. Le récit était peut-être la spécialité d'un petit groupe ou même d'une seule personne : le barde ou le chanteur.  Et arrivée à un âge avancé — disons cinquante ans pour une femme, si elle avait survécu à l'accouchement — une personne avait dû entendre le même récit une bonne centaine de fois.</p>
+<p>Pourquoi les gens de  cette époque prenaient-ils cette peine ? D'où venait leur intérêt ? Était-ce parce que n'importe quelle histoire, qu'importe le nombre de répétitions, valait toujours mieux que pas d'histoire du tout ? J'en doute. Le silence, c'est la promesse de toutes les histoires, bonnes et mauvaises, et quand on raconte, l'une de ces possibilités devient réelle. Le silence reste préférable à une mauvaise histoire racontée à nouveau. Je pense que la raison pour laquelle nos ancêtres écoutaient encore et encore les mêmes histoires, c'est qu'il s'agissait de bonnes histoires.</p>
+<p><img alt="Skara Brae" src="../media/img/skarabrae.jpg" /></p>
+<p>Avec tant de récits parmi lesquels choisir, nous pensons aujourd'hui qu'une fois l'intrigue connue, ce n'est plus la peine de réécouter. C'est vrai de beaucoup d'histoires : est-ce qu'il y a quelconque intérêt à revoir un épisode de <em>Kojak</em> ou de <em>21 Jump Street</em> ? Probablement pas. Mais il y a un petit nombre d'histoires que nous regardons, écoutons ou lisons encore et encore. Nous ressortons <em>A Christmas Carol</em> année après année, et même si le personnage du petit Tim est trop sucré pour notre goût moderne, l'histoire de la rédemption d'un vieil homme amer ne l'est pas.</p>
+<p>Je relis habituellement le <em>Seigneur des Anneaux</em> ou des passages de celui-ci tous les dix-huit mois environ. Je le connais sur le bout des doigts. Je sais que je n'apprendrai rien de nouveau sur l'intrigue. Ce qui m'y ramène régulièrement, ce qui retient mon attention, ce n'est pas l'histoire, mais la narration.</p>
+<p>Examinons la phrase suivante tirée de la fin du livre. Elle apparaît dans l'avant-dernière scène, lorsque Frodon se tient au bord de la Crevasse du Destin avec l'Anneau dans sa main. Le Prince Sombre réalise soudain sa présence et comprend que son existence-même ne tient qu'à un fil [NDT : la traduction est maison, mais je la remplacerai dès que j'aurai remis la main sur mon exemplaire du <em>Seigneur des Anneaux</em>.].</p>
+<blockquote>
+<p>From all his policies and webs of fear and treachery, from all his stratagems and wars his mind shook free; and throughout his realm a tremor ran, his slaves quailed, and his armies halted, and his captains suddenly steerless, bereft of will, wavered and despaired.</p>
+<p>De toutes ses intrigues et de ses rets de peur et de tromperie, de tous ses stratagèmes et de ses guerres, son esprit [celui de Frodon] se libéra ; et un tremblement parcourut tout son royaume,  et ses esclaves fléchirent, et ses armées s'arrêtèrent, et ses capitaines soudain sans guide, privés de volonté, vacillèrent et se mirent à désespérer.</p>
+</blockquote>
+<p>Si on la lit à haute voix, il apparaît que cette phrase est construite comme un poème [NDT : la poésie anglaise est basée sur l'alternance réglée de syllabes longues et courtes, comme la poésie latine ou la poésie grecque, de façon à former différents types de vers. Elle n'est généralement pas rimée.]. Les deux premiers blocs de la phrase ont une construction parallèle et en fait, il s'agit respectivement d'un heptamètre iambique et d'un hexamètre iambique :</p>
+<blockquote>
+<p>From all / his pol- / i-cies / and webs / of fear / and trea- / cher-y<br />
+From all / his stra- /  ta-gems / and wars / his mind / shook free</p>
+</blockquote>
+<p>Ils riment, même. Le bloc suivant ressemble à un vers allitératif anglo-saxon, où les consonnes initiales sont répétées.</p>
+<blockquote>
+<p>and <strong>t</strong>hroughout his <strong>r</strong>ealm / a <strong>t</strong>remor <strong>r</strong>an</p>
+</blockquote>
+<p>Et à l'exception du mot « and », il est aussi composé d'iambes.</p>
+<blockquote>
+<p>through-out / his realm / a tre- / mor ran</p>
+</blockquote>
+<p>Puis nous revenons à une construction parallèle avec « his slaves quailed, and his armies halted ». Après cela, le rythme commence à se briser, exactement de la même façon que le monde guerrier et mécanique du Prince Sombre s'effondre. Est-ce que Tolkien a fait ceci de façon délibérée ? On ne peut pas savoir, mais c'était un poète qui savait tout ce qu'il y a à savoir sur la langue anglaise et, consciemment ou inconsciemment, son esprit a utilisé cette connaissance pour travailler ces phrases. À un moment de l'histoire où seule la poésie pouvait rendre justice à sa vision, il y en a employé les méthodes avec succès. C'est l'une des phrases les plus puissantes du livre, mais c'est aussi l'une de celles que vous ne remarquerez qu'à la deuxième, la troisième ou même la douzième lecture.</p>
+<h1>Raconter une bonne histoire</h1>
+<p>Pour pouvoir apprécier une histoire, il n'est pas nécessaire qu'elle soit nouvelle. On peut aller à l'opéra en connaissant toute l'intrigue et effectivement, les intrigues de la plupart des opéras sont plutôt légères. Ces œuvres se concentrent sur la performance, la puissance et la beauté de la voix humaine. Pourquoi a-t-on vu des adolescentes retourner voir <em>Titanic</em> encore et encore et encore, alors qu'elles en connaissaient déjà l'intrigue ? C'est en raison de l'émotion que le film leur inspire et celle ne repose pas que sur l'intrigue, mais aussi sur la façon de raconter.</p>
+<p><img alt="J.R.R. Tolkien (c'était ça ou Titanic)" src="../media/img/tolkien.jpg" /></p>
+<p>Il y a un certain temps, j'ai commencé à me poser des questions sur les <em>comic books</em> : leurs histoires se poursuivent indéfiniment sans que les héros ou les méchants ne vieillissent et pratiquement sans qu'aucun d'entre eux ne meure. Ils essuient des échecs de temps à autre, mais ces changements sont rarement permanents. Les histoires sont présentées comme si elles faisaient partie d'une continuité narrative, mais bien sûr, cela n'aurait aucun sens : cela voudrait dire que Batman, un être humain ordinaire, a combattu le crime en continu pendant près de 70 ans [NDT : en slip, en plus]. À quelle catégorie de littérature appartiennent donc les <em>comics</em> ? Finalement, j'ai conclu que ce ne sont ni des romans, ni des <em>serials</em>, ni des <em>soaps</em>, mais des légendes. Les légendes n'ont pas besoin de continuité pour former un tout cohérent. Il peut y avoir une infinité d'histoires sur Paul Bunyan et celui-ci ne vieillit jamais ni ne meurt, parce que chacune de ces histoires se suffit à elle-même.</p>
+<p>Les éditeurs de <em>comic books</em> ont peur de tuer un personnage, de peur que les gens pensent qu'il va rester mort éternellement. Ils inventent des histoires pour raconter les origines et les aventures de leurs personnages, mais ils ne disent pas comment ils meurent. Ils sont encore bloqués sur l'idée que les livres sont forcément des narrations continues. Du moins, ils l'étaient jusqu'en 1986.</p>
+<p>En 1986, Frank Miller a écrit un roman graphique intitulé <em>The Dark Knight Returns</em>. Dans ce livre, il a raconté le combat final de Batman et sa fin. Il a reconnu que les lecteurs de <em>comic books</em> ne sont pas nécessairement des enfants, qu'ils sont suffisamment matures pour pouvoir lire l'histoire de la mort de Batman sans en déduire que la publication d'autres de ses aventures va cesser. Dans sa préface pour le livre, Alan Moore a écrit :</p>
+<blockquote>
+<p>Toutes nos meilleurs et nos plus anciennes légendes reconnaissent le passage du temps, le vieillissement et la mort des êtres. La légende de Robin des Bois ne pourrait être complète sans cette dernière flèche tirée à l'aveugle pour déterminer l'emplacement de sa tombe. Les légendes nordiques perdraient beaucoup de leur pouvoir sans l'idée du Ragnarok final, de même que l'histoire de Davy Crockett sans Alamo.</p>
+</blockquote>
+<p>En montrant la fin de la légende de Batman, Miller n'a rien enlevé et n'a rien fait qui puisse empêcher la création de nouvelles légendes. Il lui a simplement donné une fin adéquate, sans laquelle elle restait incomplète.</p>
+<p>Une autre chose à propos des légendes, c'est qu'elles n'ont pas besoin d'être cohérentes. Nous savons qu'il s'agit de fictions et non de faits. Il n'y aucune raison pour laquelle une version particulière du destin de Batman serait la bonne. Lorsqu'il a composé <em>l'Anneau du Nibelung</em>, Richard Wagner a profondément réécrit les légendes nordiques pour ses propres besoins, et bien que son œuvre ne soit pas fidèle au matériau d'origine, ce matériau n'est de toute façon pas vraiment fidèle à quoi que ce soit. Wagner travaillait à partir de copies de légendes écrites au Moyen-Âge, par des auteurs qui devaient eux-mêmes choisir de consigner une version particulière de contes bien plus ancien. Pour prendre un exemple plus récent, l'auteur John Fowles était incapable de se décider pour une fin à son livre <em>Sarah et le lieutenant français</em>, il décida donc sans regret de créer deux fins différentes et de les raconter toutes deux [NDT : en réalité, le livre a trois fins.].</p>
+<p>Il s'agit, je crois, des clefs qui permettent de faire d'un jeu narratif un jeu rejouable. En premier lieu, si l'histoire est linéaire, elle doit être si bien construite qu'elle doit être intéressante à revoir et revoir encore, même si nous en connaissons l'intrigue. Il faut faire comme Tolkien , et écrire avec soin ; faire comme l'opéra et mettre en scène avec soin ; faire comme <em>Titanic</em> l'a fait et créer une émotion qui dépasse l'intrigue seule. Raconter l'histoire comme l'aurait fait un barde de l'âge de pierre lors d'une nuit d'hiver dans la mer du Nord, de façon si fascinante que le public peut l'entendre une centaine de fois sans s'en lasser. C'est beaucoup demander, mais cela peut être fait si nous y mettons le talent et le travail nécessaires.</p>
+<p><img alt="L'Anneau du Nibelung (Richard Wagner)" src="../media/img/ring.jpg" /></p>
+<p>Ensuite, nous devons traiter nos histoires non pas comme des accumulations immuables de faits qui rendraient compte d'une « histoire » qui n'est jamais survenue, mais comme des légendes qui parlent de héros courageux, de grands évènements et de hauts faits. Certaines personnes ont déversé des litres d'encre à se prendre le bec pour d'infimes incohérences dans l'univers de <em>Star Trek</em> ; quelques décennies plutôt, c'était la même chose pour les histoires de Sherlock Holmes. C'est parce que ces personnes traitent ces mondes fictionnels comme une réalité objective. Il n'y a pas de mal à les laisser apprécier ces univers à leur façon, mais nous devrions nous garder de faire la même chose. Pour nous concepteurs, nous attacher à une seule version des évènements dans les univers que nous créons, c'est nous lier les mains et rendre la rejouabilité beaucoup plus difficile. Rejouer à un jeu crée des variations, et les variations exigent que les mécaniques de narration soient plus tolérantes. Nous voulons des histoires, pas « une vérité ».</p>
+			</div>
+			
+				<div class="sequel">
+					<p><a href="rejouabilite-2@scroll_to=article.html">Lire la suite ⇀</a></p>
+				</div>
+			
+		</div>
+		
+			<div class="share">
+				<!--Tweet this article-->
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="lesforges_fr" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<!-- Do things on facebook-->
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=http://lesforges.org/article/rejouabilite-1&layout=button_count" scrolling="no" frameborder="0" style="border:none; width:90px; height:20px"></iframe>
+			</div>
+			<div id="article_comments">
+				<h1>Ajouter un commentaire</h1>
+				
+				<div class="comment" id="your_comment">
+					<div id="you"></div>
+					<div id="your_comment_form_wrapper"></div>				
+				</div>			
+				
+				<div id="existing_comments">
+					<h1>Commentaires</h1>
+					<div id="new_comment"></div>
+					
+						﻿
+
+<div id="comment_387" class="comment">
+	
+		
+			<span class="meta">Par elhant1 le 16 mars 2014 08:52:35</span>
+			<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar de elhant1" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>"[celui de Frodon]"---&gt; celui de Sauron
+Et sinon évidemment qu'il l'a écrit consciemment. Nombre de ses textes sur la Terre Du Milieu sont écrits en vers.</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_387').addClass('deleted');
+			$('#comment_387 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_387 .delete').css("display", "none");
+			$('#comment_387 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_387 .delete').css("display", "none");
+		else										$('#comment_387 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_384" class="comment">
+	
+		<span class="meta">Par un anonyme le 24 février 2014 09:14:23</span>
+		<br/><img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=50&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+	
+	<div class="comment_content">
+		<p>Très bon article, lu du début à la fin !</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_384').addClass('deleted');
+			$('#comment_384 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_384 .delete').css("display", "none");
+			$('#comment_384 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_384 .delete').css("display", "none");
+		else										$('#comment_384 .restore').css("display", "none");
+</script>
+					
+						﻿
+
+<div id="comment_383" class="comment">
+	
+		
+			<span class="meta">Par Adrian le 21 février 2014 10:06:52</span>
+			<br/><img src="http://www.gravatar.com/avatar/ecf8606882b5d5a820fb8b57b78a6e79?s=50&amp;r=g&amp;d=mm" alt="avatar de Adrian" class="avatar" />
+		
+	
+	<div class="comment_content">
+		<p>Dans la citation du Seigneur des Anneaux, tu dis "[celui de Frodon]" mais il me semble que c'est plutôt celui de Sauron ?</p>
+<p>Très bonne traduction d'un excellent article, comme d'hab' ! Ça fait plaisir de revoir du contenu sur la Forge. :)</p>
+	</div>
+		
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+		if ("False" == "True") {
+			$('#comment_383').addClass('deleted');
+			$('#comment_383 .edit').css("display", "none");
+		}
+		if ("False" != "True") {
+			$('#comment_383 .delete').css("display", "none");
+			$('#comment_383 .restore').css("display", "none");
+		}
+		if ("False" == "True")	$('#comment_383 .delete').css("display", "none");
+		else										$('#comment_383 .restore').css("display", "none");
+</script>
+					
+				</div>
+				
+			</div>
+			<script type="text/javascript">
+				$().ready( function () {
+					$('.comment.deleted').fadeTo(0, .4);
+				});
+			</script>
+		
+	</div>
+	<!--scroll to somewhere after loading-->
+	
+	<!--handle comments-->	
+	<script type="text/javascript">
+		your_comment_url = '/your_comment/94';
+	</script>
+	<script src="../static/js/comment.js" type="text/javascript"></script>
+
+				</div>
+				<div id="right_column">
+											
+						<h2>Derniers commentaires</h2>
+						<div id="latest_comments">
+							<div id="new_recent_comment"></div>
+							
+								﻿
+
+
+	<a href="cours-pixel-art-logiciels@scroll_to=comment_487.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Cours de pixel art 2 : les bons outils
+			<br/><span class="meta">Par un anonyme | hier</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	<a href="elements-anatomie@scroll_to=comment_486.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments d&#39;anatomie
+			<br/><span class="meta">Par un anonyme | 28 septembre</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="couleurs@scroll_to=comment_485.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar de PixelJon" class="avatar" />
+			<div class="infos">
+				Cours de pixel art 6 : couleurs et palettes
+				<br/><span class="meta">Par PixelJon | 19 août</span>
+			</div>
+		</a>
+	
+								
+							
+								﻿
+
+
+	<a href="level-design-1@scroll_to=comment_484.html" class="comment">
+		<img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=30&amp;r=g&amp;d=mm" alt="avatar mystère" class="avatar" />
+		<div class="infos">
+			Éléments de level design I
+			<br/><span class="meta">Par un anonyme | 29 mai</span>
+		</div>
+	</a>
+								
+							
+								﻿
+
+
+	
+		<a href="pixel-art-lexique@scroll_to=comment_483.html" class="comment">
+			<img src="http://www.gravatar.com/avatar/d2dfe1d7913172a31544057f4ccda3ba?s=30&amp;r=g&amp;d=mm" alt="avatar de tile_down12" class="avatar" />
+			<div class="infos">
+				Lexique de Pixel art
+				<br/><span class="meta">Par tile_down12 | 31 décembre</span>
+			</div>
+		</a>
+	
+								
+							
+						</div>														
+						<h2>Archives</h2>
+						<div id="archives">
+							
+							<ul>
+								
+									<li><a href="rejouabilite-1.html">Août 2015</a>
+										<ul>
+											
+											<li><a href="un-jeu-parfait@scroll_to=article.html">Un jeu parfait</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Août 2014</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-10@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! X</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Mars 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-2@scroll_to=article.html">La rejouabilité, partie 2 : les mécaniques de jeux</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Février 2014</a>
+										<ul>
+											
+											<li><a href="rejouabilite-1@scroll_to=article.html">La rejouabilité, partie 1 : la narration</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Octobre 2013</a>
+										<ul>
+											
+											<li><a href="ld27@scroll_to=article.html">Compte-rendu de Ludum Dare #27</a></li>
+											
+											<li><a href="direction-artistique-2@scroll_to=article.html">La direction artistique (deuxième partie)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Septembre 2013</a>
+										<ul>
+											
+											<li><a href="direction-artistique-1@scroll_to=article.html">La direction artistique (première partie)</a></li>
+											
+											<li><a href="vilain-game-designer-9@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IX</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Avril 2013</a>
+										<ul>
+											
+											<li><a href="concours-creation-jeu-flip@scroll_to=article.html">Concours de création de jeux vidéo</a></li>
+											
+											<li><a href="combien-de-fins@scroll_to=article.html">Combien de fins pour mon jeu ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Février 2013</a>
+										<ul>
+											
+											<li><a href="crafting@scroll_to=article.html">Craft, alchimie et autres créations d&#39;objets</a></li>
+											
+											<li><a href="vilain-game-designer-8@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VIII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Janvier 2013</a>
+										<ul>
+											
+											<li><a href="ld25@scroll_to=article.html">Compte-rendu de Ludum Dare #25</a></li>
+											
+											<li><a href="texte@scroll_to=article.html">Le texte</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Novembre 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep2@scroll_to=article.html">Mon blog AAA – épisode 2</a></li>
+											
+											<li><a href="transgresser-les-regles@scroll_to=article.html">Transgresser les règles (Ernest va au cinéma)</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Octobre 2012</a>
+										<ul>
+											
+											<li><a href="jgmnp@scroll_to=article.html">Un peu de pub</a></li>
+											
+											<li><a href="pixel-art-chapitre-10-animation@scroll_to=article.html">Cours de pixel art 10 : Ça manque d&#39;animation par ici !</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Septembre 2012</a>
+										<ul>
+											
+											<li><a href="ld24@scroll_to=article.html">Compte-rendu de Ludum Dare #24</a></li>
+											
+											<li><a href="elements-anatomie@scroll_to=article.html">Éléments d&#39;anatomie</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Août 2012</a>
+										<ul>
+											
+											<li><a href="huit_mauvais_tutoriel@scroll_to=article.html">Huit façons de faire un mauvais tutoriel</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Juillet 2012</a>
+										<ul>
+											
+											<li><a href="ace-attorney@scroll_to=article.html">Game Design &amp; Ace Attorney</a></li>
+											
+											<li><a href="vilain-game-designer-7@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VII</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Juin 2012</a>
+										<ul>
+											
+											<li><a href="game-over@scroll_to=article.html">Les joies du game over</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Avril 2012</a>
+										<ul>
+											
+											<li><a href="aaa-ep1@scroll_to=article.html">Mon blog AAA – épisode 1</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Février 2012</a>
+										<ul>
+											
+											<li><a href="musique-et-gameplay@scroll_to=article.html">Musique et gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Janvier 2012</a>
+										<ul>
+											
+											<li><a href="dark-souls@scroll_to=article.html">Game Design &amp; Dark Souls</a></li>
+											
+											<li><a href="making-of-1@scroll_to=article.html">Making of : un arbre pour Lije</a></li>
+											
+											<li><a href="voeux2012@scroll_to=article.html">Bonne année (et bonnes nouvelles)</a></li>
+											
+											<li><a href="level-design-2@scroll_to=article.html">Éléments de level design II</a></li>
+											
+											<li><a href="level-design-1@scroll_to=article.html">Éléments de level design I</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Décembre 2011</a>
+										<ul>
+											
+											<li><a href="the_blame_game@scroll_to=article.html">La faute à qui ? C&#39;est pas moi !</a></li>
+											
+											<li><a href="ld22@scroll_to=article.html">Compte-rendu de Ludum Dare #22</a></li>
+											
+											<li><a href="design-documents@scroll_to=article.html">Pourquoi écrire un Game Design Document ?</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Novembre 2011</a>
+										<ul>
+											
+											<li><a href="introduction-graphicsgale@scroll_to=article.html">Introduction à GraphicsGale</a></li>
+											
+											<li><a href="faire-revenir-jeux-aventure@scroll_to=article.html">Il est temps de faire revenir les jeux d&#39;aventure</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Octobre 2011</a>
+										<ul>
+											
+											<li><a href="jeu-identite@scroll_to=article.html">Jeu et identité</a></li>
+											
+											<li><a href="add@scroll_to=article.html">Modes de difficulté et ajustement dynamique de la difficulté</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Septembre 2011</a>
+										<ul>
+											
+											<li><a href="cercles-vicieux@scroll_to=article.html">Cercles vicieux</a></li>
+											
+											<li><a href="chiffres-emotions-comportement@scroll_to=article.html">Chiffres, émotions et comportement</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Août 2011</a>
+										<ul>
+											
+											<li><a href="ld21@scroll_to=article.html">Compte-rendu de Ludum Dare #21</a></li>
+											
+											<li><a href="le-genre-qui-ne-voulait-pas-mourir@scroll_to=article.html">Le genre qui ne voulait pas mourir</a></li>
+											
+											<li><a href="se-lancer-dans-industrie-jeu@scroll_to=article.html">Comment se lancer dans l&#39;industrie du jeu</a></li>
+											
+											<li><a href="narration-libre@scroll_to=article.html">La narration libre</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Juillet 2011</a>
+										<ul>
+											
+											<li><a href="blending-and-shading@scroll_to=article.html">Blending et Shading</a></li>
+											
+											<li><a href="vilain-game-designer-6@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! VI</a></li>
+											
+											<li><a href="pourquoi-fin-de-jeu-craignent@scroll_to=article.html">Pourquoi les fins de jeu craignent</a></li>
+											
+											<li><a href="dlc-et-micro-paiement@scroll_to=article.html">DLCs et achats par micro-paiement</a></li>
+											
+											<li><a href="vilain-game-designer-5@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! V</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Juin 2011</a>
+										<ul>
+											
+											<li><a href="moba@scroll_to=article.html">Game Design &amp; MOBA</a></li>
+											
+											<li><a href="difficulte@scroll_to=article.html">La difficulté dans les jeux vidéo</a></li>
+											
+											<li><a href="edito-juin-2011@scroll_to=article.html">Je crois qu&#39;il se passe quelque chose…</a></li>
+											
+											<li><a href="costumes@scroll_to=article.html">Costumes et character design</a></li>
+											
+											<li><a href="photoshop@scroll_to=article.html">Introduction à Photoshop</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Novembre 2010</a>
+										<ul>
+											
+											<li><a href="narration-et-gameplay@scroll_to=article.html">Le délicat mariage de la narration et du gameplay</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Juin 2010</a>
+										<ul>
+											
+											<li><a href="achievements@scroll_to=article.html">Les achievements : le su-sucre des geeks</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Octobre 2009</a>
+										<ul>
+											
+											<li><a href="vilain-game-designer-4@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! IV</a></li>
+											
+											<li><a href="vilain-game-designer-3@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! III</a></li>
+											
+											<li><a href="tais-toi@scroll_to=article.html">Tais-toi et bosse ton jeu !</a></li>
+											
+											<li><a href="tolkien-beethoven-vision@scroll_to=article.html">Tolkien, Beethoven, Vision</a></li>
+											
+											<li><a href="simplification@scroll_to=article.html">Simplification</a></li>
+											
+											<li><a href="vilain-game-designer-2@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi ! II</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Décembre 2008</a>
+										<ul>
+											
+											<li><a href="mapping@scroll_to=article.html">Méthodes et conseils pour le mapping</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Octobre 2008</a>
+										<ul>
+											
+											<li><a href="arne@scroll_to=article.html">La leçon de dessin de Arne</a></li>
+											
+											<li><a href="retroaction@scroll_to=article.html">Equilibrer les jeux grâce à la rétroaction positive</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Août 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-tiles@scroll_to=article.html">Cours de pixel art 9 : un monde de tiles</a></li>
+											
+											<li><a href="la-mort@scroll_to=article.html">La mort (et Planescape : Torment)</a></li>
+											
+											<li><a href="narration-interactive@scroll_to=article.html">Trois problèmes de la narration interactive</a></li>
+											
+											<li><a href="symetrie@scroll_to=article.html">Une leçon de symétrie</a></li>
+											
+											<li><a href="commerce@scroll_to=article.html">Le commerce dans les RPG</a></li>
+											
+											<li><a href="cours-pixel-art-textures@scroll_to=article.html">Cours de pixel art 8 : textures et dithering</a></li>
+											
+											<li><a href="creation-de-noms@scroll_to=article.html">La création de noms : tout un art</a></li>
+											
+										</ul>
+									</li>
+								
+									<li><a href="rejouabilite-1.html">Juillet 2008</a>
+										<ul>
+											
+											<li><a href="cours-pixel-art-anti-aliasing@scroll_to=article.html">Cours de pixel art 7 : anti-aliasing</a></li>
+											
+											<li><a href="magie@scroll_to=article.html">Rendons sa magie à la magie</a></li>
+											
+											<li><a href="couleurs@scroll_to=article.html">Cours de pixel art 6 : couleurs et palettes</a></li>
+											
+											<li><a href="cours-pixel-art-shading@scroll_to=article.html">Cours de pixel art 5 : ombre et lumière</a></li>
+											
+											<li><a href="essentiel@scroll_to=article.html">Comment aller à l&#39;essentiel et donner aux joueurs ce qu&#39;ils veulent</a></li>
+											
+											<li><a href="cours-pixel-art-perspective@scroll_to=article.html">Cours de pixel art 4 : perspectives</a></li>
+											
+											<li><a href="vilain-game-designer-1@scroll_to=article.html">Vilain Game Designer ! Pas de biscuit pour toi !</a></li>
+											
+											<li><a href="representation-stylisation@scroll_to=article.html">Représentation et stylisation</a></li>
+											
+											<li><a href="methodes-et-conseils@scroll_to=article.html">Méthodes et conseils pour bien travailler</a></li>
+											
+											<li><a href="creature-design@scroll_to=article.html">Eléments de Creature Design</a></li>
+											
+											<li><a href="pixel-art-lexique@scroll_to=article.html">Lexique de Pixel art</a></li>
+											
+											<li><a href="cours-pixel-art-lignes@scroll_to=article.html">Cours de pixel art 3 : tracer des lignes</a></li>
+											
+											<li><a href="cours-pixel-art-logiciels@scroll_to=article.html">Cours de pixel art 2 : les bons outils</a></li>
+											
+											<li><a href="cours-pixel-art-preface@scroll_to=article.html">Cours de pixel art 1 : préface</a></li>
+											
+										</ul>
+									</li>
+								
+							</ul>
+						</div>
+						<h2>Catégories</h2>
+						<div id="tags_cloud">
+							
+								<a href="../tag/analyse.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Analyse</span></a><br/>
+							
+								<a href="../tag/business.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Business</span></a><br/>
+							
+								<a href="../tag/character-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Character Design</span></a><br/>
+							
+								<a href="../tag/couleur.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Couleur</span></a><br/>
+							
+								<a href="../tag/cours.html"><span style="font-size: 1.270588em; line-height: 1.000000em">Cours</span></a><br/>
+							
+								<a href="../tag/creature-design.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Creature Design</span></a><br/>
+							
+								<a href="../tag/dessin.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Dessin</span></a><br/>
+							
+								<a href="../tag/editorial.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Editorial</span></a><br/>
+							
+								<a href="../tag/ernest-adams.html"><span style="font-size: 1.529412em; line-height: 1.000000em">Ernest Adams</span></a><br/>
+							
+								<a href="../tag/game-design.html"><span style="font-size: 1.929412em; line-height: 1.000000em">Game Design</span></a><br/>
+							
+								<a href="../tag/graphisme.html"><span style="font-size: 1.388235em; line-height: 1.000000em">Graphisme</span></a><br/>
+							
+								<a href="../tag/level-design.html"><span style="font-size: 0.941176em; line-height: 1.000000em">Level Design</span></a><br/>
+							
+								<a href="../tag/ludum-dare.html"><span style="font-size: 0.894118em; line-height: 1.000000em">Ludum Dare</span></a><br/>
+							
+								<a href="../tag/ma-vie.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Ma vie</span></a><br/>
+							
+								<a href="../tag/michael-molinari.html"><span style="font-size: 0.800000em; line-height: 1.000000em">Michael Molinari</span></a><br/>
+							
+								<a href="../tag/musique.html"><span style="font-size: 0.847059em; line-height: 1.000000em">Musique</span></a><br/>
+							
+								<a href="../tag/pas-de-biscuit.html"><span style="font-size: 1.011765em; line-height: 1.000000em">Pas de biscuit</span></a><br/>
+							
+								<a href="../tag/photoshop.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Photoshop</span></a><br/>
+							
+								<a href="../tag/pixel-art.html"><span style="font-size: 1.223529em; line-height: 1.000000em">Pixel art</span></a><br/>
+							
+								<a href="../tag/scenario.html"><span style="font-size: 0.964706em; line-height: 1.000000em">Scénario</span></a><br/>
+							
+								<a href="../tag/tiles.html"><span style="font-size: 0.823529em; line-height: 1.000000em">Tiles</span></a><br/>
+							
+								<a href="../tag/univers.html"><span style="font-size: 0.917647em; line-height: 1.000000em">Univers</span></a><br/>
+							
+						</div>						
+						<h2>A la loupe</h2>						
+						<div class="loupe">
+							<object id ="loupe_object" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="284" height="240">
+								<param name="flashvars" value="folderRoot=/static/swf/" />
+								<param name="movie" value="/static/swf/loupe2.swf" />
+								<!--[if !IE]>-->
+								<object type="application/x-shockwave-flash" data="../static/swf/loupe2.swf" width="284" height="240">
+									<param name="flashvars" value="folderRoot=/static/swf/" />
+								</object>
+								<!--<![endif]-->
+							</object>
+						</div>
+						<div class="loupe_help">
+							Cliquez pour zoomer sur les détails
+							<br/><span class="source">Images extraites de <a href="http://www.vgmaps.com">VGMaps</a></span>
+						</div>
+										
+				</div>
+				<!--Clear left column and rightt column-->
+				<div class="clear"></div>
+				<!--Fake html form so that browsers will fill this with autocomplete. We'll use this info to prefill AJAX forms.-->
+				<div style="display: none">
+					<form action="../index.html" method="post">
+						<input type="text" name="username" id="dummy_username"/>
+						<input type="password" name="password" id="dummy_password"/>
+						<input type="submit" value="connexion" id="dummy_submit"/>
+					</form>
+				</div>				
+			</div>
+		</div>
+		<div id="footer">
+			
+			<div class="content">
+				<div class="column">
+					<b>Technologies à l'œuvre</b>
+					<ul id="tech">
+						<li><a href="http://www.w3.org/standards/webdesign/htmlcss#whathtml" target="_blank">HTML 5</a></li>
+						<li><a href="http://lesscss.org" target="_blank">LESS CSS</a></li>
+						<li><a href="http://daringfireball.net/projects/markdown" target="_blank">markdown</a></li>
+						<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+						<li><a href="http://www.madeincima.eu/blog/jquery-plugin-easy-list-splitter" target="_blank">Easy list splitter</a></li>
+						<li><a href="http://www.digitalia.be/software/slimbox2" target="_blank">Slimbox 2</a></li>
+						<li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+						<li><a href="http://www.sqlite.org" target="_blank">SQLite</a></li>
+						<li><a href="http://www.dreamhost.com/green.cgi?lesforges.org" target="_blank">Dreamhost</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>A propos des Forges</b>
+					<ul>
+						<li><a href="../tag/editorial.html">Éditorial</a></li>
+						<li><a href="../compact/index.html">Index des articles</a></li>
+						<li><a href="auteurs.html">Auteurs réguliers</a></li>
+						<li><a href="contribuer.html">Être publié sur les Forges</a></li>
+						<li><a href="utilisation@scroll_to=article.html">Conditions d'utilisation</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Contact</b>
+					<ul>
+						<li>
+<noscript>(Vous devez accepter le javascript pour voir cette adresse e-mail)</noscript>
+<script type="text/javascript">// <![CDATA[
+ 	       	document.write('<a href="mai'+'lto:&#99;&#x6f;&#x6e;&#x74;&#97;&#99;&#116;&#64;&#x6c;&#101;&#x73;&#x66;&#x6f;&#x72;&#x67;&#x65;&#115;&#46;&#111;&#x72;&#103;">Nous envoyer un e-mail</a>')
+ 	       	// ]]></script>
+</li>
+						<li><a href="../feeds">S'abonner à notre flux RSS</a></li>
+						<li><a href="http://twitter.com/#!/lesforges_fr" target="_blank">Nous suivre sur Twitter</a></li>
+						<li><a href="http://www.facebook.com/pages/Les-Forges/228687343824669" target="_blank">Nous retrouver sur Facebook</a></li>
+					</ul>
+				</div>
+				<div class="column">
+					<b>Vous lisez les pieds de page ?</b>
+					<ul>
+						<li><a href="../index.html">Essayez plutôt les articles</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript">
+				$().ready(function () {
+					$('#tech').easyListSplitter({ colNumber: 2, direction: 'horizontal' });
+					equalHeight($('#footer .column'));
+				});
+			</script>
+		</div>
+	</body>
+</html>
